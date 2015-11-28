@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录生活学习中的点点滴滴]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ddnode.com/"/>
-  <updated>2015-11-21T13:00:16.000Z</updated>
+  <updated>2015-11-28T08:56:30.000Z</updated>
   <id>http://ddnode.com/</id>
   
   <author>
@@ -13,6 +13,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Business name generator]]></title>
+    <link href="http://ddnode.com/2015/11/28/Business-name-generator.html"/>
+    <id>http://ddnode.com/2015/11/28/Business-name-generator.html</id>
+    <published>2015-11-28T08:54:34.000Z</published>
+    <updated>2015-11-28T08:56:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Generate business names and check domain availability instantly<br><a href="https://www.shopify.com/tools/business-name-generator" target="_blank" rel="external">Business name generator</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Generate business names and check domain availability instantly<br><a href="https://www.shopify.com/tools/business-name-generator" target]]>
+    </summary>
+    
+      <category term="Tools" scheme="http://ddnode.com/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Laravel常用插件]]></title>
@@ -206,115 +222,257 @@
   </entry>
   
   <entry>
-    <title><![CDATA[管理Sass项目]]></title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E7%AE%A1%E7%90%86sass%E9%A1%B9%E7%9B%AE.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/管理sass项目.html</id>
+    <title><![CDATA[Sass变量揭秘]]></title>
+    <link href="http://ddnode.com/2014/09/21/Sass/%E5%8F%98%E9%87%8F.html"/>
+    <id>http://ddnode.com/2014/09/21/Sass/变量.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:39.000Z</updated>
-    <content type="html"><![CDATA[<p>回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。<br><a id="more"></a></p>
-<p>我的小伙伴们，那些苦逼的日子就将过去了。CSS处理变得更有趣，也更复杂。现在我们有CSS预处理器、响应式设计、渐进增强、优雅降级，和其他一些时尚的东西。可以说，CSS变得比以往任何时候都更加强大。</p>
-<blockquote>
-<p>CSS变得更有趣，更复杂。——@<a href="http://www.sitepoint.com/author/hgiraudel" target="_blank" rel="external">Hugo Giraudel</a></p>
-</blockquote>
-<p>所以我们有很多东西需要处理，这样一来，如何组织项目文件就变得非常的重要。我想大家都同意这样的观点，但实现起来并不太容易。所以我写了这篇文章，将会告诉你应该怎么去想，比告诉你怎么做要更好，否则，我就离开你了。</p>
-<p>##构建你的结构体系</p>
-<p>CSS预处理器的特点之一是可以把你的代码分割成很多个文件，而且不会影响性能。这都要归功于Sass的<code>@import</code>命令，只要在你的开发环境下，你调用不管多少文件，最终将编译出一个CSS样式文件。</p>
-<blockquote>
-<p>多个文件中开发，最终合并输出一个文件。——@Bruce Lee</p>
-</blockquote>
-<p>开始将你的CSS文件分割成多个文件和文件夹。正如我的一位导师说的“任何事物都有其正确的地方，每个地方都有其正确的事”。那么，这也是我喜欢做的事。</p>
-<p>##文件夹构建</p>
-<p>文件夹的创建是必不可少的。就算在家里，你也不会把所有的纸张放在一个盒子里。你可能会使用一个文件夹。一个用于房子上，一个用于银行，一个用于账单等等。</p>
-<p>你在创建CSS的架构的时候也应该如此：你不只是把所有的Sass文件放在一个文件夹下，你会将他们分类。</p>
-<p>下面的示例屏示的是我将如何组织我的Sass文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass/&#10;|&#10;|&#8211; base/&#10;|   |&#8211; _reset.scss       # Reset/normalize&#10;|   |&#8211; _typography.scss  # Typography rules&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; components/&#10;|   |&#8211; _buttons.scss     # Buttons&#10;|   |&#8211; _carousel.scss    # Carousel&#10;|   |&#8211; _cover.scss       # Cover&#10;|   |&#8211; _dropdown.scss    # Dropdown&#10;|   |&#8211; _navigation.scss  # Navigation&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; helpers/&#10;|   |&#8211; _variables.scss   # Sass Variables&#10;|   |&#8211; _functions.scss   # Sass Functions&#10;|   |&#8211; _mixins.scss      # Sass Mixins&#10;|   |&#8211; _helpers.scss     # Class &#38; placeholders helpers&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; layout/&#10;|   |&#8211; _grid.scss        # Grid system&#10;|   |&#8211; _header.scss      # Header&#10;|   |&#8211; _footer.scss      # Footer&#10;|   |&#8211; _sidebar.scss     # Sidebar&#10;|   |&#8211; _forms.scss       # Forms&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; pages/&#10;|   |&#8211; _home.scss        # Home specific styles&#10;|   |&#8211; _contact.scss     # Contact specific styles&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; themes/&#10;|   |&#8211; _theme.scss       # Default theme&#10;|   |&#8211; _admin.scss       # Admin theme&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; vendors/&#10;|   |&#8211; _bootstrap.scss   # Bootstrap&#10;|   |&#8211; _jquery-ui.scss   # jQuery UI&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#10;`&#8211; main.scss             # primary Sass file</span><br></pre></td></tr></table></figure>
-<p>正如你所看到的，在根目录底下只有一个<code>main.scss</code>文件，其他<code>.scss</code>文件都根据不同的分类放在对应的文件夹中，只是这些<code>.scss</code>文件前面都有一个下划线(<code>_</code>)，用来告诉Sass，这些<code>.scss</code>文件只是<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials" target="_blank" rel="external">局部</a>，不通过<code>@import</code>是不应该被编译出<code>.css</code>文件。事实上，它们是导入和合并文件的<a href="https://gist.github.com/HugoGiraudel/8615243" target="_blank" rel="external">基本文件</a>而以。</p>
-<blockquote>
-<p>一个文件可以解决所有问题，一个文件可以找到他们，一个文件给他们带来了所有的一切，Sass只是将他们合并在一起。——@J.R.R. Tolkien</p>
-</blockquote>
-<p>接下来，我们依次来看结构中的每一个文件目录。</p>
-<p>###Base</p>
-<p><code>base/</code>文件夹包含了一些有关于你的项目中一些模板相关。在这里，你可以看到<code>reset</code>样式(或者Normalize.css,或者其他)，也有一些关于文本排版方面的，当然根据不同的项目会有一些其他的文件。</p>
-<ul>
-<li><code>_reset.scss</code>或<code>_normalize.scss</code></li>
-<li><code>_typography.scss</code></li>
-</ul>
-<p>###Helpers</p>
-<p><code>helpers/</code>文件夹（有的地方也称其为<code>utils/</code>）主要包含了项目中关于Sass的工具和帮助之类。在里面放置了我们需要使用的<code>_function.scss</code>，和<code>_mixin.scss</code>。在这里还包含了一个<code>_variables.scss</code>文件（有的地方也称其为<code>_config.scss</code>），这里包含项目中所有的全局变量（比如排版本上的，配色方案等等）。</p>
-<ul>
-<li><code>_variables.scss</code></li>
-<li><code>_mixin.scss</code></li>
-<li><code>_function.scss</code></li>
-<li><code>_placeholders.scss</code>(也有称为<code>_helpers.scss</code>)</li>
-</ul>
-<p>###Layout</p>
-<p><code>layout/</code>文件夹(有时也称为<code>partials/</code>)中放置了大量的文件，每个文件主要用于布局方面的，比如说”header”，“footer”等。他也会包括<code>_grid.scss</code>文件，用来创建网格系统。</p>
-<ul>
-<li><code>_grid.scss</code></li>
-<li><code>_header.scss</code></li>
-<li><code>_footer.scss</code></li>
-<li><code>_sidebar.scss</code></li>
-<li><code>_forms.scss</code></li>
-</ul>
-<p>导航文件（<code>_navigation.scss</code>）文件放在这里也有意义，虽然我将他放在了<code>components/</code>文件夹中。但是我想将其放在<code>layout/</code>文件夹中更好些，当然最后还是由你自己来决定。</p>
-<p>###Components</p>
-<p>对于一些小组件，都放在了<code>components/</code>文件夹（通常也称为<code>modules/</code>），<code>layout/</code>是一个宏观的（定义全局的线框），<code>components/</code>是一个微观的。它里面放了一些特定的组件，比如说<code>slider</code>，<code>loading</code>，<code>widget</code>或者其他的小组件。通常<code>components/</code>目录下的都是一些小组件文件。</p>
-<ul>
-<li><code>_media.scss</code></li>
-<li><code>_carousel.scss</code></li>
-<li><code>_thumbnails.scss</code></li>
-</ul>
-<p>###Page</p>
-<p>如果你需要针对一些页面写特定的样式，我想将他们放在<code>page/</code>文件夹中是非常酷的，并且以页面的名称来命名。例如，你的首页需要制作一个特定的样式，那么你就可以在<code>page/</code>文件夹中创建一个名叫<code>_home.scss</code>文件。</p>
-<ul>
-<li><code>_home.scss</code></li>
-<li><code>_contact.scss</code></li>
-</ul>
-<p>根据你自己的布署，你可以根据自己的需求调用这些文件，避免与其他样式文件合并在一起。这真的主取决于你自己，在我工作的地方，我是不允许这样的事情发生，只在需要的页面调用需要的文件。比如说，我们首页有一个特定的布局样式，编译出来的CSS大约有200行代码。为了防止每个页面加载这些代码，我只在主页文件上引用这个文件。</p>
-<p>###Themes</p>
-<p>如果你像我一样要为一个大型的网站制作多个主题，那么有一个<code>theme/</code>文件夹是非常有意义的。你可以把主题相关的文件放在这个文件夹中。这绝对跟具体的项目有关，你只要觉得跟主题相关的，有必要引入。</p>
-<ul>
-<li><code>_theme.scss</code></li>
-<li><code>_admin.scss</code></li>
-</ul>
-<p>###Vendors</p>
-<p>最后一个但并非不重要，创建<code>vendors/</code>文件夹，主要用来包含来自外部的库和框架的CSS文件。比如Bootstrap,jQueryUI，FancyCarouselSliderjQueryPowered等等。把这些文件放在同一个文件夹中，你可以说，嘿，这些代码不是我的，不是我写的，跟我无关。</p>
-<p>例如：</p>
-<ul>
-<li><code>bootstrap.scss</code></li>
-<li><code>jquery-ui.scss</code></li>
-<li><code>select2.scss</code></li>
-</ul>
-<p>从另一个角度来说，在我平时工作中，还创建了一个<code>vendors-extensions/</code>文件夹，用来放置一些覆盖从外部引入进来的库和框架中的小组件。例如，我们可以在<code>_bootstrap.scss</code>文件中用来覆盖Bootstrap框架中的一些小组件。这为了避免和外部直接引来的组件升级造成的冲突，或许这不是一个很好的方案。</p>
-<p>大致就是这些，但不同的项目可能会不一样，但我可以肯定，你们都有了这样的一个概念。在文件夹中嵌套一个文件夹，这样的做法我一直不太反对，但我不太喜欢这样的方式。我发现，在大多数情况之下，只需一个层级就足足够，既保证结构的简洁与清晰，而且不复杂。但话又说回来，如果你觉得你的项目有必要嵌套更深层次的文件夹，你也可以自由的发挥。</p>
-<p><strong>温馨提示：</strong>如果你觉得你的架构并不能向大家说明<code>SCSS</code>文件夹的架构，你可以在根目录下创建一个<code>README.md</code>文件（或者在<code>main.scss</code>文件中一步一步说明）解释。</p>
-<p>##文件很酷？</p>
-<p>有一个问题常被人问到“多少文件才算是很多文件呢？”我常回答“再多文件都不算多”。拆分成多个文件的宗旨是帮助你组织你的代码。如果你觉得某事值得拆分成多个文件，可以自由的拆分。正如<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a>在《<a href="http://css-tricks.com/sass-style-guide/" target="_blank" rel="external">Sass Style Guide</a>》中所说：</p>
-<blockquote>
-<p>拆分成尽可能多的小文件是有道理的。——@<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a></p>
-</blockquote>
-<p>不过，我建议不把单个组件拆分成多个文件，除非你有很好的理由这样做。通常我更倾向于一个组件一个文件。俗话说“没有更多，只有更少”。用一个简洁语义化的名称，用来表示模块的名称。这样我们就可以通过查找名称找到你需要的东西。</p>
-<p>##总结</p>
-<p>本文所有内容都是基于我当年在法国Crédit Agricole银行做前端（唯一一前端）的工作经验。针对于各人，有各自的情况和经验，可以有不同的方法。</p>
-<p>如果我们能给构建一个Sass项目挑选一个黄金法则，它可能会简单一些：就如捡东西的一个道理。如果做为一个团队，项目的结构要确认每个人用得都舒服，让大家都要知道是怎么一回事。</p>
-<p>你对构建Sass项目架构有任何想法和建议，我们都非常想听听。</p>
-<blockquote>
-<p>能力越大，责任越大。——@Aquaman</p>
-<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a>的《<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">Architecture for a Sass Project</a>》所译，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://www.sitepoint.com/architecture-sass-project/" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a>。</p>
-<p>——作者：<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a></p>
-<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
-</blockquote>
-<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
-<p>如需转载烦请注明出处：</p>
-<p>英文原文：<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a></p>
-<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/architecture-sass-project.html</a></p>
+    <updated>2015-03-29T11:01:23.000Z</updated>
+    <content type="html"><![CDATA[<p>刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。。<br><a id="more"></a></p>
+<p>刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。</p>
+<p>##全局变量和局部变量</p>
+<p>要了解sass或less的变量，有必要先了解下js的变量定义，先来一段js的代码：</p>
+<pre><code><span class="keyword">var</span> a = <span class="number">1</span>;
+(<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">{
+    a = 5;
+}</span>)<span class="params">()</span>;</span>
+console.log(a);<span class="comment">//5</span>
+</code></pre><p>上面这段代码，匿名函数里面的a因为没有使用var关键字来定义，所以当我们在函数外打印a的时候，得到的是5，改变了一开始定义的1</p>
+<pre><code><span class="keyword">var</span> a = <span class="number">1</span>;
+(<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">{
+    var a = 5;
+}</span>)<span class="params">()</span>;</span>
+console.log(a);<span class="comment">//1</span>
+</code></pre><p>而这段代码，匿名函数里面的a使用了var关键字来定义，所以当我们在函数外打印a的时候，得到的是1，一开始定义的值。</p>
+<p>如果你明白了上面两个的区别，那下面就好办了，如果你还没有明白，那么建议先去看下js的变量申明。<br>也许你现在已经看出眉目了，其实sass的变量设计用的是上面两段代码中的第一段思想，即在局部不使用var来申明，而less用的是第二段思想，即局部使用var来申明，这就是很多人所说的为什么sass没有局部变量。我们来两段代码测试下：</p>
+<p>sass版</p>
+<pre><code><span class="variable">$color</span>:red;
+p{
+    <span class="variable">$color</span>:blue;
+    color:<span class="variable">$color</span>;//blue
+}
+a{
+    color:<span class="variable">$color</span>;//blue
+}
+</code></pre><p>less版</p>
+<pre><code><span class="variable">@color:</span>red;
+<span class="tag">p</span>{
+    <span class="variable">@color:</span>blue;
+    <span class="attribute">color</span>:<span class="variable">@color</span>;<span class="comment">//blue</span>
+}
+<span class="tag">a</span>{
+    <span class="attribute">color</span>:<span class="variable">@color</span>;<span class="comment">//red</span>
+}
+</code></pre><p>简单总结下：如果全局申明了一个变量a，sass中如果使用到局部中是属于改变a的值，所以后来所有的都是改变之后的值；而less中使用到局部变量则属于在局部重新定义a的值，不影响其他地方。说到底，其实sass和less的变量其实都是js变量的表现形式，两者都有其科学性，只是设计思路不同而已。</p>
+<p>当然说到这里，可能有人会说了，那sass就没有局部变量喽。其实不然，正确的说法应该是：在有全局变量的情况下，sass是没有局部变量的。意思是如果要看到sass的局部变量，请不要设置全局变量。代码为证：</p>
+<pre><code>p{
+    <span class="variable">$color</span>:blue;
+    color:<span class="variable">$color</span>;//blue
+}
+a{
+    color:<span class="variable">$color</span>;//<span class="variable">$color</span>未定义
+}
+</code></pre><p>这是一个没有定义全局变量$color的例子，上面的p元素的color为blue，而a里面就会报错因为$color没定义，它没有获取到p元素里面定义的那个$color变量，这证明了其实sass同样存在局部变量，只是这个前提是得没有全局变量。</p>
+<p>相信到这里，大家应该对sass的变量有所了解，不至于那么迷惑吧。下面我们再来两段代码：</p>
+<pre><code>p{
+    <span class="variable">$color</span>:blue;
+    color:<span class="variable">$color</span>;//blue
+
+    a{
+        color:<span class="variable">$color</span>;//blue
+    }
+}
+</code></pre><p>这一段代码中，a嵌套在p中，然后在p元素中定义了$color这个变量，a里面是可以访问到$color变量的。</p>
+<pre><code>p{
+    <span class="variable">$color</span>:blue;
+    color:<span class="variable">$color</span>;//blue
+
+    a{
+        <span class="variable">$color</span>:red;
+        color:<span class="variable">$color</span>;//red
+    }
+
+    background-color:<span class="variable">$color</span>;//red
+
+    span{
+        color:<span class="variable">$color</span>;//red
+    }
+}
+div{
+    color:<span class="variable">$color</span>;//<span class="variable">$color</span>未定义
+}
+</code></pre><p>估计这里有人迷惑了，我们来分析下吧：因为sass的代码是从上到下解析的，所以这段代码执行到p的color值的时候颜色是上面的blue色，然后由于我们在a中又改变了$color的值为红色，所以后面所有p元素范围内用到$color这个变量的都为红色，这反应到我们后来的bgcolor和span的color上面，而p元素之外还是未定义。</p>
+<p>这里吐个槽吧，其实个人觉得正是由于这个，使得开发sass的小心定义变量，以避免污染；而less呢却刚好相反，估计到时候就是全局局部满天飞的情况，代码一团糟。你想选择哪种呢？</p>
+<p>关于sass的全部变量和局部变量就说到这，既然这篇文章的标题说了是sass变量揭秘，光这全局变量和局部变量肯定是满足不了大家的胃口的，下面我们继续说下sass变量的另一个创新点，变量默认值。</p>
+<p>##变量默认值!default</p>
+<p>为了说明这个创新点，我特意去less群问了下，less有没有这个功能，得到的答案是没有。哎呀，我那个高兴啊，小心脏那个激动啊。当然less可能是有的，这里不去计较了。我们言归正传说sass。</p>
+<p>可能很多人对这个不是很熟悉，或者觉得这个其实就是个幌子，挂羊头卖狗肉的家伙。其实不然，它的来头可不小，而且是非常的科学，我是佩服的五体投地，因为它从根本上解决了困扰我多年的css组件化开发。简单来两段比较的代码：</p>
+<p>无!default</p>
+<pre><code><span class="variable">$color</span>:red;
+<span class="variable">$color</span>:blue;
+p{
+    color:<span class="variable">$color</span>;//blue
+}
+</code></pre><p>有!default</p>
+<pre><code><span class="variable">$color</span>:red;
+<span class="variable">$color</span>:blue !<span class="keyword">default</span>;
+p{
+    color:<span class="variable">$color</span>;//red
+}
+</code></pre><p>上面说了，sass编译css是从上到下的，后面会覆盖前面的，所以第一段无!default的解析的是blue，而第二段代码由于有了!default，打破了这个规则，使用了前面定义的red。有意思吧，当然这样的使用是体现不了它伟大的价值的。</p>
+<p>简单介绍下它的作用吧：假设变量申明带有!default，那么如果在此申明之前没有这个变量的申明，则用这个值，反之如果之前有申明，则用申明的值。当然如果你先!default申明，然后再申明一次，那就没什么意思了，这就是基本的变量覆盖，第一次申明的有无!default都一样。所以你要区分这两种情况：<br>    //第一种，使用默认值<br>    //变量申明带有!default，但是之前没有这个变量的申明<br>    $color:blue !default;<br>    p{<br>        color:$color;//blue<br>    }</p>
+<pre><code>//第二种，使用前面定义的值
+<span class="variable">$color</span>:red;
+//变量申明带有!<span class="keyword">default</span>，但是前面还有这个变量的申明
+<span class="variable">$color</span>:blue !<span class="keyword">default</span>;
+p{
+    color:<span class="variable">$color</span>;//red
+}
+
+//第三种错误的用法，先!<span class="keyword">default</span>申明
+<span class="variable">$color</span>:red !<span class="keyword">default</span>;
+<span class="variable">$color</span>:blue;
+</code></pre><p>上面的第三种错误用法其实和下面的这个覆盖写法是一样一样的：</p>
+<pre><code>//覆盖写法
+<span class="variable">$color</span>:red;
+<span class="variable">$color</span>:blue;
+</code></pre><p>能一口气看到这里的，应该有点时间，建议简单活动下，摇摇脑袋，伸伸懒腰，因为下面的更加精彩。</p>
+<p>其实长久以来，css之所以不能组件化开发，有两大原因：第一个是@import的样式不能合并在一个文件中（这里排除使用压缩工具来合并）；第二个问题就是这里说到的变量问题了。感谢sass帮我们全解决了，大笑三声。</p>
+<p>现在假设我们有个scss文件，这里暂且叫做<code>_imgstyle.scss</code>，代码如下：</p>
+<pre><code><span class="comment">// 变量</span>
+<span class="comment">//---------------------------------</span>
+<span class="variable">$imgStyleBorder</span><span class="value">:         <span class="number">1px</span> solid <span class="hexcolor">#ccc</span> !default;</span>
+<span class="variable">$imgStylePadding</span><span class="value">:        <span class="number">2px</span> !default;</span>
+<span class="variable">$imgStyleRadius</span><span class="value">:         <span class="number">8px</span> !default;</span>
+
+<span class="comment">// mixin</span>
+<span class="comment">//---------------------------------</span>
+<span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> img-border</span>(<span class="variable">$border</span>:<span class="variable">$imgStyleBorder</span>,<span class="variable">$padding</span>:<span class="variable">$imgStylePadding</span>){</span>
+    <span class="attribute">border</span><span class="value">: <span class="variable">$border</span>;</span>
+    <span class="attribute">padding</span><span class="value">: <span class="variable">$padding</span>;</span>
+}
+
+<span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> img-rounded</span>(<span class="variable">$radius</span>:<span class="variable">$imgStyleRadius</span>){</span>
+    <span class="attribute">border-radius</span><span class="value">:<span class="variable">$radius</span>;</span>
+}
+
+<span class="comment">//样式</span>
+<span class="comment">//---------------------------------</span>
+<span class="class">.img-border</span>{
+    <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> img-border</span>;</span>
+}
+
+<span class="class">.img-rounded</span>{
+    <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> img-rounded</span>;</span>
+}
+</code></pre><p>接下来我们要在<code>style.scss</code>这个文件里面调用<code>_imgstyle.scss</code>，代码如下：</p>
+<pre><code><span class="comment">//导入_imgstyle.scss</span>
+@<span class="keyword">import</span> <span class="string">'imgstyle'</span>;
+</code></pre><p>现在问题来了，如果我们对默认的padding为2px不满意，要改为5px，我们有如下方法：</p>
+<p>方法一：重新覆写</p>
+<pre><code><span class="comment">//导入_imgstyle.scss</span>
+<span class="at_rule">@import</span> <span class="string">'imgstyle'</span>;
+
+<span class="class">.img-border</span>{
+    <span class="attribute">padding</span>:<span class="number">5px</span>;
+}
+</code></pre><p>解析成的css：</p>
+<pre><code><span class="class">.img-border</span> <span class="rules">{
+  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">2px</span></span></span>;
+}</span>
+<span class="class">.img-rounded</span> <span class="rules">{
+  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">8px</span></span></span>;
+}</span>
+<span class="class">.img-border</span> <span class="rules">{
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
+}</span>
+</code></pre><p>方法二：改变@include的参数</p>
+<pre><code>//导入_imgstyle.scss
+@<span class="keyword">import</span> <span class="string">'imgstyle'</span>;
+
+.img-border{
+    @include img-border(<span class="variable">$imgStyleBorder</span>,<span class="number">5</span>px);
+}
+</code></pre><p>解析成的css：</p>
+<pre><code><span class="class">.img-border</span> <span class="rules">{
+  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">2px</span></span></span>;
+}</span>
+<span class="class">.img-rounded</span> <span class="rules">{
+  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">8px</span></span></span>;
+}</span>
+
+<span class="class">.img-border</span> <span class="rules">{
+  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
+}</span>
+</code></pre><p>显而易见，上面的方法都会产生重复的代码，不科学啊。当然这时候可能有人会说了，你脑子浸水了呗，直接在<code>_imgstyle.scss</code>文件中，修改<code>$imgStyleBorder</code>为5px不就得了。当然如果你要的是每个项目使用这个样式的时候都拷贝一份这个，然后打开把变量修改成你要的值，那么我只好承认我脑子浸水了，不仅脑子浸水，还得吐血了。</p>
+<p>现在请上面那些山寨土鳖方法闪一边去，该我们的!default出场了，废话少说，上代码：</p>
+<pre><code>//申明<span class="variable">$imgStylePadding</span>为<span class="number">5</span>px
+<span class="variable">$imgStylePadding</span>:  <span class="number">5</span>px;
+
+//导入_imgstyle.scss
+@<span class="keyword">import</span> <span class="string">'imgstyle'</span>;
+</code></pre><p>解析成的css：</p>
+<pre><code><span class="class">.img-border</span> <span class="rules">{
+  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
+}</span>
+
+<span class="class">.img-rounded</span> <span class="rules">{
+  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">8px</span></span></span>;
+}</span>
+</code></pre><p>无须去源文件中修改，且解析出来无重复代码，完美！这才是!default的价值，这为组件式开发，更改调用组件里面的变量的值带来了彻底的变化。如果less真没有这个变量的默认值的话，那less的同学们估计得伤心死了。</p>
+<p>重量级的都介绍完了，下面把其他的一些小罗罗也简单介绍下吧。</p>
+<p>##变量后面加…</p>
+<p>在css3出现以前，你是绝对没有看到过的，因为它就是为css3而设计的。css3在给css带来翻天覆地的变化之外，也给sass的@mixin传递参数带来纠结了。一般来说我们的@mixin传递的参数是以<code>,</code>来分隔的，但是css3的一些属性可以设置多个值，并且多个值以<code>,</code>分开，如<code>box-shadow:0 0 3px rgba(0,0,0,0.3),inset 0 0 3px rgba(255,255,255,0.3);</code>这让@mixin如何给box-shadow传递参数啊。所以这种变量后面加<code>...</code>的变量就出现了。</p>
+<pre><code>@mixin box-shadow(<span class="variable">$shadow</span>...){
+    -webkit-box-shadow:<span class="variable">$shadow</span>;
+    -moz-box-shadow:<span class="variable">$shadow</span>;
+    box-shadow:<span class="variable">$shadow</span>;
+}
+</code></pre><p>这样就完美解决了这个需求了，漂亮吧哈哈。注意这种变量加<code>...</code>的方式只出现在传递参数中，你可以看到上面的大括号里面的变量都是没有<code>...</code>。除了box-shadow，gradient也可以用，反正能使用多个值的属性里面都可以用。</p>
+<p>##变量用<code>#{}</code>包裹</p>
+<p>一般来说，我们设置的变量都是用于属性值的，而如果用在属性或者选择器上，就得以<code>#{}</code>包裹起来了。</p>
+<pre><code><span class="variable">$btnClass</span><span class="value">: btn !default;</span>
+<span class="variable">$borderDirection</span><span class="value">:  top !default;</span>
+
+.#{<span class="variable">$btnClass</span>}{
+    <span class="attribute">border</span>-#{<span class="variable">$borderDirection</span>}<span class="value">:<span class="number">1px</span> solid <span class="hexcolor">#ccc</span>;</span>
+}
+</code></pre><p>解析成的css：</p>
+<pre><code><span class="class">.btn</span><span class="rules">{
+    <span class="rule"><span class="attribute">border-top</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;
+}</span>
+</code></pre><p>##多个变量一起申明</p>
+<p>其实这个还是很实用的，把多个相关的值写在一个变量里，然后通过<code>nth($var,index)</code>来获取第几个值。</p>
+<pre><code><span class="variable">$linkColor</span>: red blue !<span class="keyword">default</span>;
+
+a{
+    color:nth(<span class="variable">$linkColor</span>,<span class="number">1</span>);
+
+    &amp;:hover{
+        color:nth(<span class="variable">$linkColor</span>,<span class="number">2</span>);
+    }
+}
+</code></pre><p>解析成的css：</p>
+<pre><code><span class="tag">a</span> <span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;
+}</span>
+<span class="tag">a</span><span class="pseudo">:hover</span> <span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;
+}</span>
+</code></pre><p>关于sass变量揭秘到此为止。如果你对sass比较感兴趣但是还不会，可以试试我们的<a href="http://www.w3cplus.com/sassguide/index.html" target="_blank" rel="external">sassGuide</a>教程，如果已经开始使用sass了，欢迎试用<a href="https://github.com/marvin1023/sassCore" target="_blank" rel="external">sassCore</a>这个库。</p>
+<p>顺便说下，本人的面向熟悉sass人员开发的tobe即将上线，欢迎关注，也欢迎到时拍砖。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。<br>]]>
+    <![CDATA[<p>刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。。<br>]]>
     
     </summary>
     
-      <category term="项目管理" scheme="http://ddnode.com/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+    
+      <category term="变量" scheme="http://ddnode.com/tags/%E5%8F%98%E9%87%8F/"/>
     
       <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
     
@@ -380,166 +538,6 @@
       <category term="Placeholder" scheme="http://ddnode.com/tags/Placeholder/"/>
     
       <category term="译文" scheme="http://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[理解Sass的list]]></title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E7%90%86%E8%A7%A3sass%E7%9A%84list.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/理解sass的list.html</id>
-    <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:37.000Z</updated>
-    <content type="html"><![CDATA[<p>Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能，我们就必须的深入了解他。<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>写了几篇教程，其深入的培析了Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能，以及其使用方法。<br><a id="more"></a></p>
-<ul>
-<li><a href="http://css-tricks.com/striped-background-gradients/" target="_blank" rel="external">Create Striped Backgrounds With Gradients (and a Sass Mixin)</a></li>
-<li><a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/" target="_blank" rel="external">UNDERSTANDING SASS LISTS</a></li>
-<li><a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a></li>
-</ul>
-<p>除了这向篇文章，在互联网上很难找到有关于Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>更好教程了。而在Sass的社区中对List的功能讨论也是相当的激烈。这些天我也一直在阅读这几篇文章，想让自己能更好的理解Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能。今天根据这几篇文章，对<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能的介绍做了一些翻译与整理。</p>
-<p>##创建一个Sass的list</p>
-<p>首要的事情就是创建List。虽然在Sass中创建一个list可能会非常棘手，但事实上呢？<strong>Sass对于变量类型并不是非常原格</strong>，可以像理解<code>Javascript</code>语言一样，<strong>Sass也是一种弱类型语言</strong>。这样就意味着，处理一个列表你就可以像是在处理一个字符串，或者说是一个字符串列表功能。</p>
-<blockquote>
-<p>Sass对于变量类型不是非常严格</p>
-</blockquote>
-<p>在Sass中，有两种方法可以用来初始化一个<strong>空</strong>的变量（这也可以被视为一个列表）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a:();&#10;$b:unquote(&#34; &#34;);//&#27880;&#24847;&#65292;&#20882;&#21495;&#20043;&#38388;&#26377;&#19968;&#20010;&#31354;&#26684;&#10;$c:null;&#10;$d:(null);</span><br></pre></td></tr></table></figure>
-<p>现在我们创建了四个变量，接着通过Sass的<code>type-of()</code>函数来检测这些变量的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type-of($a) =&#62; list&#10;type-of($b) =&#62; string&#10;type-of($c) =&#62; null&#10;type-of($d) =&#62; null</span><br></pre></td></tr></table></figure>
-<p>接下来，使用<code>length()</code>函数来检测一下每个变量的长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 0&#10;length($b) =&#62; 1&#10;length($c) =&#62; 1&#10;length($d) =&#62; 1</span><br></pre></td></tr></table></figure>
-<p><code>$a</code>的长度是<code>0</code>，这是我们能预想到的，因为他是一个空列表。<code>$b</code>的长度是<code>1</code>，因为他是一个字符串，然而<code>$c</code>和<code>$d</code>都是<code>null</code>变量（空变量），令人想不通的是，他们的长度也是<code>1</code>。</p>
-<p>虽然<code>$a</code>和<code>$c</code>(<code>$d</code>)都可以用来初始化一个<code>List</code>（甚至是<code>unquote(&quot;&quot;)</code>,<strong>注，冒号之间没有任何空格</strong>），但前面简单的长度测试告诉我们，他们其实并不是完全一样的。当然如果你喜欢，你可以使用他们来初始化Sass的一个列表，但大家必须要记住，他们之间是不一样的。</p>
-<p>##<code>()</code>和<code>null</code>的区别</p>
-<p><code>null</code>等同于<code>(null)</code>或者<code>unquote(&quot;&quot;)</code>他们都是用来做为列表的第一个列表项，大多数情况之下，用他们来对Sass的列表进行初始化，但是和<code>()</code>并不完全一样，接下来通过几个简单的测试来说明<code>()</code>和<code>null</code>的区别。</p>
-<p>假设有两个变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a:();&#10;$b:null;</span><br></pre></td></tr></table></figure>
-<p>使用<code>type-of()</code>函数测试出变量的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type-of($a) =&#62; list&#10;type-of($b) =&#62; null</span><br></pre></td></tr></table></figure>
-<p>使用<code>length()</code>函数输出变量的长度值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 0&#10;length($b) =&#62; 1</span><br></pre></td></tr></table></figure>
-<p>变量<code>$a</code>和<code>$b</code>都是一个列表，通过<code>nth()</code>函数来检测出第一个列表项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($a,1) =&#62; throws error&#10;nth($b,1) =&#62;</span><br></pre></td></tr></table></figure>
-<p>由于<code>$a</code>长度是0，在<code>nth()</code>函数检出其第一个列表项，在Sass编译的时候将会报错，而<code>$b</code>第一项刚好是空，那么在<code>nth()</code>函数检出其第一个列表项是一个空，没有任何东西。</p>
-<p>接下来使用<code>append()</code>函数为每个列表添加一个列表项<code>test</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a: append($a,&#34;test&#34;);&#10;$b: append($b,&#34;test&#34;);</span><br></pre></td></tr></table></figure>
-<p>再次检测其长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 1&#10;length($b) =&#62; 2</span><br></pre></td></tr></table></figure>
-<p>使用<code>index()</code>函数来检测“test”列表项在列表中各处什么位置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index($a,&#34;test&#34;) =&#62; 1&#10;index($b,&#34;test&#34;) =&#62; 2</span><br></pre></td></tr></table></figure>
-<p>使用<code>nth()</code>函数，再次检出列表的第一个列表项，这个时候又变了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($a,1) =&#62; test&#10;nth($b,1) =&#62;</span><br></pre></td></tr></table></figure>
-<p>我想这几个函数对<code>$a</code>和<code>$b</code>变量的操作，一路下来，您应该很清楚的知道<code>()</code>和<code>null</code>的不同之处了吧。</p>
-<p>##Sass的List</p>
-<p>Sass的<code>list</code>非常类似于<code>JavaScript</code>语言中的数组。你可以通过下面的方式来初始化一个Sass的List:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:();</span><br></pre></td></tr></table></figure>
-<p>当然，你也还可以使用<code>$list:null</code>或者<code>$list:unquote(&quot;&quot;)</code>，但你要注意一下他们之间的不同。不管使用哪种方法，我们先来看一个简单的Sass列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:(#b4d455,42,&#34;awesome&#34;);</span><br></pre></td></tr></table></figure>
-<p>前面也说过，<strong>Sass语法非常宽松</strong>，这也让    <code>list</code>在Sass中使用变得更加的复杂。我们一个一个来看。</p>
-<p>###列表的分隔符</p>
-<p>在Sass的列表中，你可以使用<strong>空格符</strong>或者<strong>逗号</strong>作为列表项与列表项之间的分隔符。事实上，我更喜欢使用逗号(<code>,</code>)用来做为列表的分隔符。在<code>JavaScript</code>和<code>PHP</code>这些语言中，都是用逗号作为数组的分隔符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list-space: &#34;item-1&#34; &#34;item-2&#34; &#34;item-3&#34;;&#10;$list-space: &#34;item-1&#34;,&#34;item-2&#34;,&#34;item-3&#34;;</span><br></pre></td></tr></table></figure>
-<p><strong>注：</strong>和CSS一样，只要没有特殊字符，列表项的双引号是可以省略的。所以<code>$list: item-1,item-2,item-3;</code>是有效的。</p>
-<p>###列表的嵌套</p>
-<p>Sass的List就像<code>JavaScript</code>或者其他的程序语言一样，对列表的嵌套层级并没有限制，可以根据自己的需求对列表进行嵌套。Sass的嵌套主要有两种方式，一种是嵌套的列表子级列表项是以逗号分隔，那么在列表中需要用括号来分隔；另一种嵌套的列表子级用空格分隔，那么在列表中可以使用逗号来分隔。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Nested lists with braces and same separator */&#10;$list: (&#10;        (&#34;item-1.1&#34;, &#34;item-1.2&#34;, &#34;item-1.3&#34;),&#10;        (&#34;item-2.1&#34;, &#34;item-2.2&#34;, &#34;item-2.3&#34;),&#10;        (&#34;item-3.1&#34;, &#34;item-3.2&#34;, &#34;item-3.3&#34;)&#10;       );&#10;&#10;/* Nested lists without braces using different separators to distinguish levels */&#10;$list: &#34;item-1.1&#34; &#34;item-1.2&#34; &#34;item-1.3&#34;,&#10;       &#34;item-2.1&#34; &#34;item-2.2&#34; &#34;item-2.3&#34;,&#10;       &#34;item-3.1&#34; &#34;item-3.2&#34; &#34;item-3.3&#34;;</span><br></pre></td></tr></table></figure>
-<p>###你可以使用括号</p>
-<p>正如你前面看到的示例一样，在Sass中，你可以不用括号定义一个非空的列表。这主要是因为大多数人的想法相反，在Sass中括号不是用来创建列表（除非是空的列表），而是用来做为分隔符的。</p>
-<p>事实上，在Sass中没有人会强迫您使用括号来创建一个列表，如果你喜欢，完全可以使用逗号来区别。说实话，我就经常使用逗号来创建一个列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list: &#34;item-1&#34;, &#34;item-2&#34;, &#34;item-3&#34;;</span><br></pre></td></tr></table></figure>
-<p><strong>注：</strong>这是一个理论。我注意到括号都不只是一个列表项分组。当你操作的一个列表有四五层的嵌套时，括号绝对不是可选的。这样会让列表变得太复杂了。</p>
-<blockquote>
-<p>操作一个五层以上的嵌套列表是一件痛苦而又麻烦的事情</p>
-</blockquote>
-<p>###列表的索引值</p>
-<p>Sass中的列表索引值和<code>JavaSctript</code>数组中的索引值不一样，他是<strong>从1开始，而不是从0开始</strong>。一旦你开始使用Sass列表，这个问题也是最容易出错的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($list,0) =&#62; throws error&#10;nth($list,1) =&#62; item-1</span><br></pre></td></tr></table></figure>
-<p>###每个值都是一个列表</p>
-<p>在Sass中每一个值都可以是一个列表。字符串、数值、布尔值或者任何变量。而且可以通过Sass的<a href="http://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="external">List函数</a>来检测出一些值。</p>
-<p>我们来看一个简单的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$variable: &#34;Sass is awesome&#34;;&#10;$variable2: Sass is awesome;</span><br></pre></td></tr></table></figure>
-<p>上面两个变量值仅仅就是一个有引号，一个没有引号。</p>
-<p>使用<code>type-of()</code>函数检测出他们的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; type-of($variable)&#10;&#34;string&#34;&#10;&#62;&#62; type-of($variable2)&#10;&#34;list&#34;&#10;&#62;&#62;</span><br></pre></td></tr></table></figure>
-<p>使用<code>length()</code>函数检测出他们的长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; length($variable)&#10;1&#10;&#62;&#62; length($variable2)&#10;3</span><br></pre></td></tr></table></figure>
-<p>在用<code>nth()</code>函数来检测输出内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; nth($variable,1)&#10;&#34;Sass is awesome&#34;&#10;&#62;&#62; nth($variable2,1)&#10;&#34;Sass&#34;&#10;&#62;&#62;</span><br></pre></td></tr></table></figure>
-<p>这里变动一下，来索引第二个值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; nth($variable,2)&#10;SyntaxError: List index is 2 but list is only 1 item long for `nth&#39;&#10;&#62;&#62; nth($variable2,2)&#10;&#34;is&#34;</span><br></pre></td></tr></table></figure>
-<p>所在大家在使用的时候当心了，有引号的时候会当为一个字符串，当然他也是一个只有一个列表项的列表，而删除引号会被视为有三个列表项的列表。</p>
-<p>###可以使用空格或逗号分隔列表项</p>
-<p>在Sass的列表中，使用空格和逗号都可以用来分隔列表项，这两者都是完全有效的。我敢肯定你更喜欢使用逗号来分隔列表项，因为在<code>JavaScript</code>和<code>PHP</code>等程序中的数组，逗号是一个标准的分离器。如果你喜欢也可以用空格分隔。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list: #fff 42 &#34;awesome&#34;;&#10;$list: #fff,42,&#34;awesome&#34;;</span><br></pre></td></tr></table></figure>
-<p>你也可以使用逗号和空格分隔符混用，此时用来区别列表的嵌套。比如说你的一级列表中使用逗号来分隔列表项，而且他里面还嵌套了一个二级列表，那么二级列表可以使用空格来分隔。在下面的示例当中，第三个值是一个空格分隔的列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:  #b4d455, 42, &#34;awesome&#34; &#34;interesting&#34; &#34;free&#34;;</span><br></pre></td></tr></table></figure>
-<p>综合上述，在任何情况之下，定义你的列表时，你应该注意以下几点：</p>
-<ul>
-<li>使用括号进行列表嵌套；</li>
-<li>使用逗号分隔列表项；</li>
-<li>给字符串添加引号；</li>
-<li>列表嵌套不要超过五层；</li>
-<li>初始化列表建议使用<code>()</code>，不使用<code>null</code>;</li>
-</ul>
-<p>这些细节都将帮助您节省更多的时间，请相信我。</p>
-<p>##列表函数</p>
-<p>在Sass中，给列表提供了一系列的函数操作。在《<a href="http://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="external">Sass函数</a>》一文中，对列表的函数进行过详细介绍，感兴趣的可以看看。此处将Sass函数做一个汇总。</p>
-<ul>
-<li><strong>length($list)：</strong>返回<code>$list</code>长度（如果不是list,返回1）</li>
-<li><strong>nth($list,$index)：</strong>返回<code>$list</code>中第<code>$index</code>列表项值（如果索引值不在列表范围内，将会报错）</li>
-<li><strong>index($list,$value)：</strong>返回<code>$value</code>在<code>$list</code>中的位置</li>
-<li><strong>append($list,$value[,$separator])：</strong>使用<code>$separator</code>分隔符将<code>$value</code>列表项添加到<code>$list</code>最后（如果没有显式指定<code>$separator</code>分隔符，会以当前分隔符分隔）</li>
-<li><strong>jion($list-1,$list-2[,$separator]):</strong>使用<code>$separator</code>分隔符将<code>$list-2</code>附加到<code>$list-1</code>（如果没有显式指定分隔符，将对<code>$list-1</code>中的分隔符）</li>
-<li><strong>zip(*$lists):</strong>将多个<code>$list</code>组合在一起成为一个多维列表。如果列表源长度并不是所有都相同，结果列表长度将以最短的一个为准</li>
-<li><strong>reject($list,$value)：</strong>这是Compass中的一个函数，将<code>$value</code>值从<code>$list</code>中删除</li>
-<li><strong>compact(*$args)：</strong>Compass函数，返回一个删除非真值的新列表</li>
-</ul>
-<p>##给Sass列表添加东西</p>
-<p>Sass中的<code>list</code>是一个很有趣的东西，但也是个很复杂的东西。前面都是一些理论化，接下来通过一个例子的使用来介绍<code>list</code>。</p>
-<p>比如说一个扩展选择器，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.home .nav-home,&#10;.about .nav-about,&#10;.products .nav-products,&#10;.contact .nav-contact</span><br></pre></td></tr></table></figure>
-<p>这些选择器都是基于列表的关键值生成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pages: home,about,products,contact;</span><br></pre></td></tr></table></figure>
-<p>根据这个列表，有三种方法可以生成这样的选择器，我们可以一个一个来看。</p>
-<p>首先我们创建一个测试例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pages: home,about,products,contact;&#10;$selector:();&#10;@each $item in $pages &#123;&#10;&#9;//&#25105;&#20204;&#21019;&#24314;$selector&#10;&#125;&#10;#&#123;$selector&#125;&#123;&#10;&#9;//&#26679;&#24335;&#20889;&#22312;&#36825;&#37324;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>###长而复杂的方法</p>
-<p>这是我两星期前使用的一个方法，它可以运行，但它需要一个额外的条件来处理逗号。如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: $selector unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;);&#10;&#9;@if $item != nth($pages, length($pages))&#123;&#10;&#9;&#9;$selector: $selector unquote(&#34;,&#34;);&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>基本上给<code>$selector</code>添加了新的选择器，如果我们不处理列表的最后一项，我们需要添加一个逗号。</p>
-<p>###简洁的方法</p>
-<p>这种方法是通过<code>append()</code>函数方法，将他们添加到一起。这也是最简单的方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: append($selector,unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;),comma);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>我认为这是很简单的，我们将显示的使用逗号将选择器与前面的分隔开，并将此重新赋以给新的选择器<code>$selector</code>。</p>
-<p>###隐式的方法</p>
-<p>这种方法是最简单的，通过隐式的附加功能，将选择器合在一起，非常的简洁。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: $selector,unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>##自定义列表函数</p>
-<p>前面介绍主要Sass中<code>list</code>的功能以及自带的处理<code>list</code>的函数，但很多更先进的列表处理到目前为止，Sass自身是无法处理的。</p>
-<p><a href="http://hugogiraudel.com" target="_blank" rel="external">Hugo</a>根据Sass的一些功能为<code>list</code>定义了一些高级的函数功能，用来处理Sass的<code>list</code>。并在《<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a>》一文中介绍了这些高级函数的功能，以及使用方法。接下来，我们也跟随此文了解和学习这些高级的列表函数。</p>
-<p>我们来演示一个简单的函数。这里有两上小功能，就是定义两个函数用来获取列表中的第一个列表项和最后一个列表项的值。在很多时候我们都是通过<code>nth()</code>函数方式来获取：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($list,1);//&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#31532;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;nth($list,length($list));//&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010;&#21015;&#34920;&#39033;</span><br></pre></td></tr></table></figure>
-<p>众所周知，Sass中的列表项索引号是从<code>1</code>开始，而<code>length($list)</code>可以获得一个列表的长度值，再配合<code>nth()</code>函数得到第一项和最后一项。那么我们可以换过一个角度来思考，将这两个分别封装成两个函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;first()&#20989;&#25968;&#65292;&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#31532;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;@function first($list)&#123;&#10;&#9;@return nth($list,1);&#10;&#125;&#10;&#10;//&#23450;&#20041;last()&#20989;&#25968;&#65292;&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;@function last($list)&#123;&#10;&#9;@return nth($list,length($list));&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>例如我们一个颜色列表，我在页头<code>header</code>调用列表中第一个颜色，而在页脚<code>footer</code>调用列表中最后一个颜色，我们就可以这样来使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;&#39068;&#33394;&#21015;&#34920;&#10;$colors: green,blue,orange,yellow;&#10;&#10;//&#35843;&#29992;&#21015;&#34920;&#20013;&#31532;&#19968;&#20010;&#39068;&#33394;&#10;.header &#123;&#10;&#9;color: first($colors);//&#31561;&#21516;&#20110;nth($colors,1)&#10;&#125;&#10;&#10;//&#35843;&#29992;&#21015;&#34920;&#20013;&#26368;&#21518;&#19968;&#20010;&#39068;&#33394;&#10;.footer&#123;&#10;&#9;color: last($colors);//&#31561;&#21516;&#20110;nth($colors,length($colors))&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>转译出来的CSS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.header &#123;&#10;  color: green;&#10;&#125;&#10;&#10;.footer &#123;&#10;  color: yellow;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>很多时候列表只有一个列表项，此时<code>first()</code>和<code>last()</code>函数获取的列表项将等同。</p>
-<p>其它自定义的列表高级函数，如果你感兴趣，可以猛击<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">这里</a></p>
-<p>##总结</p>
-<p>本文主要根据<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>写了几篇教程：《<a href="http://css-tricks.com/striped-background-gradients/" target="_blank" rel="external">Create Striped Backgrounds With Gradients (and a Sass Mixin)</a>》、《<a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/" target="_blank" rel="external">UNDERSTANDING SASS LISTS</a>》、《<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a>》介绍了Sass中的<code>list</code>功能。</p>
-<p>经过上面的阅读之后，你能轻松的创建一个列表，以及索引列表项的值，判断列表的长度等等功能。同时在项目中使用列表功能，让你更佳轻松的完成你的工作，并且还能让你的代码更佳的简洁。</p>
-<p>最后非常感谢<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>给我们带来这么优秀的Sass教程，希望大家在此文上有所获得。</p>
-<p>如需转载，烦请注明出处：<a href="http://www.w3cplus.com/preprocessor/understanding-sass-list.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/understanding-sass-list.html</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists">List</a>是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists">List</a>功能，我们就必须的深入了解他。<a href="http://hugogiraudel.com/">Hugo</a>写了几篇教程，其深入的培析了Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists">List</a>功能，以及其使用方法。<br>]]>
-    
-    </summary>
-    
-      <category term="列表" scheme="http://ddnode.com/tags/%E5%88%97%E8%A1%A8/"/>
-    
-      <category term="周刊" scheme="http://ddnode.com/categories/%E5%91%A8%E5%88%8A/"/>
     
   </entry>
   
@@ -926,54 +924,117 @@ _mixins.scss
   </entry>
   
   <entry>
-    <title><![CDATA[定义好的变量名]]></title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E5%AE%9A%E4%B9%89%E5%A5%BD%E7%9A%84%E5%8F%98%E9%87%8F%E5%90%8D.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/定义好的变量名.html</id>
+    <title><![CDATA[管理Sass项目]]></title>
+    <link href="http://ddnode.com/2014/09/21/Sass/%E7%AE%A1%E7%90%86sass%E9%A1%B9%E7%9B%AE.html"/>
+    <id>http://ddnode.com/2014/09/21/Sass/管理sass项目.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:29.000Z</updated>
-    <content type="html"><![CDATA[<p>Sass中的定义变量是非常的强大的，你可以在一个地方定义好变量，在项目的多个地方使用这个定义的变量。它允许你在集中的一个地方做变化，而不需要在项目和多个文件中使用查找替换的方式来做修改。<br><a id="more"></a></p>
+    <updated>2015-03-29T11:01:39.000Z</updated>
+    <content type="html"><![CDATA[<p>回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。<br><a id="more"></a></p>
+<p>我的小伙伴们，那些苦逼的日子就将过去了。CSS处理变得更有趣，也更复杂。现在我们有CSS预处理器、响应式设计、渐进增强、优雅降级，和其他一些时尚的东西。可以说，CSS变得比以往任何时候都更加强大。</p>
 <blockquote>
-<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://twitter.com/iFrankZA" target="_blank" rel="external">Frank</a>的《<a href="http://thesassway.com/beginner/variable-naming" target="_blank" rel="external">Choosing great variable names</a>》一文所译，整个译文带有我们自己的理解与思想，如果译得不好或不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://thesassway.com/beginner/variable-naming" target="_blank" rel="external">http://thesassway.com/beginner/variable-naming</a>，以及作者相关信息。</p>
-<p>——作者：<a href="http://twitter.com/iFrankZA" target="_blank" rel="external">Frank</a></p>
+<p>CSS变得更有趣，更复杂。——@<a href="http://www.sitepoint.com/author/hgiraudel" target="_blank" rel="external">Hugo Giraudel</a></p>
+</blockquote>
+<p>所以我们有很多东西需要处理，这样一来，如何组织项目文件就变得非常的重要。我想大家都同意这样的观点，但实现起来并不太容易。所以我写了这篇文章，将会告诉你应该怎么去想，比告诉你怎么做要更好，否则，我就离开你了。</p>
+<p>##构建你的结构体系</p>
+<p>CSS预处理器的特点之一是可以把你的代码分割成很多个文件，而且不会影响性能。这都要归功于Sass的<code>@import</code>命令，只要在你的开发环境下，你调用不管多少文件，最终将编译出一个CSS样式文件。</p>
+<blockquote>
+<p>多个文件中开发，最终合并输出一个文件。——@Bruce Lee</p>
+</blockquote>
+<p>开始将你的CSS文件分割成多个文件和文件夹。正如我的一位导师说的“任何事物都有其正确的地方，每个地方都有其正确的事”。那么，这也是我喜欢做的事。</p>
+<p>##文件夹构建</p>
+<p>文件夹的创建是必不可少的。就算在家里，你也不会把所有的纸张放在一个盒子里。你可能会使用一个文件夹。一个用于房子上，一个用于银行，一个用于账单等等。</p>
+<p>你在创建CSS的架构的时候也应该如此：你不只是把所有的Sass文件放在一个文件夹下，你会将他们分类。</p>
+<p>下面的示例屏示的是我将如何组织我的Sass文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass/&#10;|&#10;|&#8211; base/&#10;|   |&#8211; _reset.scss       # Reset/normalize&#10;|   |&#8211; _typography.scss  # Typography rules&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; components/&#10;|   |&#8211; _buttons.scss     # Buttons&#10;|   |&#8211; _carousel.scss    # Carousel&#10;|   |&#8211; _cover.scss       # Cover&#10;|   |&#8211; _dropdown.scss    # Dropdown&#10;|   |&#8211; _navigation.scss  # Navigation&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; helpers/&#10;|   |&#8211; _variables.scss   # Sass Variables&#10;|   |&#8211; _functions.scss   # Sass Functions&#10;|   |&#8211; _mixins.scss      # Sass Mixins&#10;|   |&#8211; _helpers.scss     # Class &#38; placeholders helpers&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; layout/&#10;|   |&#8211; _grid.scss        # Grid system&#10;|   |&#8211; _header.scss      # Header&#10;|   |&#8211; _footer.scss      # Footer&#10;|   |&#8211; _sidebar.scss     # Sidebar&#10;|   |&#8211; _forms.scss       # Forms&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; pages/&#10;|   |&#8211; _home.scss        # Home specific styles&#10;|   |&#8211; _contact.scss     # Contact specific styles&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; themes/&#10;|   |&#8211; _theme.scss       # Default theme&#10;|   |&#8211; _admin.scss       # Admin theme&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; vendors/&#10;|   |&#8211; _bootstrap.scss   # Bootstrap&#10;|   |&#8211; _jquery-ui.scss   # jQuery UI&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#10;`&#8211; main.scss             # primary Sass file</span><br></pre></td></tr></table></figure>
+<p>正如你所看到的，在根目录底下只有一个<code>main.scss</code>文件，其他<code>.scss</code>文件都根据不同的分类放在对应的文件夹中，只是这些<code>.scss</code>文件前面都有一个下划线(<code>_</code>)，用来告诉Sass，这些<code>.scss</code>文件只是<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials" target="_blank" rel="external">局部</a>，不通过<code>@import</code>是不应该被编译出<code>.css</code>文件。事实上，它们是导入和合并文件的<a href="https://gist.github.com/HugoGiraudel/8615243" target="_blank" rel="external">基本文件</a>而以。</p>
+<blockquote>
+<p>一个文件可以解决所有问题，一个文件可以找到他们，一个文件给他们带来了所有的一切，Sass只是将他们合并在一起。——@J.R.R. Tolkien</p>
+</blockquote>
+<p>接下来，我们依次来看结构中的每一个文件目录。</p>
+<p>###Base</p>
+<p><code>base/</code>文件夹包含了一些有关于你的项目中一些模板相关。在这里，你可以看到<code>reset</code>样式(或者Normalize.css,或者其他)，也有一些关于文本排版方面的，当然根据不同的项目会有一些其他的文件。</p>
+<ul>
+<li><code>_reset.scss</code>或<code>_normalize.scss</code></li>
+<li><code>_typography.scss</code></li>
+</ul>
+<p>###Helpers</p>
+<p><code>helpers/</code>文件夹（有的地方也称其为<code>utils/</code>）主要包含了项目中关于Sass的工具和帮助之类。在里面放置了我们需要使用的<code>_function.scss</code>，和<code>_mixin.scss</code>。在这里还包含了一个<code>_variables.scss</code>文件（有的地方也称其为<code>_config.scss</code>），这里包含项目中所有的全局变量（比如排版本上的，配色方案等等）。</p>
+<ul>
+<li><code>_variables.scss</code></li>
+<li><code>_mixin.scss</code></li>
+<li><code>_function.scss</code></li>
+<li><code>_placeholders.scss</code>(也有称为<code>_helpers.scss</code>)</li>
+</ul>
+<p>###Layout</p>
+<p><code>layout/</code>文件夹(有时也称为<code>partials/</code>)中放置了大量的文件，每个文件主要用于布局方面的，比如说”header”，“footer”等。他也会包括<code>_grid.scss</code>文件，用来创建网格系统。</p>
+<ul>
+<li><code>_grid.scss</code></li>
+<li><code>_header.scss</code></li>
+<li><code>_footer.scss</code></li>
+<li><code>_sidebar.scss</code></li>
+<li><code>_forms.scss</code></li>
+</ul>
+<p>导航文件（<code>_navigation.scss</code>）文件放在这里也有意义，虽然我将他放在了<code>components/</code>文件夹中。但是我想将其放在<code>layout/</code>文件夹中更好些，当然最后还是由你自己来决定。</p>
+<p>###Components</p>
+<p>对于一些小组件，都放在了<code>components/</code>文件夹（通常也称为<code>modules/</code>），<code>layout/</code>是一个宏观的（定义全局的线框），<code>components/</code>是一个微观的。它里面放了一些特定的组件，比如说<code>slider</code>，<code>loading</code>，<code>widget</code>或者其他的小组件。通常<code>components/</code>目录下的都是一些小组件文件。</p>
+<ul>
+<li><code>_media.scss</code></li>
+<li><code>_carousel.scss</code></li>
+<li><code>_thumbnails.scss</code></li>
+</ul>
+<p>###Page</p>
+<p>如果你需要针对一些页面写特定的样式，我想将他们放在<code>page/</code>文件夹中是非常酷的，并且以页面的名称来命名。例如，你的首页需要制作一个特定的样式，那么你就可以在<code>page/</code>文件夹中创建一个名叫<code>_home.scss</code>文件。</p>
+<ul>
+<li><code>_home.scss</code></li>
+<li><code>_contact.scss</code></li>
+</ul>
+<p>根据你自己的布署，你可以根据自己的需求调用这些文件，避免与其他样式文件合并在一起。这真的主取决于你自己，在我工作的地方，我是不允许这样的事情发生，只在需要的页面调用需要的文件。比如说，我们首页有一个特定的布局样式，编译出来的CSS大约有200行代码。为了防止每个页面加载这些代码，我只在主页文件上引用这个文件。</p>
+<p>###Themes</p>
+<p>如果你像我一样要为一个大型的网站制作多个主题，那么有一个<code>theme/</code>文件夹是非常有意义的。你可以把主题相关的文件放在这个文件夹中。这绝对跟具体的项目有关，你只要觉得跟主题相关的，有必要引入。</p>
+<ul>
+<li><code>_theme.scss</code></li>
+<li><code>_admin.scss</code></li>
+</ul>
+<p>###Vendors</p>
+<p>最后一个但并非不重要，创建<code>vendors/</code>文件夹，主要用来包含来自外部的库和框架的CSS文件。比如Bootstrap,jQueryUI，FancyCarouselSliderjQueryPowered等等。把这些文件放在同一个文件夹中，你可以说，嘿，这些代码不是我的，不是我写的，跟我无关。</p>
+<p>例如：</p>
+<ul>
+<li><code>bootstrap.scss</code></li>
+<li><code>jquery-ui.scss</code></li>
+<li><code>select2.scss</code></li>
+</ul>
+<p>从另一个角度来说，在我平时工作中，还创建了一个<code>vendors-extensions/</code>文件夹，用来放置一些覆盖从外部引入进来的库和框架中的小组件。例如，我们可以在<code>_bootstrap.scss</code>文件中用来覆盖Bootstrap框架中的一些小组件。这为了避免和外部直接引来的组件升级造成的冲突，或许这不是一个很好的方案。</p>
+<p>大致就是这些，但不同的项目可能会不一样，但我可以肯定，你们都有了这样的一个概念。在文件夹中嵌套一个文件夹，这样的做法我一直不太反对，但我不太喜欢这样的方式。我发现，在大多数情况之下，只需一个层级就足足够，既保证结构的简洁与清晰，而且不复杂。但话又说回来，如果你觉得你的项目有必要嵌套更深层次的文件夹，你也可以自由的发挥。</p>
+<p><strong>温馨提示：</strong>如果你觉得你的架构并不能向大家说明<code>SCSS</code>文件夹的架构，你可以在根目录下创建一个<code>README.md</code>文件（或者在<code>main.scss</code>文件中一步一步说明）解释。</p>
+<p>##文件很酷？</p>
+<p>有一个问题常被人问到“多少文件才算是很多文件呢？”我常回答“再多文件都不算多”。拆分成多个文件的宗旨是帮助你组织你的代码。如果你觉得某事值得拆分成多个文件，可以自由的拆分。正如<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a>在《<a href="http://css-tricks.com/sass-style-guide/" target="_blank" rel="external">Sass Style Guide</a>》中所说：</p>
+<blockquote>
+<p>拆分成尽可能多的小文件是有道理的。——@<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a></p>
+</blockquote>
+<p>不过，我建议不把单个组件拆分成多个文件，除非你有很好的理由这样做。通常我更倾向于一个组件一个文件。俗话说“没有更多，只有更少”。用一个简洁语义化的名称，用来表示模块的名称。这样我们就可以通过查找名称找到你需要的东西。</p>
+<p>##总结</p>
+<p>本文所有内容都是基于我当年在法国Crédit Agricole银行做前端（唯一一前端）的工作经验。针对于各人，有各自的情况和经验，可以有不同的方法。</p>
+<p>如果我们能给构建一个Sass项目挑选一个黄金法则，它可能会简单一些：就如捡东西的一个道理。如果做为一个团队，项目的结构要确认每个人用得都舒服，让大家都要知道是怎么一回事。</p>
+<p>你对构建Sass项目架构有任何想法和建议，我们都非常想听听。</p>
+<blockquote>
+<p>能力越大，责任越大。——@Aquaman</p>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a>的《<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">Architecture for a Sass Project</a>》所译，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://www.sitepoint.com/architecture-sass-project/" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a>。</p>
+<p>——作者：<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a></p>
 <p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
 </blockquote>
-<p>Sass中的定义变量是非常的强大的，你可以在一个地方定义好变量，在项目的多个地方使用这个定义的变量。它允许你在集中的一个地方做变化，而不需要在项目和多个文件中使用查找替换的方式来做修改。</p>
-<p>但是选择一个好的变量名是一件比较困能的事情。</p>
-<p>如果你不小心，在项目中变量很容易失控。最常见的就是你会忘记了在项目中定义了什么变量名，因为你很难记住你定义的所有变量名，这样有可能会给你在项目开发中带来不必要的挫折。</p>
-<p>然而，通过下面的一些定义变量的原则，可以帮助你更好的控制你的变量，也让你在整个项目中变得更为理智。</p>
-<p>##使用语义化的变量名</p>
-<p>想像一下，你客户品牌是红色，你可能定义了一个变量<code>$red</code>。半年过去之后，你的客户决定将品牌的颜色由红色变成蓝色。</p>
-<p>改变变量<code>$red</code>的值是一件非常简单的事情，但变量<code>$red</code>也就失去了他自身说明意义，也就没了什么用途说明。</p>
-<p>相反，定义的变量名，可以描述其名称、功能描述或目的，这样会更好些。换句话说，定义一个具有语义化的变量名。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#19981;&#22909;&#30340;&#21629;&#21517;&#26041;&#24335;&#10;$red: red;&#10;$yellow: yellow;&#10;&#10;// &#26356;&#22909;&#30340;&#21629;&#21517;&#26041;&#24335;&#10;$brand-color: red;&#10;$accent-color: yellow;</span><br></pre></td></tr></table></figure>
-<p>##采纳有用的约定</p>
-<p>最重要的是拿出一些好的命名变量的约定，让自己能更好的记住这些变量名。</p>
-<p>例如，你可能会使用名称加<code>-color</code>的后缀来命名颜色的变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// Base colors&#10;$base-color: #333;&#10;$brand-color: red;&#10;$brand-80-color: rgba($color-brand, 0.8);&#10;$accent-color: yellow;</span><br></pre></td></tr></table></figure>
-<p>或者你会使用<code>header-</code>或者<code>footer-</code>来命名一些特殊的区域：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// Header&#10;$header-height: 100px;&#10;$header-background-color: $color-brand;&#10;&#10;// Footer&#10;$footer-height: 200px;&#10;$footer-background-color: #aaa;</span><br></pre></td></tr></table></figure>
-<p>##配置集中放置在一起</p>
-<p>我喜欢使用一个单独的文件来定义所有的变量，我把这个定义所有变量的文件名命名为<code>_config.scss</code>,这样我只需要在我的主样式表中通过<code>@import</code>命名来引用。这种方式的好处是，只要列入到这个文件中的变量，在其他地方的任何文件都可以获取这里面定义的变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import base/config;&#10;@import base/typography;&#10;@import base/utilities;&#10;&#10;@import modules/button;</span><br></pre></td></tr></table></figure>
-<p>##总结</p>
-<p>大概会有很多有关于Sass如何命名变量的建议，但哪一种才是适合你或你的团队的工作方式呢？这就是你需要关注的地方。选择好的命名变量的方式，这将能更好的帮助你维护和开发你的项目样式表。</p>
 <p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
-<p>如需转载，烦请注明出处：</p>
-<p>英文出处：<a href="http://thesassway.com/beginner/variable-naming" target="_blank" rel="external">http://thesassway.com/beginner/variable-naming</a></p>
-<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/beginner/variable-naming.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/beginner/variable-naming.html</a></p>
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/architecture-sass-project.html</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Sass中的定义变量是非常的强大的，你可以在一个地方定义好变量，在项目的多个地方使用这个定义的变量。它允许你在集中的一个地方做变化，而不需要在项目和多个文件中使用查找替换的方式来做修改。<br>]]>
+    <![CDATA[<p>回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。<br>]]>
     
     </summary>
     
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+      <category term="项目管理" scheme="http://ddnode.com/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
     
-      <category term="初级" scheme="http://ddnode.com/tags/%E5%88%9D%E7%BA%A7/"/>
-    
-      <category term="变量" scheme="http://ddnode.com/tags/%E5%8F%98%E9%87%8F/"/>
-    
-      <category term="资源" scheme="http://ddnode.com/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
@@ -1110,259 +1171,162 @@ _mixins.scss
   </entry>
   
   <entry>
-    <title><![CDATA[Sass变量揭秘]]></title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E5%8F%98%E9%87%8F.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/变量.html</id>
+    <title><![CDATA[理解Sass的list]]></title>
+    <link href="http://ddnode.com/2014/09/21/Sass/%E7%90%86%E8%A7%A3sass%E7%9A%84list.html"/>
+    <id>http://ddnode.com/2014/09/21/Sass/理解sass的list.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:23.000Z</updated>
-    <content type="html"><![CDATA[<p>刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。。<br><a id="more"></a></p>
-<p>刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。</p>
-<p>##全局变量和局部变量</p>
-<p>要了解sass或less的变量，有必要先了解下js的变量定义，先来一段js的代码：</p>
-<pre><code><span class="keyword">var</span> a = <span class="number">1</span>;
-(<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">{
-    a = 5;
-}</span>)<span class="params">()</span>;</span>
-console.log(a);<span class="comment">//5</span>
-</code></pre><p>上面这段代码，匿名函数里面的a因为没有使用var关键字来定义，所以当我们在函数外打印a的时候，得到的是5，改变了一开始定义的1</p>
-<pre><code><span class="keyword">var</span> a = <span class="number">1</span>;
-(<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">{
-    var a = 5;
-}</span>)<span class="params">()</span>;</span>
-console.log(a);<span class="comment">//1</span>
-</code></pre><p>而这段代码，匿名函数里面的a使用了var关键字来定义，所以当我们在函数外打印a的时候，得到的是1，一开始定义的值。</p>
-<p>如果你明白了上面两个的区别，那下面就好办了，如果你还没有明白，那么建议先去看下js的变量申明。<br>也许你现在已经看出眉目了，其实sass的变量设计用的是上面两段代码中的第一段思想，即在局部不使用var来申明，而less用的是第二段思想，即局部使用var来申明，这就是很多人所说的为什么sass没有局部变量。我们来两段代码测试下：</p>
-<p>sass版</p>
-<pre><code><span class="variable">$color</span>:red;
-p{
-    <span class="variable">$color</span>:blue;
-    color:<span class="variable">$color</span>;//blue
-}
-a{
-    color:<span class="variable">$color</span>;//blue
-}
-</code></pre><p>less版</p>
-<pre><code><span class="variable">@color:</span>red;
-<span class="tag">p</span>{
-    <span class="variable">@color:</span>blue;
-    <span class="attribute">color</span>:<span class="variable">@color</span>;<span class="comment">//blue</span>
-}
-<span class="tag">a</span>{
-    <span class="attribute">color</span>:<span class="variable">@color</span>;<span class="comment">//red</span>
-}
-</code></pre><p>简单总结下：如果全局申明了一个变量a，sass中如果使用到局部中是属于改变a的值，所以后来所有的都是改变之后的值；而less中使用到局部变量则属于在局部重新定义a的值，不影响其他地方。说到底，其实sass和less的变量其实都是js变量的表现形式，两者都有其科学性，只是设计思路不同而已。</p>
-<p>当然说到这里，可能有人会说了，那sass就没有局部变量喽。其实不然，正确的说法应该是：在有全局变量的情况下，sass是没有局部变量的。意思是如果要看到sass的局部变量，请不要设置全局变量。代码为证：</p>
-<pre><code>p{
-    <span class="variable">$color</span>:blue;
-    color:<span class="variable">$color</span>;//blue
-}
-a{
-    color:<span class="variable">$color</span>;//<span class="variable">$color</span>未定义
-}
-</code></pre><p>这是一个没有定义全局变量$color的例子，上面的p元素的color为blue，而a里面就会报错因为$color没定义，它没有获取到p元素里面定义的那个$color变量，这证明了其实sass同样存在局部变量，只是这个前提是得没有全局变量。</p>
-<p>相信到这里，大家应该对sass的变量有所了解，不至于那么迷惑吧。下面我们再来两段代码：</p>
-<pre><code>p{
-    <span class="variable">$color</span>:blue;
-    color:<span class="variable">$color</span>;//blue
-
-    a{
-        color:<span class="variable">$color</span>;//blue
-    }
-}
-</code></pre><p>这一段代码中，a嵌套在p中，然后在p元素中定义了$color这个变量，a里面是可以访问到$color变量的。</p>
-<pre><code>p{
-    <span class="variable">$color</span>:blue;
-    color:<span class="variable">$color</span>;//blue
-
-    a{
-        <span class="variable">$color</span>:red;
-        color:<span class="variable">$color</span>;//red
-    }
-
-    background-color:<span class="variable">$color</span>;//red
-
-    span{
-        color:<span class="variable">$color</span>;//red
-    }
-}
-div{
-    color:<span class="variable">$color</span>;//<span class="variable">$color</span>未定义
-}
-</code></pre><p>估计这里有人迷惑了，我们来分析下吧：因为sass的代码是从上到下解析的，所以这段代码执行到p的color值的时候颜色是上面的blue色，然后由于我们在a中又改变了$color的值为红色，所以后面所有p元素范围内用到$color这个变量的都为红色，这反应到我们后来的bgcolor和span的color上面，而p元素之外还是未定义。</p>
-<p>这里吐个槽吧，其实个人觉得正是由于这个，使得开发sass的小心定义变量，以避免污染；而less呢却刚好相反，估计到时候就是全局局部满天飞的情况，代码一团糟。你想选择哪种呢？</p>
-<p>关于sass的全部变量和局部变量就说到这，既然这篇文章的标题说了是sass变量揭秘，光这全局变量和局部变量肯定是满足不了大家的胃口的，下面我们继续说下sass变量的另一个创新点，变量默认值。</p>
-<p>##变量默认值!default</p>
-<p>为了说明这个创新点，我特意去less群问了下，less有没有这个功能，得到的答案是没有。哎呀，我那个高兴啊，小心脏那个激动啊。当然less可能是有的，这里不去计较了。我们言归正传说sass。</p>
-<p>可能很多人对这个不是很熟悉，或者觉得这个其实就是个幌子，挂羊头卖狗肉的家伙。其实不然，它的来头可不小，而且是非常的科学，我是佩服的五体投地，因为它从根本上解决了困扰我多年的css组件化开发。简单来两段比较的代码：</p>
-<p>无!default</p>
-<pre><code><span class="variable">$color</span>:red;
-<span class="variable">$color</span>:blue;
-p{
-    color:<span class="variable">$color</span>;//blue
-}
-</code></pre><p>有!default</p>
-<pre><code><span class="variable">$color</span>:red;
-<span class="variable">$color</span>:blue !<span class="keyword">default</span>;
-p{
-    color:<span class="variable">$color</span>;//red
-}
-</code></pre><p>上面说了，sass编译css是从上到下的，后面会覆盖前面的，所以第一段无!default的解析的是blue，而第二段代码由于有了!default，打破了这个规则，使用了前面定义的red。有意思吧，当然这样的使用是体现不了它伟大的价值的。</p>
-<p>简单介绍下它的作用吧：假设变量申明带有!default，那么如果在此申明之前没有这个变量的申明，则用这个值，反之如果之前有申明，则用申明的值。当然如果你先!default申明，然后再申明一次，那就没什么意思了，这就是基本的变量覆盖，第一次申明的有无!default都一样。所以你要区分这两种情况：<br>    //第一种，使用默认值<br>    //变量申明带有!default，但是之前没有这个变量的申明<br>    $color:blue !default;<br>    p{<br>        color:$color;//blue<br>    }</p>
-<pre><code>//第二种，使用前面定义的值
-<span class="variable">$color</span>:red;
-//变量申明带有!<span class="keyword">default</span>，但是前面还有这个变量的申明
-<span class="variable">$color</span>:blue !<span class="keyword">default</span>;
-p{
-    color:<span class="variable">$color</span>;//red
-}
-
-//第三种错误的用法，先!<span class="keyword">default</span>申明
-<span class="variable">$color</span>:red !<span class="keyword">default</span>;
-<span class="variable">$color</span>:blue;
-</code></pre><p>上面的第三种错误用法其实和下面的这个覆盖写法是一样一样的：</p>
-<pre><code>//覆盖写法
-<span class="variable">$color</span>:red;
-<span class="variable">$color</span>:blue;
-</code></pre><p>能一口气看到这里的，应该有点时间，建议简单活动下，摇摇脑袋，伸伸懒腰，因为下面的更加精彩。</p>
-<p>其实长久以来，css之所以不能组件化开发，有两大原因：第一个是@import的样式不能合并在一个文件中（这里排除使用压缩工具来合并）；第二个问题就是这里说到的变量问题了。感谢sass帮我们全解决了，大笑三声。</p>
-<p>现在假设我们有个scss文件，这里暂且叫做<code>_imgstyle.scss</code>，代码如下：</p>
-<pre><code><span class="comment">// 变量</span>
-<span class="comment">//---------------------------------</span>
-<span class="variable">$imgStyleBorder</span><span class="value">:         <span class="number">1px</span> solid <span class="hexcolor">#ccc</span> !default;</span>
-<span class="variable">$imgStylePadding</span><span class="value">:        <span class="number">2px</span> !default;</span>
-<span class="variable">$imgStyleRadius</span><span class="value">:         <span class="number">8px</span> !default;</span>
-
-<span class="comment">// mixin</span>
-<span class="comment">//---------------------------------</span>
-<span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> img-border</span>(<span class="variable">$border</span>:<span class="variable">$imgStyleBorder</span>,<span class="variable">$padding</span>:<span class="variable">$imgStylePadding</span>){</span>
-    <span class="attribute">border</span><span class="value">: <span class="variable">$border</span>;</span>
-    <span class="attribute">padding</span><span class="value">: <span class="variable">$padding</span>;</span>
-}
-
-<span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> img-rounded</span>(<span class="variable">$radius</span>:<span class="variable">$imgStyleRadius</span>){</span>
-    <span class="attribute">border-radius</span><span class="value">:<span class="variable">$radius</span>;</span>
-}
-
-<span class="comment">//样式</span>
-<span class="comment">//---------------------------------</span>
-<span class="class">.img-border</span>{
-    <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> img-border</span>;</span>
-}
-
-<span class="class">.img-rounded</span>{
-    <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> img-rounded</span>;</span>
-}
-</code></pre><p>接下来我们要在<code>style.scss</code>这个文件里面调用<code>_imgstyle.scss</code>，代码如下：</p>
-<pre><code><span class="comment">//导入_imgstyle.scss</span>
-@<span class="keyword">import</span> <span class="string">'imgstyle'</span>;
-</code></pre><p>现在问题来了，如果我们对默认的padding为2px不满意，要改为5px，我们有如下方法：</p>
-<p>方法一：重新覆写</p>
-<pre><code><span class="comment">//导入_imgstyle.scss</span>
-<span class="at_rule">@import</span> <span class="string">'imgstyle'</span>;
-
-<span class="class">.img-border</span>{
-    <span class="attribute">padding</span>:<span class="number">5px</span>;
-}
-</code></pre><p>解析成的css：</p>
-<pre><code><span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">2px</span></span></span>;
-}</span>
-<span class="class">.img-rounded</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">8px</span></span></span>;
-}</span>
-<span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
-}</span>
-</code></pre><p>方法二：改变@include的参数</p>
-<pre><code>//导入_imgstyle.scss
-@<span class="keyword">import</span> <span class="string">'imgstyle'</span>;
-
-.img-border{
-    @include img-border(<span class="variable">$imgStyleBorder</span>,<span class="number">5</span>px);
-}
-</code></pre><p>解析成的css：</p>
-<pre><code><span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">2px</span></span></span>;
-}</span>
-<span class="class">.img-rounded</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">8px</span></span></span>;
-}</span>
-
-<span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
-}</span>
-</code></pre><p>显而易见，上面的方法都会产生重复的代码，不科学啊。当然这时候可能有人会说了，你脑子浸水了呗，直接在<code>_imgstyle.scss</code>文件中，修改<code>$imgStyleBorder</code>为5px不就得了。当然如果你要的是每个项目使用这个样式的时候都拷贝一份这个，然后打开把变量修改成你要的值，那么我只好承认我脑子浸水了，不仅脑子浸水，还得吐血了。</p>
-<p>现在请上面那些山寨土鳖方法闪一边去，该我们的!default出场了，废话少说，上代码：</p>
-<pre><code>//申明<span class="variable">$imgStylePadding</span>为<span class="number">5</span>px
-<span class="variable">$imgStylePadding</span>:  <span class="number">5</span>px;
-
-//导入_imgstyle.scss
-@<span class="keyword">import</span> <span class="string">'imgstyle'</span>;
-</code></pre><p>解析成的css：</p>
-<pre><code><span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
-}</span>
-
-<span class="class">.img-rounded</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">8px</span></span></span>;
-}</span>
-</code></pre><p>无须去源文件中修改，且解析出来无重复代码，完美！这才是!default的价值，这为组件式开发，更改调用组件里面的变量的值带来了彻底的变化。如果less真没有这个变量的默认值的话，那less的同学们估计得伤心死了。</p>
-<p>重量级的都介绍完了，下面把其他的一些小罗罗也简单介绍下吧。</p>
-<p>##变量后面加…</p>
-<p>在css3出现以前，你是绝对没有看到过的，因为它就是为css3而设计的。css3在给css带来翻天覆地的变化之外，也给sass的@mixin传递参数带来纠结了。一般来说我们的@mixin传递的参数是以<code>,</code>来分隔的，但是css3的一些属性可以设置多个值，并且多个值以<code>,</code>分开，如<code>box-shadow:0 0 3px rgba(0,0,0,0.3),inset 0 0 3px rgba(255,255,255,0.3);</code>这让@mixin如何给box-shadow传递参数啊。所以这种变量后面加<code>...</code>的变量就出现了。</p>
-<pre><code>@mixin box-shadow(<span class="variable">$shadow</span>...){
-    -webkit-box-shadow:<span class="variable">$shadow</span>;
-    -moz-box-shadow:<span class="variable">$shadow</span>;
-    box-shadow:<span class="variable">$shadow</span>;
-}
-</code></pre><p>这样就完美解决了这个需求了，漂亮吧哈哈。注意这种变量加<code>...</code>的方式只出现在传递参数中，你可以看到上面的大括号里面的变量都是没有<code>...</code>。除了box-shadow，gradient也可以用，反正能使用多个值的属性里面都可以用。</p>
-<p>##变量用<code>#{}</code>包裹</p>
-<p>一般来说，我们设置的变量都是用于属性值的，而如果用在属性或者选择器上，就得以<code>#{}</code>包裹起来了。</p>
-<pre><code><span class="variable">$btnClass</span><span class="value">: btn !default;</span>
-<span class="variable">$borderDirection</span><span class="value">:  top !default;</span>
-
-.#{<span class="variable">$btnClass</span>}{
-    <span class="attribute">border</span>-#{<span class="variable">$borderDirection</span>}<span class="value">:<span class="number">1px</span> solid <span class="hexcolor">#ccc</span>;</span>
-}
-</code></pre><p>解析成的css：</p>
-<pre><code><span class="class">.btn</span><span class="rules">{
-    <span class="rule"><span class="attribute">border-top</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;
-}</span>
-</code></pre><p>##多个变量一起申明</p>
-<p>其实这个还是很实用的，把多个相关的值写在一个变量里，然后通过<code>nth($var,index)</code>来获取第几个值。</p>
-<pre><code><span class="variable">$linkColor</span>: red blue !<span class="keyword">default</span>;
-
-a{
-    color:nth(<span class="variable">$linkColor</span>,<span class="number">1</span>);
-
-    &amp;:hover{
-        color:nth(<span class="variable">$linkColor</span>,<span class="number">2</span>);
-    }
-}
-</code></pre><p>解析成的css：</p>
-<pre><code><span class="tag">a</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;
-}</span>
-<span class="tag">a</span><span class="pseudo">:hover</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;
-}</span>
-</code></pre><p>关于sass变量揭秘到此为止。如果你对sass比较感兴趣但是还不会，可以试试我们的<a href="http://www.w3cplus.com/sassguide/index.html" target="_blank" rel="external">sassGuide</a>教程，如果已经开始使用sass了，欢迎试用<a href="https://github.com/marvin1023/sassCore" target="_blank" rel="external">sassCore</a>这个库。</p>
-<p>顺便说下，本人的面向熟悉sass人员开发的tobe即将上线，欢迎关注，也欢迎到时拍砖。</p>
+    <updated>2015-03-29T11:01:37.000Z</updated>
+    <content type="html"><![CDATA[<p>Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能，我们就必须的深入了解他。<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>写了几篇教程，其深入的培析了Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能，以及其使用方法。<br><a id="more"></a></p>
+<ul>
+<li><a href="http://css-tricks.com/striped-background-gradients/" target="_blank" rel="external">Create Striped Backgrounds With Gradients (and a Sass Mixin)</a></li>
+<li><a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/" target="_blank" rel="external">UNDERSTANDING SASS LISTS</a></li>
+<li><a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a></li>
+</ul>
+<p>除了这向篇文章，在互联网上很难找到有关于Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>更好教程了。而在Sass的社区中对List的功能讨论也是相当的激烈。这些天我也一直在阅读这几篇文章，想让自己能更好的理解Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能。今天根据这几篇文章，对<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能的介绍做了一些翻译与整理。</p>
+<p>##创建一个Sass的list</p>
+<p>首要的事情就是创建List。虽然在Sass中创建一个list可能会非常棘手，但事实上呢？<strong>Sass对于变量类型并不是非常原格</strong>，可以像理解<code>Javascript</code>语言一样，<strong>Sass也是一种弱类型语言</strong>。这样就意味着，处理一个列表你就可以像是在处理一个字符串，或者说是一个字符串列表功能。</p>
+<blockquote>
+<p>Sass对于变量类型不是非常严格</p>
+</blockquote>
+<p>在Sass中，有两种方法可以用来初始化一个<strong>空</strong>的变量（这也可以被视为一个列表）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a:();&#10;$b:unquote(&#34; &#34;);//&#27880;&#24847;&#65292;&#20882;&#21495;&#20043;&#38388;&#26377;&#19968;&#20010;&#31354;&#26684;&#10;$c:null;&#10;$d:(null);</span><br></pre></td></tr></table></figure>
+<p>现在我们创建了四个变量，接着通过Sass的<code>type-of()</code>函数来检测这些变量的类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type-of($a) =&#62; list&#10;type-of($b) =&#62; string&#10;type-of($c) =&#62; null&#10;type-of($d) =&#62; null</span><br></pre></td></tr></table></figure>
+<p>接下来，使用<code>length()</code>函数来检测一下每个变量的长度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 0&#10;length($b) =&#62; 1&#10;length($c) =&#62; 1&#10;length($d) =&#62; 1</span><br></pre></td></tr></table></figure>
+<p><code>$a</code>的长度是<code>0</code>，这是我们能预想到的，因为他是一个空列表。<code>$b</code>的长度是<code>1</code>，因为他是一个字符串，然而<code>$c</code>和<code>$d</code>都是<code>null</code>变量（空变量），令人想不通的是，他们的长度也是<code>1</code>。</p>
+<p>虽然<code>$a</code>和<code>$c</code>(<code>$d</code>)都可以用来初始化一个<code>List</code>（甚至是<code>unquote(&quot;&quot;)</code>,<strong>注，冒号之间没有任何空格</strong>），但前面简单的长度测试告诉我们，他们其实并不是完全一样的。当然如果你喜欢，你可以使用他们来初始化Sass的一个列表，但大家必须要记住，他们之间是不一样的。</p>
+<p>##<code>()</code>和<code>null</code>的区别</p>
+<p><code>null</code>等同于<code>(null)</code>或者<code>unquote(&quot;&quot;)</code>他们都是用来做为列表的第一个列表项，大多数情况之下，用他们来对Sass的列表进行初始化，但是和<code>()</code>并不完全一样，接下来通过几个简单的测试来说明<code>()</code>和<code>null</code>的区别。</p>
+<p>假设有两个变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a:();&#10;$b:null;</span><br></pre></td></tr></table></figure>
+<p>使用<code>type-of()</code>函数测试出变量的类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type-of($a) =&#62; list&#10;type-of($b) =&#62; null</span><br></pre></td></tr></table></figure>
+<p>使用<code>length()</code>函数输出变量的长度值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 0&#10;length($b) =&#62; 1</span><br></pre></td></tr></table></figure>
+<p>变量<code>$a</code>和<code>$b</code>都是一个列表，通过<code>nth()</code>函数来检测出第一个列表项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($a,1) =&#62; throws error&#10;nth($b,1) =&#62;</span><br></pre></td></tr></table></figure>
+<p>由于<code>$a</code>长度是0，在<code>nth()</code>函数检出其第一个列表项，在Sass编译的时候将会报错，而<code>$b</code>第一项刚好是空，那么在<code>nth()</code>函数检出其第一个列表项是一个空，没有任何东西。</p>
+<p>接下来使用<code>append()</code>函数为每个列表添加一个列表项<code>test</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a: append($a,&#34;test&#34;);&#10;$b: append($b,&#34;test&#34;);</span><br></pre></td></tr></table></figure>
+<p>再次检测其长度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 1&#10;length($b) =&#62; 2</span><br></pre></td></tr></table></figure>
+<p>使用<code>index()</code>函数来检测“test”列表项在列表中各处什么位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index($a,&#34;test&#34;) =&#62; 1&#10;index($b,&#34;test&#34;) =&#62; 2</span><br></pre></td></tr></table></figure>
+<p>使用<code>nth()</code>函数，再次检出列表的第一个列表项，这个时候又变了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($a,1) =&#62; test&#10;nth($b,1) =&#62;</span><br></pre></td></tr></table></figure>
+<p>我想这几个函数对<code>$a</code>和<code>$b</code>变量的操作，一路下来，您应该很清楚的知道<code>()</code>和<code>null</code>的不同之处了吧。</p>
+<p>##Sass的List</p>
+<p>Sass的<code>list</code>非常类似于<code>JavaScript</code>语言中的数组。你可以通过下面的方式来初始化一个Sass的List:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:();</span><br></pre></td></tr></table></figure>
+<p>当然，你也还可以使用<code>$list:null</code>或者<code>$list:unquote(&quot;&quot;)</code>，但你要注意一下他们之间的不同。不管使用哪种方法，我们先来看一个简单的Sass列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:(#b4d455,42,&#34;awesome&#34;);</span><br></pre></td></tr></table></figure>
+<p>前面也说过，<strong>Sass语法非常宽松</strong>，这也让    <code>list</code>在Sass中使用变得更加的复杂。我们一个一个来看。</p>
+<p>###列表的分隔符</p>
+<p>在Sass的列表中，你可以使用<strong>空格符</strong>或者<strong>逗号</strong>作为列表项与列表项之间的分隔符。事实上，我更喜欢使用逗号(<code>,</code>)用来做为列表的分隔符。在<code>JavaScript</code>和<code>PHP</code>这些语言中，都是用逗号作为数组的分隔符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list-space: &#34;item-1&#34; &#34;item-2&#34; &#34;item-3&#34;;&#10;$list-space: &#34;item-1&#34;,&#34;item-2&#34;,&#34;item-3&#34;;</span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong>和CSS一样，只要没有特殊字符，列表项的双引号是可以省略的。所以<code>$list: item-1,item-2,item-3;</code>是有效的。</p>
+<p>###列表的嵌套</p>
+<p>Sass的List就像<code>JavaScript</code>或者其他的程序语言一样，对列表的嵌套层级并没有限制，可以根据自己的需求对列表进行嵌套。Sass的嵌套主要有两种方式，一种是嵌套的列表子级列表项是以逗号分隔，那么在列表中需要用括号来分隔；另一种嵌套的列表子级用空格分隔，那么在列表中可以使用逗号来分隔。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Nested lists with braces and same separator */&#10;$list: (&#10;        (&#34;item-1.1&#34;, &#34;item-1.2&#34;, &#34;item-1.3&#34;),&#10;        (&#34;item-2.1&#34;, &#34;item-2.2&#34;, &#34;item-2.3&#34;),&#10;        (&#34;item-3.1&#34;, &#34;item-3.2&#34;, &#34;item-3.3&#34;)&#10;       );&#10;&#10;/* Nested lists without braces using different separators to distinguish levels */&#10;$list: &#34;item-1.1&#34; &#34;item-1.2&#34; &#34;item-1.3&#34;,&#10;       &#34;item-2.1&#34; &#34;item-2.2&#34; &#34;item-2.3&#34;,&#10;       &#34;item-3.1&#34; &#34;item-3.2&#34; &#34;item-3.3&#34;;</span><br></pre></td></tr></table></figure>
+<p>###你可以使用括号</p>
+<p>正如你前面看到的示例一样，在Sass中，你可以不用括号定义一个非空的列表。这主要是因为大多数人的想法相反，在Sass中括号不是用来创建列表（除非是空的列表），而是用来做为分隔符的。</p>
+<p>事实上，在Sass中没有人会强迫您使用括号来创建一个列表，如果你喜欢，完全可以使用逗号来区别。说实话，我就经常使用逗号来创建一个列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list: &#34;item-1&#34;, &#34;item-2&#34;, &#34;item-3&#34;;</span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong>这是一个理论。我注意到括号都不只是一个列表项分组。当你操作的一个列表有四五层的嵌套时，括号绝对不是可选的。这样会让列表变得太复杂了。</p>
+<blockquote>
+<p>操作一个五层以上的嵌套列表是一件痛苦而又麻烦的事情</p>
+</blockquote>
+<p>###列表的索引值</p>
+<p>Sass中的列表索引值和<code>JavaSctript</code>数组中的索引值不一样，他是<strong>从1开始，而不是从0开始</strong>。一旦你开始使用Sass列表，这个问题也是最容易出错的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($list,0) =&#62; throws error&#10;nth($list,1) =&#62; item-1</span><br></pre></td></tr></table></figure>
+<p>###每个值都是一个列表</p>
+<p>在Sass中每一个值都可以是一个列表。字符串、数值、布尔值或者任何变量。而且可以通过Sass的<a href="http://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="external">List函数</a>来检测出一些值。</p>
+<p>我们来看一个简单的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$variable: &#34;Sass is awesome&#34;;&#10;$variable2: Sass is awesome;</span><br></pre></td></tr></table></figure>
+<p>上面两个变量值仅仅就是一个有引号，一个没有引号。</p>
+<p>使用<code>type-of()</code>函数检测出他们的类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; type-of($variable)&#10;&#34;string&#34;&#10;&#62;&#62; type-of($variable2)&#10;&#34;list&#34;&#10;&#62;&#62;</span><br></pre></td></tr></table></figure>
+<p>使用<code>length()</code>函数检测出他们的长度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; length($variable)&#10;1&#10;&#62;&#62; length($variable2)&#10;3</span><br></pre></td></tr></table></figure>
+<p>在用<code>nth()</code>函数来检测输出内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; nth($variable,1)&#10;&#34;Sass is awesome&#34;&#10;&#62;&#62; nth($variable2,1)&#10;&#34;Sass&#34;&#10;&#62;&#62;</span><br></pre></td></tr></table></figure>
+<p>这里变动一下，来索引第二个值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; nth($variable,2)&#10;SyntaxError: List index is 2 but list is only 1 item long for `nth&#39;&#10;&#62;&#62; nth($variable2,2)&#10;&#34;is&#34;</span><br></pre></td></tr></table></figure>
+<p>所在大家在使用的时候当心了，有引号的时候会当为一个字符串，当然他也是一个只有一个列表项的列表，而删除引号会被视为有三个列表项的列表。</p>
+<p>###可以使用空格或逗号分隔列表项</p>
+<p>在Sass的列表中，使用空格和逗号都可以用来分隔列表项，这两者都是完全有效的。我敢肯定你更喜欢使用逗号来分隔列表项，因为在<code>JavaScript</code>和<code>PHP</code>等程序中的数组，逗号是一个标准的分离器。如果你喜欢也可以用空格分隔。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list: #fff 42 &#34;awesome&#34;;&#10;$list: #fff,42,&#34;awesome&#34;;</span><br></pre></td></tr></table></figure>
+<p>你也可以使用逗号和空格分隔符混用，此时用来区别列表的嵌套。比如说你的一级列表中使用逗号来分隔列表项，而且他里面还嵌套了一个二级列表，那么二级列表可以使用空格来分隔。在下面的示例当中，第三个值是一个空格分隔的列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:  #b4d455, 42, &#34;awesome&#34; &#34;interesting&#34; &#34;free&#34;;</span><br></pre></td></tr></table></figure>
+<p>综合上述，在任何情况之下，定义你的列表时，你应该注意以下几点：</p>
+<ul>
+<li>使用括号进行列表嵌套；</li>
+<li>使用逗号分隔列表项；</li>
+<li>给字符串添加引号；</li>
+<li>列表嵌套不要超过五层；</li>
+<li>初始化列表建议使用<code>()</code>，不使用<code>null</code>;</li>
+</ul>
+<p>这些细节都将帮助您节省更多的时间，请相信我。</p>
+<p>##列表函数</p>
+<p>在Sass中，给列表提供了一系列的函数操作。在《<a href="http://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="external">Sass函数</a>》一文中，对列表的函数进行过详细介绍，感兴趣的可以看看。此处将Sass函数做一个汇总。</p>
+<ul>
+<li><strong>length($list)：</strong>返回<code>$list</code>长度（如果不是list,返回1）</li>
+<li><strong>nth($list,$index)：</strong>返回<code>$list</code>中第<code>$index</code>列表项值（如果索引值不在列表范围内，将会报错）</li>
+<li><strong>index($list,$value)：</strong>返回<code>$value</code>在<code>$list</code>中的位置</li>
+<li><strong>append($list,$value[,$separator])：</strong>使用<code>$separator</code>分隔符将<code>$value</code>列表项添加到<code>$list</code>最后（如果没有显式指定<code>$separator</code>分隔符，会以当前分隔符分隔）</li>
+<li><strong>jion($list-1,$list-2[,$separator]):</strong>使用<code>$separator</code>分隔符将<code>$list-2</code>附加到<code>$list-1</code>（如果没有显式指定分隔符，将对<code>$list-1</code>中的分隔符）</li>
+<li><strong>zip(*$lists):</strong>将多个<code>$list</code>组合在一起成为一个多维列表。如果列表源长度并不是所有都相同，结果列表长度将以最短的一个为准</li>
+<li><strong>reject($list,$value)：</strong>这是Compass中的一个函数，将<code>$value</code>值从<code>$list</code>中删除</li>
+<li><strong>compact(*$args)：</strong>Compass函数，返回一个删除非真值的新列表</li>
+</ul>
+<p>##给Sass列表添加东西</p>
+<p>Sass中的<code>list</code>是一个很有趣的东西，但也是个很复杂的东西。前面都是一些理论化，接下来通过一个例子的使用来介绍<code>list</code>。</p>
+<p>比如说一个扩展选择器，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.home .nav-home,&#10;.about .nav-about,&#10;.products .nav-products,&#10;.contact .nav-contact</span><br></pre></td></tr></table></figure>
+<p>这些选择器都是基于列表的关键值生成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pages: home,about,products,contact;</span><br></pre></td></tr></table></figure>
+<p>根据这个列表，有三种方法可以生成这样的选择器，我们可以一个一个来看。</p>
+<p>首先我们创建一个测试例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pages: home,about,products,contact;&#10;$selector:();&#10;@each $item in $pages &#123;&#10;&#9;//&#25105;&#20204;&#21019;&#24314;$selector&#10;&#125;&#10;#&#123;$selector&#125;&#123;&#10;&#9;//&#26679;&#24335;&#20889;&#22312;&#36825;&#37324;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###长而复杂的方法</p>
+<p>这是我两星期前使用的一个方法，它可以运行，但它需要一个额外的条件来处理逗号。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: $selector unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;);&#10;&#9;@if $item != nth($pages, length($pages))&#123;&#10;&#9;&#9;$selector: $selector unquote(&#34;,&#34;);&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>基本上给<code>$selector</code>添加了新的选择器，如果我们不处理列表的最后一项，我们需要添加一个逗号。</p>
+<p>###简洁的方法</p>
+<p>这种方法是通过<code>append()</code>函数方法，将他们添加到一起。这也是最简单的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: append($selector,unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;),comma);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我认为这是很简单的，我们将显示的使用逗号将选择器与前面的分隔开，并将此重新赋以给新的选择器<code>$selector</code>。</p>
+<p>###隐式的方法</p>
+<p>这种方法是最简单的，通过隐式的附加功能，将选择器合在一起，非常的简洁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: $selector,unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##自定义列表函数</p>
+<p>前面介绍主要Sass中<code>list</code>的功能以及自带的处理<code>list</code>的函数，但很多更先进的列表处理到目前为止，Sass自身是无法处理的。</p>
+<p><a href="http://hugogiraudel.com" target="_blank" rel="external">Hugo</a>根据Sass的一些功能为<code>list</code>定义了一些高级的函数功能，用来处理Sass的<code>list</code>。并在《<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a>》一文中介绍了这些高级函数的功能，以及使用方法。接下来，我们也跟随此文了解和学习这些高级的列表函数。</p>
+<p>我们来演示一个简单的函数。这里有两上小功能，就是定义两个函数用来获取列表中的第一个列表项和最后一个列表项的值。在很多时候我们都是通过<code>nth()</code>函数方式来获取：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($list,1);//&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#31532;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;nth($list,length($list));//&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010;&#21015;&#34920;&#39033;</span><br></pre></td></tr></table></figure>
+<p>众所周知，Sass中的列表项索引号是从<code>1</code>开始，而<code>length($list)</code>可以获得一个列表的长度值，再配合<code>nth()</code>函数得到第一项和最后一项。那么我们可以换过一个角度来思考，将这两个分别封装成两个函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;first()&#20989;&#25968;&#65292;&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#31532;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;@function first($list)&#123;&#10;&#9;@return nth($list,1);&#10;&#125;&#10;&#10;//&#23450;&#20041;last()&#20989;&#25968;&#65292;&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;@function last($list)&#123;&#10;&#9;@return nth($list,length($list));&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>例如我们一个颜色列表，我在页头<code>header</code>调用列表中第一个颜色，而在页脚<code>footer</code>调用列表中最后一个颜色，我们就可以这样来使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;&#39068;&#33394;&#21015;&#34920;&#10;$colors: green,blue,orange,yellow;&#10;&#10;//&#35843;&#29992;&#21015;&#34920;&#20013;&#31532;&#19968;&#20010;&#39068;&#33394;&#10;.header &#123;&#10;&#9;color: first($colors);//&#31561;&#21516;&#20110;nth($colors,1)&#10;&#125;&#10;&#10;//&#35843;&#29992;&#21015;&#34920;&#20013;&#26368;&#21518;&#19968;&#20010;&#39068;&#33394;&#10;.footer&#123;&#10;&#9;color: last($colors);//&#31561;&#21516;&#20110;nth($colors,length($colors))&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>转译出来的CSS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.header &#123;&#10;  color: green;&#10;&#125;&#10;&#10;.footer &#123;&#10;  color: yellow;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>很多时候列表只有一个列表项，此时<code>first()</code>和<code>last()</code>函数获取的列表项将等同。</p>
+<p>其它自定义的列表高级函数，如果你感兴趣，可以猛击<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">这里</a></p>
+<p>##总结</p>
+<p>本文主要根据<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>写了几篇教程：《<a href="http://css-tricks.com/striped-background-gradients/" target="_blank" rel="external">Create Striped Backgrounds With Gradients (and a Sass Mixin)</a>》、《<a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/" target="_blank" rel="external">UNDERSTANDING SASS LISTS</a>》、《<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a>》介绍了Sass中的<code>list</code>功能。</p>
+<p>经过上面的阅读之后，你能轻松的创建一个列表，以及索引列表项的值，判断列表的长度等等功能。同时在项目中使用列表功能，让你更佳轻松的完成你的工作，并且还能让你的代码更佳的简洁。</p>
+<p>最后非常感谢<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>给我们带来这么优秀的Sass教程，希望大家在此文上有所获得。</p>
+<p>如需转载，烦请注明出处：<a href="http://www.w3cplus.com/preprocessor/understanding-sass-list.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/understanding-sass-list.html</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。。<br>]]>
+    <![CDATA[<p>Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists">List</a>是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists">List</a>功能，我们就必须的深入了解他。<a href="http://hugogiraudel.com/">Hugo</a>写了几篇教程，其深入的培析了Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists">List</a>功能，以及其使用方法。<br>]]>
     
     </summary>
     
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+      <category term="列表" scheme="http://ddnode.com/tags/%E5%88%97%E8%A1%A8/"/>
     
-      <category term="变量" scheme="http://ddnode.com/tags/%E5%8F%98%E9%87%8F/"/>
-    
-      <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
+      <category term="周刊" scheme="http://ddnode.com/categories/%E5%91%A8%E5%88%8A/"/>
     
   </entry>
   
