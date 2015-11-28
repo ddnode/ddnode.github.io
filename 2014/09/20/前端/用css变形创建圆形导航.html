@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>用CSS变形创建圆形导航 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在这个教程中，我会教你使用CSS变形制作圆形导航。 我会带你一步步地创建样式，讲解背后的数学知识和简单的逻辑，让你对这技术有清晰的认识。
+正如我提到的，使用CSS变形创建样式，会用到相关的基础数学知识。但是不必担心， 用到的数学非常简单，我会带你一步步地客克服它。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用CSS变形创建圆形导航">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/用css变形创建圆形导航.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="在这个教程中，我会教你使用CSS变形制作圆形导航。 我会带你一步步地创建样式，讲解背后的数学知识和简单的逻辑，让你对这技术有清晰的认识。
+正如我提到的，使用CSS变形创建样式，会用到相关的基础数学知识。但是不必担心， 用到的数学非常简单，我会带你一步步地客克服它。">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-1.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-2.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-3.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-4.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-5.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-6.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-7.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-8.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-9.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-10.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-11.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-12.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-13.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:35:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用CSS变形创建圆形导航">
+<meta name="twitter:description" content="在这个教程中，我会教你使用CSS变形制作圆形导航。 我会带你一步步地创建样式，讲解背后的数学知识和简单的逻辑，让你对这技术有清晰的认识。
+正如我提到的，使用CSS变形创建样式，会用到相关的基础数学知识。但是不必担心， 用到的数学非常简单，我会带你一步步地客克服它。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/用css变形创建圆形导航" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/用css变形创建圆形导航.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用CSS变形创建圆形导航
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在这个教程中，我会教你使用CSS变形制作圆形导航。 我会带你一步步地创建样式，讲解背后的数学知识和简单的逻辑，让你对这技术有清晰的认识。</p>
+<p>正如我提到的，使用CSS变形创建样式，会用到相关的基础数学知识。但是不必担心， 用到的数学非常简单，我会带你一步步地客克服它。<br><a id="more"></a><br>我要指出原技术属于<a href="http://twitter.com/thebabydino" target="_blank" rel="external">Ana Tudor</a>。我把它修改成我想要效果，这也是我希望你的在教程结束时去做的：对这技术有深入而且清晰的认识，开始查阅资料并且构建自己的样式。</p>
+<p class="btns-zone"><a class="btn-demo" href="http://tympanus.net/Tutorials/CircularNavigation/" target="_blank">demo</a><a class="btn-download" href="http://tympanus.net/Tutorials/CircularNavigation/CircularNavigation.zip" target="_blank">download</a></p>
+
+<p>##结构<br>我们要创建一个导航，因此我们会从常见的导航结构开始。我们需要一个div包含无序的项目列表， 一个开启和关闭导航栏的按钮，项目清单以及在第一个演示中导航栏打开时需要用到的额外的层。<br>    <button class="cn-button" id="cn-button">+</button><br>    <div class="cn-wrapper" id="cn-wrapper"><br>           <ul><br>               <li><a href="#"><span class="icon-picture"></span></a></li><br>               <li><a href="#"><span class="icon-headphones"></span></a></li><br>               <li><a href="#"><span class="icon-home"></span></a></li><br>               <li><a href="#"><span class="icon-facetime-video"></span></a></li><br>               <li><a href="#"><span class="icon-envelope-alt"></span></a></li><br>           </ul><br>    </div><br>    <div id="cn-overlay" class="cn-overlay"></div></p>
+<p>“ICONS”的制作来自于<a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" rel="external">Font Awesome</a>。</p>
+<p>##CSS变形中的数学知识</p>
+<p>讲解数学的最佳方法是使用图形化解释而不是书面解释。所以我们会从逻辑开始并且在讲解过程中把数学知识应用进去，讲解结束之后，我们开始编码部分，那时你会准确地了解每条CSS语句的作用。</p>
+<p>首先，让我们复习下什么是“圆心角”。这是带有简短解释的直观表示:</p>
+<p><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>假如你想像例子一样要将所有的导航项分配到一个半圆中，在你的导航列表中有6项，那么每个角有一个圆心角：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">180deg / 6 = 30deg</span><br></pre></td></tr></table></figure>
+<p>如果你想要导航项占据整个圆，并且在这个圆中放入6个导航项，每一项的圆心角应该是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">360deg / 6 = 60deg</span><br></pre></td></tr></table></figure>
+<p>这样你就可以计算你想要的圆心角，此后我们会将简单的数学应用到CSS变形中，真正意义上创建这些角。</p>
+<p>为了创建期望的圆心角度的角，我们必须让导航项倾斜（用<code>skew()</code> CSS函数）:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">90deg-xdeg, /* x&#26159;&#20320;&#24819;&#24471;&#21040;&#30340;&#22278;&#24515;&#35282;&#30340;&#20540;&#12290;*/</span><br></pre></td></tr></table></figure>
+<p>很简单。但是在这种情况下，列表项里的内容都会倾斜，而且内容看起来会变形，这些都不是我们想要的，所以为了内容正常显示，我们会“不倾斜”每个列表项的锚节点。</p>
+<p>我构建了一个在线的交互式演示，它会展示变形是如何一步步地应用到导航项中，让你对代码要做的事情有清晰的了解。（注意演示中在步骤顺序稍微和教程中的不一样）。</p>
+<p>在对我们接下来要做的事情有更清晰理解的时候，在你也许想要看到分布演示。我为演示加了一个预排功能，会解释每一步中的内容，所以花一分钟时间播放这演示，对我们将要做的有更深入的了解。 你可以使用Start Demo 按钮从头到尾播放演示，或者使用Next Step 按钮一步步地播放，并且可以使用Reset 按钮随时重置演示过程。</p>
+<p class="btns-zone"><a class="btn-demo" href="http://tympanus.net/Tutorials/CircularNavigation/interactivedemo/index.html" target="_blank">demo</a></p>
+
+<p>以下是你将要在演示中看到的步骤截图：</p>
+<p>####初始状态</p>
+<p><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>####第一步</p>
+<p><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>####第二步</p>
+<p><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p><br>####第三步<br><p><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p><br>####第四步<br><p><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p><br>####第五步<br><p><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-7.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>####第六步</p>
+<p><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-8.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p><br>那么让我们来重温一下：<br>- 我们需要将导航项绝对定位在容器里面<br>- 将每一项的变换原点设置成他们的右下角<br>- 然后往左上角平移导航项，让它们的变换原点和容器中心相吻合<br>- 然后按照公式顺时针旋转每一项到指定的位置：对于第i项，需要旋转：<code>i*x</code>，其中<code>x</code>是圆心角的值。<br>- 然后让它们变形以获取我们想要的圆心角（使用上面提到过的公式）。<br><br>在我们的例子中，我们有5个导航项，意味着5个圆心角，我们只想要圆的上半部分，那么根据上面解释的数学公式，每一项应该有36度圆心角，但是在我们的例子中，我把圆心角设为40度（因为这样可以提供更大的点击区域），那么所有圆心角的总和应该是<code>5 * 40 = 200</code>度，这大于180度。 在这种情况下，我们要做的仅仅是逆时针旋转<code>(200-180)/2</code> 度确保两边相对称。<br>这时候我们已经创建了圆心角并且定位了元素。 但是倾斜列表项也造成了内容的倾斜， 如此一来内容会变形， 我们要在这里应用的最后一条数学规则会确保a标签不会变形而且内容可见。规则就是：<br>&gt;反向倾斜a标签，意味着按列表项需要按相反的值倾斜， 然后用- [90 – (x/2) ]的值反向    旋转，x是圆心角的值。那么对于40度的圆心角，我们需要倾斜a标签-40度并且按-[ 90     – (40/2) ] = -70 度旋转。<br><code>a</code>标签被绝对定位在它们的父级中，而且列表项的<code>overflow</code>被设置为<code>hidden</code>，这意味着a标签的一部分被裁切，所以为了确保a标签中的文字/图标出现在可见部分，我们将内容居中对齐。<br>这就是我们在创建导航栏切割用到的所有数学知识！啊，终于结束了，对吧？<br>那么让我们再一次快速地回顾一下：<br>- 旋转导航项到指定位置：角度y = i * x （i是第几项，x是圆心角的值）<br>- 按照90-x倾斜（x是圆心角的值）<br>- 如果要相对称反方向旋转导航项（这一步实际上和前一步合并）<br>- “反向倾斜”“反向旋转”导航中的a标签（设置text-align为center）<br><br>当然，我们跳过了移动列表项使得转换原点和容器中心保持一致的步骤。以上是创建角的所有东西，但是并不是创建整个导航栏所需要的。一个简单的步骤被保留着，那就是常规的样式编写，那么让我们开始写CSS，在讲解过程中谈谈这些步骤。<br><br>##CSS<br><br>我们先写第一个演示的样式。<br><br><p><a href="http://tympanus.net/Tutorials/CircularNavigation/index.html" target="_blank"><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-9.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>将<a href="http://modernizr.com/" target="_blank" rel="external">Modernizr</a>类应用到<code>body</code>标签，标示浏览器是否支持，为不支持CSS变形的旧浏览器提供一个非常简单和基础的备用样式。</p>
+<p>我们从编写导航容器开始。它会相对窗口定位在页面底部的中间，最初会被按比例缩小，点击展开按钮时，它会打开/按比例放大。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.csstransforms .cn-wrapper &#123;&#10;  font-size:1em;&#10;  width: 26em;&#10;  height: 26em;&#10;  overflow: hidden;&#10;  position: fixed;&#10;  z-index: 10;&#10;  bottom: -13em;&#10;  left: 50%;&#10;  border-radius: 50%;&#10;  margin-left: -13em;&#10;  transform: scale(0.1);&#10;  transition: all .3s ease;&#10;&#125;&#10;/* class applied to the container via JavaScript that will scale the navigation up */&#10;.csstransforms .opened-nav &#123;&#10;  border-radius: 50%;&#10;  transform: scale(1);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我们也需要给触发导航栏打开和闭合的按钮写样式并且定位它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.cn-button &#123;&#10;  border:none;&#10;  background:none;&#10;  color: white;&#10;  text-align: Center;&#10;  font-size: 1.5em;&#10;  padding-bottom: 1em;&#10;  height: 3.5em;&#10;  width: 3.5em;&#10;  background-color: #111;&#10;  position: fixed;&#10;  left: 50%;&#10;  margin-left: -1.75em;&#10;  bottom: -1.75em;&#10;  border-radius: 50%;&#10;  cursor: pointer;&#10;  z-index: 11&#10;&#125;&#10;.cn-button:hover,&#10;.cn-button:active,&#10;.cn-button:focus&#123;&#10;  background-color: #222;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>当导航栏打开时，一个层会覆盖在页面上。这是覆盖层的样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.cn-overlay&#123;&#10;  width:100%&#10;  height:100%;&#10;  background-color: rgba(0,0,0,0.6);&#10;  position:fixed;&#10;  top:0;&#10;  left:0;&#10;  bottom:0;&#10;  right:0;&#10;  opacity:0;&#10;  transition: all .3s ease;&#10;  z-index:2;&#10;  pointer-events:none;&#10;&#125;&#10;&#10;/* Class added to the overlay via JavaScript to show it when navigation is open */&#10;.cn-overlay.on-overlay&#123;&#10;  pointer-events:auto;&#10;  opacity:1;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>现在我们为导航项和它们的a标签编写样式，应用之前解释过的逻辑和基于数学的变形。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.csstransforms .cn-wrapper li &#123;&#10;  position: absolute;&#10;  font-size: 1.5em;&#10;  width: 10em;&#10;  height: 10em;&#10;  transform-origin: 100% 100%;&#10;  overflow: hidden;&#10;  left: 50%;&#10;  top: 50%;&#10;  margin-top: -1.3em;&#10;  margin-left: -10em;&#10;  transition: border .3s ease;&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li a &#123;&#10;  display: block;&#10;  font-size: 1.18em;&#10;  height: 14.5em;&#10;  width: 14.5em;&#10;  position: absolute;&#10;  bottom: -7.25em;&#10;  right: -7.25em;&#10;  border-radius: 50%;&#10;  text-decoration: none;&#10;  color: #fff;&#10;  padding-top: 1.8em;&#10;  text-align: center;&#10;  transform: skew(-50deg) rotate(-70deg) scale(1);&#10;  transition: opacity 0.3s, color 0.3s;&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li a span &#123;&#10;  font-size: 1.1em;&#10;  opacity: 0.7;&#10;&#125;&#10;/* for a central angle x, the list items must be skewed by 90-x degrees&#10;in our case x=40deg so skew angle is 50deg&#10;items should be rotated by x, minus (sum of angles - 180)2s (for this demo) */&#10;&#10;.csstransforms .cn-wrapper li:first-child &#123;&#10;  transform: rotate(-10deg) skew(50deg);&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li:nth-child(2) &#123;&#10;  transform: rotate(30deg) skew(50deg);&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li:nth-child(3) &#123;&#10;  transform: rotate(70deg) skew(50deg)&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li:nth-child(4) &#123;&#10;  transform: rotate(110deg) skew(50deg);&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li:nth-child(5) &#123;&#10;  transform: rotate(150deg) skew(50deg);&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li:nth-child(odd) a &#123;&#10;  background-color: #a11313;&#10;  background-color: hsla(0, 88%, 63%, 1);&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li:nth-child(even) a &#123;&#10;  background-color: #a61414;&#10;  background-color: hsla(0, 88%, 65%, 1);&#10;&#125;&#10;&#10;/* active style */&#10;.csstransforms .cn-wrapper li.active a &#123;&#10;  background-color: #b31515;&#10;  background-color: hsla(0, 88%, 70%, 1);&#10;&#125;&#10;&#10;/* hover style */&#10;.csstransforms .cn-wrapper li:not(.active) a:hover,&#10;.csstransforms .cn-wrapper li:not(.active) a:active,&#10;.csstransforms .cn-wrapper li:not(.active) a:focus &#123;&#10;  background-color: #b31515;&#10;  background-color: hsla(0, 88%, 70%, 1);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我们会为不支持CSS变形的浏览器提供简单、基本的备用样式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.no-csstransforms .cn-wrapper&#123;&#10;  font-size:1em;&#10;  height:5em;&#10;  width:25.15em;&#10;  bottom:0;&#10;  margin-left: -12.5em;&#10;  overflow: hidden;&#10;  position: fixed;&#10;  z-index: 10;&#10;  left:50%;&#10;  border:1px solid #ddd;&#10;&#125;&#10;&#10;.no-csstransforms .cn-button&#123;&#10;  display:none;&#10;&#125;&#10;&#10;.no-csstransforms .cn-wrapper li&#123;&#10;  position:static;&#10;  float:left;&#10;  font-size:1em;&#10;  height:5em;&#10;  width:5em;&#10;  background-color: #eee;&#10;  text-align:center;&#10;  line-height:5em;&#10;&#125;&#10;&#10;.no-csstransforms .cn-wrapper li a&#123;&#10;  display:block;&#10;  width:100%;&#10;  height:100%;&#10;  text-decoration:none;&#10;  color:inherit;&#10;  font-size:1.3em;&#10;  border-right: 1px solid #ddd;&#10;&#125;&#10;&#10;.no-csstransforms .cn-wrapper li a:last-child&#123;&#10;  border:none;&#10;&#125;&#10;&#10;.no-csstransforms .cn-wrapper li a:hover,&#10;.no-csstransforms .cn-wrapper li a:active,&#10;.no-csstransforms .cn-wrapper li a:focus&#123;&#10;  background-color: white;&#10;&#125;&#10;&#10;.no-csstransforms .cn-wrapper li.active a &#123;&#10;  background-color: #6F325C;&#10;  color: #fff;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>当然我们想要我们的导航可响应，所以导航会收缩到合适更小的屏幕。这是圆形导航和简单情况的响应式样式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (max-width:480px)&#123;&#10;  .csstransforms .cn-wrapper&#123;&#10;    font-size:.68em;&#10;  &#125;&#10;  .cn-button&#123;&#10;    font-size:1em;&#10;  &#125;&#10;  .csstransforms .cn-wrapper li &#123;&#10;    font-size:1.52em;&#10;  &#125;&#10;&#125;&#10;&#10;@media screen and (max-width:320px)&#123;&#10;  .no-csstransforms .cn-wrapper&#123;&#10;    width:15.15px;&#10;    margin-left: -7.5em;&#10;  &#125;&#10;  .no-csstransforms .cn-wrapper li&#123;&#10;    height:3em;&#10;    width:3em;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>那是第一个演示！我们继续下一个演示。</p>
+<p><a href="http://tympanus.net/Tutorials/CircularNavigation/index2.html" target="_blank"><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-10.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>第二个圆形样式和第一个不一样，但是除了三处不同，所有用来创建这种风格的导航的数学知识、逻辑、变形和前一个很像。所以我们不会再去回顾相同的解释， 只会涉及这种风格的三个不同的步骤。</p>
+<p>再一次引用上面的例子，只改变一点点简单的CSS规则，看看导航项的形状发生的变化。</p>
+<p>我们给带有透明背景色的a标签使用线性渐变的背景色。结果看起会是这样：</p>
+<p><a href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2013/08/cn-radial-gradient.png" target="_blank"><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-11.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>你可以从这里看到我们前进的方向。接下来，我们会稍微改变每一个导航项的旋转角度增加它们之间的距离。我们也要移出列表项的和容器的背景色、边框，以及减少a标签顶部填充距离将图标往上靠到垂直居中的位置。得到的效果像是这样：</p>
+<p><a href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2013/08/cn-demo2-step1.png" target="_blank"><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-12.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>正如你看到的，导航已经开始看起来不一样了；我们已经完成了一大半了。</p>
+<p>我们仍然有很重的事情要做。根据目前的情况，a标签的点击区域依旧比我们想要的大。我们想要的是只有图片中显示的带颜色的部分的导航栏是可以点击的。 下面的图片准确地显示a标签的可点击区域。</p>
+<p><a href="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2013/08/cn-demo2-cover.png" target="_blank"><img alt="用CSS变形创建圆形导航" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/Circular_Navigation-13.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>当你移到图片中的红色区域，a标签的下面部分，a标签的悬浮状态会被触发，这是不正常的事情，因为我们想要的a标签只是紫色区域，我们需要防止鼠标在a标签的下半部分被触发。为了达到目的，我们会在圆形容器的上面放一个“cover”，它是圆形的，会覆盖a标签的下半部分，因此阻止这些部分的鼠标事件。为了避免添加额外的空标签我们会使用伪元素。</p>
+<p>因此,应用这三个步骤,我们的CSS,改变整体样式(颜色和大小)的导航,导航项看起来像预览上图,我们最终得到以下CSS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.csstransforms .cn-wrapper &#123;&#10;  position: absolute;&#10;  top: 100%;&#10;  left: 50%;&#10;  z-index: 10;&#10;  margin-top: -13em;&#10;  margin-left: -13.5em;&#10;  width: 27em;&#10;  height: 27em;&#10;  border-radius: 50%;&#10;  background: transparent;&#10;  opacity: 0;&#10;  transition: all .3s ease 0.3s;&#10;  transform: scale(0.1);&#10;  pointer-events: none;&#10;  overflow: hidden;&#10;&#125;&#10;&#10;/*cover to prevent extra space of anchors from being clickable*/&#10;.csstransforms .cn-wrapper:after&#123;&#10;  color: transparent;&#10;  content:&#34;.&#34;;&#10;  display:block;&#10;  font-size:2em;&#10;  width:6.2em;&#10;  height:6.2em;&#10;  position: absolute;&#10;  left: 50%;&#10;  margin-left: -3.1em;&#10;  top:50%;&#10;  margin-top: -3.1em;&#10;  border-radius: 50%;&#10;  z-index:10;&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li &#123;&#10;  position: absolute;&#10;  top: 50%;&#10;  left: 50%;&#10;  overflow: hidden;&#10;  margin-top: -1.3em;&#10;  margin-left: -10em;&#10;  width: 10em;&#10;  height: 10em;&#10;  font-size: 1.5em;&#10;  transition: all .3s ease;&#10;  transform: rotate(76deg) skew(60deg);&#10;  transform-origin: 100% 100%;&#10;  pointer-events: none;&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li a &#123;&#10;  position: absolute;&#10;  right: -7.25em;&#10;  bottom: -7.25em;&#10;  display: block;&#10;  width: 14.5em;&#10;  height: 14.5em;&#10;  border-radius: 50%;&#10;  background: #429a67;&#10;  background: radial-gradient(transparent 35%, #429a67 35%);&#10;  color: #fff;&#10;  text-align: center;&#10;  text-decoration: none;&#10;  font-size: 1.2em;&#10;  line-height: 2;&#10;  transition: all .3s ease;&#10;  transform: skew(-60deg) rotate(-75deg) scale(1);&#10;  pointer-events: auto;&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li a span &#123;&#10;  position: relative;&#10;  top: 1.8em;&#10;  display: block;&#10;  font-size: .5em;&#10;  font-weight: 700;&#10;  text-transform: uppercase;&#10;&#125;&#10;&#10;.csstransforms .cn-wrapper li a:hover,&#10;.csstransforms .cn-wrapper li a:active,&#10;.csstransforms .cn-wrapper li a:focus &#123;&#10;    background: radial-gradient(transparent 35%, #449e6a 35%);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>导航栏展开的时候，我们想要第二个演示中的导航项以扇形效果展开。</p>
+<p>为了达到这种效果，我们要将所有导航项定位到同一个位置和角度/倾斜度:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rotate(76deg) skew(60deg).</span><br></pre></td></tr></table></figure>
+<p>使用过度延迟使得导航项能在容器放大后展开。当导航关闭的时候，我们会在容器缩小之前等待导航项缩到一起。</p>
+<p>当展开按钮被点击，我们会通过旋转每一项到圆里面的最终位置展开导航项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.csstransforms .opened-nav &#123;&#10;  border-radius: 50%;&#10;  opacity: 1;&#10;  transition: all .3s ease;&#10;  transform: scale(1);&#10;  pointer-events: auto;&#10;&#125;&#10;&#10;.csstransforms .opened-nav li &#123;&#10;  transition: all .3s ease .3s;&#10;&#125;&#10;&#10;.csstransforms .opened-nav li:first-child &#123;&#10;  transform: rotate(-20deg) skew(60deg);&#10;&#125;&#10;&#10;.csstransforms .opened-nav li:nth-child(2) &#123;&#10;  transform: rotate(12deg) skew(60deg);&#10;&#125;&#10;&#10;.csstransforms .opened-nav  li:nth-child(3) &#123;&#10;  transform: rotate(44deg) skew(60deg);&#10;&#125;&#10;&#10;.csstransforms .opened-nav li:nth-child(4) &#123;&#10;  transform: rotate(76deg) skew(60deg);&#10;&#125;&#10;&#10;.csstransforms .opened-nav li:nth-child(5) &#123;&#10;  transform: rotate(108deg) skew(60deg);&#10;&#125;&#10;&#10;.csstransforms .opened-nav li:nth-child(6) &#123;&#10;  transform: rotate(140deg) skew(60deg);&#10;&#125;&#10;&#10;.csstransforms .opened-nav li:nth-child(7) &#123;&#10;  transform: rotate(172deg) skew(60deg);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>当然， 我们会为不支持的浏览器提供基本的备用样式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;  margin:10em auto;&#10;  overflow:hidden;&#10;  text-align:center;&#10;  padding:1em;&#10;&#125;&#10;.no-csstransforms .cn-wrapper ul&#123;&#10;  display:inline-block;&#10;&#125;&#10;.no-csstransforms li&#123;&#10;  font-size:1em;&#10;  width:5em;&#10;  height:5em;&#10;  float:left;&#10;  line-height:5em;&#10;  text-align:center;&#10;  background-color: #fff;&#10;&#125;&#10;.no-csstransforms li a&#123;&#10;  display:block;&#10;  height:100%;&#10;  width:100%;&#10;  text-decoration: none;&#10;  color: inherit;&#10;&#125;&#10;.no-csstransforms .cn-wrapper li a:hover,&#10;.no-csstransforms .cn-wrapper li a:active,&#10;.no-csstransforms .cn-wrapper li a:focus&#123;&#10;  background-color: #f8f8f8;&#10;&#125;&#10;.no-csstransforms .cn-wrapper li.active a &#123;&#10;  background-color: #6F325C;&#10;  color: #fff;&#10;&#125;&#10;.no-csstransforms .cn-button&#123;&#10;  display:none;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>而且，导航也要是响应式的，因此我们会在小屏幕中缩小它。这里是圆形导航和简单情况的响应式样式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 620px) &#123;&#10;  .no-csstransforms li&#123;&#10;    width:4em;&#10;    height:4em;&#10;    line-height:4em;&#10;  &#125;&#10;&#125;&#10;@media only screen and (max-width: 500px) &#123;&#10;  .no-ccstransforms .cn-wrapper&#123;&#10;    padding:.5em;&#10;  &#125;&#10;  .no-csstransforms .cn-wrapper li&#123;&#10;    font-size:.9em;&#10;    width:4em;&#10;    height:4em;&#10;    line-height:4em;&#10;  &#125;&#10;&#125;&#10;@media only screen and (max-width: 480px) &#123;&#10;  .csstransforms .cn-wrapper&#123;&#10;    font-size: .68em;&#10;  &#125;&#10;  .cn-button&#123;&#10;    font-size:1em;&#10;  &#125;&#10;&#125;&#10;@media only screen and (max-width:420px)&#123;&#10;  .no-csstransforms .cn-wrapper li&#123;&#10;    width:100%;&#10;    height:3em;&#10;    line-height:3em;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>这是你创建这种风格需要用到的几乎所有的样式。</p>
+<p>##Javasctrip</p>
+<p>我们不会为这些演示使用任何框架。 我会使用David De Sandro的<a href="https://github.com/desandro/classie" target="_blank" rel="external">Classie.js</a> 添加或者移出class。并且最终对于不支持<code>addEventListener</code> 和<code>removeEventListener</code> 的浏览器，我们会使用 Jonathan Neal 的 <a href="https://github.com/jonathantneal/EventListener" target="_blank" rel="external">EventListener polyfill</a>。</p>
+<p>我们为两个演示中的按钮添加事件监听。点击按钮或者聚焦到上面都会触发导航栏开启/关闭。</p>
+<p>对于第一个演示，当导航栏展开的时候点击导航栏外面的任何地方都会使它关闭。让我们从第一个演示的JavaScript开始。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;&#10;&#10;  var button = document.getElementById(&#39;cn-button&#39;),&#10;    wrapper = document.getElementById(&#39;cn-wrapper&#39;),&#10;    overlay = document.getElementById(&#39;cn-overlay&#39;);&#10;&#10;  //open and close menu when the button is clicked&#10;  var open = false;&#10;  button.addEventListener(&#39;click&#39;, handler, false);&#10;  button.addEventListener(&#39;focus&#39;, handler, false);&#10;  wrapper.addEventListener(&#39;click&#39;, cnhandle, false);&#10;&#10;  function cnhandle(e)&#123;&#10;    e.stopPropagation();&#10;  &#125;&#10;&#10;  function handler(e)&#123;&#10;    if (!e) var e = window.event;&#10;    e.stopPropagation();//so that it doesn&#39;t trigger click event on document&#10;&#10;      if(!open)&#123;&#10;        openNav();&#10;      &#125;&#10;    else&#123;&#10;        closeNav();&#10;      &#125;&#10;  &#125;&#10;  function openNav()&#123;&#10;    open = true;&#10;      button.innerHTML = &#34;-&#34;;&#10;      classie.add(overlay, &#39;on-overlay&#39;);&#10;      classie.add(wrapper, &#39;opened-nav&#39;);&#10;  &#125;&#10;  function closeNav()&#123;&#10;    open = false;&#10;    button.innerHTML = &#34;+&#34;;&#10;    classie.remove(overlay, &#39;on-overlay&#39;);&#10;    classie.remove(wrapper, &#39;opened-nav&#39;);&#10;  &#125;&#10;  document.addEventListener(&#39;click&#39;, closeNav);&#10;&#10;&#125;)();</span><br></pre></td></tr></table></figure>
+<p>第二个演示的JavaScript和前一个很像，除了为这个案例定制的部分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;&#10;&#10;  var button = document.getElementById(&#39;cn-button&#39;),&#10;    wrapper = document.getElementById(&#39;cn-wrapper&#39;);&#10;&#10;    //open and close menu when the button is clicked&#10;  var open = false;&#10;  button.addEventListener(&#39;click&#39;, handler, false);&#10;  button.addEventListener(&#39;focus&#39;, handler, false);&#10;&#10;  function handler()&#123;&#10;    if(!open)&#123;&#10;      this.innerHTML = &#34;Close&#34;;&#10;      classie.add(wrapper, &#39;opened-nav&#39;);&#10;    &#125;&#10;    else&#123;&#10;      this.innerHTML = &#34;Menu&#34;;&#10;    classie.remove(wrapper, &#39;opened-nav&#39;);&#10;    &#125;&#10;    open = !open;&#10;  &#125;&#10;  function closeWrapper()&#123;&#10;    classie.remove(wrapper, &#39;opened-nav&#39;);&#10;  &#125;&#10;&#10;&#125;)();</span><br></pre></td></tr></table></figure>
+<p>这就是我要说的！我希望你喜欢这个教程并且发现它的价值所在！</p>
+<p class="btns-zone"><a class="btn-demo" href="http://tympanus.net/Tutorials/CircularNavigation/" target="_blank">demo</a><a class="btn-download" href="http://tympanus.net/Tutorials/CircularNavigation/CircularNavigation.zip" target="_blank">download</a></p>
+
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4>陈毅</h4><br>    <p>热爱前端，对英文翻译有高涨的热情，把英语当成一门学问，<br>希望通过翻译国外较为先进的前端文献提高翻译水平的同时为广大前端同志节省翻阅资料的时间。<a href="http://www.cnblogs.com/cy056" target="_blank" rel="external">个人博客</a>,欢迎与同学一起共勉。</p><br></blockquote>
+
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms" target="_blank" rel="external">http://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css3/building-a-circular-navigation-with-css-transforms.html" target="_blank" rel="external">http://www.w3cplus.com/css3/building-a-circular-navigation-with-css-transforms.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/精彩网格式网页设计赏析.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          精彩网格式网页设计赏析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/理解css_shapes的引用框.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">理解CSS Shapes的引用框</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

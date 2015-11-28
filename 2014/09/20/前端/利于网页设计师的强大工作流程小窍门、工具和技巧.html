@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>利于网页设计师的强大工作流程小窍门、工具和技巧 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="设计和开发的工作是比较花耗时间的，尤其当该工程遇到一个新的挑战时，都把整个团队或者自由开发者陷进一个未知的领域。而且，时间是生产力的一个关键因素。有效地工作会提高我们工作竞争力，自我增值。
+然而，对每个工程来说，有一些操作步骤是重复的。为了拥有自由、空间去尝试新的解决方案，我们应该知道有一些操作步骤可以尽可能更快地完成。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利于网页设计师的强大工作流程小窍门、工具和技巧">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/利于网页设计师的强大工作流程小窍门、工具和技巧.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="设计和开发的工作是比较花耗时间的，尤其当该工程遇到一个新的挑战时，都把整个团队或者自由开发者陷进一个未知的领域。而且，时间是生产力的一个关键因素。有效地工作会提高我们工作竞争力，自我增值。
+然而，对每个工程来说，有一些操作步骤是重复的。为了拥有自由、空间去尝试新的解决方案，我们应该知道有一些操作步骤可以尽可能更快地完成。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-2.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-3.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-4.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-5.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-6.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-7.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-8.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-9.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-10.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-11.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-12.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-65.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-13.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-14.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-15.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-16.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-17.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-18.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-19.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-20.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-21.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-22.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-23.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-24.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-25.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-26.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-27.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-28.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-29.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-30.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-31.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-32.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-33.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-34.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-35.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-36.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-37.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-38.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-39.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-40.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-41.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-42.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-43.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-44.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-45.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-46.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-47.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-48.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-49.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-50.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-51.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-52.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-53.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-54.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-55.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-56.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-57.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-58.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-59.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-60.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-61.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-62.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-63.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-64.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:40:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利于网页设计师的强大工作流程小窍门、工具和技巧">
+<meta name="twitter:description" content="设计和开发的工作是比较花耗时间的，尤其当该工程遇到一个新的挑战时，都把整个团队或者自由开发者陷进一个未知的领域。而且，时间是生产力的一个关键因素。有效地工作会提高我们工作竞争力，自我增值。
+然而，对每个工程来说，有一些操作步骤是重复的。为了拥有自由、空间去尝试新的解决方案，我们应该知道有一些操作步骤可以尽可能更快地完成。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/利于网页设计师的强大工作流程小窍门、工具和技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/利于网页设计师的强大工作流程小窍门、工具和技巧.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      利于网页设计师的强大工作流程小窍门、工具和技巧
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>设计和开发的工作是比较花耗时间的，尤其当该工程遇到一个新的挑战时，都把整个团队或者自由开发者陷进一个未知的领域。而且，时间是生产力的一个关键因素。有效地工作会提高我们工作竞争力，自我增值。</p>
+<p>然而，对每个工程来说，有一些操作步骤是重复的。为了拥有自由、空间去尝试新的解决方案，我们应该知道有一些操作步骤可以尽可能更快地完成。<br><a id="more"></a><br>这篇文章内容主要围绕“<a href="http://www.smashingmagazine.com/2013/10/02/powerful-workflow-tips-tools-and-tricks-for-web-designers/#tools" target="_blank" rel="external">工具</a>”、“<a href="http://www.smashingmagazine.com/2013/10/02/powerful-workflow-tips-tools-and-tricks-for-web-designers/#tipsandtricks" target="_blank" rel="external">小窍门和技巧</a>”，将使得你的标准工作流程尽可能地使用得更快，因此你可以为工作中那令人激动的部分腾出更多的时间。</p>
+<p>准备好了吗？让我们开始吧！</p>
+<p>##小窍门和技巧</p>
+<p>###设计工作流程</p>
+<h5 id="我的配色方案的秘密"><a href="http://dribbble.com/shots/166246-My-Secret-for-Color-Schemes" target="_blank" rel="external">我的配色方案的秘密</a></h5><p> Erica Schoonmaker 分享了她匹配颜色和创造一个漂亮的配色方案的技巧。<a href="http://dribbble.com/shots/166246-My-Secret-for-Color-Schemes" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://dribbble.com/shots/166246-My-Secret-for-Color-Schemes" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://instagram.com/p/baskurorL6/" target="_blank" rel="external">有用的对齐方式和间距</a></p>
+<p>Kris Jolls 在元素之间为各种空间创建方块。这样可以减少了时间而且确保一切都是对齐和适当间距的。<a href="http://instagram.com/p/baskurorL6/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://instagram.com/p/baskurorL6/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://justcreative.com/2012/04/17/web-design-workspace-photoshop/" target="_blank" rel="external">终极Photoshop Web设计工作区</a></p>
+<p>Jacob Cass 分享了他在 Photoshop 中如何设置终极Web设计工作区。<a href="http://justcreative.com/2012/04/17/web-design-workspace-photoshop/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://justcreative.com/2012/04/17/web-design-workspace-photoshop" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>###编码工作流程</p>
+<p>#####<a href="https://plus.google.com/+IlyaGrigorik/posts/Ub7xpVssBXw" target="_blank" rel="external">完美的 Sublime Text 2 工作流程</a></p>
+<p>这对所有的 Sublime 用户来说都是不可或缺的。Ilya Grigorik 整合了一个两小时的教程,目的就是使你变成一个 Sublime 高手！<a href="https://plus.google.com/+IlyaGrigorik/posts/Ub7xpVssBXw" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="https://plus.google.com/+IlyaGrigorik/posts/Ub7xpVssBXw" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://www.youtube.com/watch?v=f7AU2Ozu8eo" target="_blank" rel="external">2013开发工作流程</a></p>
+<p>了解现代开发工作流程看起来像什么,从编辑器和插件来创作抽象、测试和DVCS集成。<a href="http://www.youtube.com/watch?v=f7AU2Ozu8eo" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://www.youtube.com/watch?v=f7AU2Ozu8eo" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://dropshado.ws/post/10111941622/vertical-editing" target="_blank" rel="external">垂直编辑</a>（使用TextMate）</p>
+<p>学习一般如何垂直地编辑，特别使用特定的文本编辑器。这是对特定于供应商冗余的属性的最佳实践。<a href="http://dropshado.ws/post/10111941622/vertical-editing" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://dropshado.ws/post/10111941622/vertical-editing" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://bricss.net/post/23292393396/prevent-background-color-bleed-on-touch-screens" target="_blank" rel="external">防止触摸屏上的背景色溢出</a></p>
+<p>添加在你的代码里添加代码 <code>outline: 1px solid #fff</code>来停止背景色在触摸屏上溢出。<a href="http://bricss.net/post/23292393396/prevent-background-color-bleed-on-touch-screens" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://bricss.net/post/23292393396/prevent-background-color-bleed-on-touch-screens" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-7.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+
+<p>#####<a href="http://webdesign.tutsplus.com/tutorials/visuals/quick-tip-rounded-corners-done-right/" target="_blank" rel="external">快速小窍门:正确地做圆角</a></p>
+<p>使用不当的嵌套边角是一个坏的细节，足以摧毁成千上万的设计。要学习如何去正确地完成。<a href="http://webdesign.tutsplus.com/tutorials/visuals/quick-tip-rounded-corners-done-right/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://webdesign.tutsplus.com/tutorials/visuals/quick-tip-rounded-corners-done-right" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-8.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="https://coderwall.com/p/zbc2zw" target="_blank" rel="external">//<em>/</em>///*/注释切换技巧</a></p>
+<p>这是一个小窍门使得开发过程更快。但不适合来生产代码。<a href="https://coderwall.com/p/zbc2zw" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="https://coderwall.com/p/zbc2zw" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-9.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://sunpig.com/martin/archives/2012/03/25/outdenting-properties-for-debug-css.html" target="_blank" rel="external">Outdenting Properties for Debugging CSS</a></p>
+<p>Martin Sutherland 通常会添加大量的属性来找出阅读全文的组合。在工程正式上线之前，这里有一些技巧来删除这些属性。<a href="http://sunpig.com/martin/archives/2012/03/25/outdenting-properties-for-debug-css.html" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://sunpig.com/martin/archives/2012/03/25/outdenting-properties-for-debug-css.html" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-10.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://css-tricks.com/favicons-next-to-external-links/" target="_blank" rel="external">外部链接旁边的图标</a></p>
+<p>显示相应的链接和旁边的外部图标的一个小窍门就是可以使用简单的轻量级jQuery。<a href="http://css-tricks.com/favicons-next-to-external-links/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://css-tricks.com/favicons-next-to-external-links" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-11.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://www.igvita.com/slides/2012/devtools-tips-and-tricks/" target="_blank" rel="external">开发工具的小窍门和技巧</a></p>
+<p>这些幻灯片包括增强性能的技巧和窍门。你会惊讶Chrome开发工具所能做的事情（使用箭头键头来浏览幻灯片）。<a href="http://www.igvita.com/slides/2012/devtools-tips-and-tricks" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://www.igvita.com/slides/2012/devtools-tips-and-tricks" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-12.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://tarantsov.com/blog/2012/02/sublime-text-workflow-that-beats-coda-and-espresso/" target="_blank" rel="external">Sublime Text 工作流程击败 Coda 和 Esprsso</a></p>
+<p>Andrey Tarantsov 讲述关于他如何转向使用 Sublime Text 2的经历，并且搭建起工作流程平台来击败像Coda 和 Esprsso这类传统开发工具。观看视频或者<a href="http://tarantsov.com/blog/2012/02/sublime-text-workflow-that-beats-coda-and-espresso/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://tarantsov.com/blog/2012/02/sublime-text-workflow-that-beats-coda-and-espresso/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-65.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://www.css-101.org/articles/trick-for-rapid-prototyping/" target="_blank" rel="external">加速CSS原型制作</a></p>
+<p>这是一个简单的技巧来覆盖你正在写样式的网格或者页面上一个模型。它允许你直接地在浏览器里编辑内容，并且可以看到布局是如何依赖于文本中各种线条。<a href="http://www.css-101.org/articles/trick-for-rapid-prototyping/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://www.css-101.org/articles/trick-for-rapid-prototyping/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-13.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://durdn.com/blog/2012/12/05/git-12-curated-git-tips-and-workflows/" target="_blank" rel="external">Git:12条策划技巧和来自实战中的工作流程</a></p>
+<p>使用Git的12个简单方法，包括：使用“git diff” ,设置一个全局代理服务器，并且克隆一个指定的分支。<a href="http://durdn.com/blog/2012/12/05/git-12-curated-git-tips-and-workflows" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://durdn.com/blog/2012/12/05/git-12-curated-git-tips-and-workflows" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-14.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>####<a href="http://css-tricks.com/the-javascript-ah-ha-moment/" target="_blank" rel="external">JavaScript的‘Ah ha!’时刻</a></p>
+<p>这篇文章收集了人们的JavaScript‘Ah ha!’时刻——那就是，他们学习一些知识的时刻，使得JavaScript点击它们。<a href="http://css-tricks.com/the-javascript-ah-ha-moment/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://css-tricks.com/the-javascript-ah-ha-moment" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-15.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>这里就有一些文章可以帮助提高你的编码工作流程的：</p>
+<ul>
+<li><a href="http://bassam.co//2012/09/21/Sublime-Text-My-workflow-and-useful-resources/" target="_blank" rel="external">Sublime Text: 我的工作流程和有用的资源</a>： Bassam Ismail分享他的Sublime Text 工作流程。这是一个列表风格的文章,你可以进行快速预览。<a href="http://bassam.co//2012/09/21/Sublime-Text-My-workflow-and-useful-resources/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://daverupert.com/2012/04/uncle-daves-ol-padded-box/" target="_blank" rel="external">Uncle Dave的OI填充盒子</a>：一个帮助Dave Rupert解决响应式设计工作方案的技巧。<a href="http://daverupert.com/2012/04/uncle-daves-ol-padded-box/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://jeffcroft.com/blog/2012/feb/23/many-ways-to-use-css-preprocessors/" target="_blank" rel="external">CSS预处理器的处理方法</a>：Jeff Croft收集了处理CSS的预处理器的不同方法和相关比较。<a href="http://jeffcroft.com/blog/2012/feb/23/many-ways-to-use-css-preprocessors/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://keegan.st/2012/06/03/find-in-files-with-css-selectors/" target="_blank" rel="external">在文件中找到CSS选择器</a>：元素查找器在工程中寻找指定的CSS选择器——例如，<code>.layout-fluid #sidebar</code>——然后会列出包含关键字的文件出来。<a href="http://keegan.st/2012/06/03/find-in-files-with-css-selectors/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://remysharp.com/2012/12/21/my-workflow-never-having-to-leave-devtools/" target="_blank" rel="external">我的工作流程:永远使用chrome开发工具</a>：Remy Sharp 分享了他的工作流程从头到尾都没有离开chrome开发工具。<a href="http://remysharp.com/2012/12/21/my-workflow-never-having-to-leave-devtools/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://dev.hubspot.com/blog/bulletproof-demos" target="_blank" rel="external">Bulletproof Demos</a>：记录模式让你记录每个chrome请求。回放模式支持记录在缓存中请求回放。它记录里不仅是你在哪里点击或从哪里打开,而是通过网线的每个请求。<a href="http://dev.hubspot.com/blog/bulletproof-demos" target="_blank" rel="external">阅读全文</a>。</li>
+</ul>
+<p>###OS PRODUCTIVITY</p>
+<p>#####<a href="http://dferg.us/" target="_blank" rel="external">Alfred 工作流程的小窍门和技巧</a></p>
+<p>David Ferguson 分享了工作的小窍门和技巧。<a href="http://dferg.us" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://dferg.us" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-16.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://matt.might.net/articles/ssh-hacks/" target="_blank" rel="external">SSH:超越安全Shell</a></p>
+<p>本文涵盖了不太常见的SSH使用情况,如使用无密码、密钥的登录,设置本地中每台主机的配置,通过防火墙输出一个本地服务,通过防火墙访问远程服务和阅读全文操作。<a href="http://matt.might.net/articles/ssh-hacks" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://dferg.us" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-17.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<ul>
+<li><a href="http://apple.stackexchange.com/questions/400/please-share-your-hidden-os-x-features-or-tips-and-tricks" target="_blank" rel="external">分享你隐藏起来的OS X功能或巧门和技巧</a>：这是一个一系列OS X功能或巧门和技巧的线程，目前已有126条评论，你也可以留下评论。<a href="http://apple.stackexchange.com/questions/400/please-share-your-hidden-os-x-features-or-tips-and-tricks" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="https://github.com/isometry/alfredworkflows" target="_blank" rel="external">Alfred 工作流程</a>：你会发现各种各样的工作流程，包括通过任意shell命令的UNIX手册页搜索和过滤文本。<a href="https://github.com/isometry/alfredworkflows" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://mmb.pcb.ub.es/~carlesfe/unix/tricks.txt" target="_blank" rel="external">技巧</a>： 这是 Carles Fenollosa 收集各方面领域技巧的集合。领域包括bash、伪名为常用长指令，VIM，工具和网络。 <a href="http://mmb.pcb.ub.es/~carlesfe/unix/tricks.txt" target="_blank" rel="external">阅读全文</a>。</li>
+</ul>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="https://gist.github.com/vasilisvg/2415901" target="_blank" rel="external">每天自动地把工程文件同步到Dropbox</a>：这个脚本使得Dropbox很容易备份文件，它也允许你新建文件夹，从今天开始备份你的文件，防止数据丢失。<a href="https://gist.github.com/vasilisvg/2415901" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://hardware.slashdot.org/story/11/05/01/1625208/Ask-Slashdot-How-Do-You-File-Paper-Documents-At-Home" target="_blank" rel="external">问Slashdot:你在家怎么把纸质文件归档</a>：你在家怎么把纸质文件归档？这个讨论包含如何去组织你的文档在这个数字时代。<a href="http://hardware.slashdot.org/story/11/05/01/1625208/Ask-Slashdot-How-Do-You-File-Paper-Documents-At-Home" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://www.labnol.org/internet/print-from-mobile-phones/" target="_blank" rel="external">从任何一部使用Dropbox的手机上打印文件</a>:这种方法将帮助你打印文件、电子邮件、照片、PDF文件和阅读全文的把移动电话和平板电脑连到你的打印机。所有你需要的是一台打印机连接到电脑和移动设备，然后发送打印命令。这是将花费你的钱的官方app程序很好的替代。<a href="http://www.labnol.org/internet/print-from-mobile-phones/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://dlo.me/archives/2010/01/24/when-to-buy-airline-tickets/" target="_blank" rel="external">什么时候买机票</a>：正在计划你下一个旅程？Dan Loewenherz做过关于最好时间购买机票的调查和解释了如何去做一个对自己的分析。他已经<a href="http://dlo.me/archives/2010/08/01/flying-on-the-cheap/" target="_blank" rel="external">写</a>两篇<a href="http://dlo.me/archives/2010/05/23/flight-ticket-distribution/" target="_blank" rel="external">连续</a>的文章。<a href="http://dlo.me/archives/2010/01/24/when-to-buy-airline-tickets/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://stackoverflow.com/questions/17527870/how-does-trello-access-the-users-clipboard" target="_blank" rel="external">Trello如何访问用户的剪贴板？</a>: 当你在Trello里悬停一个卡片并且同时按下<code>Ctrl+ c</code>，那么这个卡片的<code>URL</code>就被<code>copy</code>到你的剪贴板上了。Trello如何做到这些？从这篇文章可以找到答案。<a href="http://stackoverflow.com/questions/17527870/how-does-trello-access-the-users-clipboard" target="_blank" rel="external">阅读全文</a>。</li>
+</ul>
+<p>##工具</p>
+<p>###合作</p>
+<p>#####<a href="http://timezoneslider.com/" target="_blank" rel="external">TimeZoneSlider</a></p>
+<p>世界各地时间同步可能会非常麻烦。这个工具可以让你添加自己的名字和其他成员的定位，然后找出最佳的开会时间。发送同步时间信息给别人就不会对时间转化错误感到难受。<a href="http://timezoneslider.com" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://timezoneslider.com" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-18.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+
+<p>#####<a href="http://www.worldtimebuddy.com/" target="_blank" rel="external">World Time Buddy</a></p>
+<p>World Time Buddy 是一种介于时区转换器,一个世界时钟转换器和一个在线会议调度程序的应用。它也是一个在线生产力工具对于那些经常发现自己旅行,在飞行中,在在线会议或只打电话国外的朋友和家人。 <a href="http://www.worldtimebuddy.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://www.worldtimebuddy.com" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-19.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://www.doodle.com/" target="_blank" rel="external">Doodle</a></p>
+<p>Doodle是最值得推荐了，它是一个查找和编排日程非常容易而且并不复杂的工具，可以说适合任何人——也只是通过一个email就行了。<a href="http://www.doodle.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://www.doodle.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-20.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="https://medium.com/look-what-i-made/5ee6ae2b1dcc" target="_blank" rel="external">如何解决在团队‘分享巨大的设计文件’问题</a><br>这篇文章是关于BitTorrent如何可以在团队成员之间同步大文件。克服关键问题是如何在设计师之间、设计师和开发者之间共享文件和如何解决故障点。<a href="https://medium.com/look-what-i-made/5ee6ae2b1dcc" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="https://medium.com/look-what-i-made/5ee6ae2b1dcc" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-21.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://screenhero.com/" target="_blank" rel="external">Screenhero</a></p>
+<p>Screenhero是另一个工具可以协作电脑屏幕操作。最大的一个优点就是,每个用户有自己的鼠标,每个用户都可以控制屏幕操作。<a href="http://screenhero.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://screenhero.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-22.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+
+<p>###PRODUCTIVITY</p>
+<p>#####<a href="http://sofresh.redpik.net/" target="_blank" rel="external">SoFresh: 自动刷新浏览器</a><br>SoFresh是一个CSS刷新书签。它允许您选择哪些文件来刷新。这个文件是更新每次你保存文件。因此,你不需要去刷新你的浏览器。<a href="http://sofresh.redpik.net/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://sofresh.redpik.net/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-23.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://mizage.com/divvy/" target="_blank" rel="external">Divvy</a></p>
+<p>Divvy是一种新的方式来管理你的工作空间。它使你能够快速，高效地“Divvy up”你的屏幕转变为多个精确的屏幕。<a href="http://mizage.com/divvy/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://mizage.com/divvy/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-24.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>####<a href="http://shortcatapp.com/" target="_blank" rel="external">Shortcat ：用于Mac OS X的键盘生产力应用程序</a></p>
+<p>你的手从键盘移到鼠标平均需要三秒钟，点击一次，然后y又回到键盘。 Shortcat用于Mac OS X上的一个键盘工具，可以让你的双手留在键盘上，节省了时间和精力。<a href="http://shortcatapp.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://shortcatapp.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-25.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://www.thethinkerbot.com/" target="_blank" rel="external">Thinkerbot</a></p>
+<p>逻辑是创意的敌人。这个应用程序通过抓住了流式纯互联网的随机性，注入非线性灵感到任何的头脑风暴。<a href="http://www.thethinkerbot.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://www.thethinkerbot.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-26.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://www.irradiatedsoftware.com/sizeup/" target="_blank" rel="external">SizeUp</a></p>
+<p>SizeUp允许您快速使用键盘快捷键或一个方便的菜单栏图标来调节窗口的大小和位置。<a href="http://www.irradiatedsoftware.com/sizeup/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://www.irradiatedsoftware.com/sizeup/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-27.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="https://shinyplasticbag.com/dragondrop/index.html" target="_blank" rel="external">DragonDrop</a></p>
+<p>DragonDrop可以让你拖拽下来，让你找到目标，而不必担心一定要按住鼠标按钮。<a href="https://shinyplasticbag.com/dragondrop/index.html" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="https://shinyplasticbag.com/dragondrop/index.html" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-28.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+
+<p>#####<a href="https://github.com/jigish/slate" target="_blank" rel="external">Slate</a><br>Slate是一个窗口管理应用程序，类似于divvy 和 SizeUp，但是使用更加自由和限制较少。它试图通过配置来克服其局限性。<a href="https://github.com/jigish/slate" target="_blank" rel="external">阅读全文</a>。</p>
+<p>###利用云</p>
+<p>#####<a href="http://www.sortmybox.com/" target="_blank" rel="external">SortMyBox</a></p>
+<p>SortMyBox使用起来就好像电子邮件过滤器，但只是对你的Dropbox文件。它神奇地根据你定的规则移动文件到文件夹。<a href="http://www.sortmybox.com/" target="_blank" rel="external">阅读全文</a></p>
+<p><a href="http://www.sortmybox.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-29.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="https://servus.io/" target="_blank" rel="external">SERVUS ：Mac和Dropbox专用</a></p>
+<p>你分享文件时，赋予你的文件一些意义和一个漂亮的布局。 Mac下的SERVUS可以轻松到Dropbox下载文件到自己的电脑上。<a href="https://servus.io/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="https://servus.io/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-30.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="https://sendtodropbox.com/" target="_blank" rel="external">发送到Dropbox</a><br><br>你曾经是否梦想过把文件放置到你的Dropbox上？有了这个工具，就可以实现这个梦想了。你需要做的就是登录到Dropbox，然后得到唯一的电子邮件地址，并开始发送文件。<a href="https://sendtodropbox.com/" target="_blank" rel="external">阅读全文</a>。<br><br><p><a href="https://sendtodropbox.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-31.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://webdesign.tutsplus.com/tutorials/workflow-tutorials/quick-tip-versioning-your-graphics-files-with-dropbox/" target="_blank" rel="external">用Dropbox来更新图形文件</a></p>
+<p>这个快速教程介绍如何可以通过Dropbox版本的图形文件。<a href="http://webdesign.tutsplus.com/tutorials/workflow-tutorials/quick-tip-versioning-your-graphics-files-with-dropbox/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://webdesign.tutsplus.com/tutorials/workflow-tutorials/quick-tip-versioning-your-graphics-files-with-dropbox/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-32.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="https://itunes.apple.com/us/app/droptunes/id457961485" target="_blank" rel="external">DropTunes</a></p>
+<p>使用这个小应用程序可以创建自己的音乐流媒体服务。 DropTunes从Dropbox上读取流音乐 。曲目添加到您的播放器，并且可以浏览正在播放的歌曲。<a href="https://itunes.apple.com/us/app/droptunes/id457961485" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="https://itunes.apple.com/us/app/droptunes/id457961485" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-33.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="https://www.sidecloudload.com/" target="_blank" rel="external">sideCLOUDload</a></p>
+<p>此工具可以将文件直接从URL发送到云存储中（目前，可以使用Dropbox和电子邮件），而不需要下载。最大的好处就是当你发现好东西的时候，可以节省带宽。<a href="https://www.sidecloudload.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="https://www.sidecloudload.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-34.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<ul>
+<li><a href="http://wordpress.org/plugins/post-via-dropbox/" target="_blank" rel="external">通过Dropbox发布</a>:这个WordPress插件允许在你的博客上发布和编辑文本文件,然后通过Dropbox上传。<a href="http://wordpress.org/plugins/post-via-dropbox/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="https://www.site44.com/" target="_blank" rel="external">Site44</a>: Site44将Dropbox的文件夹到网站。您可以编辑本地的HTML ，这样，你的网站将永远是最新的。<a href="https://www.site44.com/" target="_blank" rel="external">阅读全文</a>。</li>
+</ul>
+<p>###设计，颜色和图像工具</p>
+<p>#####<a href="http://hexcolortool.com/" target="_blank" rel="external">Hex Color Tool</a><br>Hex是一个颜色的工具，可以自动显示任何十六进制颜色。<a href="http://hexcolortool.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://hexcolortool.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-35.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://guideguide.me/" target="_blank" rel="external">GuideGuide</a><br>GuideGuide很方便地在Photoshop处理网格。像素精确的列，行，中点和基线可以创建基于文档或选择点击一个按钮。Guide工具集可以被保存起来，以便重复使用。<a href="http://guideguide.me/" target="_blank" rel="external">阅读全文</a>。<br><p><a href="http://guideguide.me/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-36.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://colorblendy.com/" target="_blank" rel="external">ColorBlendy</a><br><br>曾经流行Photoshop只是乘以几个颜色？ ColorBlendy能很容易在你的浏览器做到这一点。<a href="http://colorblendy.com/" target="_blank" rel="external">阅读全文</a>。<br><p><a href="http://colorblendy.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-37.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://www.ginifab.com/feeds/pms/cmyk_to_pantone.php" target="_blank" rel="external">CMYK to Pantone</a><br>输入一个CMYK颜色代码，这个工具将计算出接近哪个Pantone颜色值。<a href="http://www.ginifab.com/feeds/pms/cmyk_to_pantone.php" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://www.ginifab.com/feeds/pms/cmyk_to_pantone.php" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-38.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+
+<p>#####<a href="http://even.li/imagemagick-sharp-web-sized-photographs/" target="_blank" rel="external">ImageMagick</a><br>ImageMagick是一个命令行程序，可以完成许多操作，快速和高品质的图像。这是特别有用的，生成缩略图，调整大小和图像锐化等<a href="http://even.li/imagemagick-sharp-web-sized-photographs/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://even.li/imagemagick-sharp-web-sized-photographs/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-39.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+
+<p>###开发和测试</p>
+<p>#####<a href="http://blog.hull.io/post/47939445232/reconciling-svg-and-icon-fonts" target="_blank" rel="external">协调SVG(可伸缩向量图形)和图标字体</a><br>这是首次三篇系列讲述关于SVG的文章。Romain在Hull大学中解释如何建立一个强大的设计工作流程，从设计草图到图标字体，全部都实现了自动化。文章的第二部分说明如何解剖这些字体及其组件。文章的第三部分展示了用sprites和Photoshop如何做同样的事情。<a href="http://blog.hull.io/post/47939445232/reconciling-svg-and-icon-fonts" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://blog.hull.io/post/47939445232/reconciling-svg-and-icon-fonts" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-40.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://docs.emmet.io/" target="_blank" rel="external">Emmet 文档</a><br><br>Emmet（以前被称为Zen Coding）是一个Web开发工具包，可以大大提高您的HTML和CSS的工作流程程。<a href="http://docs.emmet.io/" target="_blank" rel="external">阅读全文</a>。<br><br><p><a href="http://docs.emmet.io/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-41.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://alias.sh/most-popular/usage" target="_blank" rel="external">Alias</a><br>Alias 使您可以管理所有网上的别名，浏览别人提交酷的别名列表。因此，当你运行一个简单的命令来复制你的别名你的个人资料上时，应该要求它们。<a href="http://alias.sh/most-popular/usage" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://alias.sh/most-popular/usage" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-42.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://anvilformac.com/" target="_blank" rel="external">Anvil</a><br>Anvil是一个用于管理本地网站的菜单栏应用程序。这就需要你的网站和使用<code>.devURL</code>在本地上运行起来，而不需要你改变系统级配置文件或者在终端做出一些hack。<a href="http://anvilformac.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://anvilformac.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-43.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://mir.aculo.us/dom-monster/" target="_blank" rel="external">DOM Monster</a><br>DOM Monster是一个跨平台，跨浏览器的书签，将分析你的页面的DOM和其他功能，给你提出优化页面的方案。<a href="http://mir.aculo.us/dom-monster/" target="_blank" rel="external">阅读全文</a>。<br><p><a href="http://mir.aculo.us/dom-monster/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-44.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="https://github.com/padolsey/prettyPrint.js" target="_blank" rel="external">prettyPrint.js</a><br>prettyPrint.js是在浏览器中JavaScript变量翻车机，在功能上与ColdFusion的cfdump标签相类似。<a href="https://github.com/padolsey/prettyPrint.js" target="_blank" rel="external">阅读全文</a>。<br><br><p><a href="https://github.com/padolsey/prettyPrint.js" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-45.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://huddle.github.io/Resemble.js/" target="_blank" rel="external">Resemble.js</a><br>Resemble.js分析和比较HTML5图像画布和JavaScript 。它可以被用来对任意图像的分析和比较，需要有浏览器才能使用。<a href="http://huddle.github.io/Resemble.js/" target="_blank" rel="external">阅读全文</a>。<br><br><p><a href="http://huddle.github.io/Resemble.js/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-46.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="https://github.com/juliangruber/review" target="_blank" rel="external">Review</a><br>大的更新，可能对响应式设计网站来说是一个麻烦。你永远不知道变化是否会打破任何东西。此工具在所有不同分辨率下得到正在运行网站的截图，然后你就可以发现任何问题啦。<a href="https://github.com/juliangruber/review" target="_blank" rel="external">阅读全文</a>。<br><p><a href="https://github.com/juliangruber/review" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-47.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://www.browserstack.com/" target="_blank" rel="external">BrowserStack</a><br>BrowserStack为你提供对所有桌面和移动浏览器的即时访问来很好地测试你设计的兼容性，尤其是你买不起许多设备。<a href="http://www.browserstack.com/" target="_blank" rel="external">阅读全文</a>。<br><br><p><a href="http://www.browserstack.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-48.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://www.zippopotam.us/" target="_blank" rel="external">Zippopotamus</a><br>Zippopotamus很容易使得ZIP编码与邮政编码工作起来。它提供了一个免费的API JSON响应格式，支持超过60个国家和地区，是完美的自动完成和开放的资源和贡献。<a href="http://www.zippopotam.us/" target="_blank" rel="external">阅读全文</a>。<br><p><a href="http://www.zippopotam.us/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-49.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>这里有阅读全文的开发和测试工具：<br>- <a href="http://blogs.perl.org/users/smylers/2011/08/ssh-productivity-tips.html" target="_blank" rel="external">SSH可以做到这一点？高效工作的技巧与远程服务器工作</a>: SSH有很多功能对经常访问远程服务器上文件是很有帮助的。如果你经常使用SSH，值得花一点时间了解这些配置，使生活更轻松。<a href="http://blogs.perl.org/users/smylers/2011/08/ssh-productivity-tips.html" target="_blank" rel="external">阅读全文</a>。<br>- <a href="http://www.laszlo.nu/post/553591402/how-to-kill-an-unresponsive-ssh-session" target="_blank" rel="external">如何终止一个没反应的SSH会话</a>:当活跃的SSH会话停止响应时，需要学习一些技巧。失去连接时，按<code>Ctrl + C</code>键是不起作用的。<a href="http://www.laszlo.nu/post/553591402/how-to-kill-an-unresponsive-ssh-session" target="_blank" rel="external">阅读全文</a>。<br>- <a href="http://snoopy.allmarkedup.com/" target="_blank" rel="external">Snoopy</a>: Snoopy是一个网页书签。它适用于使用移动浏览器但没有一个“查看源文件”选项。您可能也会发现它在pc端浏览器中很有用。<a href="http://snoopy.allmarkedup.com/" target="_blank" rel="external">阅读全文</a>。<br>- <a href="http://catapulty.com/" target="_blank" rel="external">Catapulty</a>: 这款小工具好像作为一个浏览器桥梁的编码器。一旦安装设置好，跨所有浏览器共享相同的URL变得简单。<a href="http://catapulty.com/" target="_blank" rel="external">阅读全文</a>。<br>- <a href="http://gridwax.gs/" target="_blank" rel="external">Gridwax</a>: 一个简单的垂直网格叠加在任何网站上的工具。只使用<code>Shift</code>和箭头键将其拖动到书签栏和调整的垂直间距。<a href="http://gridwax.gs/" target="_blank" rel="external">阅读全文</a>。<br>- <a href="http://stevesouders.com/mobileperf/mobileperfbkm.php" target="_blank" rel="external">Mobile Perf</a>: 移动Web开发是很具有挑战性的。Mobile Perf显示一个带有链接的菜单加载其他的书签，包括Firebug Lite，网页资源， 怪物DOM， SpriteMe 和 CSSess。<a href="http://stevesouders.com/mobileperf/mobileperfbkm.php" target="_blank" rel="external">阅读全文</a>。<br>- <a href="https://github.com/jstayton/version.js" target="_blank" rel="external">Version.js</a>: Version.js是一个工具，用于测试不同的脚本版本与交换机的一个查询字符串。<a href="https://github.com/jstayton/version.js" target="_blank" rel="external">阅读全文</a>。<br>- <a href="http://bricss.net/post/22198838298/easily-checking-in-javascript-if-a-css-media-query-has" target="_blank" rel="external">如果一个CSS媒体查询已执行，在JavaScript中轻松检查到</a>: 使用响应式开发的技巧，如果一个CSS媒体查询已执行，在JavaScript中轻松检查到。<a href="http://bricss.net/post/22198838298/easily-checking-in-javascript-if-a-css-media-query-has" target="_blank" rel="external">阅读全文</a>。<br>- <a href="http://stackoverflow.com/questions/15551287/how-to-test-a-website-for-retina-on-windows-without-an-actual-retina-display/17228135#17228135" target="_blank" rel="external">如何在Windows上测试一个retina网站但又没有Retina显示屏呢？</a>: 在Firefox浏览器中，在地址栏输入<code>about:config</code>，找到<code>layout.css.devPixelsPerPx</code>，然后将其更改为您所需的比例（正常为1 ， 视网膜为2等）。然后刷新页面，你就完成设置了！<a href="http://stackoverflow.com/questions/15551287/how-to-test-a-website-for-retina-on-windows-without-an-actual-retina-display/17228135#17228135" target="_blank" rel="external">阅读全文</a>。<br><br>###小帮手<br>#####<a href="http://stylemanual.org/" target="_blank" rel="external">样式手册</a><br>英语不是你的第一语言？由安迪·泰勒编写的参考文件将帮助你找到样式相关问题合适的答案。<a href="http://stylemanual.org/" target="_blank" rel="external">阅读全文</a>。<br><p><a href="http://stylemanual.org/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-50.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://13bills.com/" target="_blank" rel="external">13 Bills</a><br><br>这是很好的工具，对复杂条例草案进行分割。当你需要分割草案时，在有限的时间内是非常方便的。<a href="http://13bills.com/" target="_blank" rel="external">阅读全文</a>。<br><br><p><a href="http://13bills.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-51.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://upl.codeq.info/" target="_blank" rel="external">The Universal Packing List</a></p>
+<p>在你的下次旅行（时间限制，气候，性别，住宿，孩子们，旅途的类型，活动，交通运输和包大小）的细节中，这个工具会告诉你应该收拾什么。<a href="http://upl.codeq.info/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://upl.codeq.info/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-52.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://toki-woki.net/lab/long-press/" target="_blank" rel="external">Long Press</a><br>这个工具模拟备选字符的选择，当你在Android和iOS上的按下键盘的时候。<a href="http://toki-woki.net/lab/long-press/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://toki-woki.net/lab/long-press/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-53.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://sejda.com/" target="_blank" rel="external">Sejda</a><br><br>Sejda是一个伟大的在线处理PDF文件工具。它有许多先进的功能，包括合并，拆分和组合。<a href="http://sejda.com/" target="_blank" rel="external">阅读全文</a>。<br><p><a href="http://sejda.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-54.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://createmyinvoice.com/" target="_blank" rel="external">CreateMyInvoice</a><br><br>如果你需要一个快速和简单的发票，这个工具将原始数据转换成一个像样的发票。该工具每月提供5个免费发票。<a href="http://createmyinvoice.com/" target="_blank" rel="external">阅读全文</a>。<br><p><a href="http://createmyinvoice.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-55.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="https://www.statuspage.io/" target="_blank" rel="external">StatusPage.io</a></p>
+<p>StatusPage.io当服务器经历了宕机时而起作用的工具。活动事件在页面顶部突出显示给游客看到当他们arrive。<a href="https://www.statuspage.io/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="https://www.statuspage.io/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-56.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://beathound.com/" target="_blank" rel="external">Beathound</a></p>
+<p>音乐爱好者的好东西。反馈你的iTunes资料库中的XML文件，并从您最喜爱的艺术家的新版本中得到的每周更新。<a href="http://beathound.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://beathound.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-57.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://www.syncios.com/" target="_blank" rel="external">Syncios</a><br>此工具转换您最喜爱的音乐或铃声为MP3，M4A， M4R或CAF格式，将视频转换为MP4 ， M4V ， MOV格式。此外，还包括其他方便的功能，是值得去看看。<a href="http://www.syncios.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://www.syncios.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-58.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://skrivr.com/" target="_blank" rel="external">Skrivr</a></p>
+<p>这是针对谁不想看到杂乱的写作界面，使出版复杂的极简主义。 Skrivr让你写，保存和发布你的写作。<a href="http://skrivr.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://skrivr.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-59.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://dev.umpirsky.com/list-of-all-countries-in-all-languages-and-all-data-formats/" target="_blank" rel="external">所有国家的所有的语言，所有的数据格式列表</a></p>
+<p>这是一个很好的资源，列出了所有国家在所有的语言和所有的数据格式。<a href="http://dev.umpirsky.com/list-of-all-countries-in-all-languages-and-all-data-formats/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://dev.umpirsky.com/list-of-all-countries-in-all-languages-and-all-data-formats/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-60.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<ul>
+<li><a href="https://github.com/genericsteele/token_phrase" target="_blank" rel="external">TokenPhrase</a>: TokenPhrase是一个产生独特的词组在您的应用程序使用令牌。<a href="https://github.com/genericsteele/token_phrase" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://www.linkrr.com/" target="_blank" rel="external">Linkrr Linkrr</a>是一个小工具，将多个无法点击的链接变成可点击的链接。一旦你收集了所有链接， Linkrr可以打开它们，只有一点击。在某些情况下，你就必须禁用弹出式窗口拦截。<a href="http://www.linkrr.com/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="https://addons.mozilla.org/en-us/firefox/addon/linkchecker/" target="_blank" rel="external">LinkChecker</a> 这种评级高和流行的Firefox附加插件来测试任何Web页面上的链接的有效性。<a href="https://addons.mozilla.org/en-us/firefox/addon/linkchecker/" target="_blank" rel="external">阅读全文</a>。</li>
+</ul>
+<p>###有用的Chrome扩展</p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/tab-wrangler/egnjhciaieeiiohknchakcodbpgjnchh?hl=en" target="_blank" rel="external">Tab Wrangler</a>: Tab Wrangler自动关闭非活动状态的标签，但很容易返回。它的工作原理类似于Firefox标签的AuToClose 。<a href="https://chrome.google.com/webstore/detail/tab-wrangler/egnjhciaieeiiohknchakcodbpgjnchh?hl=en" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="https://chrome.google.com/webstore/detail/responsive-inspector/memcdolmmnmnleeiodllgpibdjlkbpim" target="_blank" rel="external">Responsive Inspector</a>: Responsive Inspector是一个简单的Chrome扩展，可以让你查看所访问网站的媒体查询。对开发响应式布局时是非常有用的，因为它直观地显示了定义样式中的方法。<a href="https://chrome.google.com/webstore/detail/responsive-inspector/memcdolmmnmnleeiodllgpibdjlkbpim" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="https://chrome.google.com/webstore/detail/shortcut-manager/mgjjeipcdnnjhgodgjpfkffcejoljijf" target="_blank" rel="external">Shortcut Manager</a> 有了这个扩展，改变浏览器bookmarklet或JavaScript的默认快捷键和热键。就像在Firefox Keyconfig 。<a href="https://chrome.google.com/webstore/detail/shortcut-manager/mgjjeipcdnnjhgodgjpfkffcejoljijf" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="https://chrome.google.com/webstore/detail/auto-login/oeoibdmcpaofjgcdncagknlmlmngkgfm" target="_blank" rel="external">Auto Login</a> 您的浏览器已经填写你的用户名和密码，那么为什么帮忙点击“提交”呢？这个工具会自动登录已经保存的密码的网站。<a href="https://chrome.google.com/webstore/detail/auto-login/oeoibdmcpaofjgcdncagknlmlmngkgfm" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://tin.cr/" target="_blank" rel="external">Tincr Tincr</a>让您在Chrome开发工具中编辑和保存文件。它支持重新刷新，自动保存文件。Mac ，Windows和Linux系统平台都可以使用。<a href="http://tin.cr/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://www.one-tab.com/" target="_blank" rel="external">OneTab</a>: OneTab是适合任何人往往在Chrome中打开太多标签。它可以节省95％的内存，并最大限度地减少杂质成一个标签。<a href="http://www.one-tab.com/" target="_blank" rel="external">阅读全文</a>。</li>
+</ul>
+<p>##最后点击</p>
+<p>#####<a href="https://chrome.google.com/webstore/detail/tab-wrangler/egnjhciaieeiiohknchakcodbpgjnchh?hl=en" target="_blank" rel="external">Browser Pong</a><br>这里是一个尝试扩大你是怎么想的浏览器的思维。Browser Pong在多个打开的窗口当中。Browser Pong跳出框框思考。<a href="https://chrome.google.com/webstore/detail/tab-wrangler/egnjhciaieeiiohknchakcodbpgjnchh?hl=en" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="https://chrome.google.com/webstore/detail/tab-wrangler/egnjhciaieeiiohknchakcodbpgjnchh?hl=en" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-61.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://www.smashingmagazine.com/2012/12/22/talks-to-help-you-become-a-better-front-end-engineer-in-2013/" target="_blank" rel="external">2013年，交流会谈帮助你成为一个更好的前端工程师</a><br><br>Addy Osmani 今年得到了很多帮助。他们分享的建议将使你学到阅读全文的知识，以成为一个更好的前端工程师。<a href="http://www.smashingmagazine.com/2012/12/22/talks-to-help-you-become-a-better-front-end-engineer-in-2013/" target="_blank" rel="external">阅读全文</a>。<br><br><p><a href="http://www.smashingmagazine.com/2012/12/22/talks-to-help-you-become-a-better-front-end-engineer-in-2013/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-62.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>#####<a href="http://usesthis.com/" target="_blank" rel="external">The Setup</a><br>这是个采访来自各行各业如何把工作做好的人们的语录集合。<a href="http://usesthis.com/" target="_blank" rel="external">阅读全文</a>。</p>
+<p><a href="http://usesthis.com/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-63.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p><br>#####<a href="http://www.learnsomethingeveryday.co.uk/" target="_blank" rel="external">每天学一点</a><br><br>总部设在英国设计工作室年轻人已经出版了关于265件实事的一本书，以帮助你每天学一点知识。此外，还可以购买一些有意思的实事衬衫。还有一个免费的iPhone应用程序。<a href="http://www.learnsomethingeveryday.co.uk/" target="_blank" rel="external">阅读全文</a>。<br><p><a href="http://www.learnsomethingeveryday.co.uk/" target="_blank"><img alt="利于网页设计师的强大工作流程小窍门、工具和技巧" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/tools-tips-tricks-64.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<ul>
+<li><a href="http://hewgill.com/~greg/stackoverflow/ebooks/" target="_blank" rel="external">从Stack Overflow编译电子书</a>: 这些书籍包含高级从高级标签中选择出来的Stack Overflow问题。这些高级问题包括那些得10分或更大的比分。<a href="http://hewgill.com/~greg/stackoverflow/ebooks/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://jourrrnal.com/about/" target="_blank" rel="external">Jourrrnal</a>: Jourrrnal是一个博客，发布一些最活跃和最有才华的Dribbble成员的工作流程程的面试题。<a href="http://jourrrnal.com/about/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://how-i-work.com/" target="_blank" rel="external">如何工作</a>: 本页面收集其他人如何工作的小技巧。比阅读博客文章更好，阅读到为什么一种方式比另一种更好，阅读到为什么一个人喜欢一个特定的工作方式，并判断是否值得自己采纳。<a href="http://how-i-work.com/" target="_blank" rel="external">阅读全文</a>。</li>
+<li><a href="http://bettermess.com/my-radical-productivity-experiment/" target="_blank" rel="external">我的自由基生产力实验</a>: Michael Schechter已经尝试用不同的方法进行测试，想找出自己的生产力。如果你还没有找到一个自己的工作流程程，那就去找一个吧。<a href="http://bettermess.com/my-radical-productivity-experiment/" target="_blank" rel="external">阅读全文</a>。</li>
+</ul>
+<p>##扩展阅读</p>
+<ul>
+<li><a href="https://github.com/codylindley/frontend-tools" target="_blank" rel="external">Landscaping With Front-End Development Tools</a> by Cody Lindley.</li>
+<li><a href="https://gist.github.com/jonkemp/2713513" target="_blank" rel="external">History of Front-End Tooling</a> by Jonathan Kemp.</li>
+<li><a href="https://gist.github.com/paulirish/5842309" target="_blank" rel="external">The Modern Web Development Workflow</a> by Paul Irish.</li>
+<li><a href="https://speakerdeck.com/addyosmani/tooling-for-the-modern-webapp-developer" target="_blank" rel="external">Tooling For The Modern Web App Developer</a> (slides), by Addy Osmani.</li>
+<li><a href="https://speakerdeck.com/addyosmani/the-new-wave-utility-belt-fowa" target="_blank" rel="external">The New Wave Utility Belt</a> (slides), by Addy Osmani.</li>
+<li><a href="http://stackoverflow.com/a/16512303/130638" target="_blank" rel="external">How to Debug Node.js Applications</a> at Stack Overflow.</li>
+<li><a href="http://www.impressivewebs.com/simple-tools-front-end-developers/" target="_blank" rel="external">Simple Tools for Front-End Developers</a> by Louis Lazaris.</li>
+<li>Last but not least: <a href="http://webplatformtools.org/" target="_blank" rel="external">WebPlatformTools.org</a>.</li>
+</ul>
+<p>现在你都可以拥有这些！我们的社区成员发现非常有用的、强大的工具，技巧和窍门的大集合。非常希望的是，这些工具当中的一些可以加快你的工作流程程或解决你某些问题。甚至可能会促使你分享你的秘密生产力。<br>如果你最喜欢的工具，技巧和窍门都不在此列表中，请你可以在下面的评论中与我们分享。如果这些工具有改变了你的生活？请告诉我们，让我们了解更多！<br><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4><br>        关于Spy</h4><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：个人<a href="http://pigerla.com/" target="_blank">博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微薄</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://www.smashingmagazine.com/2013/10/02/powerful-workflow-tips-tools-and-tricks-for-web-designers/" target="_blank" rel="external">http://www.smashingmagazine.com/2013/10/02/powerful-workflow-tips-tools-and-tricks-for-web-designers/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/powerful-workflow-tips-tools-and-tricks-for-web-designers.html" target="_blank" rel="external">http://www.w3cplus.com/css/powerful-workflow-tips-tools-and-tricks-for-web-designers.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/前端ued规范.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          前端UED规范
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/初学foundation之顶部工具栏.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初学Foundation之顶部工具栏</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

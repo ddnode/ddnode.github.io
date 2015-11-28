@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初学Foundation之自定义表单和开关 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="上节主要学习了Zurb Foundation的按钮制作，现在让我们看看自定义表单和表单开关制作。在本教程中我们主要以联系表单作为一个练习，您可以添加到您的项目或者只是拿来玩玩。一旦我们创建了这样的表单，我们将来可以直接搬到项目表单中使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初学Foundation之自定义表单和开关">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/初学foundation之自定义表单和开关.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="上节主要学习了Zurb Foundation的按钮制作，现在让我们看看自定义表单和表单开关制作。在本教程中我们主要以联系表单作为一个练习，您可以添加到您的项目或者只是拿来玩玩。一旦我们创建了这样的表单，我们将来可以直接搬到项目表单中使用。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-2.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-3.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-4.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-5.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:40:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初学Foundation之自定义表单和开关">
+<meta name="twitter:description" content="上节主要学习了Zurb Foundation的按钮制作，现在让我们看看自定义表单和表单开关制作。在本教程中我们主要以联系表单作为一个练习，您可以添加到您的项目或者只是拿来玩玩。一旦我们创建了这样的表单，我们将来可以直接搬到项目表单中使用。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/初学foundation之自定义表单和开关" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/初学foundation之自定义表单和开关.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初学Foundation之自定义表单和开关
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上节主要学习了Zurb Foundation的<a href="">按钮制作</a>，现在让我们看看自定义表单和表单开关制作。在本教程中我们主要以联系表单作为一个练习，您可以添加到您的项目或者只是拿来玩玩。一旦我们创建了这样的表单，我们将来可以直接搬到项目表单中使用。<br><a id="more"></a><br><img alt="初学Foundation之自定义表单和开关" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>表单，至少对于我来说，一直是比较烦人的，特别是想当他们融入到我的设计中之时。Foundation通过JavaScript定制表单插件使整个过程变得容易了许多。这是非常简单的设置，使您能够轻松地定制你的表单元素需要的CSS。</p>
+<blockquote>
+<p>为了能顺利得到自定义表单功能，你需要加载<code>foundation.form.js</code>。同时你要确保在表单插件上面加载<code>zepto.js</code>和<code>foundation.js</code>。</p>
+</blockquote>
+<p>插件会将每个表单元素本身隐藏，同时会生成更多的视觉可控的元素，比如像<code>div</code>和<code>a</code>这样的标签。然后它通过交互隐藏原来的元素，这意味着表单需要函数来支持。接下来让我们看看这是如何准备工作的。</p>
+<p>##联系表单</p>
+<p>对于网站而言，联系表单是最常见表单之一。在这个练习中，你将看到一些标准的输入框。在你的项目中你也可以添加一个或两个对你有用的不同例子。</p>
+<p>推荐你使用标准的<code>&lt;form&gt;</code>标签。开始使用<a href="http://foundation.zurb.com/docs/components/custom-forms.html" target="_blank" rel="external">自定义表单</a>插件，我们需要添加一个类名<code>custom</code>，像这样<code>&lt;form class=&quot;custom&quot;&gt;</code>。我们现在就有自己自定义的表单。</p>
+<p>假设你的表单中包含了两列，就像这样：</p>
+<pre><code>&lt;form <span class="type">class</span>=<span class="string">"custom"</span>&gt;
+      &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"row"</span>&gt;
+        &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"large-6 columns"</span>&gt;
+        &lt;/<span class="keyword">div</span>&gt;
+        &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"large-6 columns"</span>&gt;
+        &lt;/<span class="keyword">div</span>&gt;
+      &lt;/<span class="keyword">div</span>&gt;
+&lt;/form&gt;
+</code></pre><p>现在我们先从左列开始，在这个例子中，我使用了一个下拉选择框制作称呼，紧跟着是一个输入框用来制作姓名。在行的标准标签中我们都添加了一个<code>collapse</code>的类名。我们接下放置了一个邮箱的字段和下“如何找到我们的”下接选择项。</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row collapse"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 small-3 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">select</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Mr.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Mrs.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Miss.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Ms.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Dr.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">select</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-9 small-9 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">placeholder</span>=<span class="value">"Name"</span> /&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">placeholder</span>=<span class="value">"Email"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">select</span> <span class="attribute">id</span>=<span class="value">"contactDropdown"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">option</span> <span class="attribute">DISABLED</span>&gt;</span>How did you find us?<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">option</span>&gt;</span>Google<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">option</span>&gt;</span>A friend told me<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">option</span>&gt;</span>Not sure, where am I?<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">select</span>&gt;</span>
+</code></pre><p><img alt="初学Foundation之自定义表单和开关" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>你需要确认你选择元素有一个<code>id</code>，但是除了这样之外你可以从模板中直接找到元素。所以我们先来看看表单代码的合并，你需要将它们放在第一个命名为<code>large-6</code>的<code>div</code>里。</p>
+<p>接下来看第二列中的元素。它包括了文本域<code>textarea</code>，一个<code>spam me</code>的复选框和一个切换的单选按钮，最后是一个提交按钮。</p>
+<pre><code><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">placeholder</span>=<span class="value">"Message"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 small-6 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">label</span>&gt;</span>Send me spam&amp;nbsp;&amp;nbsp;
+              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">CHECKED</span> <span class="attribute">style</span>=<span class="value">"display:none"</span> /&gt;</span>
+        <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 small-3 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">label</span>&gt;</span>CC me?<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 small-3 columns end"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"switch tiny"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"x"</span> <span class="attribute">name</span>=<span class="value">"switch-x"</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">checked</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"x"</span> <span class="attribute">onclick</span>=<span class="value">""</span>&gt;</span>No<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"x1"</span> <span class="attribute">name</span>=<span class="value">"switch-x"</span> <span class="attribute">type</span>=<span class="value">"radio"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"x1"</span> <span class="attribute">onclick</span>=<span class="value">""</span>&gt;</span>yes<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">class</span>=<span class="value">"button small large-12"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Send Message"</span> /&gt;</span>
+</code></pre><p><img alt="初学Foundation之自定义表单和开关" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##单选按钮切换</p>
+<p>我们还没有覆盖<a href="http://foundation.zurb.com/docs/components/switch.html" target="_blank" rel="external">单选按钮切换</a>，所以现在我们来做。</p>
+<p>单选按钮切换是一个强大的input效果。其结构放在一个<code>div</code>标签中，并且命名为<code>switch</code>，紧跟着是尺寸的类名。这尺寸的类名主要包括<code>tiny</code>，<code>small</code>和<code>large</code>。你也可以给单选按钮切换设置一个类名<code>rounded</code>实现圆角。这个结构包含了两个<code>input</code>，用于单选按钮切换的状态。它们都有自己各自的标签，Foundation用来实现切换状态的文本。这里的<code>input</code>需要设置<code>id</code>名，并且<code>label</code>必须设置<code>for</code>属性。</p>
+<pre><code>&lt;div <span class="keyword">class</span>=<span class="string">"switch tiny"</span>&gt;
+      &lt;<span class="keyword">input</span> id=<span class="string">"x"</span> name=<span class="string">"switch-x"</span> <span class="keyword">type</span>=<span class="string">"radio"</span> checked&gt;
+      &lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"x"</span> onclick=<span class="string">""</span>&gt;<span class="keyword">No</span>&lt;/<span class="keyword">label</span>&gt;
+</code></pre><p>这几乎涵盖了我们一个小的联系方式，你可以只是做做玩，也可以将它用到你的下一个项目中。</p>
+<p>##其他表单元素</p>
+<p>你在一个Web表单中还有什么可能需要用到呢？比如设置为未选择的<code>radio</code>，并表给他们设置了相同的样式<code>display:none;</code>。</p>
+<p><strong>注意：</strong>我知道使用内联样式是多么可怕的一件事情，但建议在这种情况下，还是不要将这样式写到样式表中。</p>
+<pre><code>&lt;input name=<span class="string">"radio1"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"radio"</span> style=<span class="string">"display:none;"</span> CHECKED /&gt;
+&lt;input name=<span class="string">"radio1"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"radio"</span> style=<span class="string">"display:none;"</span> /&gt;
+&lt;input name=<span class="string">"radio1"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"radio"</span> disabled style=<span class="string">"display:none;"</span>&gt;
+</code></pre><p>这些自定义表单快速通过元素创建起来是多么美好的事情。用这种方式显示什么已经存在，或暗示什么用的用户交互是必需的。</p>
+<p><img alt="初学Foundation之自定义表单和开关" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>下面你可以看到我们有一个<code>span</code>元素，并且设置了<code>prefix</code>类名，其次紧跟了一个下接选择项。你仍然需要把这些元素放在一个带有<code>prefix</code>和<code>postfix</code>类名的列结构中，用来防止元素分离。你也可以充分利用<code>postfix</code>类名加在一个对象上，如一个搜索框。即你的文本输入框后紧跟一个按钮。</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row collapse"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-9 small-9 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"prefix"</span>&gt;</span>http://webdesign.tutsplus<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 small-3 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">select</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">option</span>&gt;</span>.com<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">option</span>&gt;</span>.co<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">option</span>&gt;</span>.ca<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">select</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>##错误信息</p>
+<p>大多数表单至少会有一个必须的字段或者表单无法正常提交的属性。Foundation为了实现这些验证状态使用了<code>error</code>类。简单的将它添加到任何<code>input</code>,<code>label</code>,<code>small</code>标签或列中，就可以看到这些元素呈现红色的风格。</p>
+<pre><code><span class="tag">&lt;<span class="title">form</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">label</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Error<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">class</span>=<span class="value">"error"</span> /&gt;</span>
+              <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Invalid entry<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns error"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">label</span>&gt;</span>Another Error<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> /&gt;</span>
+              <span class="tag">&lt;<span class="title">small</span>&gt;</span>Invalid entry<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">class</span>=<span class="value">"error"</span> <span class="attribute">placeholder</span>=<span class="value">"Message..."</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Invalid entry<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+</code></pre><p>需要真正验证是否有效，你需要使用<a href="https://github.com/jzaefferer/jquery-validation" target="_blank" rel="external">jQuery Validate</a>插件和使用所需的参数。当用户输入信息不正确的时候就会显示这些效果。</p>
+<p>##有用的工具</p>
+<p><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundation-for-beginners-custom-forms-and-switches/attachment/d/" target="_blank" rel="external"><br><img alt="初学Foundation之自定义表单和开关" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>在Foundation中涉及到颜色的选择，在没有设计师的帮助下并不是件容易的事。令人高兴的是,<a href="http://colourco.de/" target="_blank" rel="external">Colourco.de</a>为大家提供了整套的颜色文案查询。移动你的鼠标，向左或向右改变颜色的色相，向上或向下改变颜色的亮度。提供菜单让你选择不同的配色方案。</p>
+<p>##结论</p>
+<p>表单是每个网站的重要组成部分，Foundation在表单的基础上增加了一些不错的功能，让你的表单更加强大。如果你有足够的好奇心，为什么不看看Zurb关于表单的其他开发实验，包括他们的<a href="http://zurb.com/playground/ajax_upload" target="_blank" rel="external">AjAX图像上传</a>。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundation-for-beginners-custom-forms-and-switches/" target="_blank" rel="external">http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundation-for-beginners-custom-forms-and-switches/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/foundation-for-beginners-custom-forms-and-switches.html" target="_blank" rel="external">http://www.w3cplus.com/css/foundation-for-beginners-custom-forms-and-switches.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/初学foundation之顶部工具栏.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          初学Foundation之顶部工具栏
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/初学foundation之网格系统.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初学Foundation之网格系统</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

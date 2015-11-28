@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式网站Gilt.com之二：Block vs. In-selector Media Queries | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="此系列文章主要分享我们在创造以前的应用过程中所得的经验。在第一篇文章中，分享了如何组织一个成功的回顾总结会议。那么在此文章中，主要讨论我们工作中所用到的技术以及如何组织媒体查询。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式网站Gilt.com之二：Block vs. In-selector Media Queries">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/响应式网站gilt.com之一：block_vs._in-selector_media_queries.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="此系列文章主要分享我们在创造以前的应用过程中所得的经验。在第一篇文章中，分享了如何组织一个成功的回顾总结会议。那么在此文章中，主要讨论我们工作中所用到的技术以及如何组织媒体查询。">
+<meta property="og:updated_time" content="2014-09-20T13:39:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式网站Gilt.com之二：Block vs. In-selector Media Queries">
+<meta name="twitter:description" content="此系列文章主要分享我们在创造以前的应用过程中所得的经验。在第一篇文章中，分享了如何组织一个成功的回顾总结会议。那么在此文章中，主要讨论我们工作中所用到的技术以及如何组织媒体查询。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/响应式网站gilt.com之一：block_vs._in-selector_media_queries" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/响应式网站gilt.com之一：block_vs._in-selector_media_queries.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式网站Gilt.com之二：Block vs. In-selector Media Queries
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此系列文章主要分享我们在创造以前的应用过程中所得的经验。<a href="http://www.w3cplus.com/responsive/responsive-gilt-com-retrospective.html" target="_blank" rel="external">在第一篇文章中</a>，分享了如何组织一个成功的回顾总结会议。那么在此文章中，主要讨论我们工作中所用到的技术以及如何组织媒体查询。<br><a id="more"></a><br>CSS3的媒体查询可以帮助你在指定尺寸范围的设备显示页面内容而不用改变DOM元素。假如你有一个页面，使用媒体查询可以使得内容很好地显示在手机端、平板或者是PC端，给予用户良好的用户体验。媒体查询促使内容关注点分离也变得很容易，仅需要借助样式表，却不用改变任何DOM结构。</p>
+<p>一条媒体查询使用大致如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media (min-width: 1024px) &#123;&#10;&#9;//&#25554;&#20837;CSS&#26679;&#24335;!&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我们曾考虑到如何使用媒体查询和大量的CSS文件。响应式设计会增加一个应用的复杂度。当你使用媒体查询时，你的CSS文件（代码）会变得更长，改变DOM会变得更具有风险性。</p>
+<p>为了限制增加的复杂度——同时提高Gilt开发人员的满意<a href="http://tech.gilt.com/post/44792645000/scaling-agile-at-gilt" target="_blank" rel="external">KPI</a>，我们采取了两种使用媒体查询的模式。首先，预先定义好一些断点的变量，分别适应PC（和笔记本）、平板的横屏模式、平板的竖屏模式和手机横屏模式和手机竖屏模式，共4个。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// Desktop or laptop&#10;@viewport-wide: ~&#34;(min-width: 1024px)&#34;;&#10;&#10;// Tablet in landscape mode&#10;@viewport-medium: ~&#34;(min-width: 768px) and (max-width: 1023px)&#34;;&#10;&#10;// Tablet in portrait mode or mobile phone in landscape mode&#10;@viewport-narrow: ~&#34;(min-width: 480px) and (max-width: 767px)&#34;;&#10;&#10;// Mobile phone in portrait mode&#10;@viewport-tiny: ~&#34;(max-width: 479px)&#34;;</span><br></pre></td></tr></table></figure>
+<p>这样的好处就是，如果需求改变了，只要改变相应的值即可。</p>
+<p>需要注意的是，在你定义的变量中不要包含<code>@media</code>字段，因为很有可能会在一次查询操作中一次性使用多个变量。例子如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media @viewport-wide,&#10;&#9;   @viewport-medium &#123;&#10;&#9;.unicorn &#123;&#10;&#9;&#9;display: none;&#10;&#9;&#125;&#10;&#125;&#10;&#10;@media @viewport-narrow,&#10;&#9;   @viewport-tiny &#123;&#10;&#9;.unicorn &#123;&#10;&#9;&#9;display: block;&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种模式明显就是使用大量的CSS文件，当在开发旧的应用时，我们在每个CSS文件中添加了大量的媒体查询块。所做的一切就是为了能够支持IE7（IE7是不支持媒体查询的），<code>.less</code>文件代码示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.hero &#123;&#10;&#9;cursor: pointer;&#10;&#9;background-repeat: no-repeat;&#10;&#9;background-position: center;&#10;&#9;background-color: #EBEBE8;&#10;&#9;position: relative;&#10;&#9;margin: 0 auto 0 auto;&#10;&#9;height: 525px;&#10;&#9;min-width: 960px;&#10;&#9;max-width: 1680px;&#10;&#9;overflow: hidden;&#10;&#125;&#10;&#10;.anti-hero &#123;&#10;&#9;cursor: pointer;&#10;&#9;background-repeat: no-repeat;&#10;&#9;background-position: center;&#10;&#9;background-color: #EBEBE8;&#10;&#9;min-width: 960px;&#10;&#9;max-width: 1680px;&#10;&#9;overflow: hidden;&#10;&#125;&#10;&#10;.wishes-it-was-a-hero &#123;&#10;&#9;background-color: #EBEBE8;&#10;&#9;position: relative;&#10;&#9;margin: 0 auto 0 auto;&#10;&#9;height: 525px;&#10;&#9;min-width: 960px;&#10;&#9;max-width: 1680px;&#10;&#9;overflow: hidden;&#10;&#125;&#10;&#10;@media @viewport-tiny &#123;&#10;&#9;.hero &#123;&#10;&#9;&#9;height: auto;&#10;&#9;&#9;min-width: inherit;&#10;&#9;&#9;max-width: none;&#10;&#9;&#9;width: 100%;&#10;&#9;&#125;&#10;&#10;&#9;.anti-hero &#123;&#10;&#9;&#9;background-color: blue;&#10;&#9;&#125;&#10;&#10;&#9;.wishes-it-was-a-hero &#123;&#10;&#9;&#9;max-width: 50px;&#10;&#9;&#125;&#10;&#125;&#10;&#10;@media @viewport-narrow &#123;&#10;&#9;.hero &#123;&#10;&#9;&#9;height: auto;&#10;&#9;&#9;min-width: inherit;&#10;&#9;&#9;max-width: none;&#10;&#9;&#9;width: 100%;&#10;&#9;&#125;&#10;&#10;&#9;.anti-hero &#123;&#10;&#9;&#9;background-color: yellow;&#10;&#9;&#125;&#10;&#10;&#9;.wishes-it-was-a-hero &#123;&#10;&#9;&#9;max-width: 150px;&#10;&#9;&#125;&#10;&#125;&#10;&#10;@media @viewport-medium &#123;&#10;&#9;.hero &#123;&#10;&#9;&#9;height: 407px;&#10;&#9;&#9;min-width: 767px;&#10;&#9;&#125;&#10;&#10;&#9;.anti-hero &#123;&#10;&#9;&#9;background-color: green;&#10;&#9;&#125;&#10;&#10;&#9;.wishes-it-was-a-hero &#123;&#10;&#9;&#9;max-width: 350px;&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你的文件是很小的，这种模式是可行的，但同时也会增加CSS的复杂度，因为需要跨越成百上千条代码来使用媒体查询覆盖选择器。例如，在第2行有个选择器，却在第300行被查询覆盖了。这就增加出错的几率。一名开发人员不想滚动几百行代码才能修改相应的属性（代码）。</p>
+<p>在我们开发的过程中，<a href="https://github.com/scottjehl/Respond/blob/master/src/respond.js" target="_blank" rel="external">Respond.js</a>出现了。<code>Respond.js</code>是一个开源项目，只要是使得IE6，IE7和IE8中支持CSS3属性，媒体查询就是其中一个。于是，我们开始在Gilt中使用它以避免在每个CSS文件后面都添加一大堆媒体查询代码。</p>
+<p>于是乎又有了第二种媒体查询模式：我们在CSS选择器内加入媒体查询代码，而不是在媒体查询内加入选择器。例如，我们可以写成如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.hero &#123;&#10;&#9;cursor: pointer;&#10;&#9;background-repeat: no-repeat;&#10;&#9;background-position: center;&#10;&#9;background-color: #EBEBE8;&#10;&#9;position: relative;&#10;&#9;margin: 0 auto 0 auto;&#10;&#9;height: 525px;&#10;&#9;min-width: 960px;&#10;&#9;max-width: 1680px;&#10;&#9;overflow: hidden;&#10;&#10;&#9;@media @viewport-tiny &#123;&#10;&#9;&#9;height: auto;&#10;&#9;&#9;min-width: inherit;&#10;&#9;&#9;max-width: none;&#10;&#9;&#9;width: 100%;&#10;&#9;&#125;&#10;&#9;@media @viewport-narrow &#123;&#10;&#9;&#9;height: auto;&#10;&#9;&#9;min-width: inherit;&#10;&#9;&#9;max-width: none;&#10;&#9;&#9;width: 100%;&#10;&#9;&#125;&#10;&#9;@media @viewport-medium &#123;&#10;&#9;&#9;height: 407px;&#10;&#9;&#9;min-width: 767px;&#10;&#9;&#125;&#10;&#125;&#10;&#10;.anti-hero &#123;&#10;&#9;cursor: pointer;&#10;&#9;background-repeat: no-repeat;&#10;&#9;background-position: center;&#10;&#9;background-color: #EBEBE8;&#10;&#9;min-width: 960px;&#10;&#9;max-width: 1680px;&#10;&#9;overflow: hidden;&#10;&#10;&#9;@media @viewport-tiny &#123;&#10;&#9;&#9;background-color: blue;&#10;&#9;&#125;&#10;&#9;@media @viewport-narrow &#123;&#10;&#9;&#9;background-color: yellow;&#10;&#9;&#125;&#10;&#9;@media @viewport-medium &#123;&#10;&#9;&#9;background-color: green;&#10;&#9;&#125;&#10;&#125;&#10;&#10;.wishes-it-was-a-hero &#123;&#10;&#9;background-color: #EBEBE8;&#10;&#9;position: relative;&#10;&#9;margin: 0 auto 0 auto;&#10;&#9;height: 525px;&#10;&#9;min-width: 960px;&#10;&#9;max-width: 1680px;&#10;&#9;overflow: hidden;&#10;&#10;&#9;@media @viewport-tiny &#123;&#10;&#9;&#9;max-width: 50px;&#10;&#9;&#125;&#10;&#9;@media @viewport-narrow &#123;&#10;&#9;&#9;max-width: 150px;&#10;&#9;&#125;&#10;&#9;@media @viewport-medium &#123;&#10;&#9;&#9;max-width: 350px;&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>正如上面代码例子所示，开发人员得到的好处或许不是那么显而易见的。如果你都在每一个选择器中包含媒体查询的话，开发人员就可以很快地知道哪些属性会被覆盖。这样也就避免了不知道哪里还会用到媒体查询来覆盖原来的属性。现在我们已经依赖这种写法了，有利于样式分开管理。</p>
+<p>总结：极力推荐通过预先定义变量来处理媒体查询与在CSS选择器中加入媒体查询。正确使用这两种开发模式，我们相信将来会很容易地维护你现在的响应式设计开发流程的。</p>
+<p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h2><br>        关于Spy</h2><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：<a href="http://pigerla.com/" target="_blank">个人博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微博</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://tech.gilt.com/post/90586369504/responsive-gilt-com-block-vs-in-selector-media" target="_blank" rel="external">http://tech.gilt.com/post/90586369504/responsive-gilt-com-block-vs-in-selector-media</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/responsive/responsive-gilt-com-block-vs-in-selector-media.html" target="_blank" rel="external">http://www.w3cplus.com/responsive/responsive-gilt-com-block-vs-in-selector-media.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/响应式网站gilt.com之一：回顾总结.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          响应式网站Gilt.com之一：回顾&amp;总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/响应式电子邮件设计.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式电子邮件设计</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

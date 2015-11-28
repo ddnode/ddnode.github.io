@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式网站Gilt.com之四：Full-Screen Modal | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="为了把网站Gilt.com在移动端响应，我们基于特殊行动团队确定的几种响应式模式来“响应”我们网站布局。早点确定这些模式有利于帮助我们更有信心地作出响应式相关的决定。在这第四篇响应式相关博文里，我将与你分享如何发现和实现我们确定的最热衷设计模式之一：全屏Modal!
+我们团队主要开发响应式适应iphone手机的app。最厉害的设计元素之一就是在全屏下进行过滤，这跟在Gilt.com使用一堆下拉菜单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式网站Gilt.com之四：Full-Screen Modal">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/响应式网站gilt.com之四：full-screen_modal.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="为了把网站Gilt.com在移动端响应，我们基于特殊行动团队确定的几种响应式模式来“响应”我们网站布局。早点确定这些模式有利于帮助我们更有信心地作出响应式相关的决定。在这第四篇响应式相关博文里，我将与你分享如何发现和实现我们确定的最热衷设计模式之一：全屏Modal!
+我们团队主要开发响应式适应iphone手机的app。最厉害的设计元素之一就是在全屏下进行过滤，这跟在Gilt.com使用一堆下拉菜单">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-4.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-5.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-6.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-7.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:39:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式网站Gilt.com之四：Full-Screen Modal">
+<meta name="twitter:description" content="为了把网站Gilt.com在移动端响应，我们基于特殊行动团队确定的几种响应式模式来“响应”我们网站布局。早点确定这些模式有利于帮助我们更有信心地作出响应式相关的决定。在这第四篇响应式相关博文里，我将与你分享如何发现和实现我们确定的最热衷设计模式之一：全屏Modal!
+我们团队主要开发响应式适应iphone手机的app。最厉害的设计元素之一就是在全屏下进行过滤，这跟在Gilt.com使用一堆下拉菜单">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/响应式网站gilt.com之四：full-screen_modal" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/响应式网站gilt.com之四：full-screen_modal.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式网站Gilt.com之四：Full-Screen Modal
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>为了把网站Gilt.com在移动端响应，我们基于特殊行动团队确定的几种响应式模式来“响应”我们网站布局。早点确定这些模式有利于帮助我们更有信心地作出响应式相关的决定。在这第四篇响应式相关博文里，我将与你分享如何发现和实现我们确定的最热衷设计模式之一：全屏Modal!</p>
+<p>我们团队主要开发响应式适应iphone手机的app。最厉害的设计元素之一就是在全屏下进行过滤，这跟在Gilt.com使用一堆下拉菜单或者一个粘性侧栏作为过滤布局是极大不同的。<br><a id="more"></a><br>下面是app的过滤器：</p>
+<p><img alt="响应式网站Gilt.com之四：Full-Screen Modal" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-4.jpg" style="padding:2px;border:1px solid #ccc;width:640px;"></p>
+<p>Gilt.com的过滤器</p>
+<p><img alt="响应式网站Gilt.com之四：Full-Screen Modal" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-5.jpg" style="padding:2px;border:1px solid #ccc;width:640px;"></p>
+<p>Gilt网站上的过滤器样式在PC端与平板端都能很好显示，就是对手机端来说太大了。这也是为什么目前我们在手机端网站（m.gilt.com）不提供过滤器功能给用户的原因。出于这点，我们团队就模仿Gilt iphone手机app的设计：在手机端屏幕上创建一个全屏界面来提供过滤器。这个模式 几乎只用到CSS（我们是用<a href="http://lesscss.org/" target="_blank" rel="external">less.js</a>），因此不会增加页面的负载。</p>
+<p>实现全屏模式是比较容易的，我们决定把这模式应用到网站的其他地方——例如，在一个产品尺寸表格，看我们的实现<a href="http://jsbin.com/dizor/6" target="_blank" rel="external">demo</a>。</p>
+<p>手机横屏和手机竖屏时：</p>
+<ul>
+<li>设置content容器默认为：<code>position: fixed ；display: none</code>，使得适应整个屏幕</li>
+<li>增加一个动作脚本使得在手机横屏和竖屏中是可见的，当被点击（包括鼠标或者手指）时，给<code>content</code>的父容器或者自己添加一个类：<code>content-open</code></li>
+<li>当<code>content-open</code>被添加上时，就显示<code>content</code>的内容。</li>
+<li>当按钮被点击时，就增加一个不能滚动的类到<code>body</code>，使得整个页面都<code>position: fixed</code>，在展开模式中防止了页面滚动。</li>
+<li>在展开模式中增加一个按钮或者动作，可以关闭内容重新回到页面中。<br>特殊行动团队相信最好的手机用户体验是应该让用户关注页面最有价值的内容，而不是其他无关紧要的功能。在全屏模式中，我们抽离掉所有过滤器复杂的部分，区分不同用户体验和留下应该有的 功能。用户能看到所有信息——一个产品，一列产品等。是围绕简单的体验来创建的。现在这模式都能理解了吧，我们计划在更多将来响应式设计中运用此模式。</li>
+</ul>
+<p><img alt="响应式网站Gilt.com之四：Full-Screen Modal" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-6.jpg" style="padding:2px;border:1px solid #ccc;width:640px;"><br><img alt="响应式网站Gilt.com之四：Full-Screen Modal" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-7.jpg" style="padding:2px;border:1px solid #ccc;width:640px;"></p>
+<p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h2><br>        关于Spy</h2><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：<a href="http://pigerla.com/" target="_blank">个人博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微博</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://tech.gilt.com/post/91263242344/responsive-gilt-com-the-full-screen-modal" target="_blank" rel="external">http://tech.gilt.com/post/91263242344/responsive-gilt-com-the-full-screen-modal</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/responsive/responsive-gilt-com-the-full-screen-modal.html" target="_blank" rel="external">http://www.w3cplus.com/responsive/responsive-gilt-com-the-full-screen-modal.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/响应式网页与移动端网站和native_app的优点和缺点对比.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          响应式设计、移动端网站与原生应用的优点和缺点
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/响应式网站gilt.com之三：selenium_edition!.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式网站Gilt.com之三：Selenium Edition!</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

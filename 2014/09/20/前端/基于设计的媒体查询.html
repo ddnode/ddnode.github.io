@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>基于设计的媒体查询 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在刚一开始的时候，我们已经把特定移动设备的媒体查询运用到我们的网站上，并且服务于我们（网站），因为当时我们只是需要一种应急式的响应式设计解决方案来适应iPhone和屏幕相似的智能手机。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于设计的媒体查询">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/基于设计的媒体查询.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="在刚一开始的时候，我们已经把特定移动设备的媒体查询运用到我们的网站上，并且服务于我们（网站），因为当时我们只是需要一种应急式的响应式设计解决方案来适应iPhone和屏幕相似的智能手机。">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-1.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-2.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-3.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-4.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-5.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-6.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-7.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:38:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于设计的媒体查询">
+<meta name="twitter:description" content="在刚一开始的时候，我们已经把特定移动设备的媒体查询运用到我们的网站上，并且服务于我们（网站），因为当时我们只是需要一种应急式的响应式设计解决方案来适应iPhone和屏幕相似的智能手机。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/基于设计的媒体查询" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/基于设计的媒体查询.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基于设计的媒体查询
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在刚一开始的时候，我们已经把特定移动设备的媒体查询运用到我们的网站上，并且服务于我们（网站），因为当时我们只是需要一种应急式的响应式设计解决方案来适应iPhone和屏幕相似的智能手机。<br><a id="more"></a><br>但是随着大量移动设备不断地被推向市场，现在是时候重新考虑使用在我们设计中的<a href="http://css-tricks.com/snippets/css/media-queries-for-standard-devices/" target="_blank" rel="external">公用响应式设计断点</a>了。为什么呢？因为原来方法重用性不高。我们也必须去改变下面讲到需要改变原来方法的理由和为什么我们要在这些特殊点上设置我们的响应式设计断点的背后积极因素。</p>
+<p>我将会围绕“基于设计的媒体查询”展开讨论（对比于我们常见的基于移动设备的媒体查询）。这种响应式Web设计方法可以使我们网站的技术不会过时和尽可能保持跟设备平台无关性。</p>
+<p>##为什么我们的媒体查询需要去改变</p>
+<p>我们现在使用的媒体查询一般来说都是基于目前流行手机设备的屏幕分辨率。</p>
+<p>首先，当Web设计社区开始不断地关注<a href="http://sixrevisions.com/web_design/understanding-the-elements-of-responsive-web-design/" target="_blank" rel="external">响应式Web设计</a>时， 流行的手机设备要数 iPhone 和 Android 智能手机了。</p>
+<p>好，闲话不多说，现在就开始，应用于手机设备上的媒体查询从概念上看就好像是这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* iPhone &#21644; &#20854;&#23427;&#26234;&#33021;&#25163;&#26426; (portrait) */&#10;@media screen and (max-device-width: 320px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone and other  &#20854;&#23427;&#26234;&#33021;&#25163;&#26426; (landscape) */&#10;@media screen and (max-device-width: 480px) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>正如技术不断更新，尤其是平板电脑和视网膜显示器的不断增长，也就意味着屏幕大小范围和屏幕分辨率不断扩大。因此我们打算为了这些新的手机设备而去增强、拓展我们的媒体查询。</p>
+<p>为了兼容新一批产品，媒体查询将会看起来像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* iPhone and other smartphones (portrait) */&#10;@media screen and (max-device-width: 320px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone and other smartphones (landscape) */&#10;@media screen and (max-device-width: 480px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPad and other tablets (portrait) */&#10;@media screen and (max-device-width: 768px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPad and other tablets (landscape) */&#10;@media screen and (max-device-width: 1024px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone 5 (portrait) */&#10;@media screen and (max-device-width: 568px) and (orientation: portrait) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone 5 (landscape) */&#10;@media screen and (max-device-width: 568px) and (orientation: landscape) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>三星 Galaxy 手机现在真的很流行，因此我们也应该将它列入我们需要收集的媒体查询名单中:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Samsung Galaxy (portrait) */&#10;@media screen and (max-width: 385px) &#123;&#10;&#10;&#125;&#10;&#10;/* Samsung Galaxy (landscape) */&#10;@media screen and (max-width: 690px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone and other smartphones (portrait) */&#10;@media screen and (max-device-width: 320px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone and other smartphones (landscape) */&#10;@media screen and (max-device-width: 480px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPad and other tablets (portrait) */&#10;@media screen and (max-device-width: 768px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPad and other tablets (landscape) */&#10;@media screen and (max-device-width: 1024px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone 5 (portrait) */&#10;@media screen and (max-device-width: 568px) and (orientation: portrait) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone 5 (landscape) */&#10;@media screen and (max-device-width: 568px) and (orientation: landscape) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>那么，Amazon的电子书阅读器Kindle怎样呢？或者是iPad mini呢？</p>
+<p>先别着急，现在已经有<a href="http://code-tricks.com/css-media-queries-for-common-devices/" target="_blank" rel="external">一系列媒体查询</a>为Kindle（或者其它移动设备）准备好了，同时，也有<a href="http://www.stephentgilbert.com/mediaqueries/" target="_blank" rel="external">一系列</a>为苹果特定产品准备的媒体查询，如：iPad mini, iPhone 2G等等。这些都有利于帮助我们拓展我们的媒体查询集合。</p>
+<p>向你展示所有的这些理由是为了说明这种响应式Web设计方法怎样不能好好运作的。</p>
+<p>用这种方法来设计网站会跟Web设计的一条重要原则发生矛盾，因此我们需要努力的目标就是：PC机网页跟手机网页之间不应该有明显的区别。理想地，应该存在只有一种通用的网页。</p>
+<p>基于一小部分特定的移动设备来设置我们的媒体查询，是我们有效地创造不仅只是单纯分离的手机网页，而应该是iPhone网页，Android网页，黑莓网页等等。</p>
+<p>这种响应式网页设计的方法可以引导我们去到一个基于这些移动设备，我们所做的决策无意地创建设计的地方。这个情况在<a href="http://sixrevisions.com/web-technology/mobile-browser-wars/" target="_blank" rel="external">浏览器大战</a>是如此惊人的相似。</p>
+<p>我们对每个响应式设计的构建，而不是需要得到<a href="http://stackoverflow.com/questions/7587854/is-there-a-list-of-screen-resolutions-for-all-android-based-phones-and-tablets" target="_blank" rel="external">Android屏幕分辨率大小</a>的列表或者现在正<a href="http://stackoverflow.com/questions/16443380/common-css-media-queries-break-points" target="_blank" rel="external">流行的响应式设计断点</a>,我们真的应该提出另外一个疑问：</p>
+<p>为了这种特殊设计，我应该选择哪种断点呢？</p>
+<p>如果我们的网页设计想变得不过时的，或许，更重要地，网页要保持通用性——我们的媒体查询需要以我们的网页设计为基础，而不是现在流行的手机设备。</p>
+<p>##为什么旧的断点不起作用</p>
+<p>通过一个实际应用的例子，让我们看看如何设置基于特定移动设备的媒体查询会不起作用。</p>
+<p>为了有一个响应式网页设计，我公司的网站——<a href="http://compass-design.co.uk/" target="_blank" rel="external">Compass Design</a>，原本是用3个范围的媒体查询创建的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* iPad (portrait) */&#10;@media screen and (max-width: 760px) &#123;&#10;&#10;&#10;&#125;&#10;&#10;/* Smartphones (landscape) */&#10;@media screen and (max-width: 480px) &#123;&#10;&#10;&#125;&#10;&#10;/* Smartphones (portrait) */&#10;@media screen and (max-width: 320px) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在早一些年，当绝大多数人使用iPhone 4或者相似屏幕（320x480px），再或者iPad（760x1024px）的时候，这些媒体查询就被定义好了。因此，这些移动设备上，这些网页设计运行挺好的。</p>
+<p>桌面上网页布局是相当标准的，一个带有导航条的横向导航菜单位于页面内容的右边。</p>
+<p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>但是，这布局在平板电脑上显示就不正常了。导航条菜单的布局变化它的所有内容放置方向以适应平板电脑的可用空间：</p>
+<p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>而且布局在智能手机显示也是不同的，这一次带有链接的导航菜单,被移到页面的底部：</p>
+<p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-3.jpg" style="padding:2px;border:1px solid #ccc;"></p>
+<p>##我的响应式设计不起作用！</p>
+<p>自从该网站设计好,访问它的移动设备数量增加非常迅速。</p>
+<p>例如：</p>
+<ul>
+<li>iPhone 5 是 568 px 宽屏模式</li>
+<li>许多Android智能手机是大屏幕的(如三星 Galaxy ,分辨率是380 x685px)</li>
+<li>在我的网站最初设计之际,更小平板电脑已经发布，平板电脑拥有7英寸的屏幕,而不是一个10英寸的屏幕(尽管其中一些,比如迷你iPad,依然可以运行如果它们有相同的像素尺寸与规模更大的同系列产品)</li>
+</ul>
+<p>让我们来看看这个网站显示在iPhone 5上。因为iPhone 5 比480px更宽屏模式,智能手机正在使用为平板电脑设计的布局,将显示成一个残缺的导航菜单：</p>
+<p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>这个示例，我想表达的重点是：使用移动设备作为指导我们的网页设计的响应式是不可行的。</p>
+<p>随着移动设备数量持续增加，想预测我们的设计将在哪个设备上显示是不可能的。而且是不可能预测什么新设备会进入市场,也不必要去这样做，不管我们的网页设计将面临什么。</p>
+<p>我们需要去做的是确定在我们网页设计上某点该停止去运行像我们设计好的方式那样，然后就设置我们的响应式断点在那里。</p>
+<p>##基于设计的媒体查询在行动</p>
+<p>我网站的新媒体查询是基于两个指导原则：</p>
+<ul>
+<li>内容布局需要适应任何移动设备宽度,这样内容更容易阅读。</li>
+<li>在触摸屏和移动设备:导航菜单项需要足够大,这样用户可以很容易地点到它们。</li>
+</ul>
+<p>桌面布局包含一个全屏导航菜单。此布局遇到1005px宽屏,此时一些导航菜单项开始流动出来到下方,如下所示:</p>
+<p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>因为这种特定Web设计刚好在1005px宽屏的时候会破坏布局，由于导航菜单项的数量和长度，我决定在那设置断点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Breakpoint #1 for medium-sized screens */&#10;@media screen and (max-width: 1005px) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>注意到我的样式注释和两条指导原则，我已经删掉任何特定手机设备的引用说明。</p>
+<p>从上面所说的1005px宽屏，不断地缩小屏幕宽度，布局会在745px的时候破坏，你可看到效果截图如下：</p>
+<p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>因此我又设置另一个断点在745px:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Breakpoint #2 for small-sized screens */&#10;@media screen and (max-width: 745px) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>布局现在在745px显示的效果：</p>
+<p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-7.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>现在这个网站已经有一系列完全以移动设备无关性的断点了，并且确保这些设计将会以最好的方式适应任何移动设备了。</p>
+<p>核心思想：我们应该基于设计来选择哪种媒体查询，而不是基于特定的移动设备。</p>
+<p>##通向一个通用的Web</p>
+<p>基于设计的媒体查询的思想是很简单的，采取在Web设计项目里的概念可以调整在你的浏览器哪个布局发生破坏的点，然后就好像我的例子那样，设置媒体查询在那个点。</p>
+<p>我们目前使用“标准”媒体查询很容易忽视数量急剧增长的移动设备，而且不符合苹果、三星、索尼和其他设备厂商生产产品的尺寸。基于特定的设备媒体查询建立网站，这种技术是过时的，而且与设备有相关性。</p>
+<p>如果我们想要继续坚持Web最好的本质,就持续地创建一个通用的Web——Web不是靠特定的手机设备，或者Web浏览器，再或者某公司来驱动和指引才发展的——然后,我们所能做的就是要远离特定移动设备的媒体查询。</p>
+<p>##扩展阅读</p>
+<ul>
+<li><a href="http://sixrevisions.com/mobile/responsive-web-design-not-the-future/" target="_blank" rel="external">Responsive Web Design is Not the Future</a></li>
+<li><a href="http://sixrevisions.com/web_design/understanding-the-elements-of-responsive-web-design/" target="_blank" rel="external">Understanding the Elements of Responsive Web Design</a></li>
+<li><a href="http://sixrevisions.com/web_design/are-current-web-design-trends-pushing-us-back-to-1999/" target="_blank" rel="external">Are Current Web Design Trends Pushing Us Back to 1999?</a></li>
+<li><a href="http://www.w3cplus.com/blog/tags/79.html" target="_blank" rel="external">Responsive</a></li>
+</ul>
+<p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4><br>        关于Spy </h4><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：个人<a href="http://pigerla.com/" target="_blank">博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微薄</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://sixrevisions.com/web_design/design-based-media-queries/" target="_blank" rel="external">http://sixrevisions.com/web_design/design-based-media-queries/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css3/design-based-media-queries.html" target="_blank" rel="external">http://www.w3cplus.com/css3/design-based-media-queries.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/如何制作自己的网页字体图标.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          如何制作自己的网页字体图标
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/在html中使用meta标签的基础知识和最佳实践.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在HTML中使用meta标签的基础知识和最佳实践</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

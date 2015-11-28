@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>七个高度有效的媒体查询技巧 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我们都知道，Media Queries是实现响应式设计的秘密武器。在这篇文章中，将向大家介绍制定高质量的Media Queries需要注意的一些事项。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="七个高度有效的媒体查询技巧">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/七个高度有效的媒体查询技巧.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="我们都知道，Media Queries是实现响应式设计的秘密武器。在这篇文章中，将向大家介绍制定高质量的Media Queries需要注意的一些事项。">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/1309/media-queries-1.gif">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1309/media-queries-1.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1309/media-queries-3.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:42:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="七个高度有效的媒体查询技巧">
+<meta name="twitter:description" content="我们都知道，Media Queries是实现响应式设计的秘密武器。在这篇文章中，将向大家介绍制定高质量的Media Queries需要注意的一些事项。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/七个高度有效的媒体查询技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/七个高度有效的媒体查询技巧.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      七个高度有效的媒体查询技巧
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们都知道，<a href="http://www.w3cplus.com/blog/tags/49.html" target="_blank" rel="external">Media Queries</a>是实现<a href="http://www.w3cplus.com/blog/tags/79.html" target="_blank" rel="external">响应式设计</a>的秘密武器。在这篇文章中，将向大家介绍制定高质量的<code>Media Queries</code>需要注意的一些事项。<br><a id="more"></a></p>
+<p>##让内容确定断点</p>
+<p>很多时候，在响应式设计中，你经常看到的断点值是：<code>320px</code>、<code>480px</code>、<code>768px</code>和<code>1024px</code>等。</p>
+<p>不要使用流行的设备尺寸（<code>320px</code>是iPhone设备的竖屏尺寸，<code>480</code>是iPhone设备横向屏幕尺寸，<code>768px</code>是iPad竖向屏幕尺寸，等等）来确定断点。该设备的屏幕（Device Landscape）是不断在变化的，所以使用流行设备的尺寸作为断点，他的实际价值存在的意义可能没有什么，甚至一年的时间都坚持不到。<a href="http://alistapart.com/article/dao" target="_blank" rel="external">Web本质是流动的</a>，因此我们的工作是在任何屏幕上创建外观、功能等，而不是简简单单的几个断点。</p>
+<p>我创建<a href="http://bradfrostweb.com/demo/ish/" target="_blank" rel="external">ish</a>的原因就是鼓励设计师考虑整个分辨率，而不只是今天流行的几个设备尺寸。请尝试使用“Disco Mode”给你的设计做一个压力测试。</p>
+<p>所以你应该在哪里插入断点，应该遵循<a href="http://bradfrostweb.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/" target="_blank" rel="external">Stephen Hay</a>的建议：</p>
+<blockquote>
+<p>Start with the small screen first, then expand until it looks like shit. Time for a breakpoint!-<a href="http://bradfrostweb.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/" target="_blank" rel="external">Stephe Hay</a>.</p>
+</blockquote>
+<p>它是这么简单。</p>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="http://www.netmagazine.com/tutorials/determining-breakpoints-responsive-design" target="_blank" rel="external">Determining Breakpoints in Responsive Design</a></li>
+<li><a href="http://adactio.com/journal/5425/" target="_blank" rel="external">Fanfare for the common breakpoint</a></li>
+<li><a href="http://seesparkbox.com/foundry/there_is_no_breakpoint" target="_blank" rel="external">There Is No Breakpoint</a></li>
+<li><a href="http://2002-2012.mattwilcox.net/archive/entry/id/1075/" target="_blank" rel="external">Choosing device sizes to support for your responsive designs</a></li>
+<li><a href="http://www.markboulton.co.uk/journal/theinbetween" target="_blank" rel="external">The In-Between</a></li>
+</ul>
+<p>##对布局作为一种增加</p>
+<blockquote>
+<p>The absence of support for media queries is in fact the ﬁrst media query. -<a href="http://www.slideshare.net/bryanrieger/rethinking-the-mobile-web-by-yiibu" target="_blank" rel="external">Bryan Rieger</a></p>
+</blockquote>
+<p>作为一个<a href="http://bradfrostweb.com/blog/web/mobile-first-responsive-web-design/" target="_blank" rel="external">移动先行响应式设计</a>策略，重要的是我们要有一个移动先行的风格方式。</p>
+<p>因此这个东西很有意思：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* &#26700;&#38754;&#31532;&#19968;&#39118;&#26684;:&#36991;&#20813; */&#10;.column &#123;&#10;    float: left;&#10;    width: 50%;&#10;&#125;&#10;&#10;@media all and (max-width: 50em) &#123;&#10;    .column &#123;&#10;        float: none;&#10;        width: auto;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们想只介绍布局的具体规则时，我们需要他们：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;/* &#20808;&#21160;&#20808;&#34892;&#30340;&#39118;&#26684;&#65306; FTW */&#10;@media all and (min-width: 50em) &#123;&#10;    .column &#123;&#10;        float: left;&#10;        width: 50%;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.html5rocks.com/en/mobile/responsivedesign/#toc-style-mobilefirst" target="_blank" rel="external">移动先行</a>将导致的结果是更简单，更易于维护你的代码。这种方法还提供了对老的并不支持媒体查询的移动端浏览器的更友好支持。</p>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="http://www.html5rocks.com/en/mobile/responsivedesign/" target="_blank" rel="external">Creating a Mobile-First Responsive Web Design</a></li>
+<li><a href="http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/" target="_blank" rel="external">Essential considerations for crafting quality media queries</a></li>
+</ul>
+<p>##使用主要断点和次要断点</p>
+<p>重要的是要理解，并不是每个设计都需要巧妙的融入小的、中等的、大的断点。当然，有时一个网站的设计，发有一些戏剧性的事情发生，比如说当一列成两在变成三列。这个时候，关键点就是把握住他们在主要的断点时，才会有这戏剧性的一幕发生。</p>
+<p>我使用<a href="http://sass-lang.com/" target="_blank" rel="external">Sass</a>来控制我的断点，所以根据不同的设计，我主要断点变量看起来像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$bp-small : 24em;&#10;$bp-med : 46.8em;&#10;$bp-large : 50em;&#10;$bp-xl : 73em;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果您从未接触过Sass的任何知识，个人建议您先抽空了解一些Sass方面的知识，如果你感兴趣，可以点击<a href="http://www.w3cplus.com/blog/tags/302.html" target="_blank" rel="external">这里</a>查阅——<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
+</blockquote>
+<p>但在一些设计中，有一些<a href="http://coding.smashingmagazine.com/2013/06/25/media-queries-are-not-the-answer-element-query-polyfill/" target="_blank" rel="external">特殊元素</a>之间的值需要调整。这样一来就可以为这些特定的元素添加一个小断点（如Jeremy Keith所说的<a href="http://adactio.com/journal/6044/" target="_blank" rel="external">tweakpoint</a>）。</p>
+<p>回到我的Sass中，我在主要断点之间插入了次要断点，类型于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$bp-small : 24em;&#10;$bp-small-2 : 29.75em;&#10;$bp-small-3 : 39.8em;&#10;$bp-med : 46.8em;&#10;$bp-med-2 : 48em;&#10;$bp-large : 50em;&#10;$bp-large-2 : 54.5em;&#10;$bp-xl : 60em;&#10;$bp-xl-2 : 67em;</span><br></pre></td></tr></table></figure>
+<p>这种方法是否也适合你呢？</p>
+<p>至于如何看待主要断点和次要断点，主要取决于你，但重要的是要利用这两类断点。</p>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="http://adactio.com/journal/6044/" target="_blank" rel="external">Tweakpoints</a></li>
+<li><a href="http://www.slideshare.net/yiibu/pragmatic-responsive-design" target="_blank" rel="external">Pragmatic Responsive Design</a></li>
+</ul>
+<p>##使用相对单位</p>
+<p>我常喜欢背靠着椅子使用我的电脑，所以我经常使用<code>cmd +</code>来放大网站文本。当我们使用断点使用的是像素时，页面放到出现水平滚动条，并没有正常的工作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Avoid pixel-based media queries */&#10;@media all and (min-width: 800px) &#123;...&#125;</span><br></pre></td></tr></table></figure>
+<p>不应该使用像素，我们应该为我们的<a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/" target="_blank" rel="external">媒体查询使用相对单位</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* use ems for media queries */&#10;@media all and (min-width: 50em) &#123;...&#125;</span><br></pre></td></tr></table></figure>
+<p>首先在样式中，我们都放弃了对像素(<code>px</code>)的使用，在使用<code>em</code>、<code>rem</code>和百分比(<code>%</code>)，那么我们为什么不能将这些相对单位运用到媒体查询中呢？其次，在媒体查询中使用相对单位允许浏览来调整设计基于用户缩放的级别，让用户有一个更愉快、更容易阅读的用户体验。</p>
+<p><img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1309/media-queries-1.gif" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>看，就像老人家的视力！</p>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/" target="_blank" rel="external">The Ems Have It: Proportional Media Queries FTW</a></li>
+<li><a href="http://adactio.com/journal/4227/" target="_blank" rel="external">Tweaking Huffduffer</a></li>
+</ul>
+<p>##超越宽度</p>
+<p>视窗（Viewport）宽度不是唯一的媒体查询可检测的。有很多<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank" rel="external">媒体特性</a>我们可以检测，包括颜色、颜色指数、纵横比、宽度以及装置设备宽度、高度和设计高度、方位、单色、分辨率、扫描、像素密度等等。</p>
+<p>虽然我不知道这么一大堆的东西是什么，但有几个真正有用的功能，可以帮助我们：</p>
+<ul>
+<li>使用<code>pix-density</code>可以<a href="http://anthonygthomas.com/2012/04/22/media-queries-for-high-pixel-density-devices/" target="_blank" rel="external">有条件的提供</a>更大的背景图、视网膜<a href="http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/" target="_blank" rel="external">图标</a>和高分辨率屏幕；</li>
+<li>使用<code>height</code>可以检测可用的屏幕高度，并调整相应的样式风格。例如，在这个网站我想根据高度来扩展我的标题类型；</li>
+<li>使用<code>orientation</code>来检测屏幕是横向还是纵向模式。取向可以用于有条件的禁用固定定位，并释放出<a href="http://wtfmobileweb.com/post/16758384465/thanks-for-providing-so-much-screen-real-estate" target="_blank" rel="external">屏幕可用空间</a>。</li>
+</ul>
+<p>我肯定有很多惊人的用例使用了这些媒体特性，所以看看通过他们，考虑如何利用这些媒体特性用在你的设计中。</p>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank" rel="external">MDN: CSS media queries</a></li>
+<li><a href="http://trentwalton.com/2012/01/11/vertical-media-queries-wide-sites/" target="_blank" rel="external">Vertical Media Queries and Wide Sites</a></li>
+<li><a href="http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/" target="_blank" rel="external">Using CSS Sprites to optimize your website for Retina Displays</a></li>
+</ul>
+<p>##条件加载使用媒体查询</p>
+<p>网页包含一些有价值的东西和一些没有价值的东西。例如，你的朋友在你的页面上共享了一个链接，说：“看看这些可爱的小猫照片”和你急切的想点吉的链接，你会更期待先看到什么？在这种情况之下，可爱的小猫照片就是没有价值的东西。</p>
+<p><img src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1309/media-queries-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>但可能有其他东西在页面上并没有价值。也许有一个特性来评论的可爱的小猫图片。也许一些社交小工具分享可爱的小猫的照片。相关图片如何介绍可爱的小猫，你懂的。而这些特性添加到页面的价值，没有太多价值。我们想做的是优先考虑的主要内容，同时仍然提供补充内容和功能。</p>
+<p>我们能做的就是就是将这些没有价值的东西放在自己的HTML结构块中，当符合条件下，这此次要内容将再次显示。</p>
+<p><img src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1309/media-queries-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>我们可以使用<a href="https://developer.mozilla.org/en-US/docs/Web/API/window.matchMedia" target="_blank" rel="external">MatchMedia</a>来让这样的事情发生。MatchMedia允许Javascript来利用所有的媒体查询来改善。他看起来像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (window.matchMedia(&#34;(min-width: 40em)&#34;).matches) &#123;&#10;  /* load secondary stuff */&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>当正确的条件存在，我们就加载<a href="http://filamentgroup.com/lab/ajax_includes_modular_content/" target="_blank" rel="external">二级内容</a>。</p>
+<p>MatchMedia得到<a href="http://caniuse.com/matchmedia" target="_blank" rel="external">很好的支持</a>以及<a href="https://github.com/paulirish/matchMedia.js/" target="_blank" rel="external">Polyfill</a>也可以使用。</p>
+<p><a href="http://24ways.org/2011/conditional-loading-for-responsive-designs/" target="_blank" rel="external">有条件的加载</a>是其中管委会最强大的工具。它允许我们优先考虑核心的内容和性能，同时仍然提供一个健壮的、全功能的体验环境。</p>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="http://filamentgroup.com/lab/ajax_includes_modular_content/" target="_blank" rel="external">An Ajax-Include Pattern for Modular Content</a></li>
+<li><a href="http://24ways.org/2011/conditional-loading-for-responsive-designs/" target="_blank" rel="external">Conditional Loading for Responsive Designs</a></li>
+<li><a href="http://christianheilmann.com/2012/12/19/conditional-loading-of-resources-with-mediaqueries/" target="_blank" rel="external">Conditional loading of resources with mediaqueries</a></li>
+<li><a href="http://adactio.com/journal/5042/" target="_blank" rel="external">Clean Conditional Loading</a></li>
+</ul>
+<p>##不要做得太过火</p>
+<p>使用响应式设计，很容易陷入所有媒体查询的魔法和变得有点疯狂。虽然媒体查询非常有趣，但在设计中使用大量的复杂性会让你变得难堪。我们已经不得不花很多时间去处理这些复杂性：设备屏幕，令人眼花缭乱的浏览器和设备，为了让客户和队友使用更加的舒服。我非常喜欢Lyza的建议<a href="http://alistapart.com/column/do-as-little-as-possible" target="_blank" rel="external">尽可能少</a>。这绝对是符合我们的利益以及追求简单的页面格局。</p>
+<p>就这样，现在就开始动手查询你的媒体查询。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>英文原文：<a href="http://bradfrostweb.com/blog/post/7-habits-of-highly-effective-media-queries/" target="_blank" rel="external">http://bradfrostweb.com/blog/post/7-habits-of-highly-effective-media-queries/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css3/7-habits-of-highly-effective-media-queries.html" target="_blank" rel="external">http://www.w3cplus.com/css3/7-habits-of-highly-effective-media-queries.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/为什么要用和如何使用字体图标.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          为什么要用和如何使用字体图标
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/mac常用命令.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac常用命令</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

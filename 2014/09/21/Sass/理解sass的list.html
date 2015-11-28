@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>理解Sass的list | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Sass中的List是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的List功能，我们就必须的深入了解他。Hugo写了几篇教程，其深入的培析了Sass的List功能，以及其使用方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解Sass的list">
+<meta property="og:url" content="http://ddnode.com/2014/09/21/Sass/理解sass的list.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="Sass中的List是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的List功能，我们就必须的深入了解他。Hugo写了几篇教程，其深入的培析了Sass的List功能，以及其使用方法。">
+<meta property="og:updated_time" content="2015-03-29T11:01:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="理解Sass的list">
+<meta name="twitter:description" content="Sass中的List是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的List功能，我们就必须的深入了解他。Hugo写了几篇教程，其深入的培析了Sass的List功能，以及其使用方法。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Sass/理解sass的list" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/21/Sass/理解sass的list.html" class="article-date">
+  	<time datetime="2014-09-20T16:00:00.000Z" itemprop="datePublished">2014-09-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      理解Sass的list
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/列表/">列表</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/周刊/">周刊</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能，我们就必须的深入了解他。<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>写了几篇教程，其深入的培析了Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能，以及其使用方法。<br><a id="more"></a></p>
+<ul>
+<li><a href="http://css-tricks.com/striped-background-gradients/" target="_blank" rel="external">Create Striped Backgrounds With Gradients (and a Sass Mixin)</a></li>
+<li><a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/" target="_blank" rel="external">UNDERSTANDING SASS LISTS</a></li>
+<li><a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a></li>
+</ul>
+<p>除了这向篇文章，在互联网上很难找到有关于Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>更好教程了。而在Sass的社区中对List的功能讨论也是相当的激烈。这些天我也一直在阅读这几篇文章，想让自己能更好的理解Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能。今天根据这几篇文章，对<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能的介绍做了一些翻译与整理。</p>
+<p>##创建一个Sass的list</p>
+<p>首要的事情就是创建List。虽然在Sass中创建一个list可能会非常棘手，但事实上呢？<strong>Sass对于变量类型并不是非常原格</strong>，可以像理解<code>Javascript</code>语言一样，<strong>Sass也是一种弱类型语言</strong>。这样就意味着，处理一个列表你就可以像是在处理一个字符串，或者说是一个字符串列表功能。</p>
+<blockquote>
+<p>Sass对于变量类型不是非常严格</p>
+</blockquote>
+<p>在Sass中，有两种方法可以用来初始化一个<strong>空</strong>的变量（这也可以被视为一个列表）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a:();&#10;$b:unquote(&#34; &#34;);//&#27880;&#24847;&#65292;&#20882;&#21495;&#20043;&#38388;&#26377;&#19968;&#20010;&#31354;&#26684;&#10;$c:null;&#10;$d:(null);</span><br></pre></td></tr></table></figure>
+<p>现在我们创建了四个变量，接着通过Sass的<code>type-of()</code>函数来检测这些变量的类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type-of($a) =&#62; list&#10;type-of($b) =&#62; string&#10;type-of($c) =&#62; null&#10;type-of($d) =&#62; null</span><br></pre></td></tr></table></figure>
+<p>接下来，使用<code>length()</code>函数来检测一下每个变量的长度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 0&#10;length($b) =&#62; 1&#10;length($c) =&#62; 1&#10;length($d) =&#62; 1</span><br></pre></td></tr></table></figure>
+<p><code>$a</code>的长度是<code>0</code>，这是我们能预想到的，因为他是一个空列表。<code>$b</code>的长度是<code>1</code>，因为他是一个字符串，然而<code>$c</code>和<code>$d</code>都是<code>null</code>变量（空变量），令人想不通的是，他们的长度也是<code>1</code>。</p>
+<p>虽然<code>$a</code>和<code>$c</code>(<code>$d</code>)都可以用来初始化一个<code>List</code>（甚至是<code>unquote(&quot;&quot;)</code>,<strong>注，冒号之间没有任何空格</strong>），但前面简单的长度测试告诉我们，他们其实并不是完全一样的。当然如果你喜欢，你可以使用他们来初始化Sass的一个列表，但大家必须要记住，他们之间是不一样的。</p>
+<p>##<code>()</code>和<code>null</code>的区别</p>
+<p><code>null</code>等同于<code>(null)</code>或者<code>unquote(&quot;&quot;)</code>他们都是用来做为列表的第一个列表项，大多数情况之下，用他们来对Sass的列表进行初始化，但是和<code>()</code>并不完全一样，接下来通过几个简单的测试来说明<code>()</code>和<code>null</code>的区别。</p>
+<p>假设有两个变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a:();&#10;$b:null;</span><br></pre></td></tr></table></figure>
+<p>使用<code>type-of()</code>函数测试出变量的类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type-of($a) =&#62; list&#10;type-of($b) =&#62; null</span><br></pre></td></tr></table></figure>
+<p>使用<code>length()</code>函数输出变量的长度值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 0&#10;length($b) =&#62; 1</span><br></pre></td></tr></table></figure>
+<p>变量<code>$a</code>和<code>$b</code>都是一个列表，通过<code>nth()</code>函数来检测出第一个列表项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($a,1) =&#62; throws error&#10;nth($b,1) =&#62;</span><br></pre></td></tr></table></figure>
+<p>由于<code>$a</code>长度是0，在<code>nth()</code>函数检出其第一个列表项，在Sass编译的时候将会报错，而<code>$b</code>第一项刚好是空，那么在<code>nth()</code>函数检出其第一个列表项是一个空，没有任何东西。</p>
+<p>接下来使用<code>append()</code>函数为每个列表添加一个列表项<code>test</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a: append($a,&#34;test&#34;);&#10;$b: append($b,&#34;test&#34;);</span><br></pre></td></tr></table></figure>
+<p>再次检测其长度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 1&#10;length($b) =&#62; 2</span><br></pre></td></tr></table></figure>
+<p>使用<code>index()</code>函数来检测“test”列表项在列表中各处什么位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index($a,&#34;test&#34;) =&#62; 1&#10;index($b,&#34;test&#34;) =&#62; 2</span><br></pre></td></tr></table></figure>
+<p>使用<code>nth()</code>函数，再次检出列表的第一个列表项，这个时候又变了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($a,1) =&#62; test&#10;nth($b,1) =&#62;</span><br></pre></td></tr></table></figure>
+<p>我想这几个函数对<code>$a</code>和<code>$b</code>变量的操作，一路下来，您应该很清楚的知道<code>()</code>和<code>null</code>的不同之处了吧。</p>
+<p>##Sass的List</p>
+<p>Sass的<code>list</code>非常类似于<code>JavaScript</code>语言中的数组。你可以通过下面的方式来初始化一个Sass的List:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:();</span><br></pre></td></tr></table></figure>
+<p>当然，你也还可以使用<code>$list:null</code>或者<code>$list:unquote(&quot;&quot;)</code>，但你要注意一下他们之间的不同。不管使用哪种方法，我们先来看一个简单的Sass列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:(#b4d455,42,&#34;awesome&#34;);</span><br></pre></td></tr></table></figure>
+<p>前面也说过，<strong>Sass语法非常宽松</strong>，这也让    <code>list</code>在Sass中使用变得更加的复杂。我们一个一个来看。</p>
+<p>###列表的分隔符</p>
+<p>在Sass的列表中，你可以使用<strong>空格符</strong>或者<strong>逗号</strong>作为列表项与列表项之间的分隔符。事实上，我更喜欢使用逗号(<code>,</code>)用来做为列表的分隔符。在<code>JavaScript</code>和<code>PHP</code>这些语言中，都是用逗号作为数组的分隔符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list-space: &#34;item-1&#34; &#34;item-2&#34; &#34;item-3&#34;;&#10;$list-space: &#34;item-1&#34;,&#34;item-2&#34;,&#34;item-3&#34;;</span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong>和CSS一样，只要没有特殊字符，列表项的双引号是可以省略的。所以<code>$list: item-1,item-2,item-3;</code>是有效的。</p>
+<p>###列表的嵌套</p>
+<p>Sass的List就像<code>JavaScript</code>或者其他的程序语言一样，对列表的嵌套层级并没有限制，可以根据自己的需求对列表进行嵌套。Sass的嵌套主要有两种方式，一种是嵌套的列表子级列表项是以逗号分隔，那么在列表中需要用括号来分隔；另一种嵌套的列表子级用空格分隔，那么在列表中可以使用逗号来分隔。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Nested lists with braces and same separator */&#10;$list: (&#10;        (&#34;item-1.1&#34;, &#34;item-1.2&#34;, &#34;item-1.3&#34;),&#10;        (&#34;item-2.1&#34;, &#34;item-2.2&#34;, &#34;item-2.3&#34;),&#10;        (&#34;item-3.1&#34;, &#34;item-3.2&#34;, &#34;item-3.3&#34;)&#10;       );&#10;&#10;/* Nested lists without braces using different separators to distinguish levels */&#10;$list: &#34;item-1.1&#34; &#34;item-1.2&#34; &#34;item-1.3&#34;,&#10;       &#34;item-2.1&#34; &#34;item-2.2&#34; &#34;item-2.3&#34;,&#10;       &#34;item-3.1&#34; &#34;item-3.2&#34; &#34;item-3.3&#34;;</span><br></pre></td></tr></table></figure>
+<p>###你可以使用括号</p>
+<p>正如你前面看到的示例一样，在Sass中，你可以不用括号定义一个非空的列表。这主要是因为大多数人的想法相反，在Sass中括号不是用来创建列表（除非是空的列表），而是用来做为分隔符的。</p>
+<p>事实上，在Sass中没有人会强迫您使用括号来创建一个列表，如果你喜欢，完全可以使用逗号来区别。说实话，我就经常使用逗号来创建一个列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list: &#34;item-1&#34;, &#34;item-2&#34;, &#34;item-3&#34;;</span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong>这是一个理论。我注意到括号都不只是一个列表项分组。当你操作的一个列表有四五层的嵌套时，括号绝对不是可选的。这样会让列表变得太复杂了。</p>
+<blockquote>
+<p>操作一个五层以上的嵌套列表是一件痛苦而又麻烦的事情</p>
+</blockquote>
+<p>###列表的索引值</p>
+<p>Sass中的列表索引值和<code>JavaSctript</code>数组中的索引值不一样，他是<strong>从1开始，而不是从0开始</strong>。一旦你开始使用Sass列表，这个问题也是最容易出错的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($list,0) =&#62; throws error&#10;nth($list,1) =&#62; item-1</span><br></pre></td></tr></table></figure>
+<p>###每个值都是一个列表</p>
+<p>在Sass中每一个值都可以是一个列表。字符串、数值、布尔值或者任何变量。而且可以通过Sass的<a href="http://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="external">List函数</a>来检测出一些值。</p>
+<p>我们来看一个简单的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$variable: &#34;Sass is awesome&#34;;&#10;$variable2: Sass is awesome;</span><br></pre></td></tr></table></figure>
+<p>上面两个变量值仅仅就是一个有引号，一个没有引号。</p>
+<p>使用<code>type-of()</code>函数检测出他们的类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; type-of($variable)&#10;&#34;string&#34;&#10;&#62;&#62; type-of($variable2)&#10;&#34;list&#34;&#10;&#62;&#62;</span><br></pre></td></tr></table></figure>
+<p>使用<code>length()</code>函数检测出他们的长度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; length($variable)&#10;1&#10;&#62;&#62; length($variable2)&#10;3</span><br></pre></td></tr></table></figure>
+<p>在用<code>nth()</code>函数来检测输出内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; nth($variable,1)&#10;&#34;Sass is awesome&#34;&#10;&#62;&#62; nth($variable2,1)&#10;&#34;Sass&#34;&#10;&#62;&#62;</span><br></pre></td></tr></table></figure>
+<p>这里变动一下，来索引第二个值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; nth($variable,2)&#10;SyntaxError: List index is 2 but list is only 1 item long for `nth&#39;&#10;&#62;&#62; nth($variable2,2)&#10;&#34;is&#34;</span><br></pre></td></tr></table></figure>
+<p>所在大家在使用的时候当心了，有引号的时候会当为一个字符串，当然他也是一个只有一个列表项的列表，而删除引号会被视为有三个列表项的列表。</p>
+<p>###可以使用空格或逗号分隔列表项</p>
+<p>在Sass的列表中，使用空格和逗号都可以用来分隔列表项，这两者都是完全有效的。我敢肯定你更喜欢使用逗号来分隔列表项，因为在<code>JavaScript</code>和<code>PHP</code>等程序中的数组，逗号是一个标准的分离器。如果你喜欢也可以用空格分隔。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list: #fff 42 &#34;awesome&#34;;&#10;$list: #fff,42,&#34;awesome&#34;;</span><br></pre></td></tr></table></figure>
+<p>你也可以使用逗号和空格分隔符混用，此时用来区别列表的嵌套。比如说你的一级列表中使用逗号来分隔列表项，而且他里面还嵌套了一个二级列表，那么二级列表可以使用空格来分隔。在下面的示例当中，第三个值是一个空格分隔的列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:  #b4d455, 42, &#34;awesome&#34; &#34;interesting&#34; &#34;free&#34;;</span><br></pre></td></tr></table></figure>
+<p>综合上述，在任何情况之下，定义你的列表时，你应该注意以下几点：</p>
+<ul>
+<li>使用括号进行列表嵌套；</li>
+<li>使用逗号分隔列表项；</li>
+<li>给字符串添加引号；</li>
+<li>列表嵌套不要超过五层；</li>
+<li>初始化列表建议使用<code>()</code>，不使用<code>null</code>;</li>
+</ul>
+<p>这些细节都将帮助您节省更多的时间，请相信我。</p>
+<p>##列表函数</p>
+<p>在Sass中，给列表提供了一系列的函数操作。在《<a href="http://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="external">Sass函数</a>》一文中，对列表的函数进行过详细介绍，感兴趣的可以看看。此处将Sass函数做一个汇总。</p>
+<ul>
+<li><strong>length($list)：</strong>返回<code>$list</code>长度（如果不是list,返回1）</li>
+<li><strong>nth($list,$index)：</strong>返回<code>$list</code>中第<code>$index</code>列表项值（如果索引值不在列表范围内，将会报错）</li>
+<li><strong>index($list,$value)：</strong>返回<code>$value</code>在<code>$list</code>中的位置</li>
+<li><strong>append($list,$value[,$separator])：</strong>使用<code>$separator</code>分隔符将<code>$value</code>列表项添加到<code>$list</code>最后（如果没有显式指定<code>$separator</code>分隔符，会以当前分隔符分隔）</li>
+<li><strong>jion($list-1,$list-2[,$separator]):</strong>使用<code>$separator</code>分隔符将<code>$list-2</code>附加到<code>$list-1</code>（如果没有显式指定分隔符，将对<code>$list-1</code>中的分隔符）</li>
+<li><strong>zip(*$lists):</strong>将多个<code>$list</code>组合在一起成为一个多维列表。如果列表源长度并不是所有都相同，结果列表长度将以最短的一个为准</li>
+<li><strong>reject($list,$value)：</strong>这是Compass中的一个函数，将<code>$value</code>值从<code>$list</code>中删除</li>
+<li><strong>compact(*$args)：</strong>Compass函数，返回一个删除非真值的新列表</li>
+</ul>
+<p>##给Sass列表添加东西</p>
+<p>Sass中的<code>list</code>是一个很有趣的东西，但也是个很复杂的东西。前面都是一些理论化，接下来通过一个例子的使用来介绍<code>list</code>。</p>
+<p>比如说一个扩展选择器，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.home .nav-home,&#10;.about .nav-about,&#10;.products .nav-products,&#10;.contact .nav-contact</span><br></pre></td></tr></table></figure>
+<p>这些选择器都是基于列表的关键值生成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pages: home,about,products,contact;</span><br></pre></td></tr></table></figure>
+<p>根据这个列表，有三种方法可以生成这样的选择器，我们可以一个一个来看。</p>
+<p>首先我们创建一个测试例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pages: home,about,products,contact;&#10;$selector:();&#10;@each $item in $pages &#123;&#10;&#9;//&#25105;&#20204;&#21019;&#24314;$selector&#10;&#125;&#10;#&#123;$selector&#125;&#123;&#10;&#9;//&#26679;&#24335;&#20889;&#22312;&#36825;&#37324;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###长而复杂的方法</p>
+<p>这是我两星期前使用的一个方法，它可以运行，但它需要一个额外的条件来处理逗号。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: $selector unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;);&#10;&#9;@if $item != nth($pages, length($pages))&#123;&#10;&#9;&#9;$selector: $selector unquote(&#34;,&#34;);&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>基本上给<code>$selector</code>添加了新的选择器，如果我们不处理列表的最后一项，我们需要添加一个逗号。</p>
+<p>###简洁的方法</p>
+<p>这种方法是通过<code>append()</code>函数方法，将他们添加到一起。这也是最简单的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: append($selector,unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;),comma);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我认为这是很简单的，我们将显示的使用逗号将选择器与前面的分隔开，并将此重新赋以给新的选择器<code>$selector</code>。</p>
+<p>###隐式的方法</p>
+<p>这种方法是最简单的，通过隐式的附加功能，将选择器合在一起，非常的简洁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: $selector,unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##自定义列表函数</p>
+<p>前面介绍主要Sass中<code>list</code>的功能以及自带的处理<code>list</code>的函数，但很多更先进的列表处理到目前为止，Sass自身是无法处理的。</p>
+<p><a href="http://hugogiraudel.com" target="_blank" rel="external">Hugo</a>根据Sass的一些功能为<code>list</code>定义了一些高级的函数功能，用来处理Sass的<code>list</code>。并在《<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a>》一文中介绍了这些高级函数的功能，以及使用方法。接下来，我们也跟随此文了解和学习这些高级的列表函数。</p>
+<p>我们来演示一个简单的函数。这里有两上小功能，就是定义两个函数用来获取列表中的第一个列表项和最后一个列表项的值。在很多时候我们都是通过<code>nth()</code>函数方式来获取：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($list,1);//&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#31532;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;nth($list,length($list));//&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010;&#21015;&#34920;&#39033;</span><br></pre></td></tr></table></figure>
+<p>众所周知，Sass中的列表项索引号是从<code>1</code>开始，而<code>length($list)</code>可以获得一个列表的长度值，再配合<code>nth()</code>函数得到第一项和最后一项。那么我们可以换过一个角度来思考，将这两个分别封装成两个函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;first()&#20989;&#25968;&#65292;&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#31532;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;@function first($list)&#123;&#10;&#9;@return nth($list,1);&#10;&#125;&#10;&#10;//&#23450;&#20041;last()&#20989;&#25968;&#65292;&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;@function last($list)&#123;&#10;&#9;@return nth($list,length($list));&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>例如我们一个颜色列表，我在页头<code>header</code>调用列表中第一个颜色，而在页脚<code>footer</code>调用列表中最后一个颜色，我们就可以这样来使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;&#39068;&#33394;&#21015;&#34920;&#10;$colors: green,blue,orange,yellow;&#10;&#10;//&#35843;&#29992;&#21015;&#34920;&#20013;&#31532;&#19968;&#20010;&#39068;&#33394;&#10;.header &#123;&#10;&#9;color: first($colors);//&#31561;&#21516;&#20110;nth($colors,1)&#10;&#125;&#10;&#10;//&#35843;&#29992;&#21015;&#34920;&#20013;&#26368;&#21518;&#19968;&#20010;&#39068;&#33394;&#10;.footer&#123;&#10;&#9;color: last($colors);//&#31561;&#21516;&#20110;nth($colors,length($colors))&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>转译出来的CSS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.header &#123;&#10;  color: green;&#10;&#125;&#10;&#10;.footer &#123;&#10;  color: yellow;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>很多时候列表只有一个列表项，此时<code>first()</code>和<code>last()</code>函数获取的列表项将等同。</p>
+<p>其它自定义的列表高级函数，如果你感兴趣，可以猛击<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">这里</a></p>
+<p>##总结</p>
+<p>本文主要根据<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>写了几篇教程：《<a href="http://css-tricks.com/striped-background-gradients/" target="_blank" rel="external">Create Striped Backgrounds With Gradients (and a Sass Mixin)</a>》、《<a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/" target="_blank" rel="external">UNDERSTANDING SASS LISTS</a>》、《<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a>》介绍了Sass中的<code>list</code>功能。</p>
+<p>经过上面的阅读之后，你能轻松的创建一个列表，以及索引列表项的值，判断列表的长度等等功能。同时在项目中使用列表功能，让你更佳轻松的完成你的工作，并且还能让你的代码更佳的简洁。</p>
+<p>最后非常感谢<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>给我们带来这么优秀的Sass教程，希望大家在此文上有所获得。</p>
+<p>如需转载，烦请注明出处：<a href="http://www.w3cplus.com/preprocessor/understanding-sass-list.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/understanding-sass-list.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/21/Sass/理解sass的选择占位符placeholder.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          理解Sass的选择占位符%placeholder
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/21/Sass/模块化css更要避免选择器嵌套.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">模块化CSS更要避免选择器嵌套</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

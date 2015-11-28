@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式设计：跨浏览器兼容性 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在上一篇文章中，我阐述了在响应式设计中处理图像3种方案的观点，讨论了最好的解决方案,采用合适图像尺寸服务于各种尺寸的屏幕。那么，本文接下来将从另外一个角度来聊管理图像，那就是跨浏览器的兼容性。
+在整个网页开发过程中，尤其你想创造一个响应式的结构——一个web开发人员必须去面对一个最重要及最频繁的问题就是兼容各种浏览器。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式设计：跨浏览器兼容性">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/响应式设计：跨浏览器兼容性.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="在上一篇文章中，我阐述了在响应式设计中处理图像3种方案的观点，讨论了最好的解决方案,采用合适图像尺寸服务于各种尺寸的屏幕。那么，本文接下来将从另外一个角度来聊管理图像，那就是跨浏览器的兼容性。
+在整个网页开发过程中，尤其你想创造一个响应式的结构——一个web开发人员必须去面对一个最重要及最频繁的问题就是兼容各种浏览器。">
+<meta property="og:updated_time" content="2014-09-20T13:38:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式设计：跨浏览器兼容性">
+<meta name="twitter:description" content="在上一篇文章中，我阐述了在响应式设计中处理图像3种方案的观点，讨论了最好的解决方案,采用合适图像尺寸服务于各种尺寸的屏幕。那么，本文接下来将从另外一个角度来聊管理图像，那就是跨浏览器的兼容性。
+在整个网页开发过程中，尤其你想创造一个响应式的结构——一个web开发人员必须去面对一个最重要及最频繁的问题就是兼容各种浏览器。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/响应式设计：跨浏览器兼容性" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/响应式设计：跨浏览器兼容性.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式设计：跨浏览器兼容性
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在<a href="http://www.w3cplus.com/responsive/understanding-responsive-web-design-how-to-manage-images.html" target="_blank" rel="external">上一篇</a>文章中，我阐述了在响应式设计中处理图像3种方案的观点，讨论了最好的解决方案,采用合适图像尺寸服务于各种尺寸的屏幕。那么，本文接下来将从另外一个角度来聊管理图像，那就是跨浏览器的兼容性。</p>
+<p>在整个网页开发过程中，尤其你想创造一个响应式的结构——一个web开发人员必须去面对一个最重要及最频繁的问题就是兼容各种浏览器。<br><a id="more"></a><br>“兼容性”意味着什么？网页开发人员必须确保他们的设计可以良好地运行起来，然后网页内容保持完整性并且原有的功能性保持不变。毫无疑问，这是一个最复杂及令人沮丧的的问题之一，你必须意识到，当你在设计一个新项目时，不能给兼容性留下任何机会，要在整个设计中保持跨浏览器兼容性的思想。</p>
+<p>在最新的CSS3版本中有了很多新的CSS功能，但还没在所有主流浏览器中得到支持。事实上，有些功能是不推荐使用的，因此会在浏览器中全部被忽略掉，如果你使用了一些不支持的CSS功能，结果会导致重大的问题发生。这不仅仅是发生在不同类型浏览器之间，即使在同类型不同版本的浏览器之间也能够支持（或者不支持）各种设计技术，这些问题都会增加跨浏览器兼容性的难度。</p>
+<p>回到图像管理，这可能是RWD方案的弱点所在，特别是对于浏览器兼容性问题。照片和媒体需要具有灵活性和适应不同的设备，与此同时，很重要的一点是不会减慢对页面加载过程。因此，依然没有明确、理想的解决方案，如不同的屏幕尺寸，有限制的带宽(移动终端浏览)，在高分辨率(“视网膜”)上显示，等等。</p>
+<p>明显地，在所有设备上都使用一张大图片（尽可能是最大的版本）是不推荐的。想想一个使用着慢吞吞的2G网络的智能手机用户需要花多长时间来加载你的设计吖。经过漫长时间加载图片之后，这些高分辨率的图片也可能只显示原来的四分之一。</p>
+<p>最大的问题就是媒体查询（media queries）在老版本浏览器中是不被支持的。因此，一个依赖很多CSS3功能的响应式网页只有在一个不断支持CSS3、更新的浏览器中才能完好地显示出来。幸运的是，有3种JavaScript解决方案可以使得在老版本浏览器中运行响应式网站，而不会受限于对CSS3的支持。Respond.js、Modernizr和adaptive.960.js，接下来学习一下。</p>
+<p>##Respond.js</p>
+<p>第一种方案也是最简单的一种——我现在谈到的是一个脚本叫respond.js，是可以增强老版本浏览器理解和执行CSS3的媒体查询。添加如下代码就可以使用它。</p>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"js/respond.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p>这样子，浏览器就可以支持媒体查询、最小宽度、最大宽度和所有媒体类型（例如，屏幕（screen））。这个脚本有助于CSS3指令正确地执行，甚至在更加老的浏览器上也行。</p>
+<p>看起来Respond.js很容易成为一种理想的解决方案，但对许多项目，这是一个伟大的解决方案，因为代码是从最新的CSS3桌面浏览器和为智能手机设计的所有浏览器读取的。脚本的唯一目的是让老版本浏览器能够理解并执行媒体查询的CSS3指令，没有多余的功能。</p>
+<p>##Modernizr</p>
+<p>第二种解决方案就是使用Modernizr工具。正如在其<a href="http://modernizr.com/docs/" target="_blank" rel="external">官方文档</a>上所解释那样，“Modernizr是一个智能的JavaScript库，能够检测出本机实现新web技术的可用性，例如，基于HTML5和CSS3标准的新特性。”</p>
+<p>这些特性的大部分至少在一种主流浏览器中实现，Modernizr所做的——非常简单——告诉你目前的浏览器是否实现这些特性。这是一个不可缺少的工具，可以通过javascript驱动功能检测给你更好的控制体验。</p>
+<p>除此之外，Modernizr创建一个JavaScript对象并且在HTML元素中增加类来锁定你的CSS代码。这是一种极好的解决方案，因此这样有助于你很简单地编写条件式的JavaScript和CSS代码来处理每种方案，不管浏览器是否支持某种特性与否。</p>
+<p>Modernizr支持这些浏览器：IE6+, 火狐3.5+, Opera 9.6+, Safari 2+, Chrome, Mobile Safari, Android基于WebKit内核的浏览器，Opera手机和火狐手机（浏览器）。</p>
+<p>你可以下载该库的<a href="http://modernizr.com/" target="_blank" rel="external">完整版本</a>和根据自己的定制去实现它。然而，如果你只是需要测试浏览器对CSS3的兼容性，你可以设置库提供的各种选项并创建自己的压缩代码。在一个外部的js文件中粘贴这些代码，用标签包含在HTML文档里。Modernizr团队建议在导入CSS之后才加入该库。</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">title</span>&gt;</span>Your title<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"modernizr-latest.js"</span><span class="value">"&gt;&lt;/script&gt;
+     &lt;/head&gt;
+     &lt;body&gt;Your content&lt;/body&gt;
+&lt;/html&gt;</span></span>
+</code></pre><p>现在你有一个JavaScript库，表明你使用CSS3和HTML5功能得到支持。让页面在浏览器上运行，然后使用Chrome开发工具或Firebug审查代码。</p>
+<p>你可能看到代码如下：</p>
+<pre><code>&lt;html class="js flexbox canvas canvastext webgl <span class="keyword">no</span>-touch geolocation postmessage websqldatabase <span class="keyword">no</span>-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage <span class="keyword">no</span>-borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio <span class="keyword">no</span>-localstorage <span class="keyword">no</span>-sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"&gt;
+    ....
+&lt;/html&gt;
+</code></pre><p>##adapt.960.js</p>
+<p>对于第三种解决方案，我们认为是非常不同于前两种的，尤其是因为它并不利用CSS3和相应的媒体查询。然而，其概念非常类似于CSS3的媒体查询。</p>
+<p>如果我们单独文件中使用CSS3，这个库要求我们去用多个CSS文件分开这些代码，其中一份为每种设备类型而准备的。该库会解析设备的分辨率并为特定的屏幕分辨率调用对应的CSS设计。</p>
+<p>我们可以<a href="http://adapt.960.gs/" target="_blank" rel="external">下载该库</a>，然后在页面代码中添加如下代码行：</p>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"js/adapt.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p>接着，复制下面代码：</p>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="actionscript">
+<span class="keyword">var</span> ADAPT_CONFIG = {
+     <span class="comment">// Where is your CSS?</span>
+     path: <span class="string">'assets/css/'</span>,
+
+     <span class="keyword">dynamic</span>: <span class="literal">true</span>,
+
+     callback: myCallback,
+
+     range: [
+           <span class="string">'0px    to 760px  = mobile.css'</span>,
+           <span class="string">'760px  to 980px  = 720.css'</span>,
+           <span class="string">'980px  to 1280px = 960.css'</span>,
+           <span class="string">'1280px to 1600px = 1200.css'</span>,
+           <span class="string">'1600px to 1920px = 1560.css'</span>,
+           <span class="string">'1940px to 2540px = 1920.css'</span>,
+           <span class="string">'2540px           = 2520.css'</span>
+     ]
+};
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p>我们可以看到在“range”包含了一系列CSS文件，每个CSS文件就是对应了一组分辨率，文件内包含相对应的CSS属性，就好比，代码是编写在CSS媒体查询中。</p>
+<p>公共CSS——就是应该应用在所有的屏幕尺寸中——会被包含在不同的CSS文件汇总，为了方便，我们可以叫此CSS文件为master.css，像平常的CSS文件那样引入它：</p>
+<pre><code>&lt;link href=<span class="string">"assets/master.css"</span> rel=<span class="string">"stylesheet"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"text/css"</span> media=<span class="string">"screen"</span> /&gt;
+</code></pre><p>##总结</p>
+<p>在这三种方案中，我们应该采用哪一种？它们都是有效的、合理的方案。如果你选择应用第一个解决方案(respond.js)，你必须编写和管理一个单独的CSS文件，这点不像adapt.960.js，则需要多个CSS文件。最后，如果你选择去尝试Modernizr，将利用浏览器支持新的CSS3功能，并且很容易和可靠的手段来控制或者浏览器无法控制的局势。</p>
+<p>如果你相信在未来几年内，老版本浏览器会变得无关紧要了，移动浏览器将取代桌面浏览器，我相信最好使用媒体查询和支持老版本浏览器可用的javascript扩展插件。</p>
+<p>记住目前也有基于web的服务来测试响应式网站和模拟浏览器窗口的大小。其中有两个方案，一是<a href="http://responsive.is/typecast.com" target="_blank" rel="external">responsive.is</a>，这个是非常容易上手的；而是<a href="http://responsive.is/typecast.com" target="_blank" rel="external">studiopress.com</a>，输入网址后，从不同的角度并排地展示你的网站。</p>
+<p>除了基于web的解决方案之外，还有应用程序，可以直接安装在你的个人电脑。其中，发现Opera移动模拟器 <a href="http://www.opera.com/it/developer/mobile-emulator" target="_blank" rel="external">Opera Mobile Emulator</a>，可在Mac、Linux和Windows上安装使用。安装后打开应用程序，将发现有一个列设备类型选择来模拟的(不幸的是，苹果设备除外)。</p>
+<p>总结这篇文章，我想分享一个非常有用的在线工具来测试你的网站的兼容性:<a href="http://crossbrowsertesting.com/" target="_blank" rel="external">crossbrowsertesting.com</a>。你必须选择一个操作系统和一个web浏览器。通过在一系列浏览器截图，使得对你的网站有了较为完整视图，通过这种方式，将更容易地理解你应该修改哪些元素使得你的项目完全兼容任何平台。</p>
+<p>##汇总</p>
+<p>由<a href="http://pigerla.com/" target="_blank" rel="external">Spy</a>根据<a href="http://www.sitepoint.com/author/atranfici/" target="_blank" rel="external">Annarita Tranfici</a>的系列教程《<a href="http://www.sitepoint.com/series/understanding-responsive-web-design/" target="_blank" rel="external">Understanding Responsive Web Design</a>》翻译的有关于响应式设计的系列文章到今天为止就是最后一篇，下面将整个系列对应的译文列在此处，仅供参考：</p>
+<ul>
+<li><a href="http://www.w3cplus.com/responsive/understanding-responsive-web-design-how-to-manage-fonts.html" target="_blank" rel="external">响应式设计:使用响应式字体</a></li>
+<li><a href="http://www.w3cplus.com/responsive/responsive-web-design-tips-and-notes.html" target="_blank" rel="external">响应式设计：概念与运用</a></li>
+<li><a href="http://www.w3cplus.com/responsive/responsive-web-design-fluid-layouts.html" target="_blank" rel="external">响应式设计：流体布局</a></li>
+<li><a href="http://www.w3cplus.com/responsive/responsive-web-design-grid-layouts.html" target="_blank" rel="external">响应式设计：自定义网格布局</a></li>
+<li><a href="http://www.w3cplus.com/responsive/understanding-responsive-web-design-how-to-manage-images.html" target="_blank" rel="external">响应式设计：响应图像</a></li>
+<li><a href="http://www.w3cplus.com/responsive/understanding-responsive-web-design-cross-browser-compatibility.html" target="_blank" rel="external">响应式设计：跨浏览器兼容性</a></li>
+</ul>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote>
+<p>##关于Spy<br>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：<a href="http://pigerla.com/" target="_blank" rel="external">个人博客</a>,<a href="http://weibo.com/52spy1314" target="_blank" rel="external">新浪微博</a>。</p>
+</blockquote>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://www.sitepoint.com/understanding-responsive-web-design-cross-browser-compatibility/" target="_blank" rel="external">http://www.sitepoint.com/understanding-responsive-web-design-cross-browser-compatibility/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/responsive/understanding-responsive-web-design-cross-browser-compatibility.html" target="_blank" rel="external">http://www.w3cplus.com/responsive/understanding-responsive-web-design-cross-browser-compatibility.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/Drupal/nodes-programmatically-in-drupal-7.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Drupal 7 编码创建 Nodes
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/响应式设计：自定义网格布局.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式设计：自定义网格布局</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

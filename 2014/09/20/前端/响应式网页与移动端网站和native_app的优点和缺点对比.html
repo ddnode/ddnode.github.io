@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式设计、移动端网站与原生应用的优点和缺点 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="让你的企业业务进入移动领域的最佳方式是什么呢？
+移动端的优化最近成了一个时髦的话题，将来也会有更多关于这方面的讨论。根据Mashable在2013年8月份发布的统计，可以得知，全球所有网站流量的17.4%都是通过移动设备来的，而这个数字在2014年将会继续增长。所以，你如果不想失去一杯羹的话，是时候步入移动端的领域了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式设计、移动端网站与原生应用的优点和缺点">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/响应式网页与移动端网站和native_app的优点和缺点对比.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="让你的企业业务进入移动领域的最佳方式是什么呢？
+移动端的优化最近成了一个时髦的话题，将来也会有更多关于这方面的讨论。根据Mashable在2013年8月份发布的统计，可以得知，全球所有网站流量的17.4%都是通过移动设备来的，而这个数字在2014年将会继续增长。所以，你如果不想失去一杯羹的话，是时候步入移动端的领域了。">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-1.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-2.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-3.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-4.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-5.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-6.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-7.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-8.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-9.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-10.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-11.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-12.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-13.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-14.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-15.jpg">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-16.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:39:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式设计、移动端网站与原生应用的优点和缺点">
+<meta name="twitter:description" content="让你的企业业务进入移动领域的最佳方式是什么呢？
+移动端的优化最近成了一个时髦的话题，将来也会有更多关于这方面的讨论。根据Mashable在2013年8月份发布的统计，可以得知，全球所有网站流量的17.4%都是通过移动设备来的，而这个数字在2014年将会继续增长。所以，你如果不想失去一杯羹的话，是时候步入移动端的领域了。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/响应式网页与移动端网站和native_app的优点和缺点对比" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/响应式网页与移动端网站和native_app的优点和缺点对比.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式设计、移动端网站与原生应用的优点和缺点
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>让你的企业业务进入移动领域的最佳方式是什么呢？</p>
+<p>移动端的优化最近成了一个时髦的话题，将来也会有更多关于这方面的讨论。根据<a href="http://mashable.com/2013/08/20/mobile-web-traffic/" target="_blank" rel="external">Mashable</a>在2013年8月份发布的统计，可以得知，全球所有网站流量的<strong>17.4%</strong>都是通过移动设备来的，而这个数字在2014年将会继续增长。所以，你如果不想失去一杯羹的话，是时候步入移动端的领域了。<br><a id="more"></a><br>仅希望像Google和苹果这样的行业巨头公司网站适应移动设备往往是不够的，除非您不介意丢失几乎五分之一的游客到您的网站。</p>
+<p>下列哪一种方案最适合您的业务呢？</p>
+<ul>
+<li>响应式设计(Responsive Web Design)</li>
+<li>移动网站(Mobile Website)</li>
+<li>Native App</li>
+</ul>
+<p>要回答这个问题，我们通过了解他们各自的优点和缺点来作为回答。</p>
+<p>##响应式设计(Responsive Web Design)</p>
+<p><a href="http://designmodo.com/responsive-design-examples/" target="_blank" rel="external">响应式设计</a>让你的网站可以自适应的适配浏览他的设备屏幕大小。这是基于桌面网站自适应网站的内容，设计和导航的方法，让使用移动设备的用户浏览网站更具舒适性和使用性。</p>
+<blockquote>
+<p>有关于响应式设计的相关内容，如果您感兴趣的话，可以点击《<a href="http://www.w3cplus.com/blog/tags/79.html" target="_blank" rel="external">Responsive教程</a>》更深入的了解他。——@大漠</p>
+</blockquote>
+<p>这意味着，你有一个网站可以同时适配所有的设备。</p>
+<p>###Codrops大屏幕</p>
+<p><a href="http://tympanus.net/codrops/" target="_blank"><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-1.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></a></p>
+
+<p>###Codrops中等屏幕</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-2.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###Codrops小屏幕</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-3.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###响应式设计的优点</p>
+<ul>
+<li><strong>一个网站：</strong>适应所有设备，他更容易管理。</li>
+<li><strong>一个URL：</strong>让你的用户在移动设备上更容易找到，而且不需要任何的重定向，这在较慢的网速下特别的有用。</li>
+<li><strong>容易做搜索引擎优化：</strong>不需要为移动设备创建特定的内容，可以让移动设备使用桌面网站的搜索引擎优化的好处。</li>
+<li><strong>易于营销：</strong>网站在移动设备上显示，对于营销部门来说不需要增加额外的工作量。</li>
+<li><strong>成本低：</strong>简单的数学运算，一个网站比两个网站要便宜吧。</li>
+</ul>
+<p>###响应式设计的缺点</p>
+<ul>
+<li><strong>一个网站：</strong>让一个网站适配所有网站，对于你来说很容易，但不一定适合你的用户。你需要在同一个页面上展示不同的侧重点，以便使用该平台的最大优势，最大限度的提高你的转化率。</li>
+<li><strong>技术：</strong>响应式设计他是一种较新的技术，在一些老的设备和浏览器中加载页面速度过慢，甚至是完全不支持。</li>
+<li><strong>用户体验：</strong>移动端和PC机上的用户体验是完全不同的。所以一个网，甚至是响应式设计，在两个平台上都会损害您整体的UX。如果你试图使用相同的界面来满足移动和桌面的两个平台的用户使用，到最后可能谁都无法满足。</li>
+</ul>
+<p><strong>响应式设计在某些情况之下，他可以是一个强大的工具，但不是一个最终解决的方案。</strong></p>
+<p>###Mashable大屏幕</p>
+<p><a href="http://mashable.com/" target="_blank"><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-4.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></a></p>
+
+<p>###Mashable中等屏幕</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-5.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###Mashable小屏幕</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-6.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###Smashing Magazine大屏幕</p>
+<p><a href="http://www.smashingmagazine.com/" target="_blank"><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-7.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></a></p>
+
+
+<p>###Smashing Magazine中等屏幕</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-8.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###Smashing Magazine小屏幕</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-9.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>##Mobile网站</p>
+<p>移动网站是考虑平台的有限性和机遇，为移动设备专门设计的。在开发移动网站，你需要注意小屏幕尺寸和交互方式（触摸）和有限的网速(2G/3G)。内容必须是方便，快速加载和可读性。因为有一堆不同屏幕和交互的移动设备，不可能为每个设备类型创建不同的网站。因此，即使您的移动网站具有响应效果，适应所各种屏幕，这也成为一个大家观注的问题。</p>
+<p>开发移动网站的时候也有几个原则，像组织你的内容使他更符合人体工程学的用户界面，需要遵循一列布局。</p>
+<p>###Meetup web</p>
+<p><a href="http://www.meetup.com/" target="_blank"><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-10.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></a></p>
+
+<p>###Meetup mobile</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-11.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###Meetup app</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-12.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###移动网站的优点</p>
+<p>-　<strong>用户体验：</strong>恭喜！你有一个网站，是专门为移动设备创建的，考虑到平台的所有优点和局限性，让你有一个良好的机会，创造一个漂亮的和可用的UX。<br>-　<strong>速度：</strong>您的网站在移动平台上加载更快，更轻松。<br>-　<strong>成本：</strong>相对于响应式设计，创建一个移动网站并不便宜，但你仍然可以到一个非常合理的价格价的价值。<br>-　<strong>从本搜索中受益：</strong>搜索引擎提供的良好的UX往往不如你做的，所以本二搜索结果优化，移动网站有更好的机会进行排列。<br>-　<strong>立即访问：</strong>虽然比响应式设计没有额外的好处，但对于一个需要下载的安装的Native App，仍然发挥着它的作用。</p>
+<p>###移动网站的缺点</p>
+<p>-　<strong>多个URL：</strong>您的用户必须记住两个URL，或以其他的方式重定向到移动网站，这需要几秒钟的时间。而且移动网站还需要为SEO做额外的工作。<br>-　<strong>维护：</strong>您必须得维护两个网站。<br>-　<strong>没有普遍的一致性：</strong>你必须考虑到，有两种不同类型的移动设备：触摸屏和键盘导航。一个单一的移动网不以同样的方式在所有类型设备上工作。</p>
+<p>###Klout web</p>
+<p><a href="http://klout.com/" target="_blank"><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-13.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></a></p>
+
+<p>###Klout mobile</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-14.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###Klout app</p>
+<p><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-15.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>##Native App</p>
+<p>Native App是专门为移动设备开发的软件。本机应用程序不是所有的设备共有的，因为它们是为特定的操作系统进行开发。用户必须要从一个特定的操作系统商店下载应用程序，如在Google Play或Apple Store，然后安装到移动设备上。</p>
+<p>关于应用程序最重要的是，他们是灵活的和让桌面上的网站不具备这些东西，而且还配有手机特有的功能，比如使用摄像头，语音按钮，GPS数据或NFC，联系人或相册等等。</p>
+<p>###Native App的优点</p>
+<ul>
+<li><strong>用户体验：</strong>Native App比任何移动优化方案都具有更好的UX。</li>
+<li><strong>辅助功能和速度：</strong>应用程序可以运行，即使没有连接网络也可以访问您的所有信息。如果你足够幸运，拥有一支丰富的团队和良好的编码器，你的运用程序可以加载的更快，更顺利。</li>
+<li><strong>一切你能想象：</strong>在这里你可以和应该考虑的盒子，并得到创造性。移动平台，尤其是带触摸的导航，可以提供更好的UX功能和工作质量。</li>
+<li><strong>可见性：</strong>一旦用户在移动设备上安装了，他就一直会显示在菜单中或在桌面上有一个独特的图标。</li>
+</ul>
+<p>###Native App的缺点</p>
+<p>-　<strong>不能在所有设备上访问：</strong>你的应用程序是建立只是在一个特定的操作系统，这意味着iOS系统上的应用不能在别的设备上访问。<br>-　<strong>不具灵活性：</strong>所有的应用程序更新都必须通过应用程序商店，每次提交都得获得批准，这有可能需要长达几个星期的时间。而且不是每个用户都很乐意与频繁的更新，有些人会一直使用旧的版本。<br>-　<strong>成本高：</strong>Native App的开发显然是众多解决方案中最贵的一种。<br>-　<strong>营销和搜索引擎优化：</strong>需要一个完全不同的营销策略来推广你的应用程序，你可以需要一个专业的移动营销人员帮忙。</p>
+<p>###Shazam app</p>
+<p><a href="http://klout.com/" target="_blank"><img alt="响应式设计与移动端网站和Native App的优点和缺点" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/RMN-16.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></a></p>
+
+
+<p>##那么哪一种方案最适合你的业务呢？</p>
+<p>要回答这个问题，你应该考虑您的业务目标。当然没有任何一个理由，企业为什么不能同时具有一个移动网站和一个原生应用程序。或者你可以选择一个响应式网站，适应台式机，平板电脑，手机网站。具体取用哪个方案，主要还是看你的业务规模和预算，也就是说，你愿意给这个项目花多少钱。</p>
+<p>如果你要经常更新内容，那以响应式设计网站很容易更新和管理。如果您的企业需要一个完美的UX和优异的性能，并且可以跨平台，那么原生应用是个可选的方案。</p>
+<p>所以，给移动端优化做出最后的选择，记住三个要点：你的<strong>业务目标</strong>、<strong>项目预算</strong>和<strong>行业特点</strong>。</p>
+<p>所有这些解决方案都可以在一起的工作，相互补充。但有一点是清楚的：最好的解决方案是给你用户一个最好的效果。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://designmodo.com/responsive-design-vs-mobile-website-vs-app/" target="_blank" rel="external">http://designmodo.com/responsive-design-vs-mobile-website-vs-app/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css3/responsive-design-vs-mobile-website-vs-app.html" target="_blank" rel="external">http://www.w3cplus.com/css3/responsive-design-vs-mobile-website-vs-app.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/响应式网页字体图标.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          响应式网页字体图标
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/响应式网站gilt.com之四：full-screen_modal.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式网站Gilt.com之四：Full-Screen Modal</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

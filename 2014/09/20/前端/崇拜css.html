@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>崇拜CSS | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="公认的拥有一个编写和管理CSS的方法比什么都没有要更好。尽管如此，一些开发人员的实践是不利于语义化质量和长期的可维护性。我们要讨论一些被提倡的”CSS框架方法”的问题和作为Web开发人员，我们如何可以更好的解决这些问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="崇拜CSS">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/崇拜css.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="公认的拥有一个编写和管理CSS的方法比什么都没有要更好。尽管如此，一些开发人员的实践是不利于语义化质量和长期的可维护性。我们要讨论一些被提倡的”CSS框架方法”的问题和作为Web开发人员，我们如何可以更好的解决这些问题。">
+<meta property="og:updated_time" content="2014-09-20T13:37:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="崇拜CSS">
+<meta name="twitter:description" content="公认的拥有一个编写和管理CSS的方法比什么都没有要更好。尽管如此，一些开发人员的实践是不利于语义化质量和长期的可维护性。我们要讨论一些被提倡的”CSS框架方法”的问题和作为Web开发人员，我们如何可以更好的解决这些问题。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/崇拜css" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/崇拜css.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      崇拜CSS
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>公认的拥有一个编写和管理CSS的方法比什么都没有要更好。尽管如此，一些开发人员的实践是不利于语义化质量和长期的可维护性。我们要讨论一些被提倡的”CSS框架方法”的问题和作为Web开发人员，我们如何可以更好的解决这些问题。<br><a id="more"></a><br>今天最流行的CSS开发框架技术当属<a href="https://github.com/stubbornella/oocss/wiki/faq" target="_blank" rel="external">OOCSS</a>，尽管还有其他类似的技术存在，如<a href="http://bem.info/method/definitions/" target="_blank" rel="external">BEM</a>。这些方法试图对CSS采用面向对象的编程原则。尽管样式语言和面向对象的软件设计原则在概念之间存在一定的问题，这些微妙的东西对于一个欠缺经验的开发人员来说可能不会立即显现出来。最令人不安的是，这些方法已经可以广泛的看到博客给其冠以”最佳实践”的评价。“abscence”的证据来阐述使用这些方法的好处——选择高流量网站只是一小部分——这反应了我的观点，他们代表了一种误导和盲目的<a href="http://neurotheory.columbia.edu/~ken/cargo_cult.html" target="_blank" rel="external">崇拜</a>。</p>
+<blockquote>
+<p>如果您从未接触过有关于OOCSS和BEM相关方面的知识，你可以先从这里了解一些有关于<a href="http://www.w3cplus.com/blog/tags/284.html" target="_blank" rel="external">OOCSS</a>和<a href="http://www.w3cplus.com/blog/tags/325.html" target="_blank" rel="external">BEM</a>相关的知识。——@大漠</p>
+</blockquote>
+<p>##语义化</p>
+<blockquote>
+<p>在计算机科学中只有两硬东西：缓存失效和命名的事情——<a href="http://martinfowler.com/bliki/TwoHardThings.html" target="_blank" rel="external">Phil Karlton</a></p>
+</blockquote>
+<p>Web从根本上来产一个语义媒介。这是一个至关重要的功能平台，通过一个巨大的一系列不同类型的技术打算向许多不同的语言、文化、性别、年龄、生理和认识能力的人们呈现。看起来没有单一的视觉Web，除非你正在构建的东西明确知道了他们的范围很狭窄，因此语义的方法作为一个网页开发商应该成为你所做事情的一切核心。</p>
+<p>当编写HTML，有三种主要的方式表达内容、Web界面或应用程序的语义化：内容使用的元素类型制作的模板；使用ID用来识别一个独特的，单个元素；用类名来分类一组元素。</p>
+<p>这三种之中，用于绑定介绍HTML文档是最常用的工具。重要的是要注意，讨论类的名称时，W3C最近的候选人推荐HTML5的时候说：</p>
+<blockquote>
+<p>没有额外的限制情况之下，作者可以使用类的属性，但鼓励作者使用类的属性值描述内容的性质，而不是只描述内容所需要的表现形式——<a href="http://www.w3.org/TR/html5/dom.html#classes" target="_blank" rel="external">更多</a>。</p>
+</blockquote>
+<p>在规范中没有明确的规定类的属性目的是服务什么，但建议用其来描述内容的语义。尽管如此，它已经变得非常常见，Web开发人员错误地引用来的属性为”css类”或者类似的。正如Tantek Çelik的笔记描述的：</p>
+<blockquote>
+<p>能过使用短语“CSS类”或“CSS类名称”，你不仅是不精确的（或者完全错误），你将使用上下文/框架的表像与“CSS”类的名字所暗示的那样捆绑在一起，甚至鼓励实践表表象的类名，这是一种坏的实践方式——<a href="http://tantek.com/2012/353/b1/why-html-classes-css-class-selectors" target="_blank" rel="external">Tantek Çelik</a>。</p>
+</blockquote>
+<p>这样的建议完全不符合框架方法，他们选择忽视它。因为类名称在项目类型中必须描述他们的介绍，这样才具有语义——<a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank" rel="external">尽管有反对的声音</a>。但为什么要语义化的类名，他们重要吗？在最基本的层面上它是维护与平台无关的东西，甚至包括设计的原理，正如Tim Berners Lee在<a href="http://www.scientificamerican.com/article.cfm?id=long-live-the-web" target="_blank" rel="external">网络的普遍性</a>中所描述的一样。但也因为我们无法预测不来的创新技术可以用于今天的创建。</p>
+<blockquote>
+<p>快速测试你的HTML有没有语法化：你可以使用它作为一个公共的API吗？——<a href="https://twitter.com/alex_gaynor/statuses/389502802265133056" target="_blank" rel="external">Alex Gaynor(@alex_gaynor)</a></p>
+</blockquote>
+<p><a href="http://microformats.org/about" target="_blank" rel="external">Microformats</a>是一个例子。唯一的原因就是这些文档作者使用了语义化类名来描述常见的结构，如地址和约会的日历。通过篡改某些用于描述数据约定的这种方式，标记不仅让你的网站访客就得有用，软件也懂得和使用他在全新和无法想像的方式中。Microformats演示了语义化类名的有用性，可是令人失望的看到它们被解散：</p>
+<blockquote>
+<p>类名传授少或没有有用的语义化信息的机器或访客，除非它是商定中的一小部分（和机器可读的）名字，Microformats。——<a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank" rel="external">Nicolas Gallagher</a></p>
+</blockquote>
+<p>“小套约定的名称”和所有潜在的，未来使用的内容和今天发布的之间的区别，纯粹是由CSS框架思想给驱动的。口述那些无语义化的类名，结构和文档内容，虽内容被呈现了，但这样明显违背了<a href="http://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank" rel="external">关注的原则</a>。</p>
+<p>##可维护性</p>
+<p>创建网站的时候，我们必须确保我们的产品是有远见的，足以轻松维护和升级产品。现代的网站和应用程序越来越多的工作是大批大批的前端人员在开发。在这种环境下，什么什么方法可以成功的贯穿作者所在的CSS团队是非常重要的，因为其中一些人可能只在产品的寿命期的阶段工作，或者他们可能没有在产品的开发期中工作过。在这个环境中，许多挑战和实现CSS就出来了，如：</p>
+<ul>
+<li>代码在不断的重复</li>
+<li>产品的一致性</li>
+<li>性能</li>
+</ul>
+<p>也许最重要的是让前端开发人员通过一个CSS框架技术来解决一个网站中重复的CSS代码是首要的事情。通过类，类名派生选择器，一个开发人员可以增加选择器的有用性，并在不同的元素中使用相同的样式规则。考虑下面的类的示例，它使任何匹配的元素具有一致的边框、内距和排版风格：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.box-standard &#123;&#10;   color: blue;&#10;   border: 2px solid blue;&#10;   border-radius: 5px;&#10;   padding: 20px;&#10;   font-family: Helvetica, Arial, sans-serif;&#10;   font-weight: normal;&#10;   font-size: 1rem;&#10;   line-height: 1.4;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>开发人员可能会将这个类定义在任意数量的元素之上，这些元素将都具有这种样式风格。有可能其他元素不使用所有的风格，而是需要覆盖特定的样式，他们需要添加另一个类名，并在CSS源文件下面加上样式代码。作为两个类具有相同的权重，后者声明的样式将优秀考虑：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.box-special &#123;&#10;  color: red;&#10;  border-color: red;&#10;  font-weight: bold;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"box-standard box-special"</span>&gt;
+    Here <span class="keyword">is</span> a special box!
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>通过这种方式在模板中添加两个类名用来减少重复的代码是可取的，同时这两个类名也传达了特定的语义。</p>
+<p>这里开发人员真正需要一个“混合”和”扩展”,这些在各种CSS预处理器中都有，比如<a href="http://lesscss.org/" target="_blank" rel="external">LESS</a>或者<a href="http://sass-lang.com/" target="_blank" rel="external">Sass</a>。一组相关的属性可以被分组为一个<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank" rel="external">mixin</a>或者<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholders" target="_blank" rel="external">@extend placeholder</a>，然后可以给一个完全表像的名字：它们本身在任何地方都不会生成代码(除非你想要用它，或者说你调用他们)，所以任何CSS选择器都可以调用他们的规则。这里有一个关于mixin在<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html" target="_blank" rel="external">Scss语法</a>中的简单示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@mixin news-item($color) &#123;&#10;  border: 2px solid $color;&#10;  border-radius: 5px;&#10;  padding: 20px;&#10;  font-family: Helvetica, Arial, sans-serif;&#10;  font-weight: normal;&#10;  font-size: 1rem;&#10;  line-height: 1.4;&#10;&#125;&#10;&#10;div.news &#123;&#10;  @include news-item(blue);&#10;&#125;&#10;&#10;div.breaking &#123;&#10;  @include news-item(red);&#10;  font-weight: bold;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"news"</span>&gt;
+  Here <span class="keyword">is</span> a news <span class="property">item</span>.
+&lt;/<span class="keyword">div</span>&gt;
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"breaking"</span>&gt;
+  Here <span class="keyword">is</span> a breaking news <span class="property">item</span>!
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>改变mixin的样式风格总是通过<code>div.breaking</code>来实现，并且尽可能的与模板不耦合在一起。在CSS中能够定义mixin就是他一直以来想要的特性(这功能最终在<a href="http://lists.w3.org/Archives/Public/www-style/2011Mar/0478.html" target="_blank" rel="external">预处理器中实现</a>。)，如果你想成为一个专业的CSS开发人员，你没有什么好理由不使用CSS预处理程序。</p>
+<blockquote>
+<p>如果你从未接触过CSS预处理程序，不仿先点击《<a href="http://www.w3cplus.com/blog/tags/302.html" target="_blank" rel="external">Sass教程</a>》，了解有关于CSS预处理程序之一的Sass使用——@大漠。</p>
+</blockquote>
+<p>维护项目对于解耦或者<a href="http://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank" rel="external">关注分离</a>是非常重要的；模板和CSS耦合过于密集，维护的成本将会增加。早期有效的CSS都是通过所见即所得的网页开发工具比如Dreamweaver,Frontpage生成，导致很多网站的代码，看上去很像这样：</p>
+<pre><code><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"display: block; font-family: Arial, sans-serif; font-size: 11px; color: blue; border-style: solid; border-color: blue; border-width: 2px; padding: 20px;"</span>&gt;</span>Here’s a box.<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"display: block; font-family: Arial, sans-serif; font-size: 11px; color: blue; border-style: solid; border-color: blue; border-width: 2px; padding: 20px;"</span>&gt;</span>Here’s another box.<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"display: block; font-family: Arial, sans-serif; font-size: 11px; color: blue; border-style: solid; border-color: blue; border-width: 2px; padding: 20px;"</span>&gt;</span>Here’s yet another box. Noticing a trend yet…?<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+</code></pre><p>这种基于模板基础上的内联样式只能适可而止，这些标签组合在90年代末直接影响Web的发展。当设计需要修改，所有这些内联样式都需要跟踪并替换。很多开发人员的修改让我感到很悲哀，可以这些天的教训都给忘了，我们仍然可以看到像这样的修改代码：</p>
+<pre><code>&lt;span <span class="keyword">class</span>=<span class="string">"display-block blue-box font-arial color-blue solid-blue-border padding-20"</span>&gt;Party like it’s <span class="number">1999</span>!&lt;/span&gt;
+&lt;span <span class="keyword">class</span>=<span class="string">"display-block blue-box font-arial color-blue solid-blue-border padding-20"</span>&gt;Hey, have you <span class="keyword">checked</span> K10K.net lately?&lt;/span&gt;
+&lt;span <span class="keyword">class</span>=<span class="string">"display-block blue-box font-arial color-blue solid-blue-border padding-20"</span>&gt;Wassuuuuuuup!&lt;/span&gt;
+</code></pre><p>这例子可能有点太极端了，但它的逻辑来自于CSS框架中，抛弃语义化类名和选择器，在一味的追求“模块化”。这样避免在CSS中有重复的代码，不过转移到模板中，导致的副作用就是模板和样式的紧耦合性。</p>
+<p>另一个目标是提供高性能。这取决天很多因素，如客户端访问一个网页的类型，他们的连接速度和内容是否有被缓存，还有其他一些因素等等。在最基本的级别上有三种东西最明显的影响CSS性能：</p>
+<ul>
+<li>所需的HTTP请求数</li>
+<li>缓存状态</li>
+<li>文档大小</li>
+</ul>
+<p>前两个考虑的范围可以采用CSS框架方法，而第三个是通过类名来解决重用：其目的是，通过声明尽可能少的样式越少，CSS文件就越可能的小。</p>
+<p>提供这样的一个CSS文件可能是被误导的，然而通过使用短选择器和更少的样式规则，和把更多的类绑定到标记中（更多长类名），被转移的数据量并不一定会下降—，但它确实从CSS文件中移出更多的东西。</p>
+<p>引用CSS框架方法保持CSS选择器短小，是具有性能优势。这在现代浏览器引擎中<a href="http://calendar.perfplanet.com/2011/css-selector-performance-has-changed-for-the-better/" target="_blank" rel="external">已经证明</a>是有效率，但在极端的边缘情况之下，速度的增长依靠重写你的选择器是可以忽略不计的。同时前端性能追求的是：</p>
+<blockquote>
+<p>许多人似乎没有意识到（或不谈），性能往往是存在的，而且具有成本的，它会花费很多维护成本。——<a href="http://www.onderhond.com/blog/work/cost-of-performance-css-selector-rewriting" target="_blank" rel="external">Niels Matthijs</a></p>
+</blockquote>
+<p>当重温旧代码或者当一个新的成员加入一个项目CSS框架方法暴露出一些严重的问题。主要是提供的这些方法几乎没有发现。Nicolas Gallagher在他写的前端架构文章中说“类名应该给开发传达有用的信息”。我想加强一下：“选择器应该是和开发者交流的有用信息”。目的是相同的——让我理解在哪使用这些规则——但一个选择器给开发人员传递更有用信息，因为它传达了上下文。这样更容易理解，选择器告诉你，它只适用于在一定范围内的元素。一个社会成员列表的链接可以考虑两种样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.list-link &#123;&#10;  font-weight: bold;&#10;  text-decoration: none;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul.members li a &#123;&#10;  font-weight: bold;&#10;  text-decoration: none;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>后者更容易让那些不熟悉代码库的人理解。它也是更容易被发现：一个新的开发人员如果无法或没有阅读整个CSS代码库，是没办法知道哪个规则是合适的。</p>
+<blockquote>
+<p>优秀的代码不仅是正确的，也应该是容易阅读的。它不只是计算机通信的一种算法，还要能让人可以读取它。通过寻找我们代码中的优秀部分，我们建立更好的代码。学习编写代码一个首要条件是让代码易读，进一步才是学习如何编写优秀的代码和照顾和帮助使用代码的人如何更好的使用。优秀的代码都是易读和易用的。——<a href="http://www.faqs.org/docs/artu/transparencychapter.html" target="_blank" rel="external">Eric S.Raymond</a>。</p>
+</blockquote>
+<p>可以发现一些问题，框架方法让代码变得臃肿。通过编写特定的选择器，同时为了让开发人员得到必要的信息，致使文档变得庞大。例如上面的例子，如果社会成员列表从网站中删除，整个CSS块也可以删除，而灵活的类名选择器可能还用于网站其他的地方，无法确保删除不会引起别的问题出现。</p>
+<p>Matt Wilcox对于性能做出如下的阐述：</p>
+<blockquote>
+<p>性能是一个浏览器水平问题，它不应该由作者围绕HTML/CSS做修复或解决。只要我们编写有效的和可用的HTML/CSS，并不要为了提高页面渲染速度而遵循这些可笑的规则。这些东西版本更新越来越快。使用js的人需要担心自己的代码影响性能。如果你想充分利用你的HTML/CSS，需要考虑的是最佳实践，而不是性能问题。可怜的性能将在新版的浏览器发布得到一定的修复，但劣质的代码并不会随着新版浏览器发布而改善。——<a href="http://2002-2012.mattwilcox.net/archive/entry/id/1054/" target="_blank" rel="external">Matt Wilcox</a></p>
+</blockquote>
+<p>##我们能做什么？</p>
+<p>前端开发人员多年来一直悄悄地和世功构建大型的Web项目，而并没有使用CSS框架方法。事实上，这些项目已设法避免使用OOCSS，BEM和其他人所说的有效的工作方式。这里有一些我与别认讨论编写CSS的建议和我自身的经验。</p>
+<p>###使用ID，是上帝的爱</p>
+<p>很多CSS框架方法<a href="http://csslint.net/about.html" target="_blank" rel="external">建议使用ID</a>是一个错误的想法。这背后的原因是，ID具有较高的权重，使其他地方覆盖需要使用<code>!important</code>规则。我强烈不同意：<a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/" target="_blank" rel="external">Angus Croll</a>这样描述的：“回避策略一直让我感到困扰，直到你知道从里面走出来，因为你不能掌握一门语言——恐惧和逃避是知识的最大敌人”。如果你是一个专业的Web开发人员，您应该了解权重的工作方式，以及它如何影响你写的选择器。更重要的是，ID是一个有效的文档结构的一部分和<a href="http://www.webdirections.org/blog/in-defense-of-the-humble-id-attribute/" target="_blank" rel="external">具有非常强大的功能和语义</a>。</p>
+<p>###写选择器是用于描述，告诉他们做什么，没有更多更少一言</p>
+<p>如果你正在编写CSS，目标可以出现在文档中的任何一个元素，使用选择器反映了这一点。如果使用CSS只是在非常特殊的情况之下，那么这将违反了使用选择器原则。首先，不要让你的选择如此简洁，半年下来会让你的项目变得面目全非。</p>
+<p>###它永过不会成一个可重用的模块（直到它得到重用）；重构，重写一直伴随你</p>
+<p>害怕写CSS是过于具体，实际上是过早的优化。编写CSS是你需要做的工作，当他要被重用，你应该适当的将它制作成一个mixin。也许下周修改的时候，整个功能将被丢掉。你不会想要生成一堆冗余类选择器，没有人理解你的目的，或者避免移除的风险。</p>
+<p>###多文件与构建过程</p>
+<p>你是专业的Web开发人员。你不需要写在记事本中，所以不要限制自己使用最好的工具来帮你做你想做的事情。你正在用什么框架或平台上开发并没有太大的关系，CSS预处理程序工具可以帮你。也有很多<a href="https://github.com/alphagov/govuk_frontend_toolkit" target="_blank" rel="external">优秀的例子</a>，如何有效的跨项目重用CSS。读起来，看看它是如何被其他地方重用，可以拓宽你的知识面。</p>
+<p>###构建静态原型，一切事物都截图</p>
+<p>网站和应用程序总有一些习惯类型，如标签和输入框，列表链接放在<code>&lt;nav&gt;</code>元素里，一系列的标签和值等等。当接近任何给定的特性，首先使用静态的HTML构建适应的模板。这不仅可以作为一个测试用例，也可以确保之使用使用不会用错，同时也帮助新进团队成员可以看到，不至于被代码整晕。这些页面的截图或应用程序本身，不管是手动还是通过一个自动化的工具持续将这些东西集成在一起，可以用来检测代码是否遭到破坏。</p>
+<p>在复杂的Web应用程序设计一个好的CSS架构是很困难的(这就是为什么优秀的前端开发人员都有这样的需求)，但我们不应该对于新手任意强加这些对于自己都有难度的规则，这样只会导致不必要的复杂性和增加维护的成本。</p>
+<p>通过对自己产品的理解与构建，你会更好的决定如何为产品创建结构的方方面面，不仅仅它是如何呈现。网络是一个语义媒介：让它成为你的向导。</p>
+<blockquote>
+<p>It is the pervading law of all things organic and inorganic, of all things physical and metaphysical, of all things human and all things superhuman, of all true manifestations of the head, of the heart, of the soul, that the life is recognizable in its expression, that form ever follows function. This is the law.——<a href="http://en.wikipedia.org/wiki/Form_follows_function" target="_blank" rel="external">Louis Sullivan</a></p>
+</blockquote>
+<p>##感谢</p>
+<p>在写这篇文章在<a href="http://twitter.com/cackhanded" target="_blank" rel="external">Mark Norman Francis</a>、<a href="http://twitter.com/intranation" target="_blank" rel="external">Brad Wright</a>、<a href="http://twitter.com/rossbruniges" target="_blank" rel="external">Ross Bruniges</a>、<a href="http://twitter.com/jaffathecake" target="_blank" rel="external">Jake Archibald</a>和<a href="http://twitter.com/ptg" target="_blank" rel="external">Patrick Griffiths</a>的反馈中得到极大的帮助。</p>
+<p>##引用的链接</p>
+<ul>
+<li><a href="http://martinfowler.com/bliki/TwoHardThings.html" target="_blank" rel="external">Two Hard Things</a></li>
+<li><a href="http://www.w3.org/TR/html5/dom.html#classes" target="_blank" rel="external">W3C: Semantics, structure, and APIs of HTML documents</a></li>
+<li><a href="http://tantek.com/2012/353/b1/why-html-classes-css-class-selectors" target="_blank" rel="external">Why you should say HTML classes, CSS class selectors, or CSS pseudo-classes, but not CSS classes</a></li>
+<li><a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank" rel="external">About HTML semantics and front-end architecture</a></li>
+<li><a href="http://www.onderhond.com/blog/work/cost-of-performance-css-selector-rewriting" target="_blank" rel="external">The Cost of Performance</a></li>
+<li><a href="http://www.faqs.org/docs/artu/transparencychapter.html" target="_blank" rel="external">The Art of Unix Programming</a></li>
+<li><a href="http://2002-2012.mattwilcox.net/archive/entry/id/1054/" target="_blank" rel="external">CSS Lint is harmful</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Form_follows_function" target="_blank" rel="external">Wikipedia: Form follows function</a></li>
+</ul>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://www.kapowaz.net/articles/cargo-cult-css" target="_blank" rel="external">http://www.kapowaz.net/articles/cargo-cult-css</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/cargo-cult-css.html" target="_blank" rel="external">http://www.w3cplus.com/css/cargo-cult-css.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/开始了解css混合模式.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          开始了解CSS混合模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/实现responsive邮件的不同策略.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实现Responsive邮件的不同策略</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>让手机站点像原生应用的四大途径 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这篇文章大约3000字。它涵盖了移动网站“感知性能”的很多方面，以及加速你网站的切实可行的解决方案。TL;博士:这不是说你网站有多快，而是用户认为有多快。——Kyle Peatt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让手机站点像原生应用的四大途径">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/让手机站点像原生应用的四大途径.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="这篇文章大约3000字。它涵盖了移动网站“感知性能”的很多方面，以及加速你网站的切实可行的解决方案。TL;博士:这不是说你网站有多快，而是用户认为有多快。——Kyle Peatt">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/beginners-guide-to-perceived-performance-1.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/1310/beginners-guide-to-perceived-performance-2.gif">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/1310/beginners-guide-to-perceived-performance-5.gif">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/1310/beginners-guide-to-perceived-performance-4.gif">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/1310/beginners-guide-to-perceived-performance-3.gif">
+<meta property="og:updated_time" content="2014-09-20T13:35:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="让手机站点像原生应用的四大途径">
+<meta name="twitter:description" content="这篇文章大约3000字。它涵盖了移动网站“感知性能”的很多方面，以及加速你网站的切实可行的解决方案。TL;博士:这不是说你网站有多快，而是用户认为有多快。——Kyle Peatt">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/让手机站点像原生应用的四大途径" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/让手机站点像原生应用的四大途径.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      让手机站点像原生应用的四大途径
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这篇文章大约3000字。它涵盖了移动网站“感知性能”的很多方面，以及加速你网站的切实可行的解决方案。TL;博士:这不是说你网站有多快，而是用户认为有多快。——Kyle Peatt</p>
+</blockquote>
+<a id="more"></a>
+<p><a href="http://www.mobify.com/blog/beginners-guide-to-perceived-performance/" target="_blank"><img alt="让手机站点像原生应用的四大途径" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/beginners-guide-to-perceived-performance-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+
+<p>在移动设备上构建设计良好的网站慢慢变得越来越容易。不论使用什么方法(响应式设计、自适应等),如果你了解你所做的,创建一个美观的网站不是问题。</p>
+<p>但你的用户可能仍然要求网站有原生app的体验。完成这样的体验是一个挑战。</p>
+<p>大多数时候,当人们谈论“app”或“原生”的感觉,他们讲的的不是一个网站的视觉体验。他们所讨论的，是用户界面如何对他们的行为进行反馈，以及这种反馈是怎样呈现的。</p>
+<p>原生应用很“快”。原生应用的动画渲染的很平滑，按钮及时响应用户的点击，当app加载数据时也不会有什么问题。</p>
+<p><strong>让你的网站像原生应用一样，意味着你需要尽可能的提高你网站响应及交互的速度</strong></p>
+<p>提高性能已经是一个很热门且很有价值的话题了。直到最近，web端还在朝着笨重与缓慢发展。业内一直有个争论：实现一个高性能的webapp是不可能的。</p>
+<p>这也是<a href="http://www.infoq.com/news/2012/09/Facebook-HTML5-Native" target="_blank" rel="external">facebook转移到原生应用</a>的原因，至少在他们的开发资源下，无法完成需要的速度与交互。</p>
+<p>即使facebook这么认为，构建一个高性能的web网站也不是不可能的。但这不在我们的掌控中。我们只需要努力使这一切变为现实。从技术上讲，我们有能力是我们的网站变得更加快速，更加时髦，带来更完美的体验。</p>
+<p>##感知性能与实际性能</p>
+<p>实际性能的提升很重要，但如果不让用户感知到提升效果，就不意味着这些提升可以到达用户。</p>
+<p>今年早些时候,在西雅图Luke Wroblewski 曾提到过他的<a href="http://www.lukew.com/ff/entry.asp?1797" target="_blank" rel="external">mobile app-polar</a>。 他解释说,他的团队在努力提高加载投票的速度。</p>
+<blockquote>
+<p>polar是一款很简洁的投票应用——99</p>
+</blockquote>
+<p>同时,他们引入了一个小图标,来向用户表示投票正在加载。而之后，用户感觉投票加载很慢的反馈立即铺天盖地的涌来,尽管事实上。加载快得多。Polar迅速发布了一个补丁来移除这个加载图标,之后，投票的快速加载给用户留下了深刻的印象。</p>
+<p>这是一个表达感知性能重要性的很好的例子。当人们“觉得”一个网站不快，那这个网站再快也没用。加载图标只是让用户注意这个事实：数据在加载，用户只能等待，而不能抽离注意力。</p>
+<p><strong>作为设计师和开发人员,我们的目标不应该通过一些数字的增长，建立最快的网站,同样应该创造最快的网站体验。</strong></p>
+<p>因此最重要的是用户如何感知你网站的速度。任何实际性能的提升只是一份锦上添花。我认为,感知性能的提升，相比实际性能更重要。但这并不意味着你需要忽略实际性能的提升。</p>
+<p>Ok，解释足够了，如何可以马上提升网站的感知性能？</p>
+<p><strong>下面的四个技巧，你可以立即开始尝试</strong></p>
+<p>##给按钮添加触摸状态</p>
+<p>最简单的提高站点感知性能的方法，是给网站增加”active”状态。</p>
+<p><strong>你看,任何时候一个访问者点击网站上的一个按钮,她必须等待300毫秒才知道到底发生了啥。</strong></p>
+<p>浏览器设置了这个超时时间，之后可以确保用户不会进行一些其他操作（双击）。因此等待1/3秒后，浏览器知晓了用户的动作，并执行最初的点击。当这个动作发生后，按钮被一个灰色的东东覆盖。</p>
+<p>这是很糟糕的用户体验。Nielsen组织进行了一项研究，发现任何高于<a href="http://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank" rel="external">100ms的延迟都会让用户认为他们在等待</a>。他们可能只想进行一次跳转。</p>
+<p>然而很多的移动网站，包括我做的那些，没有考虑这个感知问题。设计师通常的设计是触摸时按钮或者链接保持原样。</p>
+<p><strong>为了让你的网站感觉更快,你需要让你的按钮立即响应用户的触摸,给用户一个明显的视觉指示–有些事情正在发生。</strong></p>
+<p>有一个很赞的属性用在网站上的按钮或链接;它是:active伪类。我们在桌面端一直使用这个伪类。</p>
+<p>不幸的是,无论是iOS还是android，当按钮或者链接被点击时都忽略了这个属性,为了激活这个状态,你需要添加一个简单的事件绑定到页面的JavaScript中:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&#34;touchstart&#34;, function()&#123;&#125;, true)</span><br></pre></td></tr></table></figure>
+<p>之后你可以用css定义active状态的样式，之后去掉点击时的高亮：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-tap-highlight-color: rgba(0,0,0,0);</span><br></pre></td></tr></table></figure>
+<p>对按钮设置这两个属性,用户会立即感觉到界面响应了用户的操作，即使最终的响应速度是一样的。你只是让你的界面即时反馈了用户的行动,而不会让用户傻等300 ms再看看到底干了啥。</p>
+<p><a href="http://codepen.io/mobify/full/ulwqf" target="_blank"><img alt="让手机站点像原生应用的四大途径" src="http://www.w3cplus.com/sites/default/files/blogs/2013/1310/beginners-guide-to-perceived-performance-2.gif" style="padding:2px;border:1px solid #ccc;width:470px;"></a></p>
+
+<p>没有触摸状态（<a href="http://codepen.io/mobify/full/ulwqf" target="_blank" rel="external">代码</a>）</p>
+<p><a href="http://codepen.io/mobify/full/ulwqf" target="_blank"><img alt="让手机站点像原生应用的四大途径" src="http://www.w3cplus.com/sites/default/files/blogs/2013/1310/beginners-guide-to-perceived-performance-5.gif" style="padding:2px;border:1px solid #ccc;width:470px;"></a></p>
+
+<p>有触状态（<a href="http://codepen.io/mobify/full/ulwqf" target="_blank" rel="external">代码</a>）</p>
+<p><strong>不过如果你想立即响应用户的操作，你可以使用另一种方案。</strong></p>
+<p>使用一个fasttap或fastclick这样的JavaScript函数,可以完全去除点击按钮后300毫秒的延迟。配合active状态，可以让网站快的亮瞎你的眼睛。</p>
+<p>有关于fasttap更多的信息，可以阅读<a href="http://developers.google.com/mobile/articles/fast_buttons" target="_blank" rel="external">google搜索到的文章</a>，这有一个现成的案例，你可以从<a href="http://github.com/ftlabs/fastclick" target="_blank" rel="external">github</a>上导出。</p>
+<p>##使用弹性滚动</p>
+<p>你试过创建一个可滚动的容器，然后被默认的慢悠悠且不响应的滚动折磨的疯掉么？</p>
+<p>现在可以解放了，android3+与ios5+版本增加了一个新的属性：<code>overflow-scrolling</code>  这个属性可以激活平滑滚动，而且效果也不错。</p>
+<p><a href="http://codepen.io/mobify/full/LueFn" target="_blank"><img alt="让手机站点像原生应用的四大途径" src="http://www.w3cplus.com/sites/default/files/blogs/2013/1310/beginners-guide-to-perceived-performance-4.gif" style="padding:2px;border:1px solid #ccc;width:470px;"></a></p>
+
+<p>没有滚动条(<a href="http://codepen.io/mobify/full/LueFn" target="_blank" rel="external">代码</a>)</p>
+<p><a href="http://codepen.io/mobify/full/vLcky" target="_blank"><img alt="让手机站点像原生应用的四大途径" src="http://www.w3cplus.com/sites/default/files/blogs/2013/1310/beginners-guide-to-perceived-performance-3.gif" style="padding:2px;border:1px solid #ccc;width:470px;"></a></p>
+
+<p>有滚动条(<a href="http://codepen.io/mobify/full/vLcky" target="_blank" rel="external">代码</a>)</p>
+<p>这个弹性滚动感觉起来像原生应用，因为这个本来就是原生的滚动。你只需要向可滚动区域增加一行代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling: touch;</span><br></pre></td></tr></table></figure>
+<p>不过这个属性有个问题。这个属性会使点击iPhone头部状态栏让网页回到顶部的功能失效。这个bug已经存在了一段时间了，貌似也没有在<a href="http://www.mobify.com/blog/designing-for-ios-7/" target="_blank" rel="external">新的ios7版本</a>中修复。</p>
+<p>有一种方法可以解决这个问题，为容器创建一个class并应用属性<code>overflow-scrolling: touch</code> 。当且仅当容器显示时，使用javascript添加class到容器上。</p>
+<p>Android4上你不需要使用这个属性。每个可滚动的容器均包含弹性滚动。</p>
+<p>在老版本的Android上你有两种选择。我比较喜欢的解决方案是利用Modernizr检测弹性滚动，之后来控制布局中容器的显示。此外,有一些JavaScript库你可以试试，比如<a href="http://filamentgroup.github.io/Overthrow/" target="_blank" rel="external">overthorw</a>与<a href="http://cubiq.org/iscroll-4" target="_blank" rel="external">iscroll</a>。</p>
+<p>##创建高效的动画</p>
+<p>App与网站最明显的差别之一就是动画效果。</p>
+<p>现在的设备上，应用程序已经能够充分利用硬件图形加速。而在web端,开发商者使用基于javascript的动画,在移动端的cpu上跑是很慢的。</p>
+<p>但现在,随着移动浏览器的不断支持,你可以在项目中使用基于硬件加速的CSS3动画。</p>
+<p><strong>这样，我们就可以添加一些视觉效果，这些效果已经被我们喜欢的一些app应用了很多年了。</strong></p>
+<p>事实上也没那么快，若使动画贴近原生体验，你需要避免动画的缓慢及抖动，而这都是很难处理的。Steamclock Software的Allen Pike写过一篇很赞的<a href="http://www.allenpike.com/2011/providing-joy-at-60-fps/" target="_blank" rel="external">文章</a>，文章里描述了动画所带给用户的快乐，也讲到低性能的动画将对用户在app上的体验产生很大的影响</p>
+<p>有趣的是,他写的这篇是原生应用开发相关的。这使得这篇文章相当有用，我们可以跟随下列任务来创建web上的动画。</p>
+<p>在文章中,他提出一个所谓的“时间轴感”:</p>
+<ul>
+<li><strong>动画要跑在60fps下</strong>。这意味着每一帧需要花费<a href="http://speakerdeck.com/jaffathecake/rendering-without-lumps" target="_blank" rel="external">16ms来跑完</a>(1000ms/60=16)。这是要达到原生应用般平滑体验的最基本要求。60 fps是所有的iOS的内置动画运行的速度;这就是为什么滚动在iPhone上比Android设备上感觉更好 (虽然谷歌已经取得了很大的进步)。你应该尝试让所有直接关系到用户的交互动画跑在这个速度上。</li>
+<li><strong>所有东西都要在100ms内渲染完毕</strong>。 这是个心理感觉慢的界限。所有低于100ms的延迟都会让用户有瞬时响应的感觉。</li>
+<li><strong>如果它绝对得超过100毫秒,1000毫秒内绝对应该回应。</strong>艾伦表明任何需要这么长时间完成的操作，都应该给用户一些反应表明正在发生。比如一个旋转的图标或一个进度条。但是,正如我们之前研究过的那个投票app的例子,把用户的注意力聚焦到那个小菊花上，实际上可能弊大于利。我将介绍一种不同的方法来处理这个问题。</li>
+<li>所有超过两秒的响应时间都是耍流氓。</li>
+</ul>
+<p>好吧，你知道这些了，所以你估计要把键盘当作帽子然后去转行了。啥时候我们创建网站需要关心动画的时间了？</p>
+<p><strong>别担心,有一些很赞的资源让这些东西更容易实现!</strong></p>
+<p>第一个是HTML5 Boilerplate中的<a href="http://github.com/h5bp/Effeckt.css" target="_blank" rel="external">Effeckt.css</a>。 他们的目标是实现一些跑在60fps下的常见的转换和动画。虽然这个库并没完全完成，里面很多的效果已经跑得很好了。我极力推荐你在项目中使用这个库。</p>
+<p>另一个很好的库是 <a href="http://topcoat.io" target="_blank" rel="external">Topcoat</a>,Adobe网络团队编写的代码,这是一个建立在性能考虑下的CSS组件库。这个库里塞了满满的优秀的组件,运行平稳。因为性能是他们的主要目标,每一个组件都已经被跟踪性能,这样你就可以清楚地看到<a href="http://bench.topcoat.io" target="_blank" rel="external">组件的性能</a>。</p>
+<p>以上两个库是齐头并进的，而且topcoat也向effeckt.css贡献代码，这两个库跑的都很赞。</p>
+<p><strong>然后，我要讨论之前提到的，尽可能去掉加载提示的方案。</strong></p>
+<p>我倾向的方案是，当等待时间大于100ms，小于250ms时，使用加载图标弊大于利，因此可以隐藏掉。</p>
+<p>例如,如果你使用Ajax请求内容,可以对内容的容器应用动画,例如收缩起来再扩展从而适应新的内容。这样的短动画会分散用户等待时的注意力,而不是让用户盯着一个不断旋转的小菊花–他们只是等待一个短动画完成，以至于甚至没有意识到新内容没出现。</p>
+<p>当然, 需要很长时间才能完成的重复的动画是非常令人讨厌的,所以我们要适当的使用这些动画。对于大多数动画而言都是这个道理。</p>
+<p>##提供自然的手势体验</p>
+<p>App超过web端体验的一点，是可以在触控设备上提供很自然的手势。</p>
+<p><a href="http://mailboxapp.com/" target="_blank" rel="external">Mailbox</a>与<a href="http://www.realmacsoftware.com/clear/" target="_blank" rel="external">Clear</a>可以作为手势应用很好的例子。这些app使用简单的手势来利用了移动设备最大的特色—可以直接触摸屏幕上的物体。</p>
+<p>然而大多数网站只使用了触摸对象。设计师对手势唯恐避之不及,结果用户感觉在web端受到了歧视一般。</p>
+<p><strong>我们需要考虑直接为设备开发网站。如果一个用户的设备允许手势操作,为什么不使用它们?</strong></p>
+<p>当然,还有一个小问题:移动操作系统有个可恶的特性,移动浏览器会劫持手势作为己用。</p>
+<p>例如, 像Facebook一样的应用程序通过触摸屏幕的左边和右边来打开导航。然而,在浏览器段,这种交互是不可用的。对于Chrome，这种操作用来切换选项卡。<a href="http://www.mobify.com/blog/designing-for-ios-7/" target="_blank" rel="external">iOS 7新版本的移动Safari</a>使用这种操作前进,与后退。</p>
+<p>好吧。这些手势在我们的可控范围之外。那么你们应该使用什么手势呢？下面有四个例子。</p>
+<p>###手势1:左右划动</p>
+<p>即使存在边缘问题,左右划动仍然是一个很好用的手势。你只需要小心触发时不要太靠近屏幕的边缘。</p>
+<p>这个手势最好的应用是用于移动一组对象,比如幻灯片或列表标签。</p>
+<p>###手势2:下拉刷新</p>
+<p>下拉刷新也是用户接触到的手势。这里有一些很赞的js库可以很容易的实现这个特性，我使用<a href="http://usehook.com/" target="_blank" rel="external">hook.js</a>来实现。</p>
+<p>###手势3:长按</p>
+<p>有一个很有用的属性: <code>-webkit-touch-callout: none</code>。这将禁用移动Safari浏览器中默认的长按效果。在android禁用这个效果则需要<a href="http://stackoverflow.com/questions/3413683/disabling-the-context-menu-on-long-taps-on-android" target="_blank" rel="external">费点劲</a>。</p>
+<p>长按手势可以用于拿起一个项目(如重新排序列表中的项)或显示更多选项(如社会共享)。</p>
+<p>###手势4:双指缩放</p>
+<p>每个人都懂双指缩放。很多人当看到web端的图片后，都会尝试缩放图片来看清细节。</p>
+<p>这里也存在浏览器劫持用户手势的情况，不过不是很难办。</p>
+<p>当你锁定或不锁定viewport的时候，你有时不希望用户在双指缩放时缩放整个页面。为了代替这个多指手势，你可以使用这个小而精的<a href="http://eightmedia.github.io/hammer.js/" target="_blank" rel="external">harmmer.js</a>库。这个库拥有一系列的手势可以为你使用，你也可以建立自己的手势。</p>
+<p>一个很好的双指缩放例子是<a href="http://imgur.com/gallery/U6HYTnm" target="_blank" rel="external">imgur.com 的手机站</a>。 你可以滑动两下看看会发生什么。</p>
+<p>只需要记住,如果你正在使用一个手势,确保对于用户而言，要么感觉自然，要么有意义。</p>
+<p>##结论</p>
+<p>我希望有一天，我们不会需要区分本地和网络。路漫漫其修远兮，我们的工作是让用户觉得网站是围绕他们设计的，这一天很快就会到来。</p>
+<p>我认为，最近关注性能的趋势固然很棒,但必须记住,我们的用户不是机器。</p>
+<p>他们不关心你的网站有多少请求，屏幕重绘有多快。但他们确实关心一些影响他们体验的东西——他们的感知性能。</p>
+<p>专注于确保你网站的外观和行为像一个尽可能快的网站。如果用户不注意的话是没有资格称作“最快的网站”的。</p>
+<p>如果你对于改善感知性能有任何建议,请贴在评论里。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4><br>        关于玖玖</h4><br>    <p>某创业团队前端负责人，关注javascript应用与数据可视化。个人<a href="http://99jty.com/" target="_blank">博客</a>、<a href="http://weibo.com/serendipity9" target="_blank">新浪微博</a>和<a href="https://github.com/jtyjty99999" target="_blank">Github</a>，欢迎与同学一起共勉。</p><br></blockquote>
+
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://www.mobify.com/blog/beginners-guide-to-perceived-performance/" target="_blank" rel="external">http://www.mobify.com/blog/beginners-guide-to-perceived-performance/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/performance/beginners-guide-to-perceived-performance.html" target="_blank" rel="external">http://www.w3cplus.com/performance/beginners-guide-to-perceived-performance.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/初学foundation之固定导航,伸缩性视频和zepto.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          初学Foundation之固定导航,伸缩性视频和Zepto
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/让那些为webkit优化的网站也能适配ie10.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">让那些为Webkit优化的网站也能适配IE10</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

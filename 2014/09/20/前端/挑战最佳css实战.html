@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>挑战最佳CSS实战 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这篇文章介绍的技术特性在Yahoo通过实践以及有问题的技术代码到今天为止我们还在使用。你可能有兴趣阅读Jonathan Snook的《Decoupling HTML From CSS》、Tim Huegdon的《On HTML Elements Identifiers》和Robin Rendle的《Atomic Design With Sass》等等。请记住：一些提到的技术并不认为是最佳实践。——">
+<meta property="og:type" content="article">
+<meta property="og:title" content="挑战最佳CSS实战">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/挑战最佳css实战.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="这篇文章介绍的技术特性在Yahoo通过实践以及有问题的技术代码到今天为止我们还在使用。你可能有兴趣阅读Jonathan Snook的《Decoupling HTML From CSS》、Tim Huegdon的《On HTML Elements Identifiers》和Robin Rendle的《Atomic Design With Sass》等等。请记住：一些提到的技术并不认为是最佳实践。——">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-2.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-3.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-4.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-5.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-6.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:35:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="挑战最佳CSS实战">
+<meta name="twitter:description" content="这篇文章介绍的技术特性在Yahoo通过实践以及有问题的技术代码到今天为止我们还在使用。你可能有兴趣阅读Jonathan Snook的《Decoupling HTML From CSS》、Tim Huegdon的《On HTML Elements Identifiers》和Robin Rendle的《Atomic Design With Sass》等等。请记住：一些提到的技术并不认为是最佳实践。——">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/挑战最佳css实战" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/挑战最佳css实战.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      挑战最佳CSS实战
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这篇文章介绍的技术特性在Yahoo通过实践以及有问题的技术代码到今天为止我们还在使用。你可能有兴趣阅读Jonathan Snook的《<a href="http://coding.smashingmagazine.com/2012/04/20/decoupling-html-from-css/" target="_blank" rel="external">Decoupling HTML From CSS</a>》、Tim Huegdon的《<a href="http://nefariousdesigns.co.uk/on-html-element-identifiers.html" target="_blank" rel="external">On HTML Elements Identifiers</a>》和Robin Rendle的《<a href="http://coding.smashingmagazine.com/2013/08/02/other-interface-atomic-design-sass/" target="_blank" rel="external">Atomic Design With Sass</a>》等等。请记住：一些提到的技术并不认为是最佳实践。——<a href="http://coding.smashingmagazine.com/author/thierry-koblentz" target="_blank" rel="external">Thierry Koblentz</a></p>
+</blockquote>
+<a id="more"></a>
+<p>当谈到CSS，我相信神圣的原则——<a href="http://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank" rel="external">点分离</a>（SoC）。他已经让我们接受<strong>膨胀、报废、冗余、缓存</strong>甚至更多。现在，我确信唯一的方法是远离这一原则来改善我们的作者样式表。</p>
+<p>对于从未听说过SoC原则在Web设计中的上下文，它涉及到一些俗称“三层分离”：</p>
+<ul>
+<li>结构</li>
+<li>表现</li>
+<li>行为</li>
+</ul>
+<p>为了避免一些担忧，将它划分成独立的资源：一个HTML文档，一个或多个样式文件和一个或多个JavaSctript文件。</p>
+<p>但当涉及到表现层，“最佳实践”已经超出了资源的分离。CSS作者完全可能通过样式表应付，例如<a href="http://www.mezzoblue.com/" target="_blank" rel="external">Dave Shea</a>写的<a href="http://www.csszengarden.com/" target="_blank" rel="external">CSS禅意花园</a>就是一个优秀的项目。CSS禅意花园是大多数（如果不是全部）开发人员用来做为如何写样式表的参考标准。</p>
+<p>##标准</p>
+<p>今天能过实践来帮我说明相关问题，我将使用一个非常常见的模块：<a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/" target="_blank" rel="external">媒体对象</a>。它结合了HTML标记和CSS样式，将是我们开始探讨的起点。</p>
+<p>###模板结构</p>
+<p>在我们的模板中，有一个容器(<code>div.media</code>)包含了一个链接容器(<code>a.img</code>)，接着有一个<code>div</code>容器(<code>div.bd</code>):</p>
+<pre><code>&lt;<span class="tag">div</span> class=<span class="string">"media"</span>&gt;
+      &lt;<span class="tag">a</span> href=<span class="string">"http://twitter.com/thierrykoblentz"</span> class=<span class="string">"img"</span>&gt;
+        &lt;<span class="tag">img</span> src=<span class="string">"thierry.jpg"</span> alt=<span class="string">"me"</span> <span class="attribute">width</span>=<span class="string">"40"</span> /&gt;
+      &lt;/a&gt;
+      &lt;<span class="tag">div</span> class=<span class="string">"bd"</span>&gt;
+        @thierrykoblentz <span class="number">14</span> minutes ago
+      &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>###CSS</p>
+<p>我们给容器设置10px的<code>margin</code>，同时给容器和<code>div.bd</code>设置为一个<a href="http://www.yuiblog.com/blog/2010/05/19/css-101-block-formatting-contexts/" target="_blank" rel="external">BFC</a>。换句话说，容器包含了一个浮动的链接，并且<code>div.bd</code>不能围绕在链接的周围。同时在图片和文本之间设置一个10像素的<code>margin</code>(在浮动的一侧)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.media &#123;&#10;    margin: 10px;&#10;&#125;&#10;.media,&#10;.bd &#123;&#10;    overflow: hidden;&#10;    _overflow: visible;&#10;    zoom: 1;&#10;&#125;&#10;.media .img &#123;&#10;    float: left;&#10;    margin-right: 10px;&#10;&#125;&#10;.media .img img &#123;&#10;    display: block;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###结果</p>
+<p>这是一个容器的表现形式，有一个图片在链接中以及文本围绕在一侧：</p>
+<p><img alt="挑战最佳CSS实战" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##新的需求出现时</p>
+<p>假设我们现在需要将文本显示在图像的另一边。</p>
+<p>###模板结构</p>
+<p>非常庆幸<code>BFC</code>的魔力，现在我们需要修改链接的样式风格。为此，我们给图片增加一个新的类名<code>imgExt</code>。</p>
+<pre><code>&lt;<span class="tag">div</span> class=<span class="string">"media"</span>&gt;
+    &lt;<span class="tag">a</span> href=<span class="string">"http://twitter.com/thierrykoblentz"</span> class=<span class="string">"imgExt"</span>&gt;
+        &lt;<span class="tag">img</span> src=<span class="string">"thierry.jpg"</span> alt=<span class="string">"me"</span> <span class="attribute">width</span>=<span class="string">"40"</span> /&gt;
+      &lt;/a&gt;
+      &lt;<span class="tag">div</span> class=<span class="string">"bd"</span>&gt;
+        @thierrykoblentz <span class="number">14</span> minutes ago
+      &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>###CSS</p>
+<p>我们将添加一个向右浮动的样式给链接，并修改他们的<code>margin</code>值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.media &#123;&#10;    margin: 10px;&#10;&#125;&#10;.media,&#10;.bd &#123;&#10;    overflow: hidden;&#10;    _overflow: visible;&#10;    zoom: 1;&#10;&#125;&#10;.media .img &#123;&#10;    float: left;&#10;    margin-right: 10px;&#10;&#125;&#10;.media .img img &#123;&#10;    display: block;&#10;&#125;&#10;.media .imgExt &#123;&#10;    float: right;&#10;    margin-left: 10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###结果</p>
+<p>图像现在显示在另一边：</p>
+<p><img alt="挑战最佳CSS实战" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##另一个需求出现时</p>
+<p>假设我们现在需要在正常的页面中将文本设置的更小。为此，我们创建一个新规则，使用<code>#rightRail</code>作为上下文的选择器：</p>
+<p>###模板结构</p>
+<p>我们的模志现在放在一个<code>div#rightRail</code>的容器里面：</p>
+<pre><code>&lt;<span class="tag">div</span> id=<span class="string">"rightRail"</span>&gt;
+    &lt;<span class="tag">div</span> class=<span class="string">"media"</span>&gt;
+        &lt;<span class="tag">a</span> href=<span class="string">"http://twitter.com/thierrykoblentz"</span> class=<span class="string">"img"</span>&gt;
+            &lt;<span class="tag">img</span> src=<span class="string">"thierry.jpg"</span> alt=<span class="string">"me"</span> <span class="attribute">width</span>=<span class="string">"40"</span> /&gt;
+        &lt;/a&gt;
+        &lt;<span class="tag">div</span> class=<span class="string">"bd"</span>&gt;
+            @thierrykoblentz <span class="number">14</span> minutes ago
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>###CSS</p>
+<p>再一次，我们创建一个额外的规则，这一次使用后代选择器<code>#rightRail .bd</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.media &#123;&#10;    margin: 10px;&#10;&#125;&#10;.media,&#10;.bd &#123;&#10;    overflow: hidden;&#10;    _overflow: visible;&#10;    zoom: 1;&#10;&#125;&#10;.media .img &#123;&#10;    float: left;&#10;    margin-right: 10px;&#10;&#125;&#10;.media .img img &#123;&#10;    display: block;&#10;&#125;&#10;.media .imgExt &#123;&#10;    float: right;&#10;    margin-left: 10px;&#10;&#125;&#10;#rightRail .bd &#123;&#10;    font-size: smaller;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###结果</p>
+<p>这里是我们的原始模块，显示在<code>div#rightRail</code>内：</p>
+<p><img alt="挑战最佳CSS实战" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##这个模块有什么错误？</p>
+<ul>
+<li><strong>在样式表中给模块改变简单的样式可以得到新的效果</strong>：必须有一个方法不总是为需要的样式风格写更多的CSS规则。</li>
+<li><strong>组合选择器是常见的样式（<code>.media,.bd{}</code>）</strong>：使用了组合选择器，而没有使用一个类定义样同的样式，而导致更多的CSS。</li>
+<li><strong>我们有六种规则，四种规则是基于上下文</strong>：上下文相关的规则是很难维护的。样式与这些规则不太可重用。</li>
+<li><strong>RTL和LTR接口变得复杂</strong>：改变方向，我们需要覆盖我们的一些样式（即写更多的规则）。例如：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.rtl .media .img &#123;&#10;    margin-right: auto; /* reset */&#10;    float: right;&#10;    margin-left: 10px;&#10;&#125;&#10;.rtl .media .imgExt &#123;&#10;    margin-left: auto; /* reset */&#10;    float: left;&#10;    margin-right: 10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##满足原子层叠样式表</p>
+<blockquote>
+<p><a href="https://www.google.com/search?q=define%3A+atomic" target="_blank" rel="external">a·tom·ic</a>:组件中的单元组成一个更大的系统。</p>
+</blockquote>
+<p>我们都知道，越小的单位，更可重用它。</p>
+<blockquote>
+<p>把代码当作成乐高。把代码尽可可能断成小块的。——<a href="https://twitter.com/csswizardry" target="_blank" rel="external">@csswizardry</a>（via<a href="https://twitter.com/stubbornella" target="_blank" rel="external">@stubbornella</a>）<a href="https://twitter.com/search?q=%23btconf&amp;src=hash" target="_blank" rel="external">#btconf</a></p>
+</blockquote>
+<p>将样式分解成单元块，我们可以将这些单元块映射到样式中的单个类，而不是很多。这个规则将导致一个更细粒度的规则，进而提高可重用性。</p>
+<p>让我们重新考虑媒体对像使用这种新方法。</p>
+<p>###模板结构</p>
+<p>我们使用了五个类名，没有哪人类是与内容相关的：</p>
+<pre><code>&lt;<span class="tag">div</span> class=<span class="string">"Bfc M-10"</span>&gt;
+    &lt;<span class="tag">a</span> href=<span class="string">"http://twitter.com/thierrykoblentz"</span> class=<span class="string">"Fl-start Mend-10"</span>&gt;
+        &lt;<span class="tag">img</span> src=<span class="string">"thierry.jpg"</span> alt=<span class="string">"me"</span> <span class="attribute">width</span>=<span class="string">"40"</span> /&gt;
+    &lt;/a&gt;
+    &lt;<span class="tag">div</span> class=<span class="string">"Bfc Fz-s"</span>&gt;
+        @thierrykoblentz <span class="number">14</span> minutes ago
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>###CSS</p>
+<p>每个类都关联到一个指定的样式。在大多数情况下，这意味着我们有一个声明规则。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.Bfc &#123;&#10;    overflow: hidden;&#10;    zoom: 1;&#10;&#125;&#10;.M-10 &#123;&#10;    margin: 10px;&#10;&#125;&#10;.Fl-start &#123;&#10;    float: left;&#10;&#125;&#10;.Mend-10 &#123;&#10;    margin-right: 10px;&#10;&#125;&#10;.Fz-s &#123;&#10;    font-size: smaller;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###结果</p>
+<p><img alt="挑战最佳CSS实战" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>###这个如何？</p>
+<p>现在我们忽略了类名和关注是这样做（或不这样做）。</p>
+<ul>
+<li><strong>没有上下文样式</strong>：我们没用使用上下誩或后台选择器，这意味着我们的样式没有权重一说。</li>
+<li><strong>方向(左和右)是“抽象的”</strong>：不用覆盖样式，容器在样式表中使用了RTL规则，例如下面的代码：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.Fl-start &#123;&#10;    float: right;&#10;&#125;&#10;.Mend-10 &#123;&#10;    margin-left: 10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>相同类名，相同的属性，不同的属性值。</p>
+<p>但要注意最重要的事情是，我们美化模板样式。我们已经必变了模上下文样式。现在编辑HTML模板而不是样式表。</p>
+<p>我相信这种方法是改变了，因为它大大缩小了范围。我们样式不是全局的，只是模块的和块级别的样式。我们可以改变一个模块的样式，而不用担心破坏别的页面。我们可以不做什么给这个样式表添加任何规则，只需要创建一个新类名和规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.someBasicStyleForThisElementHere &#123;...&#125;</span><br></pre></td></tr></table></figure>
+<p>这样一来没有冗余。选择器是不重复的，样式是属于一个单独的而不是其他的一部分。例如，在样式表中页面包含了72个<code>float</code>的声明。</p>
+<p>同时，放弃一种样式——例如，总是保持图片在左侧的模块——这并不会任何样式规则过时。</p>
+<p>###听起来不错吧？</p>
+<p>不是吹的吧？我听到了你说“这就违背了书中每一个规则”。这没有与行内样式比。你的类名是神秘的，但也是不具语义化的。</p>
+<p>这是公平的。让我们解决这些问题。</p>
+<p>###关于没有语义化的类名</p>
+<p>如果你查阅了W3C的<a href="http://www.w3.org/QA/Tips/goodclassnames" target="_blank" rel="external">网站管理的技巧</a>，它说“好名字不改变”，你将看到这样的论点是关于维护，而不是语义化本身。所也这样说的也是，在CSS文件中修改样式要比在多个HTML文件中修改要来得容易多。如果只改变一个元素的样式而要求我们修改声明，<code>.border4px</code>将是一个不好的类名，这类名和名字联系在一起。换句话说：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.border4px &#123;border-width:2px;&#125;</span><br></pre></td></tr></table></figure>
+<p>###关于语义模糊的类名</p>
+<p>在大多数情况下，这些类名名称遵循Zen Coding的语法——查看<a href="https://zen-coding.googlecode.com/files/ZenCodingCheatSheet.pdf" target="_blank" rel="external">Zen Coding字符表</a>(PDF)——现在称为<a href="http://docs.emmet.io/cheat-sheet/" target="_blank" rel="external">Emmet</a>。换句话说，他们是简单的缩写。</p>
+<p>关于(left和right)相关联的样式，包括一个组合声明。例如,Bfc代表“块格式化上下文”。</p>
+<p>###关于模仿行内样式</p>
+<p>希望下图能帮助你清理：</p>
+<p><img alt="挑战最佳CSS实战" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<ul>
+<li><strong>特殊性(Specificity)：</strong>这项技术并不像<code>@style</code>具有特殊性。他的<strong>样式权重很低</strong>，因为都只是依赖于单个类名，而不像<code>.parent .bd{}</code>这样的后代选择器，选择为<code>0.0.2.0</code>(有关于权重的相关教程，请查阅<a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/" target="_blank" rel="external">CSS Specificity: Things You Should Know</a>)。【中文版本可以点击《<a href="http://www.w3cplus.com/css/css-specificity-things-you-should-know.html" target="_blank" rel="external">你应该知道的一些事情——CSS权重</a>》】。</li>
+<li><strong>冗余(Verbosity)：</strong>大多数类是采用缩写来声明样式(例如,<code>M-10</code>表示的是<code>margin:10px</code>)。一些类名，如<code>.Bfc</code>是指多于一种样式的集合（如上图的映射部分）。还有其他一些类使用<code>start</code>和<code>end</code>这样在关键词，而没使用<code>left</code>和<code>right</code>值(见上图中的抽象部分)。</li>
+</ul>
+<p>下面是<code>@style</code>的一些优点：</p>
+<ul>
+<li><strong>范围(Scope)：</strong>样式就是将接点相连在一起的一个“沙箱”。</li>
+<li><strong>可移植性(Portability)：</strong>因为样式是封装在一些的，你可以移动到模块中而不会丢失他们的样式。当然，我们仍然需要样式表；但是，因为不受限于上下文结构，模块可以放置在任何一个页面上，网站中甚至是网络中。</li>
+</ul>
+<p>##臃肿的路径</p>
+<p>因为模块的样式是直接依靠类名，他们可以实现我们想要的任何效果。例如，如果我们需要创建一个简单的两列布局，我们所需要做的是在模板中用<code>div</code>来替代当初的链接。看起来像这样：</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"Bfc M-10"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"Fl-start Mend-10 W-25"</span>&gt;
+        column <span class="number">1</span>
+    &lt;/<span class="keyword">div</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"Bfc"</span>&gt;
+        column <span class="number">2</span>
+    &lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>我们只需要在样式表中增加一个额外的规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.Bfc &#123;&#10;    overflow: hidden;&#10;    zoom: 1;&#10;&#125;&#10;.M-10 &#123;&#10;    margin: 10px;&#10;&#125;&#10;.Fl-start &#123;&#10;    float: left;&#10;&#125;&#10;.Mend-10 &#123;&#10;    margin-right: 10px;&#10;&#125;&#10;.Fz-s &#123;&#10;    font-size: smaller;&#10;&#125;&#10;.W-50 &#123;&#10;    width: 50%;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>与传统方法相比：</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"wrapper"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"sidebar"</span>&gt;
+        column <span class="number">1</span>
+    &lt;/<span class="keyword">div</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"content"</span>&gt;
+        sidebar
+    &lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>这里我们需要创建三个新的类名，添加一个额外的样式规则和组选择器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.wrapper,&#10;.content,&#10;.media,&#10;.bd &#123;&#10;    overflow: hidden;&#10;    _overflow: visible;&#10;    zoom: 1;&#10;&#125;&#10;.sidebar &#123;&#10;    width: 50%;&#10;&#125;&#10;.sidebar,&#10;.media .img &#123;&#10;    float: left;&#10;    margin-right: 10px;&#10;&#125;&#10;.media .img img &#123;&#10;    display: block;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我认为上面的代码很好的展示了SoC原则。根据我的经验，它只是增加了样式表大小。</p>
+<p>此外，文件越大，越有由复杂的规则和选择器组成。然后没有人敢去编辑现有的样式规则：</p>
+<ul>
+<li>我们不敢去修改样式规则，害怕修改现有样式规则后会破坏一些东西。</li>
+<li>我们只能创建新的样式规则，而不是修改现有样式规则，因为我们不确定后者是100%安全的。</li>
+</ul>
+<p>换句话来说，我们使事情变得更糟糕，因为我们使文件变得越来越臃肿。</p>
+<p>如今，人们习惯于非常大的样式表，和很多程序员认为他们熟悉他们的领域。而不是去思考减少臃肿，他们使用工具（如预处理器）来帮助他们去处理它。<a href="http://chriseppstein.github.io/blog/2013/04/22/joining-linkedin/" target="_blank" rel="external">Chris Eppstein告诉我们</a>：</p>
+<blockquote>
+<p>LinkedIn有超过1100个Sass文件(每个SCSS文件有230K行)和每天有超过90个开发人员在编写Sass。</p>
+</blockquote>
+<p>###CSS臃肿对比HTML臃肿</p>
+<p>让我们一起来面对它们：数据必须放对地方。考虑下面的两种结构</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"sidebar"</span>&gt;
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"Fl-start Mend-10 W-25"</span>&gt;
+</code></pre><p>在很多案例中，语义化的类名要比表像的类名使用更多的字节(<code>.wrapper</code>与<code>.Bfc</code>对比)。但我不认为这是一个真正让人担忧的问题，相比之下，现在大多数应用都在使用<code>data-</code>属性。</p>
+<p>这就是<a href="http://www.gzip.org/" target="_blank" rel="external">gzip</a>进来的好处，因为高冗余的类名在整个文档将取得更好的压缩。同样的道理也适用于样式表中，我们有很多冗余的样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.M-1 &#123;margin: 1px;&#125;&#10;.M-2 &#123;margin: 2px;&#125;&#10;.M-4 &#123;margin: 4px;&#125;&#10;.M-6 &#123;margin: 6px;&#125;&#10;.M-8 &#123;margin: 8px;&#125;&#10;etc.</span><br></pre></td></tr></table></figure>
+<p>##缓存</p>
+<p>表面上的规则不改变。样式表由这些成熟的工具集制作，作者可以找到他们所需要的一切。通过他们的特征，他们停止增大文件，成为不可变的。而不可变是缓存最友好的。</p>
+<p>##没有更好的<code>.button</code>类名？</p>
+<p>这里讨论的技术并不是禁止语义化类名和规则，以及群组选择器声明样式。这个想法只是为了评估常用的方法的好处，而不是采用它作为事实上的技术来美化Web页面。换句话说，我们是限制“组件”方法的几个案例，这是很有意义的。</p>
+<p>例如，你可能会发现我们的样式表中有以下规则。这些规则设定我们的样式，我们不创建简单的类或规则，确保跨浏览支持。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.button &#123;&#10;    display: inline-block;&#10;    *display: inline;&#10;    zoom: 1;&#10;    font-size: bold 16px/2em Arial;&#10;   &#9;height: 2em;&#10;   &#9;box-shadow: inset 1px 1px 2px 0px #fff;&#10;   &#9;background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));&#10;   &#9;background: linear-gradient(center top, #ededed 5%, #dfdfdf 100%);&#10;   &#9;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ededed&#39;, endColorstr=&#39;#dfdfdf&#39;);&#10;   &#9;background-color: #ededed;&#10;    color: #777;&#10;    text-decoration: none;&#10;   &#9;text-align: center;&#10;   &#9;text-shadow: 1px 1px 2px #ffffff;&#10;   &#9;border-radius: 4px;&#10;   &#9;border: 2px solid #dcdcdc;&#10;&#125;&#10;.modal &#123;&#10;    position: fixed;&#10;    top: 50%;&#10;    left: 50%;&#10;    -webkit-transform: translate(-50%,-50%);&#10;    -ms-transform: translate(-50%,-50%);&#10;    transform: translate(-50%,-50%);&#10;    *width: 600px;&#10;    *margin-left: -300px;&#10;    *top: 50px;&#10;&#125;&#10;@media \0screen &#123;&#10;    .modal &#123;&#10;        width: 600px;&#10;        margin-left: -300px;&#10;        top: 50px;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>另一方面，你将在样式中看到如下所列的规则（即样式绑定到特定的模块），因为我喜欢将相同的风格使用多个类来实现：一个用于字体大小、颜色，一个用于浮动等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.news-module &#123;&#10;    font-size: 14px;&#10;    color: #555;&#10;    float: left;&#10;    width: 50%;&#10;    padding: 10px;&#10;    margin-right: 10px;&#10;&#125;&#10;.testimonial &#123;&#10;    font-size: 16px;&#10;    font-style: italic;&#10;    color: #222;&#10;    padding: 10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##我们包括所有可能的风格在我们的样式表？</p>
+<p>这个想法是为了拥有一个规则，作者可以选择他们想要的任何样式。跨网站的样式风格是常见的，足以让这些成为样式表中的一部分样式。如果一个风格太具体，那么我们就会依赖于<code>@style</code>(样式属性)。换句话说，我们宁愿修改标记而不是样式表。主要目的是创建一个规则表，解决各种设计模式。比如一个元素的<code>float</code>的基本规则可以添加一个<code>helper</code>类名来完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**&#10; * one liner with ellipsis&#10; * 1. we inherit hyphens:auto from body, which would break &#34;Ell&#34; in table cells&#10; */&#10;.Ell &#123;&#10;    max-width: 100%;&#10;    white-space: nowrap;&#10;    overflow: hidden;&#10;    text-overflow: ellipsis;&#10;    -webkit-hyphens: none; /* 1 */&#10;    -ms-hyphens: none;&#10;    -o-hyphens: none;&#10;    hyphens: none;&#10;&#125;&#10;/**&#10; * kinda line-clamp&#10; * two lines according to default font-size and line-height&#10; */&#10;.LineClamp &#123;&#10;    display: -webkit-box;&#10;    -webkit-line-clamp: 2;&#10;    -webkit-box-orient: vertical;&#10;    font-size: 13px;&#10;    line-height: 1.25;&#10;    max-height: 32px;&#10;    _height: 32px;&#10;    overflow: hidden;&#10;&#125;&#10;/**&#10; * reveals an hidden element on :hover or :focus&#10; * visibility can be forced by applying the class &#34;RevealNested-on&#34;&#10; * IE8+&#10; */&#10;:root .NestedHidden &#123;&#10;    opacity: 0;&#10;&#125;&#10;:root .NestedHidden:focus,&#10;:root .RevealNested:hover .NestedHidden,&#10;:root .RevealNested-on .NestedHidden &#123;&#10;    opacity: 1;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##这种规模如何？</p>
+<p>我们刚刚发布了一个全新的<a href="http://my.yahoo.com/" target="_blank" rel="external">My Yahoo</a>,在很大程度上依赖于这种技术。这是它与雅虎其他产品的对比（gzip压缩后）：</p>
+<p><img alt="挑战最佳CSS实战" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1310/atomic-approach-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>我们样式表大约是17.9kb大小(约3kb是可调整的)，它是可共享的（与样式表的其他属性）。原因是，没有任何规则包含了内容。</p>
+<p>##结束</p>
+<p>因为表像的类名一直被视为“界外”，我们、社区没有真正调查他们的使用需要。事实上，在这个名字的最佳实践，我们已经驳回了每一个机会去发掘自己潜在的好处。</p>
+<p>在雅虎，<a href="https://twitter.com/renatoiwa" target="_blank" rel="external">@renatoiwa</a>,<a href="https://twitter.com/StevenRCarlson" target="_blank" rel="external">@StevenRCarlson</a>和<a href="https://twitter.com/thierrykoblentz" target="_blank" rel="external">我</a>正在开发的项目使用了这个新的<a href="http://engineering.appfolio.com/2012/11/16/css-architecture/" target="_blank" rel="external">CSS架构</a>。【中文版本，可以点击<a href="http://www.w3cplus.com/css/css-architecture.html" target="_blank" rel="external">这里</a>阅读】。代码似乎是可预测、可重用、可维护和可扩展的。到目前为止，这些都是我们所经历的结果：</p>
+<ul>
+<li><strong>少臃肿：</strong>我们可以不添加一行样式到样式表中创建整个模块。</li>
+<li><strong>快速开发：</strong>样式由与内容无关的类控制，因此我们可以复制和粘贴现有模块。</li>
+<li><strong>自由的RTL接口：</strong>使用<code>start</code>和<code>end</code>关键词有很大意义。它为我们省去了为上下文RTL编写额外的样式规则。</li>
+<li><strong>好的缓存：</strong>大量的CSS可以跨产品和属性共享。</li>
+<li><strong>非常小的维护(CSS方面)：</strong>只有一套小样式规则在随着时间变化。</li>
+<li><strong>抽象少：</strong>没有必要在一个样式表中找出一个模板的样式规则。这是所有的标记。</li>
+<li><strong>第三方开发：</strong>第三方可以把我们一个模板无需附加样式表（或样式块）应用到项目中。没有自定义规则，意味着第三方没有打破规则，没有恰当的名称空间。</li>
+</ul>
+<p>注意，如果维护而言，维护CSS方面总比维护HTML方面容易，那么很简单，我们可以在CSS方面不做样式清理。但如果我们必须保持简洁，那么我们同样面对一些痛苦的事情。</p>
+<p>##最后注意</p>
+<p>在几个星期前，我在一次<a href="http://www.meetup.com/sfhtml5/events/131694202/" target="_blank" rel="external">聚会</a>中听到Colt McAnlis说“<a href="https://www.youtube.com/watch?v=OPBvdsFi7Ss&amp;feature=player_detailpage#t=11041" target="_blank" rel="external">工具，而不是规则</a>”，快速搜索这个词<a href="http://notrulestools.com/Main_Page" target="_blank" rel="external">返回这个</a>：</p>
+<blockquote>
+<p>我们都需要接受新知识、新方法、新的最佳实践，我们需要能够分享他们。</p>
+</blockquote>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://coding.smashingmagazine.com/2013/10/21/challenging-css-best-practices-atomic-approach/" target="_blank" rel="external">http://coding.smashingmagazine.com/2013/10/21/challenging-css-best-practices-atomic-approach/</a></p>
+<p>中文译文：<a href="htpp://www.w3cplus.com/css/challenging-css-best-practices-atomic-approach.html" target="_blank" rel="external">htpp://www.w3cplus.com/css/challenging-css-best-practices-atomic-approach.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/有关于css的面试题和练习.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          有关于CSS的面试题和练习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/性能优化优秀教程.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">性能优化优秀教程</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

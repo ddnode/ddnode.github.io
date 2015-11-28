@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>构建一个垂直规律 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="排版中的空间就如音乐中的时间。它是无法区分的，但少数的时间间隔比任意数量的选择更有意义。印刷商Robert Bringhurst曾经说过：“常规时间为音乐提供了更好的节奏”。所以在排版中提供有规律的空间比没有规律的要更具有可读性，不会让读者变得迷惘和丢失方向。
+在Web排版中，垂直规律指的是文本的排版和间距，引导读者往下阅读主要包括三个因素：文字大小，行高和外距或者内距。所以些因素要让垂直规律保持">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建一个垂直规律">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/构建一个垂直规律.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="排版中的空间就如音乐中的时间。它是无法区分的，但少数的时间间隔比任意数量的选择更有意义。印刷商Robert Bringhurst曾经说过：“常规时间为音乐提供了更好的节奏”。所以在排版中提供有规律的空间比没有规律的要更具有可读性，不会让读者变得迷惘和丢失方向。
+在Web排版中，垂直规律指的是文本的排版和间距，引导读者往下阅读主要包括三个因素：文字大小，行高和外距或者内距。所以些因素要让垂直规律保持">
+<meta property="og:updated_time" content="2014-09-20T13:35:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="构建一个垂直规律">
+<meta name="twitter:description" content="排版中的空间就如音乐中的时间。它是无法区分的，但少数的时间间隔比任意数量的选择更有意义。印刷商Robert Bringhurst曾经说过：“常规时间为音乐提供了更好的节奏”。所以在排版中提供有规律的空间比没有规律的要更具有可读性，不会让读者变得迷惘和丢失方向。
+在Web排版中，垂直规律指的是文本的排版和间距，引导读者往下阅读主要包括三个因素：文字大小，行高和外距或者内距。所以些因素要让垂直规律保持">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/构建一个垂直规律" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/构建一个垂直规律.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      构建一个垂直规律
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>排版中的空间就如音乐中的时间。它是无法区分的，但少数的时间间隔比任意数量的选择更有意义。印刷商Robert Bringhurst曾经说过：“常规时间为音乐提供了更好的节奏”。所以在排版中提供有规律的空间比没有规律的要更具有可读性，不会让读者变得迷惘和丢失方向。</p>
+<p>在Web排版中，垂直规律指的是文本的排版和间距，引导读者往下阅读主要包括三个因素：文字大小，行高和外距或者内距。所以些因素要让垂直规律保持不变。<br><a id="more"></a><br>垂直空间的基本单位就是行高。建立一个可以用于页面上的所有文本，不管是标题，主体内容还是侧边栏内容，最关键的就是有一个可靠稳定的垂直方向的规律，这能让读者更好的往下阅读。在这里，我为标题，主内容和侧边栏内容创建了一个<a href="http://24ways.org/examples/compose-to-a-vertical-rhythm/example.html" target="_blank" rel="external">实例</a>。</p>
+<p>##创建适当的行高</p>
+<p>开始创建一个行高的单位，最简单的办法就是从<code>&lt;body&gt;</code>的文本的字体大小中复制出来。在这个<a href="http://24ways.org/examples/compose-to-a-vertical-rhythm/example.html" target="_blank" rel="external">示例</a>中，我选择了<strong>12px</strong>。为了保证文本具有更好的可读性，我们需要设置一个行间距。1.5em的行高会给文本之间增加一个6px的间距。这将创建一个18px的行高，也就成为我们的一个基本单元。CSS是这样写的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body &#123;&#10;&#9;font-size: 75%;&#10;&#125;&#10;html&#62;body &#123;&#10;&#9;font-size: 12px;&#10;&#125;&#10;p &#123;&#10;&#9;line-height 1.5em;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在CSS中设置文字大小有多种方法，上面提供的方法是依据印刷排版的方法，使用像素给文本设置大小。顺便解释一下，第一个文本大小，我从16px（浏览器默认字体为16px）降低到12px，将其设置为正文的字体大小。第二条规则主要是用于Windows系统IE6以下浏览器，百分比值用于文本大小会或多或少的偏差。忽略IE6浏览器，使用Firefox、Safari、IE7+和Opera等主流浏览器，用户可以自动调整浏览器的文本大小。</p>
+<p>##段落之间的间距</p>
+<p>随着垂直规律的单元设置为18px，我们需要确保的是他依据于body的文本基础之上（保持body文本大小不变）。失去垂直规律一个常用的地方是设置边缘之间的空白。在Web浏览器中段落具有一个默认的顶部和底部的外边距值为1em。在我们的示例之中，给段落设置了顶部和底部边距为12px。如果要让垂直规律保持不变，需要将段落间距与行高设置相等。这一般是通过设置段落的顶部和底部的外边距等于行高来实现。</p>
+<p><strong>为了适配用户调整文本大小，也能保持排版的完整性，我们必须给垂直方向的测量值使用em为单位，包括<code>line-height</code>、<code>padding</code>和<code>margin</code></strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p &#123;&#10;&#9;font-size:1em;&#10;&#9;margin-top: 1.5em;&#10;&#9;margin-bottom: 1.5em;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>浏览器对一些块元素（比如，标题，列表和引用元素等）都有一个默认的顶部和底部的外边距，为了让排版对这些元素具有一致性，常使用的方法是重置他们的外边距值。你可以参考下面这样的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,th,td &#123;&#10;&#9;margin:0;&#10;&#9;padding:0;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>或者你可以考虑使用<a href="http://developer.yahoo.com/yui/reset/" target="_blank" rel="external">Yahoo的重置样式表</a>。从而消除了浏览器对元素的默认样式，提供一个较好的基础。你可以显示的声明你的设计意图。</p>
+<p>##文字大小变化</p>
+<p>当基本文本大小改变时，或许是标题或者是侧边栏内容，不同的文本也应该按基本单位的倍数来进行调整。这意味着，在我们的示例中，基本文字大小，都应该是18px的倍数。这可以通过调整相应的行高或外边距来实现，如下所述。</p>
+<p>###标题</p>
+<p><a href="http://24ways.org/examples/compose-to-a-vertical-rhythm/example.html" target="_blank" rel="external">示例页面</a>中的副标题设置了字号为14px。为了使每一行的高度为18px，行高应该设置为<code>18 ÷ 14 = 1.286</code>。类似上面段落部分所言，标题的顶部外边距和底部外边距也要做一定相应的调整。标题简单的将外边距设置为1em，但为了保持垂直规律，上下外边距应该设置为1.286em，这样间距才将等于18px这个基本单元值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h2 &#123;&#10;&#9;font-size:1.1667em;&#10;&#9;line-height: 1.286em;&#10;&#9;margin-top: 1.286em;&#10;&#9;margin-bottom: 1.286em;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>你也可以为标题设置不对称的外边距，基于基本行高单元值，你可能结合起来设置。在我们的示例中，顶部边外边距设置为行高的1.5倍，而底部外边距设置为行高的一半：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h2 &#123;&#10;&#9;font-size:1.1667em;&#10;&#9;line-height: 1.286em;&#10;&#9;margin-top: 1.929em;&#10;&#9;margin-bottom: 0.643em;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>另外，在我们示例中主标题文字大小设置为18px，因此行高设置为1em。因为外边距进行了修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;&#10;&#9;font-size:1.5em;&#10;&#9;line-height: 1em;&#10;&#9;margin-top: 0;&#10;&#9;margin-bottom: 1em;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###侧边栏文本</p>
+<p>侧边栏文本，相对于基本的文本而言，文字大小设置都相对较小。为了保持垂直规律，这种较小的文本也应该依据于body的字号进行设置。类似于标题计算一样，在我们示例中，文本大小设置为10px,因此他们的行高应该增加到<code>18 ÷ 10 = 1.8</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.sidenote &#123;&#10;&#9;font-size:0.8333em;&#10;&#9;line-height:1.8em;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###边框</p>
+<p>一个垂直规律的丢失往往跟元素增加水平边框有很大的关系。这些边框直接将文本推到后面，所以哪怕两个像素的边框也将让垂直规律失去。解决办法就是使用背景图像来制作水平边框，在我们示例中是给边框使用em为单位，并通过调整内距来解决。</p>
+<p>在我们示例中，页脚有一个1px的水平边框。页脚文本大小是12px，所以1px就等于：<code>1 ÷12 = 0.0833</code>。我们在边框上面加入1.5的外边距:<code>1.5 × 18 ÷12 = 2.5em</code>。所以为了保持垂直规律的边界，那么边框加上内距要等于一半，也就是9px。我们知道，边框设置为1px，内距就要设置为8px，如此我们可以计算出：<code>8 ÷12 = 0.667</code>。</p>
+<p>##打造我的垂直规律</p>
+<p>打造一个具有垂直规律助于吸引读者并引导读者继续往下阅读，但他需要排版按这样的规律来做。它可能看起来更像是一些数学计算，较为麻烦，但良好的设置都是依据这些数据，而正是这种关注细节，才能成功的关键。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文出处：<a href="http://24ways.org/2006/compose-to-a-vertical-rhythm/" target="_blank" rel="external">http://24ways.org/2006/compose-to-a-vertical-rhythm/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/compose-to-a-vertical-rhythm.html" target="_blank" rel="external">http://www.w3cplus.com/css/compose-to-a-vertical-rhythm.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/理解css_shapes的引用框.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          理解CSS Shapes的引用框
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/有关于css的面试题和练习.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">有关于CSS的面试题和练习</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

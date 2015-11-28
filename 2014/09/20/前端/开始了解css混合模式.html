@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开始了解CSS混合模式 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS混合模式提供了一种用于规定层与层之间如何相互影响及混合的方法。迄今为止，这属于图片编辑应用软件领域，但现在开始，这种混合模式可以通过CSS在web中实现！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开始了解CSS混合模式">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/开始了解css混合模式.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="CSS混合模式提供了一种用于规定层与层之间如何相互影响及混合的方法。迄今为止，这属于图片编辑应用软件领域，但现在开始，这种混合模式可以通过CSS在web中实现！">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-1.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-2.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-3.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-4.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-5.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-6.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-7.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-8.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-9.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-10.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-11.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-12.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-13.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-14.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-15.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-16.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-19.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-17.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-18.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:37:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开始了解CSS混合模式">
+<meta name="twitter:description" content="CSS混合模式提供了一种用于规定层与层之间如何相互影响及混合的方法。迄今为止，这属于图片编辑应用软件领域，但现在开始，这种混合模式可以通过CSS在web中实现！">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/开始了解css混合模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/开始了解css混合模式.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      开始了解CSS混合模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CSS混合模式提供了一种用于规定层与层之间如何相互影响及混合的方法。迄今为止，这属于图片编辑应用软件领域，但现在开始，这种混合模式可以通过CSS在web中实现！<br><a id="more"></a></p>
+<p>##什么是CSS混合模式</p>
+<p>如果你曾经广泛地使用过图片编辑应用软件（例如，Adobe Photoshop，Pixelmator，GIMP等），那么你可能对混合模式比较熟悉。如同名称中所暗示的，混合模式是指将上层的图像融入下层图像时采用的各种模式。根据您所选择的模式，你会看到不同的融合后的效果。</p>
+<p>这些混合模式，现已 <a href="">Compositing and Blending Level 1</a>说明文档被添加在CSS中。混合模式被用来指定一个特定的颜色将如何融合到背景层的颜色中。其结果可能十分有趣。</p>
+<p>##混合模式的工作方式</p>
+<p>混合模式主要是一组不同的方式，这些方式用来确定当一个元素与另一个（部分或完全地）重叠时，图像的最终色彩应该是怎样的。本质上，这些模式就是源层和背景层颜色用数学表达的函数——例如RGBA，其中所有通道的值都在0和1之间——每一个特定的像素返回一个最终的数学值，最终确定该像素的颜色。每个混合模式用来确定颜色所使用的精确公式可以参考<a href="http://dev.w3.org/fxtf/compositing-1/#blending" target="_blank" rel="external">规范</a>。现在，我们就来看看CSS中提供的不同混合模式分别产生了什么样的效果。</p>
+<p>##CSS中不同的混合模式的效果</p>
+<p>###正常模式(Normal)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-1.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>通过Normal混合模式产生的图像不会添加任何可视效果，即使用时用当前图层像素的颜色覆盖下层颜色。</p>
+<p>###正片叠底模式(Multiply)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-2.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>正如其名称所暗示的，multiply 混合模式将源图像和背景图像的颜色相乘，从而获得最终的颜色。这通常会导致图像变暗。</p>
+<p>###屏幕模式/滤色(Screen)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-3.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>与正片叠底模式相反，合成图层的效果是显现两图层中较高的灰阶，而较低的灰阶则不显现（即浅色出现，深色不出现），产生一幅更加明亮的图像。</p>
+<p>###叠加模式(Overlay)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-4.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>overlay混和模式既有screen中的像素颜色变浅效果，也有multiply中的像素颜色加深效果。反应在实际应用中就是：使浅的更浅，深的更深。究竟使用何种模式，取决于底层的色彩，合成后有些区域图变暗有些区域变亮。</p>
+<p>###变暗模式(Darken)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-5.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>此模式的效果取决于源和背景颜色之间更深的（色彩），即混合两图层像素的颜色时，对这二者的RGB值（即RGB通道中的颜色亮度值）分别进行比较，取二者中低的值再组合成为混合后的颜色。</p>
+<p>###变亮模式(Lighten)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-6.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>这个模式与darken相反，它的效果取决于源和背景颜色之间更浅的（色彩）。即将两像素的RGB值进行比较后，取高值成为混合后的颜色，因而总的颜色灰度级升高，造成变亮的效果。</p>
+<p>###颜色减淡(Color-Dodge)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-7.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>Color-Dodge模式加亮了背景颜色，从而形成鲜明对比的图像。</p>
+<p>###颜色加深(Color-Burn)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-8.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>这种模式加深了背景色，并且增加了源和背景色彩的对比度。即让底层的颜色变暗，有点类似于正片叠底，但不同的是，它会根据叠加的像素颜色相应增加底层的对比度。</p>
+<p>###强光模式(Hard-Light)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-9.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>这种模式与overlay相反。它在较浅的像素上使用multiply模式，而在较深的像素上使用screen模式。作用效果如同是打上一层色调强烈的光，所以称之为强光。</p>
+<p>###柔光模式(Soft-Light)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-10.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>这种模式在较深像素上使用multiply模式，而在较浅像素上使用screen模式。与overlay有些相似，但有轻微的不同。作用效果如同是打上一层色调柔和的光，因而被我们称之为柔光。作用时将上层图像以柔光的方式施加到下层。</p>
+<p>###色相/色调模式(Hue)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-11.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>这种模式使用当前层的色相值去替换背景图像的色相值，而饱和度与亮度不变。</p>
+<p>###饱和度模式(Saturation)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-12.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>saturation用当前层的饱和度去替换背景图像的饱和度，而色相值与亮度不变。</p>
+<p>###颜色模式(Color)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-13.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>color兼有色相和饱和度两种模式，用当前层的色相值与饱和度替换背景图像的色相值和饱和度，而亮度保持不变。</p>
+<p>###亮度/明度模式(Luminosity)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-14.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>这种模式使用当前层的亮度值去替换背景图像的亮度值，而色相值与饱和度不变。该模式产生的效果与Color模式刚好相反，它根据上层颜色的明度分布来与下层颜色混合。</p>
+<p>###差值/差异模式(Difference)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-15.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>要混合图层双方的RGB值中每个值分别进行比较，用高值减去低值作为合成后的颜色，通常用白色图层合成一图像时，可以得到负片效果的反相图像。用黑色的话不发生任何变化（黑色亮度最低，下层颜色减去最小颜色值0，结果和原来一样），而用白色会得到反相效果（下层颜色被减去，得到补值），其它颜色则基于它们的亮度水平。</p>
+<p>###排除模式(Exclusion)</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-16.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>exclusion混和模式与difference模式类似，但产生的图像对比度更低一些。</p>
+<p>有些人可能觉得不方便准确地记得每一个混合模式的工作原理，所以我们根据它们提供的一般效果，将它们分成几大类，这种方法是非常有用的。我们可以将所有这些模式分为以下几类：</p>
+<ul>
+<li><strong>变暗(Darkening)：</strong>darken, multiply, 和 color-burn模式，各自会按自己的方式，将图像变暗。</li>
+<li><strong>变亮(Lightening)：</strong>lighten, screen 和 color-dodge模式，将图像变得更亮。</li>
+<li><strong>对比度(Contrast)：</strong>overlay, soft-light 和 hard-light模式，将改变图像对比度。</li>
+<li><strong>相对(Comparative)：</strong>difference 和 exclusion模式划分到这个类别中。</li>
+<li><strong>成分(Component)：</strong>hue, saturation, color 和 luminosity模式划分到这个类别中。其他混合模式独立作用于每个颜色通道，而这个类中的模式则从源层挑出某一部分，然后把其它部分和背景层混和。</li>
+</ul>
+<blockquote>
+<p>在网上介绍Photoshop图层混合模式的教程中截取了一张介绍图层混合模式的图片，虽然此处介绍CSS中图层混合模式，但他们有异曲同工之处。</p>
+</blockquote>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-19.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>上图截取《<a href="http://www.zcool.com.cn/article/ZMzcyNzY=.html" target="_blank" rel="external">Photoshop中高级进阶系列之一——图层混合模式原理(原创理论)</a>》一文中。</p>
+<p>有关于图层混合模式更专业的介绍，可以阅读有关于介绍Photoshop制作软件中图层混合模式的相关文章：</p>
+<ul>
+<li><a href="http://helpx.adobe.com/cn/after-effects/using/blending-modes-layer-styles.html" target="_blank" rel="external">After Effects / 混合模式和图层样式</a></li>
+<li><a href="http://www.psdreamworks.com/blending-modes.html" target="_blank" rel="external">带你认识Photoshop的混合模式</a></li>
+<li><a href="http://avnpc.com/pages/photoshop-layer-blending-algorithm" target="_blank" rel="external">Photoshop图层混合(Layer Blending)模式的算法实现</a></li>
+<li><a href="http://www.cnblogs.com/xdream86/p/3321460.html" target="_blank" rel="external">PS图层混合模式实例详解</a></li>
+</ul>
+<p>##使用mix-blend-mode属性</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-17.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p><code>mix-blend-mode</code>属性规定了源元素如何将颜色和背景混和起来。背景可以是源元素之下的任何元素（例如，一个标题是一个源元素，而包裹自己的div容器是背景元素）。使用方法很简单：</p>
+<pre><code><span class="attribute">mix-blend-mode</span>: <span class="string">difference</span>
+</code></pre><p>或者：</p>
+<pre><code><span class="attribute">mix-blend-mode</span>: <span class="string">overlay</span>
+</code></pre><p>等等。注意它可以作用于任何元素上。如果你为一个元素应用了<code>mix-blend-mode</code>属性，它会把自己的颜色和任意跟它叠加在一起的元素混和起来。可以在《<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/demo_blendmodes_mixblend.html" target="_blank" rel="external">two images blending with each other</a>》一文中查看实例。</p>
+<p>##使用isolation属性</p>
+<p>如果你使用了<code>mix-blend-mode</code>，它会把当前元素和所有在其下方重叠的背景元素都混和起来。如果你想让一组元素在一个<code>&lt;div&gt;</code>容器中互相混和，而不影响其它下方重叠的元素呢？</p>
+<p>如果你通过<code>isolation</code>属性来隔离那个<code>&lt;div&gt;</code>容器，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div &#123;&#10;&#9;isolation: isolate;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>这个定义创建了一个新的堆叠背景，只有在这个堆叠背景中的元素才会进行混和，之下的其它元素都不会发生混和。</p>
+<p>这里有使用了<code>mix-blend-mode</code>和<code>isolate</code>属性的一个<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/demo_blendmodes_tile.html" target="_blank" rel="external">演示</a>。其中，我们在包含图片的<code>&lt;div&gt;</code>上应用了<code>isolation</code>属性。如果我们不使用<code>isolation</code>属性，那么它也会混和到图片下方的层。您可以通过勾选复选框来查看不同情况下出现的不同效果。</p>
+<p>##<code>background-blend-mode</code>的工作原理</p>
+<p><code>background-blend-mode</code>属性指定了源元素应该怎样把自己的颜色同自己的背景图片和背景颜色混和起来。如果该元素下还有任何其它的层（例如一个使用蓝色背景颜色的<code>section</code>元素），它将不会把自己的颜色与该元素相混合。它只会把自身的颜色与CSS中为其指定的背景图像和颜色混和在一起。</p>
+<p>如下例所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: url(images/sample.png);&#10;background-color: red;&#10;background-blend-mode: multiply;</span><br></pre></td></tr></table></figure>
+<p>如果你正在使用的是多个背景图片，那么你可以分别为它们应用多个背景图片混和模式，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: url(images/sample1.png), url(images/sample2.png);&#10;background-color: blue;&#10;background-blend-mode: screen, overlay;</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中， <code>sample1.png</code>图片将会应用<code>screen</code>混和模式，而 <code>sample2.png</code>会应用<code>overlay</code>模式。</p>
+<p>##混和模式使用技巧</p>
+<p>###渐变</p>
+<p>您也可以在自己的设计中，把使用所有这些模式与渐变和蒙板结合起来，以实现一些有趣的效果。我所见到过的最有才的例子是在图片上添加径向渐变。例如下面的图像：</p>
+<p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-18.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
+<p>你可以打开<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/demo_blendmodes_gradients.html" target="_blank" rel="external">案例</a>看到上述效果的演示。我们在该演示中做的仅仅是添加一个透明到黑色的径向渐变（如果是线性渐变，从透明至黄色），并在上面放置了一幅图像，然后为其应用<code>multiply</code>混和模式，即<code>mix-blend-mode: multiply</code>。当用户将鼠标悬停在图片上，我们使用<code>mix-blend-mode: normal</code> 来删除混和效果。</p>
+<p>###蒙板，动画和滤镜</p>
+<p>一个简单的（有些人会说显然的！）需要记住的要点是，当你在使用蒙板时，蒙板层将是最高一层的堆叠背景。这意味着你需要确保，无论你想混合多少层，都要使这些层通过蒙板可见。</p>
+<p>混合模式也可以配合动画元素进行工作，尽管它们自己并不能设置动画属性。在<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/demo_blendmodes_mask.html" target="_blank" rel="external">这个案例</a>中，我们配合CSS蒙板和动画使用了混合模式。请注意，我们已经应用了一个单独的<code>mix-blend-mode</code>来混合文本和图像。您甚至可以添加CSS滤镜来融合图像，以便进一步调整和优化您的设计。</p>
+<p>###视频</p>
+<p>虽然我们在文章中更关注图像，但使用<code>mix-blend-mode</code>属性，<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/demo_blendmodes_video.html" target="_blank" rel="external">混合模式也可以应用到视频中</a>。如果你在视频上面添加混合的图像或文本，您就可以创建一些复杂的效果或演示。这进一步增强了你使用这些混和模式的可能性。</p>
+<p>###Canvas中使用混合模式</p>
+<p>通过<a href="http://www.w3.org/TR/2dcontext2/#compositing" target="_blank" rel="external">Canvas 2D Context API</a>，混合模式也可以在<code>&lt;canvas&gt;</code>中实现。您需要做的仅仅是将canvas 2d内容的<code>globalCompositeOperation</code>属性设置为任何你喜欢的混合模式。</p>
+<p>很多时候你可能想通过调整不透明度——在canvas中则是设置globalAlpha属性——对图像进行进一步控制。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var canvas = document.querySelector(&#39;canvas&#39;);&#10;var context = getContext(&#39;2d&#39;);&#10;// Everything drawn on this context will now have&#10;// a &#8220;screen&#8221; blend mode applied to it.&#10;context.globalCompositeOperation = &#39;screen&#39;;&#10;// Drawn elements will have an alpha channel of 0.7&#10;context.globalAlpha = 0.7;</span><br></pre></td></tr></table></figure>
+<p>通过<code>globalCompositeOperator</code>，我已经实现了几个<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/demo_blendmodes_canvas.html" target="_blank" rel="external">canvas中使用混和模式的小示例</a>，你可以看看。另外您也可以看看<a href="https://blogs.adobe.com/webplatform/2014/02/24/using-blend-modes-in-html-canvas/" target="_blank" rel="external">Adobe写给新手必看的</a>，他们在这方面作了更多的讨论。</p>
+<p>###SVG中使用混和模式</p>
+<p>规范中也允许你通过CSS在SVG文档中添加混和模式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;svg xmlns=&#34;http://www.w3.org/2000/svg&#34;&#62;&#10;&#9;&#60;style&#62;&#10;&#9;&#9;rect &#123;&#10;&#9;&#9;&#9;mix-blend-mode: multiply;&#10;&#9;&#9;&#125;&#10;&#9;&#60;/style&#62;&#10;&#9;&#60;rect x=&#34;10&#34; y=&#34;10&#34; width=&#34;100&#34; height=&#34;100&#34; rx=&#34;15&#34; ry=&#34;15&#34; fill=&#34;#ff0000&#34;/&#62;&#10;&#9;&#60;rect x=&#34;40&#34; y=&#34;40&#34; width=&#34;100&#34; height=&#34;100&#34; rx=&#34;15&#34; ry=&#34;15&#34; fill=&#34;green&#34;/&#62;&#10;&#60;/svg&#62;</span><br></pre></td></tr></table></figure>
+<p>当然，在SVG里，你也可以使用<code>feImage</code>和<code>feBlend</code>来添加混和模式，但最好的方式还是使用CSS来控制，因为它更为方便。</p>
+<p>##浏览器支持状况</p>
+<p>目前，基于Chromium的浏览器对CSS混和模式最为支持（<code>background-blend-mode</code>和<code>mix-blend-mode</code>都支持）。为了使Opera也支持，在opera地址栏中打开<code>opera:flag</code>s，然后开启<code>Enable experimental Web Platform features</code>一项。对于Chrome，你需要通过<code>chrome://flags</code>开启同样的项目。</p>
+<p>火狐现在不支持<code>isolation</code>属性，但你可以先享用其它属性，你需要打开<code>about:config</code>，然后搜索属性并开启。Safari和IE浏览器迄今仍不支持这些特性。</p>
+<p>除非浏览器对其支持有所改善，最好还是在你的设计中不要将CSS混和模式作为重要的部分，而只是作为既定设计中增强的效果。然而，出于演示的目的，你最好能在同时支持<code>background-blend-mode</code>和<code>mix-blend-mode</code>这两个属性的浏览器中打开链接内容。 Adobe的Web平台团队<a href="http://html.adobe.com/webplatform/graphics/blendmodes/browser-support/" target="_blank" rel="external">维护着一个各种浏览器对混和模式的支持详情页面</a>，非常详细地对此作了说明。</p>
+<p>##混和模式功能测试</p>
+<p>通过功能测试使用混合模式是很重要的。您可以使用如下JavaScript方法同时检测<code>mix-blend-mode</code>和<code>background-blend-mode</code>地支持情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (&#39;CSS&#39; in window &#38;&#38; &#39;supports&#39; in window.CSS) &#123;&#10;&#9;var supportsMixBlendMode = window.CSS.supports(&#39;mix-blend-mode&#39;, &#39;multiply&#39;);&#10;&#9;var supportsBackgroundBlendMode = window.CSS.supports(&#39;background-blend-mode&#39;, &#39;multiply&#39;);&#10;&#9;var supportsIsolation = window.CSS.supports(&#39;isolation&#39;, &#39;isolate&#39;);&#10;&#9;&#8230;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>如果支持，它将返回<code>true</code>，否则<code>false</code>。<br>然而，最健全地方案是使用<a href="http://modernizr.com/" target="_blank" rel="external">Modernizr</a>地<a href="http://modernizr.com/docs/#testprop" target="_blank" rel="external">testProp()</a>，从功能上进行测试，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var mixBlendModeSupport = Modernizr.testProp(&#39;mixBlendMode&#39;);&#10;var backgroundBlendModeSupport = Modernizr.testProp(&#39;backgroundBlendMode&#39;);&#10;var isolationSupport = Modernizr.testProp(&#39;isolation&#39;);</span><br></pre></td></tr></table></figure>
+<p>如果浏览器支持，它将返回<code>true</code>，否则<code>false</code>。</p>
+<p>你也可以使用<code>@supports</code>来区分是否加载样式，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@supports(mix-blend-mode: screen) &#123;&#10;&#9;&#8230;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你想确定是否同时支持<code>mix-blend-mode</code>和<code>background-blend-mode</code>属性，你可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@supports((mix-blend-mode: screen) and (background-blend-mode: screen)) &#123;&#10;&#9;&#8230;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##结论<br>在网页中，混合模式非常适合用于创建不同的效果，要是在以前，这种功能是使用Web技术无法给我们的。这是一个即将到来的技术，而且，在写这篇文章的时候，浏览器的支持还不协调，但它只会随着时间的推移变得更好。您可以通过混和模式创造出一些精彩的调整和效果，所以在未来，你将不再需要仅仅为了给页面中的图形元素添加某种效果，而启动一个照片编辑器的应用程序。</p>
+<p>##扩展阅读</p>
+<ul>
+<li><a href="http://www.w3cplus.com/css3/basics-css-blend-modes.html" target="_blank" rel="external">CSS混合模式</a></li>
+<li><a href="http://www.w3cplus.com/css3/css-blend-modes-could-be-the-next-big-thing-in-web-design.html" target="_blank" rel="external">Web设计中的CSS混合模式</a></li>
+<li><a href="http://dev.w3.org/fxtf/compositing-1/" target="_blank" rel="external">CSS Compositing and Blending Level 1</a></li>
+<li><a href="http://html.adobe.com/webplatform/graphics/blendmodes/" target="_blank" rel="external">Page for Blending and Compositing</a></li>
+<li><a href="http://blogs.adobe.com/webplatform/2013/01/28/blending-features-in-canvas/" target="_blank" rel="external">Blending features in Canvas</a></li>
+<li><a href="http://css-tricks.com/basics-css-blend-modes/" target="_blank" rel="external">The Basics of CSS Blend Modes</a></li>
+</ul>
+<blockquote><br>    <h2><br>        关于韩聪</h2><br>    <p>中标软件开源社区部项目助理，爱生活，略迷茫，在web前端攻城狮的道路上匍匐前进。<a href="http://hancong9104.blog.163.com/" target="_blank">个人博客</a>、<a href="http://weibo.com/hancong9104" target="_blank">新浪微博</a>，追梦的旅途中，愿与你同行。</p><br></blockquote>
+
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文出处：<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/" target="_blank" rel="external">http://dev.opera.com/articles/getting-to-know-css-blend-modes</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css3/getting-to-know-css-blend-modes.html" target="_blank" rel="external">http://www.w3cplus.com/css3/getting-to-know-css-blend-modes.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/开始使用grunt.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          开始使用Grunt
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/崇拜css.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">崇拜CSS</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

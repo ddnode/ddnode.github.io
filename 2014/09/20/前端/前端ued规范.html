@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端UED规范 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端规范一直以来都是每个人向往的，特别是对于一些初学者，或者接触过前端一段时间。他们都会时不时的向一些有经验的朋友询问——前端规范是什么？以证明自己写的代码是否符合规范。
+前端规范其实是一个很大的讨论课题，每一个团队都会针对自身的一些因素确定一些符合自己团队开发的一些规范。所以我也无法避免这么一个环节，为自己所在的团队拟定一些前端规范。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端UED规范">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/前端ued规范.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="前端规范一直以来都是每个人向往的，特别是对于一些初学者，或者接触过前端一段时间。他们都会时不时的向一些有经验的朋友询问——前端规范是什么？以证明自己写的代码是否符合规范。
+前端规范其实是一个很大的讨论课题，每一个团队都会针对自身的一些因素确定一些符合自己团队开发的一些规范。所以我也无法避免这么一个环节，为自己所在的团队拟定一些前端规范。">
+<meta property="og:updated_time" content="2014-09-20T13:40:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端UED规范">
+<meta name="twitter:description" content="前端规范一直以来都是每个人向往的，特别是对于一些初学者，或者接触过前端一段时间。他们都会时不时的向一些有经验的朋友询问——前端规范是什么？以证明自己写的代码是否符合规范。
+前端规范其实是一个很大的讨论课题，每一个团队都会针对自身的一些因素确定一些符合自己团队开发的一些规范。所以我也无法避免这么一个环节，为自己所在的团队拟定一些前端规范。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/前端ued规范" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/前端ued规范.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端UED规范
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端规范一直以来都是每个人向往的，特别是对于一些初学者，或者接触过前端一段时间。他们都会时不时的向一些有经验的朋友询问——前端规范是什么？以证明自己写的代码是否符合规范。</p>
+<p>前端规范其实是一个很大的讨论课题，每一个团队都会针对自身的一些因素确定一些符合自己团队开发的一些规范。所以我也无法避免这么一个环节，为自己所在的团队拟定一些前端规范。<br><a id="more"></a></p>
+<p>##前言</p>
+<p>在写这份规范我思考了很久，说实话也是我一直想做的一件事件，因为我希望自己能为自己所在的团队写一些具有实用价值的前端规范，引导大家去做一些更具有意义的事情。</p>
+<p>经过一些思考与和别人的参考，在写前端规范之前，我们有一些问题需要先理清楚，因为这些问题直接引导了这份前端规范的方向。</p>
+<p>###何为规范</p>
+<p>什么是规范？百度百科是这样对规范定义的“对于某一工程作业或者行为进行定性的信息规定”。主要是因为无法精准定量而形成的标准。在此处我们所指规范就是围绕前端代码开发的一些行为进行定义，作为一个标准，来约束某一个团队编写前端代码的行为准则。</p>
+<p>###为何规范</p>
+<p>我们是一个团队在协作，并不是一个人操作。此规范并不是一种限制，而一种有效的约定：</p>
+<ul>
+<li>强调团队协作的一致性;</li>
+<li>加强团队成员之间的合作，提高协作效率；</li>
+<li>形成一种团队文化</li>
+</ul>
+<p>最终目的—— <strong>为项目服务，所做的一切都是为了提高团队协作效率，优化项目和流程，便于后期维护与优化，输出高质量文档。</strong></p>
+<p>###写在规范前的话</p>
+<p>对于一个小型项目，您可能是一个人或者几个人在维护，便于沟通与维护。但对于一个大型项目，往往是一个团队或者几个团队，上百或者上千人在维护，这样造成沟通困难，成本提高。因此<strong>项目的可维护性第一</strong>。</p>
+<p>前面也说过，我们是一个团队在作战而不是一个人在做事，项目的维护和二次开发可能是直接或间接的团队合作。所以在开发的时候，我们要保证项目的可维护性的灵活度：</p>
+<ul>
+<li><strong>模块化，降低代码的耦合度：</strong> 将页面内元素视为一个模块，相互独立，尽量避免耦合过度的代码</li>
+<li><strong>良好的注释：</strong> 在代码中具有良好的注释，帮助自己维护或者他人读懂项目的代码</li>
+<li><strong>代码弹性第一，性能第二：</strong> 在代码的弹性与性能发生冲突时，先考虑代码弹性，再保证弹性的基础上，适当优化性能</li>
+<li><strong>严格按照规范编写代码：</strong> 正因为参与开发人员众多，我们更需要严格要求自己在编码时按照制定的前端规范进行编码。</li>
+</ul>
+<p>###改变习惯，适应环境</p>
+<p>你改变环境还是去适应环境，这个复杂的问题在这你将首要的去面对。工作多年的码农都有自己的生产环境与编码习惯，但对于一个团队来说，制定一套规范让团队成员改变自己习惯去适应一个新的规范，是需要一定的时间。但不去遵循，又失去了定制前端规范的意义。所以作为团队员中的一员，都很有必要根据制定的规范改变自己一些习惯。让大家具有一个规范性的编码环境。</p>
+<p>##实现符合W3C的Web标准</p>
+<p>作为一位前端人员，都希望自己写出来的东西是能符合 <strong>W3C</strong>的WEB标准规范。那么怎么样写出一个符合W3C的标准的Web页面，这就是我们将要一起讨论的一个问题。</p>
+<p>###生产与测试环境</p>
+<p>我们把线下的环境称之为生产环境，简单点说，就是大家平时写代码的一个环境。生产环境的好坏直接影响我们编码的效率。具有一个良好的生产环境，一能提高我们的效率，二能减少代码的出错率。</p>
+<p>除了生产环境之外，测试环境对于我们来说也是必不可少的。因为我们还不够自信，编出来的码，能不经过测试就能兼容所有的游览器。加之现在浏览器星罗满布，给前端人员增加了不少的麻烦，为了能满足这些浏览器，你需要不断的游走各个浏览器之中。需要不断的去Debug。因为一个良好的测试环境，也将帮助您快速开发。</p>
+<p>####编辑器</p>
+<p>欲先善其事，必先利其器。作为前端开发工程师，你有能力编写复杂的代码，但你真正需要的是你最喜爱的，可信赖的文本编辑器。你可以使用一个简单的，如微软的记事本，但往往比较有益的文字编辑器具有语法突出/高亮功能，和其他功能与选项，让你在编写代码的时候更加容易。</p>
+<ul>
+<li><a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime Text3</a></li>
+<li><a href="http://www.eclipse.org/" target="_blank" rel="external">Eclipse</a></li>
+<li><a href="http://www.aptana.com/" target="_blank" rel="external">Aptana</a></li>
+<li><a href="http://macromates.com/" target="_blank" rel="external">Textmate</a></li>
+<li><a href="http://panic.com/coda/" target="_blank" rel="external">Coda</a></li>
+<li><a href="http://panic.com/coda/" target="_blank" rel="external">WebStorm</a></li>
+<li><a href="http://notepad-plus-plus.org/" target="_blank" rel="external">NotePad++</a></li>
+<li><a href="http://www.editplus.com/" target="_blank" rel="external">Editplus</a></li>
+<li><a href="www.vim.org/‎">Vim</a></li>
+<li><a href="http://www.adobe.com/hk_en/products/dreamweaver.html" target="_blank" rel="external">Dreamweaver CC</a></li>
+</ul>
+<p>使用这些编辑器，更有助于编写出严格标准的页面。同时在此，我们希望所有人可以抛弃视图制作页面，改变纯手写<code>HTML</code>和<code>CSS</code>。培养良好的书写代码习惯。</p>
+<p>####调试工具</p>
+<p>只要是设计开发，就需要进行调试，针对前端开发人员而言相对简单一些，如果能借助一些工具，调试将会事半功倍。在前端开发中，主要以调试<code>HTML</code>、<code>CSS</code>、<code>JavaScript</code>为主，在编写前端应用中都以Firefox为主进行开发。</p>
+<p>#####浏览器调试工具</p>
+<ul>
+<li><a href="http://getfirebug.com/" target="_blank" rel="external">Firebug</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/web-developer" target="_blank" rel="external">Web Developer</a></li>
+<li><a href="https://developers.google.com/chrome-developer-tools/" target="_blank" rel="external">Chrome DevTools</a></li>
+<li><a href="http://dev.opera.com/articles/view/opera-dev-console-bookmarklet/" target="_blank" rel="external">Opear Developer Tools</a></li>
+<li><a href="http://www.windowsmarketplace.com/" target="_blank" rel="external">IE Developer Toolsbar</a></li>
+<li><a href="http://www.debugbar.com/" target="_blank" rel="external">DebugBar</a></li>
+</ul>
+<p>#####性能测试工具</p>
+<ul>
+<li><a href="http://developer.yahoo.com/yslow/" target="_blank" rel="external">Yslow</a></li>
+<li><a href="http://www.httpwatch.com/" target="_blank" rel="external">HttpWatch</a></li>
+<li><a href="http://fiddler2.com/home" target="_blank" rel="external">Fiddler</a></li>
+<li><a href="http://msfast.myspace.com/" target="_blank" rel="external">Myspace Performance Tracker</a></li>
+<li><a href="http://ajax.dynatrace.com/pages/" target="_blank" rel="external">DynaTrace</a></li>
+</ul>
+<p>#####代码格式化工具</p>
+<ul>
+<li><a href="http://procssor.com/" target="_blank" rel="external">Procssor</a></li>
+<li><a href="http://html.fwpolice.com/css/" target="_blank" rel="external">CSS Beautifier</a></li>
+<li><a href="http://csslint.net/" target="_blank" rel="external">CSS Lint</a></li>
+<li><a href="http://www.styleneat.com/" target="_blank" rel="external">Styleneat</a></li>
+<li><a href="http://www.jslint.com/" target="_blank" rel="external">JSLint</a></li>
+<li><a href="http://www.jshint.com/" target="_blank" rel="external">JSHint</a></li>
+<li><a href="http://prettydiff.com/" target="_blank" rel="external">Pretty Diff</a></li>
+</ul>
+<p>#####代码压缩工具</p>
+<ul>
+<li><a href="http://www.csscompressor.com/" target="_blank" rel="external">CSS Compressor</a></li>
+<li><a href="http://www.minifycss.com/css-compressor/" target="_blank" rel="external">CSS的压缩机和Minifier</a></li>
+<li><a href="http://refresh-sf.com/yui/" target="_blank" rel="external">YUI Compressor</a></li>
+</ul>
+<p>#####图片压缩工具</p>
+<ul>
+<li><a href="http://imageoptim.com/" target="_blank" rel="external">ImageOptim</a></li>
+<li><a href="http://www.jpegmini.com/" target="_blank" rel="external">JPEGmini</a></li>
+<li><a href="http://pnggauntlet.com/" target="_blank" rel="external">PNGGauntlet</a></li>
+<li><a href="http://www.imageoptimizer.net/Pages/Home.aspx" target="_blank" rel="external">Image Optimizer</a></li>
+<li><a href="http://www.smushit.com/ysmush.it/" target="_blank" rel="external">Smush.it</a></li>
+</ul>
+<p>#####代码校验工具</p>
+<ul>
+<li><a href="http://validator.w3.org/" target="_blank" rel="external">Markup Validation Service</a></li>
+<li><a href="http://jigsaw.w3.org/css-validator/" target="_blank" rel="external">CSS Validation Service</a></li>
+<li><a href="http://html5.validator.nu/" target="_blank" rel="external">(X)HTML5 Validator</a></li>
+<li><a href="http://www.freeformatter.com/" target="_blank" rel="external">Freeformatter.com</a></li>
+</ul>
+<p>#####版本库</p>
+<ul>
+<li><a href="http://zh.wikipedia.org/wiki/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6" target="_blank" rel="external">版本控制</a></li>
+<li><a href="http://zh.wikipedia.org/wiki/Git" target="_blank" rel="external">Git</a></li>
+<li><a href="http://zh.wikipedia.org/wiki/Subversion" target="_blank" rel="external">SVN</a></li>
+</ul>
+<p>###基本准则</p>
+<p>符合Web2.0标准。语义化<code>HTML</code>，代码简洁明了；结构、表现和行为三层分离；兼容性优良，页面性能方便。</p>
+<p>###文件规范</p>
+<p>在项目实施过程中，文件的规范性对于团队的合作性非常有必要，在整个规范中将文件规范分为“文件命名规范”和“文件存放规范”两大部分，而在文件命名规范中，又将分成四大部分“文件命名”，“HTML命名”</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/响应式布局中模仿calc()或固定侧边栏.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          响应式布局中模仿calc()或固定侧边栏
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/利于网页设计师的强大工作流程小窍门、工具和技巧.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利于网页设计师的强大工作流程小窍门、工具和技巧</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

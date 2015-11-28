@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Grunt实现自动化工作流 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="学习如何使用Grunt实现自动化工作流，减少你每天重复多次而又乏味的任务。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Grunt实现自动化工作流">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/使用grunt实现自动化工作流.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="学习如何使用Grunt实现自动化工作流，减少你每天重复多次而又乏味的任务。">
+<meta property="og:updated_time" content="2014-09-20T13:42:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Grunt实现自动化工作流">
+<meta name="twitter:description" content="学习如何使用Grunt实现自动化工作流，减少你每天重复多次而又乏味的任务。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/使用grunt实现自动化工作流" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/使用grunt实现自动化工作流.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用Grunt实现自动化工作流
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学习如何使用Grunt实现自动化工作流，减少你每天重复多次而又乏味的任务。<br><a id="more"></a></p>
+<p>##需要自动化</p>
+<p>最近我一直在通过自动化任务完成在日常生活中的工作流。我也想在跨团队开发中有一套实现项目的标准化，设置一个项目结构和确保必要的正确无误的任务。CodeKit对于我来说已经很好了，但很多地方仍然有一些问题；能够更多的实现跨平台自动化而不需要为不同的应用程序配置不同的项目结构。他被叫作<a href="http://gruntjs.com/" target="_blank" rel="external">Grunt</a>。</p>
+<blockquote>
+<p>如果你对Grunt一无所知，我建议您先从<a href="http://www.w3cplus.com/blog/tags/372.html" target="_blank" rel="external">这里</a>了解一些相关的知识。——@大漠</p>
+</blockquote>
+<p>##什么是Grunt?</p>
+<p>总之，对于Grunt来说，是基于<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>上运行的任务（Task Runner）——不要因为这个把你吓倒了！Node.js安装很简单——访问官网，下载安装包并运行。如果你是基于Mac上，你也可以通过<a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a>安装。接下来你需要安装Grunt CLI。我不想介绍更多的细节，因为他有一个很详细的<a href="http://gruntjs.com/getting-started" target="_blank" rel="external">入门指南</a>，最后我只想总结几点：</p>
+<ul>
+<li>确保Node.js已安装。同里需要安装Node包管理器（NPM）。</li>
+<li>安装全局的Grunt CLI：<code>npm install -g grunt-cli</code>。</li>
+<li>你需要在你项目的根目录下创建两个文件，<code>package.json</code>和<code>Gruntfile.js</code>。下一步，我将解释这两个文件是做什么的。</li>
+</ul>
+<blockquote>
+<p>如果你不想阅读英文版本的入门指南，你可以访问<a href="http://www.toobug.net/" target="_blank" rel="external">Toobug</a>和<a href="http://www.basecss.net/" target="_blank" rel="external">Basecss</a>同学翻译的中文版本<a href="http://www.gruntjs.org/article/getting_started.html" target="_blank" rel="external">入门指南</a>——@大漠。</p>
+</blockquote>
+<p>在我继续往下介绍之前，值得注意的是，你可能需要以管理员的身份在终端运行一些安装命令。例如，Mac用户将需要使用<code>sudo</code>运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g grunt-cli</span><br></pre></td></tr></table></figure>
+<p>##设置你的项目</p>
+<p><code>package.json</code>文件包含所有关于该项目的信息，如名称和版本。它还列出了项目所需要的依赖关系。基本的<code>package.json</code>看起来像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#10;&#9;&#34;name&#34;:&#34;project-name&#34;,&#10;&#9;&#34;version&#34;:&#34;0.1.0&#34;,&#10;&#9;&#34;devDependencies&#34;:&#123;&#10;&#9;&#9;&#34;grunt&#34;:&#34;~0.4.1&#34;&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>这基本上就是告诉我们项目名称，版本号(使用了<a href="http://semver.org/" target="_blank" rel="external">语义化版本</a>控制系统)和<code>grunt</code>所需要的依赖关系。安装依赖项，只需要运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>所安装的所有依赖关系都将放在<code>node_modules</code>目录中。</p>
+<p>##配置Grunt任务</p>
+<p>现在我们来设置<code>Gruntfile.js</code>文件。如果有很多任务，它可以成为一个很大的文件，所以我们将开始演示一个编译Sass(.scss)文件的基本任务。首先，你需要先安装<a href="https://github.com/gruntjs/grunt-contrib-sass" target="_blank" rel="external">Sass插件</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install grunt-contrib-sass --save-dev</span><br></pre></td></tr></table></figure>
+<p>添加<code>--save-dev</code>命令可以自动添加到你的<code>package.json</code>文件，所以你不需要担心手动添加。下面是一个基本配置Sass编译——包括开配置和分布配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//wrapper&#20989;&#25968;&#10;module.exports = function(grunt)&#123;&#10;&#10;&#9;//&#35835;&#21462;package.json&#10;&#9;grunt.file.readJSON(&#39;package.json&#39;);&#10;&#10;&#9;//&#21021;&#22987;&#21270;Grunt&#10;&#9;grunt.initConfig(&#123;&#10;&#10;&#9;&#9;//Sass&#20219;&#21153;&#10;&#9;&#9;sass: &#123;&#10;&#9;&#9;&#9;//Sass&#24320;&#22914;&#36873;&#39033;&#10;&#9;&#9;&#9;options: &#123;&#10;&#9;&#9;&#9;&#9;style:&#39;expanded&#39;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;files: &#123;&#10;&#9;&#9;&#9;&#9;&#39;css/main.css&#39;:&#39;css/sass/global.scss&#39;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;,&#10;&#10;&#9;&#9;//Sass&#21457;&#24067;&#36873;&#25321;&#10;&#9;&#9;dist: &#123;&#10;&#9;&#9;&#9;options: &#123;&#10;&#9;&#9;&#9;&#9;style: &#39;compressed&#39;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;files: &#123;&#10;&#9;&#9;&#9;&#9;&#39;css/main.css&#39;:&#39;css/sass/main.scss&#39;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;&#10;&#9;&#125;);&#10;&#10;&#9;//&#21152;&#36733;&#20219;&#21153;&#10;&#9;grunt.loadNpmTasks(&#39;grunt-contrib-sass&#39;);&#10;&#10;&#9;//&#21019;&#24314;&#40664;&#35748;&#20219;&#21153;&#10;&#9;grunt.registerTask(&#8217;default&#8216;,[&#10;&#9;&#9;&#39;sass:dev&#39;// &#32534;&#35793;Sass&#24320;&#21457;&#35774;&#32622;&#10;&#9;]);&#10;&#10;&#9;//&#21019;&#24314;&#21457;&#24067;&#20219;&#21153;&#10;&#9;grunt.registerTask(&#39;dist&#39;,[&#10;&#9;&#9;&#39;sass:dist&#39;//&#32534;&#35793;Sass&#30340;&#21457;&#24067;&#35774;&#32622;&#10;&#9;]);&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果你熟悉JavaScript和JSON，它应该很简单，容易理解。如果不时，它看起来也不是那样吓人！让我们仔细看看怎么回事…</p>
+<p>##Wrapper函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//Wrapper&#20989;&#25968;&#10;module.exports = function(grunt)&#123;&#10;&#9;//&#35835;&#21462;package.json&#10;&#9;grunt.file.readJSON(&#39;package.json&#39;);&#10;&#10;&#9;//&#21021;&#22987;&#21270;Grunt&#10;&#9;grunt.initCongfig(&#123;&#10;&#9;&#9;[...]&#10;&#9;&#125;);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>Wrapper函数包含两个关键部分。首先通过我们先前指定的<code>package.json</code>读取项目细节，然后初始化Grunt。这就是我们配置的Grunt任务。</p>
+<p>##任务配置</p>
+<p>所以，我们的Sass任务看起来有点像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//Sass&#20219;&#21153;&#10;sass: &#123;&#10;&#9;//Sass&#24320;&#21457;&#36873;&#39033;&#10;&#9;dev: &#123;&#10;&#9;&#9;options: &#123;&#10;&#9;&#9;&#9;style:&#34;expanded&#34;&#10;&#9;&#9;&#125;,&#10;&#9;&#9;files: &#123;&#10;&#9;&#9;&#9;&#39;css/main.css&#39;:&#39;css/sass/global.scss&#39;&#10;&#9;&#9;&#125;&#10;&#9;&#125;,&#10;&#10;&#9;//Sass&#21457;&#24067;&#36873;&#39033;&#10;&#9;dist: &#123;&#10;&#9;&#9;options: &#123;&#10;&#9;&#9;&#9;style:&#39;compressed&#39;&#10;&#9;&#9;&#125;,&#10;&#9;&#9;files: &#123;&#10;&#9;&#9;&#9;&#39;css/main.css&#39;:&#39;css/sass/global.scss&#39;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>这里在Sass任务中包含了两个任务配置，<code>dev</code>和<code>dist</code>。这两个可能通过自定义选项，意味着它可以根据不同环境编译Sass。这是多棒呀？</p>
+<p>这很简单，我只设置了一个选项，告诉了Grunt如何根据不同的环境编译Sass。当然，在<a href="http://github.com/gruntjs/grunt-contrib-sass" target="_blank" rel="external">Github</a>插件的页面上可以发现插件更多的变量设置。这和所有的Grunt插件相同——确保检查各自的Guthub页面列出完整的选项。</p>
+<p>在设置好选项，我们告诉Grunt目标文件<code>css/main.css</code>和源文件<code>css/sass/global.css</code>。你可以使用<code>css/sass/global.scss</code>导入项目中所有其他的Sass文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">files: &#123;&#10;&#9;&#39;css/main.css&#39;:&#39;css/sass/global.scss&#39;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##加载任务</p>
+<p>Grunt运行任务之前，我们需要先加载他们——每个依赖关系将用相同的方式加载，就像下面这样简单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTasks(&#39;grunt-contrib-sass&#39;);</span><br></pre></td></tr></table></figure>
+<p>##创建任务</p>
+<p>接下来，我们从终端创建实际的任务。下面是创建一个默认和发布的子任务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#21019;&#24314;&#40664;&#35748;&#20219;&#21153;&#10;grunt.registerTask(&#39;default&#39;,[&#10;&#9;&#39;sass:dev&#39; //&#35774;&#32622;&#24320;&#21457;&#29256;&#26412;&#30340;Sass&#32534;&#35793;&#10;]);&#10;&#10;//&#21019;&#24314;&#21457;&#24067;&#20219;&#21153;&#10;grunt.registerTask(&#39;dist&#39;,[&#10;&#9;&#39;sass:dist&#39; //&#35774;&#32622;&#21457;&#24067;&#29256;&#26412;&#30340;Sass&#32534;&#35793;&#10;]);</span><br></pre></td></tr></table></figure>
+<p>开发设置可能是经常使用的，我使用<code>default</code>任务运行任何开发设置。运行<code>grunt</code>可以运行默认任务，简单称作是<code>grunt dev</code>。节省了几个字符！</p>
+<p>当你的项目已经部署好了，运行<code>grunt dist</code>，你的代码就可以使用了。</p>
+<p>##监测他们</p>
+<p>现在我们设置我们的任务，我们可以通过Grunt的<code>watch</code>监测文件的修改，执行作务和重俗人加载页面。首先，需要先安装[Grunt Watch][<a href="https://github.com/gruntjs/grunt-contrib-watch" target="_blank" rel="external">https://github.com/gruntjs/grunt-contrib-watch</a>]:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install grunt-contrib-watch --save-dev</span><br></pre></td></tr></table></figure>
+<p>配置任务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#30417;&#27979;&#25991;&#20214;&#10;watch:&#123;&#10;&#9;//&#30417;&#27979;.scss&#25991;&#20214;&#10;&#9;sass: &#123;&#10;&#9;&#9;files:[&#39;css/sass/**/*.scss&#39;],&#10;&#9;&#9;tasks:[&#39;sass:dev&#39;]&#10;&#9;&#125;,&#10;&#10;&#9;//Live reload&#25991;&#20214;&#10;&#9;livereload: &#123;&#10;&#9;&#9;options:&#123;&#10;&#9;&#9;&#9;livereload: true&#10;&#9;&#9;&#125;,&#10;&#9;&#9;files: &#123;[&#10;&#9;&#9;&#9;&#39;css/**/*.css&#39;,&#10;&#9;&#9;&#9;&#39;**/*.html&#39;&#10;&#9;&#9;]&#125;&#10;&#9;&#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>加载插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTask(&#39;grunt-contrib-watch&#39;);</span><br></pre></td></tr></table></figure>
+<p>在你的终端简单的输入<code>grunt watch</code>，它将监控任何修改的<code>.scss</code>文件，然后自动运行<code>sass:dev</code>。在浏览器中重新加载，<a href="http://livereload.com/" target="_blank" rel="external">LiveReload</a>配置为监测任何修改的<code>.css</code>文件。我也指定了重新加载任何<code>.html</code>文件，你能也可看到他是如何工作的。在Safari,Chrome或Firefox中你需要安装<a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-" target="_blank" rel="external">LiveReload扩展</a>。</p>
+<p>##讨论他的特性</p>
+<p>这只是Grunt功能中非常小的一部分。我推荐阅读Grunt文档，查看更多有用的Grunt插件(有很多！)，可以看看Grunt还有什么可以做。</p>
+<p>我使用Grunt的基础已经创建了Grunt start项目——你可以在<a href="https://github.com/markgoodyear/grunt-starter" target="_blank" rel="external">GitHub</a>上查看。随时对其进行调整，改善，学习它。目前，它包括：</p>
+<ul>
+<li>JavaScript的Lint,连接，压缩</li>
+<li>Sass开发和生产版本的编译</li>
+<li>Sass Sourcemaps(需要Sass 3.3.0版本)</li>
+<li>渲染<code>.svg</code>文件</li>
+<li>压缩<code>.jpg</code>/<code>.jpeg</code>,<code>.png</code>和<code>.svg</code>文件</li>
+<li>刷新浏览器文件</li>
+</ul>
+<p>你还在等什么呢？赶快使用Grunt吧。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://markgoodyear.com/2013/07/automating-your-workflow-with-grunt/" target="_blank" rel="external">http://markgoodyear.com/2013/07/automating-your-workflow-with-grunt/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/tools/automating-your-workflow-with-grunt.html" target="_blank" rel="external">http://www.w3cplus.com/tools/automating-your-workflow-with-grunt.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/使用grunt快乐编码.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用Grunt快乐编码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/使用grunt启动和运行.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Grunt启动和运行</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

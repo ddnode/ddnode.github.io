@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何设计一个响应式的HTML电子邮件 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在过去的几件中，移动端使用的飙升，使我们向网络用户提供内容的方法引起了一场进化或者革命。最终目标是流体的，适应移动端和device-agnostic　Web以及一个已成为受人青睐的学派：响应式设计。然而，虽然响应式设计思想高涨，而电子邮件设计和开发一直在努力跟上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何设计一个响应式的HTML电子邮件">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/如何设计一个响应式的html电子邮件.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="在过去的几件中，移动端使用的飙升，使我们向网络用户提供内容的方法引起了一场进化或者革命。最终目标是流体的，适应移动端和device-agnostic　Web以及一个已成为受人青睐的学派：响应式设计。然而，虽然响应式设计思想高涨，而电子邮件设计和开发一直在努力跟上。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/responsive-email-design3-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/responsive-email-design3-2.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:37:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何设计一个响应式的HTML电子邮件">
+<meta name="twitter:description" content="在过去的几件中，移动端使用的飙升，使我们向网络用户提供内容的方法引起了一场进化或者革命。最终目标是流体的，适应移动端和device-agnostic　Web以及一个已成为受人青睐的学派：响应式设计。然而，虽然响应式设计思想高涨，而电子邮件设计和开发一直在努力跟上。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/如何设计一个响应式的html电子邮件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/如何设计一个响应式的html电子邮件.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何设计一个响应式的HTML电子邮件
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在过去的几件中，移动端使用的飙升，使我们向网络用户提供内容的方法引起了一场进化或者革命。最终目标是流体的，适应移动端和device-agnostic　Web以及一个已成为受人青睐的学派：<strong>响应式设计</strong>。然而，虽然响应式设计思想高涨，而电子邮件设计和开发一直在努力跟上。<br><a id="more"></a><br>在某种程度上，HTML电子邮件对开发者而言是一个异常复杂的介质，这是一个铁的事实。古老的电子邮件客户技术无法呈现现多的许多的规则，致使一些代码无效。但电子邮件仍然是一个关键的营销渠道，这非常的重要，不能让人忽视的是2012年上半年Litmus公布了一个在移动设备上打开电子邮件的报告，报告显示使用移动设备查阅电子邮件增加了80%。同年Campaign Monitor显示，第一次他们的移动电子邮件打开率实际上已经超过了桌面和Web邮箱。</p>
+<p>显然在移动端开发之前进行适当的分析是重要的。但制作一个响应式电子邮件可以确保使用桌面和移动设备的用户能得到一个优秀的用户体验，以及４G网络的到来，移动端的趋势更是势不可挡，所以说为什么响应式设计不会过时。</p>
+<p>##格格不入</p>
+<p>如果你曾经不幸的在移动设备上打开过一个固定宽度的电子邮件，你就会明白需要响应式电子邮件设计。突然打开屏幕，多栏布局可以放大，以便缩小字体大小而变得不清不楚。用户可能放大，但令人气愤的是，用户要不断的从左到右，水平滚动，以便阅读内容。链接小，而且挤在一起，完全没有考虑手指触屏。在小视窗上对比，往往让人难已阅读。显然，移动端的优化很重要，但最好的方法是什么呢？</p>
+<p><img alt="如何设计一个响应式的HTML电子邮件" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/responsive-email-design3-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##移动端的最佳实践</p>
+<p>在编写代码之前，考虑设计特性可以大大改善移动端用户的体验。无论屏幕大小，可以说这都是明智的。</p>
+<ul>
+<li><strong>清晰、简洁的内容：</strong>小屏幕意味着它现在比以往任何时候更重要的是让用户更有效的获取重要信息。</li>
+<li><strong>单列布局：</strong>简单是关键，布局没有比640px宽度更好用。单列布局可以确保你视窗放大时没有内容丢失。</li>
+<li><strong>一个吸引人的标题：</strong>这是一个电子邮件营销在一个拥挤的收件箱中最有效的武器。保持标题简短精悍。</li>
+<li><strong>大的动作触发面积(CTA)：</strong>不要惩罚胖手指！苹果的iOS人机交互界面设计指南建议点击目标区域的面积为44 x 44。</li>
+<li><strong>慷慨的字体大小：</strong>确保你的信息可以很容易地阅读。</li>
+<li><strong>Pre-header：</strong>另一个关键领域就是在收件箱中的能见度。尽量避免“浏览器显示”这样的文本字样。</li>
+<li><strong>左对齐文本：</strong>有许多原因调整重要元素在左边内容区。（根眼动跟踪研究表明，西方用户大部分注意力集中在左边的电子邮件内容。这并不足以为奇，因为我们从左到右读取文本。某些操作系统，尤其是Android，内容无法缩放适应屏幕，因此只显示电子邮件的左半部分。从人体工程学的角度来看，大多数用户会发现它容易与屏幕左下角/手持中间元素操作。）</li>
+<li><strong>结构垂直排列：</strong>减少屏幕的地方往往任何时候采用的是折叠的想法。重要的商品交易的可点击区域应该尽可能的靠近顶部；如果不能立即看到，也许他们将失去使用的功能。</li>
+<li><strong>谨慎使用图像：</strong>不要以为会看到图片。iPhone的本地电子邮件应用程序将显示默认图片，但很多客户端不会显示图像。</li>
+</ul>
+<p>这些技巧可以提高移动端用户体验，但是你可以，而且应该进一步优化。由于移动电子邮件客户端不断增长对CSS3的支持，响应式电子邮件设计现在是可能的。</p>
+<p>##开始</p>
+<p>如前所述，HTML电子邮件制作严重缺乏一个标准，对于外行来说，接下来将带你回到一个早期的Web开发时代。由于HTML电子邮件客户端渲染引擎所制，布局必须使用表格和CSS样式必须使用行内样式。几个电子邮件客户将完全无视<code>&lt;head&gt;</code>内的<code>&lt;style&gt;</code>样式。</p>
+<p>有一些电子邮件模板可以使用，我建议使用Sean Powell的<a href="http://htmlemailboilerplate.com/" target="_blank" rel="external">HTML Email Boilerplate</a>作为起点，但为了演示，我们从头开始。</p>
+<blockquote>
+<p>有关于HTML Email Boilerplate的中文介绍，可以点击<a href="http://www.w3cplus.com/css/html-email-boilerplate.html" target="_blank" rel="external">HTML Email Boilerplate源码阅读</a>和<a href="http://www.w3cplus.com/css/say-hello-to-the-html-email-boilerplate.html" target="_blank" rel="external">HTML Email Boilerplate</a>——大漠</p>
+</blockquote>
+<p>如果你喜欢跟随着代码学习，你可以<a href="http://netdna.webdesignerdepot.com/uploads7/responsive-html-email-design/template.zip" target="_blank" rel="external">多这里下载本文的模板</a>。</p>
+<p class="btns-zone"><a class="btn-demo" href="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/responsive_email_tpl/index.html" target="_blank">demo</a><a class="btn-download" href="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/template.zip" target="_blank">download</a></p>
+
+<p>##文档类型(Doctype)</p>
+<p>Hotmail和Gmail会自动插入XHTML 1.0 Strict 文档类型。虽然不是一个坏主意，但重要的是用它可以彻底地测试您的电子邮件和没有文档类型的电子邮件客户端可以自动生成。</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span>
+</code></pre><p>Email Acid对电子邮件的文档类型进行了广泛的研究，感兴趣可以点击<a href="http://www.emailonacid.com/blog/details/C13/doctype_-_the_black_sheep_of_html_email_design" target="_blank" rel="external">这里</a>。</p>
+<p>##媒体查询(Media queries)</p>
+<p>我们现在可以插入一个视窗的meta标签，以确保我们的电子邮件在移动设备上可以正确的显示。指定内容类型和一个标题标签也是一个好主意。如果你打算在电子邮件中提供一个“浏览器查看”的一个链接，这是一个好主意，但忽略了一点，在很多电子邮件客户端会忽略这一点。</p>
+<p>因为在电子邮件中有可能会忽略“content-type”，明智的做法是在你的电子邮件中所有特殊字符都最好使用HTML实体符进行编码。</p>
+<p>还有几个确保我们电子邮件能跨平台，我们还需设置几个他管理费样式。</p>
+<pre><code><span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial scale=1.0"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=iso-8859-1"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Email subject or title<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+        <span class="class">.ExternalClass</span> <span class="rules">{<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100%</span></span></span>;}</span>
+        <span class="tag">img</span> <span class="rules">{<span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;}</span>
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+</code></pre><p><strong>注意：</strong>视窗meta标记对<a href="http://www.emailonacid.com/blog/details/C13/emailology_viewport_metatag_rendered_unusable" target="_blank" rel="external">黑莓有负面影响</a>。</p>
+<p>现在，我们可以插入媒体查询，有多少取决于你希望每个设备特性所需要。在这个示例中，我们将使用的媒体查询只有一个——大多数设备屏幕大小不大于600px是现代手机和触摸屏做出有利于移动设备优化样式。此外，我们我假设遵循通用移动最佳实践技术，早前也说过，手机用户浏览更大的布局会运到重大的可用性问题。</p>
+<p>我们以机样的方式使用媒体查询构建一个网站时，如果视窗大小符合媒体查询条件时，将应用媒体查询里的样式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 600px) &#123;&#10;    table[class=&#34;hide&#34;], img[class=&#34;hide&#34;], td[class=&#34;hide&#34;] &#123;&#10;      display:none!important;&#10;    &#125;&#10;  &#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，屏幕小于600px时，通过给带有类名<code>hidden</code>的元素设置<code>display:none</code>来隐藏元素。<code>!important</code>可以确保覆盖任何内联样式。这是响应式电子邮件设计的基本原理：在<code>&lt;head&gt;</code>头部样式中通过<code>!important</code>来覆盖HTML文档中的内联样式，并且根据媒体查询特定的屏幕尺寸来覆盖这些样式。有一个明显的例个是Gmail应用程序将会忽略<code>&lt;head&gt;</code>内部的任何样式。然而，内容的居左会确保Gmail用户有一个更好的用户体验。显然这并不是一个理想的解决文案，目前，响应式电子邮件设计尽可能多的想法是对前沿技术的妥协。</p>
+<p>值得注意的是，我们针对HTML元素的CSS属性选择器来<a href="http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-yahoo-mail-mobile-email/" target="_blank" rel="external">克服Yahoo邮件</a>的渲染问题。</p>
+<p>所以我们可以看到，媒体查询选择性的显示内容是一个有用的工具，但我们也可以使用它们来让我空调其他功能的布局。或许最重要的是，我们可以约束我们电子邮件的列宽——移动体验最大的关键。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 600px) &#123;&#10;    table[class=&#34;content_block&#34;] &#123;&#10;    width: 92%!important;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我们已经在我们的媒体查询中设置了，当屏幕宽度小于600px，所有类名<code>content_block</code>元素宽度调整为92%。现在我们要做的就是把内联属性指定宽度(600px)和定义类<code>content_block</code>任何表格，我们有一个固定宽度的容器，然后在移动设备下指定一宽度的比例。</p>
+<p>给这个容器的子元素的宽度属性都指定为百分比，这是一个基本响应式电子邮件模板。</p>
+<p>作为一个经验法则，为了照顾Webkit自动调整<code>&lt;body&gt;</code>标签文本大小，尽量保持字体大小最低在12px以上。</p>
+<p>##按钮</p>
+<p>调用操作(CAT)通常是营销邮件最重要的部分。他们应该是引人注目的，良好的，最重要的是使用。一个强大的CAT标准是根据不同的动作有不同的光标或手指。响应式电子邮件强大功能是在小触屏设备上提供一个手指可操作的按钮，让手指操作不受图像阻碍。</p>
+<p><img alt="如何设计一个响应式的HTML电子邮件" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/responsive-email-design3-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>不幸的是，这种按钮不能普遍显示，因为他们依赖于padding属性，但在一些桌面电子邮件客户端并不支持。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width:600) &#123;&#10;&#9;a[class=&#34;button&#34;]&#123;&#10;    &#9;display: block;&#10;      &#9;padding: 7px 8px 6px 8px;&#10;      &#9;-webkit-border-radius: 5px;&#10;      &#9;-moz-border-radius: 5px;&#10;      &#9;border-radius: 5px;&#10;      &#9;color: #fff!important;&#10;      &#9;background: #f46f62;&#10;      &#9;text-align: center;&#10;      &#9;text-decoration: none!important;&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的样式声明将改变带有类名<code>button</code>的标签，只要屏幕宽度不大于600px，按钮变大，好看，彩色的，而且跨越内容区域的宽度。CSS3支持不应该是一个问题，我们可以撰写我们的目标是合理的现代的移动技术。</p>
+<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">style</span>=<span class="value">"color:#f46f62; font-weight: bold; text-decoration: underline;"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</code></pre><p>内联样式满足鼠标的用户可以点击和更大精度但覆盖这些样式链接，可以让触屏用户减少交互的错误。重要的是，这种方法不依赖于图像，因此避免了图像加载阻滞存在的可用性问题。</p>
+<p>##结论</p>
+<p>响应电子邮件设计仍然是一个妥协方案。令人困惑的是一系列不同的设备，电子邮件客户端的渲染引擎给设计人员和开发人员带来一个艰巨的任务。但随着科技的进步变得更容易为用户提供适当的布局，他们可以毫不费力提供有效的交互。越来载多的电子邮件客户端支持媒体查询改变了移动电子邮件的外观和优化，并且为我们提供了一个平台，大大提高更多的用户体验。现在对我们来说，设计人员和开发人员，尝试有创意的方法来让更多的移动用户有更好的体验。</p>
+<p>你设计过电子邮件吗？你使用响应式方法吗？请在评论中让我们知道。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://www.webdesignerdepot.com/2013/06/responsive-html-email-design/" target="_blank" rel="external">http://www.webdesignerdepot.com/2013/06/responsive-html-email-design/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/responsive-html-email-design.html" target="_blank" rel="external">http://www.w3cplus.com/css/responsive-html-email-design.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/实战css混合模式.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          实战CSS混合模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/如何设置基线网络.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何设置基线网络</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

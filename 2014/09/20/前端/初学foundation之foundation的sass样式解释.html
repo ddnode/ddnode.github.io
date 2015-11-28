@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初学Foundation之Foundation的Sass样式解释 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在本教程我们将学习包含在Foundation前端框架中的灵活的Sass样式以及能够用来做些什么。Sass比CSS版本提供更多自定义特性集合，再加上有快捷方式可以简单又快速地运用在样式项目上，例如顶部工具栏。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初学Foundation之Foundation的Sass样式解释">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/初学foundation之foundation的sass样式解释.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="在本教程我们将学习包含在Foundation前端框架中的灵活的Sass样式以及能够用来做些什么。Sass比CSS版本提供更多自定义特性集合，再加上有快捷方式可以简单又快速地运用在样式项目上，例如顶部工具栏。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-2.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-3.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-4.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-5.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-6.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:40:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初学Foundation之Foundation的Sass样式解释">
+<meta name="twitter:description" content="在本教程我们将学习包含在Foundation前端框架中的灵活的Sass样式以及能够用来做些什么。Sass比CSS版本提供更多自定义特性集合，再加上有快捷方式可以简单又快速地运用在样式项目上，例如顶部工具栏。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/初学foundation之foundation的sass样式解释" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/初学foundation之foundation的sass样式解释.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初学Foundation之Foundation的Sass样式解释
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在本教程我们将学习包含在Foundation前端框架中的<a href="http://foundation.zurb.com/docs/sass.html" target="_blank" rel="external">灵活的Sass样式</a>以及能够用来做些什么。Sass比CSS版本提供更多自定义特性集合，再加上有快捷方式可以简单又快速地运用在样式项目上，例如顶部工具栏。<br><a id="more"></a><br>如果你需要搭建起Sass的Foundation开发环境，可以参考文章“<a href="http://dev.tutsplus.com/tutorials/setting-up-foundation-with-sass-and-compass--webdesign-15288" target="_blank" rel="external">使用Sass和Compass配置Foundation</a>”（参见上篇译文：<a href="http://www.w3cplus.com/css/setting-up-foundation-with-sass-and-compass.html" target="_blank" rel="external">初学者学习foundation：使用sass和compass来搭建foundation开发环境</a>）或者是<a href="http://foundation.zurb.com/docs/sass.html" target="_blank" rel="external">Zurb官方文档</a>。你可以通过在控制台输入命令行方式来搭建环境，然后使用Compass和Bourbon（一个简单却轻量级混合Sass库），或者只是从<a href="https://github.com/zurb/foundation/tree/scss-standalone" target="_blank" rel="external">Github上下载单独Sass文件</a>，然后放置这些文件在你的工程上，然后通过“import”来引用需要的文件。</p>
+<p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##栅格系统</p>
+<p>我们先从Foundation的基础 ——<a href="http://www.w3cplus.com/css/foundation-for-beginners-the-grid-system.html" target="_blank" rel="external">栅格</a>开始，这是一个很好的组件将会向你展示SCSS/Sass究竟有多灵活。</p>
+<p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>举个例子，当在栅格中使用混合（混合，就是使用一些已经写好代码）时，你可以创建自己的类，甚至通过一些简单变量来创建你自己的栅格。我们来看看Foundation提供给你的第一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* &#28151;&#21512;&#21019;&#24314;&#34892;&#30340;&#36873;&#39033; */&#10;@include grid-row($behavior);&#10;/* &#40664;&#35748;&#20540;&#26159;false,&#37319;&#29992;&#40664;&#35748;&#34892;&#26679;&#24335; */&#10;$behavior: false&#10;/* &#22914;&#26524;&#20320;&#22312;&#21019;&#24314;&#20363;&#22914;&#19968;&#20010;&#21253;&#21547;&#20854;&#20182;&#20803;&#32032;&#30340;&#23884;&#22871;&#24335;&#34892; */&#10;/* &#20320;&#38656;&#35201;&#28155;&#21152;&#36866;&#24403;&#30340;&#23884;&#22871;&#26679;&#24335; */&#10;$behavior: nest&#10;/* &#20320;&#36824;&#21487;&#20197;&#20351;&#29992;collapse&#25928;&#26524; */&#10;/* &#24403;&#22312;&#26629;&#26684;&#20013;&#20351;&#29992;Form&#34920;&#21333;&#26102;&#65292;&#26159;&#24456;&#26041;&#20415;&#30340; */&#10;$behavior: collapse&#10;/* &#22914;&#26524;&#20320;&#21019;&#24314;&#19968;&#20010;&#23884;&#22871;&#24335;&#30340;&#34892;&#65292;&#21448;&#24819;&#23454;&#29616;&#20498;&#22604;&#30340;&#25928;&#26524;&#65292;&#21487;&#20197;&#28155;&#21152;&#22914;&#19979;&#20195;&#30721; */&#10;$behavior: nest-collapse</span><br></pre></td></tr></table></figure>
+<p>从上面代码可以看到，我们从使用混合<code>@include grid-row</code>开始，用指定变量包含着括号里。</p>
+<p>当你使用混合时，可以编写好类似函数那样，通过传递不同参数，就可以重复使用该混合。如<code>font</code>，是一个描述字体大小，字体粗细，字体颜色等性质。当每次使用它的时候，只是颜色变化而已，而其它的都不变，因此只需要用一个变量代替颜色值，通过参数传递进来即可。</p>
+<p>如下代码示例，这里需要注意的是，在Sass中，参数是以“$”开头的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* &#36825;&#37324;&#21019;&#24314;&#19968;&#20010;&#28151;&#21512;&#65288;&#20989;&#25968;&#65289; */&#10;@mixin font($color) &#123;&#10;font-family: &#39;Arial&#39;;&#10;font-size: 14px;&#10;font-weight: 500;&#10;color: $color;&#10;&#125;&#10;/* &#23450;&#20041;&#21464;&#37327; */&#10;$blue = #0099cc;&#10;/* &#20351;&#29992;&#28151;&#21512;&#65288;&#21442;&#25968;&#20256;&#36882;&#65289; */&#10;@include font($blue);</span><br></pre></td></tr></table></figure>
+<p>回到上个代码示例，会发现变量<code>$behaviour</code>使用多次，看起来有点奇怪，就好像被每一次都重新赋值了。实际上，你给每种类型都赋上对应的值，就正如数组那样，每一次使用变量<code>$behaviour</code>，将会根据不同的赋值产生对应的输出。</p>
+<p>你还可以传递多个参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@include grid-column($columns, $last-column);&#10;/* &#26368;&#24120;&#29992;&#30340;&#26159;&#20351;&#29992;&#21442;&#25968;&#21015; */&#10; /* &#35774;&#32622;&#21015;&#30340;&#23485;&#24230;&#23646;&#24615;&#65292;&#20351;&#29992;&#19968;&#20010;&#25968;&#23383;&#26469;&#34920;&#31034; */&#10; $columns: #&#10; /* &#22914;&#26524;&#20320;&#21015;&#19981;&#21152;&#36215;&#26469;12&#65292;&#28982;&#21518;&#20351;&#29992;&#36825;&#20010;&#36873;&#39033; */&#10; /* &#26368;&#21518;&#19968;&#21015;&#40664;&#35748;&#35774;&#32622;float:right&#65292;&#20351;&#24471;&#24067;&#23616;&#32654;&#35266; */&#10; /* &#22914;&#26524;&#19981;&#24819;&#35201;&#40664;&#35748;&#65292;&#21017;&#35774;&#32622;&#20026;flase*/&#10; $last-column: false</span><br></pre></td></tr></table></figure>
+<p>为了更好的理解，我们将使用基本的HTML来创建一个栅格工程，由于Sass源码里设置了很多类，因此可以直接使用。如下代码示例：</p>
+<pre><code><span class="tag">&lt;header&gt;</span>
+    <span class="tag">&lt;aside&gt;</span><span class="tag">&lt;/aside&gt;</span>
+    <span class="tag">&lt;section&gt;</span>
+           <span class="tag">&lt;article&gt;</span>
+              <span class="tag">&lt;header&gt;</span><span class="tag">&lt;/header&gt;</span>
+              <span class="tag">&lt;div&gt;</span><span class="tag">&lt;/div&gt;</span>
+           <span class="tag">&lt;/article&gt;</span>
+    <span class="tag">&lt;/section&gt;</span>
+<span class="tag">&lt;/header&gt;</span>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$row-width: em-calc(600);&#10;$column-gutter: em-calc(30);&#10;$total-columns: 12 !default;&#10;header &#123; @include grid-row; @include panel;&#10;    aside &#123; @include grid-column(3); &#125;&#10;    section &#123; @include grid-column(9);&#10;       article &#123; @include grid-row;&#10;          header &#123; @include grid-column(2); &#125;&#10;          div &#123; @include grid-column(10); &#125;&#10;       &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>可以看出<code>html</code>是很简洁的，Sass完美地计算与嵌套，我设置了最大的宽度，列与列之间的宽度和列的条数。从一个HTML的角度来看，这节省了大量的时间,但背后的布局可能会让人有些迷惑。我们看看在Sass中如何使用按钮。</p>
+<p>##按钮</p>
+<p>使用Sass的好处之一就是你能很快地编写你的样式，并且不用编写重复的代码，从而能节省不少的时间。</p>
+<p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>你可以很快捷地使用按钮样式，就如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.your-class-name &#123; @include button; &#125;</span><br></pre></td></tr></table></figure>
+<p>只需添加几个选项,你复制的样式只用一行代码,大概编写六、七行CSS代码就可以实现大工作量,很节省时间吧!</p>
+<p>你应该还会注意到,有大量的选项在CSS版本不存在,这是适用于所有Sass元素。这会在CSS版本增加一个额外的自由层。下面例子将演示,一个按钮使用变量,和使用直接值一样,所以理解一下这些是如何工作的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.your-class-name &#123;&#10;    @include button($padding, $bg, $radius, $full-width, $disabled, $is-input);&#10;    @include inset-shadow($active);&#10;&#125;&#10;.your-class-name &#123;&#10;    @include button(1em, #ca2727, 2px, false, false, false);&#10;    @include inset-shadow(true);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>这只是一个简单的例子,你可能会频繁地使用。最终编译成CSS，可以想象，编写一样的CSS代码比Sass需要更多的时间：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.link &#123;&#10;&#9;border-style: solid;&#10;&#9;border-width: 1px;&#10;&#9;cursor: pointer;&#10;&#9;font-family: inherit;&#10;&#9;font-weight: bold;&#10;&#9;line-height: normal;&#10;&#9;margin: 0 0 1.25em;&#10;&#9;position: relative;&#10;&#9;text-decoration: none;&#10;&#9;text-align: center;&#10;&#9;display: inline-block;&#10;&#9;padding-top: 1em;&#10;&#9;padding-right: 2em;&#10;&#9;padding-bottom: 1.0625em;&#10;&#9;padding-left: 2em;&#10;&#9;font-size: 1.25em;&#10;&#9;background-color: #ca2727;&#10;&#9;border-color: #9f1f1f;&#10;&#9;color: white;&#10;&#9;-webkit-border-radius: 2px;&#10;&#9;border-radius: 2px;&#10;&#9;-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;&#10;&#9;box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>虽然你会看到Sass很多似乎是种超前语言,它实际上是能够正确地编译尽管只是写了几行的代码。结构比CSS有稍微增强。如果你被感到迷惑，你在需要时，可以使用SCSS。</p>
+<p>##单位计算器</p>
+<p>最后,Sass少写的功能之一就是能够添加函数到样式表中。这些不是动态页面函数(运行时编译Sass代码)却节省更多的时间。</p>
+<p>例如，在Foundation中有个整洁的函数是用来将px转换为em。这对响应式网站来说是很有趣的，通过如下简单的设置em默认值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$em-base: 16px!default;</span><br></pre></td></tr></table></figure>
+<p>然后，每当你想使用em值,你通常需要计算px（像素）转化为em值。示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">height:em-calc(46);</span><br></pre></td></tr></table></figure>
+<p>“46”是像素，“em-cal”是函数，在你的Sass代码都可以使用这个函数。</p>
+<p>##有用的工具</p>
+<p>在上一篇文章中，我推荐了Sass编译器，对手动编译有巨大的好处。这次我将推荐一个几乎对所有的项目都是很有用的工具。</p>
+<p>当谈到Foundation，你可能关注Sass，CSS，HTML和JavaScript。但是我们不能忘记一个重要的Web设计解决方案就是图片，特别是png和jpg格式文件。优化图片在web开发中是非常重要的，因此可以使用 <a href="http://imageoptim.com/" target="_blank" rel="external">imageOptim</a>(OS X系统)或者是<a href="http://www.softpedia.com/get/PORTABLE-SOFTWARE/System/File-management/File-Optimizer.shtml" target="_blank" rel="external">File Optimizer</a>(Windows系统)。</p>
+<p>这个工具可以无损地压缩图片，是非常高效且压缩率是很高的，可高达70%，就好比，原来需要加载100k的图片，现在只需要加载30k即可，这对合并在一起的图片压缩更加高效。</p>
+<p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##下一篇预告</p>
+<p>我们已经初步接触与学习Sass基础知识，包括如何搭建，能用它干些什么和如何加快开发进度。接下来，我们将学习一些更加有趣的东西：基于Rails的Foundation，这将允许你直接使用HTML,CSS和JavaScript就可以创建出很酷动态的功能出来。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4><br>        关于Spy</h4><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：个人<a href="http://pigerla.com/" target="_blank">博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微薄</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundations-sassy-styles-explained/" target="_blank" rel="external">http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundations-sassy-styles-explained/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/foundations-sassy-styles-explained.html" target="_blank" rel="external">http://www.w3cplus.com/css/foundations-sassy-styles-explained.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/初学foundation之joyride，交互，表格和面板.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          初学Foundation之Joyride，交互，表格和面板
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/再说等高列布局、水平垂直居中与置顶页脚.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">再说等高列布局、水平垂直居中与置顶页脚</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

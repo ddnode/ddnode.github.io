@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>管理Sass项目 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="管理Sass项目">
+<meta property="og:url" content="http://ddnode.com/2014/09/21/Sass/管理sass项目.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。">
+<meta property="og:updated_time" content="2015-03-29T11:01:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="管理Sass项目">
+<meta name="twitter:description" content="回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Sass/管理sass项目" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/21/Sass/管理sass项目.html" class="article-date">
+  	<time datetime="2014-09-20T16:00:00.000Z" itemprop="datePublished">2014-09-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      管理Sass项目
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目管理/">项目管理</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/技巧/">技巧</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。<br><a id="more"></a></p>
+<p>我的小伙伴们，那些苦逼的日子就将过去了。CSS处理变得更有趣，也更复杂。现在我们有CSS预处理器、响应式设计、渐进增强、优雅降级，和其他一些时尚的东西。可以说，CSS变得比以往任何时候都更加强大。</p>
+<blockquote>
+<p>CSS变得更有趣，更复杂。——@<a href="http://www.sitepoint.com/author/hgiraudel" target="_blank" rel="external">Hugo Giraudel</a></p>
+</blockquote>
+<p>所以我们有很多东西需要处理，这样一来，如何组织项目文件就变得非常的重要。我想大家都同意这样的观点，但实现起来并不太容易。所以我写了这篇文章，将会告诉你应该怎么去想，比告诉你怎么做要更好，否则，我就离开你了。</p>
+<p>##构建你的结构体系</p>
+<p>CSS预处理器的特点之一是可以把你的代码分割成很多个文件，而且不会影响性能。这都要归功于Sass的<code>@import</code>命令，只要在你的开发环境下，你调用不管多少文件，最终将编译出一个CSS样式文件。</p>
+<blockquote>
+<p>多个文件中开发，最终合并输出一个文件。——@Bruce Lee</p>
+</blockquote>
+<p>开始将你的CSS文件分割成多个文件和文件夹。正如我的一位导师说的“任何事物都有其正确的地方，每个地方都有其正确的事”。那么，这也是我喜欢做的事。</p>
+<p>##文件夹构建</p>
+<p>文件夹的创建是必不可少的。就算在家里，你也不会把所有的纸张放在一个盒子里。你可能会使用一个文件夹。一个用于房子上，一个用于银行，一个用于账单等等。</p>
+<p>你在创建CSS的架构的时候也应该如此：你不只是把所有的Sass文件放在一个文件夹下，你会将他们分类。</p>
+<p>下面的示例屏示的是我将如何组织我的Sass文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass/&#10;|&#10;|&#8211; base/&#10;|   |&#8211; _reset.scss       # Reset/normalize&#10;|   |&#8211; _typography.scss  # Typography rules&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; components/&#10;|   |&#8211; _buttons.scss     # Buttons&#10;|   |&#8211; _carousel.scss    # Carousel&#10;|   |&#8211; _cover.scss       # Cover&#10;|   |&#8211; _dropdown.scss    # Dropdown&#10;|   |&#8211; _navigation.scss  # Navigation&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; helpers/&#10;|   |&#8211; _variables.scss   # Sass Variables&#10;|   |&#8211; _functions.scss   # Sass Functions&#10;|   |&#8211; _mixins.scss      # Sass Mixins&#10;|   |&#8211; _helpers.scss     # Class &#38; placeholders helpers&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; layout/&#10;|   |&#8211; _grid.scss        # Grid system&#10;|   |&#8211; _header.scss      # Header&#10;|   |&#8211; _footer.scss      # Footer&#10;|   |&#8211; _sidebar.scss     # Sidebar&#10;|   |&#8211; _forms.scss       # Forms&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; pages/&#10;|   |&#8211; _home.scss        # Home specific styles&#10;|   |&#8211; _contact.scss     # Contact specific styles&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; themes/&#10;|   |&#8211; _theme.scss       # Default theme&#10;|   |&#8211; _admin.scss       # Admin theme&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; vendors/&#10;|   |&#8211; _bootstrap.scss   # Bootstrap&#10;|   |&#8211; _jquery-ui.scss   # jQuery UI&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#10;`&#8211; main.scss             # primary Sass file</span><br></pre></td></tr></table></figure>
+<p>正如你所看到的，在根目录底下只有一个<code>main.scss</code>文件，其他<code>.scss</code>文件都根据不同的分类放在对应的文件夹中，只是这些<code>.scss</code>文件前面都有一个下划线(<code>_</code>)，用来告诉Sass，这些<code>.scss</code>文件只是<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials" target="_blank" rel="external">局部</a>，不通过<code>@import</code>是不应该被编译出<code>.css</code>文件。事实上，它们是导入和合并文件的<a href="https://gist.github.com/HugoGiraudel/8615243" target="_blank" rel="external">基本文件</a>而以。</p>
+<blockquote>
+<p>一个文件可以解决所有问题，一个文件可以找到他们，一个文件给他们带来了所有的一切，Sass只是将他们合并在一起。——@J.R.R. Tolkien</p>
+</blockquote>
+<p>接下来，我们依次来看结构中的每一个文件目录。</p>
+<p>###Base</p>
+<p><code>base/</code>文件夹包含了一些有关于你的项目中一些模板相关。在这里，你可以看到<code>reset</code>样式(或者Normalize.css,或者其他)，也有一些关于文本排版方面的，当然根据不同的项目会有一些其他的文件。</p>
+<ul>
+<li><code>_reset.scss</code>或<code>_normalize.scss</code></li>
+<li><code>_typography.scss</code></li>
+</ul>
+<p>###Helpers</p>
+<p><code>helpers/</code>文件夹（有的地方也称其为<code>utils/</code>）主要包含了项目中关于Sass的工具和帮助之类。在里面放置了我们需要使用的<code>_function.scss</code>，和<code>_mixin.scss</code>。在这里还包含了一个<code>_variables.scss</code>文件（有的地方也称其为<code>_config.scss</code>），这里包含项目中所有的全局变量（比如排版本上的，配色方案等等）。</p>
+<ul>
+<li><code>_variables.scss</code></li>
+<li><code>_mixin.scss</code></li>
+<li><code>_function.scss</code></li>
+<li><code>_placeholders.scss</code>(也有称为<code>_helpers.scss</code>)</li>
+</ul>
+<p>###Layout</p>
+<p><code>layout/</code>文件夹(有时也称为<code>partials/</code>)中放置了大量的文件，每个文件主要用于布局方面的，比如说”header”，“footer”等。他也会包括<code>_grid.scss</code>文件，用来创建网格系统。</p>
+<ul>
+<li><code>_grid.scss</code></li>
+<li><code>_header.scss</code></li>
+<li><code>_footer.scss</code></li>
+<li><code>_sidebar.scss</code></li>
+<li><code>_forms.scss</code></li>
+</ul>
+<p>导航文件（<code>_navigation.scss</code>）文件放在这里也有意义，虽然我将他放在了<code>components/</code>文件夹中。但是我想将其放在<code>layout/</code>文件夹中更好些，当然最后还是由你自己来决定。</p>
+<p>###Components</p>
+<p>对于一些小组件，都放在了<code>components/</code>文件夹（通常也称为<code>modules/</code>），<code>layout/</code>是一个宏观的（定义全局的线框），<code>components/</code>是一个微观的。它里面放了一些特定的组件，比如说<code>slider</code>，<code>loading</code>，<code>widget</code>或者其他的小组件。通常<code>components/</code>目录下的都是一些小组件文件。</p>
+<ul>
+<li><code>_media.scss</code></li>
+<li><code>_carousel.scss</code></li>
+<li><code>_thumbnails.scss</code></li>
+</ul>
+<p>###Page</p>
+<p>如果你需要针对一些页面写特定的样式，我想将他们放在<code>page/</code>文件夹中是非常酷的，并且以页面的名称来命名。例如，你的首页需要制作一个特定的样式，那么你就可以在<code>page/</code>文件夹中创建一个名叫<code>_home.scss</code>文件。</p>
+<ul>
+<li><code>_home.scss</code></li>
+<li><code>_contact.scss</code></li>
+</ul>
+<p>根据你自己的布署，你可以根据自己的需求调用这些文件，避免与其他样式文件合并在一起。这真的主取决于你自己，在我工作的地方，我是不允许这样的事情发生，只在需要的页面调用需要的文件。比如说，我们首页有一个特定的布局样式，编译出来的CSS大约有200行代码。为了防止每个页面加载这些代码，我只在主页文件上引用这个文件。</p>
+<p>###Themes</p>
+<p>如果你像我一样要为一个大型的网站制作多个主题，那么有一个<code>theme/</code>文件夹是非常有意义的。你可以把主题相关的文件放在这个文件夹中。这绝对跟具体的项目有关，你只要觉得跟主题相关的，有必要引入。</p>
+<ul>
+<li><code>_theme.scss</code></li>
+<li><code>_admin.scss</code></li>
+</ul>
+<p>###Vendors</p>
+<p>最后一个但并非不重要，创建<code>vendors/</code>文件夹，主要用来包含来自外部的库和框架的CSS文件。比如Bootstrap,jQueryUI，FancyCarouselSliderjQueryPowered等等。把这些文件放在同一个文件夹中，你可以说，嘿，这些代码不是我的，不是我写的，跟我无关。</p>
+<p>例如：</p>
+<ul>
+<li><code>bootstrap.scss</code></li>
+<li><code>jquery-ui.scss</code></li>
+<li><code>select2.scss</code></li>
+</ul>
+<p>从另一个角度来说，在我平时工作中，还创建了一个<code>vendors-extensions/</code>文件夹，用来放置一些覆盖从外部引入进来的库和框架中的小组件。例如，我们可以在<code>_bootstrap.scss</code>文件中用来覆盖Bootstrap框架中的一些小组件。这为了避免和外部直接引来的组件升级造成的冲突，或许这不是一个很好的方案。</p>
+<p>大致就是这些，但不同的项目可能会不一样，但我可以肯定，你们都有了这样的一个概念。在文件夹中嵌套一个文件夹，这样的做法我一直不太反对，但我不太喜欢这样的方式。我发现，在大多数情况之下，只需一个层级就足足够，既保证结构的简洁与清晰，而且不复杂。但话又说回来，如果你觉得你的项目有必要嵌套更深层次的文件夹，你也可以自由的发挥。</p>
+<p><strong>温馨提示：</strong>如果你觉得你的架构并不能向大家说明<code>SCSS</code>文件夹的架构，你可以在根目录下创建一个<code>README.md</code>文件（或者在<code>main.scss</code>文件中一步一步说明）解释。</p>
+<p>##文件很酷？</p>
+<p>有一个问题常被人问到“多少文件才算是很多文件呢？”我常回答“再多文件都不算多”。拆分成多个文件的宗旨是帮助你组织你的代码。如果你觉得某事值得拆分成多个文件，可以自由的拆分。正如<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a>在《<a href="http://css-tricks.com/sass-style-guide/" target="_blank" rel="external">Sass Style Guide</a>》中所说：</p>
+<blockquote>
+<p>拆分成尽可能多的小文件是有道理的。——@<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a></p>
+</blockquote>
+<p>不过，我建议不把单个组件拆分成多个文件，除非你有很好的理由这样做。通常我更倾向于一个组件一个文件。俗话说“没有更多，只有更少”。用一个简洁语义化的名称，用来表示模块的名称。这样我们就可以通过查找名称找到你需要的东西。</p>
+<p>##总结</p>
+<p>本文所有内容都是基于我当年在法国Crédit Agricole银行做前端（唯一一前端）的工作经验。针对于各人，有各自的情况和经验，可以有不同的方法。</p>
+<p>如果我们能给构建一个Sass项目挑选一个黄金法则，它可能会简单一些：就如捡东西的一个道理。如果做为一个团队，项目的结构要确认每个人用得都舒服，让大家都要知道是怎么一回事。</p>
+<p>你对构建Sass项目架构有任何想法和建议，我们都非常想听听。</p>
+<blockquote>
+<p>能力越大，责任越大。——@Aquaman</p>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a>的《<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">Architecture for a Sass Project</a>》所译，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://www.sitepoint.com/architecture-sass-project/" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a>。</p>
+<p>——作者：<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a></p>
+<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
+</blockquote>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/architecture-sass-project.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/15/Drupal/drupal-design-patterns-hooks.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Drupal创建自己的钩子
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/21/Sass/理解sass的选择占位符placeholder.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">理解Sass的选择占位符%placeholder</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式设计：自定义网格布局 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在前面的文章中，我已介绍了“流布局”的特性和描述了如何使用响应式字体。在本文中，我将介绍一种应用广泛及非常著名的网格布局。网格系统其实早已应用在印刷媒体上，只是在web和mobile上的应用才发展一段时间。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式设计：自定义网格布局">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/响应式设计：自定义网格布局.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="在前面的文章中，我已介绍了“流布局”的特性和描述了如何使用响应式字体。在本文中，我将介绍一种应用广泛及非常著名的网格布局。网格系统其实早已应用在印刷媒体上，只是在web和mobile上的应用才发展一段时间。">
+<meta property="og:updated_time" content="2014-09-20T13:38:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式设计：自定义网格布局">
+<meta name="twitter:description" content="在前面的文章中，我已介绍了“流布局”的特性和描述了如何使用响应式字体。在本文中，我将介绍一种应用广泛及非常著名的网格布局。网格系统其实早已应用在印刷媒体上，只是在web和mobile上的应用才发展一段时间。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/响应式设计：自定义网格布局" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/响应式设计：自定义网格布局.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式设计：自定义网格布局
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在前面的文章中，我已介绍了“<a href="http://www.w3cplus.com/responsive/responsive-web-design-fluid-layouts.html" target="_blank" rel="external">流布局</a>”的特性和描述了<a href="http://www.w3cplus.com/responsive/understanding-responsive-web-design-how-to-manage-fonts.html" target="_blank" rel="external">如何使用响应式字体</a>。在本文中，我将介绍一种应用广泛及非常著名的网格布局。网格系统其实早已应用在印刷媒体上，只是在web和mobile上的应用才发展一段时间。<br><a id="more"></a><br>一个网格可以理解为水平与垂直方向相互相交的二维结构体，是用于展示结构性内容。网格是作为框架，为开发者有效地组织文本和图片提供简单的接口。一个完整、适当的网格系统增强了扩展性和维护，也包括手机应用的可读性。</p>
+<p>网格系统的好处多不胜数；基于网格结构…</p>
+<ul>
+<li>为展示内容提供顺序性、创意性和和谐性；</li>
+<li>允许用户可预知哪里有自己需要的信息；</li>
+<li>很方便地添加新的内容，而不怕脱节或者被边缘化。<br>为了构建一个完整的网格布局，第一步是要去创建本身的画布结构。画布的大小将决定网格框架大小：画布将被平均分割成3、5、9、12等分，这是界面或者布局的开始工作。<br>网格尺寸不必要被定义为一个固定值。一个很好的实践方法就是让内容来决定网格布局的尺寸，反之也是成立的。那么，“内容”并不是专指文本内容；而是指界面上所有的东西，包括图像、视频、文字、广告、链接等等。而不是尝试把界面所有东西塞到固定的网格里，你应该根据内容来设计适合的网格尺寸。在你定制网格结构时,布局被垂直或水平划分线划分,从而提供一致的组织空间。</li>
+</ul>
+<p>##在线工具<br>目前来说，基于HTML和CSS的web设计框架已非常著名，很多强大的框架也是基于网格布的。互联网上有很多基于CSS有用的模型和框架，可帮助设计师来创建一个简单、快速、有效的网格布局。有些布局是很灵活的，其他的是限制相当严格的（原因是为了限制内容）。有些网格布局只有3到5列（最大值），而有些却有12到16列。这里举例子想说明网格布局不是一直都是相同的，不是某种布局就一定比其他的好。然而，为了全面地了解基于网格布局方案的好处，应该为每个项目考虑一个独特的模式。你不要害怕尝试多种方案；需要记住的是，最后获胜的，往往是简单的设计。<br>现在网络上，有许多有用的网格资源可为你的页面或项目创建一个合适的布局。</p>
+<ul>
+<li><a href="http://960.gs/" target="_blank" rel="external">Grid System 960</a>:此工具允许你使用一个960像素网格尺寸来创建网站。选择960，是因为很容易分成不同的列和行。</li>
+<li><a href="http://gridr.atomeye.com/" target="_blank" rel="external">Gridr Buildrrr</a>:此工具为自定义项目提供精确地控制边界、外边距和盒子内容。</li>
+<li><a href="http://www.designbygrid.com/" target="_blank" rel="external">Design by Grid</a>:创建基于网格的杂志内容。</li>
+</ul>
+<p>##网格布局结构<br>如果你想尝试自己开发一个网格结构，确定一个界面宽度和在不同的列之间的间距。请记住，为了获得稳定效果，不同的水平间距大小都是相等的，这点是很重要的。正如上面所说的，先去研究内容，思考如何定位和安排，并保持这些想法贯穿在整个实际开发过程中。<br>把你的app或者移动网站的主要元素（<code>header</code>，<code>content</code>，<code>sidebar</code>，和<code>footer</code>）添加到一个容器“<code>wrapper</code>”里，代码如下：</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"wrapper"</span>&gt;
+      &lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"header"</span>&gt;Header&lt;/<span class="keyword">div</span>&gt;
+      &lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"content"</span>&gt;Content&lt;/<span class="keyword">div</span>&gt;
+      &lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"sidebar"</span>&gt;Sidebar&lt;/<span class="keyword">div</span>&gt;
+      &lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"footer"</span>&gt;Footer&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>这里你的内容“<code>content</code>”块和侧栏“<code>sidebar</code>”块还会分层多个“<code>section</code>”块，“<code>section</code>”块可以命名为<code>Grid1</code>（网格1）、<code>Grid2</code>（网格2）、<code>Grid3</code>（网格3）等等（同时，这取决于你创建多少个网格）。在每一个网格单元内，还可以添加很多你想要的子<code>section</code>。</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"griglia1"</span>&gt;
+      &lt;<span class="keyword">div</span>&gt;Subsection <span class="number">1</span>&lt;/<span class="keyword">div</span>&gt;
+      &lt;<span class="keyword">div</span>&gt;Subsection <span class="number">2</span>&lt;/<span class="keyword">div</span>&gt;
+      &lt;<span class="keyword">div</span>&gt;Subsection <span class="number">3</span>&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>至于CSS，几乎所有元素都是基于CSS的<code>float</code>（浮动）属性的应用。为了你的网格设计突出的区域块能够正确定位，你会使用所谓的“相对浮动”技术。为了水平间隙包含着网格之间，首先你需要去创建多个自包含的列，然后，你需要为每一个设置一个浮动和固定宽度。我的实现代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div.grid1&#123;&#10;  float: left;&#10;  width: 290px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接着，依然使用于包含在容器内的所有子Section，指定宽度大小和右外边距（例子是10像素）来分隔开来，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div.grid2 div&#123;&#10;  float: left;&#10;  width: 250px;&#10;  margin-right: 10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，为了实现模块化，使得Section占的空间在两个或以上的列，我们使用所谓的“联合列”:你只需要为一个元素指定一个类（class），例如ext2、ext3,ext4或ext5，分别代表占2、3、4或5列，而不是确定宽度值。</p>
+<p>##总结</p>
+<p>本文尝试去指明一些响应式布局或者界面开发与设计可能使用的技术。对于网格，如果说要记住一个原则，那就是:<strong>不要给你的内容塞不合身的网格</strong>。如果流行的解决方案不满足你的需求，可以设计定制网格完美地适配你的内容。可快速、轻松地使用几列、行以及CSS声明即可解决。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote>
+<p>##关于Spy<br>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：<a href="http://pigerla.com/" target="_blank" rel="external">个人博客</a>,<a href="http://weibo.com/52spy1314" target="_blank" rel="external">新浪微博</a>。</p>
+</blockquote>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://www.sitepoint.com/responsive-web-design-grid-layouts/" target="_blank" rel="external">http://www.sitepoint.com/responsive-web-design-grid-layouts</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/responsive/responsive-web-design-grid-layouts.html" target="_blank" rel="external">http://www.w3cplus.com/responsive/responsive-web-design-grid-layouts.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/响应式设计：跨浏览器兼容性.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          响应式设计：跨浏览器兼容性
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/响应式设计：流体布局.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式设计：流体布局</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

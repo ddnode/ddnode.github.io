@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式网站Gilt.com之一：回顾&amp;总结 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近，Gilt特别行动团队花了5周时间创v建了一个能够响应式于移动终端竖屏和横屏的Play应用。完成工作之后，我们聚集在一起，对前面所做的工作进行回顾总结。当然，我们也愿意把所学到的经验——将PC端友好体验转移到移动终端上来，并看起来就像Native App一样，分享给大家。这篇文章（系列5篇文章之第一篇）将分享如何进行一个成功的回顾总结会议。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式网站Gilt.com之一：回顾&总结">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/响应式网站gilt.com之一：回顾总结.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="最近，Gilt特别行动团队花了5周时间创v建了一个能够响应式于移动终端竖屏和横屏的Play应用。完成工作之后，我们聚集在一起，对前面所做的工作进行回顾总结。当然，我们也愿意把所学到的经验——将PC端友好体验转移到移动终端上来，并看起来就像Native App一样，分享给大家。这篇文章（系列5篇文章之第一篇）将分享如何进行一个成功的回顾总结会议。">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-2.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-3.jpg">
+<meta property="og:updated_time" content="2014-09-24T11:05:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式网站Gilt.com之一：回顾&总结">
+<meta name="twitter:description" content="最近，Gilt特别行动团队花了5周时间创v建了一个能够响应式于移动终端竖屏和横屏的Play应用。完成工作之后，我们聚集在一起，对前面所做的工作进行回顾总结。当然，我们也愿意把所学到的经验——将PC端友好体验转移到移动终端上来，并看起来就像Native App一样，分享给大家。这篇文章（系列5篇文章之第一篇）将分享如何进行一个成功的回顾总结会议。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/响应式网站gilt.com之一：回顾总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/响应式网站gilt.com之一：回顾总结.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式网站Gilt.com之一：回顾&amp;总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近，<a href="http://tech.gilt.com/search/special+operations" target="_blank" rel="external">Gilt特别行动团队</a>花了5周时间创v建了一个能够响应式于移动终端竖屏和横屏的<a href="http://playframework.com/" target="_blank" rel="external">Play应用</a>。完成工作之后，我们聚集在一起，对前面所做的工作进行回顾总结。当然，我们也愿意把所学到的经验——将PC端友好体验转移到移动终端上来，并看起来就像Native App一样，分享给大家。这篇文章（系列5篇文章之第一篇）将分享如何进行一个成功的回顾总结会议。<br><a id="more"></a><br>作为一个小团队，有3名队员来自特殊行动团队（负责端到端项目处理，并不适合产品驱动的团队）总是很清楚团队之间进度，因此我们并不需要花费多余的时间去了解彼此进度。相反地，我们花更多时间来讨论在工作中暴露出来更高层次的问题。我们会花半个小时把作出某个决定的理由都写在个人的便签纸上。然后我们都带着这些便签纸去参加会议，这样做的目的有3点：</p>
+<ol>
+<li>列出我们认为做的精彩的事情。</li>
+<li>列出在下个项目中想做和不想做的事情，方便于得出前所未有的水平。</li>
+<li>互相举手击掌。</li>
+</ol>
+<p>我们基于8个基准来对成绩和不足进行投票：</p>
+<ol>
+<li>内部团队合作</li>
+<li>外部团队合作</li>
+<li>效率</li>
+<li>知识</li>
+<li>开发流程</li>
+<li>测试流程</li>
+<li>代码质量</li>
+<li>传播效果（把其他人才吸引到我们工作中来）</li>
+</ol>
+<p>我们把这8个基准排成Y轴（也叫分类轴），用X轴（也叫“精彩点”轴）来表示我们做到怎样的程度。每个队员都把写上自己名字缩写的便签纸贴在对应8个基准的X轴方向上，以表示自己表现如何。</p>
+<p><img alt="响应式网站Gilt.com之一：回顾&总结" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-2.jpg" style="padding:2px;border:1px solid #ccc;width:640px;"></p>
+<p>然后我们每人还会拿具体例子来解释为什么会把便签纸贴在那里。在会议的最后，白板会被便签纸贴满，并很清晰地看出我们工作各方面的满意与不足。</p>
+<p>回顾总结对团队来说是非常重要的，尽管我们坐在一起工作，但每人对主要激励因素，目标和担忧都有独自的见解——拥有更好的工具，更好的开发流程，更好地测试进度或者更好地交流。在软件工程中，工作是永远没有尽头的。但是，如果常常回顾我们知道做了什么并总结，就会好像引擎一样不断地运行，提高和成长下去。</p>
+<p><img alt="响应式网站Gilt.com之一：回顾&总结" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/gilt-rwd-3.jpg" style="padding:2px;border:1px solid #ccc;width:640px;"></p>
+<p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h2><br>        关于Spy</h2><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：<a href="http://pigerla.com/" target="_blank">个人博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微博</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://tech.gilt.com/post/90471467734/responsive-gilt-com-retrospective" target="_blank" rel="external">http://tech.gilt.com/post/90471467734/responsive-gilt-com-retrospective</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/responsive/responsive-gilt-com-retrospective.html" target="_blank" rel="external">http://www.w3cplus.com/responsive/responsive-gilt-com-retrospective.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/响应式网站gilt.com之三：selenium_edition!.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          响应式网站Gilt.com之三：Selenium Edition!
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/响应式网站gilt.com之一：block_vs._in-selector_media_queries.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式网站Gilt.com之二：Block vs. In-selector Media Queries</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

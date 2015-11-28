@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式设计：流体布局 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前两篇文章中关注响应式web设计的清晰概念和如何响应式地使用字体之后，让我们来深人研究一下流布局。在此文中，我将演示当下是真正需要流布局的，以及当你可以选择不一定是响应式的不同解决方案。让我们接下来学习一些特定技术与应用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式设计：流体布局">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/响应式设计：流体布局.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="前两篇文章中关注响应式web设计的清晰概念和如何响应式地使用字体之后，让我们来深人研究一下流布局。在此文中，我将演示当下是真正需要流布局的，以及当你可以选择不一定是响应式的不同解决方案。让我们接下来学习一些特定技术与应用。">
+<meta property="og:updated_time" content="2014-09-20T13:38:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式设计：流体布局">
+<meta name="twitter:description" content="前两篇文章中关注响应式web设计的清晰概念和如何响应式地使用字体之后，让我们来深人研究一下流布局。在此文中，我将演示当下是真正需要流布局的，以及当你可以选择不一定是响应式的不同解决方案。让我们接下来学习一些特定技术与应用。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/响应式设计：流体布局" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/响应式设计：流体布局.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式设计：流体布局
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前<a href="http://www.sitepoint.com/series/understanding-responsive-web-design/" target="_blank" rel="external">两篇文章</a>中关注<a href="http://www.w3cplus.com/responsive/responsive-web-design-tips-and-notes.html" target="_blank" rel="external">响应式web设计的清晰概念</a>和<a href="http://www.w3cplus.com/responsive/understanding-responsive-web-design-how-to-manage-fonts.html" target="_blank" rel="external">如何响应式地使用字体</a>之后，让我们来深人研究一下流布局。在此文中，我将演示当下是真正需要流布局的，以及当你可以选择不一定是响应式的不同解决方案。让我们接下来学习一些特定技术与应用。<br><a id="more"></a><br>理解灵活的布局对你的项目很有帮助，理解和考虑到其他可行的解决方案是否是一种很好的选择。事实上，只有深入了解每种方案的优缺点，你才能有效地选择某种布局方案。</p>
+<p>布局类型有4种：<strong>固定宽度布局</strong>，<strong>流体布局</strong>，<strong>弹性布局</strong>和<strong>混合布局</strong>，一起来逐个分析吧。</p>
+<p>##固定宽度布局</p>
+<p>在固定布局中，网页的宽度是必须指定为一个像素值，一般设为960像素。在过去，开发人员发现960像素是最适合作为网格布局的宽度，因为960可以整除3，4，5，6，8，10，12和15。</p>
+<p>尽管到了今天，在web开发中还是比较普遍使用固定宽度布局的，原因是这种布局提供很强的稳定性与可控性。如果你知道你的网页宽度，就可以兼容所有浏览器与设备，你可以精确地控制图像位置，就好像一切尽在掌控之中。</p>
+<p>然而，固定宽度布局固然有些劣势，在<a href="http://www.sitepoint.com/series/understanding-responsive-web-design/" target="_blank" rel="external">前面的文章</a>也提到，想创建一个固定宽度布局网站的开发人员必须意识到网站是否可以在各式各样的屏幕，浏览器和设备中可用与可见地显示出来。现在市场上出现如此众多设备，意味着有各式各样的屏幕尺寸，对开发人员提出了“一种尺寸适应所有”的技术挑战，这种挑战已超越了固定宽度设计的精确度和可控制性。</p>
+<p>固定宽度的网站出错的一个常见例子就是小于960像素的屏幕尺寸是非常常见的。这样网站就不能够全屏显示了，你将看到一条水平的导航条。事实上,这些小屏幕通常用手指操作,而不是鼠标来控制。</p>
+<p>即使当屏幕尺寸大于960像素，还是会出现其他的问题。例如，网页会被一大片无内容空白包围着，很明显，开发人员不会选择固定宽度布局应用在大屏幕尺寸上。开发人员和用户宁愿做出更多宽度版本来。</p>
+<p>##流体布局（自适应布局）</p>
+<p>流布局与固定宽度布局基本不同点就在于对网站尺寸的测量单位不同。固定宽度布局使用的是像素，但是流布局使用的是百分比，看到百分比，你应该想到，这将提供了很强的可塑性和流动性。换句话说，通过设置了百分比，你将不需要考虑设备尺寸或者屏幕宽度大小了，结论就是，你可以为每种情形找到一种可行的方案，因为你的设计尺寸将适应所有的设备尺寸。</p>
+<p>流布局与媒体查询和优化样式技术的关系密切。单纯的基于百分比宽度是不足以在一个大屏幕中实现你设计。稍后我们将学到如何得到一个完美的流布局。</p>
+<p>##弹性布局</p>
+<p>弹性布局跟流布局很相像，主要不同是大小单位。弹性布局的大小单位不是像素或者百分比，而是em。</p>
+<p>一个<code>em</code>单位等于定义在CSS规则：<code>font-size</code>的值大小。例如，我们设置文本的<code>font-size</code>大小为20像素，那么<code>1em</code>就等于<code>20px</code>，<code>2em</code>就等于<code>40px</code>，以此类推。</p>
+<blockquote>
+<p>在CSS中像素<code>px</code>和<code>em</code>之间的转换计算是一门科学，并不像上面这说得这么简单。如果你想详细了解两者之间的转换，可以阅读早前的文章《<a href="http://www.w3cplus.com/css/px-to-em" target="_blank" rel="external">CSS中强大的EM</a>》。——@大漠</p>
+</blockquote>
+<p>这种布局为开发人员提供了一种很强的排版控制。由于绝大多数的布局主要由文本来填充，此方案使弹性布局成为许多项目的强有力的竞争者。然而，还是存在缺点就是在某些例子中依然出现令人不愉快的水平滚动条。</p>
+<p>##混合布局</p>
+<p>最后介绍这个混合布局，是上面介绍的两种或者更多布局类型的组合。例如，开发人员可能需要设置某些指定元素（侧栏或者底部）一个固定宽度，剩下的就选择百分比或者em。</p>
+<p>明显地，这种途径还是有劣势——如果你是指侧栏的宽度为200像素，然后为剩下的内容设置为80%的宽度，当屏幕小于1000像素时，你将会看到一条水平滚动条，因为主要的列已经没有足够空间容纳了。现实中很少情况,在你的项目只会有一个元素。但是你可以很容易地解决这些问题,后面我们将会学习到。</p>
+<p>##总结</p>
+<p>你可能想知道什么是最好的解决方案？上面列出的四种类型布局哪种才是最适合作为响应式解决方案。你或许已经猜到,每个布局类型都有其优点和缺点。这一切都取决于你的需求和项目的特点。</p>
+<p>这或者很容易致使你认为，这些布局之一都是普遍比其他的优秀的，但不能认为它们之间是互斥关系或是竞争对手。相反地,应该考虑技术,可以结合使用。许多这些技术不可能独立于其他技术而存在的。例如，如果没有定义固定字体大小，em就是没有意义的。同样，如果没有精确宽度来适应流行的屏幕尺寸，媒体查询也将是无意义的。</p>
+<p>我们将在下一篇文章在通过真实的应用来学习这些技术。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote>
+<p>##关于Spy<br>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：<a href="http://pigerla.com/" target="_blank" rel="external">个人博客</a>,<a href="http://weibo.com/52spy1314" target="_blank" rel="external">新浪微博</a>。</p>
+</blockquote>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://www.sitepoint.com/responsive-web-design-fluid-layouts/" target="_blank" rel="external">http://www.sitepoint.com/responsive-web-design-fluid-layouts</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/responsive/responsive-web-design-fluid-layouts.html" target="_blank" rel="external">http://www.w3cplus.com/responsive/responsive-web-design-fluid-layouts.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/响应式设计：自定义网格布局.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          响应式设计：自定义网格布局
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/响应式设计：概念与运用.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式设计：概念与运用</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

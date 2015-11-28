@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何根据背景颜色动态修改文本颜色 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何根据背景颜色动态修改文本颜色">
+<meta property="og:url" content="http://ddnode.com/2014/09/21/Sass/如何根据背景颜色动态修改文本颜色.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。">
+<meta property="og:updated_time" content="2015-03-29T11:01:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何根据背景颜色动态修改文本颜色">
+<meta name="twitter:description" content="设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Sass/如何根据背景颜色动态修改文本颜色" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/21/Sass/如何根据背景颜色动态修改文本颜色.html" class="article-date">
+  	<time datetime="2014-09-20T16:00:00.000Z" itemprop="datePublished">2014-09-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何根据背景颜色动态修改文本颜色
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中级/">中级</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/译文/">译文</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。<br><a id="more"></a></p>
+<blockquote>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://zerosixthree.se/" target="_blank" rel="external">Sebastian Ekström</a>的《<a href="http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass" target="_blank" rel="external">How to dynamically change text color based on a background color</a>》所译，整个系列共分四章，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明原作者相关信息<a href="http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass" target="_blank" rel="external">http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass</a>。</p>
+<p>——作者：<a href="http://zerosixthree.se/" target="_blank" rel="external">Sebastian Ekström</a></p>
+<p>——<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
+</blockquote>
+<p>设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。</p>
+<p>那么我们如何利用Sass在背景色的基础上选择合适的文本颜色呢？</p>
+<p>我们将以通知信息(notification message)组件做为示例。我们先从HTML结构开始：</p>
+<pre><code><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"notification notification-confirm"</span>&gt;</span>Confirmation<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"notification notification-warning"</span>&gt;</span>Warning<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"notification notification-alert"</span>&gt;</span>Alert<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</code></pre><p>我们有三种类型的通知信息：确认、预警和警告。我们希望他们有不同的背景色和文本颜色。确认使用绿色(confirm)，黄色表示预警(warning)，红色表示警告(alert)。而我们的文本颜色是根据背景颜色的对比度来实现。</p>
+<p>我们来创建一个Sass函数，使我们变得更轻松：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function set-notification-text-color($color) &#123;&#10;  @if (lightness($color) &#62; 50) &#123;&#10;    @return #000000; // &#22914;&#26524;&#32972;&#26223;&#33394;&#20026;&#20142;&#33394;,&#36820;&#22238;&#30340;&#25991;&#26412;&#33394;&#20026;&#26263;&#33394;&#10;  &#125; @else &#123;&#10;    @return #ffffff; // &#22914;&#26524;&#32972;&#26223;&#33394;&#20026;&#26263;&#33394;&#65292;&#36820;&#22238;&#30340;&#25991;&#26412;&#33394;&#20026;&#20142;&#33394;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，我们使用了Sass自带的<code>lightness()</code>函数来确定背景颜色是哪种类型。<code>lightness()</code>是Sass<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#lightness-instance_method" target="_blank" rel="external">内置的一个函数</a>，他返回的值是一个颜色的RGB值，这个值介于0到100。其中0表示最暗，而100表示最亮。</p>
+<blockquote>
+<p><code>lightness()</code>是Sass中的一个内置函数，说得更为确切一点，<code>lightness($color)</code>所表示的是<strong>从一个颜色中获取亮度（lightness）值</strong>。例如<code>lightness(#7ab)</code>函数，其返回的是<strong>#7ab</strong>颜色的亮度值，此值为<strong>60%</strong>。有关于Sass内置颜色相关函数的详细介绍，可以阅读前面写的一篇文章：《<a href="http://www.w3cplus.com/preprocessor/sass-color-function.html" target="_blank" rel="external">Sass基础——颜色函数</a>》，将帮助你对Sass内置的颜色函数有一个深入的了解。——@大漠</p>
+</blockquote>
+<p>所以这个函数功能告诉我们，如果我们调用的颜色，其“lightness”(亮度)大于50，这意味着我们引入的是一个浅（亮）颜色，反之，其返加的值小于50就是一个深(暗)颜色，因此我们需要确保他们有一个良好的对比色。否则我们返回的是一个亮色。</p>
+<p>我们来看一个具体的实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$notification-confirm: hsla(101, 72%, 37%, 1);  // Green&#10;$notification-warning: #ffc53a;                 // Yellow&#10;$notification-alert: rgb(172, 34, 34);          // Red&#10;&#10;%notification &#123;&#10;  border-radius: 10px;&#10;  display: block;&#10;  font-size: 1.5em;&#10;  font-family: sans-serif;&#10;  padding: 1em 2em;&#10;  margin: 1em auto;&#10;  width: 30%;&#10;  text-align: center;&#10;&#125;&#10;&#10;.notification &#123;&#10;  @extend %notification;&#10;&#125;&#10;.notification-confirm &#123;&#10;  background: $notification-confirm;&#10;  color: set-notification-text-color($notification-confirm);&#10;&#125;&#10;.notification-warning &#123;&#10;  background: $notification-warning;&#10;  color: set-notification-text-color($notification-warning);&#10;&#125;&#10;.notification-alert &#123;&#10;  background: $notification-alert;&#10;  color: set-notification-text-color($notification-alert);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我们有了这个功能，我们只要知道通知信息(notification message)的背景颜色，就会动态返回需要的文本颜色。</p>
+<p>下面的示例就是我们需要的效果：</p>
+<div><iframe id="cp_embed_ktcqw" src="http://codepen.io/anon/embed/ktcqw?height=400&amp;theme-id=394&amp;slug-hash=ktcqw&amp;default-tab=result" scrolling="no" frameborder="0" height="400" allowtransparency="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe></div>
+
+<p>这样做是件美妙的事情，如果我们修改了背景颜色变量值，文本颜色就会动态更新到适合背景颜色。</p>
+<p>这是如何使用Sass动态生颜色的一个简单的示例。我敢肯定你能想到这个办法。如果你有使用Sass颜色函数的其他经验，欢迎在下面的评论中与我一起分享。</p>
+<p><code>brightness()</code>函数提供了一个更先进的获取颜色亮度值的Sass函数功能。详细请参阅John W. Long写的<a href="https://gist.github.com/jlong/f06f5843104ee10006fe" target="_blank" rel="external"><code>brightness()</code>函数功能</a>。</p>
+<blockquote>
+<p><code>brightness()</code>函数的详细代码如下所示：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//_brightness.scss&#10;&#10;$red-magic-number: 241;&#10;$green-magic-number: 691;&#10;$blue-magic-number: 68;&#10;$brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-number;&#10;&#10;@function brightness($color) &#123;&#10;  // Extract color components&#10;  $red-component: red($color);&#10;  $green-component: green($color);&#10;  $blue-component: blue($color);&#10;&#10;  // Calculate a brightness value in 3d color space between 0 and 255&#10;  $number: sqrt((($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor);&#10;&#10;  // Convert to percentage and return&#10;  @return 100% * $number / 255;&#10;&#125;&#10;&#10;@function contrasting-color($color, $light, $dark) &#123;&#10;  @if brightness($color) &#60; 65% &#123;&#10;    @return $light;&#10;  &#125; @else &#123;&#10;    @return $dark;&#10;  &#125;&#10;&#125;&#10;&#10;//&#35843;&#29992;&#26041;&#27861;&#10;$dark-background-color: #333;&#10;$light-text-color: white;&#10;&#10;$light-background-color: #eee;&#10;$dark-text-color: black;&#10;&#10;.dark-background &#123;&#10;  background: $dark-background-color;&#10;  color: contrasting-color($dark-background-color, $light-text-color, $dark-text-color);&#10;&#125;&#10;&#10;.light-background &#123;&#10;  background: $light-background-color;&#10;  color: contrasting-color($light-background-color, $light-text-color, $dark-text-color);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##扩展阅读</p>
+<p>有关于Sass关于颜色功能方面的其他教程：</p>
+<ul>
+<li><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" target="_blank" rel="external">Module: Sass::Script::Functions</a></li>
+<li><a href="http://www.w3cplus.com/preprocessor/sass-color-function.html" target="_blank" rel="external">Sass基础——颜色函数</a></li>
+<li><a href="http://jackiebalzer.com/color" target="_blank" rel="external">Sass &amp; Compass Color Functions</a></li>
+</ul>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文出处：<a href="http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass" target="_blank" rel="external">http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/intermediate/dynamically-change-text-color-based-on-its-background-with-sass.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/intermediate/dynamically-change-text-color-based-on-its-background-with-sass.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/21/Sass/如何组织一个sass项目.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          如何组织一个Sass项目
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/21/Sass/变量.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sass变量揭秘</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

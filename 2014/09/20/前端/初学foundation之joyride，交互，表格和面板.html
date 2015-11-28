@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初学Foundation之Joyride，交互，表格和面板 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="让我们继续为基于Foundation的项目添加更多的功能，如将学习Joyride插件，该插件帮助引导用户来使用你的站点；还会学习价格表格、标准表格和交换功能：一种新奇响应式图片工具。我们通过一些模版示例，你还可以下载源码来学习如何实现这些特性的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初学Foundation之Joyride，交互，表格和面板">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/初学foundation之joyride，交互，表格和面板.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="让我们继续为基于Foundation的项目添加更多的功能，如将学习Joyride插件，该插件帮助引导用户来使用你的站点；还会学习价格表格、标准表格和交换功能：一种新奇响应式图片工具。我们通过一些模版示例，你还可以下载源码来学习如何实现这些特性的。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-2.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-3.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-4.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-5.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:40:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初学Foundation之Joyride，交互，表格和面板">
+<meta name="twitter:description" content="让我们继续为基于Foundation的项目添加更多的功能，如将学习Joyride插件，该插件帮助引导用户来使用你的站点；还会学习价格表格、标准表格和交换功能：一种新奇响应式图片工具。我们通过一些模版示例，你还可以下载源码来学习如何实现这些特性的。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/初学foundation之joyride，交互，表格和面板" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/初学foundation之joyride，交互，表格和面板.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初学Foundation之Joyride，交互，表格和面板
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>让我们继续为基于Foundation的项目添加更多的功能，如将学习Joyride插件，该插件帮助引导用户来使用你的站点；还会学习价格表格、标准表格和交换功能：一种新奇响应式图片工具。我们通过一些模版示例，你还可以<a href="http://www.w3cplus.com/sites/default/files/blogs/2013/1312/Foundation-9.zip" target="_blank" rel="external">下载源码</a>来学习如何实现这些特性的。<br><a id="more"></a><br>我们将从最简单的特性（面板）开始讲解。</p>
+<p>##面板</p>
+<p>在任意元素中添加一个类“<code>panel</code>”，就会形成一个简单颜色块。这种“块”显示的盒模型是“<code>border-box</code>”，因此添加<a href="http://hub.tutsplus.com/tutorials/quick-tip-did-internet-explorer-get-the-box-model-right--net-12328" target="_blank" rel="external"><code>padding</code></a>的话，不会添加元素的宽高，只会向内扩展。这样就很方便来控制元素的大小了。</p>
+<pre><code>&lt;<span class="tag">div</span> class=<span class="string">"large-6 columns"</span>&gt;
+    &lt;<span class="tag">div</span> class=<span class="string">"panel"</span>&gt;
+        &lt;<span class="tag">p</span> id=<span class="string">"firstStop"</span>&gt;We have <span class="tag">a</span> simple ...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>为了更好地说明，我添加两列，宽度都为“<code>large-6</code>”，一列是图片，一列是面板，这样就可以很好地对齐了。</p>
+<p><img alt="初学Foundation之Joyride，交互，表格和面板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##价格表格</p>
+<p>有时候，创建一个网站的一个比较重要的理由就是卖东西，因此，价格表格经常出现在网站上，另外，Foundation也覆盖了这个功能，但和传统表格不一样的是，这些表格实际上就是一个无序列表，搭配指定的类形成的。</p>
+<pre><code>&lt;ul <span class="keyword">class</span>=<span class="string">"pricing-table"</span>&gt;
+    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"title"</span>&gt;Startup&lt;/<span class="keyword">li</span>&gt;
+    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"price"</span>&gt;<span class="label">$9</span>.95&lt;/<span class="keyword">li</span>&gt;
+    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"description"</span>&gt;<span class="keyword">An</span> awesome package to get any company onto their feet. With instant setup and magic money making plugins.&lt;/<span class="keyword">li</span>&gt;
+    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"bullet-item"</span>&gt;1 Database&lt;/<span class="keyword">li</span>&gt;
+    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"bullet-item"</span>&gt;5GB Storage&lt;/<span class="keyword">li</span>&gt;
+    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"bullet-item"</span>&gt;20 Users&lt;/<span class="keyword">li</span>&gt;
+    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"cta-button"</span>&gt;&lt;a <span class="keyword">class</span>=<span class="string">"button round"</span> href=<span class="string">"#"</span>&gt;Buy Now&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;
+&lt;/ul&gt;
+</code></pre><p>从代码示例中可以看到，ul元素有一个类“<code>pricing-table</code>”，然后在li元素中倒使用很多类，包括“<code>title</code>”，“<code>price</code>”,“<code>description</code>”,“<code>bullet-item</code>”和“<code>cta-button</code>”。而你只要做的是，定制你的内容。你应该还会添加多个价格表格来起对比的作用。</p>
+<p><img alt="初学Foundation之Joyride，交互，表格和面板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##标准表格</p>
+<p>价格表格作用很大吧，接下来你可以需要一个真的的表格来展示数据，在Foundation中使用表格也是很简单的，首先创建一个table，包含其他元素，而你只要做的只是为每一列设置宽度即可。</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">thead</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">th</span> <span class="attribute">width</span>=<span class="value">"200"</span>&gt;</span>Startup<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">th</span> <span class="attribute">width</span>=<span class="value">"200"</span>&gt;</span>Enterprise<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">th</span> <span class="attribute">width</span>=<span class="value">"200"</span>&gt;</span>Global Corporation<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">thead</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">td</span>&gt;</span>1 Database<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">td</span>&gt;</span>5 Database<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">td</span>&gt;</span>10 Database<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+        <span class="comment">&lt;!--more rows--&gt;</span>
+        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">td</span>&gt;</span>No Backups<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">td</span>&gt;</span>50GB Backups<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">td</span>&gt;</span>100GB Backups<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p><img alt="初学Foundation之Joyride，交互，表格和面板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##交换插件</p>
+<p>虽然在Foundation中所有图片默认都是流式布局的，而有时候你却改变一下：图片能够响应式。</p>
+<blockquote>
+<p>And let me add, I think it’s cray-cray that anyone in our industry can talk about <em>only images</em> for over an hour. <a href="https://twitter.com/search?q=%23RWD&amp;src=hash" target="_blank" rel="external">#RWD</a>——Dave Rupert (@davatron5000) <a href="https://twitter.com/davatron5000/statuses/334357491473326080" target="_blank" rel="external">May 14, 2013</a></p>
+</blockquote>
+<p>现在有一个问题就是在图片中有文本。最近Zurb增加了一个插件叫“交换”；实现原理也是很简单的，当屏幕大小为指定时，就使用不同的图片来替换你选择的图片。实现过程就是通过添加特定属性，为“<code>data-interchange</code>”。这是用来选择图片源改变的选择。</p>
+<pre><code>&lt;img src=<span class="string">"small.jpg"</span> <span class="typedef"><span class="keyword">data</span>-interchange="[smallest.jpg, <span class="container">(<span class="title">default</span>)</span>], [smallest.jpg, <span class="container">(<span class="title">screen</span> <span class="title">and</span> (<span class="title">max</span>-<span class="title">width</span>: 568<span class="title">px</span>)</span>)], [small.jpg, <span class="container">(<span class="title">small</span>)</span>], [med.jpg, <span class="container">(<span class="title">medium</span>)</span>], [large.jpg, <span class="container">(<span class="title">large</span>)</span>]"&gt;</span>
+</code></pre><p>如上看出，我添加很多选择性的属性值，里面有很多参数，这样你就选择性地设置定制的点来交换不同的图片。</p>
+<p>这并不是一个高性能的插件，因为交换是需要一到两秒的时间，Zurb有希望在将来会解决这个问题。这个插件的主要好处之一就是它减少在移动设备上的加载时间，因为会下载更小优化过的相同图片，使得更好地加载网页其他部分。</p>
+<p>##Joyride插件</p>
+<p>在前面的每一节教程中，都会涉及学习一个插件，但这次，我们将学习两个。</p>
+<p>在某情况下，引导用户来熟悉你的网站对用户来说一种很好帮助。例如，Google在推出新的特性时候，就会这样做。通过一步一步地指引你的用户，并且解释每一部分都是怎么使用的。Joyride插件实现过程就是添加一个列表（ol或者ul），并且包含每一条项目（li），来表示每一步指引。这列表可以是有序列表或者无序列表，但是都必须添加类“<code>joyride-list</code>”和属性“<code>data-joyride</code>”。</p>
+<pre><code><span class="tag">&lt;<span class="title">ol</span> <span class="attribute">class</span>=<span class="value">"joyride-list"</span> <span class="attribute">data-joyride</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-id</span>=<span class="value">"firstStop"</span> <span class="attribute">data-text</span>=<span class="value">"Go"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Let's get started, here we have an intro.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-id</span>=<span class="value">"numero1"</span> <span class="attribute">data-class</span>=<span class="value">"custom so-awesome"</span> <span class="attribute">data-text</span>=<span class="value">"Next"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>First Stop<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Here we use the new interchange function to change images based on screen size.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-id</span>=<span class="value">"numero2"</span> <span class="attribute">data-button</span>=<span class="value">"Next"</span> <span class="attribute">data-options</span>=<span class="value">"tipLocation:top;tipAnimation:fade"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>Second Stop<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>We are using pricing tables here to display a list of services from a hosting company.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-id</span>=<span class="value">"numero3"</span> <span class="attribute">data-button</span>=<span class="value">"Next"</span> <span class="attribute">data-options</span>=<span class="value">"tipLocation:top;tipAnimation:fade"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>Third Stop<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>This is just a link but it opens a modal with a standard table inside, exciting eh?<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-button</span>=<span class="value">"End"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>End Of The Line<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Our tour ends here, please remember to take all your belongings with you on your way to the exit.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ol</span>&gt;</span>
+</code></pre><p><img alt="初学Foundation之Joyride，交互，表格和面板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>每一个li项目都必须添加“<code>data-id</code>”，如果<code>fist stop</code>是一个h2标签，那么你的<code>data-id</code>就是“<code>data-id=&quot;title&quot;</code>”了。然后h2元素就要添加一个id为“<code>title</code>”。</p>
+<p>接下来你将要添加一个“<code>next</code>”的按钮告诉用户如何操作进入下一步。这里就需要添加一个新的属性“<code>data-text</code>”到每一个li上去，在上面的代码中可以看出，使用了值“Go”来开始，使用值“Next”来进入下一步。</p>
+<p>还有其他一些选择可以直接添加到li项目的，比如<code>data-options=&quot;tipLocation:top;tipAnimation:fade</code>“ ，你可能猜出作用就是显示内容的位置和淡入进来。还有很多参数可以使用在JavaScript初始化中，你还可以使用cookies插件，如果用户登录时保存一个选择就是只是显示一次。</p>
+<p>##有用的工具</p>
+<p>有点不足的是，Foundation没有包含一个证明插件或者特性，如果实现这些那就非常方便了，<a href="http://sandbox.sebnitu.com/jquery/quovolver/" target="_blank" rel="external">Quovolver</a>可以弥补通过设置一个简单的设置和灵活的标记。在你的页脚中添加脚本,去掉一些标记。</p>
+<p><img alt="初学Foundation之Joyride，交互，表格和面板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##下一篇预告</p>
+<p>接下来我们将学习<a href="http://foundation.zurb.com/docs/components/magellan.html" target="_blank" rel="external">Magellan</a>， 用来创建一个粘性的导航栏。还学习可视化类，支持右到左，键盘响应，缩略图，flex视频和<a href="http://foundation.zurb.com/docs/javascript.html" target="_blank" rel="external">zepto</a>的细节。我都将一一解释这些特性，并且学习如何更好地在自己的项目中实现出来。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4><br>        关于Spy</h4><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：个人<a href="http://pigerla.com/" target="_blank">博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微薄</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundation-for-beginners-joyride-interchange-tables-and-panels/" target="_blank" rel="external">http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundation-for-beginners-joyride-interchange-tables-and-panels/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/foundation-for-beginners-joyride-interchange-tables-and-panels.html" target="_blank" rel="external">http://www.w3cplus.com/css/foundation-for-beginners-joyride-interchange-tables-and-panels.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/初学foundation之progress,_alerts,_tooltips和elusive_mega_drop.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          初学Foundation之Progress, Alerts, Tooltips和Elusive Mega Drop
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/初学foundation之foundation的sass样式解释.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初学Foundation之Foundation的Sass样式解释</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

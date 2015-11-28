@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何定制Foundation4顶部工具栏 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Zurb开发的第4版本Foundation（简称为Foundation 4）使得顶部工具栏表现为非常突出，出色的顶部工具栏差不多成为一个由Foundation搭建起来网站的象征元素。今天我们将学习如何通过不同方式去实现它，把它放置在页面的其他地方，让你拥有自定义样式和响应式的水平导航菜单。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何定制Foundation4顶部工具栏">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/如何定制foundation4顶部工具栏.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="Zurb开发的第4版本Foundation（简称为Foundation 4）使得顶部工具栏表现为非常突出，出色的顶部工具栏差不多成为一个由Foundation搭建起来网站的象征元素。今天我们将学习如何通过不同方式去实现它，把它放置在页面的其他地方，让你拥有自定义样式和响应式的水平导航菜单。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-4.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-2.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-3.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:38:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何定制Foundation4顶部工具栏">
+<meta name="twitter:description" content="Zurb开发的第4版本Foundation（简称为Foundation 4）使得顶部工具栏表现为非常突出，出色的顶部工具栏差不多成为一个由Foundation搭建起来网站的象征元素。今天我们将学习如何通过不同方式去实现它，把它放置在页面的其他地方，让你拥有自定义样式和响应式的水平导航菜单。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/如何定制foundation4顶部工具栏" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/如何定制foundation4顶部工具栏.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何定制Foundation4顶部工具栏
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Zurb开发的第4版本Foundation（简称为Foundation 4）使得顶部工具栏表现为非常突出，<a href="http://foundation.zurb.com/docs/components/top-bar.html" target="_blank" rel="external">出色的顶部工具栏</a>差不多成为一个由Foundation搭建起来网站的象征元素。今天我们将学习如何通过不同方式去实现它，把它放置在页面的其他地方，让你拥有自定义样式和响应式的水平导航菜单。<br><a id="more"></a></p>
+<p>##开始</p>
+<p>首先我们将需要<a href="http://foundation.zurb.com/" target="_blank" rel="external">最新版本的Foundation</a>。解压源码包并且把所有的文件放置在你的工程或者测试目录下。我们将直接使用index.html文件，创建一个style.css样式文件将用来重写顶部工具栏的样式来达到自定义导航栏效果。</p>
+<ul>
+<li><a href="http://foundation.zurb.com/download.php" target="_blank" rel="external">Foundation4默认CSS下载</a></li>
+<li><a href="http://cdn.tutsplus.com/webdesign.tutsplus.com/uploads/2013/08/foundation-4-custom-top-bar-navigation-container-img.zip" target="_blank" rel="external">导航区域背景图像</a></li>
+</ul>
+<p><img alt="如何定制Foundation4顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>当然，下载完上面提供的背景图片之后，我们把它放在img文件夹下，准备好了吗？打开你最喜欢的编辑器然后让我们开始吧！</p>
+<p>##创建HTML结构</p>
+<p>###第一步：常用的模板</p>
+<p>index.html文件里面已经预包含一些HTML代码。你可以保留<code>&lt;header&gt;</code>里面的代码，也可以保留所有的脚本（JavaScript）链接（放置在<code>&lt;/body&gt;</code>标签之前）。保留这些来确保Foundation的网格系统和顶部工具栏可以运行起来。</p>
+<p>你可以删掉其他内容代码，我们将采用一种全屏宽度的设计，这不是很复杂的，只是需要想到更好的办法来处理它。</p>
+<p>好的，我们将编写header、导航、主内容和footer区域的内容，我们将给每个区域都添加<code>class=&quot;full-width&quot;</code>,然后再添加一个块元素<code>&lt;div class=&quot;row&quot;&gt;</code>，块元素里面再添加一个块元素<code>&lt;div class=&quot;large-12 columns&quot;&gt;</code>，这也就是搭起基本的网格结构。</p>
+<p><strong>备注：</strong>更多关于网格系统如何运行的，可以回顾教程第二篇：<a href="http://www.w3cplus.com/css/foundation-for-beginners-the-grid-system.html" target="_blank" rel="external">初学者学习foundation：网格系统</a>。</p>
+<pre><code><span class="comment">&lt;!-- HEADER AREA --&gt;</span>
+<span class="tag">&lt;<span class="title">header</span> <span class="attribute">class</span>=<span class="value">"full-width header-area"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-12 columns"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">h2</span>&gt;</span>Foundation-4 Custom Top Bar<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+<span class="comment">&lt;!-- NAVIGATION AREA --&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"full-width navigation-area"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-12 columns"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">nav</span> <span class="attribute">class</span>=<span class="value">"top-bar"</span>&gt;</span><span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="comment">&lt;!-- CONTENT AREA --&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"full-width content-area"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-12 columns"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>Lorem ipsum dolor sit...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="comment">&lt;!-- FOOTER AREA --&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"full-width footer-area"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-12 columns"</span>&gt;</span>
+            &amp;copy; 2013
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>###第二步：顶部工具栏标记</p>
+<p>在编写样式之前，我们需要编写出一些必须的HTML架构代码使得Foundation顶部工具栏能够正确地运行起来。因此需要5样基础元素使得引擎跑起来。</p>
+<ul>
+<li>nav设置<code>class=&quot;top-bar&quot;</code></li>
+<li>ul设置<code>class=&quot;title-area&quot;</code></li>
+<li>li设置<code>class=&quot;toggle-topbar&quot;</code> = 扩展移动端菜单布局</li>
+<li>section设置<code>class=&quot;top-bar-section&quot;</code></li>
+<li>ul设置<code>class=&quot;left&quot;</code>和ul设置<code>class=&quot;right&quot;</code></li>
+</ul>
+<p>现在我们用这5样基础元素来搭建基础框架并且实现功能。</p>
+<p><strong>备注：</strong>在此教程例子中，我们将创建一个自定义的导航菜单，因此删除一些包括logo、文本和图片的标题。因此从下面代码例子可以看到在块元素<code>&lt;ul class=&quot;title-area&quot;&gt;</code>里的<code>&lt;li class=&quot;name&quot;&gt;&lt;/li&gt;</code>里面是空的。<br>接着，我们来添加一些菜单元素和一个下拉菜单代码，在你想添加下拉菜单的li元素里添加<code>class=&quot;has-dropdown&quot;</code>，然后在里面包含下拉菜单代码<code>&lt;ul class=&quot;dropdown&quot;&gt;...&lt;/ul&gt;</code>。如果想表示当前使用状态的li，则需要添加”active”。<code>&lt;ul class=&quot;right&quot;&gt;&lt;ul&gt;</code>里面可以为空的，嵌入代码中。一般情况下，你将会在这个空的ul里添加一个按钮或者搜索栏。更多关于顶部工具栏，可看上一篇教程：<a href="http://www.w3cplus.com/css/foundation-for-beginners-the-top-bar.html" target="_blank" rel="external">初学者学习foundation：顶部工具栏</a>。</p>
+<p>如下HTML代码示例，其中的注释会帮助你理解整体是如何运作的。</p>
+<pre><code><span class="comment">&lt;!-- Nav Wrap --&gt;</span>
+<span class="tag">&lt;<span class="title">nav</span> <span class="attribute">class</span>=<span class="value">"top-bar"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"title-area"</span>&gt;</span>
+        <span class="comment">&lt;!-- Title Area --&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"name"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="comment">&lt;!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone --&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"toggle-topbar menu-icon"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>Menu<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="comment">&lt;!-- The Section wrap --&gt;</span>
+    <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"top-bar-section"</span>&gt;</span>
+        <span class="comment">&lt;!-- Left Nav Section --&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"active"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Home<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>About us<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Our products<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Portfolio<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Blog<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Prices<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"has-dropdown"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Features<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"dropdown"</span>&gt;</span>
+                       <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Modalboxes<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Submenu's and navigation<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Price tables<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Buttons<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Button groups<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Labels, Keystrokes and Tooltips<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Alert boxes<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Columns<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Contact<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+        <span class="comment">&lt;!-- Right Nav Section --&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span><span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
+</code></pre><p>###第三步：目前效果</p>
+<p>现在可以在你的浏览器上看到目前的效果，基于Foundation框架使用顶部工具栏我们已经创建一个水平菜单。为了方便把菜单放置到其他地方，而不是固定在浏览器的顶部，我们需要在以上代码外层添加<code>&lt;div&gt;</code>。</p>
+<p>当你在调整浏览器窗口时，会发现菜单栏在预先设定的断点发生改变。</p>
+<p>接下来着手编写自定义样式，将关注如何去编写顶部工具栏的样式和可以使用哪些class。</p>
+<p><img alt="如何定制Foundation4顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##编写CSS</p>
+<p>###第一步：通用的样式</p>
+<p>如果你还没做好准备，可以创建一个css文件，命名为style.css并且放置到下载下来的Foundation工程下css文件夹下。但别忘记把此引用到index.html文件里。如下代码示例：</p>
+<pre><code><span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Foundation 4<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/foundation.css"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/style.css"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/vendor/custom.modernizr.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+</code></pre><p>这里如果你不把style.css放置在foundation.css下面，将不会覆盖原来顶部工具栏的样式。</p>
+<p>很好，接下来我们要为header、导航、内容和footer写一些基础样式，如导航块，我们将添加一张已经下载好的背景图。这些通用样式一般不是很难去实现的，见如下代码示例，我们添加一个class”full-width”到每个区域中，以致于每个区域的宽度都是占满浏览器宽度的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body &#123;&#10;    background-color: #ccc;&#10;&#125;&#10;/** Set the backgrounds for the different sections **/&#10;.header-area &#123;&#10;    background-color: #2d465c;&#10;    min-height: 160px;&#10;&#125;&#10;.navigation-area &#123;&#10;    background-image: url(&#39;../img/navigation-container.jpg&#39;);&#10;    background-repeat: repeat-x;&#10;&#125;&#10;.content-area &#123;&#10;    padding: 50px 0 70px 0;&#10;&#125;&#10;.footer-area &#123;&#10;    background-color: #1f1f1f;&#10;    color: #fff;&#10;    min-height: 50px;&#10;    padding: 20px 0 0 0;&#10;&#125;&#10;.full-width &#123;&#10;    min-width:100%;&#10;    position: relative;&#10;&#125;&#10;h2 &#123;&#10;    color: #fff;&#10;    font-weight: normal;&#10;    margin-top: 50px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###第二步：顶部工具栏样式</p>
+<p>现在看一下效果，会发现菜单会往外偏移一点，原因就是使用默认的样式，接下来修复这个问题！</p>
+<p>有一些样式类是需要修改以达到想要的效果。首先，我们将在.top-bar和.top-bar-section li里移除黑背景，改变height（在导航区域内）和line-height为58px。如下代码，可看注释帮助理解。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/** Changes background color, height and margin of the border **/&#10;.top-bar &#123;&#10;    background: none;&#10;    height: 58px;&#10;    line-height: 58px;&#10;    margin-bottom: 0;&#10;&#125;&#10;/** Removes black background on menu bar **/&#10;.top-bar-section ul &#123;&#10;    background: none;&#10;    text-transform: uppercase;&#10;&#125;&#10;/** Removes black background on menu item **/&#10;.top-bar-section li a:not(.button) &#123;&#10;    background: none;&#10;    line-height: 58px;&#10;    padding: 0 27px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我们已经移除黑背景了，并且适应高度、行高和内边距，将文字转化为大写字母，这些都是为了适应我们自定义设计。</p>
+<p>如果你进行刷新页面，可以看到出现雏形了，我们继续编写下拉菜单、菜单子项目、激活(active)和鼠标悬空(hover)的状态的样式吧。继续往下看代码示例，并阅读注释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/** Changes the active menu item from default black to a gradient **/&#10;.top-bar-section ul li.active &#62; a &#123;&#10;    background:  rgb(0, 0, 0);&#10;    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%) repeat scroll 0 0 transparent;&#10;    color: #fff;&#10;&#125;&#10;/** Changes the hover state of non active menu items **/&#10;.top-bar-section li:hover a &#123;&#10;    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%) repeat scroll 0 0 transparent;&#10;    color: #fff;&#10;&#125;&#10;/** Changes non active menu items text color to black **/&#10;.top-bar-section ul li &#62; a &#123;&#10;    color: #2d2d2d;&#10;&#125;&#10;/** Changes the hover state of dropdown menu items **/&#10;.top-bar-section ul.dropdown li a:hover:not(.button) &#123;&#10;    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9);&#10;&#125;&#10;/** IMPORTANT fill for the ul dropdown container **/&#10;.top-bar-section ul.dropdown &#123;&#10;    background: #333;&#10;    color: #fff;&#10;&#125;&#10;/** This fixes the position and the color of the dropdown arrow **/&#10;.top-bar-section .has-dropdown &#62; a:after &#123;&#10;    border-color: rgba(0, 0, 0, 1) transparent transparent;&#10;    margin-top: 2.5px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我们已经改变菜单的好几个地方（样式），如首先，我们就改变激活（active）菜单默认的黑背景为“CSS渐变”，接着给不激活菜单添加hover状态，并改变里面的文字颜色为深灰色，目的是显示得更为清晰。然后.top-bar-section li:hover的样式将使得下拉菜单里的子项目被鼠标悬空时显示特定效果。为了完善样式，我们ul.dropdown添加一个背景颜色和重新设置下拉菜单箭头的位置，是因为我们内边距适应.top-bar-section。</p>
+<p>###第三步：效果</p>
+<p>重新刷新页面，看一下现在的效果，我们还没完成样式的编写，只是想看看当调整浏览器的大小时（甚至在更小的屏幕上），页面效果是否显示正常。接下来我们将添加“媒体查询”代码来实现这种效果。</p>
+<p><img alt="如何定制Foundation4顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##编写媒体查询</p>
+<p>###第一步：媒体查询</p>
+<p>我们需要做些操作来使得使用我们自定义样式的菜单栏能够适应不断缩小的屏幕。这里主要涉及到添加一些内边距、行高、文本颜色和背景颜色。如下CSS代码示例，查看每个section的注释。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 942px) &#123;&#10;    /* Makes the responsive menu fit in the navigation container and change its background to black */&#10;    .top-bar ul &#123;&#10;        background-color: rgba(0, 0, 0, 0.5);&#10;        padding-bottom: 13px;&#10;    &#125;&#10;    /* Change non active menu item color to black */&#10;    .top-bar-section ul li &#62; a &#123;&#10;        color: #fff;&#10;    &#125;&#10;    /* Gives the dropdown ul a black fill */&#10;    .top-bar-section ul &#123;&#10;        background: #000;&#10;    &#125;&#10;    /* Give the BACK button after going in a submenu the appropriate filling */&#10;    .top-bar-section .dropdown li.title h5 a &#123;&#10;        line-height: 57px;&#10;    &#125;&#10;    /* This fixes the position and the color of the dropdown arrow */&#10;    .top-bar-section .has-dropdown &#62; a:after &#123;&#10;        border-color: rgba(255, 255, 255, 1) transparent transparent;&#10;        margin-top: 2.5px;&#10;    &#125;&#10;&#125; /* end media query */</span><br></pre></td></tr></table></figure>
+<p>###第二步：查看你的效果</p>
+<p>保存文件，然后重新刷新页面，不断地调整浏览器窗口的大小，你就会看到菜单栏都能很好地展示出来。</p>
+<p><img alt="如何定制Foundation4顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##总结</p>
+<p>最后，总结一下此教程：我们如何利用Foundation 4框架里的顶部工具栏来创建一个自定义菜单。需要记住的一点是，菜单栏不一定要被放置在页面的顶部的，可以使用网格系统来包含它，然后就可以放置任何你想放置的地方。</p>
+<p>Foundation是一系列非常有用的工具可以快速地创建起响应式网站设计，当你不断地熟悉Foundation这个框架，就可以更高效地、创意地创建出更多好玩的东西出来，尽情享受吧！</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4><br>        关于Spy</h4><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：个人<a href="http://pigerla.com/" target="_blank">博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微薄</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/how-to-customize-the-foundation-4-top-bar/" target="_blank" rel="external">http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/how-to-customize-the-foundation-4-top-bar/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/how-to-customize-the-foundation-4-top-bar.html" target="_blank" rel="external">http://www.w3cplus.com/css/how-to-customize-the-foundation-4-top-bar.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/如何设置基线网络.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          如何设置基线网络
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/Nodejs/nodejs.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node.js 概述</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

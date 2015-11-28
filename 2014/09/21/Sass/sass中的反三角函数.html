@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sass中的反三角函数 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="有可能你会认为数学在CSS中用不上，但实际上，在写CSS时运用一些数学可以帮你做一些令人惊讶的事情。数学（尤其是三角函数）可以帮助你模拟一个真实的世界。如果你想做这样的事情，你需要了解复杂的三维变换。如果你只是想在朋友面前展示一下你的才华，这将是一件非常有兴趣的事情。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sass中的反三角函数">
+<meta property="og:url" content="http://ddnode.com/2014/09/21/Sass/sass中的反三角函数.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="有可能你会认为数学在CSS中用不上，但实际上，在写CSS时运用一些数学可以帮你做一些令人惊讶的事情。数学（尤其是三角函数）可以帮助你模拟一个真实的世界。如果你想做这样的事情，你需要了解复杂的三维变换。如果你只是想在朋友面前展示一下你的才华，这将是一件非常有兴趣的事情。">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-1.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-2.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-3.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-4.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-5.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-9.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-10.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-11.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-6.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-7.jpg">
+<meta property="og:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-8.jpg">
+<meta property="og:updated_time" content="2015-03-29T11:01:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sass中的反三角函数">
+<meta name="twitter:description" content="有可能你会认为数学在CSS中用不上，但实际上，在写CSS时运用一些数学可以帮你做一些令人惊讶的事情。数学（尤其是三角函数）可以帮助你模拟一个真实的世界。如果你想做这样的事情，你需要了解复杂的三维变换。如果你只是想在朋友面前展示一下你的才华，这将是一件非常有兴趣的事情。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Sass/sass中的反三角函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/21/Sass/sass中的反三角函数.html" class="article-date">
+  	<time datetime="2014-09-20T16:00:00.000Z" itemprop="datePublished">2014-09-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sass中的反三角函数
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高级/">高级</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/资源/">资源</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有可能你会认为数学在CSS中用不上，但实际上，在写CSS时运用一些数学可以帮你做一些令人惊讶的事情。数学（尤其是三角函数）可以帮助你模拟一个真实的世界。如果你想做这样的事情，你需要了解复杂的三维变换。如果你只是想在朋友面前展示一下你的才华，这将是一件非常有兴趣的事情。<br><a id="more"></a></p>
+<blockquote>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://twitter.com/thebabydino" target="_blank" rel="external">Ana Tudor</a>的《<a href="http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass" target="_blank" rel="external">Inverse trigonometric functions with Sass</a>》所译，整个系列共分四章，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明原作者相关信息<a href="http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass" target="_blank" rel="external">http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass</a>。</p>
+<p>——作者：<a href="http://twitter.com/thebabydino" target="_blank" rel="external">Ana Tudor</a></p>
+<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
+</blockquote>
+<p>有可能你会认为数学在CSS中用不上，但实际上，在写CSS时运用一些数学可以帮你做一些令人惊讶的事情。数学（尤其是三角函数）可以帮助你模拟一个真实的世界。如果你想做这样的事情，你需要了解复杂的三维变换。如果你只是想在朋友面前展示一下你的才华，这将是一件非常有兴趣的事情。</p>
+<p>这里有一个示例：</p>
+<div><iframe id="cp_embed_kpCyx" src="http://codepen.io/anon/embed/kpCyx?height=544&amp;theme-id=394&amp;slug-hash=kpCyx&amp;default-tab=result" scrolling="no" frameborder="0" height="544" allowtransparency="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe></div>
+
+<p>这是一个旋转的<a href="http://en.wikipedia.org/wiki/Icosidodecahedron" target="_blank" rel="external">三十二面体</a>（由二十个三角形的页和十二个五角形的面组成），在CSS中可以说是一个使用三角学完成的一个高级示例。如果你为此感到头疼，你可以先看看<a href="https://twitter.com/codingdesigner" target="_blank" rel="external">Mason Wendell</a>写的<a href="http://sassymothereffingtextshadow.com/" target="_blank" rel="external">文本阴影的案例</a>。Mason Wendell使用了Compass的<code>sin()</code>和<code>cos()</code>函数来实现CSS的阴影重叠的事情。</p>
+<p>我对三角函数并不太了解。但有时候三角函数对我来说并不够用，特别是在CSS中写2D和3D的案例时，我发现需要使用正弦，余弦和正切来计算一些值。我需要<code>asin()</code>、<code>acos()</code>和<code>atan()</code>函数。不幸的是,Compass并不提供这些函数功能，所以我有下面两个选择：</p>
+<ul>
+<li>通过计算器手动计算</li>
+<li>我自己写这些函数功能</li>
+</ul>
+<p>那我肯定会选择第二条了。</p>
+<p>幸运的我，偶然发现了一篇<a href="http://www.japborst.net/blog/sass-sines-and-cosines.html" target="_blank" rel="external">使用Sass写的正弦和余弦函数功能的文章</a>。我认为使用同样的方法，也能实现我需要的功能。</p>
+<p><strong>声明</strong>：数学运算让人头疼，如果您仅仅是想看看效果，你可以跳过下面的内容，直接点击<a href="http://codepen.io/thebabydino/pen/KHpys/" target="_blank" rel="external">这里</a>查看效果。</p>
+<p>##三角101(Trigonometry 101)</p>
+<p>先别深入，我们先回过头来回忆一下高中数学知识。</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-1.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>这个图看起来有点熟悉。(如果不了解，可以看看YouTube上MathBFF的视频:<a href="http://www.youtube.com/watch?v=X5uFqpypDy4" target="_blank" rel="external">基本的三角函数:Sin，Cos,Tan</a>)。</p>
+<p>根据上面的直角三角形，我们一起来回顾几个公式：</p>
+<pre><code>α+β=<span class="number">90</span>°
+</code></pre><p>用弧度来表示是这样的：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-2.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"><br>大家可能还记得，<a href="http://en.wikipedia.org/wiki/Pythagorean_theorem" target="_blank" rel="external">毕达哥拉斯定理</a>（Pythagorean theorem）告诉我们：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-3.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>还有一些基本的三角函数是这样定义的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sin(&#945;) = a/c&#10;cos(&#945;) = b/c&#10;tan(&#945;) = a/b&#10;sin(&#946;) = b/c&#10;cos(&#946;) = a/c&#10;tan(&#946;) = b/a</span><br></pre></td></tr></table></figure>
+<p>知道这些，我们就可以推导出其他的一些公式：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-4.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>头晕了？保持清醒的头脑继续往下。</p>
+<p>##反正弦函数</p>
+<p>什么是反正弦呢？好吧，如果：</p>
+<pre><code><span class="function"><span class="title">sin</span><span class="params">(α)</span></span>=z
+</code></pre><p>那么反正弦是逆着的：</p>
+<pre><code><span class="function"><span class="title">arcsin</span><span class="params">(z)</span></span>=α
+</code></pre><p>换句话说，给了一个角度的正弦，通过反正弦可以告诉你这个角度值。反余弦和反正切类似于在一个余弦或正切基础给了一个角度。</p>
+<p>我们将用Sass来制作一个反正弦<code>asin()</code>的函数。我们将用级数来展开这一点。如果你不是一个数学奇才，泰勒级数展开是相当复杂的。我会尽我所能向大家介绍。对于反正弦，他看起来像这样：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-5.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>看到这个公式就吓坏了。让我们来分析这个结构：<code>z</code>是我们想要得到的<code>α</code>角的正弦。整个和是<code>α</code>的弧度值。当总和在<code>[−π/2,π/2]</code>之间时，<code>z</code>应该在<code>[-1,1]</code>之间。</p>
+<p>每一个标签，包括第一个，你都可以写成<code>(1)⋅z</code>，它是被编造出来的两部分；第一部分是毕达哥拉斯定理内的部分，第二部分是毕达哥拉斯定理以外的部分。</p>
+<p>对于每个<code>i</code>标签是第一位的，第一部分是<code>(2i−1)/(2i)</code>，第二部分中的分子部分是<code>z</code>的<code>2i+1</code>幂次方，而分母是<code>2i+1</code>。</p>
+<p>这可能会得到一个无限大的数，但是一旦得到期限值，对于条款中的值可能会变得非常小，小得我们甚至可以忽略他不计，而且还是安全的，不会影响其他任何东西。</p>
+<p>但我们应该从哪个地方开始停下来呢？比方说，在一个范围的十分之一。以弧度1度的值来计算，<code>1度 = π/180 ≈ 3.14 / 180 ≈ .0175</code>。所以这里的十分之一就是“.00175” 。所以当值小于“.00175”时，他就会停下来，就像我们起床的闹钟，到这个点就会停下来。</p>
+<p>我们一起来看两示例。</p>
+<p>z=0时，这个简单，因为所有条款都是０，所以根据级数展开，无单位的弧度值是０和度值是0⋅180°/π=0°。</p>
+<p>z=1时，第一项是１，第二项是1/6=.167，第三项是3/40=0.075，第四项是.045，第五项是.030，第六项是.022,第七项是.017，第八项是.014。我们注意到我们有一个问题，每一项明显有下降，但这种放慢真的非常缓慢，离我们停下来的临界点.00175还好远。</p>
+<p>但离我们需要的真正值有多远呢？我们把所有项做了一个总结，如下：</p>
+<pre><code><span class="number">1</span>+<span class="number">.167</span>+<span class="number">.075</span>+<span class="number">.045</span>+<span class="number">.030</span>+<span class="number">.022</span>+<span class="number">.017</span>+<span class="number">.014</span>=<span class="number">1.496</span>
+</code></pre><p>这个弧度值转换成度值是85°。离正确的90°并不是太远，但现在变得越来越难接近准确值。这将会导致更多的循环和较慢。它的一个问题是，虽然在特定的情况下影响的程序较小，我们也应该保证每种情况下的绝对值在<code>[0,π/2]</code>上半部分。</p>
+<p>我们要怎样解决这个问题呢？首先要检查产生的角度绝对值是否大于<code>π/4</code>，如果是，我们采用这种方法<code>π/2−|α|</code>计算他的补差。由于正弦函数在<code>[0,π/2]</code>之间是一个<a href="http://en.wikipedia.org/wiki/Monotonic_function" target="_blank" rel="external">递增函数</a>,所以我们要检查<code>z</code>的绝对值是否大于<code>sin(π/4)</code>。</p>
+<p>但是我们怎么知道正弦函数中的补差值中<code>α</code>的绝对值呢？嗯，他等于余弦的<code>α</code>的绝对值：<code>sin(π/2−|α|)=cos(|α|)</code>。根据相关公式，我们可以得知：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-9.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>##编写<code>asin()</code>函数</p>
+<p>哎，好多数学公式呀！让我们来看看一些代码。</p>
+<p>首先给所有项的总和设置一个默认的阈值：</p>
+<pre><code><span class="variable">$default-threshold</span>: pi() / <span class="number">180</span> / <span class="number">10</span>;
+</code></pre><blockquote>
+<p><a href="http://compass-style.org/reference/compass/helpers/math/#pi" target="_blank" rel="external"><code>pi()</code>函数</a>是Compass内置的一个<a href="http://compass-style.org/reference/compass/helpers/math/" target="_blank" rel="external">数学函数</a>，其返回的值就是一个<code>π</code>值。</p>
+</blockquote>
+<p>然后我们开始写我们的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function asin($z) &#123;&#10;  $sum: 0;&#10;&#10;//abs(),Sass&#20869;&#32622;&#20989;&#25968;&#65292;&#36820;&#22238;&#19968;&#20010;&#25968;&#30340;&#32477;&#23545;&#20540;&#10;//sin(),Compass&#20869;&#32622;&#20989;&#25968;&#65292;&#36820;&#22238;&#19968;&#20010;&#35282;&#24230;&#30340;&#27491;&#24358;&#20540;&#10;//sqrt(),Compass&#20869;&#32622;&#20989;&#25968;&#65292;&#36820;&#22238;&#19968;&#20010;&#25968;&#30340;&#24179;&#26041;&#26681;&#10;//pow(),Compass&#20869;&#32622;&#20989;&#25968;&#65292;&#36820;&#22238;&#19968;&#20010;&#25968;&#30340;&#24130;&#20540;&#65292;&#22914;pow($z,2)&#36820;&#22238;&#30340;&#26159;$z&#30340;&#20108;&#27425;&#26041;&#10;  @if abs($z) &#62; sin(pi() / 4) &#123;&#10;    $z: sqrt(1 - pow($z, 2));&#10;  &#125;&#10;&#10;  @return $sum;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我们设计总和<code>$sum</code>的初始值为０，如果我们角度的绝对值大于<code>pi()/4</code>时，我们要确保计算他的补差。但在那之后，我们怎么知道我们已计算了补差呢？是切换到初始角度吗？</p>
+<p>为了更好的跟踪，我引入了一个布尔变量<code>$complement</code>，并且定义其初始值为<code>false</code>，但在<code>@if</code>区块内通过<code>true</code>来切换返回的值。默认之下返回的是<code>$sum</code>值，如果检测到<code>$complement</code>变量值为<code>true</code>时，则返回<code>pi()/2 - $sum</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function asin($z) &#123;&#10;  $sum: 0;&#10;  $complement: false;&#10;&#10;  @if abs($z) &#62; sin(pi() / 4) &#123;&#10;    $complement: true;&#10;    $z: sqrt(1 - pow($z, 2));&#10;  &#125;&#10;//Miscellaneous&#20989;&#25968;,&#24403;$complement&#20026;true&#65292;&#36820;&#22238;pi()/2 - $sum&#65292;&#21453;&#20043;&#36820;&#22238;$sum&#10;  @return if($complement, pi() / 2 - $sum, $sum);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>但这只适合正值，所以我们要引入变量<code>$sign</code>，它的值可以是１或者-1。我们还让<code>$z</code>值等于他的绝对值，并且让<code>$sign</code>值等于<code>$z</code>除以他自身的绝对值。代码变成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function asin($z) &#123;&#10;  $sum: 0;&#10;  $complement: false;&#10;  $sign: $z / abs($z);&#10;  $z: abs($z);&#10;&#10;  @if $z &#62; sin(pi() / 4) &#123;&#10;    $complement: true;&#10;    $z: sqrt(1 - pow($z, 2));&#10;  &#125;&#10;&#10;  @return $sign * (if($complement, pi() / 2 - $sum, $sum));&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>现在，让实际项目加起来得到总和，一旦这个这个总和的值比我们传递给函数的阈值小，我们设置他停止下来。首先设置第一个项<code>$term</code>，其值等于<code>$z</code>，并且放在循环语句<code>@while</code>的前面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function asin($z, $threshold: $default-threshold) &#123;&#10;  $sum: 0;&#10;  $complement: false;&#10;  $sign: $z / abs($z);&#10;  $z: abs($z);&#10;&#10;  @if $z &#62; sin(pi() / 4) &#123;&#10;    $complement: true;&#10;    $z: sqrt(1 - pow($z, 2));&#10;  &#125;&#10;&#10;  $term: $z;&#10;&#10;  @while $term &#62; $threshold &#123;&#10;    $sum: $sum + $term;&#10;  &#125;&#10;&#10;  @return $sign * (if($complement, pi() / 2 - $sum, $sum));&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在这一点上，除非我们的<code>$term</code>值小于<code>$threshold</code>值，不然<code>@while</code>会一直循环计算，因为我们在里面没有改变<code>$term</code>值。因此，每一次迭代计算机都会计算一次。为了做到这一点，我们在循环前初始化两个变量。一个是<code>$i</code>,即当前项索引；另一个是<code>$k</code>,毕达哥拉斯定理里面的那部分。在此之后，我们在循环之内，不断递增<code>$i</code>的值和重新计算<code>$k</code>和<code>$term</code>的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function asin($z, $threshold: $default-threshold) &#123;&#10;  $sum: 0;&#10;  $complement: false;&#10;  $sign: $z / abs($z);&#10;  $z: abs($z);&#10;&#10;  @if $z &#62; sin(pi() / 4) &#123;&#10;    $complement: true;&#10;    $z: sqrt(1 - pow($z, 2));&#10;  &#125;&#10;&#10;  $term: $z;&#10;  $i: 0;&#10;  $k: 1;&#10;&#10;  @while $term &#62; $threshold &#123;&#10;    $sum: $sum + $term;&#10;&#10;    $i: $i + 1;&#10;    $k: $k * (2 * $i - 1) / (2 * $i);&#10;    $j: 2 * $i + 1;&#10;&#10;    $term: $k * pow($z, $j) / $j;&#10;  &#125;&#10;&#10;  @return $sign * (if($complement, pi() / 2 - $sum, $sum));&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>到此就完成了，在Sass中我们有了自己的<code>asin()</code>函数功能。</p>
+<p>我们是否有什么方法可以检测出<code>abs($z) &lt;= 1</code>,如果他返回的是一个<code>false</code>，抛出一个错误。因为在这种情况之下，<code>$term</code>不会在<code>$threshold</code>值内返回<code>false</code>，我们的循环就是一个无限循环。</p>
+<p>##编写<code>acos()</code>函数</p>
+<p>现在我们有一个函数来计算反正弦，在此基础上，我们可以很容易写出反余弦函数<code>acos()</code>。事实上，在此示例中，角度<code>α</code>的值都是在<code>[0,π]</code>之间，不难得出<code>cos(α)=sin(π / 2−α)</code>。如果我们知道<code>cos(α)=z</code>，那么<code>arcsin(z)=π/2−α</code>，如此一来，给我们提供<code>α=π/2−arcsin(z)</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function acos($z, $threshold: $default-threshold) &#123;&#10;  @return pi() / 2 - asin($z, $threshold);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##编写<code>atan()</code>函数</p>
+<p>对于<code>atan()</code>函数，我们从这样的事实开始<code>tan(α)=sin(α)/cos(α)</code>。我们也知道：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-10.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>也知道：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-11.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>根据这样的关系，我们可以得出正弦与正切之间的关系：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-6.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>我们也知道<code>tan(α)=z</code>,所以：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-7.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>将上面公式简化一下：</p>
+<p><img alt="Sass中的反三角函数" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/sass-math-8.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
+<p>因此得出我们的反正切<code>atan()</code>函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function atan($z, $threshold: $default-threshold) &#123;&#10;  @return asin($z / sqrt(1 + pow($z, 2)), $threshold);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##将这些函数功能更好的用于CSS中</p>
+<p>请记住，这些函数返回的值是一个无单位的弧度值。在我们CSS中是无法直接使用这些值，因为在CSS中至少需要有一个<code>1rad</code>或者带有单位的换算值。但是，如果我们在调用函数时，能指定单位呢？如：</p>
+<pre><code><span class="attribute">transform</span><span class="value">: <span class="function">rotate</span>(<span class="function">asin</span>(.<span class="number">5</span>, <span class="string">'deg'</span>));</span>
+</code></pre><p>为了做到这一点，我们需要一个能转换角度的函数，它能接受一个无单位的弧度值，并且它能将其转换成我们指定的单位，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$in-degrees: convert-angle(pi() / 4, &#39;deg&#39;);&#10;$in-turns: convert-angle(pi() / 2, turn); // &#35753;&#21333;&#20301;&#24102;&#19981;&#24102;&#24341;&#21495;&#37117;&#33021;&#24037;&#20316;</span><br></pre></td></tr></table></figure>
+<p>##编写角度转换函数</p>
+<p>首先我们创建无单位的弧度与CSS单位之间的换算系数表。在Sass中，我们可以使用Map功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$factors: (&#10;  rad: 1rad,&#10;  deg: 180deg / pi(),&#10;  turn: .5turn / pi(),&#10;  grad: 200grad / pi()&#10;);</span><br></pre></td></tr></table></figure>
+<p>这样，我们只需要使用无单位的弧度值乘以系数值，也就是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function convert-angle($value, $unit-name) &#123;&#10;  $factors: (&#10;    rad: 1rad,&#10;    deg: 180deg / pi(),&#10;    turn: .5turn / pi(),&#10;    grad: 200grad / pi()&#10;  );&#10;&#10;  @return $value * map-get($factors, $unit-name);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>这个功能是失败的，如果<code>$unit-name</code>不是<code>$factors</code>列表中对应的关键词，或者<code>$value</code>已经有单位了，在CSS中无效的。因此我们需要完善此函数功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function convert-angle($value, $unit-name) &#123;&#10;  $factors: (&#10;    rad: 1rad,&#10;    deg: 180deg / pi(),&#10;    grad: 200grad / pi(),&#10;    turn: .5turn / pi()&#10;  );&#10;&#10;  @if not unitless($value) &#123;&#10;    @warn &#39;`#&#123;$value&#125;` should be unitless&#39;;&#10;    @return false;&#10;  &#125;&#10;&#10;  @if not map-has-key($factors, $unit-name) &#123;&#10;    @warn &#39;unit `#&#123;$unit-name&#125;` is not a valid unit - please make sure it is either `deg`, `rad`, `grad` or `turn`&#39;;&#10;    @return false;&#10;  &#125;&#10;&#10;  @return $value*map-get($factors, $unit-name);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##增强反三角函数功能</p>
+<p>现在我们只需要完善我们的反三角函数具有单位换算功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function asin($z, $unit-name: deg, $threshold: $default-threshold) &#123;&#10;  $sum: 0;&#10;  $complement: false;&#10;  $sign: $z / abs($z);&#10;  $z: abs($z);&#10;&#10;  @if $z &#62; sin(pi() / 4) &#123;&#10;    $complement: true;&#10;    $z: sqrt(1 - pow($z, 2));&#10;  &#125;&#10;&#10;  $term: $z;&#10;  $i: 0;&#10;  $k: 1;&#10;&#10;  @while $term &#62; $threshold &#123;&#10;    $sum: $sum + $term;&#10;&#10;    $i: $i + 1;&#10;    $k: $k * (2 * $i - 1) / (2 * $i);&#10;    $j: 2 * $i + 1;&#10;&#10;    $term: $k * pow($z, $j) / $j;&#10;  &#125;&#10;&#10;  @return convert-angle($sign*(if($complement, pi()/2 - $sum, $sum)), $unit-name);&#10;&#125;&#10;&#10;@function acos($z, $unit-name: deg, $threshold: $default-threshold) &#123;&#10;  @return convert-angle(pi()/2, $unit-name) - asin($z, $unit-name, $threshold);&#10;&#125;&#10;&#10;@function atan($z, $unit-name: deg, $threshold: $default-threshold) &#123;&#10;  @return asin($z/sqrt(1 + pow($z, 2)), $unit-name, $threshold);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我将度<code>deg</code>设置为默认单位，因为这可以是大多数人比较了解和会使用的，并且将其放置在<code>$threshold</code>前面，因为它仍然有可能有人可能会改变单位。</p>
+<p>##总结</p>
+<p>如果你能跟着看到这里，你是一个真正的爱学习的人。最后的功能如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$default-threshold: pi() / 180 / 20;&#10;&#10;@function convert-angle($value, $unit-name) &#123;&#10;  $factors: (&#10;    rad: 1rad,&#10;    deg: 180deg / pi(),&#10;    grad: 200grad / pi(),&#10;    turn: .5turn / pi()&#10;  );&#10;&#10;  @if not unitless($value) &#123;&#10;    @warn &#39;`#&#123;$value&#125;` should be unitless&#39;;&#10;    @return false;&#10;  &#125;&#10;&#10;  @if not map-has-key($factors, $unit-name) &#123;&#10;    @warn &#39;unit `#&#123;$unit-name&#125;` is not a valid unit - please make sure it is either `deg`, `rad`, `grad` or `turn`&#39;;&#10;    @return false;&#10;  &#125;&#10;&#10;  @return $value*map-get($factors, $unit-name);&#10;&#125;&#10;&#10;@function asin($z, $unit-name: deg, $threshold: $default-threshold) &#123;&#10;  $sum: 0;&#10;  $complement: false;&#10;  $sign: if($z != 0, $z / abs($z), 1);&#10;  $z: abs($z);&#10;&#10;  @if $z &#62; 1 &#123;&#10;    @warn &#39;illegal `#&#123;$z&#125;` value for function&#39;;&#10;    @return false;&#10;  &#125;&#10;&#10;  @if $z &#62; sin(pi() / 4) &#123;&#10;    $complement: true;&#10;    $z: sqrt(1 - pow($z, 2));&#10;  &#125;&#10;&#10;  $term: $z;&#10;  $i: 0;&#10;  $k: 1;&#10;&#10;  @while $term &#62; $threshold &#123;&#10;    $sum: $sum + $term;&#10;&#10;    $i: $i + 1;&#10;    $k: $k * (2 * $i - 1) / (2*$i);&#10;    $j: 2 * $i + 1;&#10;&#10;    $term: $k * pow($z, $j) / $j;&#10;  &#125;&#10;&#10;  @return convert-angle($sign * (if($complement, pi() / 2 - $sum, $sum)), $unit-name);&#10;&#125;&#10;&#10;@function acos($z, $unit-name: deg, $threshold: $default-threshold) &#123;&#10;  @return convert-angle(pi() / 2, $unit-name) - asin($z, $unit-name, $threshold);&#10;&#125;&#10;&#10;@function atan($z, $unit-name: deg, $threshold: $default-threshold) &#123;&#10;  @return asin($z/sqrt(1 + pow($z, 2)), $unit-name, $threshold);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在结束这篇文章时，我在Codepen放了两个案例，以激发你的学习激情：</p>
+<ul>
+<li><a href="http://codepen.io/thebabydino/pen/qDziw" target="_blank" rel="external">A regular dodecahedron expanding into an icosidodecahedron and then collapsing into an icosahedron</a></li>
+<li><a href="http://codepen.io/thebabydino/pen/dlGJI" target="_blank" rel="external">A stretchy graphical mesh</a></li>
+</ul>
+<p>更多的案例可以到<a href="http://codepen.io/thebabydino/" target="_blank" rel="external">我的Codepen上</a>查阅。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文出处：<a href="http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass" target="_blank" rel="external">http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/advanced/inverse-trigonometric-functions-with-sass.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/advanced/inverse-trigonometric-functions-with-sass.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/21/Sass/使用sass和compass制作雪碧图.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用Sass和Compass制作雪碧图
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/21/Sass/编写sass的八个技巧.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">编写Sass的八个技巧</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Grunt构建任务管理脚本 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Grunt是构建Web开发的一个系统，但它创建比较困难。在这个指南中，你将学会如何配置Grunt创建一个现代的Web项目。当你完成教程中的配置之后，你的Gruntfile将具有：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Grunt构建任务管理脚本">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/使用grunt构建任务管理脚本.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="Grunt是构建Web开发的一个系统，但它创建比较困难。在这个指南中，你将学会如何配置Grunt创建一个现代的Web项目。当你完成教程中的配置之后，你的Gruntfile将具有：">
+<meta property="og:updated_time" content="2014-09-20T13:41:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Grunt构建任务管理脚本">
+<meta name="twitter:description" content="Grunt是构建Web开发的一个系统，但它创建比较困难。在这个指南中，你将学会如何配置Grunt创建一个现代的Web项目。当你完成教程中的配置之后，你的Gruntfile将具有：">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/使用grunt构建任务管理脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/使用grunt构建任务管理脚本.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用Grunt构建任务管理脚本
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://gruntjs.com/" target="_blank" rel="external">Grunt</a>是构建Web开发的一个系统，但它创建比较困难。在这个指南中，你将学会如何配置Grunt创建一个现代的Web项目。当你完成教程中的配置之后，你的<code>Gruntfile</code>将具有：<br><a id="more"></a></p>
+<ul>
+<li>从源目录中向目标目录复制文件；</li>
+<li>删除构建文件；</li>
+<li>编译<code>Stylus</code>文件和给他们添加前缀；</li>
+<li>编译<code>CoffeeScript</code>；</li>
+<li>压缩<code>CSS</code>和<code>JavaScript</code>文件；</li>
+<li>编译<code>Jade</code>；</li>
+<li>当文件修改后自动构建源文件；</li>
+<li>运行开发者服务器</li>
+</ul>
+<blockquote>
+<p>Grunt具有一个中文版本官网，如果你对Grunt感兴趣，可以点击<a href="http://www.gruntjs.org/article/home.html" target="_blank" rel="external">这里</a>查阅相关中文文档。</p>
+</blockquote>
+<p>##开始</p>
+<p>如果你还没有开始使用Grunt，你需要先安装“<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>”和“<a href="https://npmjs.org/" target="_blank" rel="external">NPM</a>”。你还需要通过在命令端中输入命令<code>npm install -g grunt-cli</code>来安装Grunt。这样在你的系统中允许你在任何地方使用<code>grunt</code>命令使用你的Grunt。</p>
+<p>创建一个<code>package.json</code>文件，并添加下面的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#10;  &#34;name&#34;: &#34;grunt_tutorial&#34;,&#10;  &#34;description&#34;: &#34;An example of how to set up Grunt for web development.&#34;,&#10;  &#34;author&#34;: &#34;Landon Schropp (http://landonschropp.com)&#34;,&#10;  &#34;dependencies&#34;: &#123;&#10;    &#34;grunt&#34;: &#34;0.x.x&#34;,&#10;    &#34;grunt-autoprefixer&#34;: &#34;0.2.x&#34;,&#10;    &#34;grunt-contrib-clean&#34;: &#34;0.5.x&#34;,&#10;    &#34;grunt-contrib-coffee&#34;: &#34;0.7.x&#34;,&#10;    &#34;grunt-contrib-connect&#34;: &#34;0.4.x&#34;,&#10;    &#34;grunt-contrib-copy&#34;: &#34;0.4.x&#34;,&#10;    &#34;grunt-contrib-cssmin&#34;: &#34;0.6.x&#34;,&#10;    &#34;grunt-contrib-jade&#34;: &#34;0.8.x&#34;,&#10;    &#34;grunt-contrib-jshint&#34;: &#34;0.6.x&#34;,&#10;    &#34;grunt-contrib-stylus&#34;: &#34;0.8.x&#34;,&#10;    &#34;grunt-contrib-uglify&#34;: &#34;0.2.x&#34;,&#10;    &#34;grunt-contrib-watch&#34;: &#34;0.5.x&#34;&#10;  &#125;,&#10;  &#34;engine&#34;: &#34;node &#62;= 0.10&#34;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>这个文件定义了您的项目作为一个<code>NPM</code>包和您的项目所依赖需要的声明。每个声明都有自己的一个版本号。例如，<code>grunt-contrib-copy:&quot;0.4.x&quot;</code>告诉<code>NPM</code>安装0.4最新的版本<code>grunt-contrib-copy</code>包。在你的命令终端运行<code>npm</code>安装你需要管理插件。</p>
+<p>##复制</p>
+<p>一个好的运行脚本总是能让源码和文件分开。这样分离允许你修改源文件而不会影响脚本。</p>
+<p>开始，你会让Grunt从<code>source</code>目录中复制文件到<code>build</code>目录中。需要创建一个<code>Gruntfile.js</code>文件，并将下面的代码复制到这个文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(grunt) &#123;&#10;&#10;  // &#37197;&#32622;&#20219;&#21153;&#10;  grunt.initConfig(&#123;&#10;&#10;    copy: &#123;&#10;      build: &#123;&#10;        cwd: &#39;source&#39;,&#10;        src: [ &#39;**&#39; ],&#10;        dest: &#39;build&#39;,&#10;        expand: true&#10;      &#125;,&#10;    &#125;,&#10;&#10;  &#125;);&#10;&#10;  // &#21152;&#36733;&#20219;&#21153;&#10;  grunt.loadNpmTasks(&#39;grunt-contrib-copy&#39;);&#10;&#10;  // &#23450;&#20041;&#20219;&#21153;&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<p>让我们来分解一下。在<code>Node</code>中，需要一个模块，通过<code>modules.exports</code>函数来调取并返回值。在<code>Gruntfile</code>文件中通过<code>modules.exports</code>告诉<code>Node</code>定义Grunt配置，并返回一个函数。<code>grunt.initConfig</code>是一个方法，他接受一个参数：一个对象的属性配置一个Grunt任务。</p>
+<p>在Grunt配置中，您已添加了一个<code>copy</code>任务。这个任务有一个子任务，叫<code>build</code>。在Grunt中，多个任务称为<a href="http://gruntjs.com/creating-tasks#multi-tasks" target="_blank" rel="external">多任务</a>。对于<code>copy</code>任务，你不需要此功能，但它仍然需要有至少一个子任务。</p>
+<p>在Grunt创建子任务是<a href="http://gruntjs.com/configuring-tasks#files-array-format" target="_blank" rel="external">文件数组格式</a>。这种格式是Grunt提供源文件到一个任务的一个格式方法之一。<code>cwd</code>指向源文件的目录都是相对的，和<code>src</code>指定源文件类似。<code>**</code>是一个通配符，用来匹配Grunt任何文件。<code>dest</code>是Grunt用来输出结果任务。你将设置<code>build</code>目录，告诉Grunt将内容复制到<code>build</code>目录中。如果有一个<code>source/index.html</code>文件，这个配置将输出<code>build/index.html</code>文件。最后，你设置<code>expand</code>参籹为<code>true</code>来开启这些选项。</p>
+<p><code>grunt.loadNpmTasks(&quot;grunt-contrib-copy&quot;)</code>告诉Grunt从<code>grunt-contrib-copy</code>包中加载任务。这给我们一个<code>copy</code>命令，您可以在你的命令控制台中通过<code>grunt copy</code>命令实现复制功能。</p>
+<p>##Clean</p>
+<p>现在你有一个<code>build</code>目录，他是用来完成<code>clean</code>任务。然后你将下面的配置复制到里面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean: &#123;&#10;  build: &#123;&#10;    src: [ &#39;build&#39; ]&#10;  &#125;,&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>就像<code>copy</code>，你设置了一个<code>clean</code>目标和任务配置，<code>clean</code>配置了一个<code>src</code>，设置了<code>build</code>，用来移除<code>build</code>目录。</p>
+<p>接下来使用<code>grunt.loadNpmTask(&quot;grunt-contrib-clean&quot;)</code>,加载一个<code>clean</code>任务，允许你在命令终端运行<code>grunt clean</code>命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTasks(&#39;grunt-contrib-clean&#39;);</span><br></pre></td></tr></table></figure>
+<p>##Build</p>
+<p>如果你有一个<code>build</code>任务，在复制新的源文件之前需要先删除旧的<code>build</code>，这并不是很好，让我们来添加一个任务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#23450;&#20041;&#20219;&#21153;&#10;grunt.registerTask(&#10;  &#39;build&#39;,&#10;  &#39;Compiles all of the assets and copies the files to the build directory.&#39;,&#10;  [ &#39;clean&#39;, &#39;copy&#39; ]&#10;);</span><br></pre></td></tr></table></figure>
+<p>这个<code>registerTask</code>方法创建了一个新的任务。第一参数，<code>build</code>，定义了这个任务的名称。第二个用来描述这个任务。最后一个参数是一个将要运行的任务数组，这个<code>build</code>任务，先运行<code>clean</code>任务，接着运行<code>copy</code>任务。</p>
+<p>##Stylus</p>
+<p><a href="http://learnboost.github.io/stylus/" target="_blank" rel="external">Stylus</a>是一种CSS预处理语言。它在CSS上增强了几个功能，包括添加变量、嵌套和函数等功能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stylus: &#123;&#10;  build: &#123;&#10;    options: &#123;&#10;      linenos: true,&#10;      compress: false&#10;    &#125;,&#10;    files: [&#123;&#10;      expand: true,&#10;      cwd: &#39;source&#39;,&#10;      src: [ &#39;**/*.styl&#39; ],&#10;      dest: &#39;build&#39;,&#10;      ext: &#39;.css&#39;&#10;    &#125;]&#10;  &#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>这个任务与其他的任务稍有不同。这仍然是<code>build</code>的一子任务，但他包含两个属性：<code>options</code>和<code>files</code>。<code>options</code>指定了想要完成任务的行为。我们添加了两个选择项：<code>compress</code>决定CSS输出是否被压缩和<code>linenos</code>在Stylus源文件中选择器添加行号。</p>
+<p><code>files</code>在格式化文件之前设置了一些数组参数。运行这个任务后，<code>source</code>目录下的<code>.styl</code>文件扩展编译输出文件<code>.css</code>。</p>
+<p>现在<code>stylus</code>任务是将CSS文件输出到<code>build</code>目录，没有任何理由将Stylus文件复制到<code>build</code>目录任何地方。让我们修改<code>copy</code>配置来阻止这样的事情发生。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy: &#123;&#10;  build: &#123;&#10;    cwd: &#39;source&#39;,&#10;    src: [ &#39;**&#39;, &#39;!**/*.styl&#39; ],&#10;    dest: &#39;build&#39;,&#10;    expand: true&#10;  &#125;,&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p><code>！</code>在文件路径的开始处可以防止Grunt的匹配模式。别忘了在<code>build</code>任务中添加<code>stylus</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.registerTask(&#10;  &#39;build&#39;,&#10;  &#39;Compiles all of the assets and copies the files to the build directory.&#39;,&#10;  [ &#39;clean&#39;, &#39;copy&#39;, &#39;stylus&#39; ]&#10;);</span><br></pre></td></tr></table></figure>
+<p>##Autoprefixer</p>
+<p><a href="https://github.com/ai/autoprefixer" target="_blank" rel="external">Autoprefixer</a>是Stylus尤物移人编译成CSS后，给CSS3属性添加前缀插件。他是一个强大的库，正如<a href="http://visionmedia.github.io/nib/" target="_blank" rel="external">Nib</a>和<a href="http://compass-style.org/" target="_blank" rel="external">Compass</a>。</p>
+<p>继续添加<code>autoprefixer</code>配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoprefixer: &#123;&#10;  build: &#123;&#10;    expand: true,&#10;    cwd: &#39;build&#39;,&#10;    src: [ &#39;**/*.css&#39; ],&#10;    dest: &#39;build&#39;&#10;  &#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>注意到模式了吗？这个配置非常类似于其他任务。一个明显的差异是<code>cwd</code>和<code>dest</code>两个都设置为<code>build</code>。使用的<code>autoprefixer</code>输出的文件和读取的文件在同一个目录中。</p>
+<p>和前面的一样，你也需要加载<code>autoprefixer</code>任务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTask(&#39;grunt-autoprefixer&#39;);</span><br></pre></td></tr></table></figure>
+<p>不是把所有的CSS任务添加到<code>build</code>中，创建一个添加样式的新任务和将任务添加到<code>build</code>中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#37197;&#32622;&#20219;&#21153;&#10;grunt.registerTask(&#10;  &#39;stylesheets&#39;,&#10;  &#39;Compiles the stylesheets.&#39;,&#10;  [ &#39;stylus&#39;, &#39;autoprefixer&#39; ]&#10;);&#10;&#10;grunt.registerTask(&#10;  &#39;build&#39;,&#10;  &#39;Compiles all of the assets and copies the files to the build directory.&#39;,&#10;  [ &#39;clean&#39;, &#39;copy&#39;, &#39;stylesheets&#39; ]&#10;);</span><br></pre></td></tr></table></figure>
+<p>##CSS压缩</p>
+<p>客户端加载一群庞大的CSS文件文件，会真正的减慢网站加载时间。幸运的是<code>grunt-contrib-cssmin</code>包可以将CSS文件压缩，并将多个文件合并成一个单一的文件。我们再次开始配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cssmin: &#123;&#10;  build: &#123;&#10;    files: &#123;&#10;      &#39;build/application.css&#39;: [ &#39;build/**/*.css&#39; ]&#10;    &#125;&#10;  &#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>使用文件数组格式，这个配置使用Grunt的<a href="http://gruntjs.com/configuring-tasks#files-object-format" target="_blank" rel="external">文件对象格式</a>，将几个文件指定到一个目的地。所有<code>build</code>目录下的CSS文件压缩后输出到<code>build/application.css</code>。</p>
+<p>加载CSS压缩任务包并且将<code>stylesheets</code>添加到任务中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTasks(&#39;grunt-contrib-cssmin&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.registerTask(&#10;  &#39;stylesheets&#39;,&#10;  &#39;Compiles the stylesheets.&#39;,&#10;  [ &#39;stylus&#39;, &#39;autoprefixer&#39;, &#39;cssmin&#39; ]&#10;);</span><br></pre></td></tr></table></figure>
+<p>##CoffeeScript</p>
+<p><a href="http://coffeescript.org/" target="_blank" rel="external">CoffeeScript</a>是编译JavaScript一种奇特的语言。他有干净、漂亮的语法，包括类名和隐藏大量JavaScript不足的一面。</p>
+<p>将CoffeeScript加入到项目中非常容易。首先，添加到配置中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">coffee: &#123;&#10;  build: &#123;&#10;    expand: true,&#10;    cwd: &#39;source&#39;,&#10;    src: [ &#39;**/*.coffee&#39; ],&#10;    dest: &#39;build&#39;,&#10;    ext: &#39;.js&#39;&#10;  &#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>将源文件中的CoffeeScript文件，改变他们的扩展名为<code>.js</code>，并将他们输出到<code>build</code>目录中。接下来，通过<code>grunt-contrib-coffee</code>加载任务包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTasks(&#39;grunt-contrib-coffee&#39;);</span><br></pre></td></tr></table></figure>
+<p>将<code>scripts</code>任务加载到<code>build</code>任务中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.registerTask(&#10;  &#39;scripts&#39;,&#10;  &#39;Compiles the JavaScript files.&#39;,&#10;  [ &#39;coffee&#39; ]&#10;);&#10;&#10;grunt.registerTask(&#10;  &#39;build&#39;,&#10;  &#39;Compiles all of the assets and copies the files to the build directory.&#39;,&#10;  [ &#39;clean&#39;, &#39;copy&#39;, &#39;stylesheets&#39;, &#39;scripts&#39; ]&#10;);</span><br></pre></td></tr></table></figure>
+<p>再次，你需要添加一个<code>copy</code>扩展，因为CoffeeScript文件并没有复制到<code>build</code>目录中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy: &#123;&#10;  build: &#123;&#10;    cwd: &#39;source&#39;,&#10;    src: [ &#39;**&#39;, &#39;!**/*.styl&#39;, &#39;!**/*.coffee&#39; ],&#10;    dest: &#39;build&#39;,&#10;    expand: true&#10;  &#125;,&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>##Uglify</p>
+<p>像<code>cssmin</code>一样，<a href="https://github.com/mishoo/UglifyJS" target="_blank" rel="external">Uglify</a>压缩JavaScript文件，并将压缩成一个文件。这里是他的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uglify: &#123;&#10;  build: &#123;&#10;    options: &#123;&#10;      mangle: false&#10;    &#125;,&#10;    files: &#123;&#10;      &#39;build/application.js&#39;: [ &#39;build/**/*.js&#39; ]&#10;    &#125;&#10;  &#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>默认情况之下，UglifyJS将使你的脚本用更短的名字来取代变量和函数名。如果你的项目代码是自已的那还是很方便的，如果要共享到另一个项目中，会带来问题。设置<code>false</code>将会关掉这种行为。</p>
+<p>像<code>cssmin</code>任务一样，这个任务也需要添加文件对象格式。</p>
+<p>加载任务包，并像<code>scripts</code>任务将<code>uglify</code>添加到任务中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTasks(&#39;grunt-contrib-uglify&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.registerTask(&#10;  &#39;scripts&#39;,&#10;  &#39;Compiles the JavaScript files.&#39;,&#10;  [ &#39;coffee&#39;, &#39;uglify&#39; ]&#10;);</span><br></pre></td></tr></table></figure>
+<p>##清理</p>
+<p>当你运行<code>grunt build</code>，除了<code>build/application.css</code>和<code>build/application.js</code>之外，其他所有的CSS和JavaScript文件都会挂在<code>build</code>目录下。既然你不需要他们，可以添加子任务删除它们，下面的是<code>clean</code>配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean: &#123;&#10;  build: &#123;&#10;    src: [ &#39;build&#39; ]&#10;  &#125;,&#10;  stylesheets: &#123;&#10;    src: [ &#39;build/**/*.css&#39;, &#39;!build/application.css&#39; ]&#10;  &#125;,&#10;  scripts: &#123;&#10;    src: [ &#39;build/**/*.js&#39;, &#39;!build/application.js&#39; ]&#10;  &#125;,&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>当你运行这个任务，哪果你没有指定子任务，Grunt会运行这些任务。如果你运行<code>grunt clean</code>，将执行<code>clean:build</code>，<code>clean:stylesheets</code>和<code>clean:scripts</code>。如果<code>clean</code>不能删除一个文件，它只是会忽略它，这个并不是什么问题。</p>
+<p>注意<code>build/application.css</code>和<code>build/application.js</code>排除了<code>stylesheets</code>和<code>scripts</code>的子任务。你并不想删除他们，这些毕竟是努力工作得来的。</p>
+<p>更新任务时，使用适应的子任务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// define the tasks&#10;grunt.registerTask(&#10;  &#39;stylesheets&#39;,&#10;  &#39;Compiles the stylesheets.&#39;,&#10;  [ &#39;stylus&#39;, &#39;autoprefixer&#39;, &#39;cssmin&#39;, &#39;clean:stylesheets&#39; ]&#10;);&#10;&#10;grunt.registerTask(&#10;  &#39;scripts&#39;,&#10;  &#39;Compiles the JavaScript files.&#39;,&#10;  [ &#39;coffee&#39;, &#39;uglify&#39;, &#39;clean:scripts&#39; ]&#10;);&#10;&#10;grunt.registerTask(&#10;  &#39;build&#39;,&#10;  &#39;Compiles all of the assets and copies the files to the build directory.&#39;,&#10;  [ &#39;clean:build&#39;, &#39;copy&#39;, &#39;stylesheets&#39;, &#39;scripts&#39; ]&#10;);</span><br></pre></td></tr></table></figure>
+<p>##Jade</p>
+<p><a href="http://jade-lang.com/" target="_blank" rel="external">Jade</a>是HTML模板语言。通过<code>grunt-contrib-jade</code>包将<code>Jade</code>添加到你的项目中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jade: &#123;&#10;  compile: &#123;&#10;    options: &#123;&#10;      data: &#123;&#125;&#10;    &#125;,&#10;    files: [&#123;&#10;      expand: true,&#10;      cwd: &#39;source&#39;,&#10;      src: [ &#39;**/*.jade&#39; ],&#10;      dest: &#39;build&#39;,&#10;      ext: &#39;.html&#39;&#10;    &#125;]&#10;  &#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>像<code>stylus</code>和<code>coffee</code>任务一样，<code>jade</code>配置也使用了文件数组。在<code>options</code>内设置了<code>data</code>对象。当Jade文件编译时，这个对象传递到每个模板中。这非常方便，例如创建单独的开发或动态生成内容。</p>
+<p>和前面的一样，你需要在<code>copy</code>添加扩展：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy: &#123;&#10;  build: &#123;&#10;    cwd: &#39;source&#39;,&#10;    src: [ &#39;**&#39;, &#39;!**/*.styl&#39;, &#39;!**/*.coffee&#39;, &#39;!**/*.jade&#39; ],&#10;    dest: &#39;build&#39;,&#10;    expand: true&#10;  &#125;,&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>别忘了在<code>build</code>中添加<code>grunt-contrib-jade</code>任务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTasks(&#39;grunt-contrib-jade&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.registerTask(&#10;  &#39;build&#39;,&#10;  &#39;Compiles all of the assets and copies the files to the build directory.&#39;,&#10;  [ &#39;clean:build&#39;, &#39;copy&#39;, &#39;stylesheets&#39;, &#39;scripts&#39;, &#39;jade&#39; ]&#10;);</span><br></pre></td></tr></table></figure>
+<p>##Watch</p>
+<p>你的Gruntfile现在已经很强大了，但不是很好，因为你每次都得去运行<code>grunt build</code>。使用<code>grunt-contrib-watch</code>，就不需要每次运行。让我们来配置一个这样的任务，你会看到源代码，并自动构建他们的变化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;&#10;  stylesheets: &#123;&#10;    files: &#39;source/**/*.styl&#39;,&#10;    tasks: [ &#39;stylesheets&#39; ]&#10;  &#125;,&#10;  scripts: &#123;&#10;    files: &#39;source/**/*.coffee&#39;,&#10;    tasks: [ &#39;scripts&#39; ]&#10;  &#125;,&#10;  jade: &#123;&#10;    files: &#39;source/**/*.jade&#39;,&#10;    tasks: [ &#39;jade&#39; ]&#10;  &#125;,&#10;  copy: &#123;&#10;    files: [ &#39;source/**&#39;, &#39;!source/**/*.styl&#39;, &#39;!source/**/*.coffee&#39;, &#39;!source/**/*.jade&#39; ],&#10;    tasks: [ &#39;copy&#39; ]&#10;  &#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p><code>stylesheets</code>，<code>scripts</code>和<code>jade</code>子任务可以监测到Stylus,CoffeeScript和Jade文件变化和运行各自的任务。在<code>copy</code>任务中测试所有剩下文件并将其复制到<code>build</code>目录下。</p>
+<p>再次，你需要加载Grunt任务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTasks(&#39;grunt-contrib-watch&#39;);</span><br></pre></td></tr></table></figure>
+<p>##开发者服务器</p>
+<p>没有Web服务器开发环境是一个不完整的。<code>grunt-contrib-connect</code>包是一个全功能的静态文件服务器，用于你的项目中非常的完美。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect: &#123;&#10;  server: &#123;&#10;    options: &#123;&#10;      port: 4000,&#10;      base: &#39;build&#39;,&#10;      hostname: &#39;*&#39;&#10;    &#125;&#10;  &#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>你配置的主机服务器<code>build</code>目录在4000端口上。默认情况之下，在你本地主机上连接服务器是<code>localhost</code>。你可以设置<code>hostname</code>为<code>*</code>可以从任何地方访问服务器。</p>
+<p>和前面的一样，你需要给NPM任务中添加载加任务项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.loadNpmTasks(&#39;grunt-contrib-connect&#39;);</span><br></pre></td></tr></table></figure>
+<p>如果你在命令终端尝试运行<code>grunt connect</code>，服务器运行，然后马上停止。这是因为默认情况下，<code>Grunt connet</code>任务不会一直运行下去，你需要了解如何修改这个问题。</p>
+<p>##默认</p>
+<p>在所有任务之中运行单个任务，并不很完美。<code>default</code>任务是这样设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt.registerTask(&#10;  &#39;default&#39;,&#10;  &#39;Watches the project for changes, automatically builds them and runs a server.&#39;,&#10;  [ &#39;build&#39;, &#39;connect&#39;, &#39;watch&#39; ]&#10;);</span><br></pre></td></tr></table></figure>
+<p><code>default</code>任务运行<code>build</code>创建一个初始的<code>build</code>，然后它开始连接服务器，最后它会运行<code>watch</code>，监测文件变化和重新构建。因为<code>watch</code>一直在运行，所以服务器一直在运行。在你的控制台上运行<code>grunt</code>，然后到<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>查看你的项目。</p>
+<p>##总结</p>
+<p>在这篇教程中我们已经讨论了很多，但Grunt还有很多事情可以做。对于一个完整的Grunt列表插件，可以查看<a href="http://gruntjs.com/plugins" target="_blank" rel="external">Grunt插件网站</a>。</p>
+<p>##扩展阅读</p>
+<ul>
+<li><a href="http://www.gruntjs.org/article/getting_started.html" target="_blank" rel="external">Grunt中文社区</a></li>
+<li><a href="http://javascript.ruanyifeng.com/tool/grunt.html" target="_blank" rel="external">任务管理工具Grunt</a></li>
+<li><a href="http://www.36ria.com/6192" target="_blank" rel="external">Getting started—grunt入门指南</a></li>
+<li><a href="http://www.36ria.com/6232" target="_blank" rel="external">任务配置详解—grunt入门指南</a></li>
+<li><a href="http://www.36ria.com/6226" target="_blank" rel="external">常用插件的使用—grunt入门指南（上）</a></li>
+<li><a href="http://beiyuu.com/grunt-in-action/" target="_blank" rel="external">Grunt.js 在前端项目中的实战</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/meeting-grunt-the-build-tool-for-javascript/" target="_blank" rel="external">Meet Grunt: The Build Tool for JavaScript</a></li>
+<li><a href="http://www.brianchu.com/blog/2013/07/11/grunt-by-example-a-tutorial-for-javascripts-task-runner/" target="_blank" rel="external">Grunt by Example - A Tutorial for JavaScript’s Task Runner</a></li>
+<li><a href="http://www.nitinh.com/2013/05/getting-started-with-grunt-bower/" target="_blank" rel="external">Getting Started With Grunt &amp; Bower</a></li>
+<li><a href="http://moduscreate.com/get-up-and-running-with-grunt-js/" target="_blank" rel="external">Get Up And Running With Grunt.js</a></li>
+</ul>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>英文原文：<a href="http://www.sitepoint.com/writing-awesome-build-script-grunt/" target="_blank" rel="external">http://www.sitepoint.com/writing-awesome-build-script-grunt/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/tools/writing-awesome-build-script-grunt.html" target="_blank" rel="external">http://www.w3cplus.com/tools/writing-awesome-build-script-grunt.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/使用svg完成悬浮时形状样式变化的效果.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用SVG完成悬浮时形状样式变化的效果
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/使用grunt快乐编码.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Grunt快乐编码</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

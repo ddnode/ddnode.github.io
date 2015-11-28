@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于Sass3.4你应该知道的一些事情 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Sass3.4并不是离开Sass3.3的一个开创性版本，并没有做过多的改变，但有一些小变化还是需要留意的。这些功能在Sass3.3测试版本就有显露出一些，但后面会得到更好的细化。我们来看看这些东西，这些东西对于Sass爱好者还是非常值得期待的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Sass3.4你应该知道的一些事情">
+<meta property="og:url" content="http://ddnode.com/2014/09/21/Sass/关于sass3.4你应该知道的一些事情.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="Sass3.4并不是离开Sass3.3的一个开创性版本，并没有做过多的改变，但有一些小变化还是需要留意的。这些功能在Sass3.3测试版本就有显露出一些，但后面会得到更好的细化。我们来看看这些东西，这些东西对于Sass爱好者还是非常值得期待的。">
+<meta property="og:updated_time" content="2015-03-29T11:01:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于Sass3.4你应该知道的一些事情">
+<meta name="twitter:description" content="Sass3.4并不是离开Sass3.3的一个开创性版本，并没有做过多的改变，但有一些小变化还是需要留意的。这些功能在Sass3.3测试版本就有显露出一些，但后面会得到更好的细化。我们来看看这些东西，这些东西对于Sass爱好者还是非常值得期待的。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Sass/关于sass3.4你应该知道的一些事情" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/21/Sass/关于sass3.4你应该知道的一些事情.html" class="article-date">
+  	<time datetime="2014-09-20T16:00:00.000Z" itemprop="datePublished">2014-09-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于Sass3.4你应该知道的一些事情
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/周刊/">周刊</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Sass3.4并不是离开<a href="http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/" target="_blank" rel="external">Sass3.3</a>的一个开创性版本，并没有做过多的改变，但有一些小变化还是需要留意的。这些功能在Sass3.3测试版本就有显露出一些，但后面会得到更好的细化。我们来看看这些东西，这些东西对于Sass爱好者还是非常值得期待的。<br><a id="more"></a></p>
+<blockquote>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://www.phase2technology.com/author/mgodbolt" target="_blank" rel="external">Micah Godbolt</a>的《<a href="http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/" target="_blank" rel="external">Everything you need to know about Sass 3.4</a>》所译，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/" target="_blank" rel="external">http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/</a></p>
+<p>——作者：<a href="http://www.phase2technology.com/author/mgodbolt" target="_blank" rel="external">Micah Godbolt</a></p>
+<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
+</blockquote>
+<p>Sass3.4并不是离开<a href="http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/" target="_blank" rel="external">Sass3.3</a>的一个开创性版本，并没有做过多的改变，但有一些小变化还是需要留意的。这些功能在Sass3.3测试版本就有显露出一些，但后面会得到更好的细化。我们来看看这些东西，这些东西对于Sass爱好者还是非常值得期待的。</p>
+<p>在Sass3.4中最终可以使用<code>&amp;</code>来访问父选择器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul &#123;&#10;    li &#123;&#10;        background: blue;&#10;        &#38;:hover &#123;&#10;            background: red;&#10;        &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>熟悉Sass的同学肯定知道上面的代码块在做什么。列表项设置了蓝色背景色，鼠标悬浮在列表项时，背景色变成红色。实现这个的就是通过<code>&amp;</code>字符来完成。直接在<code>li</code>标签里嵌套，来替代写一个<code>li:hover</code>。其中<code>&amp;</code>代表的就是<code>ul li</code>，所以生成的代码就是<code>ul li:hover</code>。</p>
+<p>虽然<code>&amp;</code>可以表示选择器字符串，但现在无法对这个字符串进行编辑。也不可能将<code>&amp;</code>设置成一个变量，或者通过<code>nth()</code>和<code>join()</code>字符串函数来编辑<code>&amp;</code>。在Sass3.4中对这方面做了变化，可以对<code>&amp;</code>进行编辑，定义变量，以及其他有用的功能。接下来一起探讨这方面的一些例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nav&#123;&#10;    ul &#123;&#10;        li &#123;&#10;            $selector: &#38;;&#10;            foo: $selector; // nav ul li&#10;            bar: length($selector); // 1&#10;        &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>第一件事情，你会注意到在3.4中可以设置<code>$selector:&amp;</code>，不会发生任何问题。可以不需要将<code>&amp;</code>设置成一个变量，就可以直接对它执行列表相关函数操作。</p>
+<p>下一步，可以对它执行一系列的基本的列表函数操作。可以看到，<code>&amp;</code>打印出来的是<code>nav ul li</code>。执行<code>length($selector)</code>你可能期望输出的值是3，而不是1，这一点让非常的头痛，直到你意识到它是列表的列表时就不再会头痛了。让我们来看看下面的例子，这将会更清晰。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nav, header .container&#123;&#10;    ul &#123;&#10;        li &#123;&#10;            $selector: &#38;;&#10;            foo: $selector; // nav ul li, header .container ul li&#10;            bar: length($selector); // 2&#10;            baz: length(nth($selector, 2)); // 4&#10;            qux: nth(nth($selector, 2), 1); // &#39;header&#39;&#10;        &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里可以看到“foo”是用逗号分隔开两个用空格隔开的列表（相当于<code>$list1:nav ul li</code>和<code>$list2:header .container ul li</code>）。这也意味着<code>length($selector)</code>将返回的是2。如果使用<code>nth()</code>函数来选择列表二，并且通过<code>length()</code>函数来计算出列表二的长度是４。甚至可以使用双重<code>nth()</code>函数得到选择器<code>header</code>。</p>
+<p>##选择器函数</p>
+<p>快速看一个示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nav&#123;&#10;    ul &#123;&#10;        li &#123;&#10;            $new-selector: append(nth(&#38;, 1), a);&#10;            @at-root #&#123;$new-selector&#125; &#123;&#10;                color: pink;&#10;            &#125;&#10;        &#125;&#10;    &#125;&#10;&#125;&#10;&#10;// Resulting CSS&#10;&#10;nav ul li a &#123;&#10;  color: pink;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>上面示例中通过<code>append()</code>函数给<code>nav ul li</code>添加了一个额外的选择器<code>a</code>。得到一个新选择器<code>nav ul li a</code>，它依旧能正常工作，但这样使用让人非常的蛋疼。在Sass3.4中使用函数来做，会变得清爽得多。接下来看几个新增的选择器函数的示例。</p>
+<p>第一个是<code>selector-nest($selectors...)</code>函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#&#123;selector-nest(&#34;.foo, .bar&#34;, &#34;.qux&#34;)&#125; &#123;&#10;    background-color: red;&#10;&#125;&#10;//&#30456;&#24403;&#20110;&#10;.foo, .bar &#123;&#10;    .qux &#123;&#10;        background-color: red;&#10;    &#125;&#10;&#125;&#10;&#10;// &#36755;&#20986;&#30456;&#21516;&#30340;CSS&#10;&#10;.foo .qux, .bar .qux &#123;&#10;    background-color: red;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来是<code>selector-append($selectors...)</code>函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#&#123;selector-append(&#34;.foo .bar&#34;, &#34;:hover&#34;)&#125; &#123;&#10;    background: pink;&#10;&#125;&#10;//&#30456;&#24403;&#20110;&#10;.foo .bar&#123;&#10;    &#38;:hover &#123;&#10;        background: red;&#10;    &#125;&#10;&#125;&#10;&#10;// &#36755;&#20986;&#30456;&#21516;&#30340;CSS&#10;&#10;.foo .bar:hover &#123;&#10;    background: red;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出这两个函数可以轻松的帮助我们实现选择器嵌套和追加。所以，当我们不能做什么“新”事情的时候，我们可以修改选择器，让他变得更为方便而不易出错。</p>
+<p>##真正变化在哪</p>
+<p>虽然它擅长本地上下文(<code>&amp;:hover</code>)和全局上下文(<code>.lt-ie9 &amp;</code>)选择器操作，但他还是没办法为组件级上下文进行操作，这也是让人最讨厌之处。这是什么意思呢？接下来通过一个简单的示例来做阐述。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.tabs &#123;&#10;    .tab &#123;&#10;        background: red;&#10;        &#38;:hover &#123;&#10;            background: white;&#10;            .tab-link &#123;&#10;                color: red;&#10;            &#125;&#10;        &#125;&#10;        .tab-link &#123;&#10;            color: white;&#10;        &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在我的“Sass partials”中，选择器只能是每个单一位置。在这个示例中，你可以看到其失败之处，我写了两次<code>.tab-link</code>。在这里出现这样的问题还不是很大的问题，但随着这部分复用越多,<code>.tab-link</code>重用的次数也就会越多，就会造成难于跟踪。</p>
+<p>在Sass3.3中没有比较好的解决方案，我们需要<code>.tabs .tab:hover .tab-link</code>,但不可以在选择器内部插入一个上下文选择器。只能附加或预先准备。在Sass3.4中终于对这部分做了修复。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.tabs &#123;&#10;    .tab &#123;&#10;        background: red;&#10;        &#38;:hover &#123;&#10;            background: white;&#10;        &#125;&#10;        .tab-link &#123;&#10;            color: white;&#10;            @at-root #&#123;selector-replace(&#38;, &#39;.tab&#39;, &#39;.tab:hover&#39;)&#125; &#123;&#10;                color: red;&#10;            &#125;&#10;        &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><code>selector-replace($selector, $original, $replacement)</code>函数是一个强大函数，他将多个列表函数功能集成在一起。首先他将复合选择器分成单个选择器。然后匹配到你传递的选择器<code>$original</code>(示例中的<code>.tab</code>)，接下来使用<code>$replacement</code>选择器替代(示例中的<code>.tab:hover</code>)。</p>
+<p>当时我在想使用什么方法来操纵<code>&amp;</code>时，我只想到了手工操作方法。所以我非常感激有这么一个强大的函数功能。</p>
+<p>但是这个功能，如果你每天编写代码都要用到，就显得有点笨重。需要不断重写<code>@at-root</code>，并且将<code>&amp;</code>参数传给他，这样显得有点不必要。是否可以将这个函数功能通过定义一个<code>mixins</code>来完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@mixin context($old-context, $new-context) &#123;&#10;    @at-root #&#123;selector-replace(&#38;, $old-context, $new-context)&#125; &#123;&#10;        @content;&#10;    &#125;&#10;&#125;&#10;&#10;.tabs &#123;&#10;    .tab &#123;&#10;        background: red;&#10;        &#38;:hover &#123;&#10;            background: white;&#10;        &#125;&#10;        .tab-link &#123;&#10;            color: white;&#10;            @include context(&#39;.tab&#39;, &#39;.tab:hover&#39;) &#123;&#10;                color: red;&#10;            &#125;&#10;        &#125;&#10;    &#125;&#10;&#125;&#10;&#10;// Output&#10;.tabs .tab &#123;&#10;&#9;background: red;&#10;&#125;&#10;.tabs .tab:hover &#123;&#10;&#9;background: white;&#10;&#125;&#10;.tabs .tab .tab-link &#123;&#10;&#9;color: white;&#10;&#125;&#10;.tabs .tab:hover .tab-link &#123;&#10;&#9;color: red;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>这样变得更干净、更易阅读。</p>
+<p>Sass3.4还包括了<code>selector-extend($selector, $extendee, $extender)</code>函数，他的行为除了类似于<code>selector-replace()</code>之外，它返回的是一串用来替换原始选择器的选择器列表。可以在框架中使用这个函数，让你尽量的少写Sass代码。</p>
+<p>最后<code>selector-unify($selector1, $selector2)</code>和<code>superselector($super, $sub)</code>函数可以执行一些更强大的功能以及<code>simple-selectors($selector)</code>函数可以帮助你拆解更复杂的选择器。可以通过<a href="https://github.com/sass/sass/blob/master/doc-src/SASS_CHANGELOG.md" target="_blank" rel="external">这里</a>了解这些函数的具体功能。</p>
+<p>##总结</p>
+<p>虽然这些变化比不上<code>maps</code>、    <code>sourcempas</code>和<code>@at-root</code>，但Sass3.4还是带了一些很久前就希望有的功能。就我个人而言，我一直希望有这样的函数让我更好的控制上下文选择器，因为我自己在这方面吃了很多的亏。如果你想看一些实实在在的示例，可以看看<a href="http://twitter.com/sassbites" target="_blank" rel="external">@SassBites</a>的<a href="https://www.youtube.com/watch?v=o4ok4gsiQSw" target="_blank" rel="external">视频</a>，这个教程介绍了关于<code>selector-replace()</code>函数的使用。</p>
+<p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/" target="_blank" rel="external">http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/everything-you-need-to-know-about-sass-3-4.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/everything-you-need-to-know-about-sass-3-4.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/21/Sass/变量.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Sass变量揭秘
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/21/Sass/保持sass的简单.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">保持Sass的简单</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

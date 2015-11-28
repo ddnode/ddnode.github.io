@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>让那些为Webkit优化的网站也能适配IE10 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IE10对HTML5的广泛支持确保了你的网站在Windows Phone 8中比以往任何时候都能运行的好。之前，为了支持iOS或Android你可能会把Webkit作为专门优化的目标。现在可以让你为Webkit优化的网站也能轻松适配IE10。这意味着你将维护更少的代码，并且，可以给你的客户一个更好的体验。更让人欣喜的是，这些改变会让你的站点更符合HTML5标准。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让那些为Webkit优化的网站也能适配IE10">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/让那些为webkit优化的网站也能适配ie10.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="IE10对HTML5的广泛支持确保了你的网站在Windows Phone 8中比以往任何时候都能运行的好。之前，为了支持iOS或Android你可能会把Webkit作为专门优化的目标。现在可以让你为Webkit优化的网站也能轻松适配IE10。这意味着你将维护更少的代码，并且，可以给你的客户一个更好的体验。更让人欣喜的是，这些改变会让你的站点更符合HTML5标准。">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-1.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-2.png">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-3.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-4.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-5.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-6.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-7.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-8.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-9.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-10.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-11.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-12.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:34:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="让那些为Webkit优化的网站也能适配IE10">
+<meta name="twitter:description" content="IE10对HTML5的广泛支持确保了你的网站在Windows Phone 8中比以往任何时候都能运行的好。之前，为了支持iOS或Android你可能会把Webkit作为专门优化的目标。现在可以让你为Webkit优化的网站也能轻松适配IE10。这意味着你将维护更少的代码，并且，可以给你的客户一个更好的体验。更让人欣喜的是，这些改变会让你的站点更符合HTML5标准。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/让那些为webkit优化的网站也能适配ie10" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/让那些为webkit优化的网站也能适配ie10.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      让那些为Webkit优化的网站也能适配IE10
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>IE10对<a href="http://blogs.windows.com/windows_phone/b/wpdev/archive/2012/11/08/internet-explorer-10-brings-html5-to-windows-phone-8-in-a-big-way.aspx" target="_blank" rel="external">HTML5的广泛支持</a>确保了你的网站在Windows Phone 8中比以往任何时候都能运行的好。之前，为了支持iOS或Android你可能会把Webkit作为专门优化的目标。现在可以让你为<a href="http://en.wikipedia.org/wiki/WebKit" target="_blank" rel="external">Webkit</a>优化的网站也能轻松适配IE10。这意味着你将维护更少的代码，并且，可以给你的客户一个更好的体验。更让人欣喜的是，这些改变会让你的站点更符合HTML5标准。<br><a id="more"></a><br>本指南通过一系列的技巧、最佳实践和代码示例来帮助你把专为Webkit优化过的网站更加轻松地适配到IE10。在我们团队与一些颇受欢迎的网站一起合作来把他们为webkit优化的网站适配到IE10的过程中产生了本指南。</p>
+<p>##第一步：检测Windows Phone 8上的IE10</p>
+<p>无论你在客户端还是服务端运行了user-agent（译注：以下统称ua）检测，首先要做的事情就是更新你的检测代码，把IE10和基于Webkit的浏览器同等对待。这是开始调整你的代码来支持IE10的一个基本条件。我们已经发布了一些关于如何使用ua检测IE10的<a href="http://blogs.windows.com/windows_phone/b/wpdev/archive/2012/10/17/getting-websites-ready-for-internet-explorer-10-on-windows-phone-8.aspx" target="_blank" rel="external">最佳实践</a>，然而下面才是我们希望得到的IE10的ua字符串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; ARM; Touch; IEMobile/10.0; &#60;Manufacturer&#62;; &#60;Device&#62; [;&#60;Operator&#62;])</span><br></pre></td></tr></table></figure>
+<p>处理完ua之后，如果Webkit和IE10之间仍存在着差异并影响到你的网站，那么你可以尝试采用<a href="http://blogs.msdn.com/b/ie/archive/2010/04/14/same-markup-writing-cross-browser-code.aspx" target="_blank" rel="external">特征检测</a>或者其他为跨浏览器而写的最佳实践，而不是用ua检测。尤其重要的是，要在Windows Phone 8上的IE10中使用<a href="http://blogs.windows.com/windows_phone/b/wpdev/archive/2011/10/13/html5-video-support-in-ie9-mobile.aspx" target="_blank" rel="external">HTML5视频</a>而不是基于flash的视频。</p>
+<p>作为第一步工作的一部分，你也应该更新所有的第三方库，比如jQuery Mobile，或者其他第三方提供的服务，确保你能得到他们对浏览器的最新支持。比如，如果你使用了<a href="https://typekit.com/" target="_blank" rel="external">Typekit</a>（译注：一个提供线上字体库的网站）你就要<a href="http://blog.typekit.com/2012/11/01/announcing-windows-phone-8-support/" target="_blank" rel="external">重新发布你的自定义字体套件</a>，或者你给你的视频使用了<a href="http://www.ooyala.com/" target="_blank" rel="external">Ooyala</a>（译注：一个跨平台的视频播放器解决方案），那么你就需要<a href="http://support.ooyala.com/developers/documentation/concepts/player_v3_dev_migrate.html" target="_blank" rel="external">更新到他们最新的播放器</a>。</p>
+<p>##第二步：确保标准模式</p>
+<p>接下来这步是要再次确定一下IE10会在<a href="http://msdn.microsoft.com/en-us/library/ie/hh920756(v=vs.85" target="_blank" rel="external">最符合标准的模式</a>.aspx)下渲染你的网站。使用标准模式会对最新的标准提供最大的支持，比如HTML5，CSS3，SVG等等。相反一些老的模式，比如“怪异模式”（quirks mode），只支持向后兼容。对于大多数网站来说，它们不需要做任何事情，因为默认就是标准模式。最简单的方法就是在每个页面的顶端包含<strong>HTML5 doctype</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;</span><br></pre></td></tr></table></figure>
+<p>只要HTML 4.0+和XHTML 1.0+的 doctype不指定“Transitional”，那么它们默认来说也使用标准模式渲染。</p>
+<p>如果你是在局域网（或localhost）测试你的网页，你需要临时强制使用标准模式，因为，IE在内网（intranet）默认使用向后兼容模式。你可以在页面的<code>&lt;head&gt;</code>标签内添加下面的<code>&lt;meta&gt;</code>标签来强制IE使用标准模式，或者添加等效的HTTP头：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=edge&#34; /&#62;</span><br></pre></td></tr></table></figure>
+<p>当你完成开发并把网站部署到因特网上的时候你就可以删除这个<code>&lt;meta&gt;</code>标签，因为现在已经不再需要它了。</p>
+<p>以下的一些场景你应该尽量小心，因为他们会让你的网站失去标准模式：</p>
+<ul>
+<li>不要包含doctype的声明，而要使用上面提到的HTML5的doctype。</li>
+<li>不要指定一个“tansitional”的doctype，删除Trasitional这样的字眼，或者干脆采用HTML5的doctype。</li>
+<li>不要用带有IE=9（或者更早）的x-ua-compatible头来强制使用具体的IE模式，而要指定IE=edge或者完全移除x-ua-compatible头，并且使用HTML5的doctype。</li>
+</ul>
+<p>##第三步：CSS和DOM API的更新</p>
+<p>现在要准备更新你的代码了。最简单的更新就是先在专为Webkit写的CSS和JavaScript处添加上兼容标准的（无前缀的）或者是加了微软前缀的（Microsoft-prefixed）版本的代码。可能你之前就知晓一些最佳实践的方法，已经在你的代码中包含了很多的前缀。但除此以外，你还有一些其他的CSS和JS需要重新调整一下。</p>
+<p>###无前缀属性</p>
+<p>我们首先要看的是一组无前缀属性。这些CSS或DOM属性最初是加了Webkit前缀（ “-webkit”）的，但在IE10和其他的一些浏览器中却要用到<a href="http://blogs.msdn.com/b/ie/archive/2012/06/06/moving-the-stable-web-forward-in-ie10-release-preview.aspx" target="_blank" rel="external">无前缀的格式</a>。修复这些属性非常简单，你只需要复制一行再去掉“-webkit”前缀就好。增加这样一行无前缀的属性也可以支持那些不是Webkit内核的浏览器。</p>
+<p><strong>注意</strong>，这些适用于CSS属性和等效的JavaScript调用，比如：</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-1.jpg" style="width:560px;"></p>
+<p>下面是一个常用的Webkit CSS属性和对应被IE10所支持的标准（无前缀）格式清单。每个属性都有个能让JavaScript访问的等效样式属性。比如，CSS中的border-radius就可以通过JavaScript的<code>object.style.borderRadius</code>来访问。</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-2.png" style="width:560px;"></p>
+<p>其他一些不常用的属性也支持无前缀格式，比如<a href="http://www.w3.org/TR/css3-multicol/" target="_blank" rel="external">CSS多列布局</a>。</p>
+<p>###有前缀属性</p>
+<p>下面这些使用Webkit前缀的属性在IE10中也同样支持，只不过要加微软的前缀（“-ms”），因为W3C的相应标准还没有发展到足以使用无前缀的地步。你可以移步这里了解微软在此方面的更多进展。注意，你在添加“-ms”前缀的时候，你也可以选择顺便添加无前缀的版本以便向前兼容。</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-3.jpg" style="width:560px;"></p>
+<p>###渐变</p>
+<p>在CSS标准化的过程中渐变的语法已经发生改变了。尤其是渐变类型（比如线性(linear)或径向(radial)）已经移到属性名的位置，而对于你如何指定渐变的方向和颜色也存在着差异。想更全面地了解IE10对于渐变语法的支持情况，请看<a href="http://msdn.microsoft.com/en-us/library/ie/hh673532(v=vs.85" target="_blank" rel="external">Gradients (Windows)</a>.aspx)。例如：</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-4.jpg" style="width:560px;"></p>
+<p>###弹性盒布局的方向</p>
+<p>IE10中对于设置弹性盒布局的方向的语法已经变了。欲了解IE10所支持的弹性盒布局语法，请看<a href="http://msdn.microsoft.com/en-us/library/ie/hh673531(v=vs.85" target="_blank" rel="external">弹性盒（“Flexbox”）布局（Windows）</a>.aspx)。例如：</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-5.jpg" style="width:560px;"></p>
+<p>###图片超链接的边框</p>
+<p>如果一个图片作为超链接来用，IE在默认情况下会给这个图片加上一个蓝色的高亮边框，目的是强调这是一个超链接；Webkit则不会这么做。有一个简单的办法就是用下面的CSS指明作为超链接的图片不加边框：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a img &#123;&#10;  border: none;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###边框图片</p>
+<p>IE10目前还不支持border-image。为了保持你的页面布局，我们建议你指定boder-style为solid，这样可以保持边框的宽（width），内边距（padding）和外边距（margin）不变。（如果IE找不到它支持的边框类型，他就会忽略那些值。）例如：</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-6.jpg" style="width:560px;"></p>
+<p>##第四步：更新触摸（touch）和指针(pointer)事件</p>
+<p>Webkit和IE10对触摸事件的处理是不同的。Webkit支持的触摸接口是从鼠标处理分离出来的；而IE10将触摸（touch），鼠标（mouse），触控笔（stylus）分别封装成单独的接口（指针(pointer)）。指针事件模型也已经作为标准<a href="http://blogs.msdn.com/b/ie/archive/2012/09/24/towards-interoperable-pointer-events-evolving-input-events-for-multiple-devices.aspx" target="_blank" rel="external">提交给W3C</a>下属的<a href="http://blogs.msdn.com/b/ie/archive/2012/11/12/w3c-charters-pointer-events-working-group.aspx" target="_blank" rel="external">指针事件工作小组</a>。尽管接口有所不同，但事件模型通常是相同的，所以添加对指针事件的支持只需要修改很少的代码。</p>
+<p>###监听指针事件</p>
+<p>指针API使用的是标准的“down，move，up”事件模型。因此，很容易让现有的事件监听对指针事件也生效。</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-7.jpg" style="width:560px;"></p>
+<p>###处理指针事件</p>
+<p>如果所有的事件由同一个监听来处理，比如像前面例子中提到的“eventHandlerName”，你需要根据事件类型把它们分离给单独的处理程序。这很容易映射到现有的事件处理程序：</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-8.jpg" style="width:560px;"></p>
+<p>###检测主触点</p>
+<p>如前面所说，指针事件模型为每个触点触发单独的事件。因此，如果你只想处理主触点（比如单指拖动的情况），你就需要在“move”和“up”处理之前使用下面这条语句过滤掉非主触点的触摸点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (window.navigator.msPointerEnabled &#38;&#38; !event.isPrimary) return;</span><br></pre></td></tr></table></figure>
+<p>###检索坐标</p>
+<p>因为指针事件模型为每个触点触发单独的事件，所以不需要从一系列的触摸中检索一个具体的索引。可以使用“event”对象中的pageX和pageY直接获取到坐标。并且很容易把它合并到现有的代码中：</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-9.jpg" style="width:560px;"></p>
+<p>###处理鼠标输入</p>
+<p>IE10模型有一个优势即鼠标输入是作为相同的事件来处理的！因此，当鼠标划过某个区域，IE10会触发“move”事件。在单指拖拽这种情况下，你只想处理鼠标按下并移动的事件。你可以使用下面的<a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh466130.aspx[pointerType]()属性在移动（move）事件处理开始前检测它：" target="_blank" rel="external">http://msdn.microsoft.com/en-us/library/windows/apps/hh466130.aspx[pointerType]()属性在移动（move）事件处理开始前检测它：</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (window.navigator.msPointerEnabled &#38;&#38; ((event.pointerType == event.MSPOINTER_TYPE_TOUCH &#38;&#38; event.buttons != 1) || !event.isPrimary)) return;</span><br></pre></td></tr></table></figure>
+<p>###关闭默认触摸行为</p>
+<p>IE10的指针事件模型要求你明确地指出页面上哪些区域是要用自定义手势处理（使用你刚才添加的代码），哪些是要用默认的手势处理（手指点到页面）。你可以为元素添加-ms-touch-action属性来为他们选择默认的手势处理。例如：</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-10.jpg" style="width:560px;"></p>
+<p>除了none这个属性值外，Windows Phone 8上的IE10还支持<a href="http://msdn.microsoft.com/en-us/library/windows/apps/Hh767313.aspx" target="_blank" rel="external">pan-x和pan-y属性值</a>，它们可以指定浏览器默认应该处理横向还是纵向的手势，而JavaScript会处理其他的手势。</p>
+<p>##第5步：处理非标准行为</p>
+<p>最后一类更新在W3C中没有相关的标准；因而Webkit和IE10处理也不同。但是，在所有这种情况下，Webkit和IE的解决方案可以无任何冲突地共存。</p>
+<p>###禁用链接高亮</p>
+<p>包括iOS上的Safari和Windows Phone上的IE在内的一些移动端浏览器会在超链接元素被触摸（tap）的时候显示一个半透明的高亮背景，来给用户一个附加的反馈。然而，很多网站想要禁用这种默认的行为来更好地控制自己站点的外观和体验。</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-11.jpg" style="width:560px;"></p>
+<p>注意，msapplication-tap-highlight标签在页面的<head>标签里只能出现一次，并且它会作用于整个页面。这个标签只对移动版（Windows Phone）的IE10起作用，而对桌面版（Windows）的IE10没有任何效果（译注：经本人测试，在微软的Surface RT中添加这条禁用高亮的标签也不起作用，并不会禁用超链接点击时的半透明背景）。</head></p>
+<p>###禁用下拉列表的本地样式</p>
+<p>Webkit的专有CSS属性“-webkit-appearance”可以改变控件的外观让它们看起来更像是本地控件。很多情况下，IE10默认就是这么处理的，因此它不需要专门指定样式。</p>
+<p>然而，一个特定的、常用的场景是用“-web-appearance”来禁用出现在<code>&lt;select&gt;</code>元素中的下拉箭头，然后让它显示一个自定义的外观，比如一个背景图片。当下拉箭头被移除之后通常会设置一个text-indent的值，目的是不让下拉列表项中的文字在页面上露出来。（但是，它却会在我们点击屏幕的时候显示一个弹出的控件）。下面所示是在IE10中如何达到相同的效果：</p>
+<p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-12.jpg" style="width:560px;"></p>
+<p>##总结</p>
+<p>本指南涵盖了你为Webkit优化的网站在IE10和其他兼容标准的浏览器上也能运行得很好的最常用的适配方案。如果你有其他技巧是本文没有涵盖的，请你分享在下面的评论栏里。</p>
+<p>在许多情况下，你网站中实际代码的修改量是很小的，这主要取决于网站中使用到的特性和你已经在你的代码中应用的最佳实践。那么，开始吧，让Windows Phone 8的用户也能体验到最好的网站。</p>
+<blockquote><br>    <h4><br>        关于David</h4><br>    <p>2009年开始接触前端开发，2011年组建创业团队——[<a href="http://www.fi5e-d.com" target="_blank">五维互动</a>]，2012年团队被“收编”并更名[创影互动]，遂只身来上海发展，现在就职于<a href="http://www.flipscript.com.cn" target="_blank">FlipScript</a>。欢迎交流共勉：<a href="http://t.qq.com/lybluesky0110" target="_blank">腾讯微博</a>、<a href="http://www.codingserf.com/" target="_blank">个人博客</a>。</p><br></blockquote>
+
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://blogs.windows.com/windows_phone/b/wpdev/archive/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10.aspx" target="_blank" rel="external">http://blogs.windows.com/windows_phone/b/wpdev/archive/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10.aspx</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css3/adapting-your-webkit-optimized-site-for-internet-explorer-10.html" target="_blank" rel="external">http://www.w3cplus.com/css3/adapting-your-webkit-optimized-site-for-internet-explorer-10.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/让手机站点像原生应用的四大途径.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          让手机站点像原生应用的四大途径
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/初学foundation之progress,_alerts,_tooltips和elusive_mega_drop.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初学Foundation之Progress, Alerts, Tooltips和Elusive Mega Drop</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

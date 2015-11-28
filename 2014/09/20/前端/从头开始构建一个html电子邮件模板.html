@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>从头开始构建一个HTML电子邮件模板 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最好的理解方式就是从头开始自己动手实施的过程。今天，我们要做的只是用于电子邮件设计，从头开始构建一个HTML电子邮件模板。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从头开始构建一个HTML电子邮件模板">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/从头开始构建一个html电子邮件模板.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="最好的理解方式就是从头开始自己动手实施的过程。今天，我们要做的只是用于电子邮件设计，从头开始构建一个HTML电子邮件模板。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-2.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-3.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-4.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-5.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-6.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-7.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-8.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-9.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-10.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-11.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-12.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-13.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-14.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-15.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-16.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-17.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-18.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-19.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-20.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:42:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从头开始构建一个HTML电子邮件模板">
+<meta name="twitter:description" content="最好的理解方式就是从头开始自己动手实施的过程。今天，我们要做的只是用于电子邮件设计，从头开始构建一个HTML电子邮件模板。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/从头开始构建一个html电子邮件模板" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/从头开始构建一个html电子邮件模板.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      从头开始构建一个HTML电子邮件模板
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最好的理解方式就是从头开始自己动手实施的过程。今天，我们要做的只是用于电子邮件设计，从头开始构建一个HTML电子邮件模板。<br><a id="more"></a></p>
+<p>##做了事的</p>
+<p>首先，值得一提的是，我使用的一些资源。</p>
+<ul>
+<li>可爱的2D图标是由Dribbble上的<a href="http://dribbble.com/pierreborodin" target="_blank" rel="external">Pierre Borodin</a>提供</li>
+<li>使用的字体是<a href="http://www.losttype.com/font/?name=oilcan" target="_blank" rel="external">Oil Can</a>、<a href="http://www.google.com/fonts/specimen/Source+Sans+Pro" target="_blank" rel="external">Source Sans Pro</a>和<a href="http://www.losttype.com/font/?name=mission_script" target="_blank" rel="external">Mission Script</a>提供</li>
+<li>社交媒体图标来自于<a href="http://www.alessioatzeni.com/metrize-icons/" target="_blank" rel="external">Metrize Icons</a>。</li>
+</ul>
+<p>正如我们<a href="http://enva.to/what-you-should-know-about-html-email" target="_blank" rel="external">前面的教程中</a>讨论的一样，HTML邮件需要一个XHTML文档类型：</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
+          <span class="tag">&lt;<span class="title">title</span>&gt;</span>Demystifying Email Design<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span>/&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>接下来我们可以开始构建其余的结构。</p>
+<p>##创建body和主体表格</p>
+<p>首先，我们将为我们的电子邮件添加一个总体结构，从<code>&lt;body&gt;</code>标记开始。我们给<code>&lt;body&gt;</code>标记设置<code>margin</code>和<code>padding</code>为０，以避免产生意想不到的空间。</p>
+<p>我们还将添加一个宽度为100%的表格。这才是我们的电子邮件的真正主体，因为<code>&lt;body&gt;</code>标签并不完全支持。如果你要给你的邮件的<code>body</code>添加背景色，你需要将它应用到大的<code>table</code>标签上来代替<code>body</code>标签。</p>
+<p>设置你的单元格边距(<code>cellpadding</code>)    和单元格间距(<code>cellspacing</code>)为０，避免产生不必要的空间。</p>
+<p><strong>注意：</strong>我们给我们的<code>table</code>设置<code>border=&quot;1&quot;</code>，这样我们可以看到我们框架的布局。最后我们将使用“查找和替换”删除它们。</p>
+<pre><code><span class="tag">&lt;<span class="title">body</span> <span class="attribute">style</span>=<span class="value">"margin: 0; padding: 0;"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+            Hello!
+               <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+     <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>如果属性存在于HTML，可以用来替代CSS的样式。</p>
+<p>现在在<strong>表格容器内</strong>放置一个600px宽度的表格，并且让他居中。600px是一个安全的最大宽度，使用你的邮件在桌面和Web邮件客户端在大多数的屏幕分辨率下显示的最舒服。</p>
+<p>使用宽度的属性替代CSS来设置这个宽度。HTML电子邮件开发的黄金法则是：<strong>如果一个属性存在于HTML中，绝对使用标签属性而不使用CSS样式</strong>。</p>
+<p>我们将使用这个表格来替代我们的标题“Hello!”:</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">align</span>=<span class="value">"center"</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"600"</span> <span class="attribute">style</span>=<span class="value">"border-collapse: collapse;"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+           Hello!
+          <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+     <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><blockquote>
+<p>这里看得可能会有点晕，使用上面的表格代替第一个表格中的标题”Hello!”——大漠</p>
+</blockquote>
+<p>整体的代码如下：</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">table</span> <span class="attribute">align</span>=<span class="value">"center"</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"600"</span> <span class="attribute">style</span>=<span class="value">"border-collapse: collapse;"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                           Hello!
+                       <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                   <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p>我们已经添加了一个内联样式，设置<code>border-collapse</code>的属性值为<code>collapse</code>。如果我们不这样做，新版本的Outlook将会给我们的表格与边框之间添加一个小的空间距。</p>
+<p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##创建结构和头部</p>
+<p>在我们的设计中，我们可以看到电子邮件分为三个逻辑部分，所以给每一个部分创建一个行。</p>
+<p>让我们重复复制行，使其总行数为三。我已经变了行里面的文本内容，这样我们可以更容易的标识每一行。</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">table</span> <span class="attribute">align</span>=<span class="value">"center"</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"600"</span> <span class="attribute">style</span>=<span class="value">"border-collapse: collapse;"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                           Row 1
+                       <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                   <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+                   <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                           Row 2
+                       <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                   <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+                   <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                           Row 3
+                       <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                   <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>现在根据设计给他们设置颜色。<code>bgcolor</code>是有效的HTML属性，我们使用这个属性来替代CSS的<code>background-color</code>属性来设置背景颜色。<strong>永远记住要使用完整的6个完整的十六进制编码，如果使用三个简写字符，不总是有效</strong>。</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">table</span> <span class="attribute">align</span>=<span class="value">"center"</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"600"</span> <span class="attribute">style</span>=<span class="value">"border-collapse: collapse;"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#70bbd9"</span>&gt;</span>
+                           Row 1
+                       <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                   <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+                   <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#ffffff"</span>&gt;</span>
+                           Row 2
+                       <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                   <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+                   <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#ee4c50"</span>&gt;</span>
+                           Row 3
+                       <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                   <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>好的，接下来我们将重点放在第一行。我们在单元格上调整内距(<code>padding</code>)，然后插入我们需要的图像。</p>
+<p>##使用内距<code>padding</code></p>
+<p>当在电子邮件中使用<code>padding</code>，您必须始终指定每一个值(<code>top</code>、<code>right</code>、<code>bottom</code>和<code>left</code>)，否则你可以得到无法预测的结果。我发现你仍然可以使用简写，例如：<code>padding:10px 10px 8px 5px</code>，但是如果你有麻烦，你需要单独写出来，例如：<code>padding-top:10px;padding-right:10px;padding-bottom:8px;padding-left:5px;</code>。</p>
+<p>如果你使用<code>padding</code>有更大的麻烦(例如，如果您发送邮件的平台把CSS样式都删除了)，不要使用它。简单的使用空的单元格创建空的间距。没有必要使用空的gif文件到单元格中，只需要确保在单元格中添加行内样式<code>style=&quot;line-height:0;font-size:0&quot;</code>，并在单元格中填充一个<code>&amp;nbsp;</code>并给他设置一个明确的高度或宽度。这里有一个例子：</p>
+<pre><code><span class="tag">&lt;<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">td</span> <span class="attribute">style</span>=<span class="value">"font-size: 0; line-height: 0;"</span> <span class="attribute">height</span>=<span class="value">"10"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+</code></pre><p>还请注意，在<code>td</code>标签上使用<code>padding</code>还算是安全的，但在<code>div</code>或<code>p</code>标签上，他们表现得更加不可预测。</p>
+<p>因此，我们将使用一些行内CSS给单元格添加内距<code>padding</code>。然后，我们将插入我们的图片，添加<code>alt</code>属性文本和<code>style=&quot;display:block;&quot;</code>，这个是一个常用来修复一些电子邮件客户端图片下面空白间距。我们通过在<code>td</code>标记中添加<code>align=&quot;center&quot;</code>将图像居中显示。我们还将添加一个重要的<code>alt</code>标签，因为我们邮件加载之后，在多数情况下，图片是关闭的。</p>
+<p><strong>注意：</strong>如果你的头部的内容很重要，在头部中不要仅仅使用一个图像。记住，大多数邮件客户端把图像关闭，所以，要是你的电子邮件很重要，不要使用图片加载进来。在这个例子中，我们的头部是非常多余的。</p>
+<pre><code>&lt;<span class="tag">td</span> align=<span class="string">"center"</span> bgcolor=<span class="string">"#70bbd9"</span> style=<span class="string">"padding: 40px 0 30px 0;"</span>&gt;
+     &lt;<span class="tag">img</span> src=<span class="string">"images/h1.gif"</span> alt=<span class="string">"Creating Email Magic"</span> <span class="attribute">width</span>=<span class="string">"300"</span> <span class="attribute">height</span>=<span class="string">"230"</span> style=<span class="string">"display: block;"</span> /&gt;
+&lt;/td&gt;
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##创建内容区域</p>
+<p>首先，我们将会在中间的单元格中添加一些内距<code>padding</code>，按照我们的设计，表格周围有一些空间。</p>
+<p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-7.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>现在我们给主内容添加一个三行的表格——一行是头部，一行是内容介绍和包含两列的一行。我们把表格的宽度设计为100%而不是使用一个固定的像素值。因为这有助于我们实现一个响应式的电子邮件。如果你总是给每个东西的宽度设置具体的像素，你就需要要媒体查询中覆盖更多的样式。如果你嵌套的表格的宽度是基于百分比，当你调整父元素的宽度，一切都将相应的会调整。</p>
+<pre><code><span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#ffffff"</span> <span class="attribute">style</span>=<span class="value">"padding: 40px 30px 40px 30px;"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                Row 1
+               <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                Row 2
+               <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                Row 3
+               <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+     <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-8.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>现在，我们将添加内容，并给中间的单元格添加一些内距(<code>padding</code>)。</p>
+<p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-9.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<pre><code>&lt;table border="<span class="number">1</span>" cellpadding="<span class="number">0</span>" cellspacing="<span class="number">0</span>" width="<span class="number">100</span>%"&gt;
+      &lt;tr&gt;
+           &lt;td&gt;
+            Lo<span class="comment">rem ipsum dolor sit amet!</span>
+           &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+           &lt;td style="padding: <span class="number">20</span>px <span class="number">0</span> <span class="number">30</span>px <span class="number">0</span>;"&gt;
+            Lo<span class="comment">rem ipsum dolor sit amet ...</span>
+           &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+           &lt;td&gt;
+            Row <span class="number">3</span>
+           &lt;/td&gt;
+      &lt;/tr&gt;
+ &lt;/table&gt;
+</code></pre><p>现在，我们要在第三行中添加两列内容。因为我们想要在两个单元格之间设置一个<code>margin</code>，但大家都知道表格是不支持<code>margin</code>，我们需要创建一个三列的表格，将一个空的单元格放在两列之间。</p>
+<p>尽管我非常喜欢坚持使用百分比，但当你有一个特定大小的内容时，很难将它转换成一个百分比(在这个例子中，列设置为48.1%可能会混淆)。因为这个原因，我们有两个260px宽的图像，我们将创建260px的列，并在两列中间创建一个20px宽的空单元格。(总计是540px，这是因为我们总宽度是600px，减去两边填充的30px内距)。确保在间距的单元格中设置你的字体(<code>font-size</code>)和行高(<code>line-height</code>)为０和插入空白字符<code>&amp;nbsp;</code>。</p>
+<p>我们还将给这两个单元格添加<code>valign=&quot;top&quot;</code>，让内容垂直方向在顶部对齐。单元格垂直方向的默认值是<code>middle</code>。</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"260"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
+               Column 1
+          <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">td</span> <span class="attribute">style</span>=<span class="value">"font-size: 0; line-height: 0;"</span> <span class="attribute">width</span>=<span class="value">"20"</span>&gt;</span>
+               &amp;nbsp;
+          <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"260"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
+               Column 2
+          <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+     <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-10.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>现在给这些列添加图像和内容。我们需要嵌套一个多行的表格，因为我们不能使用任何的<code>colspan</code>或<code>rowspan</code>标签。我们将给图像和内容之间添加一些内距，并将他们复制到另一列。</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"260"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
+               <span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                     <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                          <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"images/left.gif"</span> <span class="attribute">alt</span>=<span class="value">""</span> <span class="attribute">width</span>=<span class="value">"100%"</span> <span class="attribute">height</span>=<span class="value">"140"</span> <span class="attribute">style</span>=<span class="value">"display: block;"</span> /&gt;</span>
+                     <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                     <span class="tag">&lt;<span class="title">td</span> <span class="attribute">style</span>=<span class="value">"padding: 25px 0 0 0;"</span>&gt;</span>
+                          Lorem ipsum dolor sit amet...
+                     <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">td</span> <span class="attribute">style</span>=<span class="value">"font-size: 0; line-height: 0;"</span> <span class="attribute">width</span>=<span class="value">"20"</span>&gt;</span>
+               &amp;nbsp;
+          <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"260"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
+               <span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                     <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                          <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"images/right.gif"</span> <span class="attribute">alt</span>=<span class="value">""</span> <span class="attribute">width</span>=<span class="value">"100%"</span> <span class="attribute">height</span>=<span class="value">"140"</span> <span class="attribute">style</span>=<span class="value">"display: block;"</span> /&gt;</span>
+                     <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                     <span class="tag">&lt;<span class="title">td</span> <span class="attribute">style</span>=<span class="value">"padding: 25px 0 0 0;"</span>&gt;</span>
+                          Lorem ipsum dolor sit amet, ...
+                     <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+     <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p>这里我们使用HTML的<code>width</code>属性给图像设置宽度为列宽的100%。再次地，同样如此，如果我们的邮件是响应式，我们只需要使用媒体查询来改变父元素的宽度。我们将不得不用像素得写图像的高度，因为使用<code>style=&quot;height:auto;&quot;</code>，目前并没有所有邮件客户端都支持(如Outlook)。因此我们把它们设置固定的像素值。这也意味着，我们必须在媒体查询中使用<code>heihgt:auto !important;</code>覆盖图像的像素值，我们可以通过添加一个类来这样做。当我们设置宽度为百分比，我们不需要重新覆写。因为越少的东西需要覆盖，越更好。</p>
+<p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-11.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##脚部</p>
+<p>现在我们给脚部的行添加内距。</p>
+<pre><code><span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#ee4c50"</span> <span class="attribute">style</span>=<span class="value">"padding: 30px 30px 30px 30px;"</span>&gt;</span>
+     Row 3
+<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-12.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>在这个单元格这，我们将嵌套一个两列的表格。</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+               Column 1
+          <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+               Column 2
+          <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+     <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-13.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>接下来为社交媒体图标创建另一个小表格。设置他的父元素单元格<code>align=&quot;right&quot;</code>。确保这些链接图片设置了<code>border=&quot;0&quot;</code>(为了避免链接的蓝色边框)和不要忘记了给图片添加<code>display:block;</code>。</p>
+<pre><code><span class="tag">&lt;<span class="title">td</span> <span class="attribute">align</span>=<span class="value">"right"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+               <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.twitter.com/"</span>&gt;</span>
+                     <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"images/tw.gif"</span> <span class="attribute">alt</span>=<span class="value">"Twitter"</span> <span class="attribute">width</span>=<span class="value">"38"</span> <span class="attribute">height</span>=<span class="value">"38"</span> <span class="attribute">style</span>=<span class="value">"display: block;"</span> <span class="attribute">border</span>=<span class="value">"0"</span> /&gt;</span>
+                <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+               <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+               <span class="tag">&lt;<span class="title">td</span> <span class="attribute">style</span>=<span class="value">"font-size: 0; line-height: 0;"</span> <span class="attribute">width</span>=<span class="value">"20"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+               <span class="tag">&lt;<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.twitter.com/"</span>&gt;</span>
+                     <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"images/fb.gif"</span> <span class="attribute">alt</span>=<span class="value">"Facebook"</span> <span class="attribute">width</span>=<span class="value">"38"</span> <span class="attribute">height</span>=<span class="value">"38"</span> <span class="attribute">style</span>=<span class="value">"display: block;"</span> <span class="attribute">border</span>=<span class="value">"0"</span> /&gt;</span>
+                <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+               <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+     <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-14.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>现在我们添加文本和给这个单元格设置宽度，尽管他们之前有很多空白，但为了安全起见，将这个单元设置一个宽度为75%，其他的为25%。</p>
+<pre><code><span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"75%"</span>&gt;</span>
+     &amp;reg; Someone, somewhere 2013<span class="tag">&lt;<span class="title">br</span>/&gt;</span>
+     Unsubscribe to this newsletter instantly
+<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+</code></pre><p>到此，我们的整个布都完成了。</p>
+<p>##验证</p>
+<p>我们通过<a href="http://validator.w3.org/" target="_blank" rel="external">W3C验证器</a>进行验证，确保我们的代码没有问题。如果你代码没有问题，它会说，你已通过验证。</p>
+<p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-15.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>接下来我们通过Litmus来进行测试，以确保我们的电子邮件能正常工作。下面是我测试的总结：</p>
+<p><a href="https://litmus.com/pub/0fa600c/screenshots" target="_blank"><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-16.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+
+<p>##文本样式</p>
+<p>我们的第一行是一个标题，我们将使用<code>&lt;b&gt;</code>标签来创建加粗文本，因为大家都知道，HTML属性能解决的样式决不使用CSS样式。</p>
+<pre><code>&lt;td style="<span class="built_in">color</span>: #<span class="number">153643</span>; font-family: Arial, sans-serif; font-size: <span class="number">24</span>px;"&gt;
+     &lt;b&gt;Lo<span class="comment">rem ipsum dolor sit amet!&lt;/b&gt;</span>
+&lt;/td&gt;
+</code></pre><p>我也会给其他单元格添加内联样式，来美化文本：</p>
+<pre><code><span class="setting">style=<span class="value"><span class="string">"color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;"</span></span></span>
+</code></pre><p>接下来我们需要给页脚文本写样式，交且我们也将会整理我们的退订链接。我们同时使用CSS样式和HTML的<code>&lt;font&gt;</code>标签来修饰退订链接。使用这两种方式是最好的，确保你的链接从不出现默认的蓝色。</p>
+<pre><code><span class="tag">&lt;<span class="title">td</span> <span class="attribute">style</span>=<span class="value">"color: #ffffff; font-family: Arial, sans-serif; font-size: 14px;"</span>&gt;</span>
+     &amp;reg; Someone, somewhere 2013<span class="tag">&lt;<span class="title">br</span>/&gt;</span>
+     <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">style</span>=<span class="value">"color: #ffffff;"</span>&gt;</span><span class="tag">&lt;<span class="title">font</span> <span class="attribute">color</span>=<span class="value">"#ffffff"</span>&gt;</span>Unsubscribe<span class="tag">&lt;/<span class="title">font</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span> to this newsletter instantly
+<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-17.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>到此一切都有了，也是时间清除边框，让他看起来更漂亮。通过编辑器的“查找/替换”功能将<code>border=&quot;1&quot;</code>替找成<code>border=&quot;0&quot;</code>。</p>
+<p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-18.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>这样看上去它好像漂浮在白色的空间上，比较难看，所以我们去给第一个设置600px的表格添加：</p>
+<pre><code><span class="setting">style=<span class="value"><span class="string">"border: 1px solid #cccccc;"</span></span></span>
+</code></pre><p>现在看上去不漂移了。最后，我给第一个单元格添加了底部为30px的内距，防止我们的邮件在某些邮箱客户端(如Apple Mail)突然停止了，另外添加10px的顶部内距，让我们的页头顶部有点空间。</p>
+<pre><code>&lt;<span class="tag">td</span> style=<span class="string">"padding: 20px 0 30px 0;"</span>&gt;
+</code></pre><p><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-19.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>就是这样的！你只需要做最后的测试了。</p>
+<p><a href="https://litmus.com/pub/d675d96/screenshots" target="_blank"><img alt="从头开始构建一个HTML电子邮件模板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/build-html-email-20.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
+
+<p>##总结一下</p>
+<p>到今天为止，如果你有使用任何评论，请摆脱他们。使用评论，一些电子邮件客户端会让你窒息，所以最明智的做法就是<strong>没有必要的代码不要出现在你文件的任何地方</strong>。</p>
+<p>现在可以最后的测试，然后，你的HTML电子邮件就可以准备发送！</p>
+<p class="btns-zone"><a class="btn-demo" href="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/emailTutorial-02/index.html" target="_blank">demo</a><a class="btn-download" href="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/emailTutorial-02.zip" target="_blank">download</a></p>
+
+<p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://dev.tutsplus.com/articles/build-an-html-email-template-from-scratch--webdesign-12770" target="_blank" rel="external">http://dev.tutsplus.com/articles/build-an-html-email-template-from-scratch–webdesign-12770</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/build-an-html-email-template-from-scratch.html" target="_blank" rel="external">http://www.w3cplus.com/css/build-an-html-email-template-from-scratch.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/使用css3制作倒影.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用CSS3制作倒影
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/为什么要用和如何使用字体图标.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">为什么要用和如何使用字体图标</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

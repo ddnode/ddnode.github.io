@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>让你的网站在移动端健步如飞 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近一项 研究表明,80%的网民对移动端的浏览体验感到失望,同时,当体验提升时,他们会在智能手机上花费更多的时间。
+这不奇怪，因为64%的智能手机用户希望网站可以在4秒内加载完毕，但一半的网站花费了二倍以上的时间，达到了9秒。这篇文章会阐述一些可以使你的网站在移动端跑得更快的技术。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让你的网站在移动端健步如飞">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/让你的网站在移动端健步如飞.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="最近一项 研究表明,80%的网民对移动端的浏览体验感到失望,同时,当体验提升时,他们会在智能手机上花费更多的时间。
+这不奇怪，因为64%的智能手机用户希望网站可以在4秒内加载完毕，但一半的网站花费了二倍以上的时间，达到了9秒。这篇文章会阐述一些可以使你的网站在移动端跑得更快的技术。">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-1.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-2.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-3.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-4.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-5.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-6.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-7.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-8.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-9.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-10.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-11-1.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-12.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-13.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-14.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-15.jpg">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-16.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:35:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="让你的网站在移动端健步如飞">
+<meta name="twitter:description" content="最近一项 研究表明,80%的网民对移动端的浏览体验感到失望,同时,当体验提升时,他们会在智能手机上花费更多的时间。
+这不奇怪，因为64%的智能手机用户希望网站可以在4秒内加载完毕，但一半的网站花费了二倍以上的时间，达到了9秒。这篇文章会阐述一些可以使你的网站在移动端跑得更快的技术。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/让你的网站在移动端健步如飞" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/让你的网站在移动端健步如飞.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      让你的网站在移动端健步如飞
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一项 <a href="http://www.keynote.com/docs/reports/Keynote-2012-Mobile-User-Survey.pdf" target="_blank" rel="external">研究</a>表明,80%的网民对移动端的浏览体验感到失望,同时,当体验提升时,他们会在智能手机上花费更多的时间。</p>
+<p>这不奇怪，因为<a href="http://www.gomez.com/resources/whitepapers/survey-report-what-users-want-from-mobile/" target="_blank" rel="external">64%的智能手机用户</a>希望网站可以在4秒内加载完毕，但一半的网站花费了二倍以上的时间，达到了9秒。这篇文章会阐述一些可以使你的网站在移动端跑得更快的技术。<br><a id="more"></a></p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>##移动端用户的下载速度</p>
+<p>让我们来研究下究竟是什么影响了智能手机上的网页加载速度。</p>
+<p>最明显的原因是智能机的网速。最佳情况下，移动端用户使用3g与4g上网。在美国，57%的用户使用3g上网，27%的用户使用4g。在加拿大，4g用户更少。而在英国，4g还是新鲜事物。Pcworld的研究表明，在美国，3g平均下载速度为2mbps，4g则为6.2mbps。ofcom的研究显示，在英国3g的下载速度为2.1mbps。北美和欧洲以外的连接速度一般较慢。1mpbs可换算为122kb每秒，或者0.12mb每秒，因此以上的数据可以转换如下：</p>
+<ul>
+<li>244 KB/s 3G用户平均网速值 (0.24 MB/s)</li>
+<li>756 KB/s 4G用户平均网速值(0.76 MB/s)</li>
+</ul>
+<p>如果把上述值乘以移动用户等待时间4秒,这意味着网站对于3g用户来说最大为1mb，而4g用户为3mb。</p>
+<p>然而下载速度并不是瓶颈，<a href="http://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/" target="_blank" rel="external">网络延迟</a>及智能机的内存与cpu才是瓶颈。即使手机可以在4秒内下载完1mb，页面也要花费更长的时间去加载，因为手机需要接收并解析代码与图片。</p>
+<p>在桌面端，下载文件只占显示网站时间的20%，其余时间花费在解析http请求，获取样式表，脚本文件及图片上。由于移动端的cpu，内存与缓存跟桌面端完全无法相提并论，这些在手机上会花费更长的时间。</p>
+<p>##怎样减少加载时间</p>
+<p>构建一个快速的网站，就是一个做出艰难决定与砍掉非核心体验的过程。如果某一项需求价值不大，去掉之。这个原则适用于所有开发阶段,尤其是规划和编码时。</p>
+<ul>
+<li><strong>减少依赖文件</strong> : 更少的文件意味着更少的http请求与更快的加载时间</li>
+<li><strong>降低图片大小</strong>: 适应与调整高分辨率图片，在额外的下载时间中占居榜首，占用了宝贵的内存与处理资源。</li>
+<li><strong>减轻客户端负担</strong>: 最佳实践是重新思考你的javascript，并使之降低到最小尺寸</li>
+</ul>
+<p>##怎样减少依赖文件</p>
+<p>###怎样减少依赖文件</p>
+<p>如果你想为移动端用户隐藏图片，<code>display:none</code>与<code>visibility：hidden</code>是不能阻止文件下载的。测试下面的代码：</p>
+<pre><code>&lt;<span class="tag">div</span> style=<span class="string">"display:none;"</span>&gt;
+       &lt;<span class="tag">img</span> src=<span class="string">"logo-none.png"</span> /&gt;
+&lt;/div&gt;
+
+&lt;<span class="tag">div</span> style=<span class="string">"visibility:hidden;"</span>&gt;
+       &lt;<span class="tag">img</span> src=<span class="string">"logo-hidden.png"</span> /&gt;
+&lt;/div&gt;
+</code></pre><p>你可以观察下面的瀑布图，图片容器设置<code>display: none</code>或<code>visibility: hidden</code>后仍然会被下载。</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>替代方案是利用css加载背景图片，之后利用media query媒体查询来通过条件隐藏图片。这个技术最初被<a href="http://blog.cloudfour.com/css-media-query-for-mobile-is-fools-gold/" target="_blank" rel="external">Jason grigsby测试</a>过，之后被<a href="http://timkadlec.com/2012/04/media-query-asset-downloading-results/" target="_blank" rel="external">tim kandlec进一步拓展</a>。<a href="http://www.amazon.com/gp/aw/d/0345535421" target="_blank" rel="external">亚马逊独立的移动端页面</a>使用了此种技术，根据设备来条件加载特定的图片。</p>
+<pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">600px</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">display</span>:<span class="value">none</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">601px</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image1.jpg)</span></span>;
+           }</span>
+    }
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"image"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>你可以看到图片不加载的瀑布图：</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>###保持最小数量的外联样式表</p>
+<p>如果你已经根据断点来加载分开的样式表，你需要仔细思考这样的做法了。我们测试了以下的代码：</p>
+<pre><code><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"extra-small.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">media</span>=<span class="value">"screen and (max-width: 390px)"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"small.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">media</span>=<span class="value">"screen and (min-width: 391px) and (max-width: 500px)"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"medium.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">media</span>=<span class="value">"screen and (min-width: 501px) and (max-width: 767px)"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"large.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">media</span>=<span class="value">"screen and (min-width: 768px)"</span> /&gt;</span>
+</code></pre><p>你可以看到这四个样式表在竖屏下(portrait mode)都被加载了.</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>因此无论如何这些样式表都会被夹在，你需要把这些文件合并在一个文件里，减少http请求。另一种方法，你可以通过后端处理，通过判断设备来自动插入样式表。  (这种方式在<a href="http://wordpress.com/" target="_blank" rel="external">wordpress.com</a>的响应式网站中使用过)。</p>
+<p>另一种方案可以使用内部样式。亚马逊独立的移动产品页面有一个6 KB大小的外部样式表,连同一些内部样式。这只需要通过一个额外的HTTP请求来下载所有的页面样式。亚马逊的桌面版本并不是很高效,带有9个外部样式表,总共40 KB。</p>
+<p>###利用CSS3代替图片</p>
+<p>圆角，阴影，渐变填充等，这些样式不需要使用图片，可以减少http请求，加快加载时间。</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>Css3可以减少http请求，但增加了处理负荷。我们创建了一系列的html文件，每个文件包含一个基本的css3特性。参考下面的图表，你可以发现css3带来的处理时间很小，但不能不考虑。特别注意<code>box-shadow</code>对处理时间的影响最大。</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>###DATAURI来代替图片与WEB字体文件</p>
+<p><a href="http://en.wikipedia.org/wiki/Data_URI_scheme" target="_blank" rel="external">Data uri方案</a>可以不使用任何额外资源就可以向html及css中插入内容。这个技术可以在web页面中插入任何内容，通常被用于插入图片及web字体文件。这个技术最大的好处是可以减少http请求。</p>
+<p>Data uri使用很简单，你可以按照下面的格式，使用base64编码过的数据直接插入html与css中代替图片文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:[MIME-type][;charset=encoding][;base64],[data]</span><br></pre></td></tr></table></figure>
+<p>举个例子，下面的小图标就是用data uri创建的:</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-7.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>代码在这：</p>
+<pre><code>&lt;<span class="tag">img</span> alt=<span class="string">""</span> src=<span class="string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACI0lEQVQoz2P48/bFX1Tw58vn3/dv/rp56dfD238+vocIfl029UOC3dsgS4Y/nz4gq/794sm3VbO+zmr/MqX+S1/l597yb2vn/rpx6VN14od4+3cBRgx/vn9F1vB9/+bPPeVfJlZ/6S793JwDVPcxL/BjQeiHFNf3cbbvgw0Z4JZCwM/Lpz81Zn2qS/1Ul/apOv5jUfiHbP8PSc7vY23fh5m+C9JjALoVzQ8/zx7+0lH4IcvnQ4bXhwzPD8muINXhZu+C9N/56zB8mdr49/cfdH9/fPdj36bPLbkgpYH670KNQaoDdV47aTK8j7H+tmXpX6zg95+f545+7ix656PxzlP5jaf2c2M1hvcRZu8jzb4umfrn6xfs2v78+XFkx9sI2+fass8N1Rje+eu/dtR+YaD0Jj70296df3/+xKrr593bL91tnmnJMbwwVXtuoAbU+kxD5pmu4pvYkK9rVvz58B5Tz7dd257pKDAAlT43giEDFZA2NclXAe5fN60DOgZFx48fb6ICGRCqIchY/bmhKkibivinOdPRLPnQ1cwAUqGrCFQBVIes7ZmmzEtni9+vXiFr+DR9IsMzHfnXIV5vs5OeqUs/05B+rqcIdBhQ81M1yRfW+r+fPUHRMLWfAejir+tWATlf1ix/HR34wlL3ub7Scx2F56Yan6ZPQnPS+6oihlc+Tr/fv4OG+Levv+7d+X700PeDe3/dv4um+tfjhy9drQDa2DKqOJhVKgAAAABJRU5ErkJggg=="</span> /&gt;
+</code></pre><p>Wordpress.com的响应式网站使用这个技术插入了图片及字体。<a href="http://www.bostonglobe.com/" target="_blank" rel="external">波士顿环球报的响应式网站</a>也使用了这个技术，他们的网站在智能手机上，四秒内就加载完毕了。</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-8.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>使用这项技术，从此不用为外部图片及字体文件劳心费神。也需要测试与比较是否值得应用这项技术来代替传统方式。</p>
+<p>###可缩放矢量图形(SVG)而不是图片</p>
+<p>就像data URIs,<a href="http://en.wikipedia.org/wiki/Scalable_Vector_Graphics" target="_blank" rel="external">可缩放矢量图形</a>(SVG)可以被嵌入到一个页面来减少HTTP请求数。例如,下面的图片是一个内联SVG:</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-9.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>这是代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;svg version=&#34;1.1&#34; id=&#34;drop&#34; x=&#34;0px&#34; y=&#34;0px&#34;&#10;   width=&#34;17.812px&#34; height=&#34;28.664px&#34;&#10;   viewBox=&#34;296.641 381.688 17.812 28.664&#34;&#10;   enable-background=&#34;new 296.641 381.688 17.812 28.664&#34;&#10;   xml:space=&#34;preserve&#34;&#62;&#10;&#60;path fill=&#34;#EE1C4E&#34; d=&#34;M314.428,401.082c-0.443-5.489-5.146-9.522-7&#10;.52-14.186c-0.816-1.597-1.352-5.208-1.352-5.208 s-0.555,3.792-1.388&#10;,5.425c-2.233,4.371-7.127,8.999-7.507,14.047c-0.36,4.794,4.101,9.191&#10;,8.896,9.191 C310.49,410.354,314.816,405.941,314.428,401.082z&#34;/&#62;&#10;&#60;/svg&#62;</span><br></pre></td></tr></table></figure>
+<p>SVG文件可以通过一个矢量图形编辑器,如Adobe Illustrator创建。一旦创建,在文本编辑器中打开文件并把其代码拷贝出来(减去任何不必要的数据)。</p>
+<p>上面的代码在HTML文件中会生效，,但不会在样式表中生效。若在一个样式表中嵌入SVG文件,需要先将它转换为一个数据URI。如果这样做，我们需要从编辑器中(一定要包括元数据)拷贝出,用base64编码,然后使用以下格式嵌入样式表:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:image/svg+xml[;base64],[data]</span><br></pre></td></tr></table></figure>
+<p>这是代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0i&#10;MS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx&#10;1c3RyYXRvciAxNS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOi&#10;A2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL&#10;0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8x&#10;LjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzE&#10;iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Im&#10;h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3a&#10;WR0aD0iMTcuODEycHgiIGhlaWdodD0iMjguNjY0cHgiIHZpZXdCb3g9IjI5Ni42NDEg&#10;MzgxLjY4OCAxNy44MTIgMjguNjY0Ig0KCSBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDI&#10;5Ni42NDEgMzgxLjY4OCAxNy44MTIgMjguNjY0IiB4bWw6c3BhY2U9InByZXNlcnZlIj&#10;4NCjxwYXRoIGZpbGw9IiNFRTFDNEUiIGQ9Ik0zMTQuNDI4LDQwMS4wODJjLTAuNDQzL&#10;TUuNDg5LTUuMTQ2LTkuNTIyLTcuNTItMTQuMTg2Yy0wLjgxNi0xLjU5Ny0xLjM1Mi01&#10;LjIwOC0xLjM1Mi01LjIwOA0KCXMtMC41NTUsMy43OTItMS4zODgsNS40MjVjLTIuMjM&#10;zLDQuMzcxLTcuMTI3LDguOTk5LTcuNTA3LDE0LjA0N2MtMC4zNiw0Ljc5NCw0LjEwMS&#10;w5LjE5MSw4Ljg5Niw5LjE5MQ0KCUMzMTAuNDksNDEwLjM1NCwzMTQuODE2LDQwNS45N&#10;DEsMzE0LjQyOCw0MDEuMDgyeiIvPg0KPC9zdmc+DQo=);</span><br></pre></td></tr></table></figure>
+<p>###Sprites图</p>
+<p>Sprites（雪碧图）技术可以把经常使用的图片合成为一张图片，从而减少http请求。比如当你将四张图片合成到一个sprite中后，http请求从4减少到1.需要显示的图片利用<code>background-position</code>属性来控制。</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-10.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>###字体图标</p>
+<p>字体图标是利用字体文件来包含符号和图表(如Wingdings或Webdings 都是某种图标字体),可以用来代替加载一个图像文件。例如,下面的图标不是一个图像,而是Wingdings字体中的<code>“h”</code>字符:</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-11-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>Wingdings和Webdings有点过气了,现在有其他更专业的Web字体可用的,可以通过<code>font-face</code>加载。</p>
+<p>单独的Web字体,对于所有图标来讲，HTTP请求的数量可以减少到一个。如果Web字体使用数据URI(如上所述)嵌入页面，HTTP请求可以减少到零。这正是WordPress.com使用的技术。这是他们样式表中嵌入的web 字体:</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-12.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>WordPress.com访问所有这些图标,不会有任何额外的HTTP请求,因为图标通过数据URI,以Web字体的方式嵌入到WordPress的样式表中。</p>
+<p>同时,字体图标可以使用CSS3关键帧动画(这很有用，比如“加载”图标(小菊花))。　　主要的缺点是,字体图标做成的CSS sprites只能是某个纯色。亚马逊的css雪碧图包括彩色图标,因此它不能使用这种技术。</p>
+<p>如<a href="http://icomoon.io/" target="_blank" rel="external">IcoMoon</a>之类的工具可以很方便的建立一个自定义Web字体。所需要的只是每个图标的SVG文件。</p>
+<p>###避免内联<code>iframe</code></p>
+<p>每一个内联框架(iframe)都会生成一个HTTP请求,这是在iframe内没有另外依赖资源的情况下。这是我们做一个快速测试,比较一个iframe只含有文本。</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-13.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>包含一个iframe增加了将近0.2s的加载时间。为了保证web站点加载迅速，最好不要使用iframe。</p>
+<p>###移动先行</p>
+<p>移动先行也适用于前端开发。</p>
+<p>编码时以移动用户作为第一考虑,然后为平板电脑和桌面逐步增强,减少不必要的依赖。另外一种方式为桌面端优先,重型组件默认加载,然后为小屏幕隐藏这些组件(称为“优雅降级”)。</p>
+<p>下面例子为桌面端优先的编码:</p>
+<pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+    <span class="class">.image</span> <span class="rules">{
+           <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image1.jpg)</span></span>;
+    }</span>
+
+    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">390px</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+           }</span>
+    }
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"image"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>在上面的代码中,默认是显示图像,然后在移动设备上通过媒体查询隐藏了图片。</p>
+<p>下面的例子为移动端优先的编码:</p>
+<pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">391px</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image1.jpg)</span></span>;
+           }</span>
+    }
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"image"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>默认情况下,图片不显示,之后使用媒体查询对更大的屏幕进行渐进增强。</p>
+<p>###拆分到多个页面(单独的移动网站)</p>
+<p>保持你的核心内容在页面上,之后提供到次要内容的链接到次要内容。这将减少HTML的加载负担，同时防止相关的资源被下载。</p>
+<p>亚马逊的移动产品页面有通用的产品信息,同时提供链接到“用户评论”、“描述和细节”和“新<code>&amp;</code>使用提供。</p>
+<p>这就减少了三张图片的HTTP请求,且HTML的大小减少45 KB。</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-14.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>###保持最少重定向(单独的移动网站)</p>
+<p>亚马逊有一个重定向，来引导游客到单独的移动页面,这带来了0.4秒的延迟。与之相比,戴尔的网站有两个重定向,带来了1.2秒延迟。</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-15.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+
+<p>##如何缩小图片尺寸</p>
+<p>###响应式图片</p>
+<p>响应式图片的思路是让访客图像只下载那些最适合他们的设备的图片,对于智能手机,使用低分辨率图像,可以快速下载和渲染。</p>
+<p>亚马逊的独立的移动产品页面使用响应式图像技术,利用媒体查询分配一个特定的背景图像到一个div。这是亚马逊的代码:</p>
+<pre><code><span class="comment">&lt;!-- // This meta viewport is inserted for iPhones // --&gt;</span>
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0"</span>&gt;</span>
+
+<span class="comment">&lt;!-- // This meta viewport is inserted for the Nexus S // --&gt;</span>
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">390px</span>) </span>{
+           <span class="id">#image-container</span> <span class="rules">{
+              <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">109px</span></span></span>;
+           }</span>
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image1.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">390px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image2.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">390px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">2</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image3.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">391px</span>) and (max-width:<span class="number">500px</span>) </span>{
+           <span class="id">#image-container</span> <span class="rules">{
+              <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">121px</span></span></span>;
+           }</span>
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image4.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">391px</span>) and (max-width:<span class="number">500px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image5.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">391px</span>) and (max-width:<span class="number">500px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">2</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image6.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width: <span class="number">501px</span>) and (max-width: <span class="number">767px</span>) </span>{
+           <span class="id">#image-container</span> <span class="rules">{
+              <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">182px</span></span></span>;
+           }</span>
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image5.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width: <span class="number">501px</span>) and (max-width: <span class="number">767px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image7.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width: <span class="number">501px</span>) and (max-width: <span class="number">767px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">2</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image8.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">768px</span>) </span>{
+           <span class="id">#image-container</span> <span class="rules">{
+              <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">303px</span></span></span>;
+           }</span>
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image8.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">768px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image8.jpg)</span></span>;
+           }</span>
+    }
+    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">768px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">2</span>) </span>{
+           <span class="class">.image</span> <span class="rules">{
+              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image8.jpg)</span></span>;
+           }</span>
+    }
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"image-container"</span>&gt;</span>
+       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"image"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"image1.jpg"</span> /&gt;</span>
+       <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>尽管亚马逊在内部样式中有八个产品图片,在竖屏模式下的iPhone 4或Nexus S只有两个被下载。</p>
+<p>《波士顿环球报》的响应式网站，采用了利用不同的<code>data-fullsrc</code>来加载图片的<a href="http://www.alistapart.com/articles/responsive-images-how-they-almost-worked-and-what-we-need/" target="_blank" rel="external">响应式图像技术</a>。这是一个html标记,和一个服务器端JavaScript重定向规则的组合:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;img alt=&#34;&#34; src=&#34;mobile-size.r.jpg&#34; data-fullsrc=&#34;desktop-size.jpg&#34; /&#62;</span><br></pre></td></tr></table></figure>
+<p><code>src</code>是手机上使用的图像,确保网站默认为尺寸较小的版本(移动先行),而<code>data-fullsrc</code>是全尺寸的图像。JavaScript用来检测设备的屏幕大小,之后写入<code>cookie</code>。对于大屏幕,JavaScript利用<code>data-fullsrc</code>上的高分辨率图像替换较小的图片。服务器也使用Apache重写规则，来在图像文件的名称中检查<code>.r.</code>(mobile用的图片带有<code>.r.</code>),同时显示一个备用GIF,而不会使用较小的移动图像(从而防止手机大小的图像被下载到桌面)。</p>
+<p><a href="http://www.microsoft.com/" target="_blank" rel="external">微软</a>的响应式网站使用的斯科特·杰尔的<a href="https://github.com/scottjehl/picturefill" target="_blank" rel="external">Picturefill</a>技术:</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-picture</span> <span class="attribute">data-alt</span>=<span class="value">"Alternate text here"</span>&gt;</span>
+       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-src</span>=<span class="value">"image1.png"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-src</span>=<span class="value">"image2.png"</span> <span class="attribute">data-media</span>=<span class="value">"(min-device-pixel-ratio: 2.0)"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-src</span>=<span class="value">"image3.png"</span> <span class="attribute">data-media</span>=<span class="value">"(max-width: 539px)"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-src</span>=<span class="value">"image4.png"</span> <span class="attribute">data-media</span>=<span class="value">"(max-width: 539px) and (min-device-pixel-ratio: 2.0)"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+       <span class="tag">&lt;<span class="title">noscript</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"image1.png"</span> <span class="attribute">alt</span>=<span class="value">"Alternate text here"</span> /&gt;</span><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>注意:上面的代码片段中, <code>data-picture= &quot; &quot;</code>应该是 <code>data-picture</code>,没有= “ “。(=字符是smashing magazine的所见即所得编辑器自动插入的)。利用这种技术,JavaScript扫描页面的代码,发现包含<code>data-picture</code>属性的<code>div</code>。然后根据<code>data-media</code> 属性插入一个新的<code>img</code>标签。</p>
+<p>这些响应式图像技术的主要好处有:</p>
+<ul>
+<li>小屏幕下载低分辨率的图像,而大屏幕下载高分辨率图像;</li>
+<li>只下载所需的图片,而不需要的图片不在后台加载。</li>
+</ul>
+<p>有各种各样的其他技术实现响应式图像。你可以查看这些资源，了解更多的细节:</p>
+<ul>
+<li><a href="http://blog.cloudfour.com/responsive-imgs/" target="_blank" rel="external">Responsive IMGs</a></li>
+<li><a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/" target="_blank" rel="external">Which Responsive Images Solution Should You Use?</a></li>
+</ul>
+<p>##如何减少客户端处理</p>
+<p>###让JAVASCRIPT降到最低<br><a href="http://www.starbucks.com/" target="_blank" rel="external">星巴克</a>的响应式网站在chrome下禁用javascript后，桌面端良好的网络环境下花费了3.53秒加载完毕，而启用javascript后，花费了4.73秒，增加了34%。Javascript对加载时间的影响，在移动端较小的内存，cpu及缓存下会表现得更明显。通常，我们要重新思考javascript的使用，并保持其在最小尺寸。<br>一个很好的例子是<a href="http://www.bbc.co.uk/mobile" target="_blank" rel="external">BBC</a>移动网站的JavaScript。网站不使用外部JavaScript文件——都是内联。内联脚本仅限于几行，没有显著影响内存,HTML文件和所有内联JavaScript花费0.78秒加载完毕。就像BBC那样,亚马逊的移动产品页面也没有外部JavaScript文件,而使用最少的内联脚本。HTML文件和所有内联JavaScript花费0.75秒加载完毕。</p>
+<p>(请注意,jQuery不是一个轻量的替代方案,事实上是jquery本身的补充。)这两个网站在iPhone 4下均在4秒内加载完毕。使用一个JavaScript框架前,考虑它是否真的有必要。在某些情况下,使用少量的JavaScript比调用一个框架更有效。</p>
+<p>###避免组件</p>
+<p>组件对实际加载时间的影响是灾难性的。为了验证这一点,我们创建了一系列简单的HTML文件,每个文件包含默认的嵌入代码,一个小部件。你可以看到下面的结果多糟糕。注意,这不是一个完美的测试,因为这些都是在模拟环境中的可控实验,不过结果比较有意思。</p>
+<p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-16.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+
+<p>在单个页面中，结合他们为一个小部件，结果只包含这个部件的情况下，加载时间长达4秒。</p>
+<p>##服务器端(后端)技术</p>
+<p>除了优化前端,服务器端技术也可以用来加速加载时间。这些技术都值得考虑,但不会在本文中介绍:</p>
+<ul>
+<li>缓存HTTP重定向来加速重复访问;</li>
+<li>合并HTTP重定向链来减少重定向;</li>
+<li>使用HTTP压缩来减少数量的字节(Gzip或缩小)。</li>
+</ul>
+<p>##测试移动设备上的性能</p>
+<p>由于移动设备的不可预知性,测试多个设备上的性能是很重要的。这里有一些免费的性能测试工具:</p>
+<ul>
+<li><a href="http://mobitest.akamai.com/m/index.cgi" target="_blank" rel="external">Mobitest</a>,Akamai：可以对对iPhone 4的 iOS 5.0,iPhone 3 g和Nexus S  生成瀑布图和HAR文件 .注意Nexus S测试结果与我们自己的内部测试不一致。我们的服务器访问日志显示，当我们测试实际安卓2。x设备时产生了更少的HTTP请求。</li>
+<li><a href="https://developers.google.com/chrome-developer-tools/docs/network" target="_blank" rel="external">“Network Panel,”</a> Chrome Developer Tools</li>
+</ul>
+<p>##结论</p>
+<p>为了满足移动用户的高期望,你需要对网站针对移动设备进行优化,在4秒或更少的时间里加载完毕。最好的方式来达到4秒这个魔术时间，是通过减少JavaScript和优化HTML、CSS和图像，保持智能手机上最少的处理负荷。</p>
+<p>使用上面介绍的技术,你就可以自己建立一个符合潮流的移动互联网体验!你有什么要补充的吗?在评论中让我们知道。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4><br>        关于玖玖</h4><br><p>某创业团队前端负责人，关注javascript应用与数据可视化。个人<a href="http://99jty.com/" target="_blank">博客</a>、<a href="http://weibo.com/serendipity9" target="_blank">新浪微博</a>和<a href="https://github.com/jtyjty99999" target="_blank">Github</a>，欢迎与同学一起共勉。</p><br></blockquote>
+
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://mobile.smashingmagazine.com/2013/04/03/build-fast-loading-mobile-website/" target="_blank" rel="external">http://mobile.smashingmagazine.com/2013/04/03/build-fast-loading-mobile-website/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/performance/build-fast-loading-mobile-website.html" target="_blank" rel="external">http://www.w3cplus.com/performance/build-fast-loading-mobile-website.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/初学foundation之使用sass和compass配置foundation.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          初学Foundation之使用Sass和Compass配置Foundation
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/终极flexbox属性查询列表.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">终极Flexbox属性查询列表</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

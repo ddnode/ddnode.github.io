@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式设计：响应图像 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是《Understanding Responsive Web Design》系列教程中的第一篇。本文中，我将展示当一个web开发人员在创建响应式网站时都会遇到的典型问题：对图像的处理。或许你已知道，移动终端开发者面临的挑战是多不胜数的，使得图像适应多种屏幕尺寸无疑是最大的困难之一。现在有三种方案可供开发人员去选择开发响应式图像：与浏览器‘对抗’、放弃它、或者依赖服务器。接下来，我们去了解每种方案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式设计：响应图像">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/响应式设计：响应图像.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="这是《Understanding Responsive Web Design》系列教程中的第一篇。本文中，我将展示当一个web开发人员在创建响应式网站时都会遇到的典型问题：对图像的处理。或许你已知道，移动终端开发者面临的挑战是多不胜数的，使得图像适应多种屏幕尺寸无疑是最大的困难之一。现在有三种方案可供开发人员去选择开发响应式图像：与浏览器‘对抗’、放弃它、或者依赖服务器。接下来，我们去了解每种方案">
+<meta property="og:updated_time" content="2014-09-20T13:38:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式设计：响应图像">
+<meta name="twitter:description" content="这是《Understanding Responsive Web Design》系列教程中的第一篇。本文中，我将展示当一个web开发人员在创建响应式网站时都会遇到的典型问题：对图像的处理。或许你已知道，移动终端开发者面临的挑战是多不胜数的，使得图像适应多种屏幕尺寸无疑是最大的困难之一。现在有三种方案可供开发人员去选择开发响应式图像：与浏览器‘对抗’、放弃它、或者依赖服务器。接下来，我们去了解每种方案">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/响应式设计：响应图像" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/响应式设计：响应图像.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式设计：响应图像
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是《<a href="http://www.sitepoint.com/series/understanding-responsive-web-design/" target="_blank" rel="external">Understanding Responsive Web Design</a>》系列教程中的第一篇。本文中，我将展示当一个web开发人员在创建响应式网站时都会遇到的典型问题：对图像的处理。或许你已知道，移动终端开发者面临的挑战是多不胜数的，使得图像适应多种屏幕尺寸无疑是最大的困难之一。现在有三种方案可供开发人员去选择开发响应式图像：与浏览器‘对抗’、放弃它、或者依赖服务器。接下来，我们去了解每种方案的优点与缺点。<br><a id="more"></a></p>
+<p>##与浏览器对抗</p>
+<p>大部分前端开发人员会选择第一种：与浏览器对抗。这又代表什么意思呢？意思就是尽你最大的努力在浏览器加载“错的”图像（“默认的”或者原本显示在电脑上的图像版本）之前就提供“对的”图像（图像拥有确切的尺寸显示在移动终端的浏览器中）。但这种方案会在实践中难度不断增大，因为用户尝试尽可能快地加载图片。</p>
+<p>##放弃</p>
+<p>有时候，最简单最合适的方案只有一种选择：设置默认值。一般来说，这个方案使得在小的屏幕 也会加载默认的图片；其次，也可以在大的屏幕上加载更大的图片。虽然这种方案是简单、直观，但是不值得推荐的。因为在刚才说的第二种情况下，两条请求都相应到浏览器，但是只有一条是有用的。</p>
+<p>##依赖服务器</p>
+<p>服务于用户的服务器是第三种方案的主角，一种服务器端编程语言和某些基本形式的检测可以决定加载哪些图像。所有的逻辑在浏览器加载成功和解析HTML代码之前就会被执行。不幸的是，这种方案本身有缺陷：面对不断增长的移动终端设备和屏幕尺寸，维护操作就会变得非常复杂，并需要一定的维护成本。</p>
+<p>为了让你更好地理解这是一种怎样的技术和如何使用，下面我将使用PHP的例子，但别担心，这例子不是想说明你必须使用PHP才能创建响应式图像。尽管你没有学习过PHP，你还是会理解这个例子。假设你动态地创建一个页面，使用如下代码在页面插入<code>&lt;img&gt;</code>标签元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;&#60;img src=&#34;heavy-image.png&#34; /&#62;&#39;;</span><br></pre></td></tr></table></figure>
+<p>你可能已经知道，移动终端连接到网络的上网速度远不如电脑。因此，为了加快页面的渲染速度，插入更小版本的图片会更加有利…例如iPhone手机，你可以服务器端在请求检查是否iPhone手机，若是，则发送更小的图片。演示代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (strpos($_SERVER[&#39;HTTP_USER_AGENT&#39;], &#39;iPhone&#39;) === false) &#123;&#10;  // Not an iPhone&#10;  echo &#39;&#60;img src=&#34;heavy-image.png&#34; /&#62;;&#10;&#125;&#10;else &#123;&#10;  // An iPhone&#10;  echo &#39;&#60;img src=&#34;light-image.png&#34; /&#62;;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面的代码可以看到，这种方法是很容易实现的，但是，这种方法是不可靠的，原因是user-agent的本身信息不是100%可靠的。如果，这种方法失效了，可能你还会面临其他问题。</p>
+<p>##有一种方案比其他的都要好</p>
+<p>很明显，每种方案都自己独特的优势及局限性，单一的方案不能成为你所有的移动项目的最佳选择。尽管这样，开发人员还是可以使用一些额外的技术来创建响应式图像。</p>
+<p>###Sencha.io Src</p>
+<p>这种方案在操作起来是简单且迅速的。它是由James Pearce开发，应用于你选择的图片，可以适应你额外的需要。它的名字是Sencha.io Src，使用方法如下：</p>
+<pre><code>&lt;<span class="tag">img</span> src=<span class="string">"http://src.sencha.io/http://mysite.com/images/my-image.jpg"</span> /&gt;
+</code></pre><p>这种技术还可以把图片缓存在本地，这样子当页面下次加载时，保证图片不会再加载了。</p>
+<p>##自适应图像</p>
+<p>Matt Wilcox 则提出了类似的解决方案。内容包括，首先确定屏幕的大小，然后创建(缓存)一张可缩放的正确图像尺寸版本。这是一种合适可使现有的网站实现响应式图片的方案。下载源码后(在<a href="http://adaptive-images.com/" target="_blank" rel="external">adaptive-images.com</a>可以找到)，为了使该方案操作和正常运行，需要遵循如下三个简单的步骤:</p>
+<ol>
+<li>把<code>.htaccess</code>和<code>adaptive-images.php</code>这个文件放在根目录下；</li>
+<li>创建一个可写入的缓存文件夹；</li>
+<li><p>在<code>&lt;head&gt;</code>里添加如下代码行：</p>
+  <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
+
+
+</li>
+</ol>
+<p>这行代码的作用就是获取到屏幕宽高的最大值并使用cookie存储起来。可以<code>adaptive-images.php</code>文件中配置多个选项，主要目的是设置变量resolutions（<code>$resolutions</code>）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$resolutions = array (800, 480, 320);</span><br></pre></td></tr></table></figure>
+<p>这些resolutions是根据屏幕分辨率(像素)的宽度来衡量的图像“断点”。这个工具会小的屏幕中输出320px，或者更小、适合移动终端的图像。如果屏幕超过320像素，值会重新赋值480，就像不断地向数组中获取下一个元素值。</p>
+<p>一旦创建，这些图像就会被存储在缓存文件中（你可以修改文件名），之后就不再需要重新生成它们。</p>
+<p>另外，我想强调的是对自适应图像讨论的关键是它们的尺寸。这是一个很重要的因素，但是我们经常忘记它并不是唯一的一个因素。例如，在更小的屏幕中调整图像大小会损失图片质量和影响图像的识别。在这些情况下，可能需要修改图像。即使一些多余边界超出边缘，一些简单的剪裁可以帮助图像保留它在一个更小的屏幕中的影响和意义。</p>
+<p>##总结</p>
+<p>在本文中，我从响应式设计的角度介绍了三种处理图像的方案。第一种就是与浏览器对抗——尽最大的努力给浏览器最佳的图像去下载。第二种就是选择第三方插件，例如Sencha.io就是通过请求字符串来检查并决定返回正确的图像。第三种就是自适应图像——在这种情况下，开发者需要确定屏幕的尺寸，然后图片就会自适应。</p>
+<p>在上面讨论的三种方案中，自适应图像可以是最好的解决方案，原因是它不需要依赖其他的网站或者链接。在下一篇文章中，我们将研究开发人员可以用来管理一个响应式网站上的所有图像的其他方案。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote>
+<p>##关于Spy<br>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：<a href="http://pigerla.com/" target="_blank" rel="external">个人博客</a>,<a href="http://weibo.com/52spy1314" target="_blank" rel="external">新浪微博</a>。</p>
+</blockquote>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://www.sitepoint.com/understanding-responsive-web-design-how-to-manage-images" target="_blank" rel="external">http://www.sitepoint.com/understanding-responsive-web-design-how-to-manage-images/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/responsive/understanding-responsive-web-design-how-to-manage-images.html" target="_blank" rel="external">http://www.w3cplus.com/responsive/understanding-responsive-web-design-how-to-manage-images.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/响应式设计：概念与运用.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          响应式设计：概念与运用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/响应式网页字体图标.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式网页字体图标</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

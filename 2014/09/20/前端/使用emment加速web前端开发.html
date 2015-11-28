@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Emment加速Web前端开发 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Emment插件以前被称作为Zen Coding，是一个文本编辑器的插件，它可以帮助您快速编写HTML和CSS代码，从而加速Web前端开发。早在2009年，Sergey Chikuyonok写过一篇文章，提出编写HTML和CSS的新方法。这一革命性的插件指的就是Zen Coding，经过很多开发者多年来的努力与帮助，现在已达到了一个新的水平。也就是今天所说的Emment插件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Emment加速Web前端开发">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/使用emment加速web前端开发.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="Emment插件以前被称作为Zen Coding，是一个文本编辑器的插件，它可以帮助您快速编写HTML和CSS代码，从而加速Web前端开发。早在2009年，Sergey Chikuyonok写过一篇文章，提出编写HTML和CSS的新方法。这一革命性的插件指的就是Zen Coding，经过很多开发者多年来的努力与帮助，现在已达到了一个新的水平。也就是今天所说的Emment插件。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-1.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-dtd.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-2.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-3.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-4.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-climb-up.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-5.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-21.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-6.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-22.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-23.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/emment-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-13.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-14.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-15.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-16.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-17.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-18.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-19.gif">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-20.gif">
+<meta property="og:updated_time" content="2014-09-20T13:42:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Emment加速Web前端开发">
+<meta name="twitter:description" content="Emment插件以前被称作为Zen Coding，是一个文本编辑器的插件，它可以帮助您快速编写HTML和CSS代码，从而加速Web前端开发。早在2009年，Sergey Chikuyonok写过一篇文章，提出编写HTML和CSS的新方法。这一革命性的插件指的就是Zen Coding，经过很多开发者多年来的努力与帮助，现在已达到了一个新的水平。也就是今天所说的Emment插件。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/使用emment加速web前端开发" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/使用emment加速web前端开发.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用Emment加速Web前端开发
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://emmet.io/" target="_blank" rel="external">Emment</a>插件以前被称作为<strong><a href="http://www.w3cplus.com/blog/32.html" target="_blank" rel="external">Zen Coding</a></strong>，是一个文本编辑器的插件，它可以帮助您快速编写HTML和CSS代码，从而加速Web前端开发。早在2009年，Sergey Chikuyonok写过一篇<a href="http://coding.smashingmagazine.com/2009/11/21/zen-coding-a-new-way-to-write-html-code/" target="_blank" rel="external">文章</a>，提出编写HTML和CSS的新方法。这一革命性的插件指的就是Zen Coding，经过很多开发者多年来的努力与帮助，现在已达到了一个新的水平。也就是今天所说的Emment插件。<br><a id="more"></a><br>在这篇文章中，我们将要学习如何使用Emment语法来生成HTML和CSS代码。</p>
+<p>##安装Emment插件</p>
+<p>Emment只是文本编辑器一个插件，要想让他发挥应用的功能，就得将其安装到你喜欢的文本编辑器中。到目前为止，很多流行的文本编辑器都支持Emment插件，也就是说很多流行的文本编辑器都可以安装这款插件。</p>
+<p>点击下面的链接，按照说明文档可以给对应的文本编辑器安装Emment插件：</p>
+<ul>
+<li><a href="https://github.com/sergeche/emmet-sublime#readme" target="_blank" rel="external">Sublime Text</a></li>
+<li><a href="https://github.com/emmetio/emmet-eclipse#readme" target="_blank" rel="external">Eclipse</a></li>
+<li><a href="https://github.com/emmetio/Emmet.tmplugin#readme" target="_blank" rel="external">TextMate</a></li>
+<li><a href="https://github.com/emmetio/Emmet.codaplugin#readme" target="_blank" rel="external">Coda</a></li>
+<li><a href="https://github.com/emmetio/Emmet.sugar#readme" target="_blank" rel="external">Espresso</a></li>
+<li><a href="https://github.com/sergeche/emmet.chocmixin#readme" target="_blank" rel="external">Chocolat</a></li>
+<li><a href="https://github.com/emmetio/npp#readme" target="_blank" rel="external">Notepad++</a></li>
+<li><a href="https://github.com/emmetio/brackets-emmet#readme" target="_blank" rel="external">Brackets</a></li>
+<li><a href="https://github.com/emmetio/netbeans#readme" target="_blank" rel="external">NetBeans</a></li>
+<li><a href="https://github.com/emmetio/dreamweaver#readme" target="_blank" rel="external">Adobe Dreamweaver</a></li>
+</ul>
+<p>##它是如何工作的？</p>
+<p>在Web前端开发中，我们不得不面对一个残酷的现实。在写HTML代码时需要一定的时间，因为我们要花大把的时间写HTML标签，属性，引号等；同样在编写CSS时，我们要写很多的属性、属性值，大括号和分号等。当然，大多数的文本编辑器都或多或少带有代码自动提示功能，在开发之时，帮了很大的忙，但仍然需要人工输入很多代码。而Emment插件，集成了很多缩写，大家在开发时只需要输入简单的缩写，按<code>tab</code>键或<code>ctrl+E</code>键就能扩展出所需的代码片段。</p>
+<p>##Emment和HTML</p>
+<p>假定你已经为您自己喜欢的文本编辑器成功的安装好了Emment插件，接下来我们来简单的看看如何使用Emment帮助您快速编写您的HTML标签。</p>
+<p>Emment使用定义的缩写来生成元素。他的语法和CSS的选择器非常类似：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul&#62;li&#62;img+p</span><br></pre></td></tr></table></figure>
+<p>一旦你写好缩写之后，按一下<code>tab</code>键(我使用的是Sublime Text编辑器)就能生成你所请求的代码。上面的例子将会产生下面的代码：</p>
+<pre><code><span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</code></pre><p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-1.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>早前在《<a href="http://www.w3cplus.com/tools/emmet-cheat-sheet.html" target="_blank" rel="external">前端开发必备！Emmet使用手册</a>》一文中详列了Emment生成HTML代码的一些代码示例。接下来，让我们来深入一点了解Emment语法，来看看如何通过一些更复杂的缩写创建HTML标签。</p>
+<p>###创建初始文档</p>
+<p>任何一个HTML文件，都具有一些默认的文档结构。使用Emment来创建需要的时间不到一秒。只要输入<code>!</code>或<code>html:5</code>，然后点击<code>tab</code>键，你就会看到一个HTML5的<code>doctype</code>默认标签。</p>
+<ul>
+<li><code>html:5</code>或<code>!</code>：HTML5文档类型</li>
+<li><code>html:xt</code>：XHTML过渡型文档类型</li>
+<li><code>html:xs</code>：XHTML严格型文档类型</li>
+<li><code>html:4t</code>：HTML4过渡型文档类型</li>
+<li><code>html:4s</code>：HTML4严格型文档类型</li>
+</ul>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-dtd.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###子元素<code>&gt;</code></p>
+<p>使用<code>&gt;</code>运算符可以用来生成彼此嵌套的元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">section&#62;div&#62;p</span><br></pre></td></tr></table></figure>
+<p>上面的代码会生成下面的代码：</p>
+<pre><code><span class="tag">&lt;section&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+        <span class="tag">&lt;p&gt;</span><span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span>
+</code></pre><p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-2.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###相邻元素<code>+</code></p>
+<p>使用<code>+</code>运算符可以用来生成彼此相邻的元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">section+div+p</span><br></pre></td></tr></table></figure>
+<p>上面代码会生成下面的代码：</p>
+<pre><code><span class="tag">&lt;section&gt;</span><span class="tag">&lt;/section&gt;</span>
+<span class="tag">&lt;div&gt;</span><span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;p&gt;</span><span class="tag">&lt;/p&gt;</span>
+</code></pre><p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-3.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###返回上一层<code>^</code></p>
+<p>使用<code>^</code>运算符，可以让你的代码返回上一层。当你使用<code>&gt;</code>嵌套元素时，想让后面的回到上一层，那么这个方法很适用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">section&#62;div&#62;p&#62;a^p</span><br></pre></td></tr></table></figure>
+<p>这个缩写将两个段落元素都放置在<code>div</code>内，但只有第一个段落里会包含一个链接。</p>
+<pre><code><span class="tag">&lt;<span class="title">section</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+</code></pre><p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-4.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>其实这个就相当于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">section&#62;div&#62;(p&#62;a)+p</span><br></pre></td></tr></table></figure>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-climb-up.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###乘法<code>*</code></p>
+<p>如果你想一次性生成多个相同的元素，比如列表中的li，那么就可以使用乘法运算符<code>*</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul&#62;li*5</span><br></pre></td></tr></table></figure>
+<p>上面代码会生成不个<code>li</code>：</p>
+<pre><code><span class="tag">&lt;ul&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span>
+</code></pre><p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-5.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>除了能一次性生成多个相同的标签之外，我们还可以通过<code>$</code>符号做递增；通过<code>$@-</code>符号做递减；通过<code>$@3*5</code>这样的方式从第三个开始命名：</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-21.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###组合</p>
+<p>为了更有效的利用嵌套，我们常会制作一些代码片段。在Emment中你可以通过<code>()</code>将一个块组合在一起，来看一个简单的示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul&#62;(li&#62;a)*3</span><br></pre></td></tr></table></figure>
+<p>上面的代码就会生成3个<code>li</code>，而且每个<code>li</code>中套了一个<code>a</code>:</p>
+<pre><code><span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</code></pre><p>在我们一个页面中，常会包括页头、主体和页脚三个部分，我们很多时候就可以通过对全们进行一个组合，快速生成有效的代码：</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-6.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###快速添加类名、ID、文本和属性</p>
+<p>在Emment中，还有一个功效，能快速帮助你添加类名、ID、文本和属性。</p>
+<ul>
+<li>使用<code>E#ID</code>添加ID名</li>
+<li>使用<code>E.class</code>添加类名</li>
+<li>使用<code>E[attr]</code>添加属性</li>
+<li>使用<code>E{text}</code>添加文本</li>
+</ul>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-22.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###省略标签名</p>
+<p>在Emment中可以省略标签名，默认情况下，如<code>.item</code>和<code>div.item</code>起到的作用是一致的<code>&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</code>。在实际中还有几种情况：</p>
+<ul>
+<li><code>ul</code>和    <code>ol</code>中输入指的是<code>li</code></li>
+<li><code>table</code>、<code>tbody</code>、<code>thead</code>和<code>tfoot</code>指的是<code>tr</code></li>
+<li><code>tr</code>中指的是<code>td</code></li>
+<li><code>select</code>和<code>optgroup</code>指的是<code>option</code></li>
+</ul>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-23.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<blockquote>
+<p>Emment和HTML更详尽的介绍可以阅读：<a href="http://blog.teamtreehouse.com/author/mattwest" target="_blank" rel="external">Matt West</a>的《<a href="http://blog.teamtreehouse.com/using-emmet-speed-front-end-web-development" target="_blank" rel="external">Using Emmet to Speed Up Front-End Web Development</a>》、<a href="http://coding.smashingmagazine.com/author/zeno-rocha" target="_blank" rel="external">Zeno Rocha</a>的《<a href="http://coding.smashingmagazine.com/2013/03/26/goodbye-zen-coding-hello-emmet/" target="_blank" rel="external">Goodbye, Zen Coding. Hello, Emmet!</a>》和<a href="http://www.w3cplus.com/blogs/pet" target="_blank" rel="external">白牙</a>的《<a href="http://www.w3cplus.com/tools/emmet-cheat-sheet.html" target="_blank" rel="external">前端开发必备！Emmet使用手册</a>》</p>
+</blockquote>
+<p>##Emment和CSS</p>
+<p>很多文章都是介绍Emment和HTML之间的实现方式，但<a href="http://webdesign.tutsplus.com/author/josh-medeski/" target="_blank" rel="external">Josh Medeski</a>的《<a href="http://webdesign.tutsplus.com/tutorials/applications/writing-turbo-charged-css-with-emmet/" target="_blank" rel="external">Turbo-Charge Your CSS With Emmet</a>》一文详细介绍了Emment和CSS之间的实现方式。接下来的代码和图片主要来自于此文章。</p>
+<p>###属性</p>
+<p>CSS提供了属性的值，比如<code>font-size</code>，<code>margin</code>和    <code>padding</code>等等：</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/emment-1.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>Emment定义了所有已知的CSS属性和缩写。所以<code>border-bottom</code>缩写是<code>bdb</code>，<code>border-top</code>缩写是<code>bdt</code>。正如下面的示例<code>font-size</code>缩写是<code>fz</code>：</p>
+<p>假设你在你的编辑器中输入<code>fz</code>，然后按一下<code>tab</code>键，Emment就像一个魔法师一样将缩写变成有效的CSS，并且放在你的光标之处。</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-13.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###属性值</p>
+<p>现在我们已经了解了CSS的属性，它只需要添加一个值。这是通过一个组合缩写和所需要的值一起来完成。例如，<code>fz18</code>将输出<code>font-size:18px</code>。你不需要输入<code>px</code>，因为Emment将会其单位是<code>px</code>。如果一个项目没有一个单位（如<code>font-weight</code>），Emment会很聪明，他不会添加像素单位。</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-14.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###单位</p>
+<p>如果你在CSS不经常使用的像素(<code>px</code>)单位，那会是什么？是<code>em</code>、<code>rem</code>、<code>%</code>、<code>ex</code>和<code>px</code>吗？那么这些单位在Emment中都是可以使用的。在Emment中每一个单位都有其缩写形式：</p>
+<ul>
+<li><code>px</code> → 默认</li>
+<li><code>p</code> → <code>%</code></li>
+<li><code>e</code> → <code>em</code></li>
+<li><code>r</code> → <code>rem</code></li>
+<li><code>x</code> → <code>ex</code></li>
+</ul>
+<p>要使用一个单位，只需要在值的后面使用缩写的单位值。下面的例子是使用<code>em</code>定义<code>font-size</code>：</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-15.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###多个单位</p>
+<p>CSS中的某些属笥，比如<code>margin</code>，允许多个值。在Emment中要做到这一点，只需要每个值之间使用破折号(<code>-</code>)。来看看下面的例子，给<code>body</code>定义<code>margin</code>的四个值：</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-16.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###颜色</p>
+<p>在Emment中使用<code>#</code>前缀，后面紧跟颜色值，但不同的字符数将会输出不同的十六进制代码。来看一些例子：</p>
+<ul>
+<li><code>＃1</code> → <code>＃111111</code></li>
+<li><code>＃E0</code> → <code>＃e0e0e0</code></li>
+<li><code>＃FC0</code> → <code>＃FFCC00</code></li>
+</ul>
+<p>下面定义通过<code>c#2</code>定义<code>body</code>的颜色值，将会输出<code>#222</code>：</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-17.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###<code>!important</code></p>
+<p>尽管在CSS中<code>!important</code>并不经常使用，但在Emment也带有一定的缩写。添加<code>!</code>就可以自动生成：</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-18.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###多属性</p>
+<p>现在我们具Emment的CSS特性的一个基本了解，也是将它们放在一起的时候。就类似于Emment和HTML中的相邻元素的功能。可以使用加号<code>+</code>运算符来创建多个属性。我们来看一个简单的示例：</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-19.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>###示例</p>
+<p>记住，你可以使用所有缩写或者将其分开。这并不是很重要，关键的是你要使用得正确，它能更容易让你编写你的CSS。这里有一个动画，他给<code>div.panel</code>创建一些样式：</p>
+<p><img alt="使用Emment加速Web前端开发" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/blogs/2013/1312/element-20.gif" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<blockquote>
+<p>以上示例代码与演示图来自于<a href="http://webdesign.tutsplus.com/author/josh-medeski/" target="_blank" rel="external">Josh Medeski</a>的《<a href="http://webdesign.tutsplus.com/tutorials/applications/writing-turbo-charged-css-with-emmet/" target="_blank" rel="external">Turbo-Charge Your CSS With Emmet</a>》一文。</p>
+</blockquote>
+<p>##总结</p>
+<p>Emment是一个强大的工具，也被称为是一款高速的编码工具，它可以让你花更少的时间做同样的事情，而无需手动创建自己的代码片段。Emment的灵感来自于CSS选择器以及可以用于所有主要的文本编辑器，以适应开发者的工作流程。</p>
+<p>请记住，你可以在你的工作流中添加任何新工具，这个学习过程也是一个曲线的过程，但你不要花费更多的时间做那些相同的事情。你只是需要定期的访问<a href="http://docs.emmet.io/cheat-sheet/" target="_blank" rel="external">Emment文档</a>，你就会慢慢熟悉Emment中HTML和CSS的所有特性。让你少想，少写，实现更多想要的代码。</p>
+<p>##参考资料</p>
+<ul>
+<li><a href="http://www.w3cplus.com/tools/emmet-cheat-sheet.html" target="_blank" rel="external">前端开发必备！Emmet使用手册</a></li>
+<li><a href="http://docs.emmet.io/css-abbreviations/" target="_blank" rel="external">Emmet CSS Documentation</a></li>
+<li><a href="http://docs.emmet.io/cheat-sheet/" target="_blank" rel="external">Emmet Cheat Sheet</a></li>
+<li><a href="http://coding.smashingmagazine.com/2013/03/26/goodbye-zen-coding-hello-emmet/" target="_blank" rel="external">Smashing Magazine Emmet Article</a></li>
+<li><a href="http://webdesign.tutsplus.com/tutorials/applications/writing-turbo-charged-css-with-emmet/" target="_blank" rel="external">Turbo-Charge Your CSS With Emmet</a></li>
+<li><a href="http://coding.smashingmagazine.com/2013/03/26/goodbye-zen-coding-hello-emmet/" target="_blank" rel="external">Goodbye, Zen Coding. Hello, Emmet!</a></li>
+<li><a href="http://blog.teamtreehouse.com/using-emmet-speed-front-end-web-development" target="_blank" rel="external">Using Emmet to Speed Up Front-End Web Development</a></li>
+</ul>
+<p>##关于更多的HTML以及CSS的缩写请查看</p>
+<p class="btns-zone"><a class="btn-demo" href="http://www.w3cplus.com/sites/default/files/baiyaimages/CheatSheet.jpg" target="_blank">下载 API表</a><a class="btn-download" href="http://docs.emmet.io/cheat-sheet/" target="_blank">直击官网文档</a></p>
+
+<p>如需转载，烦请注明出处：<a href="http://www.w3cplus.com/tools/using-emmet-speed-front-end-web-development.html" target="_blank" rel="external">http://www.w3cplus.com/tools/using-emmet-speed-front-end-web-development.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/使用grunt启动和运行.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用Grunt启动和运行
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/使用css和datauri来添加杂色滤镜效果.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用CSS和DataURI来添加杂色滤镜效果</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

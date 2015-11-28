@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式电子邮件设计 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自从Ethan Marcotte在2010年5月25日发布的《A List Apart》文章开始，响应式网页设计(RWD)讨论的热度并没有减少，但在相同的时间内我们构建电子邮件的方式并没有太多的改变。值得庆幸的是，在过去的一年，人们开始使用RWD和运用类似的方法来设计电子邮件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式电子邮件设计">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/响应式电子邮件设计.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="自从Ethan Marcotte在2010年5月25日发布的《A List Apart》文章开始，响应式网页设计(RWD)讨论的热度并没有减少，但在相同的时间内我们构建电子邮件的方式并没有太多的改变。值得庆幸的是，在过去的一年，人们开始使用RWD和运用类似的方法来设计电子邮件。">
+<meta property="og:updated_time" content="2014-09-20T13:40:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式电子邮件设计">
+<meta name="twitter:description" content="自从Ethan Marcotte在2010年5月25日发布的《A List Apart》文章开始，响应式网页设计(RWD)讨论的热度并没有减少，但在相同的时间内我们构建电子邮件的方式并没有太多的改变。值得庆幸的是，在过去的一年，人们开始使用RWD和运用类似的方法来设计电子邮件。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/响应式电子邮件设计" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/响应式电子邮件设计.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式电子邮件设计
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自从Ethan Marcotte在2010年5月25日发布的《<a href="http://alistapart.com/article/responsive-web-design" target="_blank" rel="external">A List Apart</a>》文章开始，响应式网页设计(RWD)讨论的热度并没有减少，但在相同的时间内我们构建电子邮件的方式并没有太多的改变。值得庆幸的是，在过去的一年，人们开始使用RWD和运用类似的方法来设计电子邮件。<br><a id="more"></a><br>在我们开始之前，我想向大家介绍<a href="http://www.slideshare.net/stylecampaign/responsive-email-design" target="_blank" rel="external">Anna Yeaman</a>在最近一次演讲中介绍的一些数据，我们知道我们正在处理：</p>
+<ul>
+<li>2012年上半年，近41%的电子邮件在手机上阅读</li>
+<li>仅有2%的人会在另一个设备上打开电子邮件</li>
+<li>电子邮件不能在小屏幕上优化，其转化率要低28%</li>
+<li>如果不能在小屏幕上阅读您的电子邮件，将近有三分之一的用户会退订您的信息</li>
+</ul>
+<p>既然您已经看到电子邮件是多么的重要，那么多现在开始，让我们把他们做到最好。</p>
+<p>##最基本的</p>
+<p>在我们的职业生涯中，如果我们亲手做过几个响应式的HTML电子邮件，以及分享出来，这样其他人解决这样一个相同的任务会有一个更好的起点。我不喜欢说这是所有的答案，我并不想说你要读懂什么是最好的方法，但希望这些方法可以帮助你解决问题或者说是一些最基础的东西。</p>
+<p>在开始之前，我决定找一些可以帮助我们创建第一个响应式电子邮件的帮助文档。在<a href="http://www.campaignmonitor.com/guides/mobile/" target="_blank" rel="external">Campaign Monitor</a>文档中列出了我们构建电子邮件所需要的一些帮助文档。</p>
+<p>然而随着Campaign Monitor在网站指出的的内容，以及我列出的技术并不普遍支持所有移动端上的电子邮件客户端。</p>
+<p>电子邮件显示如何从根本上改变了收件箱收邮件，但值得庆幸的是，Campaign Monitor给我们提供了电子邮件客户端对<a href="http://www.campaignmonitor.com/css/" target="_blank" rel="external">CSS的不同支持的列表</a>和<a href="http://www.campaignmonitor.com/guides/mobile#mobile-support" target="_blank" rel="external">媒体查询</a>如何支持当前的状态。</p>
+<p>##开始</p>
+<p>记住，编写电子邮件不像编写一个网页，除非是像编写一个1994年的Web页面。你可能会碰到一些问题，但只要你有足够的时间，保持引用不同的方法，你就会实现你需要的效果。</p>
+<p>##文档类型</p>
+<p>在已知的电子邮件客户端Gmail和Hotmail，会自动删除你自己定义的文档类型，他们会自动插入<code>XHTML 1.0 Strict</code>的文档类型，这样并不是一个坏主意，这样一来你可以避免任何可能发生的冲突。</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span>
+</code></pre><p>##视窗的Meta标签</p>
+<p>就像创建一个响应式的Web页面一样，第一步你就得在你的文档的<code>&lt;head&gt;</code>标签内添加一个特定的<code>&lt;meta&gt;</code>标签。没有这个meta标记，移动端浏览器将假定你在桌面环境中查看内容，并设置视窗为一个更大的宽度，因此在小屏幕的设备上会挤压页面的一切。</p>
+<pre><code><span class="tag">&lt;<span class="title">head</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+</code></pre><p>为了解决这个问题，苹果公司推出视窗的meta标签，允许你设置<a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag/" target="_blank" rel="external">五种不同状态</a>。在上面的代码片段中，我们只关心<code>device-width</code>和<code>initial-scale</code>。<code>device-width</code>设置了在你的页面加载保持初始页面的大小时，视窗的宽度设置为设备的宽度，此时你的页面布局将按1:1的规模不做任何放大效果呈现。</p>
+<p>##重置<code>body</code></p>
+<p>如果你不想在iOS邮件中呈现的内容有间距，接下来我们要做的就是将<code>body</code>标签的<code>margin</code>和<code>padding</code>的值重置为０。然后在一些移动电子邮件客户端使用<code>-webkit-text-size-adjust</code>和<code>-ms-text-size-adjus</code>禁用自动文本大小调整，其作用就是阻止设备减少/增加默认的文本大小。</p>
+<pre><code>&lt;<span class="tag">body</span> bgcolor=<span class="string">"#EAE8E4"</span> topmargin=<span class="string">"0"</span> leftmargin=<span class="string">"0"</span> marginheight=<span class="string">"0"</span> marginwidth=<span class="string">"0"</span> style=<span class="string">"height: auto; padding:0; margin:0; -webkit-text-size-adjust:none; -ms-text-size-adjust: 100%;"</span>&gt;
+</code></pre><p>最后，我们设置一个背景颜色。</p>
+<p>##构建</p>
+<p>###布局</p>
+<p>响应式设计首先绘制草图是移动端设计的最好开始，因为这可以让你更好的把握你的内容，主要的、重要的内容怎么放置。如果你需要的时候在来返工重新设计，这样会让你变得更佳笨拙。</p>
+<p>###行内样式</p>
+<p>不幸的是，即使有很多响应式设计的介绍，但我仍然离不开在元素的行内声明样式。</p>
+<pre><code>&lt;div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; display: block; font-size: <span class="number">15</span>px; <span class="built_in">color</span>: #<span class="number">4</span>D4D4D; font-weight: lighter; line-height: <span class="number">120</span>%;"&gt;Lo<span class="comment">rem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/div&gt;</span>
+</code></pre><p>###媒体查询和CSS</p>
+<p>我们规定不是行内的CSS样式，都放在<code>&lt;head&gt;</code>标签内。CSS样式放在媒体查询里面，同时使用属性选择器来避免<a href="http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-yahoo-mail-mobile-email/" target="_blank" rel="external">Yahoo电子邮件</a>客户端的一个不同寻常的故障。</p>
+<p>不同类名的属性选器也将被使用，因为一些更明显的名字在邮件客户端可能导航一些冲突和布局的混乱。最后一件是需要注意，所有声明的样式必须使用<code>!important</code>，确保这些样式优先于内联的样式。</p>
+<pre><code><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+    <span class="at_rule">@<span class="keyword">media</span> only screen and (max-device-width: <span class="number">480px</span>) </span>{
+        <span class="tag">table</span><span class="attr_selector">[class=tableContent]</span> <span class="rules">{
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">320px</span> <span class="important">!important</span></span></span>;
+        }</span>
+        <span class="tag">img</span><span class="attr_selector">[class="headerImage"]</span> <span class="rules">{
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">320px</span> <span class="important">!important</span></span></span>;
+        }</span>
+        <span class="tag">p</span><span class="attr_selector">[class="theDate"]</span> <span class="rules">{
+            <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;
+        }</span>
+    }
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+</code></pre><p>第一行使用媒体查询，将其设置为<code>max-device-width:480px</code>的断点值，这意味着，当视窗的宽度小于或等于这个尺寸时，执行里面所有的代码。虽然我们只列出了一个特定的例子，但媒体查询可以很具体，你可以<a href="http://www.w3.org/TR/css3-mediaqueries/#media1" target="_blank" rel="external">通过他们传递任意数量的值</a>。</p>
+<p>###HTML结构</p>
+<p>外容器设置一个固定宽度是为数不多的地方，这只是因为为了让桌面用户用一个更好的体验，我们需要设置一个固定的宽度。您还会注意到在我们的媒体查询中添加了一个类<code>tableContent</code>，当媒体查询生效时，将指定一个较小的屏幕。</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"center"</span> <span class="attribute">width</span>=<span class="value">"700"</span> <span class="attribute">class</span>=<span class="value">"tableContent"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">在这里插入一列或两列布局的代码</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p>上面的代码片段中是我们邮件的基础部分，你可以选择将一列或两列布局的代码嵌套到<code>&lt;td&gt;</code>中。</p>
+<p>正如我们前面提到的，当我们编写HTML电子邮件，最重要的是坚持我们多年来一直坚持的原则。通常在设计一个网站时，我们使用浮动来对齐内容，但我们应该放弃我们通常使用的<code>&lt;div align=&quot;left&quot;&gt;</code>来替代<code>&lt;div style=&quot;float:left;&quot;&gt;</code>，让内容左对齐。我们这么做是因为<code>align=&quot;left&quot;</code>和<code>cellpadding=&quot;10&quot;</code>比<code>float:left</code>和<code>padding:10px;</code>等同的效果更可靠。</p>
+<p>###单列布局</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">内容放在这里</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p>###两列布局</p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span>&gt;</span>
+
+                <span class="tag">&lt;<span class="title">table</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">width</span>=<span class="value">"320"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"left"</span>&gt;</span>
+                      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
+                        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
+                                <span class="tag">&lt;<span class="title">左列内容放在这里</span>&gt;</span>
+                              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+                      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+
+                <span class="tag">&lt;<span class="title">table</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">width</span>=<span class="value">"320"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"right"</span>&gt;</span>
+                      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
+                        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
+                                <span class="tag">&lt;<span class="title">右列的内容放在这</span>&gt;</span>
+                              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+                      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+
+              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p>在上面的例子中我们显式设置了三个宽度，在主要的容器上设置了一个100%宽度和里面的左表格和右表格分别设置了一个320px的宽度。选择320px的原因是因为iPhone的视窗大小是320px，这似乎已成为设计响应式网页一个断点的行业标准。</p>
+<p>当你在移动设备上查看两列布局的时候，两个表将会垂直排列，第二个表会显示在第一个表的下面。这是由于媒体查询，<code>tableContent</code>表格会从700px的宽度减少到320px宽度。只要表容器的宽度大于或等于两列的宽度之和，布局都将会显示的很好。</p>
+<p>如果两列之前有一个表格单元你想隐藏，您可以使用<code>display:none</code>。</p>
+<p>###排版和动作触发</p>
+<p>苹果设备文本渲染的最小尺寸是13px，因此我们在创建电子邮件时，你需要将你的最小字体设置为13px，这样才符合这些准则。为此，我给我的电子邮件的<code>body</code>设置了一个15px的值和给列表项目设置文本大小为13px。特别声明，如果你将你的字体大小设置为一个小于13px的值，那么在这些设备上运行时会增加风险，文本将会损坏你的布局。如界你没有使用<code>text-size-adjust</code>属性，更不用说，你可能会导致各种易读性问题。</p>
+<p>测试我的电子邮件时，我注意到使用<code>&lt;p&gt;</code>标签存在很多问题，所以决定不使用标签或从浏览器或客户端继承过来的任何基本样式。最后我决定使用<code>&lt;div&gt;</code>，因为当我使用一个<code>&lt;span&gt;</code>我会遇到一些间距的问题，即例我们设置他为一个块元素。</p>
+<p>我遇到了另一个问题，当我在同一个表格的行中使用两个div，而且他们设置不同样式(如字体大小)，一些移动客户端只会给一优先级和取消另一个。如果你的设计，这两个视觉上不同的文本效果在项目中都是至关重要的，那么你将不得不把它们放在单独的行中。</p>
+<p>####动作触发</p>
+<p>动作触发(CTAs)，它往往被视为电子邮件中最重要的部分，同样我们需要遵守苹果的设计指南，使用这些按钮的最小区域为44 x 44像素。</p>
+<p>有一件事我们需要注意，在电子邮件中<code>&lt;a href=&quot;&quot;&gt;</code>使用<code>padding</code>填充占击区域，在一些客户端上如你所料的，只有文本区域才有效。为了解决这个问题，我决定把背景颜色和内距设置在按钮的父元素上。虽然这不能给足够大的触击面积，但可以给用户一个错觉。在电子邮件查看中，我注意到，大多数人试图点击按钮的文本来解决这个问题。</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"background: #69BF13; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; display: inline-block; font-size: 15px; margin: 0 auto; padding: 20px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">style</span>=<span class="value">"background: #69BF13; color: #FFFFFF; text-decoration: none;"</span>&gt;</span>Centered Button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>另外就是如果在移动页面上，通过链接触发动作，有一个很好的方式就是忽略他。在没有一个成熟的标准之前，我们没有必要为每个用户去做这些事情。</p>
+<p>###图像</p>
+<p>你应该经常检查你的电子邮件的图片的开启/关闭，因为图片将会被所有用户假设是关闭的。</p>
+<p>响应图片大小，电子邮件和Web页面中实现的代码是相同的。在下面的代码中，我们告诉图像包含在一个容器中，并且使用图像的宽度一直是图片容器宽度的100%。你可能还注意到图像还设置了<code>height:auto;</code>，这主要是为了确保图像保持长宽比例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">td[class=scaleImage] img &#123;&#10;&#9;height:auto !important;&#10;&#9;width:100% !important;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>###Retina图像</p>
+<p>另一块就是苹果设备上的视网膜显示屏，iPad3+、iPhone4+和视网膜笔记本。视网膜图像的关键是创建两倍大小的相同图像，小尺寸的图像和视网膜的图像。</p>
+<p>如果我的电子邮件上想要显示一个图像，它的尺寸是320 x 320，那么对于我们的视网膜显示屏，我就应该创建相同的图像，只是尺寸为640 x 640。我们创建更大尺寸图的像，然后我们缩放到小尺寸，这样我们大图变小尺寸图能给我们提供一个高质量的图像。有两种方法你可以叫视网膜图像的电子邮件：</p>
+<p>####第一种</p>
+<p>在这种方法中，我们在电子邮件中放置小图像，然后通过媒体查询执行的时候，在视网膜显屏设备中换出视网膜图像：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-device-width: 480px) &#123;&#10;    img[class=&#34;scaleImage&#34;] &#123;&#10;        background-image: url(scaleImage-640@2x.png) !important;&#10;        background-size: 320px 320px;&#10;        width: 320px !important;&#10;        height: 320px !important;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>####第二种</p>
+<p>在这种方法中，我们实际隐藏了实际的图像，然后在图像的容器中显示视网膜图像，当然这种方法也是使用媒体查询来实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-device-width: 480px) &#123;&#10;    td[class=&#34;scaleImage&#34;] &#123;&#10;        background-image: url(scaleImage-640@2x.png) !important;&#10;        background-size: 320px 320px;&#10;        width: 320px !important;&#10;        height: 320px !important;&#10;        &#125;&#10;    td[class=&#34;scaleImage&#34;] img &#123;&#10;        display: none;&#10;        &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>####仅仅是Retina</p>
+<p>还有一种解决方案，但它需要第二个媒体查询：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media all and (min-device-pixel-ratio : 1.5) &#123;&#10;    img[class=&#34;scaleImage&#34;] &#123;&#10;        background-image: url(scaleImage-640@2x.png) !important;&#10;        background-size: 320px 320px;&#10;        width: 320px !important;&#10;        height: 320px !important;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个媒体查询中没有设置规定的断点，只要设备具有视网膜功能。如果符合这个条件媒体查询中的代码将执行。这样处理的好处是，你可以通过媒体查询，适合的设备才加载所有的图像。</p>
+<p>####总结</p>
+<p>尽管每个人都很喜欢好看的图像，但要记住优化是非常重要的。但在最近的一项调查中，3G网络目前比桌面连接低于40%，４G网络连接才12%。所以不要让用户等待下载图片太久，这样做是没必要的。</p>
+<blockquote>
+<p>如果你从未接触过视网膜相关的知识，建议您点击<a href="http://www.w3cplus.com/blog/tags/286.html" target="_blank" rel="external">这里</a>，花点时间了解一下视网膜相的应用。——大漠</p>
+</blockquote>
+<p>###复制</p>
+<p>在移动设备上空间是有限的，所以你的工作需要确保你提供的信息很清楚，简明扼要。尽管在桌面上滚动屏幕并不是太大的问题，但在移动设备上就让人有点乏味，因为使用手指比使用鼠标更费力。如果想给客户一个更好的体验，更好的消化你的信息，你必须提供的信息在移动设备上无需滚动就能查阅。</p>
+<p>如果你觉得在移动上的电子邮件有必要隐藏桌面上的一些内容，你可以在媒体查询中使用<code>display:none</code>。但你需要问问自己，如果你愿意隐藏的东西是否值得。</p>
+<p>##测试</p>
+<p>如果构建和测试普通电子邮件时间不够，会增加额外的复杂性，将会导致电子邮件有更多的问题。幸好有各种整套的测试设备和电子邮件客户端服务。<a href="http://litmus.com/" target="_blank" rel="external">Litmus</a>和<a href="http://emailonacid.com/" target="_blank" rel="external">Email On Acid</a>是首屈一指的，当你想预浏你的代码和类似的功能，你还可以通过<a href="http://campaignmonitor.com/" target="_blank" rel="external">Campaign Monitor</a>和<a href="http://mailchimp.com/" target="_blank" rel="external">MailChimp</a>实现。</p>
+<p>当然，实际上没有什么比实际设备上测试更好，哪果你足够幸运有这么一个测试套件，那么你使用你自己的<a href="http://clearleft.com/testlab/" target="_blank" rel="external">测试方式</a>进行测试。</p>
+<p>##总结</p>
+<p>在工作中，我一直鼓励放弃支持旧版本的浏览器，虽然如此，它仍然是备受关注的，所以响应式电子邮件设计，你还是需要权衡轻重。</p>
+<p>媒体查询在一些些设备和应用程序中得不到支持，尤其是Blackberrys和Gmail应用程序，以及一些客户端会将头部信息全部删除，这样一来，媒体查询就没有任何意义了。但对于我来说很好，因为不支持媒体查询查看电子邮件不多，大部分人认为媒体查询的电子邮件就像是复活节中的一份意外的礼物。</p>
+<p>值得庆幸的是移动设备和应用不断更新，这些都让我们的生活变得无比的精彩。这也意味着我们需要不断的提高我们的技术，不能一直停在原地不动。由我们设计人员和开发人员推动制造商向前发展，以确保它们不断的向前迭代开发，确保我们正在使用的和五年前使用的不一样。</p>
+<p>##案例</p>
+<p>如果你有兴趣看一个简单的邮件模板的代码，我这里有一个演示页面，你可以点击<a href="http://jackosborne.com/demos/2013/responsive-email" target="_blank" rel="external">这里</a>查看。但请注意，你只可以在支持媒体查询的移动设备上查看。</p>
+<p>##扩展阅读</p>
+<ul>
+<li><a href="http://www.email-standards.org/clients/gmail/" target="_blank" rel="external">Email Standards Project</a></li>
+<li><a href="http://htmlemailboilerplate.com/" target="_blank" rel="external">HTML EMAIL BOILERPLATE</a></li>
+<li><a href="http://www.emailology.org/" target="_blank" rel="external">Emaillology</a></li>
+<li><a href="http://www.webdesignerdepot.com/2013/06/responsive-html-email-design/" target="_blank" rel="external">How to design a responsive HTML email</a></li>
+<li><a href="http://mailchimp.com/resources/research/email-on-mobile-devices/html/" target="_blank" rel="external">Email on Mobile Devices</a></li>
+<li><a href="http://www.campaignmonitor.com/guides/mobile/" target="_blank" rel="external">Responsive Email Design</a></li>
+<li><a href="http://www.w3cplus.com/blog/tags/398.html" target="_blank" rel="external">EDM中文教程</a></li>
+</ul>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://jackosborne.com/articles/responsive-email-design/" target="_blank" rel="external">http://jackosborne.com/articles/responsive-email-design/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/responsive-email-design-2.html" target="_blank" rel="external">http://www.w3cplus.com/css/responsive-email-design-2.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/响应式网站gilt.com之一：block_vs._in-selector_media_queries.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          响应式网站Gilt.com之二：Block vs. In-selector Media Queries
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/响应式布局中模仿calc()或固定侧边栏.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式布局中模仿calc()或固定侧边栏</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

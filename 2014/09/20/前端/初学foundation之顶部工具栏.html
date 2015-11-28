@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初学Foundation之顶部工具栏 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="先看一下Foundation框架的顶部工具栏，顶部工具栏包含很多内容，我们将进行内容分解来理解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初学Foundation之顶部工具栏">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/初学foundation之顶部工具栏.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="先看一下Foundation框架的顶部工具栏，顶部工具栏包含很多内容，我们将进行内容分解来理解。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-2.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-3.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-4.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-5.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-6.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-7.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:40:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初学Foundation之顶部工具栏">
+<meta name="twitter:description" content="先看一下Foundation框架的顶部工具栏，顶部工具栏包含很多内容，我们将进行内容分解来理解。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/初学foundation之顶部工具栏" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/初学foundation之顶部工具栏.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初学Foundation之顶部工具栏
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先看一下<a href="http://foundation.zurb.com/" target="_blank" rel="external">Foundation框架</a>的顶部工具栏，顶部工具栏包含很多内容，我们将进行内容分解来理解。<br><a id="more"></a><br><img alt="初学Foundation之顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##顶部工具栏，或者不用顶部工具栏</p>
+<p>Foundation的顶部工具栏是一个非常小巧有用的组件，但不是意味着在你的项目中就一定要使用它。我估计，在使用Foundation来开发过的项目中，大概占40%的项目使用了顶部工具栏。你该认真分析项目需求来决定是否应该使用顶部工具栏；顶部工具栏组件是很容易改变样式的，但是交互功能就比较固定了。</p>
+<p>##基本架构</p>
+<p>为了实现顶部工具栏，我们需要一个<code>&lt;nav&gt;</code>标签，这标签包含一个必须的<code>class</code>为“<code>top-bar</code>”。</p>
+<p><img alt="初学Foundation之顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>接着在<code>&lt;nav class=&quot;top-bar&quot;&gt;</code>里面添加一个<code>&lt;ul&gt;</code>和两个<code>&lt;li&gt;</code>，其中一个<code>&lt;li&gt;</code>来显示这个菜单的标题或者<code>logo</code>。</p>
+<p><strong>备注：</strong>如果你只想显示“MENU”或者“三横”（见上图），就可以去掉<code>menu-icon</code>，或者是标签内容“Menu”。</p>
+<pre><code><span class="tag">&lt;<span class="title">nav</span> <span class="attribute">class</span>=<span class="value">"top-bar"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"title-area"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"name"</span>&gt;</span>
+             <span class="tag">&lt;<span class="title">h1</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Top Bar Title <span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"toggle-topbar menu-icon"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>Menu<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
+</code></pre><p>##添加父链接</p>
+<p>添加父链接（<code>li</code>项）是我们接下来要做的，关闭<code>&lt;/nav&gt;</code>之前需要添加一个<code>&lt;section class=&quot;top-bar-section&quot;&gt;</code>标签，在这个<code>section</code>中需要添加一个无序列表。</p>
+<p><img alt="初学Foundation之顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>在这里，依然允许你使用“<code>divider</code>”来区分列表，可参考下面的代码示例：</p>
+<p>从代码中注意到，<code>&lt;ul class=&quot;left&quot;&gt;</code>中有个class为left，用来控制在左侧显示导航内容。甚至可以添加两个菜单链接，左右（<code>class=&quot;right&quot;</code>）显示导航内容。</p>
+<pre><code><span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"top-bar-section"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"divider"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"active"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Main Item 1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"divider"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Main Item 2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"divider"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+</code></pre><p>到目前为止，我们所添加的代码可以水平地显示在顶部栏上，在小屏幕的设备上，将会变成一个下拉菜单，点一下“MENU”或者“三横”按钮就可以显示出来。</p>
+<p>##添加子菜单</p>
+<p><img alt="初学Foundation之顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>每个<code>li</code>项可以内嵌一个无序列表作为子菜单。为了实现这个功能，父链接（li项）必须添加一个class为<code>has-dropdown</code>，内嵌的ul必须添加class为<code>dropdown</code>:</p>
+<pre><code><span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"has-dropdown"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Main Item 3<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"dropdown"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">label</span>&gt;</span>Dropdown Level 3 Label<span class="tag">&lt;/<span class="title">label</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Dropdown Level 3a<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Dropdown Level 3b<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"divider"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Dropdown Level 3c<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"divider"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+</code></pre><p><strong>备注：</strong>为了标记当前链接处于激活状态，可以添加<code>active</code>。</p>
+<p>子菜单在大屏幕下显示为标准的下拉菜单，而在小屏幕则显示为“滑动块”（整块向左或向右滑动）。</p>
+<p><img alt="初学Foundation之顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##附加设置</p>
+<p>尽管被叫为“顶部”工具栏，其实你可以放置在你的布局任何地方。如果你想固定住这“顶部”工具栏，就需要添加一个<code>div</code>，并添加class为“<code>fixed</code>”，来包含顶部栏。再或者，你可以添加<code>class=“contain-to-grid</code>”在主容器中来控制顶部栏的宽度，更方便的是，可以同时使用两者。</p>
+<p>假设你想顶部栏居于布局中间，当用户向下滚动的时候，并固定在页面的顶部，这时可同时使用<code>class=“contain-to-grid”</code>和<code>class=“sticky”</code>。</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"contain-to-grid sticky"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">nav</span> <span class="attribute">class</span>=<span class="value">"top-bar"</span>&gt;</span>
+        <span class="comment">&lt;!--nav content--&gt;</span>
+    <span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>##添加一个搜索输入框</p>
+<p><img alt="初学Foundation之顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>如果这些功能还不能满足你，你可能还需要一个输入框来作为搜索功能、邮箱注册功能、或者其他内容。我们需要在菜单列表项中添加一个带有<code>class=“has-form”</code>的<code>li</code>。见下面的代码，我们在顶部栏中运用了网格功能。这使得很容易去布局元素——当然也能响应式，因为网格的列在小屏幕上发生转变。</p>
+<pre><code><span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"has-form"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">form</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row collapse"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-8 columns"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-4 columns"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">class</span>=<span class="value">"alert button"</span>&gt;</span>Search<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+</code></pre><p>##面包屑导航</p>
+<p><img alt="初学Foundation之顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-4-7.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>面包屑导航在CMS系统页面中是很常见的，例如WordPress，其中一些多层次的页面在使用起来有点复杂。在任何一个基于Foundation的项目中使用面包屑导航是很容易的，在<code>&lt;ul&gt;</code>或者<code>&lt;nav&gt;</code>标签中添加<code>class=“breadcrumbs”</code>。当在使用无序列表时，所有的链接都需要变成li项，而内部的链接导航元素需要锚标记。</p>
+<p>另外，添加额外class只有“unavailable”和“current”，见如下代码：</p>
+<pre><code><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"breadcrumbs"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Home<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Features<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"unavailable"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Gene Splicing<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"current"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Cloning<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</code></pre><p>##下一篇预告</p>
+<p>顶部工具栏是非常灵活使用的，和你基于Foundation的项目合并起来是非常简单的，在下一篇中，我们将学习button、dropdown和清理插件。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4><br>        关于Spy</h4><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：个人<a href="http://pigerla.com/" target="_blank">博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微薄</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+<p>英文原文：<a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundation-for-beginners-the-top-bar/" target="_blank" rel="external">http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundation-for-beginners-the-top-bar/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/foundation-for-beginners-the-top-bar.html" target="_blank" rel="external">http://www.w3cplus.com/css/foundation-for-beginners-the-top-bar.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/利于网页设计师的强大工作流程小窍门、工具和技巧.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          利于网页设计师的强大工作流程小窍门、工具和技巧
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/初学foundation之自定义表单和开关.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初学Foundation之自定义表单和开关</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

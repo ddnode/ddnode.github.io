@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用SVG完成悬浮时形状样式变化的效果 | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在这篇教程里，我们将重新创建一个类似The Christmas Experiments网站中看到的hover样式。我们将通过SVG制作出形状，然后使用Snap.svg做出hover时的动画效果。
+
+如果你已经访问过The Christmas Experiments最新版本的网站，你可能会注意到其中Christmas calendar很酷的三角状的hover效果。那个形状其实是一个带边框的三角形。今">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用SVG完成悬浮时形状样式变化的效果">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/使用svg完成悬浮时形状样式变化的效果.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="在这篇教程里，我们将重新创建一个类似The Christmas Experiments网站中看到的hover样式。我们将通过SVG制作出形状，然后使用Snap.svg做出hover时的动画效果。
+
+如果你已经访问过The Christmas Experiments最新版本的网站，你可能会注意到其中Christmas calendar很酷的三角状的hover效果。那个形状其实是一个带边框的三角形。今">
+<meta property="og:image" content="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/shape-svg-1.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:41:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用SVG完成悬浮时形状样式变化的效果">
+<meta name="twitter:description" content="在这篇教程里，我们将重新创建一个类似The Christmas Experiments网站中看到的hover样式。我们将通过SVG制作出形状，然后使用Snap.svg做出hover时的动画效果。
+
+如果你已经访问过The Christmas Experiments最新版本的网站，你可能会注意到其中Christmas calendar很酷的三角状的hover效果。那个形状其实是一个带边框的三角形。今">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/使用svg完成悬浮时形状样式变化的效果" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/使用svg完成悬浮时形状样式变化的效果.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用SVG完成悬浮时形状样式变化的效果
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在这篇教程里，我们将重新创建一个类似The Christmas Experiments网站中看到的hover样式。我们将通过SVG制作出形状，然后使用Snap.svg做出hover时的动画效果。</p>
+</blockquote>
+<p>如果你已经访问过<a href="http://christmasexperiments.com/" target="_blank" rel="external">The Christmas Experiments</a>最新版本的网站，你可能会注意到其中Christmas calendar很酷的三角状的hover效果。那个形状其实是一个带边框的三角形。今天我会向您展示，如何使用SVG和<a href="http://snapsvg.io/" target="_blank" rel="external">Snap.svg</a>做出同样的效果。我们的想法是，使用一条路径创建一个SVG，用它来表示caption的形状背景，然后在hover时改变这个路径。完成这一任务有很多种创作的可能性，今天我们将做出三个不同的示例。使用SVG的好处是，我们可以根据父容器的大小调整形状的大小，使一切都成为流动的。<br><a id="more"></a><br>demo里使用的插画由<a href="http://cargocollective.com/isaac317" target="_blank" rel="external">Isaac Montemayor</a>创作。可以在他的<a href="http://cargocollective.com/isaac317" target="_blank" rel="external">website</a>或<a href="http://dribbble.com/isaac317" target="_blank" rel="external">Dribbble</a>中查看原始作品。</p>
+<p>那么，现在开始吧！</p>
+<p>##标记</p>
+<p>首先我们要做的，是在类似Adobe Illustrator 或 Inkscape的矢量图编辑器中绘制两个形状。每个形状将包括一条路径，完成之后，复制路径的各个点，这些点将在标记中使用。注意我们已经将一个多边形装换成了一条路径。如果你使用的是Inkscape，你可以通过这样的步骤实现：选择对象，<code>Path&gt;Object to Path</code>。路径的点可以通过<code>Edit&gt;XML Editor…</code>获取到。这将会打开如下面截图中看到的视图：</p>
+<p><img alt="使用SVG完成悬浮时形状样式变化的效果" src="http://cdn1.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1402/shape-svg-1.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
+<p>“d”（路径数据）值就是你需要的。</p>
+<p>对于这个标记，我们将有一个class为“<code>grid</code>”的区域，其中包括被包在锚点中的<code>figure</code>。你也可以在这儿使用一个列表，这样将会需要一些额外的标记。</p>
+<p>这个<code>figure</code>将包含图象、最初可见的形状和一个<code>figcaption</code>：</p>
+<pre><code><span class="tag">&lt;<span class="title">section</span> <span class="attribute">id</span>=<span class="value">"grid"</span> <span class="attribute">class</span>=<span class="value">"grid clearfix"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">data-path-hover</span>=<span class="value">"m 180,34.57627 -180,0 L 0,0 180,0 z"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">figure</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"img/1.png"</span> /&gt;</span>
+            <span class="tag">&lt;<span class="title">svg</span> <span class="attribute">viewBox</span>=<span class="value">"0 0 180 320"</span> <span class="attribute">preserveAspectRatio</span>=<span class="value">"none"</span>&gt;</span><span class="tag">&lt;<span class="title">path</span> <span class="attribute">d</span>=<span class="value">"M 180,160 0,218 0,0 180,0 z"</span>/&gt;</span><span class="tag">&lt;/<span class="title">svg</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">figcaption</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">h2</span>&gt;</span>Crystalline<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span>&gt;</span>Soko radicchio bunya nuts gram dulse.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">button</span>&gt;</span>View<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">figcaption</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">figure</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="comment">&lt;!-- ... --&gt;</span>
+<span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+</code></pre><p>对于每个图象，SVG都会有其相应的viewBox值，并且设置属性preserveAspectRatio的值为“none”。这将允许我们缩放和伸展形状到我们想要的尺寸，即100%。我们将在样式表中定义宽度和高度。hover路径的信息将会存储在锚点的数据属性<code>data-path-hover</code>中。</p>
+<p>##CSS</p>
+<p>注意CSS将不会包括任何vendor prefixes（-webkit、-moz等），但你可以在文件中找到它们。</p>
+<p>我们将看到的样式是为全部三个示例而写的。首先，我们将查看公共样式，然后为不同demo分别设置样式。</p>
+<p>让我们从<code>grid</code>开始吧。我们需要使它居中，然后设置一个<code>max-width</code>和一个百分比表示的<code>width</code>，让其成为流体的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid &#123;&#10;    margin: 40px auto 120px;&#10;    max-width: 1000px;&#10;    width: 90%;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>锚点应该向左浮动，由于我们想让它们成为流式的，并且一行显示4个项，我们需要为它们设置一个250px的max-width，并且有一个值为25%的width。稍后我们将会为更小尺寸的屏幕定义样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid a &#123;&#10;    float: left;&#10;    max-width: 250px;&#10;    width: 25%;&#10;    color: #333;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>要为奇数项创建一些偏移，我们需要设置margin-top为30px，margin-bottom为-30px。这将使grid看起来更加漂亮，如The Christmas Experiments网站中显示的那样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid a:nth-child(odd) &#123;&#10;    margin: 30px 0 -30px 0;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>因为我们需要一些绝对定位的子元素，figure应该使用相对定位。由于hover效果可能引起一些溢出，而我们不想这些溢出被看到，因此设置overflow为“hidden”：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid figure &#123;&#10;    position: relative;&#10;    overflow: hidden;&#10;    margin: 5px;&#10;    background: #333;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>图象将占据其父元素的全部宽度，并且其opacity为0.7。hover时，我们要使opacity动态变化，因此增加了一个transition：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid figure img &#123;&#10;    position: relative;&#10;    display: block;&#10;    width: 100%;&#10;    opacity: 0.7;&#10;    transition: opacity 0.3s;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><code>figcaption</code> 需要被绝对定位，我们将拉伸它直到覆盖整个项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid figcaption &#123;&#10;    position: absolute;&#10;    top: 0;&#10;    z-index: 11;&#10;    padding: 10px;&#10;    width: 100%;&#10;    height: 100%;&#10;    text-align: center;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>标题和段落在hover时都将会动态变化，因此我们给它们添加上相应的transition，然后稍微移动它们：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid figcaption h2 &#123;&#10;    margin: 0 0 20px 0;&#10;    color: #3498db;&#10;    text-transform: uppercase;&#10;    letter-spacing: 1px;&#10;    font-weight: 300;&#10;    font-size: 130%;&#10;    transition: transform 0.3s;&#10;&#125;&#10;&#10;.grid figcaption p &#123;&#10;    padding: 0 20px;&#10;    color: #aaa;&#10;    font-weight: 300;&#10;    transition: opacity 0.3s, transform 0.3s;&#10;&#125;&#10;&#10;.grid figcaption h2,&#10;.grid figcaption p &#123;&#10;    transform: translateY(50px);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是三个示例中button的公共样式。button也是动态变化的，因此我们将为其opacity和transform添加一个transition:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid figure button &#123;&#10;    position: absolute;&#10;    padding: 4px 20px;&#10;    border: none;&#10;    text-transform: uppercase;&#10;    letter-spacing: 1px;&#10;    font-weight: bold;&#10;    transition: opacity 0.3s, transform 0.3s;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>为了避免一些闪烁和毛刺，我们需要给动画元素及其父元素的backface-visibility设为hidden：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid figcaption,&#10;.grid figcaption h2,&#10;.grid figcaption p,&#10;.grid figure button &#123;&#10;    backface-visibility: hidden;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>SVG也将是绝对定位的，并且我们会通过把width和height都设置为100%来拉伸它，直到覆盖整个项。top值为-1px而不是0确保了它在Firefox (26.0 / Mac)中不会出现奇怪的行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid svg &#123;&#10;    position: absolute;&#10;    top: -1px; /* fixes rendering issue in FF */&#10;    z-index: 10;&#10;    width: 100%;&#10;    height: 100%;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>路径的颜色将被填充为白色：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid svg path &#123;&#10;    fill: #fff;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里你也可以为路径填加一些过渡效果，如hover时改变上面的填充颜色。</p>
+<p>通常的锚点hover效果如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.grid a:hover figure img &#123;&#10;    opacity: 1;&#10;&#125;&#10;&#10;.grid a:hover figcaption h2,&#10;.grid a:hover figcaption p &#123;&#10;    transform: translateY(0);&#10;&#125;&#10;&#10;.grid a:hover figcaption p &#123;&#10;    opacity: 0;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>当段落标题滑上去并隐藏之后，图像的透明度将被设置成1，并且，标题行也会上移。</p>
+<p>在第一个和第三个示例中，我们想为按钮设置一个白色的边框，并将按钮置于父容器的中间。它最初是隐藏并缩小的。其它的transform则用于将按钮拉至目标位置然后居中。hover时，button会放大、渐渐显示出来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo-1 body &#123;&#10;    background: #3498db;&#10;&#125;&#10;&#10;.demo-1 .grid figure button,&#10;.demo-3 .grid figure button &#123;&#10;    top: 50%;&#10;    left: 50%;&#10;    border: 3px solid #fff;&#10;    background: transparent;&#10;    color: #fff;&#10;    opacity: 0;&#10;    transform: translateY(-50%) translateX(-50%) scale(0.25);&#10;&#125;&#10;&#10;.demo-1 .grid a:hover figure button,&#10;.demo-3 .grid a:hover figure button &#123;&#10;    opacity: 1;&#10;    transform: translateY(-50%) translateX(-50%) scale(1);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在第二个demo中，我们将重定义一些颜色，并将button隐藏在figure的底部。为此我们设置bottom为0，并且定义其高度为100%。hover时，它会通过“ease-out”这个函数实现上滑效果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo-2 body &#123;&#10;    background: #e74c3c;&#10;&#125;&#10;&#10;.demo-2 .grid figcaption h2 &#123;&#10;    color: #e74c3c;&#10;&#125;&#10;&#10;.demo-2 .grid figcaption p &#123;&#10;    transition-delay: 0.05s;&#10;&#125;&#10;&#10;.demo-2 .grid figure button &#123;&#10;    bottom: 0;&#10;    left: 0;&#10;    padding: 15px;&#10;    width: 100%;&#10;    background: #fff;&#10;    color: #333;&#10;    font-weight: 300;&#10;    transform: translateY(100%);&#10;&#125;&#10;&#10;.demo-2 .grid a:hover figure button &#123;&#10;    transition-timing-function: ease-out;&#10;    transform: translateY(0);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>第二个和第三个示例中的标题行与段落将使用cubic-bezier 函数模拟弹性过渡效果。段落的hover效果中也将设置另一个无延迟的时间。这将确保SVG形状到达顶部之前段落快速消失。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo-2 .grid figcaption h2,&#10;.demo-2 .grid figcaption p,&#10;.demo-3 .grid figcaption h2,&#10;.demo-3 .grid figcaption p &#123;&#10;    timing-function: cubic-bezier(0.250, 0.250, 0.115, 1.445);&#10;&#125;&#10;&#10;.demo-2 .grid a:hover figcaption p,&#10;.demo-3 .grid a:hover figcaption p &#123;&#10;    transition-delay: 0s;&#10;    transition-duration: 0.1s;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>对于第三个demo，我们将改变一些颜色，使标题行hover时平移一点儿而不是设置为0.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.demo-3 body &#123;&#10;    background: #52be7f;&#10;&#125;&#10;&#10;.demo-3 .grid figcaption h2 &#123;&#10;    color: #52be7f;&#10;&#125;&#10;&#10;.demo-3 .grid a:hover figcaption h2 &#123;&#10;    transform: translateY(5px);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>对于更小的屏幕，我们想改变每一行显示的项目数量，因此我们将重置其width和偶数子元素的margin。第2、5、8、11（3n-1序列）等等这些个锚点应该有一个margin。Tips：如果你想快速寻找一行数字的序列，你可以去<a href="http://www.wolframalpha.com/input/?i=2%2C5%2C8%2C11" target="_blank" rel="external">WolframAlpha</a>这样的网站，然后键入你的数字，你会在“Possible sequence identification”对应的位置找到序列定义。</p>
+<p>对于再小一些的屏幕，我们将调整grid的max-width，重定义标题元素的一些margin：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (max-width: 58em) &#123;&#10;    .grid a &#123;&#10;        width: 33.333%;&#10;    &#125;&#10;&#10;    .grid a:nth-child(odd) &#123;&#10;        margin: 0;&#10;    &#125;&#10;&#10;    .grid a:nth-child(3n-1) &#123;&#10;        margin: 30px 0 -30px 0;&#10;    &#125;&#10;&#125;&#10;&#10;@media screen and (max-width: 45em) &#123;&#10;    .grid &#123;&#10;        max-width: 500px;&#10;    &#125;&#10;&#10;    .grid a &#123;&#10;        width: 50%;&#10;    &#125;&#10;&#10;    .grid a:nth-child(3n-1) &#123;&#10;        margin: 0;&#10;    &#125;&#10;&#10;    .grid a:nth-child(even) &#123;&#10;        margin: 30px 0 -30px 0;&#10;    &#125;&#10;&#10;&#10;    .grid figcaption h2 &#123;&#10;        margin-bottom: 0px;&#10;        transform: translateY(30px);&#10;    &#125;&#10;&#10;    .grid figcaption p &#123;&#10;        margin: 0;&#10;        padding: 0 10px;&#10;    &#125;&#10;&#125;&#10;&#10;@media screen and (max-width: 27em) &#123;&#10;    .grid &#123;&#10;        max-width: 250px;&#10;    &#125;&#10;&#10;    .grid a &#123;&#10;        width: 100%;&#10;    &#125;&#10;&#10;    .grid a:nth-child(even) &#123;&#10;        margin: 0;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>这就是所有的style啦！让我们来看看JavaScript部分怎么写。</p>
+<p>##JavaScript</p>
+<p>我们将使用<a href="http://snapsvg.io/" target="_blank" rel="external">Snap.svg</a>，一个同SVG一起工作的强大的类库。为了更好地理解它的用法，请查看<a href="http://snapsvg.io/docs/" target="_blank" rel="external">documentation</a>和<a href="http://snapsvg.io/start/" target="_blank" rel="external">interactive Getting Started tutorial</a>。</p>
+<p>让我们从定义变量speed和easing开始。我们也将定义一个变量，它会包含路径及其hover状态的信息。当锚点处于hover状态时，路径会动态变为“to”路径。当脱离hover状态时，动态变回“from”路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function() &#123;&#10;&#10;    function init() &#123;&#10;        var speed = 250,&#10;            easing = mina.easeinout;&#10;&#10;        [].slice.call ( document.querySelectorAll( &#39;#grid &#62; a&#39; ) ).forEach( function( el ) &#123;&#10;            var s = Snap( el.querySelector( &#39;svg&#39; ) ), path = s.select( &#39;path&#39; ),&#10;                pathConfig = &#123;&#10;                    from : path.attr( &#39;d&#39; ),&#10;                    to : el.getAttribute( &#39;data-path-hover&#39; )&#10;                &#125;;&#10;&#10;            el.addEventListener( &#39;mouseenter&#39;, function() &#123;&#10;                path.animate( &#123; &#39;path&#39; : pathConfig.to &#125;, speed, easing );&#10;            &#125; );&#10;&#10;            el.addEventListener( &#39;mouseleave&#39;, function() &#123;&#10;                path.animate( &#123; &#39;path&#39; : pathConfig.from &#125;, speed, easing );&#10;            &#125; );&#10;        &#125; );&#10;    &#125;&#10;&#10;    init();&#10;&#10;&#125;)();</span><br></pre></td></tr></table></figure>
+<p>以上就是全部内容了！我们已经向大家展示了三个示例，但是除此之外仍然会有很多的酷炫图形和动态、颜色效果。</p>
+<p>希望你能享受其中，并且产生了更多的启发与灵感！</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<blockquote><br>    <h4><br>        关于韩聪</h4><br>    <p>中标软件开源社区部项目助理，爱生活，略迷茫，在web前端攻城狮的道路上匍匐前进。<a href="http://hancong9104.blog.163.com/" target="_blank">个人博客</a>、<a href="http://weibo.com/hancong9104" target="_blank">新浪微博</a>，追梦的旅途中，愿与你同行。</p><br></blockquote>
+
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://tympanus.net/codrops/2014/01/07/shape-hover-effect-with-svg/" target="_blank" rel="external">http://tympanus.net/codrops/2014/01/07/shape-hover-effect-with-svg/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css3/shape-hover-effect-with-svg.html" target="_blank" rel="external">http://www.w3cplus.com/css3/shape-hover-effect-with-svg.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/使用字符串(strings)设置样式.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用字符串(STRINGS)设置样式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/使用grunt构建任务管理脚本.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Grunt构建任务管理脚本</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

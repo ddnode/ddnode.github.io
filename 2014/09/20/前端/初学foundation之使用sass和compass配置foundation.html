@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初学Foundation之使用Sass和Compass配置Foundation | Drupal 笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="总的来说，使用Sass是一种很好地加速前端开发的途径，在我的每一个项目中都会使用它。Sass(跟其他预编译器一样)是允许嵌套样式、函数编程和支持混合的。Foundation到目前为止出了几个版本，之前我们都是在使用最常见的HTML/CSS版本，现在我们将讨论如何使用Sass来创建一个版本。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初学Foundation之使用Sass和Compass配置Foundation">
+<meta property="og:url" content="http://ddnode.com/2014/09/20/前端/初学foundation之使用sass和compass配置foundation.html">
+<meta property="og:site_name" content="Drupal 笔记">
+<meta property="og:description" content="总的来说，使用Sass是一种很好地加速前端开发的途径，在我的每一个项目中都会使用它。Sass(跟其他预编译器一样)是允许嵌套样式、函数编程和支持混合的。Foundation到目前为止出了几个版本，之前我们都是在使用最常见的HTML/CSS版本，现在我们将讨论如何使用Sass来创建一个版本。">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-1.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-2.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-3.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-4.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-5.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-6.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-7.jpg">
+<meta property="og:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-8.jpg">
+<meta property="og:updated_time" content="2014-09-20T13:41:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初学Foundation之使用Sass和Compass配置Foundation">
+<meta name="twitter:description" content="总的来说，使用Sass是一种很好地加速前端开发的途径，在我的每一个项目中都会使用它。Sass(跟其他预编译器一样)是允许嵌套样式、函数编程和支持混合的。Foundation到目前为止出了几个版本，之前我们都是在使用最常见的HTML/CSS版本，现在我们将讨论如何使用Sass来创建一个版本。">
+  
+    <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/avatar.jpeg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Boy</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/前端">前端</a></li>
+				        
+							<li><a href="/tags/Drupal">Drupal</a></li>
+				        
+							<li><a href="http://blog.ddnode.com">旧站</a></li>
+				        
+							<li><a href="/about/index.html">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Compass/" style="font-size: 11.67px;">Compass</a> <a href="/tags/Drupal/" style="font-size: 16.67px;">Drupal</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Placeholder/" style="font-size: 10px;">Placeholder</a> <a href="/tags/Sass/" style="font-size: 18.33px;">Sass</a> <a href="/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/列表/" style="font-size: 10px;">列表</a> <a href="/tags/初级/" style="font-size: 15px;">初级</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/变量/" style="font-size: 11.67px;">变量</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/组织项目/" style="font-size: 10px;">组织项目</a> <a href="/tags/译文/" style="font-size: 10px;">译文</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/雪碧图/" style="font-size: 10px;">雪碧图</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a> <a href="/tags/高级/" style="font-size: 10px;">高级</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Boy</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/avatar.jpeg">
+				<hgroup>
+				  <h1 class="header-author">Boy</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">记录生活学习中的点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/前端">前端</a></li>
+		        
+					<li><a href="/tags/Drupal">Drupal</a></li>
+		        
+					<li><a href="http://blog.ddnode.com">旧站</a></li>
+		        
+					<li><a href="/about/index.html">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ddnode" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/nodewebs" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端/初学foundation之使用sass和compass配置foundation" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/20/前端/初学foundation之使用sass和compass配置foundation.html" class="article-date">
+  	<time datetime="2014-09-19T16:00:00.000Z" itemprop="datePublished">2014-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初学Foundation之使用Sass和Compass配置Foundation
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总的来说，使用Sass是一种很好地加速前端开发的途径，在我的每一个项目中都会使用它。Sass(跟其他预编译器一样)是允许嵌套样式、函数编程和支持混合的。Foundation到目前为止出了几个版本，之前我们都是在使用最常见的HTML/CSS版本，现在我们将讨论如何使用Sass来创建一个版本。<br><a id="more"></a><br>Foundation开发团队不但只是使用Sass来开发更加友好和动态的样式，而且还提供更多定制样式在Sass版本上而不是把HTML/CSS版本上。</p>
+<p>Sass更加适合一些这样的人，就拿我来说，设计第一，编码第二。学习HTML和CSS是很简单的，并且能够很快地实现你想要的效果，但是，要从这些学习衔接到更加高级的jQuery和JavaScript却是很困难的。前面提到，使用Sass允许你使用函数编程、支持变量和重用代码，就像使用高级的、动态语言一样。</p>
+<p>##开始：OS X 系统</p>
+<p>我们先从苹果OS X系统开始，首先打开控制台，然后把下面代码复制粘贴进去：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install zurb-foundation</span><br></pre></td></tr></table></figure>
+<p>安装Sass开发环境是需要一些时间的，安装成功之后就会显示如下界面：</p>
+<p><img alt="初学Foundation之使用Sass和Compass配置Foundation" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>一旦你完成这步操作，基本上就安装好Foundation核心开发组件和文档了，当然也包括Sass了。这下子就可以不断地使用Foundation核心组件、文档而不用去打开Foundation官网。还有更加方便的是，可以通过简单的命令行来更新这些核心资源。命令行如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem update zurb-foundation&#10;sudo gem install zurb-foundation --pre</span><br></pre></td></tr></table></figure>
+<p>接下来还剩下最后一步，就是安装<a href="http://hub.tutsplus.com/tutorials/sass-and-compass-for-web-designers-introduction--webdesign-5561" target="_blank" rel="external">Compass</a>，是用来构建Foundation用在我们的项目上。复制粘贴如下命令行到控制台执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install compass</span><br></pre></td></tr></table></figure>
+<p>安装成功之后应该显示如下界面：</p>
+<p><img alt="初学Foundation之使用Sass和Compass配置Foundation" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>现在安装好ruby gem并保持最新的版本的了，让我们开始创建一个工程来学习如何使用Foundation进行开发。</p>
+<p>##创建项目：OS X 系统</p>
+<p>任何时候你想创建项目，只要打开控制台，然后输入“cd”(改变目录)，再输入一个目录路径或者是一个文件夹来保存该工程。要记得“cd”与路径之间是要有空格的，接着输入下面命令行才真正创建工程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compass create YOUR-PROJECT-NAME -r zurb-foundation --using foundation</span><br></pre></td></tr></table></figure>
+<p>确保你把“YOUR-PROJECT-NAME”改为你想要的工程名然后就按回车。你就会看到会有很多选择信息，这都会指引你确认当你保存文件时，是否把Sass文件转化为CSS文件，或者是自己选择去转化。我会选择第二种，因为当我保存Sass文件时，就会自动地创建CSS文件，可以看到如下界面：</p>
+<p><img alt="初学Foundation之使用Sass和Compass配置Foundation" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>从上面界面可以看出发生了什么：成功创建了项目等。一旦你选择编译方法，可以使用“compass compile”或“compass watch”的方法,这将节省时间,因为它增加输出样式表和规范化。</p>
+<p>现在，开始在项目上使用Sass吧。</p>
+<p>##开始：Windows 系统</p>
+<p>即使你在使用Windows系统，还是可以使用Sass版的Foundation，当然也要进行几步操作才行。首先，需要安装Ruby环境，才允许我们安装Sass版本的Foundation。这点就跟OS X系统不一样，Windows系统本身没有Ruby环境的，因此需要<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">去安装它</a>。</p>
+<p>现在可能选择下载最新的版本，还要看自己的电脑是64位还是32位的，选择对应的版本下载。</p>
+<p>下载完成之后就开始安装吧，除非你知道是什么意思，不然你都不要改变安装过程中的任何东西。安装成功之后，点击“Start Command Prompt with Ruby”来启动运行Ruby。弹出命令行窗口之后，就可以把如下命令行复制粘贴到里面执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install zurb-foundation</span><br></pre></td></tr></table></figure>
+<p>你应该看到如下界面：</p>
+<p><img alt="初学Foundation之使用Sass和Compass配置Foundation" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>你还可以通过如下两行命令行来获取最新开发版或者最新发布版。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem update zurb-foundation&#10;gem install zurb-foundation --pre</span><br></pre></td></tr></table></figure>
+<p>跟上面一样，我们还有安装最后一部分：Compass，继续输入命令行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install compass</span><br></pre></td></tr></table></figure>
+<p>需要耐心等待安装，成功之后显示如下界面：</p>
+<p><img alt="初学Foundation之使用Sass和Compass配置Foundation" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##创建项目：Windows 系统</p>
+<p>任何时候你想创建项目，只要打开控制台，然后输入“cd”(改变目录)，再输入一个目录路径或者是一个文件夹来保存该项目。</p>
+<p>首先需要选择工程存放的路径，例如“桌面”并执行。这点如上面OS X系统所说的一样，然后要把“YOUR-PROJECT-NAME”改成想要的工程名称。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compass create YOUR-PROJECT-NAME -r zurb-foundation --using foundation</span><br></pre></td></tr></table></figure>
+<p><img alt="初学Foundation之使用Sass和Compass配置Foundation" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>创建项目的所有操作都完成啦，接下来的操作都跟上面一样了。</p>
+<p>##有用的工具</p>
+<p>如果你是在OS X系统下开发的，推荐一个很好的开发工具为<a href="http://incident57.com/codekit/" target="_blank" rel="external">CodeKit</a>。这个应用会自动地压缩JS,CSS,SCSS-并且把SCSS转化为CSS，也意味着你可以不使用控制台了，就只使用它。CodeKit还提供在JS和SCSS,包括例如jQuery的库类上高亮显示错误信息。</p>
+<p><img alt="初学Foundation之使用Sass和Compass配置Foundation" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-7.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>如果是使用Windows呢？别担心，可以使用相类似的应用<a href="http://alphapixels.com/prepros/" target="_blank" rel="external">Prepros</a></p>
+<p><img alt="初学Foundation之使用Sass和Compass配置Foundation" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1401/Foundation-11-8.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
+<p>##下一篇预告</p>
+<p>下一篇我们将会详细讲解用Sass版本Foundation可以做些什么，包括定制构建过程，改变默认样式或者更多。</p>
+<blockquote>
+<p>Sass是CSS预处理器中的一种，如果您想深入的了解Sass相关的知识，W3cplus为您提供了相关的<a href="http://www.w3cplus.com/blog/tags/302.html" target="_blank" rel="external">Sass中文教程</a>。——@大漠</p>
+</blockquote>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+
+<blockquote><br>    <h4><br>        关于Spy</h4><br>    <p>原名吴建杰，常用昵称“间谍”，现居广州。目前不断学习CSS3,HTML5等前沿技术，巩固js基础知识。在进行前端开发的过程中，追求HTML便签语义化，CSS的重用性，js封装等很多性能优化的操作，一切以用户体验为基础，不断地追求性能优化。希望与更多的同行朋友一起共勉：个人<a href="http://pigerla.com/" target="_blank">博客</a>,<a href="http://weibo.com/52spy1314" target="_blank">新浪微薄</a>。</p><br></blockquote>
+
+<p>如需转载，烦请注明出处：</p>
+
+<p>英文原文：<a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/setting-up-foundation-with-sass-and-compass/" target="_blank" rel="external">http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/setting-up-foundation-with-sass-and-compass/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/css/setting-up-foundation-with-sass-and-compass.html" target="_blank" rel="external">http://www.w3cplus.com/css/setting-up-foundation-with-sass-and-compass.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/20/前端/mac常用命令.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Mac常用命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/20/前端/让你的网站在移动端健步如飞.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">让你的网站在移动端健步如飞</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ddnode'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Boy
+    	</div>
+      	<div class="footer-right">
+      		<a href="//ddnode.com/">Drupal 笔记</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
