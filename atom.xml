@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录生活学习中的点点滴滴]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ddnode.com/"/>
-  <updated>2015-11-28T08:56:30.000Z</updated>
+  <updated>2016-01-31T05:56:59.000Z</updated>
   <id>http://ddnode.com/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[正则匹配在线测试]]></title>
+    <link href="http://ddnode.com/2016/01/31/regexr.html"/>
+    <id>http://ddnode.com/2016/01/31/regexr.html</id>
+    <published>2016-01-31T05:54:35.000Z</published>
+    <updated>2016-01-31T05:56:59.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://regexr.com" target="_blank" rel="external">http://regexr.com</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://regexr.com" target="_blank" rel="external">http://regexr.com</a></p>
+]]>
+    </summary>
+    
+      <category term="正则" scheme="http://ddnode.com/tags/%E6%AD%A3%E5%88%99/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Business name generator]]></title>
@@ -824,106 +841,6 @@ a{
   </entry>
   
   <entry>
-    <title><![CDATA[将你的CSS项目转换成Sass]]></title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E5%B0%86%E4%BD%A0%E7%9A%84css%E9%A1%B9%E7%9B%AE%E8%BD%AC%E6%8D%A2%E6%88%90sass.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/将你的css项目转换成sass.html</id>
-    <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:30.000Z</updated>
-    <content type="html"><![CDATA[<p>在过去的一年里，我花了很多的时间在学习<a href="http://www.sass-lang.com/" target="_blank" rel="external">Sass知识</a>以及提高Sass的技术水平。在与别人的交谈中，我发现从CSS项目转到CSS预处理器时，都有这样的担忧：<br><a id="more"></a></p>
-<blockquote>
-<p>我不知道从哪里，从什么时候开始，将CSS项目转换成Sass。</p>
-</blockquote>
-<p>有大量的文档和技术诀窍介绍使用Sass和Compass来创建一个新的项目，但考虑到如何将一个CSS项目转换成Sass项目对部分同学有所帮助的时，我整理了这样的一个教程。</p>
-<p>##将你的<code>.css</code>文件命名为<code>.scss</code></p>
-<p>在Sass的社区曾有过这样的一个笑话，从现在的项目上使用Sass，你首先要做的是将你的<code>.css</code>变成<code>.scss</code>。但它是真实的，就像你开始使用H5创建项目，首先做的是使用<code>&lt;!DOCTYPE html&gt;</code>文档声明。现在所有CSS规则都可以在Sass的语法规则上运行。</p>
-<p>##在本地安装Sass和Compass</p>
-<p>你将需要启动你的命令终端，通过Ruby的<code>gem</code>命令来进行安装(前提，你的电脑具备Ruby环境):</p>
-<pre><code>gem <span class="keyword">install</span> sass
-</code></pre><p>如果你安装制作，你需要加上<code>sudo</code>来安装：</p>
-<pre><code>sudo gem <span class="keyword">install</span> sass
-</code></pre><p>你应该还需要安装<a href="http://www.compass-style.org/" target="_blank" rel="external">Compass</a>，他是一个非常有用的框架：</p>
-<pre><code>gem <span class="keyword">install</span> compass
-</code></pre><p>同样的，你安装Compass碰到错误时，也需要使用<code>sudo</code>：</p>
-<pre><code>sudo gem <span class="keyword">install</span> compass
-</code></pre><blockquote>
-<p>其实直接安装Compass就可以将Sass一起安装了，因为Compass的运行需要依赖于Sass。有关于这方面的教程，可以阅读《<a href="http://www.w3cplus.com/preprocessor/beginner/getting-started-with-sass-and-compass.html" target="_blank" rel="external">开始使用Sass和Compass</a>》一文。这里仅简单介绍了Sass的安装，有关于更详细的介绍，可以点击《<a href="http://www.w3cplus.com/preprocessor/sass-compile.html" target="_blank" rel="external">SASS编译</a>》一文。——@大漠</p>
-</blockquote>
-<p>现在，在命令行中操作可能会直接把一些设计师给吓跑了，其实也有一些应用程序可以做这些事情。如果你也不想使用命令行，我会建议你尝试下面的方法：</p>
-<ul>
-<li><a href="http://incident57.com/codekit/" target="_blank" rel="external">Codekit</a>：这个应用程序为您安装了Sass和命令行中的监控代码编译(<code>compass watch</code>)。他还有很多小功能，比如说CoffeeScript，图片优化，压缩等等</li>
-<li><a href="http://livereload.com/" target="_blank" rel="external">LiveReload</a>：这个是Codekit的精简版本，这个应用程序的主要功能是样式的插入以及当你修改了代码之后，可以自动刷新浏览器，也可以帮你编译Sass。</li>
-</ul>
-<blockquote>
-<p>如果你从未接触过Codekit这样的应用程序，建议您阅读《<a href="http://www.w3cplus.com/preprocessor/sass-gui-tool-codekit.html" target="_blank" rel="external">Codekit的使用</a>》一文。不过Codekit不是屌丝工具，需要花美刀购买。如果你只是想体念一下，不想花这笔钱，也建议使用使用另一款具有同等功能的国产应用<a href="http://koala-app.com/index-zh.html" target="_blank" rel="external">Koala</a>，详细介绍请点击《<a href="http://www.w3cplus.com/preprocessor/sass-gui-tool-koala.html" target="_blank" rel="external">Koala的使用</a>》一文。——@大漠</p>
-</blockquote>
-<p>##设置<code>config.rb</code>文件</p>
-<p>Compass的文档非常强大，如果你是一个新手，你到官网可以查到你想要的资料。这个页面就是有关于<code>config.rb</code>文件<a href="http://compass-style.org/help/tutorials/configuration-reference/" target="_blank" rel="external">配置的详细介绍</a>。</p>
-<p>下面是你真正需要设置的一些选项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_path = &#34;/&#34;&#10;css_dir = &#34;css&#34;&#10;sass_dir = &#34;scss&#34;&#10;images_dir = &#34;img&#34;&#10;javascripts_dir = &#34;js&#34;&#10;output_style = :expanded&#10;relative_assets = true&#10;line_comments = true</span><br></pre></td></tr></table></figure>
-<p>这个用来指定目录名，输出样式格式，资源路径和注释等设置。你可以将<code>output_style</code>设置为<code>compact</code>或者<code>compressed</code>，也可以将<code>line_comments</code>设置为<code>false</code>。</p>
-<p>如果Compass需要其他插件，比如说制作响应式网格的<a href="http://susy.oddbird.net/" target="_blank" rel="external">Susy</a>，你需要使用<code>require</code>配置：</p>
-<pre><code><span class="built_in">require</span> susy
-</code></pre><p>并且将其放在<code>config.rb</code>文件顶部。</p>
-<p>##CSS转换成Sass的工具</p>
-<p>还有一些工具可以帮助你将CSS转换成Sass，我建议使用他们是可以帮助你更好的将CSS转换成Sass。重要的是还是把握Sass转换成CSS。</p>
-<ul>
-<li><strong><a href="http://css2sass.heroku.com/" target="_blank" rel="external">CSS2Sass</a>：</strong>复制你项目中的代码粘贴到工具中，看看它是如何转换成Sass。我不建议你将整个项目的代码复制，你可以复制几段代码尝试一下。一旦你感觉不错，你可以手写一些特性，包括选择器嵌套等。</li>
-<li><strong><a href="http://sassmeister.com/" target="_blank" rel="external">Sassmeister</a>：</strong>这基本上是<a href="http://codepen.io/" target="_blank" rel="external">Codepen</a>的Sass。其最新版本引入了一个HTML组件，这样就可以帮助修改代码的时候就能看到效果。这个非常有用，不紧可以帮助你学习，而且这引入了Compass。</li>
-</ul>
-<p>##重新构建你的CSS项目</p>
-<p>在项目中使用Sass最大的优势就是使用模块化的思维来维护你的项目。通过<code>@import</code>指令可以将局部的样式都引入到一个样式表中，这样一来只需要一个HTTP请求。局部的<code>.scss</code>文件在他的名字前面都有一个下划线<code>_</code>，这样他不会编译成一个单独的CSS文件，例如<code>_header.scss</code>。</p>
-<p>这里有一个Sass项目的目录结构的示例，是基于<a href="http://smacss.com/" target="_blank" rel="external">SMACSS</a>的。遵循一个最佳的方法，让你非常的舒服。可以根据需要调用你需要的样式。</p>
-<p>你使用自己定义的Sass文件，可以根据内容导入局部的和公共的部分。同样，如果你想使用Compass，你可以通过<code>@import compass;</code>将其引入进来。当然，你也可以没必要的将整个Compass引入进来，你可以引入你自己需要的那部分，例如<code>@import compass/css3;</code>。更多的介绍可以点击<a href="http://compass-style.org/reference/compass/" target="_blank" rel="external">这里</a>。</p>
-<p>这里有一个重组结构的方法，根目录底下包括了：base，components 和layout三个文件夹。</p>
-<pre><code>_<span class="tag">custom</span><span class="class">.scss</span>
-</code></pre><p>###base</p>
-<pre><code>_common<span class="class">.scss</span>
-_elements<span class="class">.scss</span>
-_mixins.scss
-</code></pre><p>####components</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_blocks.scss&#10;_buttons.scss&#10;_forms.scss&#10;_icons.scss&#10;_typography.scss</span><br></pre></td></tr></table></figure>
-<p>###layout</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_main.scss&#10;_header.scss&#10;_footer.scss&#10;_aside.scss</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>其实这样看起来有点太清晰，根据原文，我的理解是这样的。比如你有一个项目，名叫<code>project</code>。你的样式文件表是这样组织的：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">project/&#10;|&#10;|--stylesheets/&#10;|  |--base/&#10;|     |--_common.scss&#10;|     |--_elements.scss&#10;|     |--_mixins.scss&#10;|  |--components/&#10;|     |--_blocks.scss&#10;|     |--_buttons.scss&#10;|     |--_forms.scss&#10;|     |--_icons.scss&#10;|     |--_typography.scss&#10;|  |--layout/&#10;|     |--_main.scss&#10;|     |--_header.scss&#10;|     |--footer.scss&#10;|     |--aside.scss&#10;|  ...&#10;|  |--_custom.scss</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>有关于如何组织你的Sass项目的文件结构，可以阅读《<a href="http://www.w3cplus.com/preprocessor/beginner/how-to-structure-a-sass-project.html" target="_blank" rel="external">如何组织一个Sass项目</a>》和《<a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">管理Sass项目文件结构</a>》。我想你会有一个深入的了解，并且能更好的运用于你的实际项目之中。——@大漠</p>
-</blockquote>
-<p>我知道，你一开始可能没有方向或者无法重新组织一个具有5000行的CSS。你可能不会为了一个会议就把你的这个庞大的CSS进行模块化。最好的办法就是一开始你只要保持维护这个文件。当你确认你具有一定的能力之时，你就可以通过变量、混合宏、扩展和嵌套加快你重构的速度。</p>
-<p>我采取的方法是一小块一小块，不断完善的方式来重组。你可以通过重命名样式表，使用Sass的语法重新设置你的文件夹结构。然后选择一部分加到你的样式表中，比如按钮部分。请记住，这样坚持一下去，整理的东西你不仅仅用于一个项目，这样你会获益不浅。</p>
-<p>当你开始决定使用Sass之前，建议你先阅读David Walsh在CSS-Tricks发表的文章《<a href="http://css-tricks.com/redesigning-with-sass/" target="_blank" rel="external">http://css-tricks.com/redesigning-with-sass/</a>》。以确保你不要犯那些初学者的错误，比如冗余和权重的错误。</p>
-<p>随着慢慢的成长，你可以观主Github上<a href="https://github.com/Team-Sass" target="_blank" rel="external">Sass团队</a>提供的一些强大的工具，你可以将这些用到你的实际项目中。例如：</p>
-<ul>
-<li><a href="https://github.com/Team-Sass/breakpoint" target="_blank" rel="external">Breakpoint</a>：媒体查询用例</li>
-<li><a href="https://github.com/Team-Sass/modular-scale" target="_blank" rel="external">Modular Scale</a>：自动计算分辨率比例</li>
-<li><a href="https://github.com/Team-Sass/SassyLists" target="_blank" rel="external">SassyLists</a>：重新排序的函数功能</li>
-<li><a href="https://github.com/Team-Sass/Singularity" target="_blank" rel="external">Singularity</a>：创建你自己的响应式网格系统</li>
-<li><a href="https://github.com/Team-Sass/toolkit" target="_blank" rel="external">Toolkit</a>：一堆有用响应式设计和渐进增强的片段</li>
-</ul>
-<blockquote>
-<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://twitter.com/bkrall" target="_blank" rel="external">Brian Krall</a>的《<a href="http://sideproject.io/converting-your-css-project-to-sass/" target="_blank" rel="external">Converting Your CSS Project To Sass</a>》所译，整个系列共分四章，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明原作者相关信息<a href="http://sideproject.io/converting-your-css-project-to-sass" target="_blank" rel="external">http://sideproject.io/converting-your-css-project-to-sass/</a>。</p>
-<p>——作者：<a href="http://twitter.com/bkrall" target="_blank" rel="external">Brian Krall</a></p>
-<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
-</blockquote>
-<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
-<p>如需转载烦请注明出处：</p>
-<p>英文出处：<a href="http://sideproject.io/converting-your-css-project-to-sass/" target="_blank" rel="external">http://sideproject.io/converting-your-css-project-to-sass/</a></p>
-<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/converting-your-css-project-to-sass.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/converting-your-css-project-to-sass.html</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>在过去的一年里，我花了很多的时间在学习<a href="http://www.sass-lang.com/">Sass知识</a>以及提高Sass的技术水平。在与别人的交谈中，我发现从CSS项目转到CSS预处理器时，都有这样的担忧：<br>]]>
-    
-    </summary>
-    
-      <category term="译文" scheme="http://ddnode.com/tags/%E8%AF%91%E6%96%87/"/>
-    
-      <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[管理Sass项目]]></title>
     <link href="http://ddnode.com/2014/09/21/Sass/%E7%AE%A1%E7%90%86sass%E9%A1%B9%E7%9B%AE.html"/>
     <id>http://ddnode.com/2014/09/21/Sass/管理sass项目.html</id>
@@ -1035,6 +952,58 @@ _mixins.scss
       <category term="项目管理" scheme="http://ddnode.com/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
     
       <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[定义好的变量名]]></title>
+    <link href="http://ddnode.com/2014/09/21/Sass/%E5%AE%9A%E4%B9%89%E5%A5%BD%E7%9A%84%E5%8F%98%E9%87%8F%E5%90%8D.html"/>
+    <id>http://ddnode.com/2014/09/21/Sass/定义好的变量名.html</id>
+    <published>2014-09-20T16:00:00.000Z</published>
+    <updated>2015-03-29T11:01:29.000Z</updated>
+    <content type="html"><![CDATA[<p>Sass中的定义变量是非常的强大的，你可以在一个地方定义好变量，在项目的多个地方使用这个定义的变量。它允许你在集中的一个地方做变化，而不需要在项目和多个文件中使用查找替换的方式来做修改。<br><a id="more"></a></p>
+<blockquote>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://twitter.com/iFrankZA" target="_blank" rel="external">Frank</a>的《<a href="http://thesassway.com/beginner/variable-naming" target="_blank" rel="external">Choosing great variable names</a>》一文所译，整个译文带有我们自己的理解与思想，如果译得不好或不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://thesassway.com/beginner/variable-naming" target="_blank" rel="external">http://thesassway.com/beginner/variable-naming</a>，以及作者相关信息。</p>
+<p>——作者：<a href="http://twitter.com/iFrankZA" target="_blank" rel="external">Frank</a></p>
+<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
+</blockquote>
+<p>Sass中的定义变量是非常的强大的，你可以在一个地方定义好变量，在项目的多个地方使用这个定义的变量。它允许你在集中的一个地方做变化，而不需要在项目和多个文件中使用查找替换的方式来做修改。</p>
+<p>但是选择一个好的变量名是一件比较困能的事情。</p>
+<p>如果你不小心，在项目中变量很容易失控。最常见的就是你会忘记了在项目中定义了什么变量名，因为你很难记住你定义的所有变量名，这样有可能会给你在项目开发中带来不必要的挫折。</p>
+<p>然而，通过下面的一些定义变量的原则，可以帮助你更好的控制你的变量，也让你在整个项目中变得更为理智。</p>
+<p>##使用语义化的变量名</p>
+<p>想像一下，你客户品牌是红色，你可能定义了一个变量<code>$red</code>。半年过去之后，你的客户决定将品牌的颜色由红色变成蓝色。</p>
+<p>改变变量<code>$red</code>的值是一件非常简单的事情，但变量<code>$red</code>也就失去了他自身说明意义，也就没了什么用途说明。</p>
+<p>相反，定义的变量名，可以描述其名称、功能描述或目的，这样会更好些。换句话说，定义一个具有语义化的变量名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#19981;&#22909;&#30340;&#21629;&#21517;&#26041;&#24335;&#10;$red: red;&#10;$yellow: yellow;&#10;&#10;// &#26356;&#22909;&#30340;&#21629;&#21517;&#26041;&#24335;&#10;$brand-color: red;&#10;$accent-color: yellow;</span><br></pre></td></tr></table></figure>
+<p>##采纳有用的约定</p>
+<p>最重要的是拿出一些好的命名变量的约定，让自己能更好的记住这些变量名。</p>
+<p>例如，你可能会使用名称加<code>-color</code>的后缀来命名颜色的变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// Base colors&#10;$base-color: #333;&#10;$brand-color: red;&#10;$brand-80-color: rgba($color-brand, 0.8);&#10;$accent-color: yellow;</span><br></pre></td></tr></table></figure>
+<p>或者你会使用<code>header-</code>或者<code>footer-</code>来命名一些特殊的区域：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// Header&#10;$header-height: 100px;&#10;$header-background-color: $color-brand;&#10;&#10;// Footer&#10;$footer-height: 200px;&#10;$footer-background-color: #aaa;</span><br></pre></td></tr></table></figure>
+<p>##配置集中放置在一起</p>
+<p>我喜欢使用一个单独的文件来定义所有的变量，我把这个定义所有变量的文件名命名为<code>_config.scss</code>,这样我只需要在我的主样式表中通过<code>@import</code>命名来引用。这种方式的好处是，只要列入到这个文件中的变量，在其他地方的任何文件都可以获取这里面定义的变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import base/config;&#10;@import base/typography;&#10;@import base/utilities;&#10;&#10;@import modules/button;</span><br></pre></td></tr></table></figure>
+<p>##总结</p>
+<p>大概会有很多有关于Sass如何命名变量的建议，但哪一种才是适合你或你的团队的工作方式呢？这就是你需要关注的地方。选择好的命名变量的方式，这将能更好的帮助你维护和开发你的项目样式表。</p>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载，烦请注明出处：</p>
+<p>英文出处：<a href="http://thesassway.com/beginner/variable-naming" target="_blank" rel="external">http://thesassway.com/beginner/variable-naming</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/beginner/variable-naming.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/beginner/variable-naming.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Sass中的定义变量是非常的强大的，你可以在一个地方定义好变量，在项目的多个地方使用这个定义的变量。它允许你在集中的一个地方做变化，而不需要在项目和多个文件中使用查找替换的方式来做修改。<br>]]>
+    
+    </summary>
+    
+      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+    
+      <category term="初级" scheme="http://ddnode.com/tags/%E5%88%9D%E7%BA%A7/"/>
+    
+      <category term="变量" scheme="http://ddnode.com/tags/%E5%8F%98%E9%87%8F/"/>
+    
+      <category term="资源" scheme="http://ddnode.com/categories/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
@@ -1457,199 +1426,6 @@ _mixins.scss
       <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
     
       <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[使用Sass和Compass制作雪碧图]]></title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E4%BD%BF%E7%94%A8sass%E5%92%8Ccompass%E5%88%B6%E4%BD%9C%E9%9B%AA%E7%A2%A7%E5%9B%BE.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/使用sass和compass制作雪碧图.html</id>
-    <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:18.000Z</updated>
-    <content type="html"><![CDATA[<p>作为一名Web开发人员，在关注浏览器性能的时候，雪碧图(“image spriting”)这样的技术诞生了，旨在减少HTTP的请求数。事实证明，更少的请求数（当文件大小没有显著的区别时）对于一个页面的加载速度有明显的区别。<br><a id="more"></a></p>
-<blockquote>
-<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://twitter.com/goschevski" target="_blank" rel="external">Aleksandar Goševski</a>的《<a href="http://thesassway.com/intermediate/spriting-with-sass-and-compass" target="_blank" rel="external">Spriting with Sass and Compass</a>》所译，整个系列共分四章，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明原作者相关信息<a href="http://thesassway.com/intermediate/spriting-with-sass-and-compass" target="_blank" rel="external">http://thesassway.com/intermediate/spriting-with-sass-and-compass</a>。</p>
-<p>——作者：<a href="http://twitter.com/goschevski" target="_blank" rel="external">Aleksandar Goševski</a></p>
-<p>——<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
-</blockquote>
-<p>作为一名Web开发人员，在关注浏览器性能的时候，雪碧图(“image spriting”)这样的技术诞生了，旨在减少HTTP的请求数。事实证明，更少的请求数（当文件大小没有显著的区别时）对于一个页面的加载速度有明显的区别。</p>
-<p>“Image Spriting”的工作原理是一堆的图像（称为“sprites”,精灵）合并成一张大的图像（国内称为雪碧图），以达到减少HTTP的请求数。然后通过<code>background-position</code>巧妙的显示雪碧图中需要呈现的图像。</p>
-<p>下图是一个工具栏的雪碧图：</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-8.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
-<p>鉴于上面的图片，我们可以为媒体图标这样写样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$icon-width: 24px;&#10;$icon-height: 24px;&#10;$icons: image-url(&#39;toolbar.png&#39;);&#10;&#10;.media-icon &#123;&#10;  background-image: $icons;&#10;  background-position: -($icon-width * 5) -($icon-width * 1);&#10;  width: $icon-width;&#10;  height: $icon-height;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>这样做是媒体图像是背景图中X轴方向的第五个之后，Y轴第一个图像之后：</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-9.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
-<p>雪碧图是出名的难维护。添加一个新的图像需要更新图像与相关的CSS。更糟糕的是如果你要删除一个图像时，会变得更为复杂。你会怎么做呢？重新做过一张雪碧图？</p>
-<p>##Compass来拯救你</p>
-<p>幸运的是，Chris Eppstein的<a href="http://compass-style.org/" target="_blank" rel="external">Compass</a>项目包括了一套强大的工具，用于自动创建和维护雪碧图。Compass可以创建雪碧图，给出每个图的精确坐标，还可以让你控制图的布局下间距，并在SCSS中写入需要的图像。总之，Compass中制作雪碧图的工具，将节省你大量的时间与精力。</p>
-<p>我并不想从头开始介绍Compass，因为这是项目浩大的工程，况且<a href="http://thesassway.com/beginner/getting-started-with-sass-and-compass" target="_blank" rel="external">官网已经有很多教程</a>。如果你并不熟悉Compass，我建议你先阅读这些教程先。</p>
-<p>##目录结构</p>
-<p>根据Compass制作雪碧图的基本原理，你把图像放在一个文件夹中，而且这个文件夹放在<code>images/</code>的目录下，Compass会根据您提供的源图片生成一张雪碧图。对于我们工具栏的例子，我将图片源都放在了<code>images/toolbar</code>目录下，就像下面这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">images/&#10;|&#10;`-- toolbar/&#10;    |-- bold.png&#10;    |-- italic.png&#10;    |-- link.png&#10;    |-- code.png&#10;    |-- unordered-list.png&#10;    |-- ordered-list.png&#10;    ...</span><br></pre></td></tr></table></figure>
-<p>请记住，你应该只把需要的图片源放到这个文件夹内。Compass会利用这些图片源合并出你最图需要的雪碧图。</p>
-<blockquote>
-<p>为了能更好的通过示例演示Compass和Sass实现雪碧图，将原文中的示例换成下图所示：（为了不去找图片源，我使用了我电脑中的一些图片以示说明）</p>
-</blockquote>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-11.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
-<p>##最简单的方法</p>
-<p>制作雪碧图最简单的方法就是使用Compass的<code>@import</code>命令：</p>
-<pre><code><span class="at_rule">@<span class="keyword">import</span> <span class="string">"images/toolbar/*.png"</span></span>;
-</code></pre><blockquote>
-<p>如果你的Sass更新到了最新版本(Sass 3.3.7 (Maptastic Maple))，那么运行上面的命令将无法实现，在命令终端会报错误信息。这个时候你只需要在命令终端运行：<code>gem install compass --pre</code>。使用<code>compass -v</code>命令查看你的版本号是不是：Compass 1.0.0.alpha.19。如果无误，我们可以继续往下。</p>
-<p>下面内容是译者实战中的经验：</p>
-</blockquote>
-<p>为了能更好的实战Compass和Sass制作雪碧图，将原文中的结构换成了上图的效果，从图中可以看出，我们所有<code>*.png</code>放在一个名叫“<strong>Color</strong>”的文件目录之下，而且这个文件夹是放置在“<strong><code>images/</code></strong>”之下。如果按照原文教程所言，在<code>.scss</code>文件中直接通过<code>@import</code>命令引用：</p>
-<pre><code><span class="at_rule">@<span class="keyword">import</span> <span class="string">"images/toolbar/*.png"</span></span>;
-</code></pre><p>根据示例所示，我们只需要把<code>toolbar</code>换成我们的<code>Color</code>:</p>
-<pre><code><span class="at_rule">@<span class="keyword">import</span> <span class="string">"images/Color/*.png"</span></span>;
-</code></pre><p>开启<code>compass watch</code>命令，终端会提示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62;&#62; Compass is watching for changes. Press Ctrl-C to Stop.&#10;     info sass/screen.scss was modified&#10;overwrite stylesheets/ie.css&#10;overwrite stylesheets/print.css&#10;    error sass/screen.scss (Line 8: No files were found in the load path matching &#34;images/Color/*.png&#34;. Your current load paths are: /Applications/XAMPP/xamppfiles/htdocs/Sites/sass-test/images)&#10;overwrite stylesheets/screen.css</span><br></pre></td></tr></table></figure>
-<p>文件路径错误，按照我们写CSS的经验，我将路径做相应的调整：</p>
-<pre><code><span class="at_rule">@<span class="keyword">import</span> <span class="string">"../images/Color/*.png"</span></span>;
-</code></pre><p>命令检测到：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info sass/screen.scss was modified&#10;identical stylesheets/ie.css&#10;identical stylesheets/print.css&#10;   remove images/Color-s36a4fadee6.png&#10;   create images/Color-s1760dc49ac.png&#10;overwrite stylesheets/screen.css</span><br></pre></td></tr></table></figure>
-<p>虽然不报错，但看编译出来的<code>.css</code>文件，不难发现路径存在问题：</p>
-<pre><code><span class="class">.Color-sprite</span> <span class="rules">{
-    <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(<span class="string">'/images/../images/Color-s1760dc49ac.png'</span>)</span></span>;
-    <span class="rule"><span class="attribute">background-repeat</span>:<span class="value"> no-repeat</span></span>;
-}</span>
-</code></pre><p>说实在的，这让我困惑。后来，我在想，是不是Compass已具备此功能，我们只需要将路径改成包含图片的文件夹开始，于是我尝试这样写：</p>
-<pre><code><span class="at_rule">@<span class="keyword">import</span> <span class="string">"Color/*.png"</span></span>;
-</code></pre><p>命令终端也不路径错误，而且编译出来的CSS也是我想要的：</p>
-<pre><code><span class="class">.Color-sprite</span> <span class="rules">{
-    <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(<span class="string">'/images/Color-s36a4fadee6.png'</span>)</span></span>;
-    <span class="rule"><span class="attribute">background-repeat</span>:<span class="value"> no-repeat</span></span>;
-}</span>
-</code></pre><p>此时在你的项目的”images/“可以看到一张名为“<code>Color-s36a4fadee6.png</code>”的图，如下所示：</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-12.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"><br>大家可能会感到非常神奇，想知道为什么？那么我们接下来回到原文。</p>
-<p>在Compass看到<code>@import</code>指令的参数为<code>*.png</code>时，它会假定将这个目录下的所有<code>.png</code>图片制作成一张雪碧图。让他生成一个mixin，使您在项目中更好的使用雪碧图。</p>
-<p>其中mixin可以为雪碧图的所有图像生成对应的类。对于mixin的名称是基于引入图的文件夹名。例如我们的示例：</p>
-<pre><code>@<span class="preprocessor"><span class="keyword">include</span> all-toolbar-sprites;</span>
-</code></pre><p>编译出来的CSS：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.toolbar-sprite, .toolbar-bold, .toolbar-italic, .toolbar-link &#123;&#10;  background-image: url(&#39;../images/toolbar-s1f1c6cbfd0.png&#39;);&#10;  background-repeat: no-repeat;&#10;&#125;&#10;&#10;.toolbar-bold &#123;&#10;  background-position: 0 0;&#10;&#125;&#10;&#10;.toolbar-italic &#123;&#10;  background-position: 0 -24px;&#10;&#125;&#10;&#10;.toolbar-link &#123;&#10;  background-position: 0 -48px;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>请注意，Compass为我们自动创建了一张“toolbar-s1f1c6cbfd0.png”图片。这就是我们的雪碧图。这命名我们放图像的文件夹(在这个例子中叫toolbar)加上一串字母和数字。每当你更新图片源时，缓存的CSS就知道，并且会更新雪碧图。</p>
-<blockquote>
-<p>我们再次回到我实战的用例中来（是不是感觉蛮乱的，有点神游）。按照原文的教程所言，我在实际用例中是这样做的：</p>
-</blockquote>
-<p>在<code>.scss</code>文件通过<code>@include</code>调用Compass生成的mixin：</p>
-<pre><code>@<span class="preprocessor"><span class="keyword">include</span> all-Color-sprites;</span>
-</code></pre><p>输出的CSS代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.Color-sprite, .Color-Behance, .Color-Deviantart, .Color-Dribbble, .Color-Facebook, .Color-Forrst, .Color-Github, .Color-LastFM, .Color-LinkedIn, .Color-Picasa, .Color-RSS, .Color-Skype, .Color-Tumblr, .Color-Twitter, .Color-Youtube &#123;&#10;  background-image: url(&#39;/images/Color-s36a4fadee6.png&#39;);&#10;  background-repeat: no-repeat;&#10;&#125;&#10;&#10;.Color-Behance &#123;&#10;  background-position: 0 0;&#10;&#125;&#10;&#10;.Color-Deviantart &#123;&#10;  background-position: 0 -52px;&#10;&#125;&#10;&#10;.Color-Dribbble &#123;&#10;  background-position: 0 -104px;&#10;&#125;&#10;&#10;.Color-Facebook &#123;&#10;  background-position: 0 -156px;&#10;&#125;&#10;&#10;.Color-Forrst &#123;&#10;  background-position: 0 -208px;&#10;&#125;&#10;&#10;.Color-Github &#123;&#10;  background-position: 0 -260px;&#10;&#125;&#10;&#10;.Color-LastFM &#123;&#10;  background-position: 0 -312px;&#10;&#125;&#10;&#10;.Color-LinkedIn &#123;&#10;  background-position: 0 -364px;&#10;&#125;&#10;&#10;.Color-Picasa &#123;&#10;  background-position: 0 -416px;&#10;&#125;&#10;&#10;.Color-RSS &#123;&#10;  background-position: 0 -468px;&#10;&#125;&#10;&#10;.Color-Skype &#123;&#10;  background-position: 0 -520px;&#10;&#125;&#10;&#10;.Color-Tumblr &#123;&#10;  background-position: 0 -572px;&#10;&#125;&#10;&#10;.Color-Twitter &#123;&#10;  background-position: 0 -624px;&#10;&#125;&#10;&#10;.Color-Youtube &#123;&#10;  background-position: 0 -676px;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>##控制类名</p>
-<p>如果你想更好的控制输出，不使用混合宏<code>all-{文件夹名称}-sprites</code>。在Compass你也可以使用单独的单独的混合宏。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &#34;images/toolbar/*.png&#34;;&#10;&#10;.bold-icon &#123; @include toolbar-sprite(bold); &#125;&#10;.italic-icon &#123; @include toolbar-sprite(italic); &#125;&#10;.link-icon &#123; @include toolbar-sprite(link); &#125;</span><br></pre></td></tr></table></figure>
-<p>这些混合宏同样是根据雪碧图的名称命名的。在我们的示例中“<code>toolbar-sprite</code>”。</p>
-<blockquote>
-<p>在很多时候，我们希望调用的图片是根据需要调用雪碧图上的图像。Compass非常的强大，除了可以通过混合宏<code>all-{文件夹名称}-sprites</code>一次生成所有图像的CSS（类名是<code>Color-图像源文件名</code>）之外，还可以通过混合宏<code>{文件夹名称}-sprites({图像源文件名})</code>来实现按需加载，并且自定义类名。我们来看个简单的示例：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &#34;Color/*.png&#34;;&#10;&#10;&#10;.icon-twitter &#123;&#10;&#9;@include Color-sprite(Twitter);&#10;&#125;&#10;.icon-facebook&#123;&#10;&#9;@include Color-sprite(Facebook);&#10;&#125;&#10;.icon-youtube&#123;&#10;&#9;@include Color-sprite(Youtube);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>输出的CSS:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.Color-sprite, .icon-twitter, .icon-facebook, .icon-youtube &#123;&#10;  background-image: url(&#39;/images/Color-s36a4fadee6.png&#39;);&#10;  background-repeat: no-repeat;&#10;&#125;&#10;&#10;.icon-twitter &#123;&#10;  background-position: 0 -624px;&#10;&#125;&#10;&#10;.icon-facebook &#123;&#10;  background-position: 0 -156px;&#10;&#125;&#10;&#10;.icon-youtube &#123;&#10;  background-position: 0 -676px;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>##雪碧地图（Sprite maps）</p>
-<p>如果你真的需要一个更低级的，Compass同样可以满足你，他提供了另一种工具——<strong>雪碧地图(Sprite maps)</strong>。让你在内部控制你的雪碧图。</p>
-<p>使用雪碧地图，我们就不再使用<code>@import</code>指令了，是这样使用的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$icons: sprite-map(&#34;toolbar/*.png&#34;);&#10;&#10;.bold-icon &#123; background: sprite($icons, bold); &#125;&#10;.italic-icon &#123; background: sprite($icons, italic); &#125;&#10;.link-icon &#123; background: sprite($icons, link); &#125;</span><br></pre></td></tr></table></figure>
-<p>请注意，没有使用生成的雪碧图的混合宏，而是使用生成的雪碧地图的混合宏<code>sprite</code>，在对应的类名上插入图像。</p>
-<blockquote>
-<p>同样，我们自己动手实战一下雪碧地图的功能。根据示例，我们也做一定调整：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$icons: sprite-map(&#34;Color/*.png&#34;);&#10;&#10;.icon-twitter &#123;&#10;&#9;background: sprite($icons,Twitter);&#10;&#125;&#10;.icon-facebook&#123;&#10;&#9;background: sprite($icons,Facebook);&#10;&#125;&#10;.icon-youtube&#123;&#10;&#9;background: sprite($icons,Youtube);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>生成的CSS如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.icon-twitter &#123;&#10;  background: url(&#39;/images/Color-s29211bcaaa.png&#39;) 0 -624px;&#10;&#125;&#10;&#10;.icon-facebook &#123;&#10;  background: url(&#39;/images/Color-s29211bcaaa.png&#39;) 0 -156px;&#10;&#125;&#10;&#10;.icon-youtube &#123;&#10;  background: url(&#39;/images/Color-s29211bcaaa.png&#39;) 0 -676px;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>##控制间距</p>
-<p>很多时候，我们制作雪碧图时，每个图像之间需要有一定的空白距离。在实际应用中，这一点也是非常重要的。</p>
-<p>比如在每个icon四周设置一个间距：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#20351;&#29992;@import&#10;$toolbar-spacing: 5px;&#10;@import &#34;toolbar/*.png&#34;;&#10;&#10;// &#20351;&#29992;Sprite Maps&#10;$icons: sprite-map(&#34;toolbar/*.png&#34;, $spacing: 5px);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在我们实际用例中，我们每个icon的大小是52px*52px。为了更好的适应偶数计算，我希望每个icon之间有一个8px的间距。根据上面介绍，我们可以这样做。</p>
-</blockquote>
-<p>先来看<code>@import</code>的方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$Color-spacing: 8px;&#10;@import &#34;Color/*.png&#34;;&#10;&#10;.icon-twitter &#123;&#10;&#9;@include Color-sprite(Twitter);&#10;&#125;&#10;.icon-facebook&#123;&#10;&#9;@include Color-sprite(Facebook);&#10;&#125;&#10;.icon-youtube&#123;&#10;&#9;@include Color-sprite(Youtube);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>这个时候Compass会重新生成一张雪碧图，我们将有无间距的两张雪碧图来对比一下：</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-13.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
-<p><strong>特别注意，使用<code>@import</code>指令，我们定义变量时需要以<code>{文件夹名称}-spacing:间距值；</code>格式来定义，如果你的变量名和放置图片源的文件夹名称不匹配，将无法生成带有间距的雪碧图。</strong></p>
-<p>接下来看第二种，就是雪碧地图的方式：</p>
-<pre><code><span class="variable">$icons</span>: sprite-map(<span class="string">"Color/*.png"</span>,<span class="variable">$spacing</span>:<span class="number">8</span>px);
-</code></pre><p>这种方式与第一种方式生成的雪碧图是一样的。</p>
-<p>##控制布局</p>
-<p>Compass支持几种不同的布局方式，就是雪碧图中icon的排列方式：</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-10.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"><br>包括四种排列方式：vertical、horizontal、diagonal和smart。其中vertical为其默认的排列方式。</p>
-<p>在不同的生成雪碧图方式中，其使用方式也略有不同。也就是<code>@import</code>和雪碧地图，设置方式不同：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#20351;&#29992;@import&#10;$toolbar-spacing: 5px;&#10;$toolbar-layout: &#39;smart&#39;;&#10;@import &#34;toolbar/*.png&#34;;&#10;&#10;// &#20351;&#29992;&#38634;&#30887;&#22320;&#22270;Sprite Maps&#10;$icons: sprite-map(&#34;toolbar/*.png&#34;, $spacing: 5px, $layout: diagonal);</span><br></pre></td></tr></table></figure>
-<p><strong>注意：在当前版本，你不能同时使用间距和智能(<code>smart</code>)布局。</strong></p>
-<blockquote>
-<p>我们接下来亲自实战一下这四种排列图标的效果。</p>
-</blockquote>
-<p>###垂直排列</p>
-<p>使用Compass生成雪碧图，其图像中的icon排列方式是按垂直方式排列，这种排列方式也是其默认的排列方式，不需要显式的声明。当然，你显示的声明也是可以的。如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$Color-spacing: 8px;&#10;$Color-layout: &#34;vertical&#34;;&#10;@import &#34;Color/*.png&#34;;</span><br></pre></td></tr></table></figure>
-<p>生成的雪碧图如下：</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-14.jpg" style="padding:2px;border:1px solid #ccc;width:450px;"></p>
-<p>###水平排列</p>
-<p>按照上面的方式，将<code>$Color-layout</code>变量的值设置为“<strong>horizontal</strong>”。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$Color-spacing: 8px;&#10;$Color-layout: &#34;horizontal&#34;;&#10;@import &#34;Color/*.png&#34;;</span><br></pre></td></tr></table></figure>
-<p>生成的雪碧图如下所示：</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-15.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
-<p>###斜角排列（成45度角）</p>
-<p>同样的将<code>$Color-layout</code>变量的值设置为“<strong>diagonal</strong>”。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$Color-spacing: 8px;&#10;$Color-layout: &#34;diagonal&#34;;&#10;@import &#34;Color/*.png&#34;;</span><br></pre></td></tr></table></figure>
-<p>生成的雪碧图如下所示：</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-16.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
-<p>###智能排列</p>
-<p>将<code>$Color-layout</code>值设置为”<strong>smart</strong>“：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$Color-spacing: 8px;&#10;$Color-layout: &#34;smart&#34;;&#10;@import &#34;Color/*.png&#34;;</span><br></pre></td></tr></table></figure>
-<p>可以生成的雪碧图与默认垂直的效果是一样的。我在想是不是哪操作失误。前面有说过间距和智能排列不能同时出现，虽然我的Compass是<code>pre</code>版本，我还是尝试禁用了间距的设置。可还是依旧。效果跟前面示意完全不同。我在想是不是因为icon大小都一样，我不仿修改一下，加过一张不同类型的图片到源文件夹中。</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-17.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
-<p>这个时候，重新看看生成出来的雪碧图效果：</p>
-<p><img alt="使用Sass和Compass制作雪碧图" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1405/sass-compass-18.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
-<p>效果出来了。</p>
-<p><strong>特别提醒：使用Compass设置图标排列方式时，定义变量的方式和定义间距变量方式类似，需要和对应的源图的文件夹结合起来。比如我们此处所有图片源都放在<code>Color</code>的文件夹中，那么定义的变量名是：<code>Color-layout</code>。也就是<code>${文件夹名称}-layout:[vertical][horizontal][diagonal][smart]</code>。</strong></p>
-<p>上面演示的是通过<code>@import</code>指令生成雪碧图的排列方式，那么在雪碧地图中使用方法类似，你只需要修改参数<code>$layout</code>的值即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$icons: sprite-map(&#34;Color/*.png&#34;,$spacing:8px,$layout:smart);</span><br></pre></td></tr></table></figure>
-<p>##其它函数和混合宏功能</p>
-<p>Compass还为雪碧地图提供了一些其他的函数(<code>function</code>)和混合宏（<code>mixin</code>）功能：</p>
-<ul>
-<li><strong><code>sprite-url($icons)</code>：</strong>返回雪碧图的URL</li>
-<li><strong><code>sprite-position($icons,bold)</code>：</strong>返回“bold”图标在雪碧图中的X轴和Y轴的坐标值</li>
-<li><strong><code>@include sprite-dimensions($icons,link)</code>：</strong>根据雪碧图的原始尺寸设置like图标的宽度和高度。</li>
-</ul>
-<p>使用方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$icons: sprite-map(&#34;toolbar/*.png&#34;, $spacing: 5px, $layout: diagonal);&#10;.bold-icon &#123;&#10;  background-image: sprite-url($icons);&#10;  background-position: sprite-position($icons, bold);&#10;  @include sprite-dimensions($icons, bold);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>根据上面所述，亲自体会了一回：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$icons: sprite-map(&#34;Color/*.png&#34;,$spacing:8px,$layout:smart);&#10;&#10;.icon-twitter &#123;&#10;&#9;background-image: sprite-url($icons);&#10;&#9;background-position: sprite-position($icons,Twitter);&#10;&#9;//@include sprite-dimensions($icons,Twitter);&#10;&#125;&#10;.icon-facebook&#123;&#10;&#9;background-image: sprite-url($icons);&#10;&#9;background-position: sprite-position($icons,Facebook);&#10;&#9;//@include sprite-dimensions($icons,Facebook);&#10;&#125;&#10;.icon-youtube&#123;&#10;&#9;background-image: sprite-url($icons);&#10;&#9;background-position: sprite-position($icons,Youtube);&#10;&#9;//@include sprite-dimensions($icons,Youtube);&#10;&#125;&#10;.icon-ctrip&#123;&#10;&#9;background-image: sprite-url($icons);&#10;&#9;background-position: sprite-position($icons,Ctrip);&#10;&#9;//@include sprite-dimensions($icons,Ctrip);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>大家都看到了，我把<code>@include sprite-dimensions()</code>功能给注释掉了，因为在我的环境中没有编译成功。目前我也还没有查出切确原因。希望有知道原因的同学希望能分享一下。最后编译出来的CSS：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.icon-twitter &#123;&#10;  background-image: url(&#39;/images/Color-s6ea6182c52.png&#39;);&#10;  background-position: -156px 0;&#10;&#125;&#10;&#10;.icon-facebook &#123;&#10;  background-image: url(&#39;/images/Color-s6ea6182c52.png&#39;);&#10;  background-position: 0 0;&#10;&#125;&#10;&#10;.icon-youtube &#123;&#10;  background-image: url(&#39;/images/Color-s6ea6182c52.png&#39;);&#10;  background-position: 0 -52px;&#10;&#125;&#10;&#10;.icon-ctrip &#123;&#10;  background-image: url(&#39;/images/Color-s6ea6182c52.png&#39;);&#10;  background-position: 0 -208px;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>##更深层次的挖掘</p>
-<p>使用Compass制作雪碧图，其实还有很多，信不信由你。以上只是一个简单的教程。如果你对这方面感兴趣，可以阅读<a href="http://compass-style.org/help/tutorials/spriting/" target="_blank" rel="external">官网提供的教程</a>，或者从这里<a href="http://compass-style.org/search/?q=sprites" target="_blank" rel="external">查阅其他文档</a>。</p>
-<p>##扩展阅读</p>
-<ul>
-<li><a href="http://viget.com/inspire/stop-making-sprites-compass-sass-and-png-sprite-generation" target="_blank" rel="external">Stop Making Sprites (Compass, Sass, and PNG Sprite Generation)</a></li>
-<li><a href="http://jlzych.com/2013/09/01/automating-semantic-sprites-with-compass/" target="_blank" rel="external">Automating Semantic Sprites with Compass</a></li>
-<li><a href="http://www.wearecube.ch/how-to-make-icons-for-the-web-2/" target="_blank" rel="external">How to make icons for the Web [part 2]</a></li>
-<li><a href="http://www.w3cplus.com/preprocessor/compass-image-sprite.html" target="_blank" rel="external">使用Compass生成雪碧图</a></li>
-</ul>
-<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
-<p>如需转载烦请注明出处：</p>
-<p>英文出处：<a href="http://thesassway.com/intermediate/spriting-with-sass-and-compass" target="_blank" rel="external">http://thesassway.com/intermediate/spriting-with-sass-and-compass</a></p>
-<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/intermediate/spriting-with-sass-and-compass.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/intermediate/spriting-with-sass-and-compass.html</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>作为一名Web开发人员，在关注浏览器性能的时候，雪碧图(“image spriting”)这样的技术诞生了，旨在减少HTTP的请求数。事实证明，更少的请求数（当文件大小没有显著的区别时）对于一个页面的加载速度有明显的区别。<br>]]>
-    
-    </summary>
-    
-      <category term="Compass" scheme="http://ddnode.com/tags/Compass/"/>
-    
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
-    
-      <category term="中级" scheme="http://ddnode.com/tags/%E4%B8%AD%E7%BA%A7/"/>
-    
-      <category term="雪碧图" scheme="http://ddnode.com/tags/%E9%9B%AA%E7%A2%A7%E5%9B%BE/"/>
-    
-      <category term="译文" scheme="http://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
     
   </entry>
   
