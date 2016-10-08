@@ -18,13 +18,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式布局中模仿calc()或固定侧边栏">
 <meta name="twitter:description" content="处理CSS的浏览器兼容性和解决技术问题才能尽显前端开发人员真正的魅力。没有项目可做的情况之下，我终于有了一次机会使用cale()函数的经验。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/calc-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -208,7 +209,7 @@
 <p>如果你还从未接触过<code>calc()</code>，你可以通过阅读《<a href="http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html" target="_blank" rel="external">CSS3的calc()使用</a>》一文来了解有关于<code>calc()</code>的基础知识——大漠</p>
 </blockquote>
 <p>我想你可能知道，我也知道你已经看到这些<a href="http://www.w3.org/TR/css3-values/#calc-notation" target="_blank" rel="external">例子</a>，甚至在首页尝试使用过：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div&#123;&#10;    width: calc( 100% - 2.5em );&#10;    background-position: calc( 50% + 50px );&#10;    margin: calc( 1.25rem - 5px );&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    width: calc( 100% - 2.5em );</div><div class="line">    background-position: calc( 50% + 50px );</div><div class="line">    margin: calc( 1.25rem - 5px );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>正如你所看到的，编写<code>calc()</code>需要一个更高的CSS水平。它是如此强大，前端开发人员不知道如何处理它。现在主流的浏览器(Android4.4)都<a href="http://caniuse.com/#feat=calc" target="_blank" rel="external">支持这功能</a>。</p>
 <div><br><iframe src="http://caniuse.com/calc/embed" width="100%" height="370"></iframe><br></div>
 
@@ -218,12 +219,12 @@
 <p><img alt="响应式布局中模仿calc()或固定侧边栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/calc-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>通常有一个容器包含了两个<code>div</code>，并且设置样式：</p>
 <p>####HTML</p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"container"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"content"</span>&gt;Content&lt;/<span class="keyword">div</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"sidebar"</span>&gt;Sidebar&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;Content&lt;/div&gt;
+    &lt;div class=&quot;sidebar&quot;&gt;Sidebar&lt;/div&gt;
+&lt;/div&gt;
 </code></pre><p>####CSS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.container:after,&#10;.container:before &#123;&#10;  content:&#34;&#34;;&#10;  display: table;&#10;&#125;&#10;.container:after &#123;&#10;  clear:both;&#10;  overflow: hidden;&#10;&#125;&#10;.container &#123;&#10;  zoom:1;&#10;&#125;&#10;.container,&#10;.content,&#10;.sidebar&#123;&#10;  box-sizing: border-box;&#10;  color: #fff;&#10;&#125;&#10;.container&#123;&#10;  width: 100%;&#10;  max-width: 80em; /* 1280 */&#10;  padding: 2.5em; /* 40 */&#10;  background: #eee;&#10;&#125;&#10;.content,&#10;.sidebar &#123;&#10;  padding:10em 1.25em;&#10;&#125;&#10;.content&#123;&#10;  width: 80%; /* 960 */&#10;  float: left;&#10;  background: #8ac233;&#10;&#125;&#10;.sidebar&#123;&#10;  width: 16.666%; /* 200 */&#10;  float: right;&#10;  background: #8ac233;&#10;&#125;&#10;&#10;@media only screen and (max-width: 40em) /* 640 */&#123;&#10;  .content,&#10;  .sidebar&#123;&#10;     width: 100%;&#10;     float: none;&#10;  &#125;&#10;  .sidebar&#123;&#10;     margin-top: 1.25em; /* 20 */&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">.container:after,</div><div class="line">.container:before &#123;</div><div class="line">  content:&quot;&quot;;</div><div class="line">  display: table;</div><div class="line">&#125;</div><div class="line">.container:after &#123;</div><div class="line">  clear:both;</div><div class="line">  overflow: hidden;</div><div class="line">&#125;</div><div class="line">.container &#123;</div><div class="line">  zoom:1;</div><div class="line">&#125;</div><div class="line">.container,</div><div class="line">.content,</div><div class="line">.sidebar&#123;</div><div class="line">  box-sizing: border-box;</div><div class="line">  color: #fff;</div><div class="line">&#125;</div><div class="line">.container&#123;</div><div class="line">  width: 100%;</div><div class="line">  max-width: 80em; /* 1280 */</div><div class="line">  padding: 2.5em; /* 40 */</div><div class="line">  background: #eee;</div><div class="line">&#125;</div><div class="line">.content,</div><div class="line">.sidebar &#123;</div><div class="line">  padding:10em 1.25em;</div><div class="line">&#125;</div><div class="line">.content&#123;</div><div class="line">  width: 80%; /* 960 */</div><div class="line">  float: left;</div><div class="line">  background: #8ac233;</div><div class="line">&#125;</div><div class="line">.sidebar&#123;</div><div class="line">  width: 16.666%; /* 200 */</div><div class="line">  float: right;</div><div class="line">  background: #8ac233;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@media only screen and (max-width: 40em) /* 640 */&#123;</div><div class="line">  .content,</div><div class="line">  .sidebar&#123;</div><div class="line">     width: 100%;</div><div class="line">     float: none;</div><div class="line">  &#125;</div><div class="line">  .sidebar&#123;</div><div class="line">     margin-top: 1.25em; /* 20 */</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>看起来像一个完美的响应式布局和什么都没有添加，但是…</p>
 <p>##问题</p>
 <p><a href="http://codepen.io/airen/pen/gIteo" target="_blank"><br><img alt="响应式布局中模仿calc()或固定侧边栏" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/1312/calc-2.gif" style="padding:2px;border:1px solid #ccc;width:560px;"><br></a></p>
@@ -233,7 +234,7 @@
 <p><a href="http://codepen.io/airen/pen/HyBia" target="_blank"><br><img alt="响应式布局中模仿calc()或固定侧边栏" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/1312/calc-3.gif" style="padding:2px;border:1px solid #ccc;width:560px;"><br></a></p>
 
 <p>通过<strong>calc()</strong>函数计算宽度，并给不支持<code>calc</code>的浏览器提供一个后备方案，就是固定宽度。通过给<code>.content</code>和<code>.sidebar</code>两个类上做一个小小的修改，将会改变你的一切：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.content&#123;&#10;  width: 80%; /* 960 */&#10;  width: calc( 100% - 15em ); /* 240 */&#10;  float: left;&#10;  background: #8ac233;&#10;&#125;&#10;.sidebar&#123;&#10;  width: 16.666%; /* 200 */&#10;  width: calc( 12.5em ); /* 200 */&#10;  float: right;&#10;  background: #8ac233;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.content&#123;</div><div class="line">  width: 80%; /* 960 */</div><div class="line">  width: calc( 100% - 15em ); /* 240 */</div><div class="line">  float: left;</div><div class="line">  background: #8ac233;</div><div class="line">&#125;</div><div class="line">.sidebar&#123;</div><div class="line">  width: 16.666%; /* 200 */</div><div class="line">  width: calc( 12.5em ); /* 200 */</div><div class="line">  float: right;</div><div class="line">  background: #8ac233;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果你细心的话，你应该看到多添加了一行<strong><code>width:calc(12.5em)</code></strong>，这就是技巧。为什么？让我们看看这些宽度都是成对——下在我们浏览器需要的。</p>
 <p>第一对是<code>width:80%</code>(主内容)和<code>width:16.666%</code>（侧边栏），不支持<code>calc()</code>的浏览器将会无视<code>calc()</code>。这是用来做备份的。这意味着少数访问者访问网站看到窄的侧边栏。对于使用旧的浏览版本的人应该是完美的。</p>
 <p>第二对是：<code>width:calc(100% - 15em)</code>和<code>width: calc(12.5em)</code>。这是用于新的浏览器版本，这将会覆盖前面定义的固定宽度。有几个方面需要作个解释：</p>
@@ -246,7 +247,7 @@
 
 <p>##还有一件事</p>
 <p>就像其他的一些CSS特性，<code>calc()</code>还是一个实验属性，在特定的浏览器下还需要添加特定的前缀。让更多的浏览器得到支持：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.content&#123;&#10;  width: 80%; /* 960 */&#10;  width: -webkit-calc( 100% - 15em ); /* 240 */&#10;  width: calc( 100% - 15em ); /* 240 */&#10;  float: left;&#10;  background: #8ac233;&#10;&#125;&#10;.sidebar&#123;&#10;  width: 16.666%; /* 200 */&#10;  width: -webkit-calc(12.5em); /* 200 */&#10;  width: calc(12.5em); /* 200 */&#10;  float: right;&#10;  background: #8ac233;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.content&#123;</div><div class="line">  width: 80%; /* 960 */</div><div class="line">  width: -webkit-calc( 100% - 15em ); /* 240 */</div><div class="line">  width: calc( 100% - 15em ); /* 240 */</div><div class="line">  float: left;</div><div class="line">  background: #8ac233;</div><div class="line">&#125;</div><div class="line">.sidebar&#123;</div><div class="line">  width: 16.666%; /* 200 */</div><div class="line">  width: -webkit-calc(12.5em); /* 200 */</div><div class="line">  width: calc(12.5em); /* 200 */</div><div class="line">  float: right;</div><div class="line">  background: #8ac233;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>有一种情况不能使用<code>calc()</code>，这是通过CSS的<code>position</code>属性。然而，如果侧边栏高于内容区域，整个布局会失败（这是你不希望看到的）。</p>
 <blockquote>
 <p>通过一个简单的示例，向大家演示了如何使用CSS的<code>calc()</code>属性，给元素设置表达式，通过浏览器自身去计算需要的值。从而达到完美的自适应效果。</p>
@@ -264,18 +265,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/响应式电子邮件设计.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/前端ued规范.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          响应式电子邮件设计
+          前端UED规范
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/前端ued规范.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">前端UED规范</div>
+    <a href="/2014/09/20/前端/利于网页设计师的强大工作流程小窍门、工具和技巧.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利于网页设计师的强大工作流程小窍门、工具和技巧</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -321,8 +322,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

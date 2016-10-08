@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -213,10 +213,10 @@
 <p>但是你应该如何组织你的Sass项目呢？有没有分离样式文件的一个标准呢？</p>
 <p>##基本目录结构</p>
 <p>我喜欢将我的Sass项目这样组织文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stylesheets/&#10;|&#10;|-- modules/              # &#36890;&#29992;&#27169;&#22359;&#10;|   |-- _all.scss         # &#21253;&#21547;&#20102;&#25152;&#26377;&#27169;&#22359;&#10;|   |-- _utility.scss     # &#27169;&#22359;&#21517;&#31216;&#10;|   |-- _colors.scss      # Etc...&#10;|   ...&#10;|&#10;|-- partials/             # Partials&#10;|   |-- _base.sass        # &#24341;&#20837;&#39033;&#30446;&#25152;&#26377;&#30340;mixins&#21644;&#39033;&#30446;&#30340;&#20840;&#23616;&#21464;&#37327;&#10;|   |-- _buttons.scss     # buttons&#10;|   |-- _figures.scss     # figures&#10;|   |-- _grids.scss       # grids&#10;|   |-- _typography.scss  # typography&#10;|   |-- _reset.scss       # reset&#10;|   ...&#10;|&#10;|-- vendor/               # &#20854;&#20182;&#39033;&#30446;&#30340;CSS&#25110;SCSS&#10;|   |-- _colorpicker.scss&#10;|   |-- _jquery.ui.core.scss&#10;|   ...&#10;|&#10;`-- main.scss            # &#20027;SCSS&#25991;&#20214;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">stylesheets/</div><div class="line">|</div><div class="line">|-- modules/              # 通用模块</div><div class="line">|   |-- _all.scss         # 包含了所有模块</div><div class="line">|   |-- _utility.scss     # 模块名称</div><div class="line">|   |-- _colors.scss      # Etc...</div><div class="line">|   ...</div><div class="line">|</div><div class="line">|-- partials/             # Partials</div><div class="line">|   |-- _base.sass        # 引入项目所有的mixins和项目的全局变量</div><div class="line">|   |-- _buttons.scss     # buttons</div><div class="line">|   |-- _figures.scss     # figures</div><div class="line">|   |-- _grids.scss       # grids</div><div class="line">|   |-- _typography.scss  # typography</div><div class="line">|   |-- _reset.scss       # reset</div><div class="line">|   ...</div><div class="line">|</div><div class="line">|-- vendor/               # 其他项目的CSS或SCSS</div><div class="line">|   |-- _colorpicker.scss</div><div class="line">|   |-- _jquery.ui.core.scss</div><div class="line">|   ...</div><div class="line">|</div><div class="line">`-- main.scss            # 主SCSS文件</div></pre></td></tr></table></figure>
 <p>##主样式表</p>
 <p>继续让我的主样式文件保持干净与简洁：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// Modules and Variables&#10;@import &#34;partials/base&#34;;&#10;&#10;// Partials&#10;@import &#34;partials/reset&#34;;&#10;@import &#34;partials/typography&#34;;&#10;@import &#34;partials/buttons&#34;;&#10;@import &#34;partials/figures&#34;;&#10;@import &#34;partials/grids&#34;;&#10;// ...&#10;&#10;// Third-party&#10;@import &#34;vendor/colorpicker&#34;;&#10;@import &#34;vendor/jquery.ui.core&#34;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// Modules and Variables</div><div class="line">@import &quot;partials/base&quot;;</div><div class="line"></div><div class="line">// Partials</div><div class="line">@import &quot;partials/reset&quot;;</div><div class="line">@import &quot;partials/typography&quot;;</div><div class="line">@import &quot;partials/buttons&quot;;</div><div class="line">@import &quot;partials/figures&quot;;</div><div class="line">@import &quot;partials/grids&quot;;</div><div class="line">// ...</div><div class="line"></div><div class="line">// Third-party</div><div class="line">@import &quot;vendor/colorpicker&quot;;</div><div class="line">@import &quot;vendor/jquery.ui.core&quot;;</div></pre></td></tr></table></figure>
 <p>##模块, 局部和供应商</p>
 <p>正如你所看到的，我将我的项目划分成三部分：模块样式(Modules)，局部样式(Partials)和供应商样式(vendor)（也就是引入的第三方样式）。</p>
 <ul>
@@ -227,11 +227,11 @@
 <p>##使用基础的局部样式</p>
 <p>在我的partials目录中，你会注意到，我还放了一个基础的partials。这个partials主要目的是配置一个基本的Sass环境，使大家可以很容易构造一个样式。</p>
 <p>他看起来像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// Use Compass (&#39;cause it rocks!)&#10;@import &#34;compass&#34;;&#10;&#10;// Font weights&#10;$light: 100;&#10;$regular: 400;&#10;$bold: 600;&#10;&#10;// Base Font&#10;$base-font-family: sans-serif;&#10;$base-font-weight: $regular;&#10;$base-font-size: 13px;&#10;$base-line-height: 1.4;&#10;&#10;// Fixed Font&#10;$fixed-font-family: monospace;&#10;$fixed-font-size: 85%;&#10;$fixed-line-height: $base-line-height;&#10;&#10;// Headings&#10;$header-font-weight: $bold;&#10;&#10;@import &#34;modules/all&#34;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// Use Compass (&apos;cause it rocks!)</div><div class="line">@import &quot;compass&quot;;</div><div class="line"></div><div class="line">// Font weights</div><div class="line">$light: 100;</div><div class="line">$regular: 400;</div><div class="line">$bold: 600;</div><div class="line"></div><div class="line">// Base Font</div><div class="line">$base-font-family: sans-serif;</div><div class="line">$base-font-weight: $regular;</div><div class="line">$base-font-size: 13px;</div><div class="line">$base-line-height: 1.4;</div><div class="line"></div><div class="line">// Fixed Font</div><div class="line">$fixed-font-family: monospace;</div><div class="line">$fixed-font-size: 85%;</div><div class="line">$fixed-line-height: $base-line-height;</div><div class="line"></div><div class="line">// Headings</div><div class="line">$header-font-weight: $bold;</div><div class="line"></div><div class="line">@import &quot;modules/all&quot;;</div></pre></td></tr></table></figure>
 <p>这个样式表设置了一些全局的变量和加载了我所有的模块。模块不能再次的导入，不然会导致CSS输出。将所有变量和模块构成了我一个基本的Partials，让我有一个好的Sass环境。我可以使用<code>@import</code>语句引入一个样式。这可以让我导入不同的Partials来构建更多个样式表。一旦项目发展到一定的规模，多个样式表使用起来就更得心应手。</p>
 <p>##进一步加强</p>
 <p>根据<a href="http://uservoice.com/" target="_blank" rel="external">用户的建议</a>，我们进一步的对其完善。通过一个单独的Rails应用上同时开发多个子项目，我们可以将每个子项目设置为一个顶级的目录，这个时候，我们的项目目录结构将看来是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stylesheets/&#10;|&#10;|-- admin/           # Admin&#23376;&#39033;&#30446;&#10;|   |-- modules/&#10;|   |-- partials/&#10;|   `-- _base.scss&#10;|&#10;|-- account/         # Account&#23376;&#39033;&#30446;&#10;|   |-- modules/&#10;|   |-- partials/&#10;|   `-- _base.scss&#10;|&#10;|-- site/            # Site&#23376;&#39033;&#30446;&#10;|   |-- modules/&#10;|   |-- partials/&#10;|   `-- _base.scss&#10;|&#10;|-- vendor/          # &#20854;&#20182;&#39033;&#30446;&#24341;&#20837;&#30340;CSS&#25110;SCSS&#10;|   |-- _colorpicker-1.1.scss&#10;|   |-- _jquery.ui.core-1.9.1.scss&#10;|   ...&#10;|&#10;|-- admin.scss       # &#27599;&#20010;&#23376;&#39033;&#30446;&#30340;&#20027;SCSS&#25991;&#20214;&#10;|-- account.scss&#10;`-- site.scss</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">stylesheets/</div><div class="line">|</div><div class="line">|-- admin/           # Admin子项目</div><div class="line">|   |-- modules/</div><div class="line">|   |-- partials/</div><div class="line">|   `-- _base.scss</div><div class="line">|</div><div class="line">|-- account/         # Account子项目</div><div class="line">|   |-- modules/</div><div class="line">|   |-- partials/</div><div class="line">|   `-- _base.scss</div><div class="line">|</div><div class="line">|-- site/            # Site子项目</div><div class="line">|   |-- modules/</div><div class="line">|   |-- partials/</div><div class="line">|   `-- _base.scss</div><div class="line">|</div><div class="line">|-- vendor/          # 其他项目引入的CSS或SCSS</div><div class="line">|   |-- _colorpicker-1.1.scss</div><div class="line">|   |-- _jquery.ui.core-1.9.1.scss</div><div class="line">|   ...</div><div class="line">|</div><div class="line">|-- admin.scss       # 每个子项目的主SCSS文件</div><div class="line">|-- account.scss</div><div class="line">`-- site.scss</div></pre></td></tr></table></figure>
 <p>正如你所看到的，每个子项目都有其自己的主样式文件，模块，局部和基础样式。vendor是通用的，并且有自己的一级目录。这样的文件组织方式，在一个大型的Sass项目中非常实用。</p>
 <p>##进一步探索</p>
 <p>现在，我在这里介绍了我自己的想法，你或许还会想了解别人是如何组织他们的Sass项目。实际上你可以在这里做很多的变化。下面的这些项目可能让你得到一些更好的方法：</p>
@@ -258,18 +258,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/21/Sass/定义好的变量名.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/21/Sass/编写sass的八个技巧.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          定义好的变量名
+          编写Sass的八个技巧
         
       </div>
     </a>
   
   
-    <a href="/2014/09/21/Sass/如何根据背景颜色动态修改文本颜色.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何根据背景颜色动态修改文本颜色</div>
+    <a href="/2014/09/21/Sass/定义好的变量名.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">定义好的变量名</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -315,8 +315,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

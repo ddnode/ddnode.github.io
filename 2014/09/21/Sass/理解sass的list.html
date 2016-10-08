@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -216,76 +216,76 @@
 <p>Sass对于变量类型不是非常严格</p>
 </blockquote>
 <p>在Sass中，有两种方法可以用来初始化一个<strong>空</strong>的变量（这也可以被视为一个列表）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a:();&#10;$b:unquote(&#34; &#34;);//&#27880;&#24847;&#65292;&#20882;&#21495;&#20043;&#38388;&#26377;&#19968;&#20010;&#31354;&#26684;&#10;$c:null;&#10;$d:(null);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$a:();</div><div class="line">$b:unquote(&quot; &quot;);//注意，冒号之间有一个空格</div><div class="line">$c:null;</div><div class="line">$d:(null);</div></pre></td></tr></table></figure>
 <p>现在我们创建了四个变量，接着通过Sass的<code>type-of()</code>函数来检测这些变量的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type-of($a) =&#62; list&#10;type-of($b) =&#62; string&#10;type-of($c) =&#62; null&#10;type-of($d) =&#62; null</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">type-of($a) =&gt; list</div><div class="line">type-of($b) =&gt; string</div><div class="line">type-of($c) =&gt; null</div><div class="line">type-of($d) =&gt; null</div></pre></td></tr></table></figure>
 <p>接下来，使用<code>length()</code>函数来检测一下每个变量的长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 0&#10;length($b) =&#62; 1&#10;length($c) =&#62; 1&#10;length($d) =&#62; 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">length($a) =&gt; 0</div><div class="line">length($b) =&gt; 1</div><div class="line">length($c) =&gt; 1</div><div class="line">length($d) =&gt; 1</div></pre></td></tr></table></figure>
 <p><code>$a</code>的长度是<code>0</code>，这是我们能预想到的，因为他是一个空列表。<code>$b</code>的长度是<code>1</code>，因为他是一个字符串，然而<code>$c</code>和<code>$d</code>都是<code>null</code>变量（空变量），令人想不通的是，他们的长度也是<code>1</code>。</p>
 <p>虽然<code>$a</code>和<code>$c</code>(<code>$d</code>)都可以用来初始化一个<code>List</code>（甚至是<code>unquote(&quot;&quot;)</code>,<strong>注，冒号之间没有任何空格</strong>），但前面简单的长度测试告诉我们，他们其实并不是完全一样的。当然如果你喜欢，你可以使用他们来初始化Sass的一个列表，但大家必须要记住，他们之间是不一样的。</p>
 <p>##<code>()</code>和<code>null</code>的区别</p>
 <p><code>null</code>等同于<code>(null)</code>或者<code>unquote(&quot;&quot;)</code>他们都是用来做为列表的第一个列表项，大多数情况之下，用他们来对Sass的列表进行初始化，但是和<code>()</code>并不完全一样，接下来通过几个简单的测试来说明<code>()</code>和<code>null</code>的区别。</p>
 <p>假设有两个变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a:();&#10;$b:null;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$a:();</div><div class="line">$b:null;</div></pre></td></tr></table></figure>
 <p>使用<code>type-of()</code>函数测试出变量的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type-of($a) =&#62; list&#10;type-of($b) =&#62; null</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">type-of($a) =&gt; list</div><div class="line">type-of($b) =&gt; null</div></pre></td></tr></table></figure>
 <p>使用<code>length()</code>函数输出变量的长度值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 0&#10;length($b) =&#62; 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">length($a) =&gt; 0</div><div class="line">length($b) =&gt; 1</div></pre></td></tr></table></figure>
 <p>变量<code>$a</code>和<code>$b</code>都是一个列表，通过<code>nth()</code>函数来检测出第一个列表项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($a,1) =&#62; throws error&#10;nth($b,1) =&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nth($a,1) =&gt; throws error</div><div class="line">nth($b,1) =&gt;</div></pre></td></tr></table></figure>
 <p>由于<code>$a</code>长度是0，在<code>nth()</code>函数检出其第一个列表项，在Sass编译的时候将会报错，而<code>$b</code>第一项刚好是空，那么在<code>nth()</code>函数检出其第一个列表项是一个空，没有任何东西。</p>
 <p>接下来使用<code>append()</code>函数为每个列表添加一个列表项<code>test</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a: append($a,&#34;test&#34;);&#10;$b: append($b,&#34;test&#34;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$a: append($a,&quot;test&quot;);</div><div class="line">$b: append($b,&quot;test&quot;);</div></pre></td></tr></table></figure>
 <p>再次检测其长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">length($a) =&#62; 1&#10;length($b) =&#62; 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">length($a) =&gt; 1</div><div class="line">length($b) =&gt; 2</div></pre></td></tr></table></figure>
 <p>使用<code>index()</code>函数来检测“test”列表项在列表中各处什么位置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index($a,&#34;test&#34;) =&#62; 1&#10;index($b,&#34;test&#34;) =&#62; 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">index($a,&quot;test&quot;) =&gt; 1</div><div class="line">index($b,&quot;test&quot;) =&gt; 2</div></pre></td></tr></table></figure>
 <p>使用<code>nth()</code>函数，再次检出列表的第一个列表项，这个时候又变了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($a,1) =&#62; test&#10;nth($b,1) =&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nth($a,1) =&gt; test</div><div class="line">nth($b,1) =&gt;</div></pre></td></tr></table></figure>
 <p>我想这几个函数对<code>$a</code>和<code>$b</code>变量的操作，一路下来，您应该很清楚的知道<code>()</code>和<code>null</code>的不同之处了吧。</p>
 <p>##Sass的List</p>
 <p>Sass的<code>list</code>非常类似于<code>JavaScript</code>语言中的数组。你可以通过下面的方式来初始化一个Sass的List:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$list:();</div></pre></td></tr></table></figure>
 <p>当然，你也还可以使用<code>$list:null</code>或者<code>$list:unquote(&quot;&quot;)</code>，但你要注意一下他们之间的不同。不管使用哪种方法，我们先来看一个简单的Sass列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:(#b4d455,42,&#34;awesome&#34;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$list:(#b4d455,42,&quot;awesome&quot;);</div></pre></td></tr></table></figure>
 <p>前面也说过，<strong>Sass语法非常宽松</strong>，这也让    <code>list</code>在Sass中使用变得更加的复杂。我们一个一个来看。</p>
 <p>###列表的分隔符</p>
 <p>在Sass的列表中，你可以使用<strong>空格符</strong>或者<strong>逗号</strong>作为列表项与列表项之间的分隔符。事实上，我更喜欢使用逗号(<code>,</code>)用来做为列表的分隔符。在<code>JavaScript</code>和<code>PHP</code>这些语言中，都是用逗号作为数组的分隔符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list-space: &#34;item-1&#34; &#34;item-2&#34; &#34;item-3&#34;;&#10;$list-space: &#34;item-1&#34;,&#34;item-2&#34;,&#34;item-3&#34;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$list-space: &quot;item-1&quot; &quot;item-2&quot; &quot;item-3&quot;;</div><div class="line">$list-space: &quot;item-1&quot;,&quot;item-2&quot;,&quot;item-3&quot;;</div></pre></td></tr></table></figure>
 <p><strong>注：</strong>和CSS一样，只要没有特殊字符，列表项的双引号是可以省略的。所以<code>$list: item-1,item-2,item-3;</code>是有效的。</p>
 <p>###列表的嵌套</p>
 <p>Sass的List就像<code>JavaScript</code>或者其他的程序语言一样，对列表的嵌套层级并没有限制，可以根据自己的需求对列表进行嵌套。Sass的嵌套主要有两种方式，一种是嵌套的列表子级列表项是以逗号分隔，那么在列表中需要用括号来分隔；另一种嵌套的列表子级用空格分隔，那么在列表中可以使用逗号来分隔。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Nested lists with braces and same separator */&#10;$list: (&#10;        (&#34;item-1.1&#34;, &#34;item-1.2&#34;, &#34;item-1.3&#34;),&#10;        (&#34;item-2.1&#34;, &#34;item-2.2&#34;, &#34;item-2.3&#34;),&#10;        (&#34;item-3.1&#34;, &#34;item-3.2&#34;, &#34;item-3.3&#34;)&#10;       );&#10;&#10;/* Nested lists without braces using different separators to distinguish levels */&#10;$list: &#34;item-1.1&#34; &#34;item-1.2&#34; &#34;item-1.3&#34;,&#10;       &#34;item-2.1&#34; &#34;item-2.2&#34; &#34;item-2.3&#34;,&#10;       &#34;item-3.1&#34; &#34;item-3.2&#34; &#34;item-3.3&#34;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* Nested lists with braces and same separator */</div><div class="line">$list: (</div><div class="line">        (&quot;item-1.1&quot;, &quot;item-1.2&quot;, &quot;item-1.3&quot;),</div><div class="line">        (&quot;item-2.1&quot;, &quot;item-2.2&quot;, &quot;item-2.3&quot;),</div><div class="line">        (&quot;item-3.1&quot;, &quot;item-3.2&quot;, &quot;item-3.3&quot;)</div><div class="line">       );</div><div class="line"></div><div class="line">/* Nested lists without braces using different separators to distinguish levels */</div><div class="line">$list: &quot;item-1.1&quot; &quot;item-1.2&quot; &quot;item-1.3&quot;,</div><div class="line">       &quot;item-2.1&quot; &quot;item-2.2&quot; &quot;item-2.3&quot;,</div><div class="line">       &quot;item-3.1&quot; &quot;item-3.2&quot; &quot;item-3.3&quot;;</div></pre></td></tr></table></figure>
 <p>###你可以使用括号</p>
 <p>正如你前面看到的示例一样，在Sass中，你可以不用括号定义一个非空的列表。这主要是因为大多数人的想法相反，在Sass中括号不是用来创建列表（除非是空的列表），而是用来做为分隔符的。</p>
 <p>事实上，在Sass中没有人会强迫您使用括号来创建一个列表，如果你喜欢，完全可以使用逗号来区别。说实话，我就经常使用逗号来创建一个列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list: &#34;item-1&#34;, &#34;item-2&#34;, &#34;item-3&#34;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$list: &quot;item-1&quot;, &quot;item-2&quot;, &quot;item-3&quot;;</div></pre></td></tr></table></figure>
 <p><strong>注：</strong>这是一个理论。我注意到括号都不只是一个列表项分组。当你操作的一个列表有四五层的嵌套时，括号绝对不是可选的。这样会让列表变得太复杂了。</p>
 <blockquote>
 <p>操作一个五层以上的嵌套列表是一件痛苦而又麻烦的事情</p>
 </blockquote>
 <p>###列表的索引值</p>
 <p>Sass中的列表索引值和<code>JavaSctript</code>数组中的索引值不一样，他是<strong>从1开始，而不是从0开始</strong>。一旦你开始使用Sass列表，这个问题也是最容易出错的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($list,0) =&#62; throws error&#10;nth($list,1) =&#62; item-1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nth($list,0) =&gt; throws error</div><div class="line">nth($list,1) =&gt; item-1</div></pre></td></tr></table></figure>
 <p>###每个值都是一个列表</p>
 <p>在Sass中每一个值都可以是一个列表。字符串、数值、布尔值或者任何变量。而且可以通过Sass的<a href="http://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="external">List函数</a>来检测出一些值。</p>
 <p>我们来看一个简单的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$variable: &#34;Sass is awesome&#34;;&#10;$variable2: Sass is awesome;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$variable: &quot;Sass is awesome&quot;;</div><div class="line">$variable2: Sass is awesome;</div></pre></td></tr></table></figure>
 <p>上面两个变量值仅仅就是一个有引号，一个没有引号。</p>
 <p>使用<code>type-of()</code>函数检测出他们的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; type-of($variable)&#10;&#34;string&#34;&#10;&#62;&#62; type-of($variable2)&#10;&#34;list&#34;&#10;&#62;&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; type-of($variable)</div><div class="line">&quot;string&quot;</div><div class="line">&gt;&gt; type-of($variable2)</div><div class="line">&quot;list&quot;</div><div class="line">&gt;&gt;</div></pre></td></tr></table></figure>
 <p>使用<code>length()</code>函数检测出他们的长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; length($variable)&#10;1&#10;&#62;&#62; length($variable2)&#10;3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; length($variable)</div><div class="line">1</div><div class="line">&gt;&gt; length($variable2)</div><div class="line">3</div></pre></td></tr></table></figure>
 <p>在用<code>nth()</code>函数来检测输出内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; nth($variable,1)&#10;&#34;Sass is awesome&#34;&#10;&#62;&#62; nth($variable2,1)&#10;&#34;Sass&#34;&#10;&#62;&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; nth($variable,1)</div><div class="line">&quot;Sass is awesome&quot;</div><div class="line">&gt;&gt; nth($variable2,1)</div><div class="line">&quot;Sass&quot;</div><div class="line">&gt;&gt;</div></pre></td></tr></table></figure>
 <p>这里变动一下，来索引第二个值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62; nth($variable,2)&#10;SyntaxError: List index is 2 but list is only 1 item long for `nth&#39;&#10;&#62;&#62; nth($variable2,2)&#10;&#34;is&#34;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; nth($variable,2)</div><div class="line">SyntaxError: List index is 2 but list is only 1 item long for `nth&apos;</div><div class="line">&gt;&gt; nth($variable2,2)</div><div class="line">&quot;is&quot;</div></pre></td></tr></table></figure>
 <p>所在大家在使用的时候当心了，有引号的时候会当为一个字符串，当然他也是一个只有一个列表项的列表，而删除引号会被视为有三个列表项的列表。</p>
 <p>###可以使用空格或逗号分隔列表项</p>
 <p>在Sass的列表中，使用空格和逗号都可以用来分隔列表项，这两者都是完全有效的。我敢肯定你更喜欢使用逗号来分隔列表项，因为在<code>JavaScript</code>和<code>PHP</code>等程序中的数组，逗号是一个标准的分离器。如果你喜欢也可以用空格分隔。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list: #fff 42 &#34;awesome&#34;;&#10;$list: #fff,42,&#34;awesome&#34;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$list: #fff 42 &quot;awesome&quot;;</div><div class="line">$list: #fff,42,&quot;awesome&quot;;</div></pre></td></tr></table></figure>
 <p>你也可以使用逗号和空格分隔符混用，此时用来区别列表的嵌套。比如说你的一级列表中使用逗号来分隔列表项，而且他里面还嵌套了一个二级列表，那么二级列表可以使用空格来分隔。在下面的示例当中，第三个值是一个空格分隔的列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:  #b4d455, 42, &#34;awesome&#34; &#34;interesting&#34; &#34;free&#34;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$list:  #b4d455, 42, &quot;awesome&quot; &quot;interesting&quot; &quot;free&quot;;</div></pre></td></tr></table></figure>
 <p>综合上述，在任何情况之下，定义你的列表时，你应该注意以下几点：</p>
 <ul>
 <li>使用括号进行列表嵌套；</li>
@@ -310,34 +310,34 @@
 <p>##给Sass列表添加东西</p>
 <p>Sass中的<code>list</code>是一个很有趣的东西，但也是个很复杂的东西。前面都是一些理论化，接下来通过一个例子的使用来介绍<code>list</code>。</p>
 <p>比如说一个扩展选择器，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.home .nav-home,&#10;.about .nav-about,&#10;.products .nav-products,&#10;.contact .nav-contact</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.home .nav-home,</div><div class="line">.about .nav-about,</div><div class="line">.products .nav-products,</div><div class="line">.contact .nav-contact</div></pre></td></tr></table></figure>
 <p>这些选择器都是基于列表的关键值生成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pages: home,about,products,contact;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pages: home,about,products,contact;</div></pre></td></tr></table></figure>
 <p>根据这个列表，有三种方法可以生成这样的选择器，我们可以一个一个来看。</p>
 <p>首先我们创建一个测试例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pages: home,about,products,contact;&#10;$selector:();&#10;@each $item in $pages &#123;&#10;&#9;//&#25105;&#20204;&#21019;&#24314;$selector&#10;&#125;&#10;#&#123;$selector&#125;&#123;&#10;&#9;//&#26679;&#24335;&#20889;&#22312;&#36825;&#37324;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$pages: home,about,products,contact;</div><div class="line">$selector:();</div><div class="line">@each $item in $pages &#123;</div><div class="line">	//我们创建$selector</div><div class="line">&#125;</div><div class="line">#&#123;$selector&#125;&#123;</div><div class="line">	//样式写在这里</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>###长而复杂的方法</p>
 <p>这是我两星期前使用的一个方法，它可以运行，但它需要一个额外的条件来处理逗号。如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: $selector unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;);&#10;&#9;@if $item != nth($pages, length($pages))&#123;&#10;&#9;&#9;$selector: $selector unquote(&#34;,&#34;);&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@each $item in $pages&#123;</div><div class="line">	$selector: $selector unquote(&quot;.#&#123;$item&#125; .nav-#&#123;$item&#125;&quot;);</div><div class="line">	@if $item != nth($pages, length($pages))&#123;</div><div class="line">		$selector: $selector unquote(&quot;,&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>基本上给<code>$selector</code>添加了新的选择器，如果我们不处理列表的最后一项，我们需要添加一个逗号。</p>
 <p>###简洁的方法</p>
 <p>这种方法是通过<code>append()</code>函数方法，将他们添加到一起。这也是最简单的方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: append($selector,unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;),comma);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@each $item in $pages&#123;</div><div class="line">	$selector: append($selector,unquote(&quot;.#&#123;$item&#125; .nav-#&#123;$item&#125;&quot;),comma);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我认为这是很简单的，我们将显示的使用逗号将选择器与前面的分隔开，并将此重新赋以给新的选择器<code>$selector</code>。</p>
 <p>###隐式的方法</p>
 <p>这种方法是最简单的，通过隐式的附加功能，将选择器合在一起，非常的简洁。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@each $item in $pages&#123;&#10;&#9;$selector: $selector,unquote(&#34;.#&#123;$item&#125; .nav-#&#123;$item&#125;&#34;);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@each $item in $pages&#123;</div><div class="line">	$selector: $selector,unquote(&quot;.#&#123;$item&#125; .nav-#&#123;$item&#125;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>##自定义列表函数</p>
 <p>前面介绍主要Sass中<code>list</code>的功能以及自带的处理<code>list</code>的函数，但很多更先进的列表处理到目前为止，Sass自身是无法处理的。</p>
 <p><a href="http://hugogiraudel.com" target="_blank" rel="external">Hugo</a>根据Sass的一些功能为<code>list</code>定义了一些高级的函数功能，用来处理Sass的<code>list</code>。并在《<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a>》一文中介绍了这些高级函数的功能，以及使用方法。接下来，我们也跟随此文了解和学习这些高级的列表函数。</p>
 <p>我们来演示一个简单的函数。这里有两上小功能，就是定义两个函数用来获取列表中的第一个列表项和最后一个列表项的值。在很多时候我们都是通过<code>nth()</code>函数方式来获取：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($list,1);//&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#31532;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;nth($list,length($list));//&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010;&#21015;&#34920;&#39033;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nth($list,1);//获取列表中的第一个列表项</div><div class="line">nth($list,length($list));//获取列表中的最后一个列表项</div></pre></td></tr></table></figure>
 <p>众所周知，Sass中的列表项索引号是从<code>1</code>开始，而<code>length($list)</code>可以获得一个列表的长度值，再配合<code>nth()</code>函数得到第一项和最后一项。那么我们可以换过一个角度来思考，将这两个分别封装成两个函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;first()&#20989;&#25968;&#65292;&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#31532;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;@function first($list)&#123;&#10;&#9;@return nth($list,1);&#10;&#125;&#10;&#10;//&#23450;&#20041;last()&#20989;&#25968;&#65292;&#33719;&#21462;&#21015;&#34920;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010;&#21015;&#34920;&#39033;&#10;@function last($list)&#123;&#10;&#9;@return nth($list,length($list));&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//定义first()函数，获取列表中的第一个列表项</div><div class="line">@function first($list)&#123;</div><div class="line">	@return nth($list,1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//定义last()函数，获取列表中的最后一个列表项</div><div class="line">@function last($list)&#123;</div><div class="line">	@return nth($list,length($list));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>例如我们一个颜色列表，我在页头<code>header</code>调用列表中第一个颜色，而在页脚<code>footer</code>调用列表中最后一个颜色，我们就可以这样来使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;&#39068;&#33394;&#21015;&#34920;&#10;$colors: green,blue,orange,yellow;&#10;&#10;//&#35843;&#29992;&#21015;&#34920;&#20013;&#31532;&#19968;&#20010;&#39068;&#33394;&#10;.header &#123;&#10;&#9;color: first($colors);//&#31561;&#21516;&#20110;nth($colors,1)&#10;&#125;&#10;&#10;//&#35843;&#29992;&#21015;&#34920;&#20013;&#26368;&#21518;&#19968;&#20010;&#39068;&#33394;&#10;.footer&#123;&#10;&#9;color: last($colors);//&#31561;&#21516;&#20110;nth($colors,length($colors))&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//定义颜色列表</div><div class="line">$colors: green,blue,orange,yellow;</div><div class="line"></div><div class="line">//调用列表中第一个颜色</div><div class="line">.header &#123;</div><div class="line">	color: first($colors);//等同于nth($colors,1)</div><div class="line">&#125;</div><div class="line"></div><div class="line">//调用列表中最后一个颜色</div><div class="line">.footer&#123;</div><div class="line">	color: last($colors);//等同于nth($colors,length($colors))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>转译出来的CSS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.header &#123;&#10;  color: green;&#10;&#125;&#10;&#10;.footer &#123;&#10;  color: yellow;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.header &#123;</div><div class="line">  color: green;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.footer &#123;</div><div class="line">  color: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>很多时候列表只有一个列表项，此时<code>first()</code>和<code>last()</code>函数获取的列表项将等同。</p>
 <p>其它自定义的列表高级函数，如果你感兴趣，可以猛击<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">这里</a></p>
 <p>##总结</p>
@@ -354,18 +354,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/21/Sass/如何根据背景颜色动态修改文本颜色.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/21/Sass/模块化css更要避免选择器嵌套.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          如何根据背景颜色动态修改文本颜色
+          模块化CSS更要避免选择器嵌套
         
       </div>
     </a>
   
   
-    <a href="/2014/09/21/Sass/关于sass3.4你应该知道的一些事情.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">关于Sass3.4你应该知道的一些事情</div>
+    <a href="/2014/09/21/Sass/如何根据背景颜色动态修改文本颜色.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何根据背景颜色动态修改文本颜色</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -411,8 +411,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

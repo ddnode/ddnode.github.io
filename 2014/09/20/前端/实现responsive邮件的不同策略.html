@@ -24,13 +24,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实现Responsive邮件的不同策略">
 <meta name="twitter:description" content="电子邮件变得相当的重要，它在我们身边随时出现。所以我们重新在思考FogBugz邮件通知的制作，我们知道我们必须在随时随地都能阅读，这意味着移动端上要做很多的优化。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/responsive-email-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -245,34 +246,34 @@
 <p>如果你可以自信的说，你的用户不会使用Lotus Notes，Outlook或者App Mail，那么你可以跳过这一节，继续往后阅读。如果你不能确认，那么请仔细阅读这部分内容，不会花你很长时间。</p>
 <p>###Lotus Notes8 和Outlook 2000~2003</p>
 <p>因为Lotus Notes8和Outlook完全是桌面客户端，我们可以侥幸的迫使它们总是用一个固定的宽度来显示，用于优化桌面上的邮件显示效果。我们做的是通过给目标设置一个条件：Lotus Notes和老版本的Outlook使用的是IE渲染引擎，所以我们可以使用条件注释，先检查IE，给他一个固定的宽度来约束整个邮件的内容。</p>
-<pre><code><span class="comment">&lt;!--[if IE]&gt;
-      &lt;table width="540" align="center" cellpadding="0" cellspacing="0" border="0"&gt;
+<pre><code>&lt;!--[if IE]&gt;
+      &lt;table width=&quot;540&quot; align=&quot;center&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
         &lt;tr&gt;
               &lt;td&gt;
-&lt;![endif]--&gt;</span>
+&lt;![endif]--&gt;
                 [EMAIL BODY HERE]
-<span class="comment">&lt;!--[if IE]&gt;
+&lt;!--[if IE]&gt;
               &lt;/td&gt;
         &lt;/tr&gt;
       &lt;/table&gt;
-&lt;![endif]--&gt;</span>
+&lt;![endif]--&gt;
 </code></pre><p><strong>注意:</strong>约束的元素是<code>table</code>。这是因为，<code>div</code>在所有电子邮件客户端都不可靠。</p>
 <p>###Outlook 2007+</p>
 <p>继续往下阅读，我们可以使用相同的策略用在Outlook 2007和更新的版本。唯一的区别是，Outlook 2007+采用的是Microsoft Office作为渲染引擎。不要问为什么，我们只需要添加<code>gte mso 9</code>的条件。这个条件表示的是“大于或等于Microsoft Office 9.0版本”，它涵盖了<a href="http://templates.mailchimp.com/development/css/outlook-conditional-css" target="_blank" rel="external">Office2000+版本</a>。</p>
-<pre><code><span class="comment">&lt;!--[if (gte mso 9)|(IE)]&gt;
-      &lt;table width="540" align="center" cellpadding="0" cellspacing="0" border="0"&gt;
+<pre><code>&lt;!--[if (gte mso 9)|(IE)]&gt;
+      &lt;table width=&quot;540&quot; align=&quot;center&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
         &lt;tr&gt;
               &lt;td&gt;
-&lt;![endif]--&gt;</span>
+&lt;![endif]--&gt;
                 [EMAIL BODY HERE]
-<span class="comment">&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;!--[if (gte mso 9)|(IE)]&gt;
               &lt;/td&gt;
         &lt;/tr&gt;
       &lt;/table&gt;
-&lt;![endif]--&gt;</span>
+&lt;![endif]--&gt;
 </code></pre><p>###Apple Mail</p>
 <p>出人意外的是，经过我们的测试，Apple Mail也不尊重<code>max-width</code>！幸运的是，它确实支持媒体查询，所以我们可以添加一个媒体查询，让他回退。把需要的样式放置在<code>&lt;head&gt;</code>标签中的<code>&lt;style&gt;&lt;/style&gt;</code>内：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (min-device-width: 541px) &#123;&#10;  .content &#123;&#10;    width: 540px !important;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media only screen and (min-device-width: 541px) &#123;</div><div class="line">  .content &#123;</div><div class="line">    width: 540px !important;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这只是说：“如果我的设备不是一个很小的手机，就会让邮件容器有一个固定宽度”。</p>
 <p>完成了！所有的东西都在这个<a href="https://gist.github.com/tinabeans/6996367" target="_blank" rel="external">文件</a>中。</p>
 <p>最后，记得要测试测试再测试。我在<a href="https://litmus.com/" target="_blank" rel="external">Litmus</a>，我的同事，和一小部分用户上进行测试。测试，直到你能测试没有什么问题，然后告诉世界你成功了。</p>
@@ -292,18 +293,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/崇拜css.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/实战css混合模式.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          崇拜CSS
+          实战CSS混合模式
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/实战css混合模式.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">实战CSS混合模式</div>
+    <a href="/2014/09/20/前端/崇拜css.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">崇拜CSS</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -349,8 +350,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

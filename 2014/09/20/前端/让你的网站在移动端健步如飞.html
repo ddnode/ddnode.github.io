@@ -34,13 +34,14 @@
 <meta name="twitter:title" content="让你的网站在移动端健步如飞">
 <meta name="twitter:description" content="最近一项 研究表明,80%的网民对移动端的浏览体验感到失望,同时,当体验提升时,他们会在智能手机上花费更多的时间。
 这不奇怪，因为64%的智能手机用户希望网站可以在4秒内加载完毕，但一半的网站花费了二倍以上的时间，达到了9秒。这篇文章会阐述一些可以使你的网站在移动端跑得更快的技术。">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -242,42 +243,42 @@
 <p>##怎样减少依赖文件</p>
 <p>###怎样减少依赖文件</p>
 <p>如果你想为移动端用户隐藏图片，<code>display:none</code>与<code>visibility：hidden</code>是不能阻止文件下载的。测试下面的代码：</p>
-<pre><code>&lt;<span class="tag">div</span> style=<span class="string">"display:none;"</span>&gt;
-       &lt;<span class="tag">img</span> src=<span class="string">"logo-none.png"</span> /&gt;
+<pre><code>&lt;div style=&quot;display:none;&quot;&gt;
+       &lt;img src=&quot;logo-none.png&quot; /&gt;
 &lt;/div&gt;
 
-&lt;<span class="tag">div</span> style=<span class="string">"visibility:hidden;"</span>&gt;
-       &lt;<span class="tag">img</span> src=<span class="string">"logo-hidden.png"</span> /&gt;
+&lt;div style=&quot;visibility:hidden;&quot;&gt;
+       &lt;img src=&quot;logo-hidden.png&quot; /&gt;
 &lt;/div&gt;
 </code></pre><p>你可以观察下面的瀑布图，图片容器设置<code>display: none</code>或<code>visibility: hidden</code>后仍然会被下载。</p>
 <p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 
 <p>替代方案是利用css加载背景图片，之后利用media query媒体查询来通过条件隐藏图片。这个技术最初被<a href="http://blog.cloudfour.com/css-media-query-for-mobile-is-fools-gold/" target="_blank" rel="external">Jason grigsby测试</a>过，之后被<a href="http://timkadlec.com/2012/04/media-query-asset-downloading-results/" target="_blank" rel="external">tim kandlec进一步拓展</a>。<a href="http://www.amazon.com/gp/aw/d/0345535421" target="_blank" rel="external">亚马逊独立的移动端页面</a>使用了此种技术，根据设备来条件加载特定的图片。</p>
-<pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width"</span>&gt;</span>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
 
-<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">600px</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">display</span>:<span class="value">none</span></span>;
-           }</span>
+&lt;style&gt;
+    @media (max-width:600px) {
+           .image {
+              display:none;
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">601px</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image1.jpg)</span></span>;
-           }</span>
+    @media (min-width:601px) {
+           .image {
+              background-image: url(image1.jpg);
+           }
     }
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+&lt;/style&gt;
 
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"image"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+&lt;div class=&quot;image&quot;&gt;&lt;/div&gt;
 </code></pre><p>你可以看到图片不加载的瀑布图：</p>
 <p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 
 <p>###保持最小数量的外联样式表</p>
 <p>如果你已经根据断点来加载分开的样式表，你需要仔细思考这样的做法了。我们测试了以下的代码：</p>
-<pre><code><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"extra-small.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">media</span>=<span class="value">"screen and (max-width: 390px)"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"small.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">media</span>=<span class="value">"screen and (min-width: 391px) and (max-width: 500px)"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"medium.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">media</span>=<span class="value">"screen and (min-width: 501px) and (max-width: 767px)"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"large.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">media</span>=<span class="value">"screen and (min-width: 768px)"</span> /&gt;</span>
+<pre><code>&lt;link href=&quot;extra-small.css&quot; rel=&quot;stylesheet&quot; media=&quot;screen and (max-width: 390px)&quot; /&gt;
+&lt;link href=&quot;small.css&quot; rel=&quot;stylesheet&quot; media=&quot;screen and (min-width: 391px) and (max-width: 500px)&quot; /&gt;
+&lt;link href=&quot;medium.css&quot; rel=&quot;stylesheet&quot; media=&quot;screen and (min-width: 501px) and (max-width: 767px)&quot; /&gt;
+&lt;link href=&quot;large.css&quot; rel=&quot;stylesheet&quot; media=&quot;screen and (min-width: 768px)&quot; /&gt;
 </code></pre><p>你可以看到这四个样式表在竖屏下(portrait mode)都被加载了.</p>
 <p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 
@@ -293,12 +294,12 @@
 <p>###DATAURI来代替图片与WEB字体文件</p>
 <p><a href="http://en.wikipedia.org/wiki/Data_URI_scheme" target="_blank" rel="external">Data uri方案</a>可以不使用任何额外资源就可以向html及css中插入内容。这个技术可以在web页面中插入任何内容，通常被用于插入图片及web字体文件。这个技术最大的好处是可以减少http请求。</p>
 <p>Data uri使用很简单，你可以按照下面的格式，使用base64编码过的数据直接插入html与css中代替图片文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:[MIME-type][;charset=encoding][;base64],[data]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:[MIME-type][;charset=encoding][;base64],[data]</div></pre></td></tr></table></figure>
 <p>举个例子，下面的小图标就是用data uri创建的:</p>
 <p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-7.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 
 <p>代码在这：</p>
-<pre><code>&lt;<span class="tag">img</span> alt=<span class="string">""</span> src=<span class="string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACI0lEQVQoz2P48/bFX1Tw58vn3/dv/rp56dfD238+vocIfl029UOC3dsgS4Y/nz4gq/794sm3VbO+zmr/MqX+S1/l597yb2vn/rpx6VN14od4+3cBRgx/vn9F1vB9/+bPPeVfJlZ/6S793JwDVPcxL/BjQeiHFNf3cbbvgw0Z4JZCwM/Lpz81Zn2qS/1Ul/apOv5jUfiHbP8PSc7vY23fh5m+C9JjALoVzQ8/zx7+0lH4IcvnQ4bXhwzPD8muINXhZu+C9N/56zB8mdr49/cfdH9/fPdj36bPLbkgpYH670KNQaoDdV47aTK8j7H+tmXpX6zg95+f545+7ix656PxzlP5jaf2c2M1hvcRZu8jzb4umfrn6xfs2v78+XFkx9sI2+fass8N1Rje+eu/dtR+YaD0Jj70296df3/+xKrr593bL91tnmnJMbwwVXtuoAbU+kxD5pmu4pvYkK9rVvz58B5Tz7dd257pKDAAlT43giEDFZA2NclXAe5fN60DOgZFx48fb6ICGRCqIchY/bmhKkibivinOdPRLPnQ1cwAUqGrCFQBVIes7ZmmzEtni9+vXiFr+DR9IsMzHfnXIV5vs5OeqUs/05B+rqcIdBhQ81M1yRfW+r+fPUHRMLWfAejir+tWATlf1ix/HR34wlL3ub7Scx2F56Yan6ZPQnPS+6oihlc+Tr/fv4OG+Levv+7d+X700PeDe3/dv4um+tfjhy9drQDa2DKqOJhVKgAAAABJRU5ErkJggg=="</span> /&gt;
+<pre><code>&lt;img alt=&quot;&quot; src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACI0lEQVQoz2P48/bFX1Tw58vn3/dv/rp56dfD238+vocIfl029UOC3dsgS4Y/nz4gq/794sm3VbO+zmr/MqX+S1/l597yb2vn/rpx6VN14od4+3cBRgx/vn9F1vB9/+bPPeVfJlZ/6S793JwDVPcxL/BjQeiHFNf3cbbvgw0Z4JZCwM/Lpz81Zn2qS/1Ul/apOv5jUfiHbP8PSc7vY23fh5m+C9JjALoVzQ8/zx7+0lH4IcvnQ4bXhwzPD8muINXhZu+C9N/56zB8mdr49/cfdH9/fPdj36bPLbkgpYH670KNQaoDdV47aTK8j7H+tmXpX6zg95+f545+7ix656PxzlP5jaf2c2M1hvcRZu8jzb4umfrn6xfs2v78+XFkx9sI2+fass8N1Rje+eu/dtR+YaD0Jj70296df3/+xKrr593bL91tnmnJMbwwVXtuoAbU+kxD5pmu4pvYkK9rVvz58B5Tz7dd257pKDAAlT43giEDFZA2NclXAe5fN60DOgZFx48fb6ICGRCqIchY/bmhKkibivinOdPRLPnQ1cwAUqGrCFQBVIes7ZmmzEtni9+vXiFr+DR9IsMzHfnXIV5vs5OeqUs/05B+rqcIdBhQ81M1yRfW+r+fPUHRMLWfAejir+tWATlf1ix/HR34wlL3ub7Scx2F56Yan6ZPQnPS+6oihlc+Tr/fv4OG+Levv+7d+X700PeDe3/dv4um+tfjhy9drQDa2DKqOJhVKgAAAABJRU5ErkJggg==&quot; /&gt;
 </code></pre><p>Wordpress.com的响应式网站使用这个技术插入了图片及字体。<a href="http://www.bostonglobe.com/" target="_blank" rel="external">波士顿环球报的响应式网站</a>也使用了这个技术，他们的网站在智能手机上，四秒内就加载完毕了。</p>
 <p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-8.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 
@@ -308,12 +309,12 @@
 <p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-9.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 
 <p>这是代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;svg version=&#34;1.1&#34; id=&#34;drop&#34; x=&#34;0px&#34; y=&#34;0px&#34;&#10;   width=&#34;17.812px&#34; height=&#34;28.664px&#34;&#10;   viewBox=&#34;296.641 381.688 17.812 28.664&#34;&#10;   enable-background=&#34;new 296.641 381.688 17.812 28.664&#34;&#10;   xml:space=&#34;preserve&#34;&#62;&#10;&#60;path fill=&#34;#EE1C4E&#34; d=&#34;M314.428,401.082c-0.443-5.489-5.146-9.522-7&#10;.52-14.186c-0.816-1.597-1.352-5.208-1.352-5.208 s-0.555,3.792-1.388&#10;,5.425c-2.233,4.371-7.127,8.999-7.507,14.047c-0.36,4.794,4.101,9.191&#10;,8.896,9.191 C310.49,410.354,314.816,405.941,314.428,401.082z&#34;/&#62;&#10;&#60;/svg&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;svg version=&quot;1.1&quot; id=&quot;drop&quot; x=&quot;0px&quot; y=&quot;0px&quot;</div><div class="line">   width=&quot;17.812px&quot; height=&quot;28.664px&quot;</div><div class="line">   viewBox=&quot;296.641 381.688 17.812 28.664&quot;</div><div class="line">   enable-background=&quot;new 296.641 381.688 17.812 28.664&quot;</div><div class="line">   xml:space=&quot;preserve&quot;&gt;</div><div class="line">&lt;path fill=&quot;#EE1C4E&quot; d=&quot;M314.428,401.082c-0.443-5.489-5.146-9.522-7</div><div class="line">.52-14.186c-0.816-1.597-1.352-5.208-1.352-5.208 s-0.555,3.792-1.388</div><div class="line">,5.425c-2.233,4.371-7.127,8.999-7.507,14.047c-0.36,4.794,4.101,9.191</div><div class="line">,8.896,9.191 C310.49,410.354,314.816,405.941,314.428,401.082z&quot;/&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
 <p>SVG文件可以通过一个矢量图形编辑器,如Adobe Illustrator创建。一旦创建,在文本编辑器中打开文件并把其代码拷贝出来(减去任何不必要的数据)。</p>
 <p>上面的代码在HTML文件中会生效，,但不会在样式表中生效。若在一个样式表中嵌入SVG文件,需要先将它转换为一个数据URI。如果这样做，我们需要从编辑器中(一定要包括元数据)拷贝出,用base64编码,然后使用以下格式嵌入样式表:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:image/svg+xml[;base64],[data]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:image/svg+xml[;base64],[data]</div></pre></td></tr></table></figure>
 <p>这是代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0i&#10;MS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx&#10;1c3RyYXRvciAxNS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOi&#10;A2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL&#10;0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8x&#10;LjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzE&#10;iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Im&#10;h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3a&#10;WR0aD0iMTcuODEycHgiIGhlaWdodD0iMjguNjY0cHgiIHZpZXdCb3g9IjI5Ni42NDEg&#10;MzgxLjY4OCAxNy44MTIgMjguNjY0Ig0KCSBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDI&#10;5Ni42NDEgMzgxLjY4OCAxNy44MTIgMjguNjY0IiB4bWw6c3BhY2U9InByZXNlcnZlIj&#10;4NCjxwYXRoIGZpbGw9IiNFRTFDNEUiIGQ9Ik0zMTQuNDI4LDQwMS4wODJjLTAuNDQzL&#10;TUuNDg5LTUuMTQ2LTkuNTIyLTcuNTItMTQuMTg2Yy0wLjgxNi0xLjU5Ny0xLjM1Mi01&#10;LjIwOC0xLjM1Mi01LjIwOA0KCXMtMC41NTUsMy43OTItMS4zODgsNS40MjVjLTIuMjM&#10;zLDQuMzcxLTcuMTI3LDguOTk5LTcuNTA3LDE0LjA0N2MtMC4zNiw0Ljc5NCw0LjEwMS&#10;w5LjE5MSw4Ljg5Niw5LjE5MQ0KCUMzMTAuNDksNDEwLjM1NCwzMTQuODE2LDQwNS45N&#10;DEsMzE0LjQyOCw0MDEuMDgyeiIvPg0KPC9zdmc+DQo=);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0i</div><div class="line">MS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx</div><div class="line">1c3RyYXRvciAxNS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOi</div><div class="line">A2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL</div><div class="line">0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8x</div><div class="line">LjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzE</div><div class="line">iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Im</div><div class="line">h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3a</div><div class="line">WR0aD0iMTcuODEycHgiIGhlaWdodD0iMjguNjY0cHgiIHZpZXdCb3g9IjI5Ni42NDEg</div><div class="line">MzgxLjY4OCAxNy44MTIgMjguNjY0Ig0KCSBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDI</div><div class="line">5Ni42NDEgMzgxLjY4OCAxNy44MTIgMjguNjY0IiB4bWw6c3BhY2U9InByZXNlcnZlIj</div><div class="line">4NCjxwYXRoIGZpbGw9IiNFRTFDNEUiIGQ9Ik0zMTQuNDI4LDQwMS4wODJjLTAuNDQzL</div><div class="line">TUuNDg5LTUuMTQ2LTkuNTIyLTcuNTItMTQuMTg2Yy0wLjgxNi0xLjU5Ny0xLjM1Mi01</div><div class="line">LjIwOC0xLjM1Mi01LjIwOA0KCXMtMC41NTUsMy43OTItMS4zODgsNS40MjVjLTIuMjM</div><div class="line">zLDQuMzcxLTcuMTI3LDguOTk5LTcuNTA3LDE0LjA0N2MtMC4zNiw0Ljc5NCw0LjEwMS</div><div class="line">w5LjE5MSw4Ljg5Niw5LjE5MQ0KCUMzMTAuNDksNDEwLjM1NCwzMTQuODE2LDQwNS45N</div><div class="line">DEsMzE0LjQyOCw0MDEuMDgyeiIvPg0KPC9zdmc+DQo=);</div></pre></td></tr></table></figure>
 <p>###Sprites图</p>
 <p>Sprites（雪碧图）技术可以把经常使用的图片合成为一张图片，从而减少http请求。比如当你将四张图片合成到一个sprite中后，http请求从4减少到1.需要显示的图片利用<code>background-position</code>属性来控制。</p>
 <p><img alt="让你的网站在移动端健步如飞" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1308/build-fast-loading-mobile-website-10.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
@@ -338,30 +339,30 @@
 <p>移动先行也适用于前端开发。</p>
 <p>编码时以移动用户作为第一考虑,然后为平板电脑和桌面逐步增强,减少不必要的依赖。另外一种方式为桌面端优先,重型组件默认加载,然后为小屏幕隐藏这些组件(称为“优雅降级”)。</p>
 <p>下面例子为桌面端优先的编码:</p>
-<pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-    <span class="class">.image</span> <span class="rules">{
-           <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image1.jpg)</span></span>;
-    }</span>
-
-    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">390px</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
-           }</span>
+<pre><code>&lt;style&gt;
+    .image {
+           background-image: url(image1.jpg);
     }
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
 
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"image"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    @media (max-width:390px) {
+           .image {
+              display: none;
+           }
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;image&quot;&gt;&lt;/div&gt;
 </code></pre><p>在上面的代码中,默认是显示图像,然后在移动设备上通过媒体查询隐藏了图片。</p>
 <p>下面的例子为移动端优先的编码:</p>
-<pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">391px</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image1.jpg)</span></span>;
-           }</span>
+<pre><code>&lt;style&gt;
+    @media (min-width:391px) {
+           .image {
+              background-image: url(image1.jpg);
+           }
     }
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+&lt;/style&gt;
 
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"image"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+&lt;div class=&quot;image&quot;&gt;&lt;/div&gt;
 </code></pre><p>默认情况下,图片不显示,之后使用媒体查询对更大的屏幕进行渐进增强。</p>
 <p>###拆分到多个页面(单独的移动网站)</p>
 <p>保持你的核心内容在页面上,之后提供到次要内容的链接到次要内容。这将减少HTML的加载负担，同时防止相关的资源被下载。</p>
@@ -378,105 +379,105 @@
 <p>###响应式图片</p>
 <p>响应式图片的思路是让访客图像只下载那些最适合他们的设备的图片,对于智能手机,使用低分辨率图像,可以快速下载和渲染。</p>
 <p>亚马逊的独立的移动产品页面使用响应式图像技术,利用媒体查询分配一个特定的背景图像到一个div。这是亚马逊的代码:</p>
-<pre><code><span class="comment">&lt;!-- // This meta viewport is inserted for iPhones // --&gt;</span>
-<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0"</span>&gt;</span>
+<pre><code>&lt;!-- // This meta viewport is inserted for iPhones // --&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0&quot;&gt;
 
-<span class="comment">&lt;!-- // This meta viewport is inserted for the Nexus S // --&gt;</span>
-<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width"</span>&gt;</span>
+&lt;!-- // This meta viewport is inserted for the Nexus S // --&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
 
-<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">390px</span>) </span>{
-           <span class="id">#image-container</span> <span class="rules">{
-              <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">109px</span></span></span>;
-           }</span>
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image1.jpg)</span></span>;
-           }</span>
+&lt;style&gt;
+    @media (max-width:390px) {
+           #image-container {
+              max-width: 109px;
+           }
+           .image {
+              background-image: url(image1.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">390px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image2.jpg)</span></span>;
-           }</span>
+    @media (max-width:390px) and (-webkit-min-device-pixel-ratio:1.5) {
+           .image {
+              background-image: url(image2.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (max-width:<span class="number">390px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">2</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image3.jpg)</span></span>;
-           }</span>
+    @media (max-width:390px) and (-webkit-min-device-pixel-ratio:2) {
+           .image {
+              background-image: url(image3.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">391px</span>) and (max-width:<span class="number">500px</span>) </span>{
-           <span class="id">#image-container</span> <span class="rules">{
-              <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">121px</span></span></span>;
-           }</span>
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image4.jpg)</span></span>;
-           }</span>
+    @media (min-width:391px) and (max-width:500px) {
+           #image-container {
+              max-width: 121px;
+           }
+           .image {
+              background-image: url(image4.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">391px</span>) and (max-width:<span class="number">500px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image5.jpg)</span></span>;
-           }</span>
+    @media (min-width:391px) and (max-width:500px) and (-webkit-min-device-pixel-ratio:1.5) {
+           .image {
+              background-image: url(image5.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">391px</span>) and (max-width:<span class="number">500px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">2</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image6.jpg)</span></span>;
-           }</span>
+    @media (min-width:391px) and (max-width:500px) and (-webkit-min-device-pixel-ratio:2) {
+           .image {
+              background-image: url(image6.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width: <span class="number">501px</span>) and (max-width: <span class="number">767px</span>) </span>{
-           <span class="id">#image-container</span> <span class="rules">{
-              <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">182px</span></span></span>;
-           }</span>
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image5.jpg)</span></span>;
-           }</span>
+    @media (min-width: 501px) and (max-width: 767px) {
+           #image-container {
+              max-width: 182px;
+           }
+           .image {
+              background-image: url(image5.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width: <span class="number">501px</span>) and (max-width: <span class="number">767px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image7.jpg)</span></span>;
-           }</span>
+    @media (min-width: 501px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio:1.5) {
+           .image {
+              background-image: url(image7.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width: <span class="number">501px</span>) and (max-width: <span class="number">767px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">2</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image8.jpg)</span></span>;
-           }</span>
+    @media (min-width: 501px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio:2) {
+           .image {
+              background-image: url(image8.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">768px</span>) </span>{
-           <span class="id">#image-container</span> <span class="rules">{
-              <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">303px</span></span></span>;
-           }</span>
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image8.jpg)</span></span>;
-           }</span>
+    @media (min-width:768px) {
+           #image-container {
+              max-width: 303px;
+           }
+           .image {
+              background-image: url(image8.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">768px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image8.jpg)</span></span>;
-           }</span>
+    @media (min-width:768px) and (-webkit-min-device-pixel-ratio:1.5) {
+           .image {
+              background-image: url(image8.jpg);
+           }
     }
-    <span class="at_rule">@<span class="keyword">media</span> (min-width:<span class="number">768px</span>) and (-webkit-min-device-pixel-ratio:<span class="number">2</span>) </span>{
-           <span class="class">.image</span> <span class="rules">{
-              <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(image8.jpg)</span></span>;
-           }</span>
+    @media (min-width:768px) and (-webkit-min-device-pixel-ratio:2) {
+           .image {
+              background-image: url(image8.jpg);
+           }
     }
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+&lt;/style&gt;
 
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"image-container"</span>&gt;</span>
-       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"image"</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"image1.jpg"</span> /&gt;</span>
-       <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+&lt;div id=&quot;image-container&quot;&gt;
+       &lt;div class=&quot;image&quot;&gt;
+          &lt;img src=&quot;image1.jpg&quot; /&gt;
+       &lt;/div&gt;
+&lt;/div&gt;
 </code></pre><p>尽管亚马逊在内部样式中有八个产品图片,在竖屏模式下的iPhone 4或Nexus S只有两个被下载。</p>
 <p>《波士顿环球报》的响应式网站，采用了利用不同的<code>data-fullsrc</code>来加载图片的<a href="http://www.alistapart.com/articles/responsive-images-how-they-almost-worked-and-what-we-need/" target="_blank" rel="external">响应式图像技术</a>。这是一个html标记,和一个服务器端JavaScript重定向规则的组合:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;img alt=&#34;&#34; src=&#34;mobile-size.r.jpg&#34; data-fullsrc=&#34;desktop-size.jpg&#34; /&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img alt=&quot;&quot; src=&quot;mobile-size.r.jpg&quot; data-fullsrc=&quot;desktop-size.jpg&quot; /&gt;</div></pre></td></tr></table></figure>
 <p><code>src</code>是手机上使用的图像,确保网站默认为尺寸较小的版本(移动先行),而<code>data-fullsrc</code>是全尺寸的图像。JavaScript用来检测设备的屏幕大小,之后写入<code>cookie</code>。对于大屏幕,JavaScript利用<code>data-fullsrc</code>上的高分辨率图像替换较小的图片。服务器也使用Apache重写规则，来在图像文件的名称中检查<code>.r.</code>(mobile用的图片带有<code>.r.</code>),同时显示一个备用GIF,而不会使用较小的移动图像(从而防止手机大小的图像被下载到桌面)。</p>
 <p><a href="http://www.microsoft.com/" target="_blank" rel="external">微软</a>的响应式网站使用的斯科特·杰尔的<a href="https://github.com/scottjehl/picturefill" target="_blank" rel="external">Picturefill</a>技术:</p>
-<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-picture</span> <span class="attribute">data-alt</span>=<span class="value">"Alternate text here"</span>&gt;</span>
-       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-src</span>=<span class="value">"image1.png"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-src</span>=<span class="value">"image2.png"</span> <span class="attribute">data-media</span>=<span class="value">"(min-device-pixel-ratio: 2.0)"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-src</span>=<span class="value">"image3.png"</span> <span class="attribute">data-media</span>=<span class="value">"(max-width: 539px)"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-       <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-src</span>=<span class="value">"image4.png"</span> <span class="attribute">data-media</span>=<span class="value">"(max-width: 539px) and (min-device-pixel-ratio: 2.0)"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<pre><code>&lt;div data-picture data-alt=&quot;Alternate text here&quot;&gt;
+       &lt;div data-src=&quot;image1.png&quot;&gt;&lt;/div&gt;
+       &lt;div data-src=&quot;image2.png&quot; data-media=&quot;(min-device-pixel-ratio: 2.0)&quot;&gt;&lt;/div&gt;
+       &lt;div data-src=&quot;image3.png&quot; data-media=&quot;(max-width: 539px)&quot;&gt;&lt;/div&gt;
+       &lt;div data-src=&quot;image4.png&quot; data-media=&quot;(max-width: 539px) and (min-device-pixel-ratio: 2.0)&quot;&gt;&lt;/div&gt;
 
-       <span class="tag">&lt;<span class="title">noscript</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"image1.png"</span> <span class="attribute">alt</span>=<span class="value">"Alternate text here"</span> /&gt;</span><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+       &lt;noscript&gt;&lt;img src=&quot;image1.png&quot; alt=&quot;Alternate text here&quot; /&gt;&lt;/noscript&gt;
+&lt;/div&gt;
 </code></pre><p>注意:上面的代码片段中, <code>data-picture= &quot; &quot;</code>应该是 <code>data-picture</code>,没有= “ “。(=字符是smashing magazine的所见即所得编辑器自动插入的)。利用这种技术,JavaScript扫描页面的代码,发现包含<code>data-picture</code>属性的<code>div</code>。然后根据<code>data-media</code> 属性插入一个新的<code>img</code>标签。</p>
 <p>这些响应式图像技术的主要好处有:</p>
 <ul>
@@ -527,18 +528,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/让手机站点像原生应用的四大途径.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/Drupal/nodes-programmatically-in-drupal-7.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          让手机站点像原生应用的四大途径
+          Drupal 7 编码创建 Nodes
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/终极flexbox属性查询列表.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">终极Flexbox属性查询列表</div>
+    <a href="/2014/09/20/前端/让手机站点像原生应用的四大途径.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">让手机站点像原生应用的四大途径</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -584,8 +585,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

@@ -19,13 +19,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何定制Foundation4顶部工具栏">
 <meta name="twitter:description" content="Zurb开发的第4版本Foundation（简称为Foundation 4）使得顶部工具栏表现为非常突出，出色的顶部工具栏差不多成为一个由Foundation搭建起来网站的象征元素。今天我们将学习如何通过不同方式去实现它，把它放置在页面的其他地方，让你拥有自定义样式和响应式的水平导航菜单。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -218,38 +219,38 @@
 <p>你可以删掉其他内容代码，我们将采用一种全屏宽度的设计，这不是很复杂的，只是需要想到更好的办法来处理它。</p>
 <p>好的，我们将编写header、导航、主内容和footer区域的内容，我们将给每个区域都添加<code>class=&quot;full-width&quot;</code>,然后再添加一个块元素<code>&lt;div class=&quot;row&quot;&gt;</code>，块元素里面再添加一个块元素<code>&lt;div class=&quot;large-12 columns&quot;&gt;</code>，这也就是搭起基本的网格结构。</p>
 <p><strong>备注：</strong>更多关于网格系统如何运行的，可以回顾教程第二篇：<a href="http://www.w3cplus.com/css/foundation-for-beginners-the-grid-system.html" target="_blank" rel="external">初学者学习foundation：网格系统</a>。</p>
-<pre><code><span class="comment">&lt;!-- HEADER AREA --&gt;</span>
-<span class="tag">&lt;<span class="title">header</span> <span class="attribute">class</span>=<span class="value">"full-width header-area"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-12 columns"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">h2</span>&gt;</span>Foundation-4 Custom Top Bar<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">header</span>&gt;</span>
-<span class="comment">&lt;!-- NAVIGATION AREA --&gt;</span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"full-width navigation-area"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-12 columns"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">nav</span> <span class="attribute">class</span>=<span class="value">"top-bar"</span>&gt;</span><span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="comment">&lt;!-- CONTENT AREA --&gt;</span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"full-width content-area"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-12 columns"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">p</span>&gt;</span>Lorem ipsum dolor sit...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="comment">&lt;!-- FOOTER AREA --&gt;</span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"full-width footer-area"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-12 columns"</span>&gt;</span>
+<pre><code>&lt;!-- HEADER AREA --&gt;
+&lt;header class=&quot;full-width header-area&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;large-12 columns&quot;&gt;
+            &lt;h2&gt;Foundation-4 Custom Top Bar&lt;/h2&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+&lt;!-- NAVIGATION AREA --&gt;
+&lt;div class=&quot;full-width navigation-area&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;large-12 columns&quot;&gt;
+            &lt;nav class=&quot;top-bar&quot;&gt;&lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- CONTENT AREA --&gt;
+&lt;div class=&quot;full-width content-area&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;large-12 columns&quot;&gt;
+            &lt;p&gt;Lorem ipsum dolor sit...&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FOOTER AREA --&gt;
+&lt;div class=&quot;full-width footer-area&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;large-12 columns&quot;&gt;
             &amp;copy; 2013
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </code></pre><p>###第二步：顶部工具栏标记</p>
 <p>在编写样式之前，我们需要编写出一些必须的HTML架构代码使得Foundation顶部工具栏能够正确地运行起来。因此需要5样基础元素使得引擎跑起来。</p>
 <ul>
@@ -262,43 +263,43 @@
 <p>现在我们用这5样基础元素来搭建基础框架并且实现功能。</p>
 <p><strong>备注：</strong>在此教程例子中，我们将创建一个自定义的导航菜单，因此删除一些包括logo、文本和图片的标题。因此从下面代码例子可以看到在块元素<code>&lt;ul class=&quot;title-area&quot;&gt;</code>里的<code>&lt;li class=&quot;name&quot;&gt;&lt;/li&gt;</code>里面是空的。<br>接着，我们来添加一些菜单元素和一个下拉菜单代码，在你想添加下拉菜单的li元素里添加<code>class=&quot;has-dropdown&quot;</code>，然后在里面包含下拉菜单代码<code>&lt;ul class=&quot;dropdown&quot;&gt;...&lt;/ul&gt;</code>。如果想表示当前使用状态的li，则需要添加”active”。<code>&lt;ul class=&quot;right&quot;&gt;&lt;ul&gt;</code>里面可以为空的，嵌入代码中。一般情况下，你将会在这个空的ul里添加一个按钮或者搜索栏。更多关于顶部工具栏，可看上一篇教程：<a href="http://www.w3cplus.com/css/foundation-for-beginners-the-top-bar.html" target="_blank" rel="external">初学者学习foundation：顶部工具栏</a>。</p>
 <p>如下HTML代码示例，其中的注释会帮助你理解整体是如何运作的。</p>
-<pre><code><span class="comment">&lt;!-- Nav Wrap --&gt;</span>
-<span class="tag">&lt;<span class="title">nav</span> <span class="attribute">class</span>=<span class="value">"top-bar"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"title-area"</span>&gt;</span>
-        <span class="comment">&lt;!-- Title Area --&gt;</span>
-        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"name"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-        <span class="comment">&lt;!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone --&gt;</span>
-        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"toggle-topbar menu-icon"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>Menu<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-    <span class="comment">&lt;!-- The Section wrap --&gt;</span>
-    <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"top-bar-section"</span>&gt;</span>
-        <span class="comment">&lt;!-- Left Nav Section --&gt;</span>
-        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"active"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Home<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>About us<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Our products<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Portfolio<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Blog<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Prices<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"has-dropdown"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Features<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"dropdown"</span>&gt;</span>
-                       <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Modalboxes<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Submenu's and navigation<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Price tables<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Buttons<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Button groups<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Labels, Keystrokes and Tooltips<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Alert boxes<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Columns<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Contact<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-        <span class="comment">&lt;!-- Right Nav Section --&gt;</span>
-        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span><span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
+<pre><code>&lt;!-- Nav Wrap --&gt;
+&lt;nav class=&quot;top-bar&quot;&gt;
+    &lt;ul class=&quot;title-area&quot;&gt;
+        &lt;!-- Title Area --&gt;
+        &lt;li class=&quot;name&quot;&gt;&lt;/li&gt;
+        &lt;!-- Remove the class &quot;menu-icon&quot; to get rid of menu icon. Take out &quot;Menu&quot; to just have icon alone --&gt;
+        &lt;li class=&quot;toggle-topbar menu-icon&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!-- The Section wrap --&gt;
+    &lt;section class=&quot;top-bar-section&quot;&gt;
+        &lt;!-- Left Nav Section --&gt;
+        &lt;ul class=&quot;left&quot;&gt;
+            &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About us&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Our products&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Prices&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;has-dropdown&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;Features&lt;/a&gt;
+                &lt;ul class=&quot;dropdown&quot;&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Modalboxes&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu&apos;s and navigation&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Price tables&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Buttons&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Button groups&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Labels, Keystrokes and Tooltips&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Alert boxes&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Columns&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;!-- Right Nav Section --&gt;
+        &lt;ul class=&quot;right&quot;&gt;&lt;/ul&gt;
+    &lt;/section&gt;
+&lt;/nav&gt;
 </code></pre><p>###第三步：目前效果</p>
 <p>现在可以在你的浏览器上看到目前的效果，基于Foundation框架使用顶部工具栏我们已经创建一个水平菜单。为了方便把菜单放置到其他地方，而不是固定在浏览器的顶部，我们需要在以上代码外层添加<code>&lt;div&gt;</code>。</p>
 <p>当你在调整浏览器窗口时，会发现菜单栏在预先设定的断点发生改变。</p>
@@ -307,24 +308,24 @@
 <p>##编写CSS</p>
 <p>###第一步：通用的样式</p>
 <p>如果你还没做好准备，可以创建一个css文件，命名为style.css并且放置到下载下来的Foundation工程下css文件夹下。但别忘记把此引用到index.html文件里。如下代码示例：</p>
-<pre><code><span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Foundation 4<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/foundation.css"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/style.css"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/vendor/custom.modernizr.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<pre><code>&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+    &lt;title&gt;Foundation 4&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/foundation.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+    &lt;script src=&quot;js/vendor/custom.modernizr.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
 </code></pre><p>这里如果你不把style.css放置在foundation.css下面，将不会覆盖原来顶部工具栏的样式。</p>
 <p>很好，接下来我们要为header、导航、内容和footer写一些基础样式，如导航块，我们将添加一张已经下载好的背景图。这些通用样式一般不是很难去实现的，见如下代码示例，我们添加一个class”full-width”到每个区域中，以致于每个区域的宽度都是占满浏览器宽度的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body &#123;&#10;    background-color: #ccc;&#10;&#125;&#10;/** Set the backgrounds for the different sections **/&#10;.header-area &#123;&#10;    background-color: #2d465c;&#10;    min-height: 160px;&#10;&#125;&#10;.navigation-area &#123;&#10;    background-image: url(&#39;../img/navigation-container.jpg&#39;);&#10;    background-repeat: repeat-x;&#10;&#125;&#10;.content-area &#123;&#10;    padding: 50px 0 70px 0;&#10;&#125;&#10;.footer-area &#123;&#10;    background-color: #1f1f1f;&#10;    color: #fff;&#10;    min-height: 50px;&#10;    padding: 20px 0 0 0;&#10;&#125;&#10;.full-width &#123;&#10;    min-width:100%;&#10;    position: relative;&#10;&#125;&#10;h2 &#123;&#10;    color: #fff;&#10;    font-weight: normal;&#10;    margin-top: 50px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    background-color: #ccc;</div><div class="line">&#125;</div><div class="line">/** Set the backgrounds for the different sections **/</div><div class="line">.header-area &#123;</div><div class="line">    background-color: #2d465c;</div><div class="line">    min-height: 160px;</div><div class="line">&#125;</div><div class="line">.navigation-area &#123;</div><div class="line">    background-image: url(&apos;../img/navigation-container.jpg&apos;);</div><div class="line">    background-repeat: repeat-x;</div><div class="line">&#125;</div><div class="line">.content-area &#123;</div><div class="line">    padding: 50px 0 70px 0;</div><div class="line">&#125;</div><div class="line">.footer-area &#123;</div><div class="line">    background-color: #1f1f1f;</div><div class="line">    color: #fff;</div><div class="line">    min-height: 50px;</div><div class="line">    padding: 20px 0 0 0;</div><div class="line">&#125;</div><div class="line">.full-width &#123;</div><div class="line">    min-width:100%;</div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">h2 &#123;</div><div class="line">    color: #fff;</div><div class="line">    font-weight: normal;</div><div class="line">    margin-top: 50px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>###第二步：顶部工具栏样式</p>
 <p>现在看一下效果，会发现菜单会往外偏移一点，原因就是使用默认的样式，接下来修复这个问题！</p>
 <p>有一些样式类是需要修改以达到想要的效果。首先，我们将在.top-bar和.top-bar-section li里移除黑背景，改变height（在导航区域内）和line-height为58px。如下代码，可看注释帮助理解。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/** Changes background color, height and margin of the border **/&#10;.top-bar &#123;&#10;    background: none;&#10;    height: 58px;&#10;    line-height: 58px;&#10;    margin-bottom: 0;&#10;&#125;&#10;/** Removes black background on menu bar **/&#10;.top-bar-section ul &#123;&#10;    background: none;&#10;    text-transform: uppercase;&#10;&#125;&#10;/** Removes black background on menu item **/&#10;.top-bar-section li a:not(.button) &#123;&#10;    background: none;&#10;    line-height: 58px;&#10;    padding: 0 27px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/** Changes background color, height and margin of the border **/</div><div class="line">.top-bar &#123;</div><div class="line">    background: none;</div><div class="line">    height: 58px;</div><div class="line">    line-height: 58px;</div><div class="line">    margin-bottom: 0;</div><div class="line">&#125;</div><div class="line">/** Removes black background on menu bar **/</div><div class="line">.top-bar-section ul &#123;</div><div class="line">    background: none;</div><div class="line">    text-transform: uppercase;</div><div class="line">&#125;</div><div class="line">/** Removes black background on menu item **/</div><div class="line">.top-bar-section li a:not(.button) &#123;</div><div class="line">    background: none;</div><div class="line">    line-height: 58px;</div><div class="line">    padding: 0 27px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我们已经移除黑背景了，并且适应高度、行高和内边距，将文字转化为大写字母，这些都是为了适应我们自定义设计。</p>
 <p>如果你进行刷新页面，可以看到出现雏形了，我们继续编写下拉菜单、菜单子项目、激活(active)和鼠标悬空(hover)的状态的样式吧。继续往下看代码示例，并阅读注释：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/** Changes the active menu item from default black to a gradient **/&#10;.top-bar-section ul li.active &#62; a &#123;&#10;    background:  rgb(0, 0, 0);&#10;    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%) repeat scroll 0 0 transparent;&#10;    color: #fff;&#10;&#125;&#10;/** Changes the hover state of non active menu items **/&#10;.top-bar-section li:hover a &#123;&#10;    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%) repeat scroll 0 0 transparent;&#10;    color: #fff;&#10;&#125;&#10;/** Changes non active menu items text color to black **/&#10;.top-bar-section ul li &#62; a &#123;&#10;    color: #2d2d2d;&#10;&#125;&#10;/** Changes the hover state of dropdown menu items **/&#10;.top-bar-section ul.dropdown li a:hover:not(.button) &#123;&#10;    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9);&#10;&#125;&#10;/** IMPORTANT fill for the ul dropdown container **/&#10;.top-bar-section ul.dropdown &#123;&#10;    background: #333;&#10;    color: #fff;&#10;&#125;&#10;/** This fixes the position and the color of the dropdown arrow **/&#10;.top-bar-section .has-dropdown &#62; a:after &#123;&#10;    border-color: rgba(0, 0, 0, 1) transparent transparent;&#10;    margin-top: 2.5px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/** Changes the active menu item from default black to a gradient **/</div><div class="line">.top-bar-section ul li.active &gt; a &#123;</div><div class="line">    background:  rgb(0, 0, 0);</div><div class="line">    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%) repeat scroll 0 0 transparent;</div><div class="line">    color: #fff;</div><div class="line">&#125;</div><div class="line">/** Changes the hover state of non active menu items **/</div><div class="line">.top-bar-section li:hover a &#123;</div><div class="line">    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%) repeat scroll 0 0 transparent;</div><div class="line">    color: #fff;</div><div class="line">&#125;</div><div class="line">/** Changes non active menu items text color to black **/</div><div class="line">.top-bar-section ul li &gt; a &#123;</div><div class="line">    color: #2d2d2d;</div><div class="line">&#125;</div><div class="line">/** Changes the hover state of dropdown menu items **/</div><div class="line">.top-bar-section ul.dropdown li a:hover:not(.button) &#123;</div><div class="line">    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9);</div><div class="line">&#125;</div><div class="line">/** IMPORTANT fill for the ul dropdown container **/</div><div class="line">.top-bar-section ul.dropdown &#123;</div><div class="line">    background: #333;</div><div class="line">    color: #fff;</div><div class="line">&#125;</div><div class="line">/** This fixes the position and the color of the dropdown arrow **/</div><div class="line">.top-bar-section .has-dropdown &gt; a:after &#123;</div><div class="line">    border-color: rgba(0, 0, 0, 1) transparent transparent;</div><div class="line">    margin-top: 2.5px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我们已经改变菜单的好几个地方（样式），如首先，我们就改变激活（active）菜单默认的黑背景为“CSS渐变”，接着给不激活菜单添加hover状态，并改变里面的文字颜色为深灰色，目的是显示得更为清晰。然后.top-bar-section li:hover的样式将使得下拉菜单里的子项目被鼠标悬空时显示特定效果。为了完善样式，我们ul.dropdown添加一个背景颜色和重新设置下拉菜单箭头的位置，是因为我们内边距适应.top-bar-section。</p>
 <p>###第三步：效果</p>
 <p>重新刷新页面，看一下现在的效果，我们还没完成样式的编写，只是想看看当调整浏览器的大小时（甚至在更小的屏幕上），页面效果是否显示正常。接下来我们将添加“媒体查询”代码来实现这种效果。</p>
@@ -332,7 +333,7 @@
 <p>##编写媒体查询</p>
 <p>###第一步：媒体查询</p>
 <p>我们需要做些操作来使得使用我们自定义样式的菜单栏能够适应不断缩小的屏幕。这里主要涉及到添加一些内边距、行高、文本颜色和背景颜色。如下CSS代码示例，查看每个section的注释。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 942px) &#123;&#10;    /* Makes the responsive menu fit in the navigation container and change its background to black */&#10;    .top-bar ul &#123;&#10;        background-color: rgba(0, 0, 0, 0.5);&#10;        padding-bottom: 13px;&#10;    &#125;&#10;    /* Change non active menu item color to black */&#10;    .top-bar-section ul li &#62; a &#123;&#10;        color: #fff;&#10;    &#125;&#10;    /* Gives the dropdown ul a black fill */&#10;    .top-bar-section ul &#123;&#10;        background: #000;&#10;    &#125;&#10;    /* Give the BACK button after going in a submenu the appropriate filling */&#10;    .top-bar-section .dropdown li.title h5 a &#123;&#10;        line-height: 57px;&#10;    &#125;&#10;    /* This fixes the position and the color of the dropdown arrow */&#10;    .top-bar-section .has-dropdown &#62; a:after &#123;&#10;        border-color: rgba(255, 255, 255, 1) transparent transparent;&#10;        margin-top: 2.5px;&#10;    &#125;&#10;&#125; /* end media query */</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width: 942px) &#123;</div><div class="line">    /* Makes the responsive menu fit in the navigation container and change its background to black */</div><div class="line">    .top-bar ul &#123;</div><div class="line">        background-color: rgba(0, 0, 0, 0.5);</div><div class="line">        padding-bottom: 13px;</div><div class="line">    &#125;</div><div class="line">    /* Change non active menu item color to black */</div><div class="line">    .top-bar-section ul li &gt; a &#123;</div><div class="line">        color: #fff;</div><div class="line">    &#125;</div><div class="line">    /* Gives the dropdown ul a black fill */</div><div class="line">    .top-bar-section ul &#123;</div><div class="line">        background: #000;</div><div class="line">    &#125;</div><div class="line">    /* Give the BACK button after going in a submenu the appropriate filling */</div><div class="line">    .top-bar-section .dropdown li.title h5 a &#123;</div><div class="line">        line-height: 57px;</div><div class="line">    &#125;</div><div class="line">    /* This fixes the position and the color of the dropdown arrow */</div><div class="line">    .top-bar-section .has-dropdown &gt; a:after &#123;</div><div class="line">        border-color: rgba(255, 255, 255, 1) transparent transparent;</div><div class="line">        margin-top: 2.5px;</div><div class="line">    &#125;</div><div class="line">&#125; /* end media query */</div></pre></td></tr></table></figure>
 <p>###第二步：查看你的效果</p>
 <p>保存文件，然后重新刷新页面，不断地调整浏览器窗口的大小，你就会看到菜单栏都能很好地展示出来。</p>
 <p><img alt="如何定制Foundation4顶部工具栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-5-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
@@ -354,18 +355,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/如何设置基线网络.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/基于设计的媒体查询.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          如何设置基线网络
+          基于设计的媒体查询
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/Nodejs/nodejs.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Node.js 概述</div>
+    <a href="/2014/09/20/前端/如何制作自己的网页字体图标.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何制作自己的网页字体图标</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -411,8 +412,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

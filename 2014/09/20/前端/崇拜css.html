@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -234,34 +234,34 @@
 <li>性能</li>
 </ul>
 <p>也许最重要的是让前端开发人员通过一个CSS框架技术来解决一个网站中重复的CSS代码是首要的事情。通过类，类名派生选择器，一个开发人员可以增加选择器的有用性，并在不同的元素中使用相同的样式规则。考虑下面的类的示例，它使任何匹配的元素具有一致的边框、内距和排版风格：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.box-standard &#123;&#10;   color: blue;&#10;   border: 2px solid blue;&#10;   border-radius: 5px;&#10;   padding: 20px;&#10;   font-family: Helvetica, Arial, sans-serif;&#10;   font-weight: normal;&#10;   font-size: 1rem;&#10;   line-height: 1.4;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.box-standard &#123;</div><div class="line">   color: blue;</div><div class="line">   border: 2px solid blue;</div><div class="line">   border-radius: 5px;</div><div class="line">   padding: 20px;</div><div class="line">   font-family: Helvetica, Arial, sans-serif;</div><div class="line">   font-weight: normal;</div><div class="line">   font-size: 1rem;</div><div class="line">   line-height: 1.4;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>开发人员可能会将这个类定义在任意数量的元素之上，这些元素将都具有这种样式风格。有可能其他元素不使用所有的风格，而是需要覆盖特定的样式，他们需要添加另一个类名，并在CSS源文件下面加上样式代码。作为两个类具有相同的权重，后者声明的样式将优秀考虑：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.box-special &#123;&#10;  color: red;&#10;  border-color: red;&#10;  font-weight: bold;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"box-standard box-special"</span>&gt;
-    Here <span class="keyword">is</span> a special box!
-&lt;/<span class="keyword">div</span>&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.box-special &#123;</div><div class="line">  color: red;</div><div class="line">  border-color: red;</div><div class="line">  font-weight: bold;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>&lt;div class=&quot;box-standard box-special&quot;&gt;
+    Here is a special box!
+&lt;/div&gt;
 </code></pre><p>通过这种方式在模板中添加两个类名用来减少重复的代码是可取的，同时这两个类名也传达了特定的语义。</p>
 <p>这里开发人员真正需要一个“混合”和”扩展”,这些在各种CSS预处理器中都有，比如<a href="http://lesscss.org/" target="_blank" rel="external">LESS</a>或者<a href="http://sass-lang.com/" target="_blank" rel="external">Sass</a>。一组相关的属性可以被分组为一个<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank" rel="external">mixin</a>或者<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholders" target="_blank" rel="external">@extend placeholder</a>，然后可以给一个完全表像的名字：它们本身在任何地方都不会生成代码(除非你想要用它，或者说你调用他们)，所以任何CSS选择器都可以调用他们的规则。这里有一个关于mixin在<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html" target="_blank" rel="external">Scss语法</a>中的简单示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@mixin news-item($color) &#123;&#10;  border: 2px solid $color;&#10;  border-radius: 5px;&#10;  padding: 20px;&#10;  font-family: Helvetica, Arial, sans-serif;&#10;  font-weight: normal;&#10;  font-size: 1rem;&#10;  line-height: 1.4;&#10;&#125;&#10;&#10;div.news &#123;&#10;  @include news-item(blue);&#10;&#125;&#10;&#10;div.breaking &#123;&#10;  @include news-item(red);&#10;  font-weight: bold;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"news"</span>&gt;
-  Here <span class="keyword">is</span> a news <span class="property">item</span>.
-&lt;/<span class="keyword">div</span>&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">@mixin news-item($color) &#123;</div><div class="line">  border: 2px solid $color;</div><div class="line">  border-radius: 5px;</div><div class="line">  padding: 20px;</div><div class="line">  font-family: Helvetica, Arial, sans-serif;</div><div class="line">  font-weight: normal;</div><div class="line">  font-size: 1rem;</div><div class="line">  line-height: 1.4;</div><div class="line">&#125;</div><div class="line"></div><div class="line">div.news &#123;</div><div class="line">  @include news-item(blue);</div><div class="line">&#125;</div><div class="line"></div><div class="line">div.breaking &#123;</div><div class="line">  @include news-item(red);</div><div class="line">  font-weight: bold;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>&lt;div class=&quot;news&quot;&gt;
+  Here is a news item.
+&lt;/div&gt;
 
-&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"breaking"</span>&gt;
-  Here <span class="keyword">is</span> a breaking news <span class="property">item</span>!
-&lt;/<span class="keyword">div</span>&gt;
+&lt;div class=&quot;breaking&quot;&gt;
+  Here is a breaking news item!
+&lt;/div&gt;
 </code></pre><p>改变mixin的样式风格总是通过<code>div.breaking</code>来实现，并且尽可能的与模板不耦合在一起。在CSS中能够定义mixin就是他一直以来想要的特性(这功能最终在<a href="http://lists.w3.org/Archives/Public/www-style/2011Mar/0478.html" target="_blank" rel="external">预处理器中实现</a>。)，如果你想成为一个专业的CSS开发人员，你没有什么好理由不使用CSS预处理程序。</p>
 <blockquote>
 <p>如果你从未接触过CSS预处理程序，不仿先点击《<a href="http://www.w3cplus.com/blog/tags/302.html" target="_blank" rel="external">Sass教程</a>》，了解有关于CSS预处理程序之一的Sass使用——@大漠。</p>
 </blockquote>
 <p>维护项目对于解耦或者<a href="http://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank" rel="external">关注分离</a>是非常重要的；模板和CSS耦合过于密集，维护的成本将会增加。早期有效的CSS都是通过所见即所得的网页开发工具比如Dreamweaver,Frontpage生成，导致很多网站的代码，看上去很像这样：</p>
-<pre><code><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"display: block; font-family: Arial, sans-serif; font-size: 11px; color: blue; border-style: solid; border-color: blue; border-width: 2px; padding: 20px;"</span>&gt;</span>Here’s a box.<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"display: block; font-family: Arial, sans-serif; font-size: 11px; color: blue; border-style: solid; border-color: blue; border-width: 2px; padding: 20px;"</span>&gt;</span>Here’s another box.<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"display: block; font-family: Arial, sans-serif; font-size: 11px; color: blue; border-style: solid; border-color: blue; border-width: 2px; padding: 20px;"</span>&gt;</span>Here’s yet another box. Noticing a trend yet…?<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<pre><code>&lt;span style=&quot;display: block; font-family: Arial, sans-serif; font-size: 11px; color: blue; border-style: solid; border-color: blue; border-width: 2px; padding: 20px;&quot;&gt;Here’s a box.&lt;/span&gt;
+&lt;span style=&quot;display: block; font-family: Arial, sans-serif; font-size: 11px; color: blue; border-style: solid; border-color: blue; border-width: 2px; padding: 20px;&quot;&gt;Here’s another box.&lt;/span&gt;
+&lt;span style=&quot;display: block; font-family: Arial, sans-serif; font-size: 11px; color: blue; border-style: solid; border-color: blue; border-width: 2px; padding: 20px;&quot;&gt;Here’s yet another box. Noticing a trend yet…?&lt;/span&gt;
 </code></pre><p>这种基于模板基础上的内联样式只能适可而止，这些标签组合在90年代末直接影响Web的发展。当设计需要修改，所有这些内联样式都需要跟踪并替换。很多开发人员的修改让我感到很悲哀，可以这些天的教训都给忘了，我们仍然可以看到像这样的修改代码：</p>
-<pre><code>&lt;span <span class="keyword">class</span>=<span class="string">"display-block blue-box font-arial color-blue solid-blue-border padding-20"</span>&gt;Party like it’s <span class="number">1999</span>!&lt;/span&gt;
-&lt;span <span class="keyword">class</span>=<span class="string">"display-block blue-box font-arial color-blue solid-blue-border padding-20"</span>&gt;Hey, have you <span class="keyword">checked</span> K10K.net lately?&lt;/span&gt;
-&lt;span <span class="keyword">class</span>=<span class="string">"display-block blue-box font-arial color-blue solid-blue-border padding-20"</span>&gt;Wassuuuuuuup!&lt;/span&gt;
+<pre><code>&lt;span class=&quot;display-block blue-box font-arial color-blue solid-blue-border padding-20&quot;&gt;Party like it’s 1999!&lt;/span&gt;
+&lt;span class=&quot;display-block blue-box font-arial color-blue solid-blue-border padding-20&quot;&gt;Hey, have you checked K10K.net lately?&lt;/span&gt;
+&lt;span class=&quot;display-block blue-box font-arial color-blue solid-blue-border padding-20&quot;&gt;Wassuuuuuuup!&lt;/span&gt;
 </code></pre><p>这例子可能有点太极端了，但它的逻辑来自于CSS框架中，抛弃语义化类名和选择器，在一味的追求“模块化”。这样避免在CSS中有重复的代码，不过转移到模板中，导致的副作用就是模板和样式的紧耦合性。</p>
 <p>另一个目标是提供高性能。这取决天很多因素，如客户端访问一个网页的类型，他们的连接速度和内容是否有被缓存，还有其他一些因素等等。在最基本的级别上有三种东西最明显的影响CSS性能：</p>
 <ul>
@@ -276,9 +276,9 @@
 <p>许多人似乎没有意识到（或不谈），性能往往是存在的，而且具有成本的，它会花费很多维护成本。——<a href="http://www.onderhond.com/blog/work/cost-of-performance-css-selector-rewriting" target="_blank" rel="external">Niels Matthijs</a></p>
 </blockquote>
 <p>当重温旧代码或者当一个新的成员加入一个项目CSS框架方法暴露出一些严重的问题。主要是提供的这些方法几乎没有发现。Nicolas Gallagher在他写的前端架构文章中说“类名应该给开发传达有用的信息”。我想加强一下：“选择器应该是和开发者交流的有用信息”。目的是相同的——让我理解在哪使用这些规则——但一个选择器给开发人员传递更有用信息，因为它传达了上下文。这样更容易理解，选择器告诉你，它只适用于在一定范围内的元素。一个社会成员列表的链接可以考虑两种样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.list-link &#123;&#10;  font-weight: bold;&#10;  text-decoration: none;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.list-link &#123;</div><div class="line">  font-weight: bold;</div><div class="line">  text-decoration: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul.members li a &#123;&#10;  font-weight: bold;&#10;  text-decoration: none;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ul.members li a &#123;</div><div class="line">  font-weight: bold;</div><div class="line">  text-decoration: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>后者更容易让那些不熟悉代码库的人理解。它也是更容易被发现：一个新的开发人员如果无法或没有阅读整个CSS代码库，是没办法知道哪个规则是合适的。</p>
 <blockquote>
 <p>优秀的代码不仅是正确的，也应该是容易阅读的。它不只是计算机通信的一种算法，还要能让人可以读取它。通过寻找我们代码中的优秀部分，我们建立更好的代码。学习编写代码一个首要条件是让代码易读，进一步才是学习如何编写优秀的代码和照顾和帮助使用代码的人如何更好的使用。优秀的代码都是易读和易用的。——<a href="http://www.faqs.org/docs/artu/transparencychapter.html" target="_blank" rel="external">Eric S.Raymond</a>。</p>
@@ -331,18 +331,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/开始了解css混合模式.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/实现responsive邮件的不同策略.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          开始了解CSS混合模式
+          实现Responsive邮件的不同策略
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/实现responsive邮件的不同策略.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">实现Responsive邮件的不同策略</div>
+    <a href="/2014/09/20/前端/开始了解css混合模式.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开始了解CSS混合模式</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -388,8 +388,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

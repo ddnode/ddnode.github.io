@@ -17,13 +17,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在HTML中使用meta标签的基础知识和最佳实践">
 <meta name="twitter:description" content="元数据通常被理解为‘描述数据的数据’，在web页面中的用途之一就是使用&amp;lt;meta&amp;gt;标签。meta标签的内容一般都是表示关于HTML页面的信息，其作用是不可以被其它标签取代的。另外，meta标签还可以模拟一个HTTP响应头部（例如重定向到不同页面），同时，它还拥有像http-equiv和charset这样的属性 ，在Mozilla开发者社区中有对元数据详细的文档说明。">
+<meta name="twitter:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1404/meta-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -210,38 +211,38 @@
 <p>##不同meta标签的用法</p>
 <p>通过改变<code>name</code><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#standard-metadata-names" target="_blank" rel="external">属性</a>的有效值来定义不同的<code>meta</code>标签。</p>
 <p>描述（descriptions）<code>meta</code>标签是最常用的：</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"description"</span> content=<span class="string">"A general guide on the use of meta tags in html pages"</span> /&gt;
+<pre><code>&lt;meta name=&quot;description&quot; content=&quot;A general guide on the use of meta tags in html pages&quot; /&gt;
 </code></pre><p>假如描述标签内容为空（或者基本不存在），搜索引擎会从页面的内容中生成一段描述。</p>
 <p>你还可以使用<code>meta</code>标签来设置页面的作者（author）。</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"author"</span> content=<span class="string">"Shaumik Daityari"</span> /&gt;
+<pre><code>&lt;meta name=&quot;author&quot; content=&quot;Shaumik Daityari&quot; /&gt;
 </code></pre><p><code>charset</code>属性是用来指定页面内容的编码格式。一个HTML页面只能设置一个<code>charset</code>。对于大部分页面来说，你应该设置UTF-8字符编码。</p>
-<pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span>
+<pre><code>&lt;meta charset=&quot;UTF-8&quot; /&gt;
 </code></pre><p>更多关于字符编码信息和<a href="https://www.w3.org/International/questions/qa-choosing-encodings" target="_blank" rel="external">选择一种字符编码</a>的文章可以在W3C上找到。</p>
 <p>##取代HTTP头部</p>
 <p>如小标题，<code>meta</code>标签可以用作HTTP头部的某些作用，例如重定向和刷新。</p>
-<pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"refresh"</span> <span class="attribute">content</span>=<span class="value">"5;url=http://www.sitepoint.com/"</span> /&gt;</span>
+<pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;url=http://www.sitepoint.com/&quot; /&gt;
 </code></pre><p><code>centent</code>属性值在指定一个刷新时间。URL可以取决于你的需求来保持原来不变或者是不同的页面。你可以不填写URL的值，表示刷新当前页面。</p>
 <p>##过时的用法</p>
 <p><code>meta</code>标签已经使用多年，但有一些经典实践对今天来说已经不适用了，应该丢弃。</p>
-<pre><code><span class="comment">&lt;!-- 不要用这个! --&gt;</span>
-<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span>
+<pre><code>&lt;!-- 不要用这个! --&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
 </code></pre><p>这是长版本的字符编码，在XHTML中普遍存在的，但是可以使用缩简为：</p>
-<pre><code><span class="comment">&lt;!-- 使用这个! --&gt;</span>
-<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>　/&gt;</span>
+<pre><code>&lt;!-- 使用这个! --&gt;
+&lt;meta charset=&quot;UTF-8&quot;　/&gt;
 </code></pre><p><code>meta</code>标签还可以用作版权说明。<br>    <!-- 不要用这个! --><br>    <meta name="copyright" content="SitePoint"></p>
 <p>应该提供一个链接标记指向一个版权页面(或锚在相同的页面上)。</p>
-<pre><code><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"copyright"</span> <span class="attribute">href</span>=<span class="value">"copyright.html"</span>　/&gt;</span>
+<pre><code>&lt;link rel=&quot;copyright&quot; href=&quot;copyright.html&quot;　/&gt;
 </code></pre><p>最后，尽管很多网站依然使用<code>name</code>属性值<code>keywords</code>，google的网站排名算法中并不包含这些。实际上，Google在算法中从来没有考虑过。</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"keywords"</span> content=<span class="string">"web,design,html,css,html5,development"</span> /&gt;
+<pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;web,design,html,css,html5,development&quot; /&gt;
 </code></pre><p><a href="http://googlewebmastercentral.blogspot.ca/2009/09/google-does-not-use-keywords-meta-tag.html" target="_blank" rel="external">Google曾表示</a>，算法规则将来会改变是不太可能的，因此，不要对关键词<code>meta</code>标签抱有任何期望。</p>
 <p>前面也提到了一个重要的因素，就是事实上，百度中文搜索引擎算法则是考虑到关键词标签作为<a href="http://searchengineland.com/the-b2b-marketers-guide-to-baidu-seo-180658" target="_blank" rel="external">算法的一个重要因素</a>。因此，如果你希望流量的重要组成部分是来自中文用户，那么你应该添加关键字<code>meta</code>标签——但是要小心，避免使用不必要和不道德的关键词。</p>
 <p>总的来说，使用这些过时的方法不会影响网站排名，但往往向页面中添加了不必要的代码，最好避免使用它们并使用替代方法。</p>
 <p>##使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）</p>
 <p>随着社交网络的不断发展，<code>meta</code>标签被赋予新的功能。<a href="https://developers.facebook.com/docs/opengraph/" target="_blank" rel="external">Facebook的Open Graph</a>允许你指定你的内容如何在用户时间表上显示。这些标签可以让你检查你的数据是使用<a href="https://developers.facebook.com/docs/opengraph/guides/insights" target="_blank" rel="external">Insights</a>如何共享在Facebook上。</p>
 <p><img alt="在HTML中使用meta标签的基础知识和最佳实践" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1404/meta-2.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
-<pre><code>&lt;meta <span class="keyword">property</span>=<span class="string">"og:title"</span> content=<span class="string">"The best site"</span> /&gt;
-&lt;meta <span class="keyword">property</span>=<span class="string">"og:image"</span> content=<span class="string">"link_to_image"</span> /&gt;
-&lt;meta <span class="keyword">property</span>=<span class="string">"og:description"</span> content=<span class="string">"description goes here"</span> /&gt;
+<pre><code>&lt;meta property=&quot;og:title&quot; content=&quot;The best site&quot; /&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;link_to_image&quot; /&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;description goes here&quot; /&gt;
 </code></pre><p>我建议你去<a href="https://developers.facebook.com/docs/opengraph" target="_blank" rel="external">Facebook Open Graph官方文档</a>以获取更多信息。</p>
 <p>与Open Graph相似的还有Twitter的<a href="https://dev.twitter.com/docs/cards" target="_blank" rel="external">Twitter cards</a>(使用<code>name=&quot;twitter:title&quot;</code>或者<code>name=&quot;twitter:url&quot;</code>)以及Google+使用的<a href="http://schema.org/" target="_blank" rel="external">Schema.org</a>(使用<code>itemscope</code>和<code>itemprop</code>)。</p>
 <p>Open Graph已变得非常受欢迎，所以大多数社交网络默认都是Open Graph。如果Open Graph 的<code>meta</code>标签也没有的话，他们设置缺少<code>meta</code>标签的默认值。</p>
@@ -263,18 +264,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/基于设计的媒体查询.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/响应式设计：跨浏览器兼容性.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          基于设计的媒体查询
+          响应式设计：跨浏览器兼容性
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/响应式设计：跨浏览器兼容性.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">响应式设计：跨浏览器兼容性</div>
+    <a href="/2014/09/20/前端/基于设计的媒体查询.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于设计的媒体查询</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -320,8 +321,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

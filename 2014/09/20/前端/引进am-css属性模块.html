@@ -6,25 +6,25 @@
   <title>引进AM-CSS属性模块 | Drupal 笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在几个月之前，我阅读了Harry Roberts写的《Grouping related classes in your markup》一文。他介绍了一个很有趣的概念——用来处理CSS类名。在这篇文章中介绍了使用[]来使用相关的属性，快速选择需要的目标元素。介绍的示例中，讨论了使用类名还是属性声明更易于一目了然选择元素。
-&amp;lt;div class=&quot;[ foo  foo--bar ]  [ baz">
+&amp;lt;div class=&amp;quot;[ foo  foo--bar ]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="引进AM-CSS属性模块">
 <meta property="og:url" content="http://ddnode.com/2014/09/20/前端/引进am-css属性模块.html">
 <meta property="og:site_name" content="Drupal 笔记">
 <meta property="og:description" content="在几个月之前，我阅读了Harry Roberts写的《Grouping related classes in your markup》一文。他介绍了一个很有趣的概念——用来处理CSS类名。在这篇文章中介绍了使用[]来使用相关的属性，快速选择需要的目标元素。介绍的示例中，讨论了使用类名还是属性声明更易于一目了然选择元素。
-&amp;lt;div class=&quot;[ foo  foo--bar ]  [ baz">
+&amp;lt;div class=&amp;quot;[ foo  foo--bar ]">
 <meta property="og:updated_time" content="2014-09-20T13:37:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="引进AM-CSS属性模块">
 <meta name="twitter:description" content="在几个月之前，我阅读了Harry Roberts写的《Grouping related classes in your markup》一文。他介绍了一个很有趣的概念——用来处理CSS类名。在这篇文章中介绍了使用[]来使用相关的属性，快速选择需要的目标元素。介绍的示例中，讨论了使用类名还是属性声明更易于一目了然选择元素。
-&amp;lt;div class=&quot;[ foo  foo--bar ]  [ baz">
+&amp;lt;div class=&amp;quot;[ foo  foo--bar ]">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -203,7 +203,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在几个月之前，我阅读了Harry Roberts写的《<a href="http://csswizardry.com/2014/05/grouping-related-classes-in-your-markup/" target="_blank" rel="external">Grouping related classes in your markup</a>》一文。他介绍了一个很有趣的概念——用来处理CSS类名。在这篇文章中介绍了使用<code>[]</code>来使用相关的属性，快速选择需要的目标元素。介绍的示例中，讨论了使用类名还是属性声明更易于一目了然选择元素。</p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"[ foo  foo--bar ]  [ baz  baz--foo ]"</span>&gt;
+<pre><code>&lt;div class=&quot;[ foo  foo--bar ]  [ baz  baz--foo ]&quot;&gt;
 </code></pre><p>我必须承认，最初感觉使用这种技术十分不爽。他只是使用<code>[</code>和<code>]</code>来匹配类名，而不是匹配CSS，重复使用同一个类属性，似乎只是给人提供而不是给浏览器。实际上我仍然还在思考，关键是对HTML结构和语义化的认识，在此要非常感谢Harry Roberts。<br><a id="more"></a><br>看着它，似乎跟其他人的想法非常的类似，比如<a href="http://beneverard.co.uk/blog/using-slashes-within-the-html-class-attribute/" target="_blank" rel="external">Ben Everard</a>使用<code>/</code>或者<a href="https://twitter.com/sn0lan/status/439384690680942592" target="_blank" rel="external">Stephen Nolan</a>使用<code>|</code>，但总感觉他们都有点做作。我始终认为：</p>
 <blockquote>
 <p>你有很多个类名，你要如何让这些类名更具可读性。</p>
@@ -213,27 +213,27 @@
 <p>让你惊讶的是，标记中的多类让我感到困惑，而且不能像Harry那样阐述的有说服力。不能像OOCSS那样有说服力和自己的严则，以及根据自己从业多年经验创建一套日益复杂而且吸引人的东西。最近我在思考，如何做这样的一件事情，让我觉得非常的开心。</p>
 <p>以前我通过BEM来强调重用性，每个新的块不会继承默认样式，允许组件单独开发，并且避免组件在其他网站上使用的风险。但这样做是有代价的，当你发现自己有十个不同的链接样式、12种蓝色色调和18种略有不同样式按钮等。Nicole Sullivan在去年讲<a href="https://www.youtube.com/watch?v=0NDyopLKE1w" target="_blank" rel="external">OOCSS主题</a>时说到这个问题，如何创建共性和覆盖。</p>
 <p>对我来说，感觉就像被动使用CSS预处理器能力来处理BEM和OOCSS，我使用了下面的方法来替代：</p>
-<pre><code>&lt;a <span class="keyword">class</span>=<span class="string">'btn large rounded'</span>&gt;
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.btn &#123;&#10;&#9;/* &#25353;&#38062;&#26679;&#24335; */&#10;&#125;&#10;.large &#123;&#10;&#9;/* global large-type modifier */&#10;&#125;&#10;.rounded &#123;&#10;&#9;/* global rounded-border modifier */&#10;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;a class=&apos;btn large rounded&apos;&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.btn &#123;</div><div class="line">	/* 按钮样式 */</div><div class="line">&#125;</div><div class="line">.large &#123;</div><div class="line">	/* global large-type modifier */</div><div class="line">&#125;</div><div class="line">.rounded &#123;</div><div class="line">	/* global rounded-border modifier */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>你可能会使用下面这样的方式：</p>
-<pre><code>&lt;a <span class="keyword">class</span>=<span class="string">'btn btn--large btn--rounded'</span>&gt;
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.btn &#123;&#10;&#9;/* button styles */&#10;&#125;&#10;.btn--large &#123;&#10;&#9;@extend %large-type;&#10;&#125;&#10;.btn--rounded &#123;&#10;&#9;@extend %rounded-borders;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;a class=&apos;btn btn--large btn--rounded&apos;&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.btn &#123;</div><div class="line">	/* button styles */</div><div class="line">&#125;</div><div class="line">.btn--large &#123;</div><div class="line">	@extend %large-type;</div><div class="line">&#125;</div><div class="line">.btn--rounded &#123;</div><div class="line">	@extend %rounded-borders;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>最后我会在文件中使用<code>mixins</code>或者<code>%placeholder</code>，例如<code>_typography.scss</code>和<code>_brand.scss</code>文件。让他们保持是碎片分离，也让他们在默认情况之下，每个组件样式是分离的。一段时间以来，我都觉得这样使用是好的。</p>
 <p>##修饰符：如何打破BEM中的M</p>
 <p>做任何有关于CSS的类命名和维护的研究，你注定都会围绕Nicolas Gallagher写的那篇优秀文章《<a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank" rel="external">“About HTML semantics and front-end architecture”</a>》。其中有一部分让我特别关注，就是修饰符使用单类还是多类。总结一下，你的HTML结构大多存在这样的两个版本：</p>
-<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">'btn--large'</span>&gt;</span> <span class="comment">&lt;!--　单类 --&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">'btn btn--large'</span>&gt;</span> <span class="comment">&lt;!-- 多类 --&gt;</span>
+<pre><code>&lt;a class=&apos;btn--large&apos;&gt; &lt;!--　单类 --&gt;
+&lt;a class=&apos;btn btn--large&apos;&gt; &lt;!-- 多类 --&gt;
 </code></pre><p>对应的CSS样式版本：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* &#21333;&#31867; */&#10;.btn, .btn--large &#123;&#10;&#9;/* base button styles */&#10;&#125;&#10;.btn--large &#123;&#10;&#9;/* large button styles */&#10;&#125;&#10;&#10;/* &#22810;&#31867; */&#10;.btn &#123;&#10;&#9;/* base button styles */&#10;&#125;&#10;.btn--large &#123;&#10;&#9;/* large button styles */&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/* 单类 */</div><div class="line">.btn, .btn--large &#123;</div><div class="line">	/* base button styles */</div><div class="line">&#125;</div><div class="line">.btn--large &#123;</div><div class="line">	/* large button styles */</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 多类 */</div><div class="line">.btn &#123;</div><div class="line">	/* base button styles */</div><div class="line">&#125;</div><div class="line">.btn--large &#123;</div><div class="line">	/* large button styles */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这里的区别就是<code>.btn-large</code>样式是取决于自身还是依赖于<code>.btn</code>样式。单类模式给人感觉更简单，避免在结构中忘记添加<code>.btn</code>类名。也减少了使用的重复性，类似于Sass中的<code>@extend</code>一样，不想在CSS方面承受更多的负担。但它真的有一个致命的缺陷。</p>
 <p>##上下文的覆盖</p>
 <p>比如说，除了顶部导航栏上的按钮之外的其他所有按钮都有同一种背景颜色。在多类模式下，所有按钮，大的或小的、圆的或方的等等，他们都会包括一个<code>.btn</code>类名。所以你可以这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header &#62; nav &#62; .btn &#123; background: none; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header &gt; nav &gt; .btn &#123; background: none; &#125;</div></pre></td></tr></table></figure>
 <p>而在单类模式下，我们不知道哪种按钮要覆写，我们不得不这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header &#62; nav &#123;&#10;  .btn, .btn--large, .btn--rounded &#123; background: none; &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">header &gt; nav &#123;</div><div class="line">  .btn, .btn--large, .btn--rounded &#123; background: none; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>很显然，这样做很不理想——如果添加一个新类型按钮，意味着要要添加另一个类名覆盖样式。这样做将是一个死胡同，所以很多人主张回归到多类名模式（<a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank" rel="external">Nicholas Gallagher</a>、<a href="http://bensmithett.com/bem-modifiers-multiple-classes-vs-extend/" target="_blank" rel="external">Ben Smithett</a>）。我也看到有些人提出新的建议，例如<a href="http://viget.com/extend/bem-multiple-modifiers-and-experimenting-with-attribute-selectors" target="_blank" rel="external">Tommy Marshall</a>和<a href="http://benfrain.com/multiple-classes-ui-component-variations-wrong/" target="_blank" rel="external">Ben Frain</a>提出的使用CSS属性选择器前缀<code>^=</code>。允许你通过某个字符串开始或某个特定字符串来检测，例如:</p>
-<pre><code>&lt;a <span class="keyword">class</span>=<span class="string">'btn--large'</span>&gt;
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[class^=&#39;btn&#39;] &#123;&#10;&#9;/* base button styles */&#10;&#125;&#10;.btn--large &#123;&#10;&#9;/* large button styles */&#10;&#125;&#10;header &#62; nav &#62; [class^=&#39;btn&#39;] &#123;&#10;&#9;/* Overrides for all buttons */&#10;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;a class=&apos;btn--large&apos;&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[class^=&apos;btn&apos;] &#123;</div><div class="line">	/* base button styles */</div><div class="line">&#125;</div><div class="line">.btn--large &#123;</div><div class="line">	/* large button styles */</div><div class="line">&#125;</div><div class="line">header &gt; nav &gt; [class^=&apos;btn&apos;] &#123;</div><div class="line">	/* Overrides for all buttons */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这样在单类模式下容易实现上下文样式覆盖，但太脆弱了，不是一个严谨的选择器。最致命的是，如果有一个类名出现在<code>btn-large</code>，这样就无法匹配。另外，带没有明显的方式可以允许匹配多个类型，如：<code>btn--large--rounded</code>。</p>
 <p>我很欣赏这样的创造性方法，但也是一个死胡同。而且我也正在此处被卡住，直到后面的事情发现为止。</p>
 <p>##为什么要使用类？</p>
@@ -248,55 +248,55 @@
 <p>在具体谈AM之前，先温习一下CSS鲜为人知的功能。</p>
 <p>##魔力选择器~=</p>
 <p>IE7已经支持这种选择器，称为<strong>空间分离属性选择器</strong>，也是此处要介绍的CSS技巧。它将匹配由空格分隔开的任意属性值，所以下面的两行CSS是等效的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.dat-class &#123; /* dem styles */ &#125;;&#10;[class~=&#39;dat-class&#39;] &#123; /* dem styles */ &#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.dat-class &#123; /* dem styles */ &#125;;</div><div class="line">[class~=&apos;dat-class&apos;] &#123; /* dem styles */ &#125;;</div></pre></td></tr></table></figure>
 <p>在同一种方式<code>&lt;div class=&#39;a b c&#39;&gt;</code>，<code>~=</code>选择器不在呼<code>a</code>、<code>b</code>或<code>c</code>在类名中顺序，或者是否还有其他东西存在。<code>~=</code>选择器都能正常工作。这也是<code>~=</code>不是有限类属性，任何属性都可以工作。关键是，这是一种全新方式。</p>
 <p>##属性模块</p>
 <p>属性模块或者说AM，其核心就是关于定义命名空间用来写样式。先来看一个简单的示例，就是有关于网格的，先来看类的命名方式：</p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"row"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"column-12"</span>&gt;Full&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"row"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"column-4"</span>&gt;Thirds&lt;/<span class="keyword">div</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"column-4"</span>&gt;Thirds&lt;/<span class="keyword">div</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"column-4"</span>&gt;Thirds&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.row &#123; /* max-width, clearfixes */ &#125;&#10;.column-1 &#123; /* 1/12th width, floated */ &#125;&#10;.column-2 &#123; /* 1/6th width, floated */ &#125;&#10;.column-3 &#123; /* 1/4th width, floated */ &#125;&#10;.column-4 &#123; /* 1/3rd width, floated */ &#125;&#10;.column-5 &#123; /* 5/12th width, floated */ &#125;&#10;/* etc */&#10;.column-12 &#123; /* 100% width, floated */ &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;column-12&quot;&gt;Full&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;column-4&quot;&gt;Thirds&lt;/div&gt;
+    &lt;div class=&quot;column-4&quot;&gt;Thirds&lt;/div&gt;
+    &lt;div class=&quot;column-4&quot;&gt;Thirds&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.row &#123; /* max-width, clearfixes */ &#125;</div><div class="line">.column-1 &#123; /* 1/12th width, floated */ &#125;</div><div class="line">.column-2 &#123; /* 1/6th width, floated */ &#125;</div><div class="line">.column-3 &#123; /* 1/4th width, floated */ &#125;</div><div class="line">.column-4 &#123; /* 1/3rd width, floated */ &#125;</div><div class="line">.column-5 &#123; /* 5/12th width, floated */ &#125;</div><div class="line">/* etc */</div><div class="line">.column-12 &#123; /* 100% width, floated */ &#125;</div></pre></td></tr></table></figure>
 <p>接下来看使用属性模块。主要有两个模块，行和列。到目前为止，行没有什么变化，列有变化，他有12列：</p>
-<pre><code>&lt;<span class="keyword">div</span> am-Row&gt;
-    &lt;<span class="keyword">div</span> am-Column=<span class="string">"12"</span>&gt;Full&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-&lt;<span class="keyword">div</span> am-Row&gt;
-    &lt;<span class="keyword">div</span> am-Column=<span class="string">"4"</span>&gt;Thirds&lt;/<span class="keyword">div</span>&gt;
-    &lt;<span class="keyword">div</span> am-Column=<span class="string">"4"</span>&gt;Thirds&lt;/<span class="keyword">div</span>&gt;
-    &lt;<span class="keyword">div</span> am-Column=<span class="string">"4"</span>&gt;Thirds&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[am-Row] &#123; /* max-width, clearfixes */ &#125;&#10;[am-Column~=&#34;1&#34;] &#123; /* 1/12th width, floated */ &#125;&#10;[am-Column~=&#34;2&#34;] &#123; /* 1/6th width, floated */ &#125;&#10;[am-Column~=&#34;3&#34;] &#123; /* 1/4th width, floated */ &#125;&#10;[am-Column~=&#34;4&#34;] &#123; /* 1/3rd width, floated */ &#125;&#10;[am-Column~=&#34;5&#34;] &#123; /* 5/12th width, floated */ &#125;&#10;/* etc */&#10;[am-Column~=&#34;12&#34;] &#123; /* 100% width, floated */ &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;div am-Row&gt;
+    &lt;div am-Column=&quot;12&quot;&gt;Full&lt;/div&gt;
+&lt;/div&gt;
+&lt;div am-Row&gt;
+    &lt;div am-Column=&quot;4&quot;&gt;Thirds&lt;/div&gt;
+    &lt;div am-Column=&quot;4&quot;&gt;Thirds&lt;/div&gt;
+    &lt;div am-Column=&quot;4&quot;&gt;Thirds&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[am-Row] &#123; /* max-width, clearfixes */ &#125;</div><div class="line">[am-Column~=&quot;1&quot;] &#123; /* 1/12th width, floated */ &#125;</div><div class="line">[am-Column~=&quot;2&quot;] &#123; /* 1/6th width, floated */ &#125;</div><div class="line">[am-Column~=&quot;3&quot;] &#123; /* 1/4th width, floated */ &#125;</div><div class="line">[am-Column~=&quot;4&quot;] &#123; /* 1/3rd width, floated */ &#125;</div><div class="line">[am-Column~=&quot;5&quot;] &#123; /* 5/12th width, floated */ &#125;</div><div class="line">/* etc */</div><div class="line">[am-Column~=&quot;12&quot;] &#123; /* 100% width, floated */ &#125;</div></pre></td></tr></table></figure>
 <p>你会注意到第一件事情就是有<code>am-</code>前缀。这也是AM核心部分，确保属性模块不会与现有属性冲突。你可以使用你自己喜欢的任何前缀名，我常使用的是<code>ui-</code>、<code>css-</code>或者其他前缀，但这些示例中使用的是<code>am-</code>前缀。HTML的有效性对你或你的项目来说是非常重要，就类似于使用<code>data-</code>前缀开头定义的属性类似。</p>
 <p>你可能会注意到的第二件事情就是类似于<code>1</code>、<code>4</code>或<code>12</code>这样的值，使用类名变得极为麻烦——造成冲突的机会很多。但定义了我们自己的命名空间，实际上将空间变得很小，用于工作中不会造成冲突。为了更好的工作，可以自由选择最简明而且有意义的标记。</p>
 <p>##灵活的属性值</p>
 <p>到目前为止，差别相当的小。因为每个模块定义了自己的命名空间，所以可以让值略有不同：</p>
-<pre><code>&lt;<span class="keyword">div</span> am-Row&gt;
-    &lt;<span class="keyword">div</span> am-Column&gt;Full&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-&lt;<span class="keyword">div</span> am-Row&gt;
-    &lt;<span class="keyword">div</span> am-Column=<span class="string">"1/3"</span>&gt;Thirds&lt;/<span class="keyword">div</span>&gt;
-    &lt;<span class="keyword">div</span> am-Column=<span class="string">"1/3"</span>&gt;Thirds&lt;/<span class="keyword">div</span>&gt;
-    &lt;<span class="keyword">div</span> am-Column=<span class="string">"1/3"</span>&gt;Thirds&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[am-Row] &#123; /* max-width, clearfixes */ &#125;&#10;[am-Column] &#123; /* 100% width, floated */ &#125;&#10;[am-Column~=&#34;1/12&#34;] &#123; /* 1/12th width */ &#125;&#10;[am-Column~=&#34;1/6&#34;] &#123; /* 1/6th width */ &#125;&#10;[am-Column~=&#34;1/4&#34;] &#123; /* 1/4th width */ &#125;&#10;[am-Column~=&#34;1/3&#34;] &#123; /* 1/3rd width */ &#125;&#10;[am-Column~=&#34;5/12&#34;] &#123; /* 5/12ths width */ &#125;&#10;/* etc */</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;div am-Row&gt;
+    &lt;div am-Column&gt;Full&lt;/div&gt;
+&lt;/div&gt;
+&lt;div am-Row&gt;
+    &lt;div am-Column=&quot;1/3&quot;&gt;Thirds&lt;/div&gt;
+    &lt;div am-Column=&quot;1/3&quot;&gt;Thirds&lt;/div&gt;
+    &lt;div am-Column=&quot;1/3&quot;&gt;Thirds&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[am-Row] &#123; /* max-width, clearfixes */ &#125;</div><div class="line">[am-Column] &#123; /* 100% width, floated */ &#125;</div><div class="line">[am-Column~=&quot;1/12&quot;] &#123; /* 1/12th width */ &#125;</div><div class="line">[am-Column~=&quot;1/6&quot;] &#123; /* 1/6th width */ &#125;</div><div class="line">[am-Column~=&quot;1/4&quot;] &#123; /* 1/4th width */ &#125;</div><div class="line">[am-Column~=&quot;1/3&quot;] &#123; /* 1/3rd width */ &#125;</div><div class="line">[am-Column~=&quot;5/12&quot;] &#123; /* 5/12ths width */ &#125;</div><div class="line">/* etc */</div></pre></td></tr></table></figure>
 <p>可以使用类似于宽度的<code>1/3</code>来命名，使命名空间变得更有意义，而其对应的就是<code>12</code>列中的<code>4</code>列。同时定义了所有列为默认样式，也就是没有值的属性列视为宽度是100%。为了更好的完成布局，将其设置左浮动。</p>
 <p>##根据属性和值定义样式</p>
 <p>这是这种方法的主要优点之一。根据存在的属性定义基本样式，比如<code>am-Button</code>。然后每个特定的属性值都可以使用这个基本样式。</p>
 <p>在上面的网格示例中，标记中的<code>am-Column=&quot;1/3&quot;</code>匹配<code>am-Column</code>和<code>am-Column~=&quot;1/3&quot;</code>,所以结果就是基本样式加上其他的自定义样式。这种方式不需要使用多类名或者Sass的<code>@extend</code>就能获取所有列。</p>
 <p>##无类名的BEM修饰符</p>
 <p>回到BEM中修饰符使用单类名还是多类名讨论中，AM给了一个全新的参考方式，就是不需要任何类名。对于上面的示例，结构做如下修改：</p>
-<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">am-Button</span>&gt;</span>Normal button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">am-Button</span>=<span class="value">'large'</span>&gt;</span>Large button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">am-Button</span>=<span class="value">'rounded'</span>&gt;</span>Rounded button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">am-Button</span>=<span class="value">'large rounded'</span>&gt;</span>Large rounded button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[am-Button] &#123; /* base button styles */ &#125;&#10;[am-Button~=&#34;large&#34;] &#123; /* large button styles */ &#125;&#10;[am-Button~=&#34;rounded&#34;] &#123; /* round button styles */ &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;a am-Button&gt;Normal button&lt;/a&gt;
+&lt;a am-Button=&apos;large&apos;&gt;Large button&lt;/a&gt;
+&lt;a am-Button=&apos;rounded&apos;&gt;Rounded button&lt;/a&gt;
+&lt;a am-Button=&apos;large rounded&apos;&gt;Large rounded button&lt;/a&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[am-Button] &#123; /* base button styles */ &#125;</div><div class="line">[am-Button~=&quot;large&quot;] &#123; /* large button styles */ &#125;</div><div class="line">[am-Button~=&quot;rounded&quot;] &#123; /* round button styles */ &#125;</div></pre></td></tr></table></figure>
 <p>通过创建一个新的属性模块<code>am-Button</code>，可以将所有按钮的基本样式分离出来，如大按钮或带圆角的按钮。不仅如此，还可以随意的组合，如<code>am-Button=&quot;large rounded&quot;</code>，而且还可以针对上下文进行样式的覆写：</p>
-<pre><code><span class="tag">header</span> &gt; <span class="tag">nav</span> &gt; <span class="attr_selector">[am-Button]</span> <span class="rules">{ <span class="rule"><span class="attribute">background</span>:<span class="value"> none</span></span>; }</span>
+<pre><code>header &gt; nav &gt; [am-Button] { background: none; }
 </code></pre><p>按钮选择使用什么变量并不重要，他可以有很多的变化，也可以是自定义，都可以匹配选择器<code>am-Button</code>，所以知道重写将是有效的。</p>
 <blockquote>
 <p>####关于AMCSS项目<br>我、<a href="http://germanforblack.com/" target="_blank" rel="external">Ben Schwarz</a>和<a href="http://bensmithett.com/" target="_blank" rel="external">Ben Smithett</a>开始在为AM制定<a href="https://github.com/amcss/attribute-module-specification" target="_blank" rel="external">官方规范</a>。如果您想要阅读更多有关于这方面技术的扩展如块、元素、断点等等，你都可以在上面阅读，如果你发现有任何问题，可以给我们提<a href="https://github.com/amcss/attribute-module-specification/issues" target="_blank" rel="external">Bug</a>。</p>
@@ -304,9 +304,9 @@
 <p>##扩展阅读</p>
 <p>AMCSS虽然是一个新东西，但在Sass方面也有相关的<code>mixins</code>和<code>functions</code>。如下所示：</p>
 <p>###Sass中AM模块函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@function am($module, $trait: false) &#123;&#10;  @if $trait == false  &#123;&#10;    @return &#39;[am-&#39; + $module + &#39;]&#39;;&#10;  &#125; @else &#123;&#10;    @return &#39;[am-&#39; + $module + &#39;~=&#34;&#39; + $trait + &#39;&#34;]&#39;;&#10;  &#125;&#10;&#125;&#10;&#10;//use&#10;#&#123;am(&#39;module&#39;)&#125; &#123;&#10;  color: red;&#10;&#125;&#10;&#10;#&#123;am(&#39;module&#39;, &#39;blue&#39;)&#125; &#123;&#10; color: blue;&#10;&#125;&#10;&#10;#&#123;am(&#39;module&#39;, &#39;large&#39;)&#125; &#123;&#10; font-size: 2em;&#10;&#125;&#10;//Output&#10;[am-module] &#123;&#10;  color: red;&#10;&#125;&#10;&#10;[am-module~=&#34;blue&#34;] &#123;&#10;  color: blue;&#10;&#125;&#10;&#10;[am-module~=&#34;large&#34;] &#123;&#10;  font-size: 2em;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">@function am($module, $trait: false) &#123;</div><div class="line">  @if $trait == false  &#123;</div><div class="line">    @return &apos;[am-&apos; + $module + &apos;]&apos;;</div><div class="line">  &#125; @else &#123;</div><div class="line">    @return &apos;[am-&apos; + $module + &apos;~=&quot;&apos; + $trait + &apos;&quot;]&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//use</div><div class="line">#&#123;am(&apos;module&apos;)&#125; &#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#&#123;am(&apos;module&apos;, &apos;blue&apos;)&#125; &#123;</div><div class="line"> color: blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#&#123;am(&apos;module&apos;, &apos;large&apos;)&#125; &#123;</div><div class="line"> font-size: 2em;</div><div class="line">&#125;</div><div class="line">//Output</div><div class="line">[am-module] &#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[am-module~=&quot;blue&quot;] &#123;</div><div class="line">  color: blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[am-module~=&quot;large&quot;] &#123;</div><div class="line">  font-size: 2em;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>###Sass中AM的混合宏</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@mixin am($module, $trait: null) &#123;&#10;  @if $trait != null &#123;&#10;    [am-#&#123;$module&#125;~=&#34;#&#123;$trait&#125;&#34;]&#123;&#10;      @content;&#10;    &#125;&#10;  &#125;&#10;  @else &#123;&#10;    [am-#&#123;$module&#125;]&#123;&#10;      @content;&#10;    &#125;&#10;  &#125;&#10;&#125;&#10;//use&#10;@include am(module) &#123;&#10;  color: red;&#10;&#125;&#10;&#10;@include am(module, blue) &#123;&#10;  color: blue;&#10;&#125;&#10;&#10;@include am(module, large) &#123;&#10;  font-size: 2em;&#10;&#125;&#10;//output&#10;[am-module] &#123;&#10;  color: red;&#10;&#125;&#10;&#10;[am-module~=&#34;blue&#34;] &#123;&#10;  color: blue;&#10;&#125;&#10;&#10;[am-module~=&#34;large&#34;] &#123;&#10;  font-size: 2em;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">@mixin am($module, $trait: null) &#123;</div><div class="line">  @if $trait != null &#123;</div><div class="line">    [am-#&#123;$module&#125;~=&quot;#&#123;$trait&#125;&quot;]&#123;</div><div class="line">      @content;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  @else &#123;</div><div class="line">    [am-#&#123;$module&#125;]&#123;</div><div class="line">      @content;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">//use</div><div class="line">@include am(module) &#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@include am(module, blue) &#123;</div><div class="line">  color: blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@include am(module, large) &#123;</div><div class="line">  font-size: 2em;</div><div class="line">&#125;</div><div class="line">//output</div><div class="line">[am-module] &#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[am-module~=&quot;blue&quot;] &#123;</div><div class="line">  color: blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[am-module~=&quot;large&quot;] &#123;</div><div class="line">  font-size: 2em;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
 <p>如需转载，烦请注明出处：</p>
 <p>英文原文：<a href="http://glenmaddern.com/articles/introducing-am-css" target="_blank" rel="external">http://glenmaddern.com/articles/introducing-am-css</a></p>
@@ -320,11 +320,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/性能优化优秀教程.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/开始制作html_email.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          性能优化优秀教程
+          开始制作HTML Email
         
       </div>
     </a>
@@ -377,8 +377,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

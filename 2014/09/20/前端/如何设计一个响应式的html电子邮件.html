@@ -17,13 +17,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何设计一个响应式的HTML电子邮件">
 <meta name="twitter:description" content="在过去的几件中，移动端使用的飙升，使我们向网络用户提供内容的方法引起了一场进化或者革命。最终目标是流体的，适应移动端和device-agnostic　Web以及一个已成为受人青睐的学派：响应式设计。然而，虽然响应式设计思想高涨，而电子邮件设计和开发一直在努力跟上。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/responsive-email-design3-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -231,29 +232,29 @@
 
 <p>##文档类型(Doctype)</p>
 <p>Hotmail和Gmail会自动插入XHTML 1.0 Strict 文档类型。虽然不是一个坏主意，但重要的是用它可以彻底地测试您的电子邮件和没有文档类型的电子邮件客户端可以自动生成。</p>
-<pre><code><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span>
+<pre><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
 </code></pre><p>Email Acid对电子邮件的文档类型进行了广泛的研究，感兴趣可以点击<a href="http://www.emailonacid.com/blog/details/C13/doctype_-_the_black_sheep_of_html_email_design" target="_blank" rel="external">这里</a>。</p>
 <p>##媒体查询(Media queries)</p>
 <p>我们现在可以插入一个视窗的meta标签，以确保我们的电子邮件在移动设备上可以正确的显示。指定内容类型和一个标题标签也是一个好主意。如果你打算在电子邮件中提供一个“浏览器查看”的一个链接，这是一个好主意，但忽略了一点，在很多电子邮件客户端会忽略这一点。</p>
 <p>因为在电子邮件中有可能会忽略“content-type”，明智的做法是在你的电子邮件中所有特殊字符都最好使用HTML实体符进行编码。</p>
 <p>还有几个确保我们电子邮件能跨平台，我们还需设置几个他管理费样式。</p>
-<pre><code><span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial scale=1.0"</span>/&gt;</span>
-    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=iso-8859-1"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Email subject or title<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
-        <span class="class">.ExternalClass</span> <span class="rules">{<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100%</span></span></span>;}</span>
-        <span class="tag">img</span> <span class="rules">{<span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;}</span>
-    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<pre><code>&lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial scale=1.0&quot;/&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot;&gt;
+    &lt;title&gt;Email subject or title&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .ExternalClass {width:100%;}
+        img {display: block;}
+    &lt;/style&gt;
+&lt;/head&gt;
 </code></pre><p><strong>注意：</strong>视窗meta标记对<a href="http://www.emailonacid.com/blog/details/C13/emailology_viewport_metatag_rendered_unusable" target="_blank" rel="external">黑莓有负面影响</a>。</p>
 <p>现在，我们可以插入媒体查询，有多少取决于你希望每个设备特性所需要。在这个示例中，我们将使用的媒体查询只有一个——大多数设备屏幕大小不大于600px是现代手机和触摸屏做出有利于移动设备优化样式。此外，我们我假设遵循通用移动最佳实践技术，早前也说过，手机用户浏览更大的布局会运到重大的可用性问题。</p>
 <p>我们以机样的方式使用媒体查询构建一个网站时，如果视窗大小符合媒体查询条件时，将应用媒体查询里的样式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 600px) &#123;&#10;    table[class=&#34;hide&#34;], img[class=&#34;hide&#34;], td[class=&#34;hide&#34;] &#123;&#10;      display:none!important;&#10;    &#125;&#10;  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width: 600px) &#123;</div><div class="line">    table[class=&quot;hide&quot;], img[class=&quot;hide&quot;], td[class=&quot;hide&quot;] &#123;</div><div class="line">      display:none!important;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <p>在上面的例子中，屏幕小于600px时，通过给带有类名<code>hidden</code>的元素设置<code>display:none</code>来隐藏元素。<code>!important</code>可以确保覆盖任何内联样式。这是响应式电子邮件设计的基本原理：在<code>&lt;head&gt;</code>头部样式中通过<code>!important</code>来覆盖HTML文档中的内联样式，并且根据媒体查询特定的屏幕尺寸来覆盖这些样式。有一个明显的例个是Gmail应用程序将会忽略<code>&lt;head&gt;</code>内部的任何样式。然而，内容的居左会确保Gmail用户有一个更好的用户体验。显然这并不是一个理想的解决文案，目前，响应式电子邮件设计尽可能多的想法是对前沿技术的妥协。</p>
 <p>值得注意的是，我们针对HTML元素的CSS属性选择器来<a href="http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-yahoo-mail-mobile-email/" target="_blank" rel="external">克服Yahoo邮件</a>的渲染问题。</p>
 <p>所以我们可以看到，媒体查询选择性的显示内容是一个有用的工具，但我们也可以使用它们来让我空调其他功能的布局。或许最重要的是，我们可以约束我们电子邮件的列宽——移动体验最大的关键。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 600px) &#123;&#10;    table[class=&#34;content_block&#34;] &#123;&#10;    width: 92%!important;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width: 600px) &#123;</div><div class="line">    table[class=&quot;content_block&quot;] &#123;</div><div class="line">    width: 92%!important;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我们已经在我们的媒体查询中设置了，当屏幕宽度小于600px，所有类名<code>content_block</code>元素宽度调整为92%。现在我们要做的就是把内联属性指定宽度(600px)和定义类<code>content_block</code>任何表格，我们有一个固定宽度的容器，然后在移动设备下指定一宽度的比例。</p>
 <p>给这个容器的子元素的宽度属性都指定为百分比，这是一个基本响应式电子邮件模板。</p>
 <p>作为一个经验法则，为了照顾Webkit自动调整<code>&lt;body&gt;</code>标签文本大小，尽量保持字体大小最低在12px以上。</p>
@@ -261,9 +262,9 @@
 <p>调用操作(CAT)通常是营销邮件最重要的部分。他们应该是引人注目的，良好的，最重要的是使用。一个强大的CAT标准是根据不同的动作有不同的光标或手指。响应式电子邮件强大功能是在小触屏设备上提供一个手指可操作的按钮，让手指操作不受图像阻碍。</p>
 <p><img alt="如何设计一个响应式的HTML电子邮件" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/responsive-email-design3-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>不幸的是，这种按钮不能普遍显示，因为他们依赖于padding属性，但在一些桌面电子邮件客户端并不支持。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width:600) &#123;&#10;&#9;a[class=&#34;button&#34;]&#123;&#10;    &#9;display: block;&#10;      &#9;padding: 7px 8px 6px 8px;&#10;      &#9;-webkit-border-radius: 5px;&#10;      &#9;-moz-border-radius: 5px;&#10;      &#9;border-radius: 5px;&#10;      &#9;color: #fff!important;&#10;      &#9;background: #f46f62;&#10;      &#9;text-align: center;&#10;      &#9;text-decoration: none!important;&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width:600) &#123;</div><div class="line">	a[class=&quot;button&quot;]&#123;</div><div class="line">    	display: block;</div><div class="line">      	padding: 7px 8px 6px 8px;</div><div class="line">      	-webkit-border-radius: 5px;</div><div class="line">      	-moz-border-radius: 5px;</div><div class="line">      	border-radius: 5px;</div><div class="line">      	color: #fff!important;</div><div class="line">      	background: #f46f62;</div><div class="line">      	text-align: center;</div><div class="line">      	text-decoration: none!important;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面的样式声明将改变带有类名<code>button</code>的标签，只要屏幕宽度不大于600px，按钮变大，好看，彩色的，而且跨越内容区域的宽度。CSS3支持不应该是一个问题，我们可以撰写我们的目标是合理的现代的移动技术。</p>
-<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">style</span>=<span class="value">"color:#f46f62; font-weight: bold; text-decoration: underline;"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<pre><code>&lt;a href=&quot;#&quot; style=&quot;color:#f46f62; font-weight: bold; text-decoration: underline;&quot;&gt;Click me!&lt;/a&gt;
 </code></pre><p>内联样式满足鼠标的用户可以点击和更大精度但覆盖这些样式链接，可以让触屏用户减少交互的错误。重要的是，这种方法不依赖于图像，因此避免了图像加载阻滞存在的可用性问题。</p>
 <p>##结论</p>
 <p>响应电子邮件设计仍然是一个妥协方案。令人困惑的是一系列不同的设备，电子邮件客户端的渲染引擎给设计人员和开发人员带来一个艰巨的任务。但随着科技的进步变得更容易为用户提供适当的布局，他们可以毫不费力提供有效的交互。越来载多的电子邮件客户端支持媒体查询改变了移动电子邮件的外观和优化，并且为我们提供了一个平台，大大提高更多的用户体验。现在对我们来说，设计人员和开发人员，尝试有创意的方法来让更多的移动用户有更好的体验。</p>
@@ -281,18 +282,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/实战css混合模式.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/如何设置基线网络.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          实战CSS混合模式
+          如何设置基线网络
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/如何设置基线网络.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何设置基线网络</div>
+    <a href="/2014/09/20/前端/实战css混合模式.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实战CSS混合模式</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -338,8 +339,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

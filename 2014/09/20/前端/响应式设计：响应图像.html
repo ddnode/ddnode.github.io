@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -207,15 +207,15 @@
 <p>##依赖服务器</p>
 <p>服务于用户的服务器是第三种方案的主角，一种服务器端编程语言和某些基本形式的检测可以决定加载哪些图像。所有的逻辑在浏览器加载成功和解析HTML代码之前就会被执行。不幸的是，这种方案本身有缺陷：面对不断增长的移动终端设备和屏幕尺寸，维护操作就会变得非常复杂，并需要一定的维护成本。</p>
 <p>为了让你更好地理解这是一种怎样的技术和如何使用，下面我将使用PHP的例子，但别担心，这例子不是想说明你必须使用PHP才能创建响应式图像。尽管你没有学习过PHP，你还是会理解这个例子。假设你动态地创建一个页面，使用如下代码在页面插入<code>&lt;img&gt;</code>标签元素：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;&#60;img src=&#34;heavy-image.png&#34; /&#62;&#39;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &apos;&lt;img src=&quot;heavy-image.png&quot; /&gt;&apos;;</div></pre></td></tr></table></figure>
 <p>你可能已经知道，移动终端连接到网络的上网速度远不如电脑。因此，为了加快页面的渲染速度，插入更小版本的图片会更加有利…例如iPhone手机，你可以服务器端在请求检查是否iPhone手机，若是，则发送更小的图片。演示代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (strpos($_SERVER[&#39;HTTP_USER_AGENT&#39;], &#39;iPhone&#39;) === false) &#123;&#10;  // Not an iPhone&#10;  echo &#39;&#60;img src=&#34;heavy-image.png&#34; /&#62;;&#10;&#125;&#10;else &#123;&#10;  // An iPhone&#10;  echo &#39;&#60;img src=&#34;light-image.png&#34; /&#62;;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">if (strpos($_SERVER[&apos;HTTP_USER_AGENT&apos;], &apos;iPhone&apos;) === false) &#123;</div><div class="line">  // Not an iPhone</div><div class="line">  echo &apos;&lt;img src=&quot;heavy-image.png&quot; /&gt;;</div><div class="line">&#125;</div><div class="line">else &#123;</div><div class="line">  // An iPhone</div><div class="line">  echo &apos;&lt;img src=&quot;light-image.png&quot; /&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>从上面的代码可以看到，这种方法是很容易实现的，但是，这种方法是不可靠的，原因是user-agent的本身信息不是100%可靠的。如果，这种方法失效了，可能你还会面临其他问题。</p>
 <p>##有一种方案比其他的都要好</p>
 <p>很明显，每种方案都自己独特的优势及局限性，单一的方案不能成为你所有的移动项目的最佳选择。尽管这样，开发人员还是可以使用一些额外的技术来创建响应式图像。</p>
 <p>###Sencha.io Src</p>
 <p>这种方案在操作起来是简单且迅速的。它是由James Pearce开发，应用于你选择的图片，可以适应你额外的需要。它的名字是Sencha.io Src，使用方法如下：</p>
-<pre><code>&lt;<span class="tag">img</span> src=<span class="string">"http://src.sencha.io/http://mysite.com/images/my-image.jpg"</span> /&gt;
+<pre><code>&lt;img src=&quot;http://src.sencha.io/http://mysite.com/images/my-image.jpg&quot; /&gt;
 </code></pre><p>这种技术还可以把图片缓存在本地，这样子当页面下次加载时，保证图片不会再加载了。</p>
 <p>##自适应图像</p>
 <p>Matt Wilcox 则提出了类似的解决方案。内容包括，首先确定屏幕的大小，然后创建(缓存)一张可缩放的正确图像尺寸版本。这是一种合适可使现有的网站实现响应式图片的方案。下载源码后(在<a href="http://adaptive-images.com/" target="_blank" rel="external">adaptive-images.com</a>可以找到)，为了使该方案操作和正常运行，需要遵循如下三个简单的步骤:</p>
@@ -229,7 +229,7 @@
 </li>
 </ol>
 <p>这行代码的作用就是获取到屏幕宽高的最大值并使用cookie存储起来。可以<code>adaptive-images.php</code>文件中配置多个选项，主要目的是设置变量resolutions（<code>$resolutions</code>）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$resolutions = array (800, 480, 320);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$resolutions = array (800, 480, 320);</div></pre></td></tr></table></figure>
 <p>这些resolutions是根据屏幕分辨率(像素)的宽度来衡量的图像“断点”。这个工具会小的屏幕中输出320px，或者更小、适合移动终端的图像。如果屏幕超过320像素，值会重新赋值480，就像不断地向数组中获取下一个元素值。</p>
 <p>一旦创建，这些图像就会被存储在缓存文件中（你可以修改文件名），之后就不再需要重新生成它们。</p>
 <p>另外，我想强调的是对自适应图像讨论的关键是它们的尺寸。这是一个很重要的因素，但是我们经常忘记它并不是唯一的一个因素。例如，在更小的屏幕中调整图像大小会损失图片质量和影响图像的识别。在这些情况下，可能需要修改图像。即使一些多余边界超出边缘，一些简单的剪裁可以帮助图像保留它在一个更小的屏幕中的影响和意义。</p>
@@ -252,18 +252,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/响应式设计：概念与运用.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/响应式网页与移动端网站和native_app的优点和缺点对比.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          响应式设计：概念与运用
+          响应式设计、移动端网站与原生应用的优点和缺点
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/响应式网页字体图标.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">响应式网页字体图标</div>
+    <a href="/2014/09/20/前端/响应式设计：概念与运用.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式设计：概念与运用</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -309,8 +309,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

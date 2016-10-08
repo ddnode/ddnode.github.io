@@ -38,13 +38,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解CSS Shapes的引用框">
 <meta name="twitter:description" content="CSS Shapes是用来定义内容环绕的路径，这些路径都是通过形状函数来定义，比如：circle()、 ellipse()、 inset() 或 polygon()，他们都被定位在一个虚拟盒子(virtual box)中，也就是引用框(reference box)。">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -225,7 +226,7 @@
         <p><a href="http://www.w3cplus.com/css3/css-shapes-101.html" target="_blank" rel="external">CSS Shapes</a>是用来定义内容环绕的路径，这些路径都是通过形状函数来定义，比如：<code>circle()</code>、 <code>ellipse()</code>、 <code>inset()</code> 或 <code>polygon()</code>，他们都被定位在一个虚拟盒子(virtual box)中，也就是引用框(reference box)。<br><a id="more"></a><br>引用框定义了形状的坐标系统，因此它影响了形状如何绘制和定位。他有四种引用框可供选择：<code>margin-box</code>, <code>padding-box</code>, <code>border-box</code> 和 <code>content-box</code>。每种引用框都会产生不同的结果。请继续往下阅读，了解他们是如何工作。</p>
 <p><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-1.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
 <p>我们以内容围绕在一个圆形形状周围为例。我们将使用百分比来定义圆形形状的半径，来观察引用框对形状产生的影响。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape&#123;&#10;  shape-outside: circle(50%);&#10;  float: left;&#10;  width: 100px;&#10;  height: 100px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.shape&#123;</div><div class="line">  shape-outside: circle(50%);</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/HJIgE" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-1.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
 <p class="btns-zone"><a class="btn-demo" href="http://codepen.io/airen/pen/HJIgE" target="_blank">查看DEMO</a></p>
@@ -233,7 +234,7 @@
 <p><strong>特别声明：本文中所有示例，参考与教程制作，如果您希望浏览DEMO的效果，请使用Webkit Nightly和Chrome Canary浏览器。如无特别说明，下面所有示例都只能在这两种浏览器下浏览。</strong></p>
 <p>##margin-box</p>
 <p>如里未显式的声明，CSS Shapes的引用框默认为<code>margin-box</code>。上面的形状声明相当于：</p>
-<pre><code>shape-<span class="value">outside</span><span class="value">: <span class="function">circle</span>(<span class="number">50%</span>) margin-box;</span>
+<pre><code>shape-outside: circle(50%) margin-box;
 </code></pre><p>得出的效果：</p>
 <p><a href="http://codepen.io/airen/pen/csDdi" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-1.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
@@ -243,7 +244,7 @@
 <p>在我们的示例中并没有设置<code>margin</code>，所以<code>margin-box</code>引用框并没有超出元素内容区域。形状的坐标系统原点还是在元素的左上角。</p>
 <p>在这一点上，圆的半径为50%，实际就是50px（宽和高的一半）。</p>
 <p>当给形状指定<code>margin</code>时变化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape&#123;&#10;  margin: 50px;&#10;  shape-outside: circle(50%);&#10;  float: left;&#10;  width: 100px;&#10;  height: 100px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.shape&#123;</div><div class="line">  margin: 50px;</div><div class="line">  shape-outside: circle(50%);</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/ckosp" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-2.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
 <p class="btns-zone"><a class="btn-demo" href="http://codepen.io/airen/pen/ckosp" target="_blank">查看DEMO</a></p>
@@ -258,7 +259,7 @@
 <p>它是了解所有引用框定义形状坐标系统，但实际上只有形状使用<code>margin-box</code>引用框非常重要。这意味着使用<code>margin-box</code>引用框剪切的形状会大于其他引用框的形状。因此，使用<code>margin</code>可用以增加绘制图形的区域。</p>
 <p>##border-box</p>
 <p>正如其名所暗示，<code>border-box</code>引用框限制形状的坐标系统定义在元素边框的外边缘。在这种情况之下，形状可能会与元素边框重叠，如果元素设置了<code>margin</code>，形状可以超越元素的边框。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape&#123;&#10;  border: 25px solid pink;&#10;  shape-outside: circle(50%) border-box;&#10;  float: left;&#10;  width: 100px;&#10;  height: 100px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.shape&#123;</div><div class="line">  border: 25px solid pink;</div><div class="line">  shape-outside: circle(50%) border-box;</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/mjlEK" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-4.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
 <p class="btns-zone"><a class="btn-demo" href="http://codepen.io/airen/pen/mjlEK" target="_blank">查看DEMO</a></p>
@@ -268,7 +269,7 @@
 <p>对应的引用盒子示意图：</p>
 <p><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-3.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
 <p>然而，如果设置<code>box-sizing:border-box;</code>（注：不同的属性）。不同的盒模型计算方法，盒子的大小不会改变，只是元素内容区域宽度变小。在这种情况之下，引用框的大小始终是<code>100px * 100px</code>,而圆半径50%实际上就是50px。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape &#123;&#10;  border: 25px solid pink;&#10;  box-sizing: border-box;&#10;  shape-outside: circle(50%) border-box;&#10;  float: left;&#10;  width: 100px;&#10;  height: 100px;&#10;  border-radius: 50%;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.shape &#123;</div><div class="line">  border: 25px solid pink;</div><div class="line">  box-sizing: border-box;</div><div class="line">  shape-outside: circle(50%) border-box;</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">  border-radius: 50%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/zphfs" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-6.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
 <p class="btns-zone"><a class="btn-demo" href="http://codepen.io/airen/pen/zphfs" target="_blank">查看DEMO</a></p>
@@ -278,7 +279,7 @@
 <p>##padding-box</p>
 <p><code>padding-box</code>引用框约束形状坐标系统在元素内距的外边缘。</p>
 <p>来看一个简单的示例，将形状的引用框指定为<code>padding-box</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape&#123;&#10;  padding: 25px;&#10;  shape-outside: circle(50%) padding-box;&#10;  float: left;&#10;  width: 100px;&#10;  height: 100px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.shape&#123;</div><div class="line">  padding: 25px;</div><div class="line">  shape-outside: circle(50%) padding-box;</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/JcFjr" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-7.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
 <p class="btns-zone"><a class="btn-demo" href="http://codepen.io/airen/pen/JcFjr" target="_blank">查看DEMO</a></p>
@@ -302,13 +303,13 @@
 <p><code>content-box</code>引用框限制了形状坐标系统在元素的内容区域内。</p>
 <p>这是一个非常少见的，显式设置元素宽度，而高度由自己的内容来控制。这种引用框生成的形状直接受到元素的内容影响。</p>
 <p>来看看有关于<code>content-box</code>引用框的两个示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape&#123;&#10;  shape-outside: circle(50%) content-box;&#10;  float: left;&#10;  width: 100px;&#10;  height: 100px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.shape&#123;</div><div class="line">  shape-outside: circle(50%) content-box;</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/Hbhna" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-10.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
 <p class="btns-zone"><a class="btn-demo" href="http://codepen.io/airen/pen/Hbhna" target="_blank">查看DEMO</a></p>
 
 <p>显式设置引用框两个维度的值：同时设置了引用框的宽度和高度。就算添加了<code>padding</code>和<code>border</code>，改变了元素尺寸大小，但引用框仍然使用的是初始定义的尺寸。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape &#123;&#10;  padding: 25px;&#10;  border:25px solid rgba(22,222,22,.5);&#10;  shape-outside: circle(50%) content-box;&#10;  float: left;&#10;  width: 100px;&#10;  height: 100px;&#10;  border-radius: 50%;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.shape &#123;</div><div class="line">  padding: 25px;</div><div class="line">  border:25px solid rgba(22,222,22,.5);</div><div class="line">  shape-outside: circle(50%) content-box;</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">  border-radius: 50%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/dKsGw" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-11.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
 <p class="btns-zone"><a class="btn-demo" href="http://codepen.io/airen/pen/dKsGw" target="_blank">查看DEMO</a></p>
@@ -316,18 +317,18 @@
 <p>对应的引用盒子示意图：</p>
 <p><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-5.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
 <p>当使用<code>box-sizing:border-box;</code>，减去<code>padding</code>和<code>border</code>的值，引用框剩下的可用表示是完全相同的。如果该运算导致引用框剩余的面为零或负值，将不会显示形状，因为没有地方绘制形状。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape &#123;&#10;  box-sizing:border-box;&#10;  padding: 25px;&#10;  border:25px solid rgba(22,222,22,.5);&#10;  shape-outside: circle(50%) content-box;&#10;  float: left;&#10;  width: 100px;&#10;  height: 100px;&#10;  border-radius: 50%;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.shape &#123;</div><div class="line">  box-sizing:border-box;</div><div class="line">  padding: 25px;</div><div class="line">  border:25px solid rgba(22,222,22,.5);</div><div class="line">  shape-outside: circle(50%) content-box;</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">  border-radius: 50%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/JxEfp" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-12.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
 <p class="btns-zone"><a class="btn-demo" href="http://codepen.io/airen/pen/JxEfp" target="_blank">查看DEMO</a></p>
 
 <p>可能还有一种情况，只定义一个方向的维度，引用框只受其中一方面的限制。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape&#123;&#10;  shape-outside: circle(50%) content-box;&#10;  float: left;&#10;  width: 100px;&#10;  /* height: 100px; */&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.shape&#123;</div><div class="line">  shape-outside: circle(50%) content-box;</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  /* height: 100px; */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>请注意，现在显式的注释掉了<code>height</code>的设置。现在<code>content-box</code>引用框取决于元素内容。不同的字体大小值和相对单位都会影响引用框。</p>
 <p>###尺寸大小可变的引用框</p>
 <p>为了能更好的说明问题，到目前为止，示例中使用的都是一个正方形元素。这样一来，圆的半径刚好上正方形元素宽度一半。</p>
 <p>然而，给<code>circle()</code>和<code>ellipse()</code>的半径使用百分比作单位，相对来说要<a href="http://www.w3.org/TR/css-shapes/#funcdef-circle" target="_blank" rel="external">复杂一些</a>。可以使用这样的一个公式：</p>
-<pre><code><span class="function"><span class="title">sqrt</span><span class="params">(width的二次方 +height的二次方)</span></span>/<span class="function"><span class="title">sqrt</span><span class="params">(<span class="number">2</span>)</span></span>
+<pre><code>sqrt(width的二次方 +height的二次方)/sqrt(2)
 </code></pre><p>这是一种特殊的情况，对于<code>circle()</code>和<code>ellipse()</code>的半径，而其他形状，比如<code>polygon()</code>是不受影响的。</p>
 <p>对于<code>content-box</code>引用框只影响一个或两个维度时，这个公式变得有点弱智。值得注意的是，这是一种可变化的引用框，而不仅是<code>content-box</code>引用框。</p>
 <p><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-6.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
@@ -343,7 +344,7 @@
 <p><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-8.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></p>
 <p>##从引用框创建形状</p>
 <p>它可能跳过形状函数，从元素的引用框创建形状。当使用边界做为<code>border-radius</code> 时，这非常有用，因为该属性会根据引用框影响形状。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.shape&#123;&#10;  border-radius: 50px;&#10;  shape-outside: margin-box;&#10;  float: left;&#10;  width: 100px;&#10;  height: 100px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.shape&#123;</div><div class="line">  border-radius: 50px;</div><div class="line">  shape-outside: margin-box;</div><div class="line">  float: left;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/qyzxL" target="_blank"><img alt="理解CSS Shapes的引用框" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1408/reference-boxes-case-13.jpg" style="padding:2px;border:1px solid #ccc;width:650px;"></a></p>
 
 <p class="btns-zone"><a class="btn-demo" href="http://codepen.io/airen/pen/qyzxL" target="_blank">查看DEMO</a></p>
@@ -374,18 +375,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/用css变形创建圆形导航.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/构建一个垂直规律.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          用CSS变形创建圆形导航
+          构建一个垂直规律
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/构建一个垂直规律.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">构建一个垂直规律</div>
+    <a href="/2014/09/20/前端/精彩网格式网页设计赏析.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">精彩网格式网页设计赏析</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -431,8 +432,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

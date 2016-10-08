@@ -21,13 +21,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开始编写CSS">
 <meta name="twitter:description" content="你不要觉得CSS没什么重要可言？最近几年他成为一个热门的话题，很多人都在讨论他。CSS并不是一个简单的事情，前端开发者可以使用他将页面制作的更佳漂亮。看得更远一些，我们更关心的是网站的性能以及如何制作出更好的网站。在本文中，我想分享我最近几个月的学到的有关于CSS编码的知识。作为一个程序员，我真正感兴趣的事情是框架（Architectural）部分。我觉得写CSS应该需要去改变，为此我深挖了很多知">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1309/starting-css-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -213,20 +214,20 @@
 <p>我认为最有价值的东西是连接你的文件。我相信，你知道使用<code>@import</code>来引用你的<code>.css</code>文件，告诉浏览器获取这个文件。这样做，浏览器需要增加一个请求，这样有点麻烦，因为你可能有很多个这样的文件。增加额外的请求，使你的程序性能变得更低。如果您使用CSS预处理器语言，这个问题将不会存在。他们只会编译你样式文件中单个<code>.css</code>文件。</p>
 <p>###扩展（Extending）</p>
 <p><a href="http://lesscss.org/" target="_blank" rel="external">LESS</a>和<a href="http://sass-lang.com/" target="_blank" rel="external">Sass</a>是最主要的两个CSS预处理器。我们都支持扩展。虽然他们的工作方式略有不同，但他们的想法是一样的。你可以做一个基本的类（通常称为<code>mixin</code>）和一群属性，然后在另一个选择器导入这些属性，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// less&#10;.bordered(@color: #000) &#123;&#10;    border: dotted 2px @color;&#10;&#125;&#10;.header &#123; .bordered; &#125;&#10;.footer &#123; .bordered(#BADA55); &#125;&#10;&#10;// &#32534;&#35793;&#20986;&#26469;&#30340;CSS&#10;.header &#123;&#10;    border: dotted 2px #000000;&#10;&#125;&#10;.footer &#123;&#10;    border: dotted 2px #bada55;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// less</div><div class="line">.bordered(@color: #000) &#123;</div><div class="line">    border: dotted 2px @color;</div><div class="line">&#125;</div><div class="line">.header &#123; .bordered; &#125;</div><div class="line">.footer &#123; .bordered(#BADA55); &#125;</div><div class="line"></div><div class="line">// 编译出来的CSS</div><div class="line">.header &#123;</div><div class="line">    border: dotted 2px #000000;</div><div class="line">&#125;</div><div class="line">.footer &#123;</div><div class="line">    border: dotted 2px #bada55;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这里的问题是，如果你没有定义一个参数的<code>mixin</code>，例如刚才的示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.bordered &#123;&#10;    border: dotted 2px #000;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.bordered &#123;</div><div class="line">    border: dotted 2px #000;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这是最后编译的CSS文件，无论你是否使用都没有任何关系。因为他是一个有效的选择器。在Sass中我们可以做得更灵活一些。他有混合(<code>mixins</code>)、扩展（<code>extends</code>）和占位选择器(<code>placeholders</code>)（如果您想看到他们之间的区别，我强烈建议您阅读这篇<a href="http://krasimirtsonev.com/blog/article/SASS-mixins-extends-and-placeholders-differences-use-cases" target="_blank" rel="external">文章</a>）。接下来我们简单看看Sass是如何工作和编译的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// sass&#10;@mixin bordered($color: #000) &#123;&#10;    border: dotted 2px $color;&#10;&#125;&#10;.header &#123; @include bordered; &#125;&#10;.footer &#123; @include bordered(#BADA55); &#125;&#10;&#10;//&#32534;&#35793;&#30340;CSS&#10;.header &#123;&#10;    border: dotted 2px black;&#10;&#125;&#10;.footer &#123;&#10;    border: dotted 2px #bada55;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// sass</div><div class="line">@mixin bordered($color: #000) &#123;</div><div class="line">    border: dotted 2px $color;</div><div class="line">&#125;</div><div class="line">.header &#123; @include bordered; &#125;</div><div class="line">.footer &#123; @include bordered(#BADA55); &#125;</div><div class="line"></div><div class="line">//编译的CSS</div><div class="line">.header &#123;</div><div class="line">    border: dotted 2px black;</div><div class="line">&#125;</div><div class="line">.footer &#123;</div><div class="line">    border: dotted 2px #bada55;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>它看起来和前面几乎相同，但如果我们秋看第二个<code>placeholder</code>的用例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// sass&#10;%bordered &#123;&#10;    border: dotted 2px #000;&#10;&#125;&#10;.header &#123;&#10;    @extend %bordered;&#10;&#125;&#10;.footer &#123;&#10;    @extend %bordered;&#10;&#125;&#10;&#10;// &#32534;&#35793;&#30340;CSS&#10;.header, .footer &#123;&#10;    border: dotted 2px #000;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// sass</div><div class="line">%bordered &#123;</div><div class="line">    border: dotted 2px #000;</div><div class="line">&#125;</div><div class="line">.header &#123;</div><div class="line">    @extend %bordered;</div><div class="line">&#125;</div><div class="line">.footer &#123;</div><div class="line">    @extend %bordered;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 编译的CSS</div><div class="line">.header, .footer &#123;</div><div class="line">    border: dotted 2px #000;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这个有两个优势，首先不会编译出<code>.bordered</code>类名，其次会使用组合选择器，合并相同的样式，使代码变得更加简洁。</p>
 <p>###配置（Configuration）</p>
 <p>LESS和Sass都支持变量，你可以调用这些变量，将将他们作为属性的值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// sass&#10;$brand-color: #009f0A;&#10;...&#10;h1 &#123;&#10;    color: $brand-color;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// sass</div><div class="line">$brand-color: #009f0A;</div><div class="line">...</div><div class="line">h1 &#123;</div><div class="line">    color: $brand-color;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这是一个很好的特性，因为你可以储存一些重要的东西，比如说颜色或者网格的宽度，将他们存放在同一个地方，如果你需要修改一些不经常改动的代码，会变得非常的简便。</p>
 <p>另一个好处理，可以使用变量的插值，如下面演示的方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// sass&#10;@mixin border($side) &#123;&#10;    border-#&#123;$side&#125;: solid 1px #000;&#10;&#125;&#10;.header &#123;&#10;    @include border(&#34;left&#34;);&#10;&#125;&#10;&#10;// &#32534;&#35793;&#30340;CSS&#10;.header &#123;&#10;    border-left: solid 1px #000;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// sass</div><div class="line">@mixin border($side) &#123;</div><div class="line">    border-#&#123;$side&#125;: solid 1px #000;</div><div class="line">&#125;</div><div class="line">.header &#123;</div><div class="line">    @include border(&quot;left&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 编译的CSS</div><div class="line">.header &#123;</div><div class="line">    border-left: solid 1px #000;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>###针对预处理器（Against the preprocessors）</p>
 <ul>
 <li>预处理器是一种工具，您要使用得先要有一个适合的环境。如果你思念将其集成到你的应用程序中，也需要额外的编码。</li>
@@ -250,21 +251,21 @@
 <p>##BEM</p>
 <p><img alt="开始编写CSS" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1309/starting-css-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>好的，我找到了一个新的好玩工具。这个预处理器可以节省大量的时间，但他不能为你写出好的结构。首先，我开始考虑是一个命名约定，让我们来看以下的HTML标签：</p>
-<pre><code>&lt;header <span class="type">class</span>=<span class="string">"site-header"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"logo"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"navigation"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
+<pre><code>&lt;header class=&quot;site-header&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;navigation&quot;&gt;&lt;/div&gt;
 &lt;/header&gt;
 </code></pre><p>可能会写出对应的样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.site-header &#123; ... &#125;&#10;.logo &#123; ... &#125;&#10;.navigation &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.site-header &#123; ... &#125;</div><div class="line">.logo &#123; ... &#125;</div><div class="line">.navigation &#123; ... &#125;</div></pre></td></tr></table></figure>
 <p>这样的样式能正常的工作，但它有一个问题——阅读CSS，让人难于理解。例如，<code>logo</code>是属于<code>header</code>部分的，你可能有另一个<code>logo</code>要放在页脚<code>footer</code>处。那么将添加一个后代选择器来控制：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.site-header .logo &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.site-header .logo &#123; ... &#125;</div></pre></td></tr></table></figure>
 <p>但是使用这些选择器并不是很好的主意，因为它始终需要依赖于特定的标记和结构。一旦你把<code>logo</code>移到<code>&lt;header&gt;</code>外面，样式将会丢失。另外一种做法是给<code>logo</code>添加一个<code>site-header</code>，给其重新命名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.site-header-logo &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.site-header-logo &#123; ... &#125;</div></pre></td></tr></table></figure>
 <p>很棒了，自己就是说明，但它并不能运用于所有情况之下。例如，我想在12的圣诞节使用一个圣诞节版本的<code>logo</code>。所以，我不能写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.site-header-logo-xmas &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.site-header-logo-xmas &#123; ... &#125;</div></pre></td></tr></table></figure>
 <p>因为我的逻辑是，写一个选择器要像嵌套HTML标签一样匹配。</p>
 <p><a href="">BEM</a>可能解决这样的情况。这意味着块(Block)、元素(Element)和修改器（Modifier）和一些创建规则，你可以遵循这些规则。使用BEM，我们的小例将变成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.site-header &#123; ... &#125; /* block */&#10;.site-header__logo &#123; ... &#125; /* element */&#10;.site-header__logo--xmas &#123; ... &#125; /* modifier */&#10;.site-header__navigation &#123; ... &#125; /* element */</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.site-header &#123; ... &#125; /* block */</div><div class="line">.site-header__logo &#123; ... &#125; /* element */</div><div class="line">.site-header__logo--xmas &#123; ... &#125; /* modifier */</div><div class="line">.site-header__navigation &#123; ... &#125; /* element */</div></pre></td></tr></table></figure>
 <p>也就是说<code>site-header</code>是我们的块。那么<code>logo</code>和<code>navigation</code>是这个块的元素，圣诞版本的<code>logo</code>是修饰符。也许它看起来简单，但是它真的很强大。一旦你开始使用它，会发现他能让你的结构更加的优秀。当然也有反对的理由，那就是因为其语法。是的，或许看起来有点丑，但为了有一个好的结构，我会准备为此做出牺牲。（更好的阅读请点<a href="http://bem.info/method/definitions/" target="_blank" rel="external">这</a>和<a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank" rel="external">这</a>）。</p>
 <p>###扩展阅读</p>
 <ul>
@@ -281,13 +282,13 @@
 <p>自从我发现BEM，我就开始在思考如何正确的使用我的类名。也许，我的第一件事情要读一篇关于面向对象的CSS。面向对象编程添加了一些抽像的概念，CSS也支持这样的概念。如果你使用了CSS预处理器，你或多或少知道一些。做为一个编写代码的人，我发现这个概念离我平时编程很近，拿JavaScript为例，有两个主要原则：</p>
 <p>###单独的结构和样式</p>
 <p>我们用下面的例子来进行介绍：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.header &#123;&#10;    background: #BADA55;&#10;    color: #000;&#10;    width: 960px;&#10;    margin: 0 auto;&#10;&#125;&#10;.footer &#123;&#10;    background: #BADA55;&#10;    text-align: center;&#10;    color: #000;&#10;    padding-top: 20px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.header &#123;</div><div class="line">    background: #BADA55;</div><div class="line">    color: #000;</div><div class="line">    width: 960px;</div><div class="line">    margin: 0 auto;</div><div class="line">&#125;</div><div class="line">.footer &#123;</div><div class="line">    background: #BADA55;</div><div class="line">    text-align: center;</div><div class="line">    color: #000;</div><div class="line">    padding-top: 20px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>其中有一些样式是重复的，我们可以考虑在另一个类中提取这些相同的样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.colors-skin &#123;&#10;    background: #BADA55;&#10;    color: #000;&#10;&#125;&#10;.header &#123;&#10;    width: 960px;&#10;    margin: 0 auto;&#10;&#125;&#10;.footer &#123;&#10;    text-align: center;&#10;    padding-top: 20px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.colors-skin &#123;</div><div class="line">    background: #BADA55;</div><div class="line">    color: #000;</div><div class="line">&#125;</div><div class="line">.header &#123;</div><div class="line">    width: 960px;</div><div class="line">    margin: 0 auto;</div><div class="line">&#125;</div><div class="line">.footer &#123;</div><div class="line">    text-align: center;</div><div class="line">    padding-top: 20px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>所以我们使用<code>colors-skin</code>做为一个对象，用来扩展。这样HTML模板修改成像这样：</p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"header colors-skin"</span>&gt; ... &lt;/<span class="keyword">div</span>&gt;
-&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"colors-skin"</span>&gt; ... &lt;/<span class="keyword">div</span>&gt;
-&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"footer colors-skin"</span>&gt; ... &lt;/<span class="keyword">div</span>&gt;
+<pre><code>&lt;div class=&quot;header colors-skin&quot;&gt; ... &lt;/div&gt;
+&lt;div class=&quot;colors-skin&quot;&gt; ... &lt;/div&gt;
+&lt;div class=&quot;footer colors-skin&quot;&gt; ... &lt;/div&gt;
 </code></pre><p>这样做有几个好处：</p>
 <ul>
 <li>有一个类，它可以使用多次</li>
@@ -296,7 +297,7 @@
 </ul>
 <p>###独立的容器和内容</p>
 <p>这里的想法是，每个元素应该有相同的样式，不管他放在何处。所以，你应该尽量避免使用像下面演示的选择器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.header .social-widget &#123;&#10;    width: 250px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.header .social-widget &#123;</div><div class="line">    width: 250px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果你把<code>.social-widget</code>移动<code>.header</code>容器的外面，那么<code>.social-widget</code>的宽度就变了。尤其是用在页面上的组件。这也是我鼓励CSS模块化以及我强烈建议采用更多的时间去尝试。就我个人而言，以下的原则会将CSS写得更好。</p>
 <p>###框架</p>
 <p>如果你在GitHub上打开<a href="https://github.com/stubbornella/oocss" target="_blank" rel="external">OOCSS库</a>你可以看到一个框架。是的，这个框架使用了面向对象的概念，他的CSS有很多很优秀的现成组件。很长一段时间我并不喜欢框架。如果你有在工作使用框架，你会发现他分为两个部分。事实上，你使用框架处理一些事情，你必须遵守他的规则。不过我更喜欢使用一些微小的框架。当然我不是说我得重新去造轮子，但我总是试图去寻找一种平衡。通常现成的解决方案导致系统的混乱和复杂。我建议是为一定的目的建立一个特定的东西。如果你试图去覆盖一些东西，你总是想到框架中的东西。</p>
@@ -336,32 +337,32 @@
 <p><img alt="开始编写CSS" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1309/starting-css-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>知道了OOCSS和SMACSS后，请允许我找一个恰当的比喻，请快速登录<a href="http://bradfrostweb.com/blog/post/atomic-web-design/" target="_blank" rel="external">这个</a>页面。这里展示了一个伟大的原子设计概念。它的作者是<a href="http://bradfrostweb.com/" target="_blank" rel="external">Brad Frost</a>，众所周知，他是一位有名的Web开发人员，致力于<a href="http://bradfrost.github.io/this-is-responsive/index.html" target="_blank" rel="external">响应式设计</a>和移动端开发。</p>
 <p>这个想法是非常有趣的。以下是一些术语，我们可以说，物质的基本单位是原子。<a href="http://bradfrostweb.com/" target="_blank" rel="external">Brad Frost</a>说我们的页面是用移动的原子构建，一个原子可以是：</p>
-<pre><code>&lt;<span class="keyword">label</span>&gt;<span class="keyword">Search</span> the site&lt;/<span class="keyword">label</span>&gt;
+<pre><code>&lt;label&gt;Search the site&lt;/label&gt;
 </code></pre><p>或者</p>
-<pre><code>&lt;input <span class="class"><span class="keyword">type</span></span>=<span class="string">"text"</span> placeholder=<span class="string">"enter keyword"</span> /&gt;
+<pre><code>&lt;input type=&quot;text&quot; placeholder=&quot;enter keyword&quot; /&gt;
 </code></pre><p>也就是说原子是包括了一些基本样式的DOM元素。如颜色、字体大小或者过渡动画。后来这些部分可以结合成分子，例如：</p>
-<pre><code>&lt;<span class="keyword">form</span>&gt;
-    &lt;<span class="keyword">label</span>&gt;<span class="keyword">Search</span> the site&lt;/<span class="keyword">label</span>&gt;
-    &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"text"</span> placeholder=<span class="string">"enter keyword"</span> /&gt;
-    &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"submit"</span> value=<span class="string">"search"</span> /&gt;
-&lt;/<span class="keyword">form</span>&gt;
+<pre><code>&lt;form&gt;
+    &lt;label&gt;Search the site&lt;/label&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;enter keyword&quot; /&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;search&quot; /&gt;
+&lt;/form&gt;
 </code></pre><p>所以表单元素包含了几个原子。这样抽象带来的灵活性，因为我们可以使用相同的原子来构建另一个分子。这样一来，我们在不同的上下文中可以重用相同的形式：</p>
 <p><a href="http://bradfrostweb.com/" target="_blank" rel="external">Brad Frost</a>并没有停止。生特体是构建分子的东西，遵循同样的方法，我们可以编写以下的结构，并将其称为有机体：</p>
-<pre><code><span class="tag">&lt;<span class="title">header</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"logo"</span>&gt;</span> <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">nav</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Home<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>About<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Contacts<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">form</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">label</span>&gt;</span>Search the site<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">placeholder</span>=<span class="value">"enter keyword"</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"search"</span> /&gt;</span>
-    <span class="tag">&lt;/<span class="title">form</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+<pre><code>&lt;header&gt;
+    &lt;div class=&quot;logo&quot;&gt; &lt;/div&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contacts&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;form&gt;
+        &lt;label&gt;Search the site&lt;/label&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;enter keyword&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;search&quot; /&gt;
+    &lt;/form&gt;
+&lt;/header&gt;
 </code></pre><p>第二件事是模板的概念。他们不是直接相关的化学反应，但被放入了Web的上下文。一旦我们开始结合不同的生物构建我们的模板。后来这些模板形式就是我们最后得到的页面。</p>
 <p>你可能已经使用类似的方法来构建应用程序。然而，命名的东西以一种合理的主式带来良好的结构。在开发中，你和你的队友会有很多事情需要去弄明白。分离的原子和分子是很重要的部分，因为它提高了工作效率和让你更好的维护您的Web应用程序。</p>
 <p>###扩展阅读</p>
@@ -376,29 +377,29 @@
 <p>当我阅读了Brad Frost的文章，我就已经有了类似于的概念，因为我知道Organic。Brad做的非常的棒，但是我决定更深入的去了解，或尝试自己在基于原子设计概念的基础上写一个小型的框架。我最终选择了Sass作为预处理器和在Github上创建了一库<a href="https://github.com/krasimir/organic-css" target="_blank" rel="external">organic-css</a>。</p>
 <p>###原子（Atoms）</p>
 <p>让我匀先从框架最小的一部分开始——原子。<a href="http://en.wikipedia.org/wiki/Atom" target="_blank" rel="external">维基百科</a>是这样定义的，原子是物质的基本单位。在CSS中，我认为它是一个属性和一个属性值，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">margin-top: 24px;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">margin-top: 24px;</div></pre></td></tr></table></figure>
 <p>仅仅为了写样式添加原子而直接添加类名，这并不是我想要的，如果有一个这样的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body &#123;&#10;    margin-top: 24px;&#10;&#125;&#10;header &#123;&#10;    margin-top: 24px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    margin-top: 24px;</div><div class="line">&#125;</div><div class="line">header &#123;</div><div class="line">    margin-top: 24px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>预处理器将会失去他自己作用，因为我想要的结果是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body, header &#123;&#10;    margin-top: 24px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body, header &#123;</div><div class="line">    margin-top: 24px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在Sass中可以使用<code>placeholders</code>的功能，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%margin-top-24 &#123;&#10;    margin-top: 24px;&#10;&#125;&#10;body &#123;&#10;    @extend %margin-top-24;&#10;&#125;&#10;header &#123;&#10;    @extend %margin-top-24;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">%margin-top-24 &#123;</div><div class="line">    margin-top: 24px;</div><div class="line">&#125;</div><div class="line">body &#123;</div><div class="line">    @extend %margin-top-24;</div><div class="line">&#125;</div><div class="line">header &#123;</div><div class="line">    @extend %margin-top-24;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>所以我不得不使用<code>placeholder</code>。这也意味着，我必须要定义很多<code>placeholders</code>，才能使用。在那一刻，我决定，这个框架将只包含原子。也许有一些分子和通用的函数，例如<code>reset.css</code>、网格的定义等等。我想写点东西，作为一个基础的CSS开发。也许我会看到项目中的一些模式，将其放在核心处，作为一个开始，并保持干净和简单。</p>
 <p>事情变得更加的一致化，我创建了一个<code>mixin</code>作为一个原子。如这个例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@include define-atom(&#34;block&#34;) &#123;&#10;    display: block;&#10;&#125;&#10;@include define-atom(&#34;font-family&#34;) &#123;&#10;    font-family: Georgia;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@include define-atom(&quot;block&quot;) &#123;</div><div class="line">    display: block;</div><div class="line">&#125;</div><div class="line">@include define-atom(&quot;font-family&quot;) &#123;</div><div class="line">    font-family: Georgia;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>使用这种方法，我创建了一个原子群，并且可以很容易的适合用于每一个项目。你可以点击<a href=""></a>查看。我并且拿其他的框架作为对比，让我更好的去实践，从中学到很多东西。还可以制作一个<code>mixin</code>分子，将原子相结合在一起：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@mixin header &#123; // &#60;- molecule called &#39;header&#39;&#10;    @include atoms((&#10;        block,&#10;        clearfix,&#10;        font-family&#10;    ));&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@mixin header &#123; // &lt;- molecule called &apos;header&apos;</div><div class="line">    @include atoms((</div><div class="line">        block,</div><div class="line">        clearfix,</div><div class="line">        font-family</div><div class="line">    ));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>###分子（Molecules）</p>
 <p>分子是一个DOM元素需要样式，但他没有子元素。或者他有子元素，便也不会直接连接到它。如<code>&lt;img src=&quot;logo.jpg&quot; /&gt;</code>，可能是一个分子。如果你很难在你的页面识别这些分子，只需要想到什么是由原子构建就行。有些元素也有可能是构建其他分子的原子。如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@mixin login-box &#123;&#10;    @include atoms((&#10;        block,&#10;        font-size-20,&#10;        margin-top-23,&#10;        bold&#10;    ));&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@mixin login-box &#123;</div><div class="line">    @include atoms((</div><div class="line">        block,</div><div class="line">        font-size-20,</div><div class="line">        margin-top-23,</div><div class="line">        bold</div><div class="line">    ));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我们将面对一些很有趣的事。比如说我们的<code>body</code>标签。他是什么呢？它是一个分子或其他什么吗？当然，这需要一些样式，但一般在原子中包含其他分子。它应该是其他东西。我的结论是，CSS应该是主要部分，也就是说，如果<code>body</code>样式需要几个原子，那么他就是一个分子。这也就意味着，从理论上讲，我不应该附加任何其他的分子给它。这看起来有点不切实际，但在大多数情况下，会让你使用不同的选择器，这将是一个好的发展迹象。</p>
 <p>###细胞器（Organelles）</p>
 <p>一旦你认识到这个DOM元素是分子，那么你可以将其看到是一个细胞器。例如，典型的表单元素是一个很好的细胞器例子，他包含像<code>label</code>、<code>input</code>和<code>textarea</code>这样的分子。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.login-form &#123;&#10;    @include label;&#10;    @include input;&#10;    @include textarea;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.login-form &#123;</div><div class="line">    @include label;</div><div class="line">    @include input;</div><div class="line">    @include textarea;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这些也许是框轲中的一部分，它紧密的连接到当前应用程序中。原子和分子可能在不同项目之间移动，而细胞器是不可能会移动的。</p>
 <p>###更抽象（More abstractions）</p>
 <p>很多时候你可能想把几个别的东西放在一起，这样细胞器变得更加抽象：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Atom &#8594; Molecule &#8594; Organelle &#8594; Cell &#8594; Tissue &#8594; Organ &#8594; Sys &#8594; Organism</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Atom → Molecule → Organelle → Cell → Tissue → Organ → Sys → Organism</div></pre></td></tr></table></figure>
 <p>这将面对一个选择问题，你将如何构建你的CSS。我以前只在一个项目中使用OrganicCSS，到目前为止，我还可以说他是清晰的。我把不同的元素放在他们自己的目录中和按他们的名命名，这样我可以很容易的找到他们，并做相应的处理。例如，如果有一个细胞器称为<code>header</code>，我只需要将其修改为<code>o-header</code>。后来，让我读到HTML标记，我就可以看到该元素的CSS样式就在细胞器文件夹中。</p>
 <p>###扩展阅读</p>
 <ul>
@@ -430,8 +431,8 @@
     </a>
   
   
-    <a href="/2014/09/20/前端/开始制作html_email.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">开始制作HTML Email</div>
+    <a href="/2014/09/20/前端/性能优化优秀教程.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">性能优化优秀教程</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -477,8 +478,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

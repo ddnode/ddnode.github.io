@@ -20,13 +20,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让手机站点像原生应用的四大途径">
 <meta name="twitter:description" content="这篇文章大约3000字。它涵盖了移动网站“感知性能”的很多方面，以及加速你网站的切实可行的解决方案。TL;博士:这不是说你网站有多快，而是用户认为有多快。——Kyle Peatt">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/beginners-guide-to-perceived-performance-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -240,9 +241,9 @@
 <p><strong>为了让你的网站感觉更快,你需要让你的按钮立即响应用户的触摸,给用户一个明显的视觉指示–有些事情正在发生。</strong></p>
 <p>有一个很赞的属性用在网站上的按钮或链接;它是:active伪类。我们在桌面端一直使用这个伪类。</p>
 <p>不幸的是,无论是iOS还是android，当按钮或者链接被点击时都忽略了这个属性,为了激活这个状态,你需要添加一个简单的事件绑定到页面的JavaScript中:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&#34;touchstart&#34;, function()&#123;&#125;, true)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.addEventListener(&quot;touchstart&quot;, function()&#123;&#125;, true)</div></pre></td></tr></table></figure>
 <p>之后你可以用css定义active状态的样式，之后去掉点击时的高亮：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-tap-highlight-color: rgba(0,0,0,0);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-webkit-tap-highlight-color: rgba(0,0,0,0);</div></pre></td></tr></table></figure>
 <p>对按钮设置这两个属性,用户会立即感觉到界面响应了用户的操作，即使最终的响应速度是一样的。你只是让你的界面即时反馈了用户的行动,而不会让用户傻等300 ms再看看到底干了啥。</p>
 <p><a href="http://codepen.io/mobify/full/ulwqf" target="_blank"><img alt="让手机站点像原生应用的四大途径" src="http://www.w3cplus.com/sites/default/files/blogs/2013/1310/beginners-guide-to-perceived-performance-2.gif" style="padding:2px;border:1px solid #ccc;width:470px;"></a></p>
 
@@ -263,7 +264,7 @@
 
 <p>有滚动条(<a href="http://codepen.io/mobify/full/vLcky" target="_blank" rel="external">代码</a>)</p>
 <p>这个弹性滚动感觉起来像原生应用，因为这个本来就是原生的滚动。你只需要向可滚动区域增加一行代码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling: touch;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-webkit-overflow-scrolling: touch;</div></pre></td></tr></table></figure>
 <p>不过这个属性有个问题。这个属性会使点击iPhone头部状态栏让网页回到顶部的功能失效。这个bug已经存在了一段时间了，貌似也没有在<a href="http://www.mobify.com/blog/designing-for-ios-7/" target="_blank" rel="external">新的ios7版本</a>中修复。</p>
 <p>有一种方法可以解决这个问题，为容器创建一个class并应用属性<code>overflow-scrolling: touch</code> 。当且仅当容器显示时，使用javascript添加class到容器上。</p>
 <p>Android4上你不需要使用这个属性。每个可滚动的容器均包含弹性滚动。</p>
@@ -334,18 +335,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/初学foundation之progress,_alerts,_tooltips和elusive_mega_drop.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/让你的网站在移动端健步如飞.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          初学Foundation之Progress, Alerts, Tooltips和Elusive Mega Drop
+          让你的网站在移动端健步如飞
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/让你的网站在移动端健步如飞.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">让你的网站在移动端健步如飞</div>
+    <a href="/2014/09/20/前端/用css变形创建圆形导航.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用CSS变形创建圆形导航</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -391,8 +392,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

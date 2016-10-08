@@ -22,13 +22,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初学Foundation之导航栏">
 <meta name="twitter:description" content="一个前端框架是否优秀，其中看该框架如何处理导航栏。初学Foundation，我们先来看几种用javascript工具实现效果的导航栏。我还会介绍另一种有益于你更好地成为Foundation开发者、很有用的工具。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation3-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -212,83 +213,83 @@
 <p><img alt="初学Foundation之导航栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation3-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p><img alt="初学Foundation之导航栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation3-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>见如下代码:</p>
-<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"section-container auto"</span> <span class="attribute">data-section</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">section</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"title"</span> <span class="attribute">data-section-title</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Section 1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"content"</span> <span class="attribute">data-section-content</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">p</span>&gt;</span>Content of section 1.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">section</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"title"</span> <span class="attribute">data-section-title</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Section 2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"content"</span> <span class="attribute">data-section-content</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">p</span>&gt;</span>Content of section 2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<pre><code>&lt;div class=&quot;section-container auto&quot; data-section&gt;
+      &lt;section&gt;
+        &lt;p class=&quot;title&quot; data-section-title&gt;&lt;a href=&quot;#&quot;&gt;Section 1&lt;/a&gt;&lt;/p&gt;
+        &lt;div class=&quot;content&quot; data-section-content&gt;
+              &lt;p&gt;Content of section 1.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;p class=&quot;title&quot; data-section-title&gt;&lt;a href=&quot;#&quot;&gt;Section 2&lt;/a&gt;&lt;/p&gt;
+        &lt;div class=&quot;content&quot; data-section-content&gt;
+              &lt;p&gt;Content of section 2.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+&lt;/div&gt;
 </code></pre><p>这段代码可能比前面章节都要复杂些，我来解释一下：</p>
 <p>不管你打算创建哪种形式的Section，都要以<code>&lt;div class=&quot;section-container auto&quot; data-section&gt;</code>开头，这个<code>data-section</code>属性声明我们正在使用哪种Section,<code>class：auto</code>指明使用Foundation默认的风格：手风琴。如果想使用上其他风格的话，可以把<code>auto</code>改为<code>tabs</code>,<code>accordion</code>,<code>vertical-nav</code>或者是<code>horizontal-nav</code>。最后给<code>data-section</code>赋上与class相同的值，来确认你用对特定形式的<code>section</code>。</p>
 <p>接下来需要添加<code>&lt;section&gt;</code>块，里面添加一个<code>title</code>和该<code>title</code>链到内容的链接：</p>
-<pre><code><span class="tag">&lt;<span class="title">section</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"title"</span> <span class="attribute">data-section-title</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#panel1"</span>&gt;</span>Section 1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"content"</span> <span class="attribute">data-section-content</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">p</span>&gt;</span>Content of section 1.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+<pre><code>&lt;section&gt;
+    &lt;p class=&quot;title&quot; data-section-title&gt;&lt;a href=&quot;#panel1&quot;&gt;Section 1&lt;/a&gt;&lt;/p&gt;
+    &lt;div class=&quot;content&quot; data-section-content&gt;
+          &lt;p&gt;Content of section 1.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
 </code></pre><p>从上面代码可以看出每个<code>Section</code>都是有<code>&lt;section&gt;</code>容器包含着。还有一个<code>&lt;p&gt;</code>标签，添加<code>class</code>为<code>title</code>, <code>&lt;a&gt;</code>链接链到相对应的内容。接着下面包含的是Section要显示内容块，需要添加<code>class</code>为<code>content</code>， 重复多个<code>&lt;section&gt;</code>内容就可以创建多个<code>Section</code>了。</p>
 <p><strong>备注：</strong>添加<code>class</code>名<code>vertical-nav</code>或者<code>horizontal-nav</code>时，在大屏幕上正常显示垂直或者水平的导航栏，但遇到小屏幕时就会自动转换成<code>accordin</code>（手风琴）风格导航。</p>
 <p>##深层链接</p>
 <p>假设你想默认链接到第二个<code>section</code>,但是当你打开页面时，它还是默认显示第一个section的内容。不用纠结！Foundation本身就提供了<a href="http://en.wikipedia.org/wiki/Deep_linking" target="_blank" rel="external">解决方案</a>，方案就是需要添加一个新的属性值：<code>data-options=”deep_linking:true”</code>在外面的<code>section</code>容器。当用户浏览一个有<a href="http://en.wikipedia.org/wiki/Fragment_identifier" target="_blank" rel="external">锚点</a>的<code>url</code>时，例如<code>http://www.website.com/#section3</code>，其中<code>#section3</code>就是锚点，然后就会加载这个<code>section</code>显示出来。</p>
 <p><img alt="初学Foundation之导航栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation3-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
-<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"section-container auto"</span> <span class="attribute">data-section</span> <span class="attribute">data-options</span>=<span class="value">"deep_linking: true"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">section</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"title"</span> <span class="attribute">data-section-title</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#section1"</span>&gt;</span>Section 1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"content"</span> <span class="attribute">data-slug</span>=<span class="value">"section1"</span> <span class="attribute">data-section-content</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">p</span>&gt;</span>Content of section 1.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">section</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"title"</span> <span class="attribute">data-section-title</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#section2"</span>&gt;</span>Section 2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"content"</span> <span class="attribute">data-slug</span>=<span class="value">"section2"</span> <span class="attribute">data-section-content</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">p</span>&gt;</span>Content of section 2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<pre><code>&lt;div class=&quot;section-container auto&quot; data-section data-options=&quot;deep_linking: true&quot;&gt;
+      &lt;section&gt;
+        &lt;p class=&quot;title&quot; data-section-title&gt;&lt;a href=&quot;#section1&quot;&gt;Section 1&lt;/a&gt;&lt;/p&gt;
+        &lt;div class=&quot;content&quot; data-slug=&quot;section1&quot; data-section-content&gt;
+              &lt;p&gt;Content of section 1.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;p class=&quot;title&quot; data-section-title&gt;&lt;a href=&quot;#section2&quot;&gt;Section 2&lt;/a&gt;&lt;/p&gt;
+        &lt;div class=&quot;content&quot; data-slug=&quot;section2&quot; data-section-content&gt;
+              &lt;p&gt;Content of section 2.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+&lt;/div&gt;
 </code></pre><p>从上面的代码，应该注意到在<code>&lt;div class=&quot;content&quot; data-slug=&quot;section1&quot; data-section-content&gt;</code>这个内容<code>div</code>里面添加了一个新属性为<code>data-slug</code>，是用来告诉Foundation加载页面时，先显示哪个<code>Section</code>。</p>
 <p>##侧导航</p>
 <p>Foundation的侧导航（一种类似于垂直导航）通常被包含在内容div里面。它的<code>html</code>结构也是非常简单的，而且可以使用<code>divider</code>（分界线）分区分。看如下代码所需要的标签：</p>
-<pre><code><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"side-nav"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"active"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Link 1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Link 2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"divider"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Link 3<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Link 4<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<pre><code>&lt;ul class=&quot;side-nav&quot;&gt;
+      &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </code></pre><p>代码显示的是一段标准的无序列表，包含一系列内嵌链接的子项。无论你想要什么，添加关键<code>class：side-nav</code>到<code>ul</code>，然后在<code>li</code>里添加<code>class:active</code>表明当前显示的子项链接。如果你想区分子项，就可以添加一段<code>&lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;</code>代码来显示分界线。</p>
 <p><img alt="初学Foundation之导航栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation3-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>##子导航</p>
 <p>Foundation的子导航通常用来过滤、挑选特定的内容。但是子导航并不是像前面那样使用无序列表，而是使用<a href="http://hub.tutsplus.com/articles/community-project-style-a-description-list--webdesign-8735" target="_blank" rel="external">定义列表</a>。这样的好处就是有选择地使用描述标签来定义特定术语包含链接。这里就不能使用<code>divider</code>(分界线)了，但依然还是用使用<code>class:active</code>,见代码如下：</p>
-<pre><code><span class="tag">&lt;<span class="title">dl</span> <span class="attribute">class</span>=<span class="value">"sub-nav"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">dt</span>&gt;</span>Filter:<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">dd</span> <span class="attribute">class</span>=<span class="value">"active"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>All<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">dd</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Photos<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">dd</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Videos<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">dd</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Music<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">dl</span>&gt;</span>
+<pre><code>&lt;dl class=&quot;sub-nav&quot;&gt;
+      &lt;dt&gt;Filter:&lt;/dt&gt;
+      &lt;dd class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;All&lt;/a&gt;&lt;/dd&gt;
+      &lt;dd&gt;&lt;a href=&quot;#&quot;&gt;Photos&lt;/a&gt;&lt;/dd&gt;
+      &lt;dd&gt;&lt;a href=&quot;#&quot;&gt;Videos&lt;/a&gt;&lt;/dd&gt;
+      &lt;dd&gt;&lt;a href=&quot;#&quot;&gt;Music&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
 </code></pre><p><img alt="初学Foundation之导航栏" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation3-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>##分页导航</p>
 <p><a href="http://foundation.zurb.com/docs/components/pagination.html" target="_blank" rel="external">分页导航</a>也是导航中的一种；事实上，分页应该被包含在<code>&lt;nav&gt;</code>元素当中，Foundation使用哪些标记来实现分页，见如下代码：</p>
-<pre><code><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"pagination"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"arrow unavailable"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>&amp;laquo;<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"current"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>3<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>4<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"unavailable"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>&amp;hellip;<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>12<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>13<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"arrow"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>&amp;raquo;<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<pre><code>&lt;ul class=&quot;pagination&quot;&gt;
+      &lt;li class=&quot;arrow unavailable&quot;&gt;&lt;a href=&quot;&quot;&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;current&quot;&gt;&lt;a href=&quot;&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;unavailable&quot;&gt;&lt;a href=&quot;&quot;&gt;&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;&quot;&gt;12&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;&quot;&gt;13&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;arrow&quot;&gt;&lt;a href=&quot;&quot;&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </code></pre><p>分页中左右两侧通常都用箭头表示，那就需要用到<code>class:arrow</code>,左侧内容上使用左箭头：<code>&amp;laquo;</code>或者<code>&amp;lsaquo;</code>，甚至<code>&amp;larr；</code>右侧使用右箭头：<code>&amp;raquo;</code>，或者<code>&amp;rsaquo;</code>，甚至<code>&amp;rarr;</code>，更多字符编码到<a href="http://unicode-table.com/en/search/?q=arrow" target="_blank" rel="external">unicode-table.com</a>来查找。</p>
 <p>分页导航允许我们使用class:<code>unavailable</code> 和 <code>current</code>，分别表示不可用状态和当前使用状态。</p>
 <p>上面段代码添加到如WordPress的内容管理系统中去是相当简单的。</p>
@@ -315,18 +316,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/初学foundation之网格系统.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/初学foundation之固定导航,伸缩性视频和zepto.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          初学Foundation之网格系统
+          初学Foundation之固定导航,伸缩性视频和Zepto
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/初学foundation之固定导航,伸缩性视频和zepto.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">初学Foundation之固定导航,伸缩性视频和Zepto</div>
+    <a href="/2014/09/20/前端/初学foundation之网格系统.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初学Foundation之网格系统</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -372,8 +373,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

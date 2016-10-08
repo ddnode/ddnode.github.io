@@ -34,13 +34,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开始了解CSS混合模式">
 <meta name="twitter:description" content="CSS混合模式提供了一种用于规定层与层之间如何相互影响及混合的方法。迄今为止，这属于图片编辑应用软件领域，但现在开始，这种混合模式可以通过CSS在web中实现！">
+<meta name="twitter:image" content="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -296,22 +297,22 @@
 <p>##使用mix-blend-mode属性</p>
 <p><img alt="开始了解CSS混合模式" data-pinit="registered" src="http://cdn.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2014/1406/blendmode-17.jpg" style="padding:2px;border:1px solid #ccc;width:550px;"></p>
 <p><code>mix-blend-mode</code>属性规定了源元素如何将颜色和背景混和起来。背景可以是源元素之下的任何元素（例如，一个标题是一个源元素，而包裹自己的div容器是背景元素）。使用方法很简单：</p>
-<pre><code><span class="attribute">mix-blend-mode</span>: <span class="string">difference</span>
+<pre><code>mix-blend-mode: difference
 </code></pre><p>或者：</p>
-<pre><code><span class="attribute">mix-blend-mode</span>: <span class="string">overlay</span>
+<pre><code>mix-blend-mode: overlay
 </code></pre><p>等等。注意它可以作用于任何元素上。如果你为一个元素应用了<code>mix-blend-mode</code>属性，它会把自己的颜色和任意跟它叠加在一起的元素混和起来。可以在《<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/demo_blendmodes_mixblend.html" target="_blank" rel="external">two images blending with each other</a>》一文中查看实例。</p>
 <p>##使用isolation属性</p>
 <p>如果你使用了<code>mix-blend-mode</code>，它会把当前元素和所有在其下方重叠的背景元素都混和起来。如果你想让一组元素在一个<code>&lt;div&gt;</code>容器中互相混和，而不影响其它下方重叠的元素呢？</p>
 <p>如果你通过<code>isolation</code>属性来隔离那个<code>&lt;div&gt;</code>容器，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div &#123;&#10;&#9;isolation: isolate;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">	isolation: isolate;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这个定义创建了一个新的堆叠背景，只有在这个堆叠背景中的元素才会进行混和，之下的其它元素都不会发生混和。</p>
 <p>这里有使用了<code>mix-blend-mode</code>和<code>isolate</code>属性的一个<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/demo_blendmodes_tile.html" target="_blank" rel="external">演示</a>。其中，我们在包含图片的<code>&lt;div&gt;</code>上应用了<code>isolation</code>属性。如果我们不使用<code>isolation</code>属性，那么它也会混和到图片下方的层。您可以通过勾选复选框来查看不同情况下出现的不同效果。</p>
 <p>##<code>background-blend-mode</code>的工作原理</p>
 <p><code>background-blend-mode</code>属性指定了源元素应该怎样把自己的颜色同自己的背景图片和背景颜色混和起来。如果该元素下还有任何其它的层（例如一个使用蓝色背景颜色的<code>section</code>元素），它将不会把自己的颜色与该元素相混合。它只会把自身的颜色与CSS中为其指定的背景图像和颜色混和在一起。</p>
 <p>如下例所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: url(images/sample.png);&#10;background-color: red;&#10;background-blend-mode: multiply;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">background-image: url(images/sample.png);</div><div class="line">background-color: red;</div><div class="line">background-blend-mode: multiply;</div></pre></td></tr></table></figure>
 <p>如果你正在使用的是多个背景图片，那么你可以分别为它们应用多个背景图片混和模式，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: url(images/sample1.png), url(images/sample2.png);&#10;background-color: blue;&#10;background-blend-mode: screen, overlay;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">background-image: url(images/sample1.png), url(images/sample2.png);</div><div class="line">background-color: blue;</div><div class="line">background-blend-mode: screen, overlay;</div></pre></td></tr></table></figure>
 <p>在上面的例子中， <code>sample1.png</code>图片将会应用<code>screen</code>混和模式，而 <code>sample2.png</code>会应用<code>overlay</code>模式。</p>
 <p>##混和模式使用技巧</p>
 <p>###渐变</p>
@@ -327,11 +328,11 @@
 <p>通过<a href="http://www.w3.org/TR/2dcontext2/#compositing" target="_blank" rel="external">Canvas 2D Context API</a>，混合模式也可以在<code>&lt;canvas&gt;</code>中实现。您需要做的仅仅是将canvas 2d内容的<code>globalCompositeOperation</code>属性设置为任何你喜欢的混合模式。</p>
 <p>很多时候你可能想通过调整不透明度——在canvas中则是设置globalAlpha属性——对图像进行进一步控制。</p>
 <p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var canvas = document.querySelector(&#39;canvas&#39;);&#10;var context = getContext(&#39;2d&#39;);&#10;// Everything drawn on this context will now have&#10;// a &#8220;screen&#8221; blend mode applied to it.&#10;context.globalCompositeOperation = &#39;screen&#39;;&#10;// Drawn elements will have an alpha channel of 0.7&#10;context.globalAlpha = 0.7;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var canvas = document.querySelector(&apos;canvas&apos;);</div><div class="line">var context = getContext(&apos;2d&apos;);</div><div class="line">// Everything drawn on this context will now have</div><div class="line">// a “screen” blend mode applied to it.</div><div class="line">context.globalCompositeOperation = &apos;screen&apos;;</div><div class="line">// Drawn elements will have an alpha channel of 0.7</div><div class="line">context.globalAlpha = 0.7;</div></pre></td></tr></table></figure>
 <p>通过<code>globalCompositeOperator</code>，我已经实现了几个<a href="http://dev.opera.com/articles/getting-to-know-css-blend-modes/demo_blendmodes_canvas.html" target="_blank" rel="external">canvas中使用混和模式的小示例</a>，你可以看看。另外您也可以看看<a href="https://blogs.adobe.com/webplatform/2014/02/24/using-blend-modes-in-html-canvas/" target="_blank" rel="external">Adobe写给新手必看的</a>，他们在这方面作了更多的讨论。</p>
 <p>###SVG中使用混和模式</p>
 <p>规范中也允许你通过CSS在SVG文档中添加混和模式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;svg xmlns=&#34;http://www.w3.org/2000/svg&#34;&#62;&#10;&#9;&#60;style&#62;&#10;&#9;&#9;rect &#123;&#10;&#9;&#9;&#9;mix-blend-mode: multiply;&#10;&#9;&#9;&#125;&#10;&#9;&#60;/style&#62;&#10;&#9;&#60;rect x=&#34;10&#34; y=&#34;10&#34; width=&#34;100&#34; height=&#34;100&#34; rx=&#34;15&#34; ry=&#34;15&#34; fill=&#34;#ff0000&#34;/&#62;&#10;&#9;&#60;rect x=&#34;40&#34; y=&#34;40&#34; width=&#34;100&#34; height=&#34;100&#34; rx=&#34;15&#34; ry=&#34;15&#34; fill=&#34;green&#34;/&#62;&#10;&#60;/svg&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		rect &#123;</div><div class="line">			mix-blend-mode: multiply;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">	&lt;rect x=&quot;10&quot; y=&quot;10&quot; width=&quot;100&quot; height=&quot;100&quot; rx=&quot;15&quot; ry=&quot;15&quot; fill=&quot;#ff0000&quot;/&gt;</div><div class="line">	&lt;rect x=&quot;40&quot; y=&quot;40&quot; width=&quot;100&quot; height=&quot;100&quot; rx=&quot;15&quot; ry=&quot;15&quot; fill=&quot;green&quot;/&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
 <p>当然，在SVG里，你也可以使用<code>feImage</code>和<code>feBlend</code>来添加混和模式，但最好的方式还是使用CSS来控制，因为它更为方便。</p>
 <p>##浏览器支持状况</p>
 <p>目前，基于Chromium的浏览器对CSS混和模式最为支持（<code>background-blend-mode</code>和<code>mix-blend-mode</code>都支持）。为了使Opera也支持，在opera地址栏中打开<code>opera:flag</code>s，然后开启<code>Enable experimental Web Platform features</code>一项。对于Chrome，你需要通过<code>chrome://flags</code>开启同样的项目。</p>
@@ -339,14 +340,14 @@
 <p>除非浏览器对其支持有所改善，最好还是在你的设计中不要将CSS混和模式作为重要的部分，而只是作为既定设计中增强的效果。然而，出于演示的目的，你最好能在同时支持<code>background-blend-mode</code>和<code>mix-blend-mode</code>这两个属性的浏览器中打开链接内容。 Adobe的Web平台团队<a href="http://html.adobe.com/webplatform/graphics/blendmodes/browser-support/" target="_blank" rel="external">维护着一个各种浏览器对混和模式的支持详情页面</a>，非常详细地对此作了说明。</p>
 <p>##混和模式功能测试</p>
 <p>通过功能测试使用混合模式是很重要的。您可以使用如下JavaScript方法同时检测<code>mix-blend-mode</code>和<code>background-blend-mode</code>地支持情况：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (&#39;CSS&#39; in window &#38;&#38; &#39;supports&#39; in window.CSS) &#123;&#10;&#9;var supportsMixBlendMode = window.CSS.supports(&#39;mix-blend-mode&#39;, &#39;multiply&#39;);&#10;&#9;var supportsBackgroundBlendMode = window.CSS.supports(&#39;background-blend-mode&#39;, &#39;multiply&#39;);&#10;&#9;var supportsIsolation = window.CSS.supports(&#39;isolation&#39;, &#39;isolate&#39;);&#10;&#9;&#8230;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if (&apos;CSS&apos; in window &amp;&amp; &apos;supports&apos; in window.CSS) &#123;</div><div class="line">	var supportsMixBlendMode = window.CSS.supports(&apos;mix-blend-mode&apos;, &apos;multiply&apos;);</div><div class="line">	var supportsBackgroundBlendMode = window.CSS.supports(&apos;background-blend-mode&apos;, &apos;multiply&apos;);</div><div class="line">	var supportsIsolation = window.CSS.supports(&apos;isolation&apos;, &apos;isolate&apos;);</div><div class="line">	…</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果支持，它将返回<code>true</code>，否则<code>false</code>。<br>然而，最健全地方案是使用<a href="http://modernizr.com/" target="_blank" rel="external">Modernizr</a>地<a href="http://modernizr.com/docs/#testprop" target="_blank" rel="external">testProp()</a>，从功能上进行测试，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var mixBlendModeSupport = Modernizr.testProp(&#39;mixBlendMode&#39;);&#10;var backgroundBlendModeSupport = Modernizr.testProp(&#39;backgroundBlendMode&#39;);&#10;var isolationSupport = Modernizr.testProp(&#39;isolation&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var mixBlendModeSupport = Modernizr.testProp(&apos;mixBlendMode&apos;);</div><div class="line">var backgroundBlendModeSupport = Modernizr.testProp(&apos;backgroundBlendMode&apos;);</div><div class="line">var isolationSupport = Modernizr.testProp(&apos;isolation&apos;);</div></pre></td></tr></table></figure>
 <p>如果浏览器支持，它将返回<code>true</code>，否则<code>false</code>。</p>
 <p>你也可以使用<code>@supports</code>来区分是否加载样式，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@supports(mix-blend-mode: screen) &#123;&#10;&#9;&#8230;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@supports(mix-blend-mode: screen) &#123;</div><div class="line">	…</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果你想确定是否同时支持<code>mix-blend-mode</code>和<code>background-blend-mode</code>属性，你可以这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@supports((mix-blend-mode: screen) and (background-blend-mode: screen)) &#123;&#10;&#9;&#8230;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@supports((mix-blend-mode: screen) and (background-blend-mode: screen)) &#123;</div><div class="line">	…</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>##结论<br>在网页中，混合模式非常适合用于创建不同的效果，要是在以前，这种功能是使用Web技术无法给我们的。这是一个即将到来的技术，而且，在写这篇文章的时候，浏览器的支持还不协调，但它只会随着时间的推移变得更好。您可以通过混和模式创造出一些精彩的调整和效果，所以在未来，你将不再需要仅仅为了给页面中的图形元素添加某种效果，而启动一个照片编辑器的应用程序。</p>
 <p>##扩展阅读</p>
 <ul>
@@ -372,18 +373,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/开始使用grunt.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/崇拜css.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          开始使用Grunt
+          崇拜CSS
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/崇拜css.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">崇拜CSS</div>
+    <a href="/2014/09/20/前端/开始使用grunt.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开始使用Grunt</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -429,8 +430,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

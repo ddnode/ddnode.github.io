@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -219,7 +219,7 @@
 <p>文件夹的创建是必不可少的。就算在家里，你也不会把所有的纸张放在一个盒子里。你可能会使用一个文件夹。一个用于房子上，一个用于银行，一个用于账单等等。</p>
 <p>你在创建CSS的架构的时候也应该如此：你不只是把所有的Sass文件放在一个文件夹下，你会将他们分类。</p>
 <p>下面的示例屏示的是我将如何组织我的Sass文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass/&#10;|&#10;|&#8211; base/&#10;|   |&#8211; _reset.scss       # Reset/normalize&#10;|   |&#8211; _typography.scss  # Typography rules&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; components/&#10;|   |&#8211; _buttons.scss     # Buttons&#10;|   |&#8211; _carousel.scss    # Carousel&#10;|   |&#8211; _cover.scss       # Cover&#10;|   |&#8211; _dropdown.scss    # Dropdown&#10;|   |&#8211; _navigation.scss  # Navigation&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; helpers/&#10;|   |&#8211; _variables.scss   # Sass Variables&#10;|   |&#8211; _functions.scss   # Sass Functions&#10;|   |&#8211; _mixins.scss      # Sass Mixins&#10;|   |&#8211; _helpers.scss     # Class &#38; placeholders helpers&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; layout/&#10;|   |&#8211; _grid.scss        # Grid system&#10;|   |&#8211; _header.scss      # Header&#10;|   |&#8211; _footer.scss      # Footer&#10;|   |&#8211; _sidebar.scss     # Sidebar&#10;|   |&#8211; _forms.scss       # Forms&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; pages/&#10;|   |&#8211; _home.scss        # Home specific styles&#10;|   |&#8211; _contact.scss     # Contact specific styles&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; themes/&#10;|   |&#8211; _theme.scss       # Default theme&#10;|   |&#8211; _admin.scss       # Admin theme&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#8211; vendors/&#10;|   |&#8211; _bootstrap.scss   # Bootstrap&#10;|   |&#8211; _jquery-ui.scss   # jQuery UI&#10;|   ...                  # Etc&#8230;&#10;|&#10;|&#10;`&#8211; main.scss             # primary Sass file</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">sass/</div><div class="line">|</div><div class="line">|– base/</div><div class="line">|   |– _reset.scss       # Reset/normalize</div><div class="line">|   |– _typography.scss  # Typography rules</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– components/</div><div class="line">|   |– _buttons.scss     # Buttons</div><div class="line">|   |– _carousel.scss    # Carousel</div><div class="line">|   |– _cover.scss       # Cover</div><div class="line">|   |– _dropdown.scss    # Dropdown</div><div class="line">|   |– _navigation.scss  # Navigation</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– helpers/</div><div class="line">|   |– _variables.scss   # Sass Variables</div><div class="line">|   |– _functions.scss   # Sass Functions</div><div class="line">|   |– _mixins.scss      # Sass Mixins</div><div class="line">|   |– _helpers.scss     # Class &amp; placeholders helpers</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– layout/</div><div class="line">|   |– _grid.scss        # Grid system</div><div class="line">|   |– _header.scss      # Header</div><div class="line">|   |– _footer.scss      # Footer</div><div class="line">|   |– _sidebar.scss     # Sidebar</div><div class="line">|   |– _forms.scss       # Forms</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– pages/</div><div class="line">|   |– _home.scss        # Home specific styles</div><div class="line">|   |– _contact.scss     # Contact specific styles</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– themes/</div><div class="line">|   |– _theme.scss       # Default theme</div><div class="line">|   |– _admin.scss       # Admin theme</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– vendors/</div><div class="line">|   |– _bootstrap.scss   # Bootstrap</div><div class="line">|   |– _jquery-ui.scss   # jQuery UI</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|</div><div class="line">`– main.scss             # primary Sass file</div></pre></td></tr></table></figure>
 <p>正如你所看到的，在根目录底下只有一个<code>main.scss</code>文件，其他<code>.scss</code>文件都根据不同的分类放在对应的文件夹中，只是这些<code>.scss</code>文件前面都有一个下划线(<code>_</code>)，用来告诉Sass，这些<code>.scss</code>文件只是<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials" target="_blank" rel="external">局部</a>，不通过<code>@import</code>是不应该被编译出<code>.css</code>文件。事实上，它们是导入和合并文件的<a href="https://gist.github.com/HugoGiraudel/8615243" target="_blank" rel="external">基本文件</a>而以。</p>
 <blockquote>
 <p>一个文件可以解决所有问题，一个文件可以找到他们，一个文件给他们带来了所有的一切，Sass只是将他们合并在一起。——@J.R.R. Tolkien</p>
@@ -309,18 +309,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/21/Sass/嵌套选择器规则.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/10/15/Drupal/drupal-design-patterns-hooks.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          嵌套选择器规则
+          Drupal创建自己的钩子
         
       </div>
     </a>
   
   
-    <a href="/2014/09/21/Sass/定义好的变量名.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">定义好的变量名</div>
+    <a href="/2014/09/21/Sass/理解sass的选择占位符placeholder.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">理解Sass的选择占位符%placeholder</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -366,8 +366,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

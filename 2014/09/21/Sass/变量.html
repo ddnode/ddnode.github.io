@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -207,74 +207,74 @@
 <p>刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。</p>
 <p>##全局变量和局部变量</p>
 <p>要了解sass或less的变量，有必要先了解下js的变量定义，先来一段js的代码：</p>
-<pre><code><span class="keyword">var</span> a = <span class="number">1</span>;
-(<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">{
+<pre><code>var a = 1;
+(function(){
     a = 5;
-}</span>)<span class="params">()</span>;</span>
-console.log(a);<span class="comment">//5</span>
+})();
+console.log(a);//5
 </code></pre><p>上面这段代码，匿名函数里面的a因为没有使用var关键字来定义，所以当我们在函数外打印a的时候，得到的是5，改变了一开始定义的1</p>
-<pre><code><span class="keyword">var</span> a = <span class="number">1</span>;
-(<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">{
+<pre><code>var a = 1;
+(function(){
     var a = 5;
-}</span>)<span class="params">()</span>;</span>
-console.log(a);<span class="comment">//1</span>
+})();
+console.log(a);//1
 </code></pre><p>而这段代码，匿名函数里面的a使用了var关键字来定义，所以当我们在函数外打印a的时候，得到的是1，一开始定义的值。</p>
 <p>如果你明白了上面两个的区别，那下面就好办了，如果你还没有明白，那么建议先去看下js的变量申明。<br>也许你现在已经看出眉目了，其实sass的变量设计用的是上面两段代码中的第一段思想，即在局部不使用var来申明，而less用的是第二段思想，即局部使用var来申明，这就是很多人所说的为什么sass没有局部变量。我们来两段代码测试下：</p>
 <p>sass版</p>
-<pre><code><span class="variable">$color</span>:red;
+<pre><code>$color:red;
 p{
-    <span class="variable">$color</span>:blue;
-    color:<span class="variable">$color</span>;//blue
+    $color:blue;
+    color:$color;//blue
 }
 a{
-    color:<span class="variable">$color</span>;//blue
+    color:$color;//blue
 }
 </code></pre><p>less版</p>
-<pre><code><span class="variable">@color:</span>red;
-<span class="tag">p</span>{
-    <span class="variable">@color:</span>blue;
-    <span class="attribute">color</span>:<span class="variable">@color</span>;<span class="comment">//blue</span>
+<pre><code>@color:red;
+p{
+    @color:blue;
+    color:@color;//blue
 }
-<span class="tag">a</span>{
-    <span class="attribute">color</span>:<span class="variable">@color</span>;<span class="comment">//red</span>
+a{
+    color:@color;//red
 }
 </code></pre><p>简单总结下：如果全局申明了一个变量a，sass中如果使用到局部中是属于改变a的值，所以后来所有的都是改变之后的值；而less中使用到局部变量则属于在局部重新定义a的值，不影响其他地方。说到底，其实sass和less的变量其实都是js变量的表现形式，两者都有其科学性，只是设计思路不同而已。</p>
 <p>当然说到这里，可能有人会说了，那sass就没有局部变量喽。其实不然，正确的说法应该是：在有全局变量的情况下，sass是没有局部变量的。意思是如果要看到sass的局部变量，请不要设置全局变量。代码为证：</p>
 <pre><code>p{
-    <span class="variable">$color</span>:blue;
-    color:<span class="variable">$color</span>;//blue
+    $color:blue;
+    color:$color;//blue
 }
 a{
-    color:<span class="variable">$color</span>;//<span class="variable">$color</span>未定义
+    color:$color;//$color未定义
 }
 </code></pre><p>这是一个没有定义全局变量$color的例子，上面的p元素的color为blue，而a里面就会报错因为$color没定义，它没有获取到p元素里面定义的那个$color变量，这证明了其实sass同样存在局部变量，只是这个前提是得没有全局变量。</p>
 <p>相信到这里，大家应该对sass的变量有所了解，不至于那么迷惑吧。下面我们再来两段代码：</p>
 <pre><code>p{
-    <span class="variable">$color</span>:blue;
-    color:<span class="variable">$color</span>;//blue
+    $color:blue;
+    color:$color;//blue
 
     a{
-        color:<span class="variable">$color</span>;//blue
+        color:$color;//blue
     }
 }
 </code></pre><p>这一段代码中，a嵌套在p中，然后在p元素中定义了$color这个变量，a里面是可以访问到$color变量的。</p>
 <pre><code>p{
-    <span class="variable">$color</span>:blue;
-    color:<span class="variable">$color</span>;//blue
+    $color:blue;
+    color:$color;//blue
 
     a{
-        <span class="variable">$color</span>:red;
-        color:<span class="variable">$color</span>;//red
+        $color:red;
+        color:$color;//red
     }
 
-    background-color:<span class="variable">$color</span>;//red
+    background-color:$color;//red
 
     span{
-        color:<span class="variable">$color</span>;//red
+        color:$color;//red
     }
 }
 div{
-    color:<span class="variable">$color</span>;//<span class="variable">$color</span>未定义
+    color:$color;//$color未定义
 }
 </code></pre><p>估计这里有人迷惑了，我们来分析下吧：因为sass的代码是从上到下解析的，所以这段代码执行到p的color值的时候颜色是上面的blue色，然后由于我们在a中又改变了$color的值为红色，所以后面所有p元素范围内用到$color这个变量的都为红色，这反应到我们后来的bgcolor和span的color上面，而p元素之外还是未定义。</p>
 <p>这里吐个槽吧，其实个人觉得正是由于这个，使得开发sass的小心定义变量，以避免污染；而less呢却刚好相反，估计到时候就是全局局部满天飞的情况，代码一团糟。你想选择哪种呢？</p>
@@ -283,161 +283,161 @@ div{
 <p>为了说明这个创新点，我特意去less群问了下，less有没有这个功能，得到的答案是没有。哎呀，我那个高兴啊，小心脏那个激动啊。当然less可能是有的，这里不去计较了。我们言归正传说sass。</p>
 <p>可能很多人对这个不是很熟悉，或者觉得这个其实就是个幌子，挂羊头卖狗肉的家伙。其实不然，它的来头可不小，而且是非常的科学，我是佩服的五体投地，因为它从根本上解决了困扰我多年的css组件化开发。简单来两段比较的代码：</p>
 <p>无!default</p>
-<pre><code><span class="variable">$color</span>:red;
-<span class="variable">$color</span>:blue;
+<pre><code>$color:red;
+$color:blue;
 p{
-    color:<span class="variable">$color</span>;//blue
+    color:$color;//blue
 }
 </code></pre><p>有!default</p>
-<pre><code><span class="variable">$color</span>:red;
-<span class="variable">$color</span>:blue !<span class="keyword">default</span>;
+<pre><code>$color:red;
+$color:blue !default;
 p{
-    color:<span class="variable">$color</span>;//red
+    color:$color;//red
 }
 </code></pre><p>上面说了，sass编译css是从上到下的，后面会覆盖前面的，所以第一段无!default的解析的是blue，而第二段代码由于有了!default，打破了这个规则，使用了前面定义的red。有意思吧，当然这样的使用是体现不了它伟大的价值的。</p>
 <p>简单介绍下它的作用吧：假设变量申明带有!default，那么如果在此申明之前没有这个变量的申明，则用这个值，反之如果之前有申明，则用申明的值。当然如果你先!default申明，然后再申明一次，那就没什么意思了，这就是基本的变量覆盖，第一次申明的有无!default都一样。所以你要区分这两种情况：<br>    //第一种，使用默认值<br>    //变量申明带有!default，但是之前没有这个变量的申明<br>    $color:blue !default;<br>    p{<br>        color:$color;//blue<br>    }</p>
 <pre><code>//第二种，使用前面定义的值
-<span class="variable">$color</span>:red;
-//变量申明带有!<span class="keyword">default</span>，但是前面还有这个变量的申明
-<span class="variable">$color</span>:blue !<span class="keyword">default</span>;
+$color:red;
+//变量申明带有!default，但是前面还有这个变量的申明
+$color:blue !default;
 p{
-    color:<span class="variable">$color</span>;//red
+    color:$color;//red
 }
 
-//第三种错误的用法，先!<span class="keyword">default</span>申明
-<span class="variable">$color</span>:red !<span class="keyword">default</span>;
-<span class="variable">$color</span>:blue;
+//第三种错误的用法，先!default申明
+$color:red !default;
+$color:blue;
 </code></pre><p>上面的第三种错误用法其实和下面的这个覆盖写法是一样一样的：</p>
 <pre><code>//覆盖写法
-<span class="variable">$color</span>:red;
-<span class="variable">$color</span>:blue;
+$color:red;
+$color:blue;
 </code></pre><p>能一口气看到这里的，应该有点时间，建议简单活动下，摇摇脑袋，伸伸懒腰，因为下面的更加精彩。</p>
 <p>其实长久以来，css之所以不能组件化开发，有两大原因：第一个是@import的样式不能合并在一个文件中（这里排除使用压缩工具来合并）；第二个问题就是这里说到的变量问题了。感谢sass帮我们全解决了，大笑三声。</p>
 <p>现在假设我们有个scss文件，这里暂且叫做<code>_imgstyle.scss</code>，代码如下：</p>
-<pre><code><span class="comment">// 变量</span>
-<span class="comment">//---------------------------------</span>
-<span class="variable">$imgStyleBorder</span><span class="value">:         <span class="number">1px</span> solid <span class="hexcolor">#ccc</span> !default;</span>
-<span class="variable">$imgStylePadding</span><span class="value">:        <span class="number">2px</span> !default;</span>
-<span class="variable">$imgStyleRadius</span><span class="value">:         <span class="number">8px</span> !default;</span>
+<pre><code>// 变量
+//---------------------------------
+$imgStyleBorder:         1px solid #ccc !default;
+$imgStylePadding:        2px !default;
+$imgStyleRadius:         8px !default;
 
-<span class="comment">// mixin</span>
-<span class="comment">//---------------------------------</span>
-<span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> img-border</span>(<span class="variable">$border</span>:<span class="variable">$imgStyleBorder</span>,<span class="variable">$padding</span>:<span class="variable">$imgStylePadding</span>){</span>
-    <span class="attribute">border</span><span class="value">: <span class="variable">$border</span>;</span>
-    <span class="attribute">padding</span><span class="value">: <span class="variable">$padding</span>;</span>
+// mixin
+//---------------------------------
+@mixin img-border($border:$imgStyleBorder,$padding:$imgStylePadding){
+    border: $border;
+    padding: $padding;
 }
 
-<span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> img-rounded</span>(<span class="variable">$radius</span>:<span class="variable">$imgStyleRadius</span>){</span>
-    <span class="attribute">border-radius</span><span class="value">:<span class="variable">$radius</span>;</span>
+@mixin img-rounded($radius:$imgStyleRadius){
+    border-radius:$radius;
 }
 
-<span class="comment">//样式</span>
-<span class="comment">//---------------------------------</span>
-<span class="class">.img-border</span>{
-    <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> img-border</span>;</span>
+//样式
+//---------------------------------
+.img-border{
+    @include img-border;
 }
 
-<span class="class">.img-rounded</span>{
-    <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> img-rounded</span>;</span>
+.img-rounded{
+    @include img-rounded;
 }
 </code></pre><p>接下来我们要在<code>style.scss</code>这个文件里面调用<code>_imgstyle.scss</code>，代码如下：</p>
-<pre><code><span class="comment">//导入_imgstyle.scss</span>
-@<span class="keyword">import</span> <span class="string">'imgstyle'</span>;
+<pre><code>//导入_imgstyle.scss
+@import &apos;imgstyle&apos;;
 </code></pre><p>现在问题来了，如果我们对默认的padding为2px不满意，要改为5px，我们有如下方法：</p>
 <p>方法一：重新覆写</p>
-<pre><code><span class="comment">//导入_imgstyle.scss</span>
-<span class="at_rule">@import</span> <span class="string">'imgstyle'</span>;
-
-<span class="class">.img-border</span>{
-    <span class="attribute">padding</span>:<span class="number">5px</span>;
-}
-</code></pre><p>解析成的css：</p>
-<pre><code><span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">2px</span></span></span>;
-}</span>
-<span class="class">.img-rounded</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">8px</span></span></span>;
-}</span>
-<span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
-}</span>
-</code></pre><p>方法二：改变@include的参数</p>
 <pre><code>//导入_imgstyle.scss
-@<span class="keyword">import</span> <span class="string">'imgstyle'</span>;
+@import &apos;imgstyle&apos;;
 
 .img-border{
-    @include img-border(<span class="variable">$imgStyleBorder</span>,<span class="number">5</span>px);
+    padding:5px;
 }
 </code></pre><p>解析成的css：</p>
-<pre><code><span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">2px</span></span></span>;
-}</span>
-<span class="class">.img-rounded</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">8px</span></span></span>;
-}</span>
+<pre><code>.img-border {
+  border: 1px solid #cccccc;
+  padding: 2px;
+}
+.img-rounded {
+  border-radius: 8px;
+}
+.img-border {
+  padding: 5px;
+}
+</code></pre><p>方法二：改变@include的参数</p>
+<pre><code>//导入_imgstyle.scss
+@import &apos;imgstyle&apos;;
 
-<span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
-}</span>
+.img-border{
+    @include img-border($imgStyleBorder,5px);
+}
+</code></pre><p>解析成的css：</p>
+<pre><code>.img-border {
+  border: 1px solid #cccccc;
+  padding: 2px;
+}
+.img-rounded {
+  border-radius: 8px;
+}
+
+.img-border {
+  border: 1px solid #cccccc;
+  padding: 5px;
+}
 </code></pre><p>显而易见，上面的方法都会产生重复的代码，不科学啊。当然这时候可能有人会说了，你脑子浸水了呗，直接在<code>_imgstyle.scss</code>文件中，修改<code>$imgStyleBorder</code>为5px不就得了。当然如果你要的是每个项目使用这个样式的时候都拷贝一份这个，然后打开把变量修改成你要的值，那么我只好承认我脑子浸水了，不仅脑子浸水，还得吐血了。</p>
 <p>现在请上面那些山寨土鳖方法闪一边去，该我们的!default出场了，废话少说，上代码：</p>
-<pre><code>//申明<span class="variable">$imgStylePadding</span>为<span class="number">5</span>px
-<span class="variable">$imgStylePadding</span>:  <span class="number">5</span>px;
+<pre><code>//申明$imgStylePadding为5px
+$imgStylePadding:  5px;
 
 //导入_imgstyle.scss
-@<span class="keyword">import</span> <span class="string">'imgstyle'</span>;
+@import &apos;imgstyle&apos;;
 </code></pre><p>解析成的css：</p>
-<pre><code><span class="class">.img-border</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
-}</span>
+<pre><code>.img-border {
+  border: 1px solid #cccccc;
+  padding: 5px;
+}
 
-<span class="class">.img-rounded</span> <span class="rules">{
-  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">8px</span></span></span>;
-}</span>
+.img-rounded {
+  border-radius: 8px;
+}
 </code></pre><p>无须去源文件中修改，且解析出来无重复代码，完美！这才是!default的价值，这为组件式开发，更改调用组件里面的变量的值带来了彻底的变化。如果less真没有这个变量的默认值的话，那less的同学们估计得伤心死了。</p>
 <p>重量级的都介绍完了，下面把其他的一些小罗罗也简单介绍下吧。</p>
 <p>##变量后面加…</p>
 <p>在css3出现以前，你是绝对没有看到过的，因为它就是为css3而设计的。css3在给css带来翻天覆地的变化之外，也给sass的@mixin传递参数带来纠结了。一般来说我们的@mixin传递的参数是以<code>,</code>来分隔的，但是css3的一些属性可以设置多个值，并且多个值以<code>,</code>分开，如<code>box-shadow:0 0 3px rgba(0,0,0,0.3),inset 0 0 3px rgba(255,255,255,0.3);</code>这让@mixin如何给box-shadow传递参数啊。所以这种变量后面加<code>...</code>的变量就出现了。</p>
-<pre><code>@mixin box-shadow(<span class="variable">$shadow</span>...){
-    -webkit-box-shadow:<span class="variable">$shadow</span>;
-    -moz-box-shadow:<span class="variable">$shadow</span>;
-    box-shadow:<span class="variable">$shadow</span>;
+<pre><code>@mixin box-shadow($shadow...){
+    -webkit-box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    box-shadow:$shadow;
 }
 </code></pre><p>这样就完美解决了这个需求了，漂亮吧哈哈。注意这种变量加<code>...</code>的方式只出现在传递参数中，你可以看到上面的大括号里面的变量都是没有<code>...</code>。除了box-shadow，gradient也可以用，反正能使用多个值的属性里面都可以用。</p>
 <p>##变量用<code>#{}</code>包裹</p>
 <p>一般来说，我们设置的变量都是用于属性值的，而如果用在属性或者选择器上，就得以<code>#{}</code>包裹起来了。</p>
-<pre><code><span class="variable">$btnClass</span><span class="value">: btn !default;</span>
-<span class="variable">$borderDirection</span><span class="value">:  top !default;</span>
+<pre><code>$btnClass: btn !default;
+$borderDirection:  top !default;
 
-.#{<span class="variable">$btnClass</span>}{
-    <span class="attribute">border</span>-#{<span class="variable">$borderDirection</span>}<span class="value">:<span class="number">1px</span> solid <span class="hexcolor">#ccc</span>;</span>
+.#{$btnClass}{
+    border-#{$borderDirection}:1px solid #ccc;
 }
 </code></pre><p>解析成的css：</p>
-<pre><code><span class="class">.btn</span><span class="rules">{
-    <span class="rule"><span class="attribute">border-top</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;
-}</span>
+<pre><code>.btn{
+    border-top:1px solid #ccc;
+}
 </code></pre><p>##多个变量一起申明</p>
 <p>其实这个还是很实用的，把多个相关的值写在一个变量里，然后通过<code>nth($var,index)</code>来获取第几个值。</p>
-<pre><code><span class="variable">$linkColor</span>: red blue !<span class="keyword">default</span>;
+<pre><code>$linkColor: red blue !default;
 
 a{
-    color:nth(<span class="variable">$linkColor</span>,<span class="number">1</span>);
+    color:nth($linkColor,1);
 
     &amp;:hover{
-        color:nth(<span class="variable">$linkColor</span>,<span class="number">2</span>);
+        color:nth($linkColor,2);
     }
 }
 </code></pre><p>解析成的css：</p>
-<pre><code><span class="tag">a</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;
-}</span>
-<span class="tag">a</span><span class="pseudo">:hover</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;
-}</span>
+<pre><code>a {
+    color: red;
+}
+a:hover {
+    color: blue;
+}
 </code></pre><p>关于sass变量揭秘到此为止。如果你对sass比较感兴趣但是还不会，可以试试我们的<a href="http://www.w3cplus.com/sassguide/index.html" target="_blank" rel="external">sassGuide</a>教程，如果已经开始使用sass了，欢迎试用<a href="https://github.com/marvin1023/sassCore" target="_blank" rel="external">sassCore</a>这个库。</p>
 <p>顺便说下，本人的面向熟悉sass人员开发的tobe即将上线，欢迎关注，也欢迎到时拍砖。</p>
 
@@ -449,18 +449,18 @@ a{
     
 <nav id="article-nav">
   
-    <a href="/2014/10/15/Drupal/drupal-design-patterns-hooks.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/21/Sass/关于sass3.4你应该知道的一些事情.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Drupal创建自己的钩子
+          关于Sass3.4你应该知道的一些事情
         
       </div>
     </a>
   
   
-    <a href="/2014/09/21/Sass/理解sass的选择占位符placeholder.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">理解Sass的选择占位符%placeholder</div>
+    <a href="/2014/09/21/Sass/编写sass的八个技巧.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">编写Sass的八个技巧</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -506,8 +506,8 @@ a{
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

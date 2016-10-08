@@ -20,13 +20,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初学Foundation之自定义表单和开关">
 <meta name="twitter:description" content="上节主要学习了Zurb Foundation的按钮制作，现在让我们看看自定义表单和表单开关制作。在本教程中我们主要以联系表单作为一个练习，您可以添加到您的项目或者只是拿来玩玩。一旦我们创建了这样的表单，我们将来可以直接搬到项目表单中使用。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -214,107 +215,107 @@
 <p>对于网站而言，联系表单是最常见表单之一。在这个练习中，你将看到一些标准的输入框。在你的项目中你也可以添加一个或两个对你有用的不同例子。</p>
 <p>推荐你使用标准的<code>&lt;form&gt;</code>标签。开始使用<a href="http://foundation.zurb.com/docs/components/custom-forms.html" target="_blank" rel="external">自定义表单</a>插件，我们需要添加一个类名<code>custom</code>，像这样<code>&lt;form class=&quot;custom&quot;&gt;</code>。我们现在就有自己自定义的表单。</p>
 <p>假设你的表单中包含了两列，就像这样：</p>
-<pre><code>&lt;form <span class="type">class</span>=<span class="string">"custom"</span>&gt;
-      &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"row"</span>&gt;
-        &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"large-6 columns"</span>&gt;
-        &lt;/<span class="keyword">div</span>&gt;
-        &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"large-6 columns"</span>&gt;
-        &lt;/<span class="keyword">div</span>&gt;
-      &lt;/<span class="keyword">div</span>&gt;
+<pre><code>&lt;form class=&quot;custom&quot;&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;large-6 columns&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;large-6 columns&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
 &lt;/form&gt;
 </code></pre><p>现在我们先从左列开始，在这个例子中，我使用了一个下拉选择框制作称呼，紧跟着是一个输入框用来制作姓名。在行的标准标签中我们都添加了一个<code>collapse</code>的类名。我们接下放置了一个邮箱的字段和下“如何找到我们的”下接选择项。</p>
-<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row collapse"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 small-3 columns"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">select</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Mr.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Mrs.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Miss.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Ms.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">option</span>&gt;</span>Dr.<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">select</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-9 small-9 columns"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">placeholder</span>=<span class="value">"Name"</span> /&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">placeholder</span>=<span class="value">"Email"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">select</span> <span class="attribute">id</span>=<span class="value">"contactDropdown"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">option</span> <span class="attribute">DISABLED</span>&gt;</span>How did you find us?<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">option</span>&gt;</span>Google<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">option</span>&gt;</span>A friend told me<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">option</span>&gt;</span>Not sure, where am I?<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">select</span>&gt;</span>
+<pre><code>&lt;div class=&quot;row collapse&quot;&gt;
+      &lt;div class=&quot;large-3 small-3 columns&quot;&gt;
+        &lt;select&gt;
+              &lt;option&gt;Mr.&lt;/option&gt;
+              &lt;option&gt;Mrs.&lt;/option&gt;
+              &lt;option&gt;Miss.&lt;/option&gt;
+              &lt;option&gt;Ms.&lt;/option&gt;
+              &lt;option&gt;Dr.&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;large-9 small-9 columns&quot;&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;Name&quot; /&gt;
+      &lt;/div&gt;
+&lt;/div&gt;
+&lt;input type=&quot;email&quot; placeholder=&quot;Email&quot; /&gt;
+&lt;select id=&quot;contactDropdown&quot;&gt;
+      &lt;option DISABLED&gt;How did you find us?&lt;/option&gt;
+      &lt;option&gt;Google&lt;/option&gt;
+      &lt;option&gt;A friend told me&lt;/option&gt;
+      &lt;option&gt;Not sure, where am I?&lt;/option&gt;
+&lt;/select&gt;
 </code></pre><p><img alt="初学Foundation之自定义表单和开关" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>你需要确认你选择元素有一个<code>id</code>，但是除了这样之外你可以从模板中直接找到元素。所以我们先来看看表单代码的合并，你需要将它们放在第一个命名为<code>large-6</code>的<code>div</code>里。</p>
 <p>接下来看第二列中的元素。它包括了文本域<code>textarea</code>，一个<code>spam me</code>的复选框和一个切换的单选按钮，最后是一个提交按钮。</p>
-<pre><code><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">placeholder</span>=<span class="value">"Message"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 small-6 columns"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">label</span>&gt;</span>Send me spam&amp;nbsp;&amp;nbsp;
-              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">CHECKED</span> <span class="attribute">style</span>=<span class="value">"display:none"</span> /&gt;</span>
-        <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 small-3 columns"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">label</span>&gt;</span>CC me?<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 small-3 columns end"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"switch tiny"</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"x"</span> <span class="attribute">name</span>=<span class="value">"switch-x"</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">checked</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"x"</span> <span class="attribute">onclick</span>=<span class="value">""</span>&gt;</span>No<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"x1"</span> <span class="attribute">name</span>=<span class="value">"switch-x"</span> <span class="attribute">type</span>=<span class="value">"radio"</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"x1"</span> <span class="attribute">onclick</span>=<span class="value">""</span>&gt;</span>yes<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;<span class="title">input</span> <span class="attribute">class</span>=<span class="value">"button small large-12"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Send Message"</span> /&gt;</span>
+<pre><code>&lt;textarea placeholder=&quot;Message&quot;&gt;&lt;/textarea&gt;
+&lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;large-6 small-6 columns&quot;&gt;
+        &lt;label&gt;Send me spam&amp;nbsp;&amp;nbsp;
+              &lt;input type=&quot;checkbox&quot; CHECKED style=&quot;display:none&quot; /&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;large-3 small-3 columns&quot;&gt;
+        &lt;label&gt;CC me?&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;large-3 small-3 columns end&quot;&gt;
+        &lt;div class=&quot;switch tiny&quot;&gt;
+              &lt;input id=&quot;x&quot; name=&quot;switch-x&quot; type=&quot;radio&quot; checked&gt;
+              &lt;label for=&quot;x&quot; onclick=&quot;&quot;&gt;No&lt;/label&gt;
+              &lt;input id=&quot;x1&quot; name=&quot;switch-x&quot; type=&quot;radio&quot;&gt;
+              &lt;label for=&quot;x1&quot; onclick=&quot;&quot;&gt;yes&lt;/label&gt;
+              &lt;span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+&lt;/div&gt;
+&lt;input class=&quot;button small large-12&quot; type=&quot;submit&quot; value=&quot;Send Message&quot; /&gt;
 </code></pre><p><img alt="初学Foundation之自定义表单和开关" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>##单选按钮切换</p>
 <p>我们还没有覆盖<a href="http://foundation.zurb.com/docs/components/switch.html" target="_blank" rel="external">单选按钮切换</a>，所以现在我们来做。</p>
 <p>单选按钮切换是一个强大的input效果。其结构放在一个<code>div</code>标签中，并且命名为<code>switch</code>，紧跟着是尺寸的类名。这尺寸的类名主要包括<code>tiny</code>，<code>small</code>和<code>large</code>。你也可以给单选按钮切换设置一个类名<code>rounded</code>实现圆角。这个结构包含了两个<code>input</code>，用于单选按钮切换的状态。它们都有自己各自的标签，Foundation用来实现切换状态的文本。这里的<code>input</code>需要设置<code>id</code>名，并且<code>label</code>必须设置<code>for</code>属性。</p>
-<pre><code>&lt;div <span class="keyword">class</span>=<span class="string">"switch tiny"</span>&gt;
-      &lt;<span class="keyword">input</span> id=<span class="string">"x"</span> name=<span class="string">"switch-x"</span> <span class="keyword">type</span>=<span class="string">"radio"</span> checked&gt;
-      &lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"x"</span> onclick=<span class="string">""</span>&gt;<span class="keyword">No</span>&lt;/<span class="keyword">label</span>&gt;
+<pre><code>&lt;div class=&quot;switch tiny&quot;&gt;
+      &lt;input id=&quot;x&quot; name=&quot;switch-x&quot; type=&quot;radio&quot; checked&gt;
+      &lt;label for=&quot;x&quot; onclick=&quot;&quot;&gt;No&lt;/label&gt;
 </code></pre><p>这几乎涵盖了我们一个小的联系方式，你可以只是做做玩，也可以将它用到你的下一个项目中。</p>
 <p>##其他表单元素</p>
 <p>你在一个Web表单中还有什么可能需要用到呢？比如设置为未选择的<code>radio</code>，并表给他们设置了相同的样式<code>display:none;</code>。</p>
 <p><strong>注意：</strong>我知道使用内联样式是多么可怕的一件事情，但建议在这种情况下，还是不要将这样式写到样式表中。</p>
-<pre><code>&lt;input name=<span class="string">"radio1"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"radio"</span> style=<span class="string">"display:none;"</span> CHECKED /&gt;
-&lt;input name=<span class="string">"radio1"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"radio"</span> style=<span class="string">"display:none;"</span> /&gt;
-&lt;input name=<span class="string">"radio1"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"radio"</span> disabled style=<span class="string">"display:none;"</span>&gt;
+<pre><code>&lt;input name=&quot;radio1&quot; type=&quot;radio&quot; style=&quot;display:none;&quot; CHECKED /&gt;
+&lt;input name=&quot;radio1&quot; type=&quot;radio&quot; style=&quot;display:none;&quot; /&gt;
+&lt;input name=&quot;radio1&quot; type=&quot;radio&quot; disabled style=&quot;display:none;&quot;&gt;
 </code></pre><p>这些自定义表单快速通过元素创建起来是多么美好的事情。用这种方式显示什么已经存在，或暗示什么用的用户交互是必需的。</p>
 <p><img alt="初学Foundation之自定义表单和开关" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>下面你可以看到我们有一个<code>span</code>元素，并且设置了<code>prefix</code>类名，其次紧跟了一个下接选择项。你仍然需要把这些元素放在一个带有<code>prefix</code>和<code>postfix</code>类名的列结构中，用来防止元素分离。你也可以充分利用<code>postfix</code>类名加在一个对象上，如一个搜索框。即你的文本输入框后紧跟一个按钮。</p>
-<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row collapse"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-9 small-9 columns"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"prefix"</span>&gt;</span>http://webdesign.tutsplus<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 small-3 columns"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">select</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">option</span>&gt;</span>.com<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">option</span>&gt;</span>.co<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">option</span>&gt;</span>.ca<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">select</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<pre><code>&lt;div class=&quot;row collapse&quot;&gt;
+      &lt;div class=&quot;large-9 small-9 columns&quot;&gt;
+        &lt;span class=&quot;prefix&quot;&gt;http://webdesign.tutsplus&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;large-3 small-3 columns&quot;&gt;
+        &lt;select&gt;
+              &lt;option&gt;.com&lt;/option&gt;
+              &lt;option&gt;.co&lt;/option&gt;
+              &lt;option&gt;.ca&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+&lt;/div&gt;
 </code></pre><p>##错误信息</p>
 <p>大多数表单至少会有一个必须的字段或者表单无法正常提交的属性。Foundation为了实现这些验证状态使用了<code>error</code>类。简单的将它添加到任何<code>input</code>,<code>label</code>,<code>small</code>标签或列中，就可以看到这些元素呈现红色的风格。</p>
-<pre><code><span class="tag">&lt;<span class="title">form</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">label</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Error<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">class</span>=<span class="value">"error"</span> /&gt;</span>
-              <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Invalid entry<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns error"</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">label</span>&gt;</span>Another Error<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> /&gt;</span>
-              <span class="tag">&lt;<span class="title">small</span>&gt;</span>Invalid entry<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-     <span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">class</span>=<span class="value">"error"</span> <span class="attribute">placeholder</span>=<span class="value">"Message..."</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Invalid entry<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+<pre><code>&lt;form&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;large-6 columns&quot;&gt;
+              &lt;label class=&quot;error&quot;&gt;Error&lt;/label&gt;
+              &lt;input type=&quot;text&quot; class=&quot;error&quot; /&gt;
+              &lt;small class=&quot;error&quot;&gt;Invalid entry&lt;/small&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;large-6 columns error&quot;&gt;
+              &lt;label&gt;Another Error&lt;/label&gt;
+              &lt;input type=&quot;text&quot; /&gt;
+              &lt;small&gt;Invalid entry&lt;/small&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+     &lt;textarea class=&quot;error&quot; placeholder=&quot;Message...&quot;&gt;&lt;/textarea&gt;
+      &lt;small class=&quot;error&quot;&gt;Invalid entry&lt;/small&gt;
+&lt;/form&gt;
 </code></pre><p>需要真正验证是否有效，你需要使用<a href="https://github.com/jzaefferer/jquery-validation" target="_blank" rel="external">jQuery Validate</a>插件和使用所需的参数。当用户输入信息不正确的时候就会显示这些效果。</p>
 <p>##有用的工具</p>
 <p><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/foundation-for-beginners-custom-forms-and-switches/attachment/d/" target="_blank" rel="external"><br><img alt="初学Foundation之自定义表单和开关" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/Foundation-7-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
@@ -345,8 +346,8 @@
     </a>
   
   
-    <a href="/2014/09/20/前端/初学foundation之网格系统.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">初学Foundation之网格系统</div>
+    <a href="/2014/09/20/前端/前端ued规范.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端UED规范</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -392,8 +393,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

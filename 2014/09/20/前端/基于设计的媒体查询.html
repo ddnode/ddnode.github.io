@@ -22,13 +22,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于设计的媒体查询">
 <meta name="twitter:description" content="在刚一开始的时候，我们已经把特定移动设备的媒体查询运用到我们的网站上，并且服务于我们（网站），因为当时我们只是需要一种应急式的响应式设计解决方案来适应iPhone和屏幕相似的智能手机。">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -212,12 +213,12 @@
 <p>我们现在使用的媒体查询一般来说都是基于目前流行手机设备的屏幕分辨率。</p>
 <p>首先，当Web设计社区开始不断地关注<a href="http://sixrevisions.com/web_design/understanding-the-elements-of-responsive-web-design/" target="_blank" rel="external">响应式Web设计</a>时， 流行的手机设备要数 iPhone 和 Android 智能手机了。</p>
 <p>好，闲话不多说，现在就开始，应用于手机设备上的媒体查询从概念上看就好像是这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* iPhone &#21644; &#20854;&#23427;&#26234;&#33021;&#25163;&#26426; (portrait) */&#10;@media screen and (max-device-width: 320px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone and other  &#20854;&#23427;&#26234;&#33021;&#25163;&#26426; (landscape) */&#10;@media screen and (max-device-width: 480px) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/* iPhone 和 其它智能手机 (portrait) */</div><div class="line">@media screen and (max-device-width: 320px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPhone and other  其它智能手机 (landscape) */</div><div class="line">@media screen and (max-device-width: 480px) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>正如技术不断更新，尤其是平板电脑和视网膜显示器的不断增长，也就意味着屏幕大小范围和屏幕分辨率不断扩大。因此我们打算为了这些新的手机设备而去增强、拓展我们的媒体查询。</p>
 <p>为了兼容新一批产品，媒体查询将会看起来像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* iPhone and other smartphones (portrait) */&#10;@media screen and (max-device-width: 320px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone and other smartphones (landscape) */&#10;@media screen and (max-device-width: 480px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPad and other tablets (portrait) */&#10;@media screen and (max-device-width: 768px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPad and other tablets (landscape) */&#10;@media screen and (max-device-width: 1024px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone 5 (portrait) */&#10;@media screen and (max-device-width: 568px) and (orientation: portrait) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone 5 (landscape) */&#10;@media screen and (max-device-width: 568px) and (orientation: landscape) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/* iPhone and other smartphones (portrait) */</div><div class="line">@media screen and (max-device-width: 320px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPhone and other smartphones (landscape) */</div><div class="line">@media screen and (max-device-width: 480px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPad and other tablets (portrait) */</div><div class="line">@media screen and (max-device-width: 768px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPad and other tablets (landscape) */</div><div class="line">@media screen and (max-device-width: 1024px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPhone 5 (portrait) */</div><div class="line">@media screen and (max-device-width: 568px) and (orientation: portrait) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPhone 5 (landscape) */</div><div class="line">@media screen and (max-device-width: 568px) and (orientation: landscape) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>三星 Galaxy 手机现在真的很流行，因此我们也应该将它列入我们需要收集的媒体查询名单中:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Samsung Galaxy (portrait) */&#10;@media screen and (max-width: 385px) &#123;&#10;&#10;&#125;&#10;&#10;/* Samsung Galaxy (landscape) */&#10;@media screen and (max-width: 690px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone and other smartphones (portrait) */&#10;@media screen and (max-device-width: 320px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone and other smartphones (landscape) */&#10;@media screen and (max-device-width: 480px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPad and other tablets (portrait) */&#10;@media screen and (max-device-width: 768px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPad and other tablets (landscape) */&#10;@media screen and (max-device-width: 1024px) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone 5 (portrait) */&#10;@media screen and (max-device-width: 568px) and (orientation: portrait) &#123;&#10;&#10;&#125;&#10;&#10;/* iPhone 5 (landscape) */&#10;@media screen and (max-device-width: 568px) and (orientation: landscape) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">/* Samsung Galaxy (portrait) */</div><div class="line">@media screen and (max-width: 385px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* Samsung Galaxy (landscape) */</div><div class="line">@media screen and (max-width: 690px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPhone and other smartphones (portrait) */</div><div class="line">@media screen and (max-device-width: 320px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPhone and other smartphones (landscape) */</div><div class="line">@media screen and (max-device-width: 480px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPad and other tablets (portrait) */</div><div class="line">@media screen and (max-device-width: 768px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPad and other tablets (landscape) */</div><div class="line">@media screen and (max-device-width: 1024px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPhone 5 (portrait) */</div><div class="line">@media screen and (max-device-width: 568px) and (orientation: portrait) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* iPhone 5 (landscape) */</div><div class="line">@media screen and (max-device-width: 568px) and (orientation: landscape) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>那么，Amazon的电子书阅读器Kindle怎样呢？或者是iPad mini呢？</p>
 <p>先别着急，现在已经有<a href="http://code-tricks.com/css-media-queries-for-common-devices/" target="_blank" rel="external">一系列媒体查询</a>为Kindle（或者其它移动设备）准备好了，同时，也有<a href="http://www.stephentgilbert.com/mediaqueries/" target="_blank" rel="external">一系列</a>为苹果特定产品准备的媒体查询，如：iPad mini, iPhone 2G等等。这些都有利于帮助我们拓展我们的媒体查询集合。</p>
 <p>向你展示所有的这些理由是为了说明这种响应式Web设计方法怎样不能好好运作的。</p>
@@ -230,7 +231,7 @@
 <p>##为什么旧的断点不起作用</p>
 <p>通过一个实际应用的例子，让我们看看如何设置基于特定移动设备的媒体查询会不起作用。</p>
 <p>为了有一个响应式网页设计，我公司的网站——<a href="http://compass-design.co.uk/" target="_blank" rel="external">Compass Design</a>，原本是用3个范围的媒体查询创建的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* iPad (portrait) */&#10;@media screen and (max-width: 760px) &#123;&#10;&#10;&#10;&#125;&#10;&#10;/* Smartphones (landscape) */&#10;@media screen and (max-width: 480px) &#123;&#10;&#10;&#125;&#10;&#10;/* Smartphones (portrait) */&#10;@media screen and (max-width: 320px) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/* iPad (portrait) */</div><div class="line">@media screen and (max-width: 760px) &#123;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* Smartphones (landscape) */</div><div class="line">@media screen and (max-width: 480px) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/* Smartphones (portrait) */</div><div class="line">@media screen and (max-width: 320px) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在早一些年，当绝大多数人使用iPhone 4或者相似屏幕（320x480px），再或者iPad（760x1024px）的时候，这些媒体查询就被定义好了。因此，这些移动设备上，这些网页设计运行挺好的。</p>
 <p>桌面上网页布局是相当标准的，一个带有导航条的横向导航菜单位于页面内容的右边。</p>
 <p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
@@ -260,12 +261,12 @@
 <p>桌面布局包含一个全屏导航菜单。此布局遇到1005px宽屏,此时一些导航菜单项开始流动出来到下方,如下所示:</p>
 <p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>因为这种特定Web设计刚好在1005px宽屏的时候会破坏布局，由于导航菜单项的数量和长度，我决定在那设置断点：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Breakpoint #1 for medium-sized screens */&#10;@media screen and (max-width: 1005px) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/* Breakpoint #1 for medium-sized screens */</div><div class="line">@media screen and (max-width: 1005px) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>注意到我的样式注释和两条指导原则，我已经删掉任何特定手机设备的引用说明。</p>
 <p>从上面所说的1005px宽屏，不断地缩小屏幕宽度，布局会在745px的时候破坏，你可看到效果截图如下：</p>
 <p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-6.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>因此我又设置另一个断点在745px:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Breakpoint #2 for small-sized screens */&#10;@media screen and (max-width: 745px) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/* Breakpoint #2 for small-sized screens */</div><div class="line">@media screen and (max-width: 745px) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>布局现在在745px显示的效果：</p>
 <p><img alt="基于设计的媒体查询" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/design-based_media_queries_desktop_example-7.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>现在这个网站已经有一系列完全以移动设备无关性的断点了，并且确保这些设计将会以最好的方式适应任何移动设备了。</p>
@@ -296,18 +297,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/如何制作自己的网页字体图标.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/在html中使用meta标签的基础知识和最佳实践.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          如何制作自己的网页字体图标
+          在HTML中使用meta标签的基础知识和最佳实践
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/在html中使用meta标签的基础知识和最佳实践.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">在HTML中使用meta标签的基础知识和最佳实践</div>
+    <a href="/2014/09/20/前端/如何定制foundation4顶部工具栏.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何定制Foundation4顶部工具栏</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -353,8 +354,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

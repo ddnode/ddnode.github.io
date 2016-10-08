@@ -40,13 +40,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="终极Flexbox属性查询列表">
 <meta name="twitter:description" content="Flexbox是CSS3新增加的，优秀的和令人惊奇的新特性，并在各浏览器得到良好的支持。让你从此告诉了浮动带来的挫折感和让你实现垂直水平居中更佳简单完美。让你的布局可以根据浏览器自动伸缩。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -234,70 +235,70 @@
 <p><strong>注意：</strong>如果下面的示例中没有任何效果，您需要先升级您的浏览器。</p>
 <p>##创建一个flex容器</p>
 <p>任何一个flexbox布局的第一步是需要创建一个flex容器。为此给元素设置<code>display</code>属性的值为<code>flex</code>。在Safari浏览器中，你依然需要添加前缀<code>-webkit</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>##Flex项目行显示</p>
 <p>Flex项目是Flex容器的子元素。他们沿着主要轴和横轴定位。默认的是沿着水平轴排列一行。你可以通过<code>flex-direction</code>来改变主轴方向修改为<code>column</code>，其默认值是<code>row</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/*On the flex container*/&#10;.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-flex-direction: row;&#10;   flex-direction: row;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/*On the flex container*/</div><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-flex-direction: row;</div><div class="line">   flex-direction: row;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/ItDmf" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-1.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 
 <p>##Flex项目列显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-flex-direction: column;&#10;   flex-direction: column;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-flex-direction: column;</div><div class="line">   flex-direction: column;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/sJiLE" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-2.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##Flex项目移动到顶部</p>
 <p>如何将flex项目移动到顶部，取决于主轴的方向。如果它是垂直的方向通过<code>align-items</code>设置；如果它是水平的方向通过<code>justify-content</code>设置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   -webkit-flex-direction: column;&#10;   flex-direction: column;&#10;   -webkit-justify-content: flex-start;&#10;   justify-content: flex-start;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   -webkit-flex-direction: column;</div><div class="line">   flex-direction: column;</div><div class="line">   -webkit-justify-content: flex-start;</div><div class="line">   justify-content: flex-start;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/krpxm" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-3.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-flex-direction: row;&#10;   flex-direction: row;&#10;   -webkit-align-items: flex-start;&#10;   align-items: flex-start;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-flex-direction: row;</div><div class="line">   flex-direction: row;</div><div class="line">   -webkit-align-items: flex-start;</div><div class="line">   align-items: flex-start;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/iGmpl" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-4.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##Flex项目移到左边</p>
 <p>flex项目称动到左边或右边也取决于主轴的方向。如果<code>flex-direction</code>设置为<code>row</code>，设置<code>justify-content</code>控制方向；如果设置为<code>column</code>，设置<code>align-items</code>控制方向。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-flex-direction: row;&#10;   flex-direction: row;&#10;   -webkit-justify-content: flex-start;&#10;   justify-content: flex-start;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-flex-direction: row;</div><div class="line">   flex-direction: row;</div><div class="line">   -webkit-justify-content: flex-start;</div><div class="line">   justify-content: flex-start;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/kBdHc" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-5.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-flex-direction: column;&#10;   flex-direction: column;&#10;   -webkit-align-items: flex-start;&#10;   align-items: flex-start;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-flex-direction: column;</div><div class="line">   flex-direction: column;</div><div class="line">   -webkit-align-items: flex-start;</div><div class="line">   align-items: flex-start;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/Eauvn" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-6.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##Flex项目移动右边</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-flex-direction: row;&#10;   flex-direction: row;&#10;   -webkit-justify-content: flex-end;&#10;   justify-content: flex-end;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-flex-direction: row;</div><div class="line">   flex-direction: row;</div><div class="line">   -webkit-justify-content: flex-end;</div><div class="line">   justify-content: flex-end;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/lzqes" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-7.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-flex-direction: column;&#10;   flex-direction: column;&#10;   -webkit-align-items: flex-end;&#10;   align-items: flex-end;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-flex-direction: column;</div><div class="line">   flex-direction: column;</div><div class="line">   -webkit-align-items: flex-end;</div><div class="line">   align-items: flex-end;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/BEaLt" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-8.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##水平垂直居中</p>
 <p>在Flexbox容器中制作水平垂直居中是微不足道的。设置<code>justify-content</code>或者<code>align-items</code>为<code>center</code>。另外根据主轴的方向设置<code>flex-direction</code>为<code>row</code>或<code>column</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-flex-direction: row;&#10;   flex-direction: row;&#10;   -webkit-align-items: center;&#10;   align-items: center;&#10;   -webkit-justify-content: center;&#10;   justify-content: center;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-flex-direction: row;</div><div class="line">   flex-direction: row;</div><div class="line">   -webkit-align-items: center;</div><div class="line">   align-items: center;</div><div class="line">   -webkit-justify-content: center;</div><div class="line">   justify-content: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/ioBuA" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-9.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-flex-direction: column;&#10;   flex-direction: column;&#10;   -webkit-align-items: center;&#10;   align-items: center;&#10;   -webkit-justify-content: center;&#10;   justify-content: center;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-flex-direction: column;</div><div class="line">   flex-direction: column;</div><div class="line">   -webkit-align-items: center;</div><div class="line">   align-items: center;</div><div class="line">   -webkit-justify-content: center;</div><div class="line">   justify-content: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/wDsIH" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-10.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##Flex项目实现自动伸缩</p>
 <p>您可以定义一个flex项目，如何相对于flex容器实现自动的伸缩。需要给每个flex项目设置<code>flex</code>属性设置需要伸缩的值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.bigitem &#123;&#10;   -webkit-flex: 2 0 0;&#10;   flex: 2 0 0;&#10;&#125;&#10;.smallitem &#123;&#10;   -webkit-flex: 1 0 0;&#10;   flex: 1 0 0;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.bigitem &#123;</div><div class="line">   -webkit-flex: 2 0 0;</div><div class="line">   flex: 2 0 0;</div><div class="line">&#125;</div><div class="line">.smallitem &#123;</div><div class="line">   -webkit-flex: 1 0 0;</div><div class="line">   flex: 1 0 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/nBGIC" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-11.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##Flex项目多行显示</p>
 <p>Flex项目多行显示目前支持的浏览器仅限于webkit浏览器和IE11浏览器。Firefox浏览器不支持多行显示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-align-items: center;&#10;   align-items: center;&#10;   -webkit-justify-content: center;&#10;   justify-content: center;&#10;   -webkit-flex-direction: row;&#10;   flex-direction: row;&#10;   -webkit-flex-wrap: wrap;&#10;   flex-wrap: wrap;&#10;   -webkit-flex-flow: row wrap;&#10;   flex-flow: row wrap;&#10;   -webkit-align-content: flex-end;&#10;   align-content: flex-end;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-align-items: center;</div><div class="line">   align-items: center;</div><div class="line">   -webkit-justify-content: center;</div><div class="line">   justify-content: center;</div><div class="line">   -webkit-flex-direction: row;</div><div class="line">   flex-direction: row;</div><div class="line">   -webkit-flex-wrap: wrap;</div><div class="line">   flex-wrap: wrap;</div><div class="line">   -webkit-flex-flow: row wrap;</div><div class="line">   flex-flow: row wrap;</div><div class="line">   -webkit-align-content: flex-end;</div><div class="line">   align-content: flex-end;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/fDvud" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-12.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##Flex项目多列显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-align-items: center;&#10;   align-items: center;&#10;   -webkit-justify-content: center;&#10;   justify-content: center;&#10;   -webkit-flex-flow: column wrap;&#10;   flex-flow: column wrap;&#10;   -webkit-align-content: stretch;&#10;   align-content: stretch;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-align-items: center;</div><div class="line">   align-items: center;</div><div class="line">   -webkit-justify-content: center;</div><div class="line">   justify-content: center;</div><div class="line">   -webkit-flex-flow: column wrap;</div><div class="line">   flex-flow: column wrap;</div><div class="line">   -webkit-align-content: stretch;</div><div class="line">   align-content: stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/Goyhd" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-13.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##移出多行或多列之间的间距</p>
 <p><code>align-content</code>属性用来分配多行或多列之间的空间。其属性值包括：<code>flex-start</code>、<code>flex-end</code>、<code>space-between</code>、<code>space-around</code>和<code>stretch</code>。简单地移出多列之间的宽间，可以将<code>align-content</code>设置为<code>center</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.flexcontainer &#123;&#10;   display: -webkit-flex;&#10;   display: flex;&#10;   -webkit-align-items: center;&#10;   align-items: center;&#10;   -webkit-justify-content: center;&#10;   justify-content: center;&#10;   -webkit-flex-flow: column wrap;&#10;   flex-flow: column wrap;&#10;   -webkit-align-content: center;&#10;   align-content: center;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.flexcontainer &#123;</div><div class="line">   display: -webkit-flex;</div><div class="line">   display: flex;</div><div class="line">   -webkit-align-items: center;</div><div class="line">   align-items: center;</div><div class="line">   -webkit-justify-content: center;</div><div class="line">   justify-content: center;</div><div class="line">   -webkit-flex-flow: column wrap;</div><div class="line">   flex-flow: column wrap;</div><div class="line">   -webkit-align-content: center;</div><div class="line">   align-content: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/qIFnz" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-15.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##Flex容器每侧放置一个元素</p>
 <p>你可以控制<code>align-items</code>值和<code>align-self</code>设置单个元素。你可以使用<code>margin</code>将单个元素向下或向下或向左向右。例如，在列布局你可以给flex项目设置<code>margin-right:auto</code>，将flex项目移到flex容器的左侧。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.left &#123;&#10;   -webkit-align-self: flex-start;&#10;   align-self: flex-start;&#10;&#125;&#10;&#10;.right &#123;&#10;   margin-left: auto;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.left &#123;</div><div class="line">   -webkit-align-self: flex-start;</div><div class="line">   align-self: flex-start;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.right &#123;</div><div class="line">   margin-left: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://codepen.io/airen/pen/qsdph" target="_blank"><img alt="终极Flexbox属性查询列表" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/flexbox-14.jpg" style="padding:2px;border:1px solid #ccc;width:680px;"><br></a></p>
 
 <p>##扩展阅读</p>
@@ -345,18 +346,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/让你的网站在移动端健步如飞.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/精彩网格式网页设计赏析.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          让你的网站在移动端健步如飞
+          精彩网格式网页设计赏析
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/精彩网格式网页设计赏析.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">精彩网格式网页设计赏析</div>
+    <a href="/2014/09/20/前端/初学foundation之progress,_alerts,_tooltips和elusive_mega_drop.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初学Foundation之Progress, Alerts, Tooltips和Elusive Mega Drop</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -402,8 +403,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

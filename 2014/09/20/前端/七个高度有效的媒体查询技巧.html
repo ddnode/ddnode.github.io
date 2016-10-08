@@ -18,13 +18,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="七个高度有效的媒体查询技巧">
 <meta name="twitter:description" content="我们都知道，Media Queries是实现响应式设计的秘密武器。在这篇文章中，将向大家介绍制定高质量的Media Queries需要注意的一些事项。">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/1309/media-queries-1.gif">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -226,9 +227,9 @@
 </blockquote>
 <p>作为一个<a href="http://bradfrostweb.com/blog/web/mobile-first-responsive-web-design/" target="_blank" rel="external">移动先行响应式设计</a>策略，重要的是我们要有一个移动先行的风格方式。</p>
 <p>因此这个东西很有意思：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* &#26700;&#38754;&#31532;&#19968;&#39118;&#26684;:&#36991;&#20813; */&#10;.column &#123;&#10;    float: left;&#10;    width: 50%;&#10;&#125;&#10;&#10;@media all and (max-width: 50em) &#123;&#10;    .column &#123;&#10;        float: none;&#10;        width: auto;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/* 桌面第一风格:避免 */</div><div class="line">.column &#123;</div><div class="line">    float: left;</div><div class="line">    width: 50%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@media all and (max-width: 50em) &#123;</div><div class="line">    .column &#123;</div><div class="line">        float: none;</div><div class="line">        width: auto;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>当我们想只介绍布局的具体规则时，我们需要他们：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;/* &#20808;&#21160;&#20808;&#34892;&#30340;&#39118;&#26684;&#65306; FTW */&#10;@media all and (min-width: 50em) &#123;&#10;    .column &#123;&#10;        float: left;&#10;        width: 50%;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/* 先动先行的风格： FTW */</div><div class="line">@media all and (min-width: 50em) &#123;</div><div class="line">    .column &#123;</div><div class="line">        float: left;</div><div class="line">        width: 50%;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="http://www.html5rocks.com/en/mobile/responsivedesign/#toc-style-mobilefirst" target="_blank" rel="external">移动先行</a>将导致的结果是更简单，更易于维护你的代码。这种方法还提供了对老的并不支持媒体查询的移动端浏览器的更友好支持。</p>
 <p>###扩展阅读</p>
 <ul>
@@ -238,13 +239,13 @@
 <p>##使用主要断点和次要断点</p>
 <p>重要的是要理解，并不是每个设计都需要巧妙的融入小的、中等的、大的断点。当然，有时一个网站的设计，发有一些戏剧性的事情发生，比如说当一列成两在变成三列。这个时候，关键点就是把握住他们在主要的断点时，才会有这戏剧性的一幕发生。</p>
 <p>我使用<a href="http://sass-lang.com/" target="_blank" rel="external">Sass</a>来控制我的断点，所以根据不同的设计，我主要断点变量看起来像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$bp-small : 24em;&#10;$bp-med : 46.8em;&#10;$bp-large : 50em;&#10;$bp-xl : 73em;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$bp-small : 24em;</div><div class="line">$bp-med : 46.8em;</div><div class="line">$bp-large : 50em;</div><div class="line">$bp-xl : 73em;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>如果您从未接触过Sass的任何知识，个人建议您先抽空了解一些Sass方面的知识，如果你感兴趣，可以点击<a href="http://www.w3cplus.com/blog/tags/302.html" target="_blank" rel="external">这里</a>查阅——<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
 </blockquote>
 <p>但在一些设计中，有一些<a href="http://coding.smashingmagazine.com/2013/06/25/media-queries-are-not-the-answer-element-query-polyfill/" target="_blank" rel="external">特殊元素</a>之间的值需要调整。这样一来就可以为这些特定的元素添加一个小断点（如Jeremy Keith所说的<a href="http://adactio.com/journal/6044/" target="_blank" rel="external">tweakpoint</a>）。</p>
 <p>回到我的Sass中，我在主要断点之间插入了次要断点，类型于：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$bp-small : 24em;&#10;$bp-small-2 : 29.75em;&#10;$bp-small-3 : 39.8em;&#10;$bp-med : 46.8em;&#10;$bp-med-2 : 48em;&#10;$bp-large : 50em;&#10;$bp-large-2 : 54.5em;&#10;$bp-xl : 60em;&#10;$bp-xl-2 : 67em;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$bp-small : 24em;</div><div class="line">$bp-small-2 : 29.75em;</div><div class="line">$bp-small-3 : 39.8em;</div><div class="line">$bp-med : 46.8em;</div><div class="line">$bp-med-2 : 48em;</div><div class="line">$bp-large : 50em;</div><div class="line">$bp-large-2 : 54.5em;</div><div class="line">$bp-xl : 60em;</div><div class="line">$bp-xl-2 : 67em;</div></pre></td></tr></table></figure>
 <p>这种方法是否也适合你呢？</p>
 <p>至于如何看待主要断点和次要断点，主要取决于你，但重要的是要利用这两类断点。</p>
 <p>###扩展阅读</p>
@@ -254,9 +255,9 @@
 </ul>
 <p>##使用相对单位</p>
 <p>我常喜欢背靠着椅子使用我的电脑，所以我经常使用<code>cmd +</code>来放大网站文本。当我们使用断点使用的是像素时，页面放到出现水平滚动条，并没有正常的工作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* Avoid pixel-based media queries */&#10;@media all and (min-width: 800px) &#123;...&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/* Avoid pixel-based media queries */</div><div class="line">@media all and (min-width: 800px) &#123;...&#125;</div></pre></td></tr></table></figure>
 <p>不应该使用像素，我们应该为我们的<a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/" target="_blank" rel="external">媒体查询使用相对单位</a>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* use ems for media queries */&#10;@media all and (min-width: 50em) &#123;...&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/* use ems for media queries */</div><div class="line">@media all and (min-width: 50em) &#123;...&#125;</div></pre></td></tr></table></figure>
 <p>首先在样式中，我们都放弃了对像素(<code>px</code>)的使用，在使用<code>em</code>、<code>rem</code>和百分比(<code>%</code>)，那么我们为什么不能将这些相对单位运用到媒体查询中呢？其次，在媒体查询中使用相对单位允许浏览来调整设计基于用户缩放的级别，让用户有一个更愉快、更容易阅读的用户体验。</p>
 <p><img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1309/media-queries-1.gif" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>看，就像老人家的视力！</p>
@@ -287,7 +288,7 @@
 <p>我们能做的就是就是将这些没有价值的东西放在自己的HTML结构块中，当符合条件下，这此次要内容将再次显示。</p>
 <p><img src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1309/media-queries-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>我们可以使用<a href="https://developer.mozilla.org/en-US/docs/Web/API/window.matchMedia" target="_blank" rel="external">MatchMedia</a>来让这样的事情发生。MatchMedia允许Javascript来利用所有的媒体查询来改善。他看起来像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (window.matchMedia(&#34;(min-width: 40em)&#34;).matches) &#123;&#10;  /* load secondary stuff */&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (window.matchMedia(&quot;(min-width: 40em)&quot;).matches) &#123;</div><div class="line">  /* load secondary stuff */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>当正确的条件存在，我们就加载<a href="http://filamentgroup.com/lab/ajax_includes_modular_content/" target="_blank" rel="external">二级内容</a>。</p>
 <p>MatchMedia得到<a href="http://caniuse.com/matchmedia" target="_blank" rel="external">很好的支持</a>以及<a href="https://github.com/paulirish/matchMedia.js/" target="_blank" rel="external">Polyfill</a>也可以使用。</p>
 <p><a href="http://24ways.org/2011/conditional-loading-for-responsive-designs/" target="_blank" rel="external">有条件的加载</a>是其中管委会最强大的工具。它允许我们优先考虑核心的内容和性能，同时仍然提供一个健壮的、全功能的体验环境。</p>
@@ -313,11 +314,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/为什么要用和如何使用字体图标.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/Nodejs/nodejs.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          为什么要用和如何使用字体图标
+          Node.js 概述
         
       </div>
     </a>
@@ -370,8 +371,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

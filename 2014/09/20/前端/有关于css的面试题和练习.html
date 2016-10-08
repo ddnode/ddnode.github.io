@@ -20,13 +20,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有关于CSS的面试题和练习">
 <meta name="twitter:description" content="如果你处在一个需要面试别人有关于CSS方面技巧和知识，一时想起来还真有点难。我把我能想出来的整理在一起，提供给大家参考。">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/Interview-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -249,7 +250,7 @@
 <li>他们测试了吗？（确保它真的有用，并找到想要的meta标签。）</li>
 </ul>
 <p>###使用图像替换Logo</p>
-<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/"</span> <span class="attribute">class</span>=<span class="value">"logo"</span>&gt;</span>Company<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<pre><code>&lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;Company&lt;/a&gt;
 </code></pre><p>具有访问性和语义化图像替换已经是一个很多年的CSS话题和“最佳方法”已经讨论<a href="http://css-tricks.com/examples/ImageReplacement/" target="_blank" rel="external">很多年</a>。让他们告诉你如何可以做到很多方法实现这种效果，以观察他们真的会使用CSS。他不仅仅是知道怎么做的一件事情，而是知道如何去用多种方式实现。</p>
 <blockquote>
 <p>有关于图像替换文本更多方法，你要是感兴趣，可以猛击<a href="http://www.w3cplus.com/css/ten-image-replace-text-with-css" target="_blank" rel="external">这里</a>。——大漠</p>
@@ -328,7 +329,7 @@
 <p>有关于<code>@font-face</code>更多的中文教程，在W3cplus已有多篇教程，如果您对此非常感谢兴趣，猛击<a href="http://www.w3cplus.com/blog/tags/26.html" target="_blank" rel="external">这里</a>。 ——大漠</p>
 </blockquote>
 <p>###解释下这个CSS选择器什么发生什么？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[role=navigation] &#62; ul a:not([href^=mailto]) &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[role=navigation] &gt; ul a:not([href^=mailto]) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>定义了<code>role</code>属性，并且值为<code>navigation</code>的任何元素，其子元素列表下的除邮箱链接之外的所有链接元素。</p>
 <p>能够用语言表达清楚这个选择器，证明你理解他们和可以使用他们做一些技术交流。</p>
 <p>##你的想法</p>
@@ -345,18 +346,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/构建一个垂直规律.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/挑战最佳css实战.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          构建一个垂直规律
+          挑战最佳CSS实战
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/挑战最佳css实战.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">挑战最佳CSS实战</div>
+    <a href="/2014/09/20/前端/构建一个垂直规律.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">构建一个垂直规律</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -402,8 +403,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

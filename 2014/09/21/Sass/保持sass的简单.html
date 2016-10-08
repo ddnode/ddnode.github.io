@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -210,19 +210,19 @@
 <p>有些需求是合理的，有些需求是烦死人的。嘿嘿，我们可以从任何地方开始。也有些是抽象的。每个人都希望使用Sass能变得更简单（其他预处理器也在做这样的事情）。包括我在内，我也一直在这么做。</p>
 <p>##让我们来优化</p>
 <p>那天我被问及到如何做到这点：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.class &#123;&#10;  width: 20px;&#10;&#125;&#10;&#10;.other-class &#123;&#10;  width: em(.class:width);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.class &#123;</div><div class="line">  width: 20px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.other-class &#123;</div><div class="line">  width: em(.class:width);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>基本上,使用<code>em()</code>函数将<code>.class</code>宽度转换到<code>.other-class</code>。仔细想想，在Sass中如果离开上下文，要将<code>px</code>单位转换成<code>em</code>单位，其实蛮困难的，而且这里还要从一个选择器引值到另一个选择器中。</p>
 <p>甚至<a href="http://learnboost.github.io/stylus/" target="_blank" rel="external">Stylus</a>——这是很出名，非常强大的一款预处理器。他也做不到。充其量，只能在相同的代码块中引用值(也就是<a href="http://learnboost.github.io/stylus/docs/variables.html#property-lookup" target="_blank" rel="external">属性查找</a>)。显然Sass要保守得多，他是做不到的。</p>
 <p>注：如果你曾经也想要这样做，这并不是一件什么坏事。因为有很多人都有过这样的想法，你只不过是<a href="http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/" target="_blank" rel="external">其中的一位而以</a>。</p>
 <p>##我们可以做的</p>
 <p>好吧，让我们接受上面的需求在Sass中使用确实是一个错误。你想看一个更有争议性的示例吗？<a href="https://github.com/sass/sass/blob/master/doc-src/SASS_CHANGELOG.md#340-unreleased" target="_blank" rel="external">Sass 3.4</a>新增了一个新的功能特性，就是促进选择器传递的函数。这些特性注定了Sass能像处理list一样处理选择器，比如<code>selector-nest()</code>，<code>selector-replace()</code>等等。</p>
 <p>尽管如何努力，至今我还没有找到一个合理的用例来说明选择器函数。有很多人在<a href="https://twitter.com/jdsteinbach/status/489443347501973505" target="_blank" rel="external">Twitter</a>上用这些示例试图来说服我：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//Sass 3.40.rc.3&#10;@mixin context($old-context, $new-context) &#123;&#10;    @at-root #&#123;selector-replace(&#38;, $old-context, $new-context)&#125; &#123;&#10;        @content;&#10;    &#125;&#10;&#125;&#10;&#10;li &#123;&#10;  float: left;&#10;&#10;  ul &#123;&#10;    display: none;&#10;&#10;    @include context(&#39;li&#39;, &#39;li:hover&#39;) &#123;&#10;      display: block;&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//Sass 3.40.rc.3</div><div class="line">@mixin context($old-context, $new-context) &#123;</div><div class="line">    @at-root #&#123;selector-replace(&amp;, $old-context, $new-context)&#125; &#123;</div><div class="line">        @content;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">li &#123;</div><div class="line">  float: left;</div><div class="line"></div><div class="line">  ul &#123;</div><div class="line">    display: none;</div><div class="line"></div><div class="line">    @include context(&apos;li&apos;, &apos;li:hover&apos;) &#123;</div><div class="line">      display: block;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>编译出来的CSS:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li &#123;&#10;  float: left;&#10;&#125;&#10;li ul &#123;&#10;  display: none;&#10;&#125;&#10;li:hover ul &#123;&#10;  display: block;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">li &#123;</div><div class="line">  float: left;</div><div class="line">&#125;</div><div class="line">li ul &#123;</div><div class="line">  display: none;</div><div class="line">&#125;</div><div class="line">li:hover ul &#123;</div><div class="line">  display: block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我同意这么做是一个很聪明的方法，但我并不觉得这是一个简单的方法。我认为他把事情整得更为复杂。我觉得不应该在任何地方让代码变得复杂化。</p>
 <p>为什么不像这样写呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li &#123;&#10;  float: left;&#10;&#10;  ul &#123;&#10;    display: none;&#10;  &#125;&#10;&#10;  &#38;:hover ul &#123;&#10;    display: block&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">li &#123;</div><div class="line">  float: left;</div><div class="line"></div><div class="line">  ul &#123;</div><div class="line">    display: none;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  &amp;:hover ul &#123;</div><div class="line">    display: block</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>现在这样就简单了。这样是可以理解的。我觉得有时候我们用的东西，我们只知道他的存在，并不是因为我们应该使用它们。</p>
 <p>##我们怎么在这里</p>
 <p>在某种程度上，我觉得非常惭愧。我使用Sass做了一些疯狂的事情(例如<a href="http://www.sitepoint.com/cross-media-query-extend-sass/" target="_blank" rel="external">这里</a>和<a href="http://www.sitepoint.com/caching-values-sass-mixins/" target="_blank" rel="external">这里</a>)。向大家推荐他的特性，可能没有足够掌握好这些技术，这些技术大多是都还只是实验阶段。</p>
@@ -237,9 +237,9 @@
 <p>当你知道如何使用Sass和如何不使用Sass时，Sass是一个有用的工具。在使用混合宏或函数数，有一些人认为使用Sass绝对没有错。即使是复杂的，只要他们不要搞得太复杂，那么复杂就变得不复杂了。</p>
 <p>只要你控制的妥当，嵌套并没有什么不好。就我个人而言，我并不太喜欢嵌套，因为他让代码变得更难阅读。</p>
 <p>当伪类和伪元素出现时，我非常的喜欢他们，但我认为，很快他们就会在嵌套中乱用，像下面的示例，<a href="http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/" target="_blank" rel="external">摘自这篇文章</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.tabs &#123;&#10;  .tab &#123;&#10;    background: red;&#10;    &#38;:hover &#123;&#10;      background: white;&#10;      .tab-link &#123;&#10;        color: red;&#10;      &#125;&#10;    &#125;&#10;    .tab-link &#123;&#10;      color: white;&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.tabs &#123;</div><div class="line">  .tab &#123;</div><div class="line">    background: red;</div><div class="line">    &amp;:hover &#123;</div><div class="line">      background: white;</div><div class="line">      .tab-link &#123;</div><div class="line">        color: red;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    .tab-link &#123;</div><div class="line">      color: white;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>对于我来说，我宁愿多写一点：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.tabs .tab &#123;&#10;  background: red;&#10;&#10;  &#38;:hover &#123;&#10;    background: white;&#10;  &#125;&#10;&#125;&#10;&#10;.tab-link &#123;&#10;  color: white;&#10;&#10;  .tabs .tab:hover &#38; &#123;&#10;    color: red;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.tabs .tab &#123;</div><div class="line">  background: red;</div><div class="line"></div><div class="line">  &amp;:hover &#123;</div><div class="line">    background: white;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.tab-link &#123;</div><div class="line">  color: white;</div><div class="line"></div><div class="line">  .tabs .tab:hover &amp; &#123;</div><div class="line">    color: red;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>而且你知道吗？第一个示例用了176个字符，而第二个示例只用了152个字符。所以深层嵌套并不一定适合。</p>
 <p>##它的乐趣</p>
 <p>是的，它是非常有趣的，我也知道这点。我写了一个<a href="http://hugogiraudel.com/2014/01/20/json-in-sass/" target="_blank" rel="external">Json解析器</a>，输出Sass，可以<a href="http://hugogiraudel.com/2014/06/22/bitwise-operators-in-sass/" target="_blank" rel="external">按位运算字符，只不过不是SCSS</a>。做这个事情的过程，它是非常有趣的。</p>
@@ -262,11 +262,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/21/Sass/关于sass3.4你应该知道的一些事情.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/21/Sass/sass中的反三角函数.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          关于Sass3.4你应该知道的一些事情
+          Sass中的反三角函数
         
       </div>
     </a>
@@ -319,8 +319,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

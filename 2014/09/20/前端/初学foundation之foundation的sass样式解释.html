@@ -21,13 +21,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初学Foundation之Foundation的Sass样式解释">
 <meta name="twitter:description" content="在本教程我们将学习包含在Foundation前端框架中的灵活的Sass样式以及能够用来做些什么。Sass比CSS版本提供更多自定义特性集合，再加上有快捷方式可以简单又快速地运用在样式项目上，例如顶部工具栏。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -211,45 +212,45 @@
 <p>我们先从Foundation的基础 ——<a href="http://www.w3cplus.com/css/foundation-for-beginners-the-grid-system.html" target="_blank" rel="external">栅格</a>开始，这是一个很好的组件将会向你展示SCSS/Sass究竟有多灵活。</p>
 <p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>举个例子，当在栅格中使用混合（混合，就是使用一些已经写好代码）时，你可以创建自己的类，甚至通过一些简单变量来创建你自己的栅格。我们来看看Foundation提供给你的第一个例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* &#28151;&#21512;&#21019;&#24314;&#34892;&#30340;&#36873;&#39033; */&#10;@include grid-row($behavior);&#10;/* &#40664;&#35748;&#20540;&#26159;false,&#37319;&#29992;&#40664;&#35748;&#34892;&#26679;&#24335; */&#10;$behavior: false&#10;/* &#22914;&#26524;&#20320;&#22312;&#21019;&#24314;&#20363;&#22914;&#19968;&#20010;&#21253;&#21547;&#20854;&#20182;&#20803;&#32032;&#30340;&#23884;&#22871;&#24335;&#34892; */&#10;/* &#20320;&#38656;&#35201;&#28155;&#21152;&#36866;&#24403;&#30340;&#23884;&#22871;&#26679;&#24335; */&#10;$behavior: nest&#10;/* &#20320;&#36824;&#21487;&#20197;&#20351;&#29992;collapse&#25928;&#26524; */&#10;/* &#24403;&#22312;&#26629;&#26684;&#20013;&#20351;&#29992;Form&#34920;&#21333;&#26102;&#65292;&#26159;&#24456;&#26041;&#20415;&#30340; */&#10;$behavior: collapse&#10;/* &#22914;&#26524;&#20320;&#21019;&#24314;&#19968;&#20010;&#23884;&#22871;&#24335;&#30340;&#34892;&#65292;&#21448;&#24819;&#23454;&#29616;&#20498;&#22604;&#30340;&#25928;&#26524;&#65292;&#21487;&#20197;&#28155;&#21152;&#22914;&#19979;&#20195;&#30721; */&#10;$behavior: nest-collapse</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/* 混合创建行的选项 */</div><div class="line">@include grid-row($behavior);</div><div class="line">/* 默认值是false,采用默认行样式 */</div><div class="line">$behavior: false</div><div class="line">/* 如果你在创建例如一个包含其他元素的嵌套式行 */</div><div class="line">/* 你需要添加适当的嵌套样式 */</div><div class="line">$behavior: nest</div><div class="line">/* 你还可以使用collapse效果 */</div><div class="line">/* 当在栅格中使用Form表单时，是很方便的 */</div><div class="line">$behavior: collapse</div><div class="line">/* 如果你创建一个嵌套式的行，又想实现倒塌的效果，可以添加如下代码 */</div><div class="line">$behavior: nest-collapse</div></pre></td></tr></table></figure>
 <p>从上面代码可以看到，我们从使用混合<code>@include grid-row</code>开始，用指定变量包含着括号里。</p>
 <p>当你使用混合时，可以编写好类似函数那样，通过传递不同参数，就可以重复使用该混合。如<code>font</code>，是一个描述字体大小，字体粗细，字体颜色等性质。当每次使用它的时候，只是颜色变化而已，而其它的都不变，因此只需要用一个变量代替颜色值，通过参数传递进来即可。</p>
 <p>如下代码示例，这里需要注意的是，在Sass中，参数是以“$”开头的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* &#36825;&#37324;&#21019;&#24314;&#19968;&#20010;&#28151;&#21512;&#65288;&#20989;&#25968;&#65289; */&#10;@mixin font($color) &#123;&#10;font-family: &#39;Arial&#39;;&#10;font-size: 14px;&#10;font-weight: 500;&#10;color: $color;&#10;&#125;&#10;/* &#23450;&#20041;&#21464;&#37327; */&#10;$blue = #0099cc;&#10;/* &#20351;&#29992;&#28151;&#21512;&#65288;&#21442;&#25968;&#20256;&#36882;&#65289; */&#10;@include font($blue);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* 这里创建一个混合（函数） */</div><div class="line">@mixin font($color) &#123;</div><div class="line">font-family: &apos;Arial&apos;;</div><div class="line">font-size: 14px;</div><div class="line">font-weight: 500;</div><div class="line">color: $color;</div><div class="line">&#125;</div><div class="line">/* 定义变量 */</div><div class="line">$blue = #0099cc;</div><div class="line">/* 使用混合（参数传递） */</div><div class="line">@include font($blue);</div></pre></td></tr></table></figure>
 <p>回到上个代码示例，会发现变量<code>$behaviour</code>使用多次，看起来有点奇怪，就好像被每一次都重新赋值了。实际上，你给每种类型都赋上对应的值，就正如数组那样，每一次使用变量<code>$behaviour</code>，将会根据不同的赋值产生对应的输出。</p>
 <p>你还可以传递多个参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@include grid-column($columns, $last-column);&#10;/* &#26368;&#24120;&#29992;&#30340;&#26159;&#20351;&#29992;&#21442;&#25968;&#21015; */&#10; /* &#35774;&#32622;&#21015;&#30340;&#23485;&#24230;&#23646;&#24615;&#65292;&#20351;&#29992;&#19968;&#20010;&#25968;&#23383;&#26469;&#34920;&#31034; */&#10; $columns: #&#10; /* &#22914;&#26524;&#20320;&#21015;&#19981;&#21152;&#36215;&#26469;12&#65292;&#28982;&#21518;&#20351;&#29992;&#36825;&#20010;&#36873;&#39033; */&#10; /* &#26368;&#21518;&#19968;&#21015;&#40664;&#35748;&#35774;&#32622;float:right&#65292;&#20351;&#24471;&#24067;&#23616;&#32654;&#35266; */&#10; /* &#22914;&#26524;&#19981;&#24819;&#35201;&#40664;&#35748;&#65292;&#21017;&#35774;&#32622;&#20026;flase*/&#10; $last-column: false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@include grid-column($columns, $last-column);</div><div class="line">/* 最常用的是使用参数列 */</div><div class="line"> /* 设置列的宽度属性，使用一个数字来表示 */</div><div class="line"> $columns: #</div><div class="line"> /* 如果你列不加起来12，然后使用这个选项 */</div><div class="line"> /* 最后一列默认设置float:right，使得布局美观 */</div><div class="line"> /* 如果不想要默认，则设置为flase*/</div><div class="line"> $last-column: false</div></pre></td></tr></table></figure>
 <p>为了更好的理解，我们将使用基本的HTML来创建一个栅格工程，由于Sass源码里设置了很多类，因此可以直接使用。如下代码示例：</p>
-<pre><code><span class="tag">&lt;header&gt;</span>
-    <span class="tag">&lt;aside&gt;</span><span class="tag">&lt;/aside&gt;</span>
-    <span class="tag">&lt;section&gt;</span>
-           <span class="tag">&lt;article&gt;</span>
-              <span class="tag">&lt;header&gt;</span><span class="tag">&lt;/header&gt;</span>
-              <span class="tag">&lt;div&gt;</span><span class="tag">&lt;/div&gt;</span>
-           <span class="tag">&lt;/article&gt;</span>
-    <span class="tag">&lt;/section&gt;</span>
-<span class="tag">&lt;/header&gt;</span>
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$row-width: em-calc(600);&#10;$column-gutter: em-calc(30);&#10;$total-columns: 12 !default;&#10;header &#123; @include grid-row; @include panel;&#10;    aside &#123; @include grid-column(3); &#125;&#10;    section &#123; @include grid-column(9);&#10;       article &#123; @include grid-row;&#10;          header &#123; @include grid-column(2); &#125;&#10;          div &#123; @include grid-column(10); &#125;&#10;       &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;header&gt;
+    &lt;aside&gt;&lt;/aside&gt;
+    &lt;section&gt;
+           &lt;article&gt;
+              &lt;header&gt;&lt;/header&gt;
+              &lt;div&gt;&lt;/div&gt;
+           &lt;/article&gt;
+    &lt;/section&gt;
+&lt;/header&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$row-width: em-calc(600);</div><div class="line">$column-gutter: em-calc(30);</div><div class="line">$total-columns: 12 !default;</div><div class="line">header &#123; @include grid-row; @include panel;</div><div class="line">    aside &#123; @include grid-column(3); &#125;</div><div class="line">    section &#123; @include grid-column(9);</div><div class="line">       article &#123; @include grid-row;</div><div class="line">          header &#123; @include grid-column(2); &#125;</div><div class="line">          div &#123; @include grid-column(10); &#125;</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>可以看出<code>html</code>是很简洁的，Sass完美地计算与嵌套，我设置了最大的宽度，列与列之间的宽度和列的条数。从一个HTML的角度来看，这节省了大量的时间,但背后的布局可能会让人有些迷惑。我们看看在Sass中如何使用按钮。</p>
 <p>##按钮</p>
 <p>使用Sass的好处之一就是你能很快地编写你的样式，并且不用编写重复的代码，从而能节省不少的时间。</p>
 <p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>你可以很快捷地使用按钮样式，就如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.your-class-name &#123; @include button; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.your-class-name &#123; @include button; &#125;</div></pre></td></tr></table></figure>
 <p>只需添加几个选项,你复制的样式只用一行代码,大概编写六、七行CSS代码就可以实现大工作量,很节省时间吧!</p>
 <p>你应该还会注意到,有大量的选项在CSS版本不存在,这是适用于所有Sass元素。这会在CSS版本增加一个额外的自由层。下面例子将演示,一个按钮使用变量,和使用直接值一样,所以理解一下这些是如何工作的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.your-class-name &#123;&#10;    @include button($padding, $bg, $radius, $full-width, $disabled, $is-input);&#10;    @include inset-shadow($active);&#10;&#125;&#10;.your-class-name &#123;&#10;    @include button(1em, #ca2727, 2px, false, false, false);&#10;    @include inset-shadow(true);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.your-class-name &#123;</div><div class="line">    @include button($padding, $bg, $radius, $full-width, $disabled, $is-input);</div><div class="line">    @include inset-shadow($active);</div><div class="line">&#125;</div><div class="line">.your-class-name &#123;</div><div class="line">    @include button(1em, #ca2727, 2px, false, false, false);</div><div class="line">    @include inset-shadow(true);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img alt="初学Foundation之Foundation的Sass样式解释" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2014/1402/Foundation-10-5.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>这只是一个简单的例子,你可能会频繁地使用。最终编译成CSS，可以想象，编写一样的CSS代码比Sass需要更多的时间：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.link &#123;&#10;&#9;border-style: solid;&#10;&#9;border-width: 1px;&#10;&#9;cursor: pointer;&#10;&#9;font-family: inherit;&#10;&#9;font-weight: bold;&#10;&#9;line-height: normal;&#10;&#9;margin: 0 0 1.25em;&#10;&#9;position: relative;&#10;&#9;text-decoration: none;&#10;&#9;text-align: center;&#10;&#9;display: inline-block;&#10;&#9;padding-top: 1em;&#10;&#9;padding-right: 2em;&#10;&#9;padding-bottom: 1.0625em;&#10;&#9;padding-left: 2em;&#10;&#9;font-size: 1.25em;&#10;&#9;background-color: #ca2727;&#10;&#9;border-color: #9f1f1f;&#10;&#9;color: white;&#10;&#9;-webkit-border-radius: 2px;&#10;&#9;border-radius: 2px;&#10;&#9;-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;&#10;&#9;box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">.link &#123;</div><div class="line">	border-style: solid;</div><div class="line">	border-width: 1px;</div><div class="line">	cursor: pointer;</div><div class="line">	font-family: inherit;</div><div class="line">	font-weight: bold;</div><div class="line">	line-height: normal;</div><div class="line">	margin: 0 0 1.25em;</div><div class="line">	position: relative;</div><div class="line">	text-decoration: none;</div><div class="line">	text-align: center;</div><div class="line">	display: inline-block;</div><div class="line">	padding-top: 1em;</div><div class="line">	padding-right: 2em;</div><div class="line">	padding-bottom: 1.0625em;</div><div class="line">	padding-left: 2em;</div><div class="line">	font-size: 1.25em;</div><div class="line">	background-color: #ca2727;</div><div class="line">	border-color: #9f1f1f;</div><div class="line">	color: white;</div><div class="line">	-webkit-border-radius: 2px;</div><div class="line">	border-radius: 2px;</div><div class="line">	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;</div><div class="line">	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>虽然你会看到Sass很多似乎是种超前语言,它实际上是能够正确地编译尽管只是写了几行的代码。结构比CSS有稍微增强。如果你被感到迷惑，你在需要时，可以使用SCSS。</p>
 <p>##单位计算器</p>
 <p>最后,Sass少写的功能之一就是能够添加函数到样式表中。这些不是动态页面函数(运行时编译Sass代码)却节省更多的时间。</p>
 <p>例如，在Foundation中有个整洁的函数是用来将px转换为em。这对响应式网站来说是很有趣的，通过如下简单的设置em默认值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$em-base: 16px!default;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$em-base: 16px!default;</div></pre></td></tr></table></figure>
 <p>然后，每当你想使用em值,你通常需要计算px（像素）转化为em值。示例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">height:em-calc(46);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">height:em-calc(46);</div></pre></td></tr></table></figure>
 <p>“46”是像素，“em-cal”是函数，在你的Sass代码都可以使用这个函数。</p>
 <p>##有用的工具</p>
 <p>在上一篇文章中，我推荐了Sass编译器，对手动编译有巨大的好处。这次我将推荐一个几乎对所有的项目都是很有用的工具。</p>
@@ -273,18 +274,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/初学foundation之joyride，交互，表格和面板.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/再说等高列布局、水平垂直居中与置顶页脚.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          初学Foundation之Joyride，交互，表格和面板
+          再说等高列布局、水平垂直居中与置顶页脚
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/再说等高列布局、水平垂直居中与置顶页脚.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">再说等高列布局、水平垂直居中与置顶页脚</div>
+    <a href="/2014/09/20/前端/初学foundation之joyride，交互，表格和面板.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初学Foundation之Joyride，交互，表格和面板</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -330,8 +331,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

@@ -20,13 +20,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为什么要用和如何使用字体图标">
 <meta name="twitter:description" content="图片是有诸多优点的，然而目前在网站设计这行业面临各种各样的挑战。图片不但增加了总文件的大小，还增加了很多额外的”http请求”，这都会大大降低网页的性能的。图片还有一个缺点就是不能很好的进行“缩放”，因此，有时候在“响应式设计”中需要使用图像的最好解决方案就是不去使用图片。">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/icon-fonts-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -238,33 +239,33 @@
 </ul>
 <p>###把字符直接写在html文件里</p>
 <p>这个方法是简单而且直观的，见如下代码，我用一个<code>&lt;span&gt;</code>元素去包含一个字符“s”(即是字母“s”)，然后给这个<code>&lt;span&gt;</code>添加一个类。这个字母在选定的字体中被映射到一个特定的图标。</p>
-<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"shopping-cart.php"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"icon"</span>&gt;</span>s<span class="tag">&lt;/<span class="title">span</span>&gt;</span> View Cart<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<pre><code>&lt;a href=&quot;shopping-cart.php&quot;&gt;&lt;span class=&quot;icon&quot;&gt;s&lt;/span&gt; View Cart&lt;/a&gt;
 </code></pre><p>为了显示效果，还需要编写样式类：<code>.icon</code>来决定此字符以哪种字体风格来显示，如下：</p>
-<pre><code><span class="class">.icon</span> <span class="rules">{<span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">'your-chosen-icon-font'</span></span></span>;}</span>
+<pre><code>.icon {font-family: &apos;your-chosen-icon-font&apos;;}
 </code></pre><p>这是个简单的例子，但是通常你用<a href="http://www.vanseodesign.com/web-design/semantic-html/" target="_blank" rel="external">字母当作为字符</a>的时候，携带的信息量是较少的。字母是可以被屏幕阅读器读取到的，往往有时候你只是想仅作为图片被看到而已，会有那么一群人（如视障人士）是需要听内容的。</p>
 <p><a href="http://www.fontsquirrel.com/fonts/modern-pictograms" target="_blank"><img alt="为什么要用和如何使用字体图标" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/icon-fonts-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
 
 <p>###使用css来生成内容</p>
 <p>让我们更深入点，不直接在html文件里添加字符，我们用css来生成字符内容。见代码如下：</p>
-<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"shopping-cart.php"</span> <span class="attribute">class</span>=<span class="value">"icon cart"</span>&gt;</span> View Cart<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<pre><code>&lt;a href=&quot;shopping-cart.php&quot; class=&quot;icon cart&quot;&gt; View Cart&lt;/a&gt;
 </code></pre><p>可以看出，我添加了一个类名“cart”。神奇的就事就发生在css中，跟上面一样，第一步先定义好字体,然后我们可以使用<code>:before</code>伪元素来产生字符图标，其中“before”表示字符出现在左边，“after”则出现在右边。</p>
-<pre><code><span class="class">.icon</span> <span class="rules">{ <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">'your-chosen-icon-font'</span></span></span>;}</span>  <span class="class">.cart</span><span class="pseudo">:before</span> <span class="rules">{<span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">"s"</span></span></span>; }</span>
+<pre><code>.icon { font-family: &apos;your-chosen-icon-font&apos;;}  .cart:before {content: &quot;s&quot;; }
 </code></pre><p>同样是需要使用字母<code>s</code>来映射出图标，只不过区别是移除了HTML标签换用了CSS样式实现。这是好事，但是，屏幕阅读器还是会读出字母的，这样子也不是很好。</p>
 <p>###用“data-icon”属性</p>
 <p>一个跟上面<a href="http://24ways.org/2011/displaying-icons-with-fonts-and-data-attributes" target="_blank" rel="external">相似方法</a>就是使用html5的“data-”属性，接下来我们就创建一个data-icon属性。</p>
-<pre><code>&lt;<span class="tag">a</span> href=<span class="string">"shopping-cart.php"</span> class=<span class="string">"icon"</span> data-<span class="attribute">icon</span>=<span class="string">"s"</span>&gt; View Cart&lt;/a&gt;
+<pre><code>&lt;a href=&quot;shopping-cart.php&quot; class=&quot;icon&quot; data-icon=&quot;s&quot;&gt; View Cart&lt;/a&gt;
 </code></pre><p>跟上面一样，我们也将添加需要的字体font-family，然后我们通过使用data-icon来创建字母（字符），如：</p>
-<pre><code><span class="class">.icon</span> <span class="rules">{<span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">'your-chosen-icon-font'</span></span></span>;}</span> <span class="class">.icon</span><span class="pseudo">:before</span> <span class="rules">{<span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="function">attr</span>(data-icon)</span></span>;}</span>
+<pre><code>.icon {font-family: &apos;your-chosen-icon-font&apos;;} .icon:before {content: attr(data-icon);}
 </code></pre><p>但是这些写还是会出现跟上面一样的问题，屏幕阅读器还是会读出字母的。</p>
 <iframe width="465" height="262" src="http://www.youtube.com/embed/1JnrmmcoLSM?rel=0" frameborder="0" allowfullscreen></iframe>
 
 <p>###更好的 Data-Icon 方法</p>
 <p>尝试去优化上面提到的<a href="http://yatil.net/a-better-way-to-use-icon-fonts" target="_blank" rel="external">Data-Icon方法</a>，Chris Coyier就给出两个方法，一种是用类似的图标代表某个字符；另外一种是就直接使用标准的图标图片。</p>
 <p>这里就展示第一种的做法，我们给当前元素添加一个新的属性：<code>aria-hidden</code>，并赋值为“true”。</p>
-<pre><code>&lt;<span class="tag">a</span> href=<span class="string">"shopping-cart.php"</span>&gt;&lt;<span class="tag">span</span> aria-hidden=<span class="string">"true"</span> data-<span class="attribute">icon</span>=<span class="string">"s"</span>&gt;&lt;/span&gt;View Cart&lt;/a&gt;
+<pre><code>&lt;a href=&quot;shopping-cart.php&quot;&gt;&lt;span aria-hidden=&quot;true&quot; data-icon=&quot;s&quot;&gt;&lt;/span&gt;View Cart&lt;/a&gt;
 </code></pre><p><code>aria-hidden=”true”</code>是为了防止被阅读器直接把字符读取出来，但是也不是对所有的平台都奏效。</p>
 <p>再结合一些搭配使用的css属性，可以写成如下代码：</p>
-<pre><code><span class="attr_selector">[data-icon]</span><span class="pseudo">:before</span> <span class="rules">{<span class="rule"><span class="attribute">font-family</span>:<span class="value"> your-chosen-font</span></span>; <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="function">attr</span>(data-icon)</span></span>;<span class="rule"><span class="attribute">speak</span>:<span class="value"> none</span></span>;}</span>
+<pre><code>[data-icon]:before {font-family: your-chosen-font; content: attr(data-icon);speak: none;}
 </code></pre><p>最后一个 <code>speak: none</code>，其实具体作用不是很可靠的，写上这个只是为了以防万一，能够用上，就可以派上用场了。你还可以从Chris Coyier的一篇文章<a href="http://css-tricks.com/html-for-icon-font-usage/" target="_blank" rel="external">post describing both methods</a>看到上面所有讲到的例子，可以学习到更多。</p>
 <p><a href="http://www.vanseodesign.com/web-design/icon-fonts/www.flickr.com/photos/cimatti/433566504/" target="_blank"><img alt="为什么要用和如何使用字体图标" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/styles/print_image/public/blogs/2013/1310/icon-fonts-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></a></p>
 
@@ -325,18 +326,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/从头开始构建一个html电子邮件模板.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/mac常用命令.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          从头开始构建一个HTML电子邮件模板
+          Mac常用命令
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/七个高度有效的媒体查询技巧.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">七个高度有效的媒体查询技巧</div>
+    <a href="/2014/09/20/前端/从头开始构建一个html电子邮件模板.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从头开始构建一个HTML电子邮件模板</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -382,8 +383,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -202,11 +202,11 @@
         <p>在本系列的<a href="http://www.w3cplus.com/responsive/responsive-gilt-com-block-vs-in-selector-media.html" target="_blank" rel="external">第二篇文章中</a>，我的同事Greg Mazurek讲了为什么在项目使用“在选择器内使用媒体查询”。采用这种模式的好处就是在未来开发中代码可维护性更强。那么，接下来我将讨论我们如何把相同的原则应用到测试实践中来。<br><a id="more"></a><br>我们曾认真思考过——如何减少代码量，甚至可以避免在未来发生的不利变化。Gilt开发团队使用自动化测试来测试所有的app，不幸的是，其中很多测试都已不再适用此时的响应式设计环境，因为一些页面元素已被移动、隐藏、改变或者添加。此外，如果开发人员想改变CSS属性来增强平板上体验，却又担心是否影响了手机用户的体验。修改类名称，js功能修改或者指定CSS修改都可能导致不好的后果。</p>
 <p>为了解决这类问题，特别行动小组已经写了Selenium自动化测试来测试响应式页面——具体点，是去测试每个响应断点。（Selenium是一个允许你在浏览器里自动化应用的web测试框架，健壮的API能够像用户那样与你的页面做交互，并且能够处理大部分自动化情景）首先，要有一个预设某断点视图的浏览器作为测试——例如，iPhone竖屏的最大宽度为479px，然而当横屏时，视图最小宽度为480px，最大宽度为767px。Selenium通过web驱动对象是很容易做到的。</p>
 <p>代码演示如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def resizeWindow(width: Int, height: Int)(implicit webDriver: WebDriver) = &#123; webDriver.manage().window().setSize(new org.openqa.selenium.Dimension(width, height)) &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">def resizeWindow(width: Int, height: Int)(implicit webDriver: WebDriver) = &#123; webDriver.manage().window().setSize(new org.openqa.selenium.Dimension(width, height)) &#125;</div></pre></td></tr></table></figure>
 <p>上面的代码块会在每个测试开始之前被执行。在页面被加载之前执行它,不是之后，会根据相应的断点（不进行缩放页面，但可能引起一些视图问题）进行适应。在初始页面被加载之前执行代码，有助于确保自动化在浏览器完成缩放之后启动。</p>
 <p>##举个例子</p>
 <p>为了确保页面能够响应于屏幕或者设备的视窗，这里有一个基础的测试。它是用Selenium写的缩放测试，还有一些jQuery代码（其实有很多方法来测试，可我更喜欢这种）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe(&#34;When resizing the browser to 479px and navigating to product listing page&#34;) &#123;&#10;&#9;it(&#34;should fit all the elements within the 479px limit&#34;) &#123;&#10;&#9;&#9;val expectedPageWidth = 479&#10;&#9;&#9;resizeWindow(width = expectedPageWidth, height = 800)&#10;&#9;&#9;webDriver.navigate().to(&#34;http://www.gilt.com/sale/men&#34;)&#10;&#9;&#9;// Using scrollWidth instead of width(), to get the true width of the html container&#10;&#9;&#9;val actualPageWidth =&#10;&#9;&#9;webDriver.asInstanceOf[JavascriptExecutor]&#10;&#9;&#9;.executeScript(&#34;return $(&#39;html&#39;)[0].scrollWidth;&#34;).asInstanceOf[Long]&#10;&#9;&#9; actualPageWidth.toInt should be &#60;= expectedPageWidth&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">describe(&quot;When resizing the browser to 479px and navigating to product listing page&quot;) &#123;</div><div class="line">	it(&quot;should fit all the elements within the 479px limit&quot;) &#123;</div><div class="line">		val expectedPageWidth = 479</div><div class="line">		resizeWindow(width = expectedPageWidth, height = 800)</div><div class="line">		webDriver.navigate().to(&quot;http://www.gilt.com/sale/men&quot;)</div><div class="line">		// Using scrollWidth instead of width(), to get the true width of the html container</div><div class="line">		val actualPageWidth =</div><div class="line">		webDriver.asInstanceOf[JavascriptExecutor]</div><div class="line">		.executeScript(&quot;return $(&apos;html&apos;)[0].scrollWidth;&quot;).asInstanceOf[Long]</div><div class="line">		 actualPageWidth.toInt should be &lt;= expectedPageWidth</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>（备注：你的页面不应该可以向右滑动）</p>
 <p>这就是我要讲的所有知识。如果你没有其他测试，至少这个还可以保证你的网站仍然是响应式的。但是我们还是强烈推荐添加更多对网站功能方面的测试。</p>
 <p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
@@ -224,18 +224,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/响应式网站gilt.com之四：full-screen_modal.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/响应式网站gilt.com之一：回顾总结.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          响应式网站Gilt.com之四：Full-Screen Modal
+          响应式网站Gilt.com之一：回顾&amp;总结
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/响应式网站gilt.com之一：回顾总结.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">响应式网站Gilt.com之一：回顾&amp;总结</div>
+    <a href="/2014/09/20/前端/响应式网站gilt.com之四：full-screen_modal.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式网站Gilt.com之四：Full-Screen Modal</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -281,8 +281,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

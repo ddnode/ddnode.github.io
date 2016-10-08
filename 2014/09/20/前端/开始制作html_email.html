@@ -37,13 +37,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开始制作HTML Email">
 <meta name="twitter:description" content="向用户发布最新的更新、业务或产品，HTML电子邮件是一个最好的方式，但他们有点棘手。电子邮件客户端对CSS的支持不一致。因此我们必须借助于老的技术，如使用表格和内联CSS。今天，我将不可的大家一起创建一个简单的HTML电子邮件。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -258,28 +259,28 @@
 <p>###设置</p>
 <p>设置电子邮件很简单：只包括了<code>html</code>、<code>head</code>和<code>body</code>标记。让我们在表容器中放置我们之前讨论的三个主要表格。</p>
 <p>对于DOCTYPE布言，有几种不同的方法，在这<a href="http://www.campaignmonitor.com/blog/post/3317/correct-doctype-to-use-in-html-email/" target="_blank" rel="external">文章</a>中做过详细的介绍。在我们的这个例子中，我决定不使用任何文档类型，因为我们不需要任何DOCTYPE声明的任何东西。在大多数情况下，电子邮件客户端会删除我们自定义的DOCTYPE类型。</p>
-<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">title</span>&gt;</span>Nettuts Email Newsletter<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">width</span>=<span class="value">"100%"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">bgcolor</span>=<span class="value">"e4e4e4"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"top-message"</span> <span class="attribute">cellpadding</span>=<span class="value">"20"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"600"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- top message --&gt;</span>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+        &lt;title&gt;Nettuts Email Newsletter&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; bgcolor=&quot;e4e4e4&quot;&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;table id=&quot;top-message&quot; cellpadding=&quot;20&quot; cellspacing=&quot;0&quot; width=&quot;600&quot; align=&quot;center&quot;&gt;
+&lt;/table&gt;&lt;!-- top message --&gt;
 
-                    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"main"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"15"</span> <span class="attribute">bgcolor</span>=<span class="value">"ffffff"</span> <span class="attribute">width</span>=<span class="value">"600"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- main --&gt;</span>
+                    &lt;table id=&quot;main&quot; cellpadding=&quot;0&quot; cellspacing=&quot;15&quot; bgcolor=&quot;ffffff&quot; width=&quot;600&quot; align=&quot;center&quot;&gt;
+&lt;/table&gt;&lt;!-- main --&gt;
 
-                    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"bottom-message"</span> <span class="attribute">cellpadding</span>=<span class="value">"20"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"600"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- bottom message --&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- wrapper --&gt;</span>
-    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+                    &lt;table id=&quot;bottom-message&quot; cellpadding=&quot;20&quot; cellspacing=&quot;0&quot; width=&quot;600&quot; align=&quot;center&quot;&gt;
+&lt;/table&gt;&lt;!-- bottom message --&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;&lt;!-- wrapper --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
 </code></pre><p>注意两个信息的表格设置了<code>cellpadding</code>值为20px。这将设置了主内容中段落的空间。主表格设置了15px的<code>cellspacing</code>。这是为了在垂直方向有一个间距。因为每个部分都放置在表格的单元格里，他们之间设置了一个15px的间距。</p>
 <p>还要注意，表格都设置了<code>align=&quot;center&quot;</code>和我们都定义了表格的宽度。在HTML电子邮件中，一般最好不要给表容器定义宽度。你最好为每个单元格定义宽度，但在这种情况下，我们将打破这个规则，因为我们担心表格有<code>cellspacing</code>和<code>cellpadding</code>。</p>
 <blockquote>
@@ -287,31 +288,31 @@
 </blockquote>
 <p>###信息表格</p>
 <p>这些非常简单：段落在单元格中居中显示。</p>
-<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"top-message"</span> <span class="attribute">cellpadding</span>=<span class="value">"20"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"600"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">td</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">p</span>&gt;</span>Trouble viewing this email? <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>View in Browser<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- top message --&gt;</span>
+<pre><code>&lt;table id=&quot;top-message&quot; cellpadding=&quot;20&quot; cellspacing=&quot;0&quot; width=&quot;600&quot; align=&quot;center&quot;&gt;
+    &lt;tr&gt;
+        &lt;td align=&quot;center&quot;&gt;
+            &lt;p&gt;Trouble viewing this email? &lt;a href=&quot;#&quot;&gt;View in Browser&lt;/a&gt;&lt;/p&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;&lt;!-- top message --&gt;
 </code></pre><p>底部的信息表格和这个完全一样。</p>
 <p>###头部</p>
 <p>头部非常简单，有三行，每行一列。因为我们表格有蓝色背景，我们需要给每个表格的单元格设置一些内距，让文本不挨着边框。</p>
-<pre><code><span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"header"</span> <span class="attribute">cellpadding</span>=<span class="value">"10"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"570"</span> <span class="attribute">bgcolor</span>=<span class="value">"7aa7e9"</span>&gt;</span><span class="tag">&lt;<span class="title">h1</span>&gt;</span>Communitech Venture Services<span class="tag">&lt;/<span class="title">h1</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"570"</span> <span class="attribute">bgcolor</span>=<span class="value">"8fb3e9"</span>&gt;</span><span class="tag">&lt;<span class="title">h2</span>&gt;</span>News and Events<span class="tag">&lt;/<span class="title">h2</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"570"</span> <span class="attribute">align</span>=<span class="value">"right"</span> <span class="attribute">bgcolor</span>=<span class="value">"7aa7e9"</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>July 2010<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- header --&gt;</span>
-    <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="comment">&lt;!-- header --&gt;</span>
+<pre><code>&lt;tr&gt;
+    &lt;td&gt;
+        &lt;table id=&quot;header&quot; cellpadding=&quot;10&quot; cellspacing=&quot;0&quot; align=&quot;center&quot;&gt;
+            &lt;tr&gt;
+                &lt;td width=&quot;570&quot; bgcolor=&quot;7aa7e9&quot;&gt;&lt;h1&gt;Communitech Venture Services&lt;/h1&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td width=&quot;570&quot; bgcolor=&quot;8fb3e9&quot;&gt;&lt;h2&gt;News and Events&lt;/h2&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td width=&quot;570&quot; align=&quot;right&quot; bgcolor=&quot;7aa7e9&quot;&gt;&lt;p&gt;July 2010&lt;/p&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;&lt;!-- header --&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;&lt;!-- header --&gt;
 </code></pre><p>记得要设置每个单元格的宽度，在本例中是570px（600px - 两边单元格各15px）。我们还设置了<code>align</code>属性为<code>right</code>，让日期向右对齐。现在，我们还没有添加背景图片，不过我们稍后会这么做。同时我们给单元格设置浅蓝色背景。</p>
 <p>请注意，我们使用<code>bgcolor</code>来替找<code>style=&quot;background:&quot;</code>。这是因为在电子邮件客户端中HTML属性要比CSS样式更好。</p>
 <p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-4.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
@@ -325,29 +326,29 @@
 </ul>
 <p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-5.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
 <p>图像有边框效果，我们将在单元格内嵌套一个表格，前且设置表格的<code>cellpadding=&quot;5&quot;</code>，同时给他设置一个灰色的背景色。<code>cellpadding</code>增加了元素的宽度，所以我们在定义单元格宽度的时候需要减云10px。</p>
-<pre><code><span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-<span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"content-1"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"170"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">cellpadding</span>=<span class="value">"5"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"d0d0d0"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"http://dummyimage.com/170x120/e9e9e9/fff"</span> /&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"15"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"375"</span> <span class="attribute">valign</span>=<span class="value">"top"</span> <span class="attribute">colspan</span>=<span class="value">"3"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">h3</span>&gt;</span>All New Site Design<span class="tag">&lt;/<span class="title">h3</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>It's 150% Better and 40% More Efficient!<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- content 1 --&gt;</span>
-    <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="comment">&lt;!-- content 1 --&gt;</span>
+<pre><code>&lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;
+        &lt;table id=&quot;content-1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; align=&quot;center&quot;&gt;
+            &lt;tr&gt;
+                &lt;td width=&quot;170&quot; valign=&quot;top&quot;&gt;
+                    &lt;table cellpadding=&quot;5&quot; cellspacing=&quot;0&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;td bgcolor=&quot;d0d0d0&quot;&gt;&lt;img src=&quot;http://dummyimage.com/170x120/e9e9e9/fff&quot; /&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/td&gt;
+                &lt;td width=&quot;15&quot;&gt;&lt;/td&gt;
+                &lt;td width=&quot;375&quot; valign=&quot;top&quot; colspan=&quot;3&quot;&gt;
+                    &lt;h3&gt;All New Site Design&lt;/h3&gt;
+                    &lt;h4&gt;It&apos;s 150% Better and 40% More Efficient!&lt;/h4&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;&lt;!-- content 1 --&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;&lt;!-- content 1 --&gt;
 </code></pre><p>####注意：</p>
 <ul>
 <li>我们添加一个空行。因为我们内容有15px的间距，我们使用一个空的单元格来制作这个间距。在我的测试中，这个空格没有问题，但你最好在单元格中添加一个空白的符号<code>&amp;nbsp;</code></li>
@@ -356,121 +357,121 @@
 </ul>
 <p>###内容区域——一列</p>
 <p>这一部分真的很简单：单列的表格里面放了一个段落。不要忘记了设置单元格的宽度和设置表中心对齐。</p>
-<pre><code><span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"content-2"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"570"</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>Lorem ipsum dol...<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- content-2 --&gt;</span>
-    <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="comment">&lt;!-- content-2 --&gt;</span>
+<pre><code>&lt;tr&gt;
+    &lt;td&gt;
+        &lt;table id=&quot;content-2&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; align=&quot;center&quot;&gt;
+            &lt;tr&gt;
+                &lt;td width=&quot;570&quot;&gt;&lt;p&gt;Lorem ipsum dol...&lt;/p&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;&lt;!-- content-2 --&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;&lt;!-- content-2 --&gt;
 </code></pre><p>###分割器</p>
 <p>添加垂直空间的单元格间距(超过15px)时，我们必须使用一个图像来模拟制作间隔。就像90年代一样！我们可以使用一个空白的gif，但目前只需要使用一个虚拟的图像，你可以看到一开始是灰色的，但后来我们把设置成白色的。</p>
-<pre><code><span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span> <span class="attribute">height</span>=<span class="value">"30"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"http://dummyimage.com/570x30/e9e9e9/fff"</span> /&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<pre><code>&lt;tr&gt;
+    &lt;td height=&quot;30&quot;&gt;&lt;img src=&quot;http://dummyimage.com/570x30/e9e9e9/fff&quot; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
 </code></pre><p>效果如下图所示：</p>
 <p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-6.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
 <p>###内容区域——三列</p>
 <p>对于三列内容区域，我们使用一个具有五个单元格的表格，每一个单元格为一列，两列之间的单元格用来制作间距。</p>
 <p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-7.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
-<pre><code><span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"content-3"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"180"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">cellpadding</span>=<span class="value">"5"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"d0d0d0"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"http://dummyimage.com/170x120/e9e9e9/fff"</span> /&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"15"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"180"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">cellpadding</span>=<span class="value">"5"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"d0d0d0"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"http://dummyimage.com/170x120/e9e9e9/fff"</span> /&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"15"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"180"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">cellpadding</span>=<span class="value">"5"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"d0d0d0"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"http://dummyimage.com/170x120/e9e9e9/fff"</span> /&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- content-3 --&gt;</span>
-    <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="comment">&lt;!-- content-3 --&gt;</span>
+<pre><code>&lt;tr&gt;
+    &lt;td&gt;
+        &lt;table id=&quot;content-3&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; align=&quot;center&quot;&gt;
+            &lt;tr&gt;
+                &lt;td width=&quot;180&quot; valign=&quot;top&quot;&gt;
+                    &lt;table cellpadding=&quot;5&quot; cellspacing=&quot;0&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;td bgcolor=&quot;d0d0d0&quot;&gt;&lt;img src=&quot;http://dummyimage.com/170x120/e9e9e9/fff&quot; /&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/td&gt;
+                &lt;td width=&quot;15&quot;&gt;&lt;/td&gt;
+                &lt;td width=&quot;180&quot; valign=&quot;top&quot;&gt;
+                    &lt;table cellpadding=&quot;5&quot; cellspacing=&quot;0&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;td bgcolor=&quot;d0d0d0&quot;&gt;&lt;img src=&quot;http://dummyimage.com/170x120/e9e9e9/fff&quot; /&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/td&gt;
+                &lt;td width=&quot;15&quot;&gt;&lt;/td&gt;
+                &lt;td width=&quot;180&quot; valign=&quot;top&quot;&gt;
+                    &lt;table cellpadding=&quot;5&quot; cellspacing=&quot;0&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;td bgcolor=&quot;d0d0d0&quot;&gt;&lt;img src=&quot;http://dummyimage.com/170x120/e9e9e9/fff&quot; /&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;&lt;!-- content-3 --&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;&lt;!-- content-3 --&gt;
 </code></pre><p>很简单，使用前面介绍的方法一样，实现边框效果。别忘记了给单元格添加<code>align=&quot;top&quot;</code>。</p>
 <p>三个文本列制作是相同的。</p>
-<pre><code><span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"content-4"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"180"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">h5</span>&gt;</span>Exciting New Products!<span class="tag">&lt;/<span class="title">h5</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">p</span>&gt;</span> Ut enim ad minim veniam, ...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"15"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"180"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">h5</span>&gt;</span>A Newsletter Every Month<span class="tag">&lt;/<span class="title">h5</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">p</span>&gt;</span>Excepteur sint occaecat ...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"15"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"180"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">h5</span>&gt;</span>New and Improved Forum<span class="tag">&lt;/<span class="title">h5</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">p</span>&gt;</span>Lorem ipsum dolor sit ...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- content-4 --&gt;</span>
-    <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="comment">&lt;!-- content-4 --&gt;</span>
+<pre><code>&lt;tr&gt;
+    &lt;td&gt;
+        &lt;table id=&quot;content-4&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; align=&quot;center&quot;&gt;
+            &lt;tr&gt;
+                &lt;td width=&quot;180&quot; valign=&quot;top&quot;&gt;
+                    &lt;h5&gt;Exciting New Products!&lt;/h5&gt;
+                    &lt;p&gt; Ut enim ad minim veniam, ...&lt;/p&gt;
+                &lt;/td&gt;
+                &lt;td width=&quot;15&quot;&gt;&lt;/td&gt;
+                &lt;td width=&quot;180&quot; valign=&quot;top&quot;&gt;
+                    &lt;h5&gt;A Newsletter Every Month&lt;/h5&gt;
+                    &lt;p&gt;Excepteur sint occaecat ...&lt;/p&gt;
+                &lt;/td&gt;
+                &lt;td width=&quot;15&quot;&gt;&lt;/td&gt;
+                &lt;td width=&quot;180&quot; valign=&quot;top&quot;&gt;
+                    &lt;h5&gt;New and Improved Forum&lt;/h5&gt;
+                    &lt;p&gt;Lorem ipsum dolor sit ...&lt;/p&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;&lt;!-- content-4 --&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;&lt;!-- content-4 --&gt;
 </code></pre><p>使用前面介绍的方法，在底部添加另一个分隔器。</p>
 <p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-8.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
 <p>###其他</p>
 <p>一切只是重复我们已经做好的两列内容和一列内容。</p>
-<pre><code><span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"content-5"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"267"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">cellpadding</span>=<span class="value">"5"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">bgcolor</span>=<span class="value">"d0d0d0"</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">td</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"http://dummyimage.com/267x200/e9e9e9/fff"</span> /&gt;</span>
-                            <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"15"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span> <span class="attribute">width</span>=<span class="value">"278"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>This is a heading<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">p</span>&gt;</span>Lorem ipsum dolor sit...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span><span class="comment">&lt;!-- content-5 --&gt;</span>
-    <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="comment">&lt;!-- content-5 --&gt;</span>
-<span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span> <span class="attribute">height</span>=<span class="value">"30"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"http://dummyimage.com/570x30/e9e9e9/fff"</span> /&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-<span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"content-6"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">p</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>Lorem ipsum dolor si... <span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">p</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>CALL TO ACTION<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<pre><code>&lt;tr&gt;
+    &lt;td&gt;
+        &lt;table id=&quot;content-5&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; align=&quot;center&quot;&gt;
+            &lt;tr&gt;
+                &lt;td width=&quot;267&quot; valign=&quot;top&quot;&gt;
+                    &lt;table cellpadding=&quot;5&quot; cellspacing=&quot;0&quot; bgcolor=&quot;d0d0d0&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;
+                            &lt;img src=&quot;http://dummyimage.com/267x200/e9e9e9/fff&quot; /&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/td&gt;
+                &lt;td width=&quot;15&quot;&gt;&lt;/td&gt;
+                &lt;td width=&quot;278&quot; valign=&quot;top&quot;&gt;
+                    &lt;h4&gt;This is a heading&lt;/h4&gt;
+                    &lt;p&gt;Lorem ipsum dolor sit...&lt;/p&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;&lt;!-- content-5 --&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;&lt;!-- content-5 --&gt;
+&lt;tr&gt;
+    &lt;td height=&quot;30&quot;&gt;&lt;img src=&quot;http://dummyimage.com/570x30/e9e9e9/fff&quot; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;
+        &lt;table id=&quot;content-6&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; align=&quot;center&quot;&gt;
+            &lt;tr&gt;
+                &lt;/td&gt;
+                    &lt;p align=&quot;center&quot;&gt;Lorem ipsum dolor si... &lt;/p&gt;
+                    &lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;#&quot;&gt;CALL TO ACTION&lt;/a&gt;&lt;/p&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
 </code></pre><p>主内容的布局到此就完成：</p>
 <p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-9.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
 <p>##图片的使用</p>
@@ -487,71 +488,71 @@
 <p>###重置基本样式</p>
 <p>我们不会在你喜欢的页面中强硬的使用<code>*</code>选择器来重置样式。因为使用默认的值会让效果更佳一致。唯一的就是我们需要重置元素（如我们的标题和段落）的<code>margin</code>和<code>padding</code>，让元素周围空间一致(如<code>cellpadding</code>/<code>cellspacing</code>)。</p>
 <p>您还将注意到表容器周边有一个空白的间距，这是<code>body</code>元素默认的样式。</p>
-<pre><code><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
-    <span class="tag">body</span>, <span class="id">#header</span> <span class="tag">h1</span>, <span class="id">#header</span> <span class="tag">h2</span>, <span class="tag">p</span> <span class="rules">{<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;}</span>
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    body, #header h1, #header h2, p {margin: 0; padding: 0;}
+&lt;/style&gt;
 </code></pre><p>###排版</p>
 <p>对于电子邮件的排版没有什么很特别，因为它和Web页面的文字排版几乎是一样的。不要使用简写的声明(如，font)，因为在不同的电子邮件客户端会产生不一致的结果。</p>
-<pre><code><span class="id">#top-message</span> <span class="tag">p</span>,
-<span class="id">#bottom-message</span> <span class="tag">p</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#3f4042</span></span></span>;
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">12px</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial, Helvetica, sans-serif</span></span>;
-}</span>
-<span class="id">#header</span> <span class="tag">h1</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#ffffff</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">"Lucida Grande"</span>, <span class="string">"Lucida Sans"</span>, <span class="string">"Lucida Sans Unicode"</span>, sans-serif</span></span>;
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24px</span></span></span>;
-}</span>
-<span class="id">#header</span> <span class="tag">h2</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#ffffff</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial, Helvetica, sans-serif</span></span>;
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24px</span></span></span>;
-}</span>
-<span class="id">#header</span> <span class="tag">p</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#ffffff</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">"Lucida Grande"</span>, <span class="string">"Lucida Sans"</span>, <span class="string">"Lucida Sans Unicode"</span>, sans-serif</span></span>;
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">12px</span></span></span>;
-}</span>
-<span class="tag">h3</span> <span class="rules">{
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">28px</span></span></span>;
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#444444</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial, Helvetica, sans-serif</span></span>;
-}</span>
-<span class="tag">h4</span> <span class="rules">{
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">22px</span></span></span>;
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#4A72AF</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial, Helvetica, sans-serif</span></span>;
-}</span>
-<span class="tag">h5</span> <span class="rules">{
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">18px</span></span></span>;
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#444444</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial, Helvetica, sans-serif</span></span>;
-}</span>
-<span class="tag">p</span> <span class="rules">{
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">12px</span></span></span>;
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#444444</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">"Lucida Grande"</span>, <span class="string">"Lucida Sans"</span>, <span class="string">"Lucida Sans Unicode"</span>, sans-serif</span></span>;
-    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">1.5</span></span></span>;
-}</span>
-<span class="tag">h1</span>, <span class="tag">h2</span>, <span class="tag">h3</span>, <span class="tag">h4</span>, <span class="tag">h5</span>, <span class="tag">h6</span> <span class="rules">{
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">0.8em</span> <span class="number">0</span></span></span>;
-}</span>
+<pre><code>#top-message p,
+#bottom-message p {
+    color: #3f4042;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#header h1 {
+    color: #ffffff;
+    font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, &quot;Lucida Sans Unicode&quot;, sans-serif;
+    font-size: 24px;
+}
+#header h2 {
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+#header p {
+    color: #ffffff;
+    font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, &quot;Lucida Sans Unicode&quot;, sans-serif;
+    font-size: 12px;
+}
+h3 {
+    font-size: 28px;
+    color: #444444;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h4 {
+    font-size: 22px;
+    color: #4A72AF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h5 {
+    font-size: 18px;
+    color: #444444;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p {
+    font-size: 12px;
+    color: #444444;
+    font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, &quot;Lucida Sans Unicode&quot;, sans-serif;
+    line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.8em 0;
+}
 </code></pre><p>现在这样看起来，效果更好：</p>
 <p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-10.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
 <p>###背景图片</p>
 <p>背景图像在一些电子邮件客户端不能正常显示，如果你需要使用背景图片，最好提供一个备选颜色，把他们应用到一个单元格上。这样一来，不支持显示背景图片的客户端将会显示背景颜色。</p>
-<pre><code>&lt;td style=<span class="string">"background: url(http://tessat.s3.amazonaws.com/email-bg.jpg); "</span> width=<span class="string">"570"</span> <span class="keyword">bgcolor="8fb3e9:&gt;
-</span>    &lt;h2&gt;News <span class="keyword">and </span>Events&lt;/h2&gt;
+<pre><code>&lt;td style=&quot;background: url(http://tessat.s3.amazonaws.com/email-bg.jpg); &quot; width=&quot;570&quot; bgcolor=&quot;8fb3e9:&gt;
+    &lt;h2&gt;News and Events&lt;/h2&gt;
 &lt;/td&gt;
 </code></pre><p>###各种各样的其他样式</p>
 <p>我们需要给每个链接根据客户需要重新设置样式，用来覆盖电子邮件客户默认的样式，并给主体表格设置一个边框。我也还要给图片添加一个<code>display:block</code>，用来解决Outlook和Hotmail电子邮件客户中图片底部增加空白间距的问题。</p>
 <blockquote>
 <p>确保所有图片添加<code>display:block</code>，以防止Outlook和Hotmail电子邮件客户端产生一个怪异的margin。</p>
 </blockquote>
-<pre><code><span class="id">#main</span> <span class="rules">{<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cfcece</span></span></span>;}</span>
-<span class="tag">img</span> <span class="rules">{<span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;}</span>
-<span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#4A72AF</span></span></span>;}</span>
+<pre><code>#main {border: 1px solid #cfcece;}
+img {display: block;}
+a {color: #4A72AF;}
 </code></pre><p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-11.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
 <p>我们完成了比较容易的部分。现在我们需要测试我们制作的电子邮件。</p>
 <p>##步骤五：测试</p>
@@ -598,34 +599,34 @@
 <p>经过全面的考虑，这是一个非常成功的测试，因为我们测试了Outlook和Gmail下的很多元素。我们与老的Gmail和Hotmail的问题相关的客户使用默认样式表。我们使用<code>!important</code>覆盖了标题自带的绿色文本效果。有时候这些效果真的让我们要疯了。</p>
 <p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-20.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
 <p>为了解决这个问题，我们需要给我们带有绿色标题元素添加<code>!important</code>重新设置，覆盖默认的样式。</p>
-<pre><code><span class="tag">h3</span> <span class="rules">{
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">28px</span></span></span>;
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#444444</span> <span class="important">!important</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial, Helvetica, sans-serif</span></span>;
-}</span>
-<span class="tag">h4</span> <span class="rules">{
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">22px</span></span></span>;
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#4A72AF</span> <span class="important">!important</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial, Helvetica, sans-serif</span></span>;
-}</span>
-<span class="tag">h5</span> <span class="rules">{
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">18px</span></span></span>;
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#444444</span> <span class="important">!important</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial, Helvetica, sans-serif</span></span>;
-}</span>
+<pre><code>h3 {
+    font-size: 28px;
+    color: #444444 !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h4 {
+    font-size: 22px;
+    color: #4A72AF !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h5 {
+    font-size: 18px;
+    color: #444444 !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
 </code></pre><p>在老的Gmail邮箱中有一个类似的问题，Gmail会给标题标签底部添加一个<code>margin</code>。我们只需要覆盖<code>margin-bottom</code>样式即可。</p>
-<pre><code><span class="id">#header</span> <span class="tag">h1</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#ffffff</span> <span class="important">!important</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">"Lucida Grande"</span>, <span class="string">"Lucida Sans"</span>, <span class="string">"Lucida Sans Unicode"</span>, sans-serif</span></span>;
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24px</span></span></span>;
-    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">0</span><span class="important">!important</span></span></span>;
-}</span>
-<span class="id">#header</span> <span class="tag">h2</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#ffffff</span> <span class="important">!important</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial, Helvetica, sans-serif</span></span>;
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24px</span></span></span>;
-    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">0</span> <span class="important">!important</span>
-</span></span></span>}
+<pre><code>#header h1 {
+    color: #ffffff !important;
+    font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, &quot;Lucida Sans Unicode&quot;, sans-serif;
+    font-size: 24px;
+    margin-bottom: 0!important;
+}
+#header h2 {
+    color: #ffffff !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    margin-bottom: 0 !important
+}
 </code></pre><p>我们修复hotmail下的效果</p>
 <p><img alt="开始制作HTML Email" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1311/getting-started-html-eamil-21.jpg" style="padding:2px;border:1px solid #ccc;width:600px;"></p>
 <p>所以有一个实用的，一致的HTML电子邮件。这是一件痛苦的事情，但是你得到一个系统就要快得多。尽量保持你的代码有注释和组织结构清晰，以便你以后可以重用。</p>
@@ -668,18 +669,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/开始编写css.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/开始使用grunt.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          开始编写CSS
+          开始使用Grunt
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/开始使用grunt.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">开始使用Grunt</div>
+    <a href="/2014/09/20/前端/引进am-css属性模块.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">引进AM-CSS属性模块</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -725,8 +726,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

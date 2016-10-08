@@ -27,13 +27,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让那些为Webkit优化的网站也能适配IE10">
 <meta name="twitter:description" content="IE10对HTML5的广泛支持确保了你的网站在Windows Phone 8中比以往任何时候都能运行的好。之前，为了支持iOS或Android你可能会把Webkit作为专门优化的目标。现在可以让你为Webkit优化的网站也能轻松适配IE10。这意味着你将维护更少的代码，并且，可以给你的客户一个更好的体验。更让人欣喜的是，这些改变会让你的站点更符合HTML5标准。">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -214,15 +215,15 @@
         <p>IE10对<a href="http://blogs.windows.com/windows_phone/b/wpdev/archive/2012/11/08/internet-explorer-10-brings-html5-to-windows-phone-8-in-a-big-way.aspx" target="_blank" rel="external">HTML5的广泛支持</a>确保了你的网站在Windows Phone 8中比以往任何时候都能运行的好。之前，为了支持iOS或Android你可能会把Webkit作为专门优化的目标。现在可以让你为<a href="http://en.wikipedia.org/wiki/WebKit" target="_blank" rel="external">Webkit</a>优化的网站也能轻松适配IE10。这意味着你将维护更少的代码，并且，可以给你的客户一个更好的体验。更让人欣喜的是，这些改变会让你的站点更符合HTML5标准。<br><a id="more"></a><br>本指南通过一系列的技巧、最佳实践和代码示例来帮助你把专为Webkit优化过的网站更加轻松地适配到IE10。在我们团队与一些颇受欢迎的网站一起合作来把他们为webkit优化的网站适配到IE10的过程中产生了本指南。</p>
 <p>##第一步：检测Windows Phone 8上的IE10</p>
 <p>无论你在客户端还是服务端运行了user-agent（译注：以下统称ua）检测，首先要做的事情就是更新你的检测代码，把IE10和基于Webkit的浏览器同等对待。这是开始调整你的代码来支持IE10的一个基本条件。我们已经发布了一些关于如何使用ua检测IE10的<a href="http://blogs.windows.com/windows_phone/b/wpdev/archive/2012/10/17/getting-websites-ready-for-internet-explorer-10-on-windows-phone-8.aspx" target="_blank" rel="external">最佳实践</a>，然而下面才是我们希望得到的IE10的ua字符串：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; ARM; Touch; IEMobile/10.0; &#60;Manufacturer&#62;; &#60;Device&#62; [;&#60;Operator&#62;])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; ARM; Touch; IEMobile/10.0; &lt;Manufacturer&gt;; &lt;Device&gt; [;&lt;Operator&gt;])</div></pre></td></tr></table></figure>
 <p>处理完ua之后，如果Webkit和IE10之间仍存在着差异并影响到你的网站，那么你可以尝试采用<a href="http://blogs.msdn.com/b/ie/archive/2010/04/14/same-markup-writing-cross-browser-code.aspx" target="_blank" rel="external">特征检测</a>或者其他为跨浏览器而写的最佳实践，而不是用ua检测。尤其重要的是，要在Windows Phone 8上的IE10中使用<a href="http://blogs.windows.com/windows_phone/b/wpdev/archive/2011/10/13/html5-video-support-in-ie9-mobile.aspx" target="_blank" rel="external">HTML5视频</a>而不是基于flash的视频。</p>
 <p>作为第一步工作的一部分，你也应该更新所有的第三方库，比如jQuery Mobile，或者其他第三方提供的服务，确保你能得到他们对浏览器的最新支持。比如，如果你使用了<a href="https://typekit.com/" target="_blank" rel="external">Typekit</a>（译注：一个提供线上字体库的网站）你就要<a href="http://blog.typekit.com/2012/11/01/announcing-windows-phone-8-support/" target="_blank" rel="external">重新发布你的自定义字体套件</a>，或者你给你的视频使用了<a href="http://www.ooyala.com/" target="_blank" rel="external">Ooyala</a>（译注：一个跨平台的视频播放器解决方案），那么你就需要<a href="http://support.ooyala.com/developers/documentation/concepts/player_v3_dev_migrate.html" target="_blank" rel="external">更新到他们最新的播放器</a>。</p>
 <p>##第二步：确保标准模式</p>
 <p>接下来这步是要再次确定一下IE10会在<a href="http://msdn.microsoft.com/en-us/library/ie/hh920756(v=vs.85" target="_blank" rel="external">最符合标准的模式</a>.aspx)下渲染你的网站。使用标准模式会对最新的标准提供最大的支持，比如HTML5，CSS3，SVG等等。相反一些老的模式，比如“怪异模式”（quirks mode），只支持向后兼容。对于大多数网站来说，它们不需要做任何事情，因为默认就是标准模式。最简单的方法就是在每个页面的顶端包含<strong>HTML5 doctype</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div></pre></td></tr></table></figure>
 <p>只要HTML 4.0+和XHTML 1.0+的 doctype不指定“Transitional”，那么它们默认来说也使用标准模式渲染。</p>
 <p>如果你是在局域网（或localhost）测试你的网页，你需要临时强制使用标准模式，因为，IE在内网（intranet）默认使用向后兼容模式。你可以在页面的<code>&lt;head&gt;</code>标签内添加下面的<code>&lt;meta&gt;</code>标签来强制IE使用标准模式，或者添加等效的HTTP头：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=edge&#34; /&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot; /&gt;</div></pre></td></tr></table></figure>
 <p>当你完成开发并把网站部署到因特网上的时候你就可以删除这个<code>&lt;meta&gt;</code>标签，因为现在已经不再需要它了。</p>
 <p>以下的一些场景你应该尽量小心，因为他们会让你的网站失去标准模式：</p>
 <ul>
@@ -250,7 +251,7 @@
 <p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-5.jpg" style="width:560px;"></p>
 <p>###图片超链接的边框</p>
 <p>如果一个图片作为超链接来用，IE在默认情况下会给这个图片加上一个蓝色的高亮边框，目的是强调这是一个超链接；Webkit则不会这么做。有一个简单的办法就是用下面的CSS指明作为超链接的图片不加边框：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a img &#123;&#10;  border: none;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a img &#123;</div><div class="line">  border: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>###边框图片</p>
 <p>IE10目前还不支持border-image。为了保持你的页面布局，我们建议你指定boder-style为solid，这样可以保持边框的宽（width），内边距（padding）和外边距（margin）不变。（如果IE找不到它支持的边框类型，他就会忽略那些值。）例如：</p>
 <p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-6.jpg" style="width:560px;"></p>
@@ -264,13 +265,13 @@
 <p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-8.jpg" style="width:560px;"></p>
 <p>###检测主触点</p>
 <p>如前面所说，指针事件模型为每个触点触发单独的事件。因此，如果你只想处理主触点（比如单指拖动的情况），你就需要在“move”和“up”处理之前使用下面这条语句过滤掉非主触点的触摸点：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (window.navigator.msPointerEnabled &#38;&#38; !event.isPrimary) return;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if (window.navigator.msPointerEnabled &amp;&amp; !event.isPrimary) return;</div></pre></td></tr></table></figure>
 <p>###检索坐标</p>
 <p>因为指针事件模型为每个触点触发单独的事件，所以不需要从一系列的触摸中检索一个具体的索引。可以使用“event”对象中的pageX和pageY直接获取到坐标。并且很容易把它合并到现有的代码中：</p>
 <p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-9.jpg" style="width:560px;"></p>
 <p>###处理鼠标输入</p>
 <p>IE10模型有一个优势即鼠标输入是作为相同的事件来处理的！因此，当鼠标划过某个区域，IE10会触发“move”事件。在单指拖拽这种情况下，你只想处理鼠标按下并移动的事件。你可以使用下面的<a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh466130.aspx[pointerType]()属性在移动（move）事件处理开始前检测它：" target="_blank" rel="external">http://msdn.microsoft.com/en-us/library/windows/apps/hh466130.aspx[pointerType]()属性在移动（move）事件处理开始前检测它：</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (window.navigator.msPointerEnabled &#38;&#38; ((event.pointerType == event.MSPOINTER_TYPE_TOUCH &#38;&#38; event.buttons != 1) || !event.isPrimary)) return;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if (window.navigator.msPointerEnabled &amp;&amp; ((event.pointerType == event.MSPOINTER_TYPE_TOUCH &amp;&amp; event.buttons != 1) || !event.isPrimary)) return;</div></pre></td></tr></table></figure>
 <p>###关闭默认触摸行为</p>
 <p>IE10的指针事件模型要求你明确地指出页面上哪些区域是要用自定义手势处理（使用你刚才添加的代码），哪些是要用默认的手势处理（手指点到页面）。你可以为元素添加-ms-touch-action属性来为他们选择默认的手势处理。例如：</p>
 <p><img alt="让那些为Webkit优化的网站也能适配IE10" data-pinit="registered" src="http://www.w3cplus.com/sites/default/files/blogs/2013/adapting-webkit-optimized-10.jpg" style="width:560px;"></p>
@@ -302,18 +303,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/初学foundation之使用sass和compass配置foundation.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/初学foundation之joyride，交互，表格和面板.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          初学Foundation之使用Sass和Compass配置Foundation
+          初学Foundation之Joyride，交互，表格和面板
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/初学foundation之joyride，交互，表格和面板.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">初学Foundation之Joyride，交互，表格和面板</div>
+    <a href="/2014/09/20/前端/初学foundation之使用sass和compass配置foundation.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初学Foundation之使用Sass和Compass配置Foundation</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -359,8 +360,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

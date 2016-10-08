@@ -20,13 +20,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初学Foundation之Joyride，交互，表格和面板">
 <meta name="twitter:description" content="让我们继续为基于Foundation的项目添加更多的功能，如将学习Joyride插件，该插件帮助引导用户来使用你的站点；还会学习价格表格、标准表格和交换功能：一种新奇响应式图片工具。我们通过一些模版示例，你还可以下载源码来学习如何实现这些特性的。">
+<meta name="twitter:image" content="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -207,50 +208,50 @@
         <p>让我们继续为基于Foundation的项目添加更多的功能，如将学习Joyride插件，该插件帮助引导用户来使用你的站点；还会学习价格表格、标准表格和交换功能：一种新奇响应式图片工具。我们通过一些模版示例，你还可以<a href="http://www.w3cplus.com/sites/default/files/blogs/2013/1312/Foundation-9.zip" target="_blank" rel="external">下载源码</a>来学习如何实现这些特性的。<br><a id="more"></a><br>我们将从最简单的特性（面板）开始讲解。</p>
 <p>##面板</p>
 <p>在任意元素中添加一个类“<code>panel</code>”，就会形成一个简单颜色块。这种“块”显示的盒模型是“<code>border-box</code>”，因此添加<a href="http://hub.tutsplus.com/tutorials/quick-tip-did-internet-explorer-get-the-box-model-right--net-12328" target="_blank" rel="external"><code>padding</code></a>的话，不会添加元素的宽高，只会向内扩展。这样就很方便来控制元素的大小了。</p>
-<pre><code>&lt;<span class="tag">div</span> class=<span class="string">"large-6 columns"</span>&gt;
-    &lt;<span class="tag">div</span> class=<span class="string">"panel"</span>&gt;
-        &lt;<span class="tag">p</span> id=<span class="string">"firstStop"</span>&gt;We have <span class="tag">a</span> simple ...&lt;/p&gt;
+<pre><code>&lt;div class=&quot;large-6 columns&quot;&gt;
+    &lt;div class=&quot;panel&quot;&gt;
+        &lt;p id=&quot;firstStop&quot;&gt;We have a simple ...&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre><p>为了更好地说明，我添加两列，宽度都为“<code>large-6</code>”，一列是图片，一列是面板，这样就可以很好地对齐了。</p>
 <p><img alt="初学Foundation之Joyride，交互，表格和面板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-1.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>##价格表格</p>
 <p>有时候，创建一个网站的一个比较重要的理由就是卖东西，因此，价格表格经常出现在网站上，另外，Foundation也覆盖了这个功能，但和传统表格不一样的是，这些表格实际上就是一个无序列表，搭配指定的类形成的。</p>
-<pre><code>&lt;ul <span class="keyword">class</span>=<span class="string">"pricing-table"</span>&gt;
-    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"title"</span>&gt;Startup&lt;/<span class="keyword">li</span>&gt;
-    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"price"</span>&gt;<span class="label">$9</span>.95&lt;/<span class="keyword">li</span>&gt;
-    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"description"</span>&gt;<span class="keyword">An</span> awesome package to get any company onto their feet. With instant setup and magic money making plugins.&lt;/<span class="keyword">li</span>&gt;
-    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"bullet-item"</span>&gt;1 Database&lt;/<span class="keyword">li</span>&gt;
-    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"bullet-item"</span>&gt;5GB Storage&lt;/<span class="keyword">li</span>&gt;
-    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"bullet-item"</span>&gt;20 Users&lt;/<span class="keyword">li</span>&gt;
-    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"cta-button"</span>&gt;&lt;a <span class="keyword">class</span>=<span class="string">"button round"</span> href=<span class="string">"#"</span>&gt;Buy Now&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;
+<pre><code>&lt;ul class=&quot;pricing-table&quot;&gt;
+    &lt;li class=&quot;title&quot;&gt;Startup&lt;/li&gt;
+    &lt;li class=&quot;price&quot;&gt;$9.95&lt;/li&gt;
+    &lt;li class=&quot;description&quot;&gt;An awesome package to get any company onto their feet. With instant setup and magic money making plugins.&lt;/li&gt;
+    &lt;li class=&quot;bullet-item&quot;&gt;1 Database&lt;/li&gt;
+    &lt;li class=&quot;bullet-item&quot;&gt;5GB Storage&lt;/li&gt;
+    &lt;li class=&quot;bullet-item&quot;&gt;20 Users&lt;/li&gt;
+    &lt;li class=&quot;cta-button&quot;&gt;&lt;a class=&quot;button round&quot; href=&quot;#&quot;&gt;Buy Now&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre><p>从代码示例中可以看到，ul元素有一个类“<code>pricing-table</code>”，然后在li元素中倒使用很多类，包括“<code>title</code>”，“<code>price</code>”,“<code>description</code>”,“<code>bullet-item</code>”和“<code>cta-button</code>”。而你只要做的是，定制你的内容。你应该还会添加多个价格表格来起对比的作用。</p>
 <p><img alt="初学Foundation之Joyride，交互，表格和面板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-2.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>##标准表格</p>
 <p>价格表格作用很大吧，接下来你可以需要一个真的的表格来展示数据，在Foundation中使用表格也是很简单的，首先创建一个table，包含其他元素，而你只要做的只是为每一列设置宽度即可。</p>
-<pre><code><span class="tag">&lt;<span class="title">table</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">thead</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">th</span> <span class="attribute">width</span>=<span class="value">"200"</span>&gt;</span>Startup<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">th</span> <span class="attribute">width</span>=<span class="value">"200"</span>&gt;</span>Enterprise<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">th</span> <span class="attribute">width</span>=<span class="value">"200"</span>&gt;</span>Global Corporation<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">thead</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">td</span>&gt;</span>1 Database<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">td</span>&gt;</span>5 Database<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">td</span>&gt;</span>10 Database<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-        <span class="comment">&lt;!--more rows--&gt;</span>
-        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">td</span>&gt;</span>No Backups<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">td</span>&gt;</span>50GB Backups<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">td</span>&gt;</span>100GB Backups<span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+<pre><code>&lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+              &lt;th width=&quot;200&quot;&gt;Startup&lt;/th&gt;
+              &lt;th width=&quot;200&quot;&gt;Enterprise&lt;/th&gt;
+              &lt;th width=&quot;200&quot;&gt;Global Corporation&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1 Database&lt;/td&gt;
+            &lt;td&gt;5 Database&lt;/td&gt;
+            &lt;td&gt;10 Database&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;!--more rows--&gt;
+        &lt;tr&gt;
+            &lt;td&gt;No Backups&lt;/td&gt;
+            &lt;td&gt;50GB Backups&lt;/td&gt;
+            &lt;td&gt;100GB Backups&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+&lt;/table&gt;
 </code></pre><p><img alt="初学Foundation之Joyride，交互，表格和面板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-3.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>##交换插件</p>
 <p>虽然在Foundation中所有图片默认都是流式布局的，而有时候你却改变一下：图片能够响应式。</p>
@@ -258,33 +259,33 @@
 <p>And let me add, I think it’s cray-cray that anyone in our industry can talk about <em>only images</em> for over an hour. <a href="https://twitter.com/search?q=%23RWD&amp;src=hash" target="_blank" rel="external">#RWD</a>——Dave Rupert (@davatron5000) <a href="https://twitter.com/davatron5000/statuses/334357491473326080" target="_blank" rel="external">May 14, 2013</a></p>
 </blockquote>
 <p>现在有一个问题就是在图片中有文本。最近Zurb增加了一个插件叫“交换”；实现原理也是很简单的，当屏幕大小为指定时，就使用不同的图片来替换你选择的图片。实现过程就是通过添加特定属性，为“<code>data-interchange</code>”。这是用来选择图片源改变的选择。</p>
-<pre><code>&lt;img src=<span class="string">"small.jpg"</span> <span class="typedef"><span class="keyword">data</span>-interchange="[smallest.jpg, <span class="container">(<span class="title">default</span>)</span>], [smallest.jpg, <span class="container">(<span class="title">screen</span> <span class="title">and</span> (<span class="title">max</span>-<span class="title">width</span>: 568<span class="title">px</span>)</span>)], [small.jpg, <span class="container">(<span class="title">small</span>)</span>], [med.jpg, <span class="container">(<span class="title">medium</span>)</span>], [large.jpg, <span class="container">(<span class="title">large</span>)</span>]"&gt;</span>
+<pre><code>&lt;img src=&quot;small.jpg&quot; data-interchange=&quot;[smallest.jpg, (default)], [smallest.jpg, (screen and (max-width: 568px))], [small.jpg, (small)], [med.jpg, (medium)], [large.jpg, (large)]&quot;&gt;
 </code></pre><p>如上看出，我添加很多选择性的属性值，里面有很多参数，这样你就选择性地设置定制的点来交换不同的图片。</p>
 <p>这并不是一个高性能的插件，因为交换是需要一到两秒的时间，Zurb有希望在将来会解决这个问题。这个插件的主要好处之一就是它减少在移动设备上的加载时间，因为会下载更小优化过的相同图片，使得更好地加载网页其他部分。</p>
 <p>##Joyride插件</p>
 <p>在前面的每一节教程中，都会涉及学习一个插件，但这次，我们将学习两个。</p>
 <p>在某情况下，引导用户来熟悉你的网站对用户来说一种很好帮助。例如，Google在推出新的特性时候，就会这样做。通过一步一步地指引你的用户，并且解释每一部分都是怎么使用的。Joyride插件实现过程就是添加一个列表（ol或者ul），并且包含每一条项目（li），来表示每一步指引。这列表可以是有序列表或者无序列表，但是都必须添加类“<code>joyride-list</code>”和属性“<code>data-joyride</code>”。</p>
-<pre><code><span class="tag">&lt;<span class="title">ol</span> <span class="attribute">class</span>=<span class="value">"joyride-list"</span> <span class="attribute">data-joyride</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-id</span>=<span class="value">"firstStop"</span> <span class="attribute">data-text</span>=<span class="value">"Go"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Let's get started, here we have an intro.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-id</span>=<span class="value">"numero1"</span> <span class="attribute">data-class</span>=<span class="value">"custom so-awesome"</span> <span class="attribute">data-text</span>=<span class="value">"Next"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>First Stop<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Here we use the new interchange function to change images based on screen size.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-id</span>=<span class="value">"numero2"</span> <span class="attribute">data-button</span>=<span class="value">"Next"</span> <span class="attribute">data-options</span>=<span class="value">"tipLocation:top;tipAnimation:fade"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>Second Stop<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span>&gt;</span>We are using pricing tables here to display a list of services from a hosting company.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-id</span>=<span class="value">"numero3"</span> <span class="attribute">data-button</span>=<span class="value">"Next"</span> <span class="attribute">data-options</span>=<span class="value">"tipLocation:top;tipAnimation:fade"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>Third Stop<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span>&gt;</span>This is just a link but it opens a modal with a standard table inside, exciting eh?<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-button</span>=<span class="value">"End"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>End Of The Line<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Our tour ends here, please remember to take all your belongings with you on your way to the exit.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">ol</span>&gt;</span>
+<pre><code>&lt;ol class=&quot;joyride-list&quot; data-joyride&gt;
+    &lt;li data-id=&quot;firstStop&quot; data-text=&quot;Go&quot;&gt;
+        &lt;p&gt;Let&apos;s get started, here we have an intro.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li data-id=&quot;numero1&quot; data-class=&quot;custom so-awesome&quot; data-text=&quot;Next&quot;&gt;
+        &lt;h4&gt;First Stop&lt;/h4&gt;
+        &lt;p&gt;Here we use the new interchange function to change images based on screen size.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li data-id=&quot;numero2&quot; data-button=&quot;Next&quot; data-options=&quot;tipLocation:top;tipAnimation:fade&quot;&gt;
+        &lt;h4&gt;Second Stop&lt;/h4&gt;
+        &lt;p&gt;We are using pricing tables here to display a list of services from a hosting company.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li data-id=&quot;numero3&quot; data-button=&quot;Next&quot; data-options=&quot;tipLocation:top;tipAnimation:fade&quot;&gt;
+        &lt;h4&gt;Third Stop&lt;/h4&gt;
+        &lt;p&gt;This is just a link but it opens a modal with a standard table inside, exciting eh?&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li data-button=&quot;End&quot;&gt;
+        &lt;h4&gt;End Of The Line&lt;/h4&gt;
+        &lt;p&gt;Our tour ends here, please remember to take all your belongings with you on your way to the exit.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
 </code></pre><p><img alt="初学Foundation之Joyride，交互，表格和面板" data-pinit="registered" src="http://w3cplus-cdn2.u.qiniudn.com/sites/default/files/styles/print_image/public/blogs/2013/1312/Foundation-9-4.jpg" style="padding:2px;border:1px solid #ccc;width:560px;"></p>
 <p>每一个li项目都必须添加“<code>data-id</code>”，如果<code>fist stop</code>是一个h2标签，那么你的<code>data-id</code>就是“<code>data-id=&quot;title&quot;</code>”了。然后h2元素就要添加一个id为“<code>title</code>”。</p>
 <p>接下来你将要添加一个“<code>next</code>”的按钮告诉用户如何操作进入下一步。这里就需要添加一个新的属性“<code>data-text</code>”到每一个li上去，在上面的代码中可以看出，使用了值“Go”来开始，使用值“Next”来进入下一步。</p>
@@ -309,18 +310,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/让那些为webkit优化的网站也能适配ie10.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/初学foundation之foundation的sass样式解释.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          让那些为Webkit优化的网站也能适配IE10
+          初学Foundation之Foundation的Sass样式解释
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/初学foundation之foundation的sass样式解释.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">初学Foundation之Foundation的Sass样式解释</div>
+    <a href="/2014/09/20/前端/让那些为webkit优化的网站也能适配ie10.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">让那些为Webkit优化的网站也能适配IE10</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -366,8 +367,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 

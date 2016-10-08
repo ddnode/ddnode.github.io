@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
@@ -216,93 +216,93 @@
 <p>记住，编写电子邮件不像编写一个网页，除非是像编写一个1994年的Web页面。你可能会碰到一些问题，但只要你有足够的时间，保持引用不同的方法，你就会实现你需要的效果。</p>
 <p>##文档类型</p>
 <p>在已知的电子邮件客户端Gmail和Hotmail，会自动删除你自己定义的文档类型，他们会自动插入<code>XHTML 1.0 Strict</code>的文档类型，这样并不是一个坏主意，这样一来你可以避免任何可能发生的冲突。</p>
-<pre><code><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span>
+<pre><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
 </code></pre><p>##视窗的Meta标签</p>
 <p>就像创建一个响应式的Web页面一样，第一步你就得在你的文档的<code>&lt;head&gt;</code>标签内添加一个特定的<code>&lt;meta&gt;</code>标签。没有这个meta标记，移动端浏览器将假定你在桌面环境中查看内容，并设置视窗为一个更大的宽度，因此在小屏幕的设备上会挤压页面的一切。</p>
-<pre><code><span class="tag">&lt;<span class="title">head</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<pre><code>&lt;head&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+&lt;/head&gt;
 </code></pre><p>为了解决这个问题，苹果公司推出视窗的meta标签，允许你设置<a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag/" target="_blank" rel="external">五种不同状态</a>。在上面的代码片段中，我们只关心<code>device-width</code>和<code>initial-scale</code>。<code>device-width</code>设置了在你的页面加载保持初始页面的大小时，视窗的宽度设置为设备的宽度，此时你的页面布局将按1:1的规模不做任何放大效果呈现。</p>
 <p>##重置<code>body</code></p>
 <p>如果你不想在iOS邮件中呈现的内容有间距，接下来我们要做的就是将<code>body</code>标签的<code>margin</code>和<code>padding</code>的值重置为０。然后在一些移动电子邮件客户端使用<code>-webkit-text-size-adjust</code>和<code>-ms-text-size-adjus</code>禁用自动文本大小调整，其作用就是阻止设备减少/增加默认的文本大小。</p>
-<pre><code>&lt;<span class="tag">body</span> bgcolor=<span class="string">"#EAE8E4"</span> topmargin=<span class="string">"0"</span> leftmargin=<span class="string">"0"</span> marginheight=<span class="string">"0"</span> marginwidth=<span class="string">"0"</span> style=<span class="string">"height: auto; padding:0; margin:0; -webkit-text-size-adjust:none; -ms-text-size-adjust: 100%;"</span>&gt;
+<pre><code>&lt;body bgcolor=&quot;#EAE8E4&quot; topmargin=&quot;0&quot; leftmargin=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; style=&quot;height: auto; padding:0; margin:0; -webkit-text-size-adjust:none; -ms-text-size-adjust: 100%;&quot;&gt;
 </code></pre><p>最后，我们设置一个背景颜色。</p>
 <p>##构建</p>
 <p>###布局</p>
 <p>响应式设计首先绘制草图是移动端设计的最好开始，因为这可以让你更好的把握你的内容，主要的、重要的内容怎么放置。如果你需要的时候在来返工重新设计，这样会让你变得更佳笨拙。</p>
 <p>###行内样式</p>
 <p>不幸的是，即使有很多响应式设计的介绍，但我仍然离不开在元素的行内声明样式。</p>
-<pre><code>&lt;div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; display: block; font-size: <span class="number">15</span>px; <span class="built_in">color</span>: #<span class="number">4</span>D4D4D; font-weight: lighter; line-height: <span class="number">120</span>%;"&gt;Lo<span class="comment">rem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/div&gt;</span>
+<pre><code>&lt;div style=&quot;font-family: &apos;Helvetica Neue&apos;, Helvetica, Arial, sans-serif; display: block; font-size: 15px; color: #4D4D4D; font-weight: lighter; line-height: 120%;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/div&gt;
 </code></pre><p>###媒体查询和CSS</p>
 <p>我们规定不是行内的CSS样式，都放在<code>&lt;head&gt;</code>标签内。CSS样式放在媒体查询里面，同时使用属性选择器来避免<a href="http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-yahoo-mail-mobile-email/" target="_blank" rel="external">Yahoo电子邮件</a>客户端的一个不同寻常的故障。</p>
 <p>不同类名的属性选器也将被使用，因为一些更明显的名字在邮件客户端可能导航一些冲突和布局的混乱。最后一件是需要注意，所有声明的样式必须使用<code>!important</code>，确保这些样式优先于内联的样式。</p>
-<pre><code><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
-    <span class="at_rule">@<span class="keyword">media</span> only screen and (max-device-width: <span class="number">480px</span>) </span>{
-        <span class="tag">table</span><span class="attr_selector">[class=tableContent]</span> <span class="rules">{
-            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">320px</span> <span class="important">!important</span></span></span>;
-        }</span>
-        <span class="tag">img</span><span class="attr_selector">[class="headerImage"]</span> <span class="rules">{
-            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">320px</span> <span class="important">!important</span></span></span>;
-        }</span>
-        <span class="tag">p</span><span class="attr_selector">[class="theDate"]</span> <span class="rules">{
-            <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;
-        }</span>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    @media only screen and (max-device-width: 480px) {
+        table[class=tableContent] {
+            width:320px !important;
+        }
+        img[class=&quot;headerImage&quot;] {
+            width:320px !important;
+        }
+        p[class=&quot;theDate&quot;] {
+            display: none !important;
+        }
     }
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+&lt;/style&gt;
 </code></pre><p>第一行使用媒体查询，将其设置为<code>max-device-width:480px</code>的断点值，这意味着，当视窗的宽度小于或等于这个尺寸时，执行里面所有的代码。虽然我们只列出了一个特定的例子，但媒体查询可以很具体，你可以<a href="http://www.w3.org/TR/css3-mediaqueries/#media1" target="_blank" rel="external">通过他们传递任意数量的值</a>。</p>
 <p>###HTML结构</p>
 <p>外容器设置一个固定宽度是为数不多的地方，这只是因为为了让桌面用户用一个更好的体验，我们需要设置一个固定的宽度。您还会注意到在我们的媒体查询中添加了一个类<code>tableContent</code>，当媒体查询生效时，将指定一个较小的屏幕。</p>
-<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"center"</span> <span class="attribute">width</span>=<span class="value">"700"</span> <span class="attribute">class</span>=<span class="value">"tableContent"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">在这里插入一列或两列布局的代码</span>&gt;</span>
-              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+<pre><code>&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot; align=&quot;center&quot; width=&quot;700&quot; class=&quot;tableContent&quot;&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+              &lt;td bgcolor=&quot;#FFFFFF&quot;&gt;
+                &lt;在这里插入一列或两列布局的代码&gt;
+              &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+&lt;/table&gt;
 </code></pre><p>上面的代码片段中是我们邮件的基础部分，你可以选择将一列或两列布局的代码嵌套到<code>&lt;td&gt;</code>中。</p>
 <p>正如我们前面提到的，当我们编写HTML电子邮件，最重要的是坚持我们多年来一直坚持的原则。通常在设计一个网站时，我们使用浮动来对齐内容，但我们应该放弃我们通常使用的<code>&lt;div align=&quot;left&quot;&gt;</code>来替代<code>&lt;div style=&quot;float:left;&quot;&gt;</code>，让内容左对齐。我们这么做是因为<code>align=&quot;left&quot;</code>和<code>cellpadding=&quot;10&quot;</code>比<code>float:left</code>和<code>padding:10px;</code>等同的效果更可靠。</p>
 <p>###单列布局</p>
-<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">内容放在这里</span>&gt;</span>
-              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+<pre><code>&lt;table bgcolor=&quot;#FFFFFF&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+              &lt;td bgcolor=&quot;#FFFFFF&quot;&gt;
+                &lt;内容放在这里&gt;
+              &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+&lt;/table&gt;
 </code></pre><p>###两列布局</p>
-<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">width</span>=<span class="value">"100%"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span>&gt;</span>
+<pre><code>&lt;table bgcolor=&quot;#FFFFFF&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+              &lt;td bgcolor=&quot;#FFFFFF&quot;&gt;
 
-                <span class="tag">&lt;<span class="title">table</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">width</span>=<span class="value">"320"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"left"</span>&gt;</span>
-                      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                                <span class="tag">&lt;<span class="title">左列内容放在这里</span>&gt;</span>
-                              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-                      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+                &lt;table bgcolor=&quot;#FFFFFF&quot; width=&quot;320&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;left&quot;&gt;
+                      &lt;tbody&gt;
+                        &lt;tr&gt;
+                              &lt;td bgcolor=&quot;#FFFFFF&quot; valign=&quot;top&quot;&gt;
+                                &lt;左列内容放在这里&gt;
+                              &lt;/td&gt;
+                        &lt;/tr&gt;
+                      &lt;/tbody&gt;
+                &lt;/table&gt;
 
-                <span class="tag">&lt;<span class="title">table</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">width</span>=<span class="value">"320"</span> <span class="attribute">border</span>=<span class="value">"0"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span> <span class="attribute">align</span>=<span class="value">"right"</span>&gt;</span>
-                      <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                              <span class="tag">&lt;<span class="title">td</span> <span class="attribute">bgcolor</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">valign</span>=<span class="value">"top"</span>&gt;</span>
-                                <span class="tag">&lt;<span class="title">右列的内容放在这</span>&gt;</span>
-                              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-                      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+                &lt;table bgcolor=&quot;#FFFFFF&quot; width=&quot;320&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;right&quot;&gt;
+                      &lt;tbody&gt;
+                        &lt;tr&gt;
+                              &lt;td bgcolor=&quot;#FFFFFF&quot; valign=&quot;top&quot;&gt;
+                                &lt;右列的内容放在这&gt;
+                              &lt;/td&gt;
+                        &lt;/tr&gt;
+                      &lt;/tbody&gt;
+                &lt;/table&gt;
 
-              <span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+              &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+&lt;/table&gt;
 </code></pre><p>在上面的例子中我们显式设置了三个宽度，在主要的容器上设置了一个100%宽度和里面的左表格和右表格分别设置了一个320px的宽度。选择320px的原因是因为iPhone的视窗大小是320px，这似乎已成为设计响应式网页一个断点的行业标准。</p>
 <p>当你在移动设备上查看两列布局的时候，两个表将会垂直排列，第二个表会显示在第一个表的下面。这是由于媒体查询，<code>tableContent</code>表格会从700px的宽度减少到320px宽度。只要表容器的宽度大于或等于两列的宽度之和，布局都将会显示的很好。</p>
 <p>如果两列之前有一个表格单元你想隐藏，您可以使用<code>display:none</code>。</p>
@@ -313,26 +313,26 @@
 <p>####动作触发</p>
 <p>动作触发(CTAs)，它往往被视为电子邮件中最重要的部分，同样我们需要遵守苹果的设计指南，使用这些按钮的最小区域为44 x 44像素。</p>
 <p>有一件事我们需要注意，在电子邮件中<code>&lt;a href=&quot;&quot;&gt;</code>使用<code>padding</code>填充占击区域，在一些客户端上如你所料的，只有文本区域才有效。为了解决这个问题，我决定把背景颜色和内距设置在按钮的父元素上。虽然这不能给足够大的触击面积，但可以给用户一个错觉。在电子邮件查看中，我注意到，大多数人试图点击按钮的文本来解决这个问题。</p>
-<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"background: #69BF13; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; display: inline-block; font-size: 15px; margin: 0 auto; padding: 20px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">style</span>=<span class="value">"background: #69BF13; color: #FFFFFF; text-decoration: none;"</span>&gt;</span>Centered Button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<pre><code>&lt;div style=&quot;background: #69BF13; font-family: &apos;Helvetica Neue&apos;, Helvetica, Arial, sans-serif; display: inline-block; font-size: 15px; margin: 0 auto; padding: 20px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;&quot;&gt;
+    &lt;a href=&quot;#&quot; style=&quot;background: #69BF13; color: #FFFFFF; text-decoration: none;&quot;&gt;Centered Button&lt;/a&gt;
+&lt;/div&gt;
 </code></pre><p>另外就是如果在移动页面上，通过链接触发动作，有一个很好的方式就是忽略他。在没有一个成熟的标准之前，我们没有必要为每个用户去做这些事情。</p>
 <p>###图像</p>
 <p>你应该经常检查你的电子邮件的图片的开启/关闭，因为图片将会被所有用户假设是关闭的。</p>
 <p>响应图片大小，电子邮件和Web页面中实现的代码是相同的。在下面的代码中，我们告诉图像包含在一个容器中，并且使用图像的宽度一直是图片容器宽度的100%。你可能还注意到图像还设置了<code>height:auto;</code>，这主要是为了确保图像保持长宽比例。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">td[class=scaleImage] img &#123;&#10;&#9;height:auto !important;&#10;&#9;width:100% !important;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">td[class=scaleImage] img &#123;</div><div class="line">	height:auto !important;</div><div class="line">	width:100% !important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>###Retina图像</p>
 <p>另一块就是苹果设备上的视网膜显示屏，iPad3+、iPhone4+和视网膜笔记本。视网膜图像的关键是创建两倍大小的相同图像，小尺寸的图像和视网膜的图像。</p>
 <p>如果我的电子邮件上想要显示一个图像，它的尺寸是320 x 320，那么对于我们的视网膜显示屏，我就应该创建相同的图像，只是尺寸为640 x 640。我们创建更大尺寸图的像，然后我们缩放到小尺寸，这样我们大图变小尺寸图能给我们提供一个高质量的图像。有两种方法你可以叫视网膜图像的电子邮件：</p>
 <p>####第一种</p>
 <p>在这种方法中，我们在电子邮件中放置小图像，然后通过媒体查询执行的时候，在视网膜显屏设备中换出视网膜图像：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-device-width: 480px) &#123;&#10;    img[class=&#34;scaleImage&#34;] &#123;&#10;        background-image: url(scaleImage-640@2x.png) !important;&#10;        background-size: 320px 320px;&#10;        width: 320px !important;&#10;        height: 320px !important;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-device-width: 480px) &#123;</div><div class="line">    img[class=&quot;scaleImage&quot;] &#123;</div><div class="line">        background-image: url(scaleImage-640@2x.png) !important;</div><div class="line">        background-size: 320px 320px;</div><div class="line">        width: 320px !important;</div><div class="line">        height: 320px !important;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>####第二种</p>
 <p>在这种方法中，我们实际隐藏了实际的图像，然后在图像的容器中显示视网膜图像，当然这种方法也是使用媒体查询来实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-device-width: 480px) &#123;&#10;    td[class=&#34;scaleImage&#34;] &#123;&#10;        background-image: url(scaleImage-640@2x.png) !important;&#10;        background-size: 320px 320px;&#10;        width: 320px !important;&#10;        height: 320px !important;&#10;        &#125;&#10;    td[class=&#34;scaleImage&#34;] img &#123;&#10;        display: none;&#10;        &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-device-width: 480px) &#123;</div><div class="line">    td[class=&quot;scaleImage&quot;] &#123;</div><div class="line">        background-image: url(scaleImage-640@2x.png) !important;</div><div class="line">        background-size: 320px 320px;</div><div class="line">        width: 320px !important;</div><div class="line">        height: 320px !important;</div><div class="line">        &#125;</div><div class="line">    td[class=&quot;scaleImage&quot;] img &#123;</div><div class="line">        display: none;</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>####仅仅是Retina</p>
 <p>还有一种解决方案，但它需要第二个媒体查询：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media all and (min-device-pixel-ratio : 1.5) &#123;&#10;    img[class=&#34;scaleImage&#34;] &#123;&#10;        background-image: url(scaleImage-640@2x.png) !important;&#10;        background-size: 320px 320px;&#10;        width: 320px !important;&#10;        height: 320px !important;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@media all and (min-device-pixel-ratio : 1.5) &#123;</div><div class="line">    img[class=&quot;scaleImage&quot;] &#123;</div><div class="line">        background-image: url(scaleImage-640@2x.png) !important;</div><div class="line">        background-size: 320px 320px;</div><div class="line">        width: 320px !important;</div><div class="line">        height: 320px !important;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在这个媒体查询中没有设置规定的断点，只要设备具有视网膜功能。如果符合这个条件媒体查询中的代码将执行。这样处理的好处是，你可以通过媒体查询，适合的设备才加载所有的图像。</p>
 <p>####总结</p>
 <p>尽管每个人都很喜欢好看的图像，但要记住优化是非常重要的。但在最近的一项调查中，3G网络目前比桌面连接低于40%，４G网络连接才12%。所以不要让用户等待下载图片太久，这样做是没必要的。</p>
@@ -374,18 +374,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/20/前端/响应式网站gilt.com之一：block_vs._in-selector_media_queries.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/09/20/前端/利于网页设计师的强大工作流程小窍门、工具和技巧.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          响应式网站Gilt.com之二：Block vs. In-selector Media Queries
+          利于网页设计师的强大工作流程小窍门、工具和技巧
         
       </div>
     </a>
   
   
-    <a href="/2014/09/20/前端/响应式布局中模仿calc()或固定侧边栏.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">响应式布局中模仿calc()或固定侧边栏</div>
+    <a href="/2014/09/20/前端/响应式网站gilt.com之一：block_vs._in-selector_media_queries.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">响应式网站Gilt.com之二：Block vs. In-selector Media Queries</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -431,8 +431,8 @@
     </div>
     
 
-<script src="/js/mobile.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
 
 
 
