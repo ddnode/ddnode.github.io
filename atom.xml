@@ -945,6 +945,198 @@
   </entry>
   
   <entry>
+    <title>如何根据背景颜色动态修改文本颜色</title>
+    <link href="http://ddnode.com/2014/09/21/Sass/%E5%A6%82%E4%BD%95%E6%A0%B9%E6%8D%AE%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%96%87%E6%9C%AC%E9%A2%9C%E8%89%B2.html"/>
+    <id>http://ddnode.com/2014/09/21/Sass/如何根据背景颜色动态修改文本颜色.html</id>
+    <published>2014-09-20T16:00:00.000Z</published>
+    <updated>2015-03-29T11:01:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。<br><a id="more"></a></p>
+<blockquote>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://zerosixthree.se/" target="_blank" rel="external">Sebastian Ekström</a>的《<a href="http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass" target="_blank" rel="external">How to dynamically change text color based on a background color</a>》所译，整个系列共分四章，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明原作者相关信息<a href="http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass" target="_blank" rel="external">http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass</a>。</p>
+<p>——作者：<a href="http://zerosixthree.se/" target="_blank" rel="external">Sebastian Ekström</a></p>
+<p>——<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
+</blockquote>
+<p>设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。</p>
+<p>那么我们如何利用Sass在背景色的基础上选择合适的文本颜色呢？</p>
+<p>我们将以通知信息(notification message)组件做为示例。我们先从HTML结构开始：</p>
+<pre><code>&lt;p class=&quot;notification notification-confirm&quot;&gt;Confirmation&lt;/p&gt;
+&lt;p class=&quot;notification notification-warning&quot;&gt;Warning&lt;/p&gt;
+&lt;p class=&quot;notification notification-alert&quot;&gt;Alert&lt;/p&gt;
+</code></pre><p>我们有三种类型的通知信息：确认、预警和警告。我们希望他们有不同的背景色和文本颜色。确认使用绿色(confirm)，黄色表示预警(warning)，红色表示警告(alert)。而我们的文本颜色是根据背景颜色的对比度来实现。</p>
+<p>我们来创建一个Sass函数，使我们变得更轻松：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@function set-notification-text-color($color) &#123;</div><div class="line">  @if (lightness($color) &gt; 50) &#123;</div><div class="line">    @return #000000; // 如果背景色为亮色,返回的文本色为暗色</div><div class="line">  &#125; @else &#123;</div><div class="line">    @return #ffffff; // 如果背景色为暗色，返回的文本色为亮色</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在这里，我们使用了Sass自带的<code>lightness()</code>函数来确定背景颜色是哪种类型。<code>lightness()</code>是Sass<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#lightness-instance_method" target="_blank" rel="external">内置的一个函数</a>，他返回的值是一个颜色的RGB值，这个值介于0到100。其中0表示最暗，而100表示最亮。</p>
+<blockquote>
+<p><code>lightness()</code>是Sass中的一个内置函数，说得更为确切一点，<code>lightness($color)</code>所表示的是<strong>从一个颜色中获取亮度（lightness）值</strong>。例如<code>lightness(#7ab)</code>函数，其返回的是<strong>#7ab</strong>颜色的亮度值，此值为<strong>60%</strong>。有关于Sass内置颜色相关函数的详细介绍，可以阅读前面写的一篇文章：《<a href="http://www.w3cplus.com/preprocessor/sass-color-function.html" target="_blank" rel="external">Sass基础——颜色函数</a>》，将帮助你对Sass内置的颜色函数有一个深入的了解。——@大漠</p>
+</blockquote>
+<p>所以这个函数功能告诉我们，如果我们调用的颜色，其“lightness”(亮度)大于50，这意味着我们引入的是一个浅（亮）颜色，反之，其返加的值小于50就是一个深(暗)颜色，因此我们需要确保他们有一个良好的对比色。否则我们返回的是一个亮色。</p>
+<p>我们来看一个具体的实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">$notification-confirm: hsla(101, 72%, 37%, 1);  // Green</div><div class="line">$notification-warning: #ffc53a;                 // Yellow</div><div class="line">$notification-alert: rgb(172, 34, 34);          // Red</div><div class="line"></div><div class="line">%notification &#123;</div><div class="line">  border-radius: 10px;</div><div class="line">  display: block;</div><div class="line">  font-size: 1.5em;</div><div class="line">  font-family: sans-serif;</div><div class="line">  padding: 1em 2em;</div><div class="line">  margin: 1em auto;</div><div class="line">  width: 30%;</div><div class="line">  text-align: center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.notification &#123;</div><div class="line">  @extend %notification;</div><div class="line">&#125;</div><div class="line">.notification-confirm &#123;</div><div class="line">  background: $notification-confirm;</div><div class="line">  color: set-notification-text-color($notification-confirm);</div><div class="line">&#125;</div><div class="line">.notification-warning &#123;</div><div class="line">  background: $notification-warning;</div><div class="line">  color: set-notification-text-color($notification-warning);</div><div class="line">&#125;</div><div class="line">.notification-alert &#123;</div><div class="line">  background: $notification-alert;</div><div class="line">  color: set-notification-text-color($notification-alert);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们有了这个功能，我们只要知道通知信息(notification message)的背景颜色，就会动态返回需要的文本颜色。</p>
+<p>下面的示例就是我们需要的效果：</p>
+<div><iframe id="cp_embed_ktcqw" src="http://codepen.io/anon/embed/ktcqw?height=400&amp;theme-id=394&amp;slug-hash=ktcqw&amp;default-tab=result" scrolling="no" frameborder="0" height="400" allowtransparency="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe></div>
+
+<p>这样做是件美妙的事情，如果我们修改了背景颜色变量值，文本颜色就会动态更新到适合背景颜色。</p>
+<p>这是如何使用Sass动态生颜色的一个简单的示例。我敢肯定你能想到这个办法。如果你有使用Sass颜色函数的其他经验，欢迎在下面的评论中与我一起分享。</p>
+<p><code>brightness()</code>函数提供了一个更先进的获取颜色亮度值的Sass函数功能。详细请参阅John W. Long写的<a href="https://gist.github.com/jlong/f06f5843104ee10006fe" target="_blank" rel="external"><code>brightness()</code>函数功能</a>。</p>
+<blockquote>
+<p><code>brightness()</code>函数的详细代码如下所示：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">//_brightness.scss</div><div class="line"></div><div class="line">$red-magic-number: 241;</div><div class="line">$green-magic-number: 691;</div><div class="line">$blue-magic-number: 68;</div><div class="line">$brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-number;</div><div class="line"></div><div class="line">@function brightness($color) &#123;</div><div class="line">  // Extract color components</div><div class="line">  $red-component: red($color);</div><div class="line">  $green-component: green($color);</div><div class="line">  $blue-component: blue($color);</div><div class="line"></div><div class="line">  // Calculate a brightness value in 3d color space between 0 and 255</div><div class="line">  $number: sqrt((($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor);</div><div class="line"></div><div class="line">  // Convert to percentage and return</div><div class="line">  @return 100% * $number / 255;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@function contrasting-color($color, $light, $dark) &#123;</div><div class="line">  @if brightness($color) &lt; 65% &#123;</div><div class="line">    @return $light;</div><div class="line">  &#125; @else &#123;</div><div class="line">    @return $dark;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//调用方法</div><div class="line">$dark-background-color: #333;</div><div class="line">$light-text-color: white;</div><div class="line"></div><div class="line">$light-background-color: #eee;</div><div class="line">$dark-text-color: black;</div><div class="line"></div><div class="line">.dark-background &#123;</div><div class="line">  background: $dark-background-color;</div><div class="line">  color: contrasting-color($dark-background-color, $light-text-color, $dark-text-color);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.light-background &#123;</div><div class="line">  background: $light-background-color;</div><div class="line">  color: contrasting-color($light-background-color, $light-text-color, $dark-text-color);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>##扩展阅读</p>
+<p>有关于Sass关于颜色功能方面的其他教程：</p>
+<ul>
+<li><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" target="_blank" rel="external">Module: Sass::Script::Functions</a></li>
+<li><a href="http://www.w3cplus.com/preprocessor/sass-color-function.html" target="_blank" rel="external">Sass基础——颜色函数</a></li>
+<li><a href="http://jackiebalzer.com/color" target="_blank" rel="external">Sass &amp; Compass Color Functions</a></li>
+</ul>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文出处：<a href="http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass" target="_blank" rel="external">http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/intermediate/dynamically-change-text-color-based-on-its-background-with-sass.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/intermediate/dynamically-change-text-color-based-on-its-background-with-sass.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="译文" scheme="http://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
+    
+    
+      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+    
+      <category term="中级" scheme="http://ddnode.com/tags/%E4%B8%AD%E7%BA%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编写Sass的八个技巧</title>
+    <link href="http://ddnode.com/2014/09/21/Sass/%E7%BC%96%E5%86%99sass%E7%9A%84%E5%85%AB%E4%B8%AA%E6%8A%80%E5%B7%A7.html"/>
+    <id>http://ddnode.com/2014/09/21/Sass/编写sass的八个技巧.html</id>
+    <published>2014-09-20T16:00:00.000Z</published>
+    <updated>2015-03-29T11:01:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Sass可以编译出非常优秀的CSS样式表，或者说，这就是Sass要做的事情。有效的使用Sass可以帮助你构建出干净的有效的CSS，但如果运用不好，Sass其实会让你的CSS文件变得更大，并且添加一些不必要的和重复的CSS代码。下面一些编写Sass小技巧，可以有效帮助你编写出更好的Sass。<br><a id="more"></a></p>
+<blockquote><br>    <p>本文由<a href="http://www.w3cplus.com" target="_blank">大漠</a>根据<a href="http://www.sitepoint.com/author/cdutton/" target="_blank">Cathy Dutton</a>的《<a href="http://www.sitepoint.com/8-tips-help-get-best-sass/" target="_blank">10 Useful Sass Mixins for Modern Developer</a>》所译，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明原作者相关信息<a href="http://www.sitepoint.com/8-tips-help-get-best-sass/" target="_blank">http://www.sitepoint.com/8-tips-help-get-best-sass/</a>。</p><br>    <p>——作者：<a href="http://www.sitepoint.com/author/cdutton/" target="_blank">Cathy Dutton</a><br>    </p><p>——译者：<a href="http://www.w3cplus.com" target="_blank">大漠</a></p><br></blockquote>
+
+<p>Sass可以编译出非常优秀的CSS样式表，或者说，这就是Sass要做的事情。</p>
+<p>有效的使用Sass可以帮助你构建出干净的有效的CSS，但如果运用不好，Sass其实会让你的CSS文件变得更大，并且添加一些不必要的和重复的CSS代码。</p>
+<p>下面一些编写Sass小技巧，可以有效帮助你编写出更好的Sass。</p>
+<p>##１、你的Sass结构</p>
+<p>在你的项目中使用Sass，管理好网站的结构是对每一个项目最重要的一点。使用Partials允许你把CSS分成若干个更小更易于管理的代码块，这样更易于维护和扩展。</p>
+<p>Partial文件使用下划线来命名SCSS文件(如：<code>_buttons.scss</code>)，不引入这部分代码是不会编译出CSS代码。每个partial文件都将会在Sass根目录下的主体文件(如：<code>global.scss</code>)引入。</p>
+<p>例如，这有一个示例，来演示这部分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">vendor/</div><div class="line">base/</div><div class="line">|</div><div class="line">|-- _variables.scss</div><div class="line">|-- _mixins.scss</div><div class="line">|-- _placeholders.scss</div><div class="line"></div><div class="line">framework/</div><div class="line">modules/</div><div class="line">global.scss</div></pre></td></tr></table></figure>
+<p>这样的文件结构可以确保该网站是很容易工作，并且可以随时添加新的文件。例如，新的模块文件可以很容易添加到<code>modules</code>文件夹中，然使用通过<code>@import</code>添加到<code>global.scss</code>文件中。</p>
+<p>为了演示，将<code>global.scss</code>文件拿出来做演示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/* VENDOR - Default fall-backs and external files.</div><div class="line">========================================================================== */</div><div class="line"></div><div class="line">@import &apos;vendor/_normalize.scss&apos;;</div><div class="line"></div><div class="line"></div><div class="line">/* BASE - Base Variable file along with starting point Mixins and Placeholders.</div><div class="line">========================================================================== */</div><div class="line"></div><div class="line">@import &apos;base/_variables.scss&apos;;</div><div class="line">@import &apos;base/_mixins.scss&apos;;</div><div class="line">@import &apos;base/_placeholders.scss&apos;;</div><div class="line"></div><div class="line"></div><div class="line">/* FRAMEWORK - Structure and layout files.</div><div class="line">========================================================================== */</div><div class="line"></div><div class="line">@import &apos;framework/_grid.scss&apos;;</div><div class="line">@import &apos;framework/_breakpoints.scss&apos;;</div><div class="line">@import &apos;framework/_layout.scss&apos;;</div><div class="line"></div><div class="line"></div><div class="line">/* MODULES - Re-usable site elements.</div><div class="line">========================================================================== */</div><div class="line"></div><div class="line">@import &apos;modules/_buttons.scss&apos;;</div><div class="line">@import &apos;modules/_lists.scss&apos;;</div><div class="line">@import &apos;modules/_tabs.scss&apos;;</div></pre></td></tr></table></figure>
+<p>作为一个知识的侧重点，你可以看看<a href="http://www.sitepoint.com/architecture-sass-project/" target="_blank" rel="external">Hugo对Sass结构方面的一些见解</a>,因为他在这一个领域有非常深的经验。</p>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">管理Sass项目文件结构</a></li>
+<li><a href="http://www.w3cplus.com/preprocessor/beginner/how-to-structure-a-sass-project.html" target="_blank" rel="external">如何组织一个Sass项目</a></li>
+<li><a href="http://www.bignerdranch.com/blog/css-burrito-an-organizational-sass-template/" target="_blank" rel="external">css-burrito: an organizational Sass template</a></li>
+<li><a href="https://medium.com/@wanderingmatt/a-little-structure-for-your-large-sass-project-7fe19ab647fa" target="_blank" rel="external">A Little Structure For Your Large Sass Project</a></li>
+<li><a href="http://blog.groupbuddies.com/posts/32-our-css-sass-project-architecture-and-styleguide" target="_blank" rel="external">Our CSS/Sass Project Architecture and Styleguide</a></li>
+<li><a href="http://branch.com/b/scss-how-do-you-structure-your-file-architecture-and-why" target="_blank" rel="external">SCSS: How do you structure your file architecture and why?</a></li>
+<li><a href="http://www.infobahndesign.com/how-i-structure-my-sass-projects/" target="_blank" rel="external">Our Front-end Development Practices: How I Structure my SASS Projects</a></li>
+</ul>
+<p>##2、更有效的使用Sass变量</p>
+<p>变量是Sass中最简单的特性之一，但有时候也会使用不当。创建站点范围内有语义化的变量，是不可或缺的工作。如果命名不好，他会变得难以理解和重复使用。</p>
+<p>这里有一些命名变量的小技巧，提供参考：</p>
+<ul>
+<li>命名变量时不要含糊不清</li>
+<li>坚持一种命名规则（Modular, BEM等等）</li>
+<li>确定变量的使用是有道理的</li>
+</ul>
+<p>这有一个好的示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$orange: #ffa600;</div><div class="line">$grey: #f3f3f3;</div><div class="line">$blue: #82d2e5;</div><div class="line"></div><div class="line">$link-primary: $orange;</div><div class="line">$link-secondary: $blue;</div><div class="line">$link-tertiary: $grey;</div><div class="line"></div><div class="line">$radius-button: 5px;</div><div class="line">$radius-tab: 5px;</div></pre></td></tr></table></figure>
+<p>这个是不好的示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$link: #ffa600;</div><div class="line">$listStyle: none;</div><div class="line">$radius: 5px;</div></pre></td></tr></table></figure>
+<p>##3、减少Mixins的使用</p>
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank" rel="external">Mixins</a>是实现代码块的一种伟大方式，可以在一个站点内多次使用。然而，<code>@include</code>定义好的Mixins和在CSS代码中复制、粘贴没什么不一样。它将会让你的CSS代码生成很多重复的代码，让你的文件变得越来越臃肿。</p>
+<p>到目前为止，Mixins只适合那种需要通过传递参数来快速创建样式的情形。</p>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@mixin rounded-corner($arc) &#123;</div><div class="line">    -moz-border-radius: $arc;</div><div class="line">    -webkit-border-radius: $arc;</div><div class="line">    border-radius: $arc;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>rounded-corner</code>这个Mixins可以在任何情况下使用，仅仅通过改变其参数<code>$arc</code>的值，将得到不同的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.tab-button &#123;</div><div class="line">     @include rounded-corner(5px);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.cta-button &#123;</div><div class="line">     @include rounded-corner(8px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>像这样使用Mixins是不明智的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@mixin cta-button &#123;</div><div class="line">    padding: 10px;</div><div class="line">    color: #fff;</div><div class="line">    background-color: red;</div><div class="line">    font-size: 14px;</div><div class="line">    width: 150px;</div><div class="line">    margin: 5px 0;</div><div class="line">    text-align: center;</div><div class="line">    display: block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个Mixins没有传递任何参数，更建议<a href="http://www.sitepoint.com/sass-mixin-placeholder/" target="_blank" rel="external">使用<code>%placeholder</code>来创建</a>，这也是接下来要说的第四点。</p>
+<p>##4、拥抱Placeholder</p>
+<p>与Mixins不同，<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_" target="_blank" rel="external">%placeholder</a>也可以多次使用，而且不会生成重复的代码。这使得输入的CSS更友好，更干净。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">%bg-image &#123;</div><div class="line">    width: 100%;</div><div class="line">    background-position: center center;</div><div class="line">    background-size: cover;</div><div class="line">    background-repeat: no-repeat;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.image-one &#123;</div><div class="line">    @extend %bg-image;</div><div class="line">    background-image:url(/img/image-one.jpg&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.image-two &#123;</div><div class="line">    @extend %bg-image;</div><div class="line">    background-image:url(/img/image-two.jpg&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译出来的CSS：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.image-one, .image-two &#123;</div><div class="line">    width: 100%;</div><div class="line">    background-position: center center;</div><div class="line">    background-size: cover;</div><div class="line">    background-repeat: no-repeat;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.image-one &#123;</div><div class="line">    background-image:url(/img/image-one.jpg&quot;) ;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.image-two &#123;</div><div class="line">    background-image:url(/img/image-two.jpg&quot;) ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>多个选择器运用了相同的<code>%placeholder</code>也只会输出一次代码。没有引用的<code>%placeholder</code>是不会输出任何CSS代码。</p>
+<p>和第三点的Mixins配合在一起使用，既可保持Mixins灵活性，而且还可以保持代码的简洁与干净。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">/* PLACEHOLDER</div><div class="line">============================================= */</div><div class="line"></div><div class="line">%btn &#123;</div><div class="line">    padding: 10px;</div><div class="line">    color:#fff;</div><div class="line">    curser: pointer;</div><div class="line">    border: none;</div><div class="line">    shadow: none;</div><div class="line">    font-size: 14px;</div><div class="line">    width: 150px;</div><div class="line">    margin: 5px 0;</div><div class="line">    text-align: center;</div><div class="line">    display: block;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* BUTTON MIXIN</div><div class="line">============================================= */</div><div class="line"></div><div class="line">@mixin  btn-background($btn-background) &#123;</div><div class="line">    @extend %btn;</div><div class="line">    background-color: $btn-background;</div><div class="line">    &amp;:hover &#123;</div><div class="line">        background-color: lighten($btn-background,10%);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* BUTTONS</div><div class="line">============================================= */</div><div class="line"></div><div class="line">.cta-btn &#123;</div><div class="line">    @include btn-background(green);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.main-btn &#123;</div><div class="line">    @include btn-background(orange);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.info-btn &#123;</div><div class="line">    @include btn-background(blue);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="http://www.w3cplus.com/preprocessor/understanding-placeholder-selectors.html" target="_blank" rel="external">理解Sass的选择占位符%placeholder</a></li>
+<li><a href="http://www.w3cplus.com/preprocessor/sass-mixin-placeholder.html" target="_blank" rel="external">Sass:Mixin还是Placeholder</a></li>
+<li><a href="http://www.w3cplus.com/preprocessor/sass-basic-mixins-nesting-placeholders-extend.html" target="_blank" rel="external">理解SASS的嵌套，@extend，%Placeholders和Mixins</a></li>
+<li><a href="http://miguelcamba.com/blog/2013/07/11/sass-placeholders-versus-mixins-and-extends/" target="_blank" rel="external">SASS Placeholders Versus Mixins and Extends</a></li>
+<li><a href="http://thesassway.com/intermediate/understanding-placeholder-selectors" target="_blank" rel="external">Understanding placeholder selectors</a></li>
+<li><a href="http://www.sitepoint.com/sass-mixin-placeholder/" target="_blank" rel="external">Sass: Mixin or Placeholder?</a></li>
+<li><a href="http://www.fredparke.com/blog/ditto-making-good-use-sass-extends-and-placeholder-selectors" target="_blank" rel="external">Ditto: Making good use of Sass extends and placeholder selectors</a></li>
+<li><a href="http://learnwebtutorials.com/sass-mixin-placeholder-tutorial" target="_blank" rel="external">Sass Mixin and Sass Placeholder Tutorial</a></li>
+</ul>
+<p>##5、使用Function计算</p>
+<p>使用<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#functions" target="_blank" rel="external">Functions</a>来进行计算。Sass的函数不会输出任何CSS代码。相反，在使用的函数的时候，他会返回一个值。在网站使用函数来计算是非常有用的。</p>
+<p>例如，函数可以计算给定元素的百分比宽度值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@function calculate-width ($col-span) &#123;</div><div class="line">    @return 100% / $col-span</div><div class="line">&#125;</div><div class="line"></div><div class="line">.span-two &#123;</div><div class="line">    width: calculate-width(2); // spans 2 columns, width = 50%</div><div class="line">&#125;</div><div class="line"></div><div class="line">.span-three &#123;</div><div class="line">    width: calculate-width(3); // spans 3 columns, width = 33.3%</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="http://thesassway.com/advanced/pure-sass-functions" target="_blank" rel="external">Using pure Sass functions to make reusable logic more useful</a></li>
+<li><a href="http://www.intridea.com/blog/2014/2/11/sass-functions-for-fun-profit" target="_blank" rel="external">Sass Functions for Play + Profit</a></li>
+</ul>
+<p>##6、有顺工作</p>
+<p>将所有的Mixins、Placeholder、Functions和变量放置在一起。将他们放置一起，可以确认他们可以很快的编写以及将来重复使用。</p>
+<p>整站的元素应该放在一个<code>base</code>文件夹中。<code>base</code>文件夹应该包括全局的变量，如字体和颜色等：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$font-primary: &apos;Roboto&apos;, sans-serif;</div><div class="line">$font-secondary: Arial, Helvetica, sans-serif;</div><div class="line"></div><div class="line">$color-primary: $orange;</div><div class="line">$color-secondary: $blue;</div><div class="line">$color-tertiary: $grey;</div></pre></td></tr></table></figure>
+<p>对于特定模块的Mixins、Functions 和变量，为了保证模块能正常运行，需要将这些集中放置在<code>module</code>文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$tab-radius: 5px;</div><div class="line">$tab-color: $grey;</div></pre></td></tr></table></figure>
+<p>##7、限制嵌套</p>
+<p><a href="http://www.sitepoint.com/8-tips-help-get-best-sass/nested_rules" target="_blank" rel="external">Sass的嵌套规则</a>是，过度的嵌套会导致很多问题的发生,代码变得复杂，而且太过于依赖HTML结构。这样将导致后面的样式需要使用<code>!important</code>来覆盖，而这种方式，我们应该尽量要去避免的。</p>
+<p>这有几条是使用嵌套的黄金规则：</p>
+<ul>
+<li>嵌套永远不要超过三个层级</li>
+<li>确保输出的CSS简洁、可重用</li>
+<li>使用嵌套是很有意义的，而不是默认选项</li>
+</ul>
+<p>##保持简单</p>
+<p>这篇文章的结论是保持简单。使用Sass的目的是要写出更简洁，更易于管理的CSS。在创建任何新的Mixins、变量或函数之前，你都需要确保它们的存在将会加强开发，并不会把事情整得更复杂。Sass的所有功能只要在适度的使用和正确的使用，才能发挥其最大的作用。</p>
+<p>无休止创建一个变量列表，或者创建一个复杂的函数，对于任何人来都是很难理解的，因为其他人必竟不是作者，无法理解作者的意图，或者说这样对开发并没带来好处和编译出干净的CSS。</p>
+<p>###扩展阅读</p>
+<ul>
+<li><a href="http://www.w3cplus.com/preprocessor/keep-sass-simple.html" target="_blank" rel="external">保持Sass的简单</a></li>
+</ul>
+<p>##结论</p>
+<p>上面所说的这些小技巧，或许你并不会完全认可。Sass仍然是一门很新的技术，因此我们只有不断去学习和实践，才能得到更多的有用技巧。如果您有更好的看法，欢迎在评论中一起讨论。</p>
+<p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://www.sitepoint.com/8-tips-help-get-best-sass/" target="_blank" rel="external">http://www.sitepoint.com/8-tips-help-get-best-sass/</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/8-tips-help-get-best-sass.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/8-tips-help-get-best-sass.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Sass可以编译出非常优秀的CSS样式表，或者说，这就是Sass要做的事情。有效的使用Sass可以帮助你构建出干净的有效的CSS，但如果运用不好，Sass其实会让你的CSS文件变得更大，并且添加一些不必要的和重复的CSS代码。下面一些编写Sass小技巧，可以有效帮助你编写出更好的Sass。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="译文" scheme="http://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
+    
+    
+      <category term="技巧" scheme="http://ddnode.com/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Sass变量揭秘</title>
     <link href="http://ddnode.com/2014/09/21/Sass/%E5%8F%98%E9%87%8F.html"/>
     <id>http://ddnode.com/2014/09/21/Sass/变量.html</id>
@@ -1206,202 +1398,6 @@ a:hover {
   </entry>
   
   <entry>
-    <title>编写Sass的八个技巧</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E7%BC%96%E5%86%99sass%E7%9A%84%E5%85%AB%E4%B8%AA%E6%8A%80%E5%B7%A7.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/编写sass的八个技巧.html</id>
-    <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Sass可以编译出非常优秀的CSS样式表，或者说，这就是Sass要做的事情。有效的使用Sass可以帮助你构建出干净的有效的CSS，但如果运用不好，Sass其实会让你的CSS文件变得更大，并且添加一些不必要的和重复的CSS代码。下面一些编写Sass小技巧，可以有效帮助你编写出更好的Sass。<br><a id="more"></a></p>
-<blockquote><br>    <p>本文由<a href="http://www.w3cplus.com" target="_blank">大漠</a>根据<a href="http://www.sitepoint.com/author/cdutton/" target="_blank">Cathy Dutton</a>的《<a href="http://www.sitepoint.com/8-tips-help-get-best-sass/" target="_blank">10 Useful Sass Mixins for Modern Developer</a>》所译，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明原作者相关信息<a href="http://www.sitepoint.com/8-tips-help-get-best-sass/" target="_blank">http://www.sitepoint.com/8-tips-help-get-best-sass/</a>。</p><br>    <p>——作者：<a href="http://www.sitepoint.com/author/cdutton/" target="_blank">Cathy Dutton</a><br>    </p><p>——译者：<a href="http://www.w3cplus.com" target="_blank">大漠</a></p><br></blockquote>
-
-<p>Sass可以编译出非常优秀的CSS样式表，或者说，这就是Sass要做的事情。</p>
-<p>有效的使用Sass可以帮助你构建出干净的有效的CSS，但如果运用不好，Sass其实会让你的CSS文件变得更大，并且添加一些不必要的和重复的CSS代码。</p>
-<p>下面一些编写Sass小技巧，可以有效帮助你编写出更好的Sass。</p>
-<p>##１、你的Sass结构</p>
-<p>在你的项目中使用Sass，管理好网站的结构是对每一个项目最重要的一点。使用Partials允许你把CSS分成若干个更小更易于管理的代码块，这样更易于维护和扩展。</p>
-<p>Partial文件使用下划线来命名SCSS文件(如：<code>_buttons.scss</code>)，不引入这部分代码是不会编译出CSS代码。每个partial文件都将会在Sass根目录下的主体文件(如：<code>global.scss</code>)引入。</p>
-<p>例如，这有一个示例，来演示这部分：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">vendor/</div><div class="line">base/</div><div class="line">|</div><div class="line">|-- _variables.scss</div><div class="line">|-- _mixins.scss</div><div class="line">|-- _placeholders.scss</div><div class="line"></div><div class="line">framework/</div><div class="line">modules/</div><div class="line">global.scss</div></pre></td></tr></table></figure>
-<p>这样的文件结构可以确保该网站是很容易工作，并且可以随时添加新的文件。例如，新的模块文件可以很容易添加到<code>modules</code>文件夹中，然使用通过<code>@import</code>添加到<code>global.scss</code>文件中。</p>
-<p>为了演示，将<code>global.scss</code>文件拿出来做演示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/* VENDOR - Default fall-backs and external files.</div><div class="line">========================================================================== */</div><div class="line"></div><div class="line">@import &apos;vendor/_normalize.scss&apos;;</div><div class="line"></div><div class="line"></div><div class="line">/* BASE - Base Variable file along with starting point Mixins and Placeholders.</div><div class="line">========================================================================== */</div><div class="line"></div><div class="line">@import &apos;base/_variables.scss&apos;;</div><div class="line">@import &apos;base/_mixins.scss&apos;;</div><div class="line">@import &apos;base/_placeholders.scss&apos;;</div><div class="line"></div><div class="line"></div><div class="line">/* FRAMEWORK - Structure and layout files.</div><div class="line">========================================================================== */</div><div class="line"></div><div class="line">@import &apos;framework/_grid.scss&apos;;</div><div class="line">@import &apos;framework/_breakpoints.scss&apos;;</div><div class="line">@import &apos;framework/_layout.scss&apos;;</div><div class="line"></div><div class="line"></div><div class="line">/* MODULES - Re-usable site elements.</div><div class="line">========================================================================== */</div><div class="line"></div><div class="line">@import &apos;modules/_buttons.scss&apos;;</div><div class="line">@import &apos;modules/_lists.scss&apos;;</div><div class="line">@import &apos;modules/_tabs.scss&apos;;</div></pre></td></tr></table></figure>
-<p>作为一个知识的侧重点，你可以看看<a href="http://www.sitepoint.com/architecture-sass-project/" target="_blank" rel="external">Hugo对Sass结构方面的一些见解</a>,因为他在这一个领域有非常深的经验。</p>
-<p>###扩展阅读</p>
-<ul>
-<li><a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">管理Sass项目文件结构</a></li>
-<li><a href="http://www.w3cplus.com/preprocessor/beginner/how-to-structure-a-sass-project.html" target="_blank" rel="external">如何组织一个Sass项目</a></li>
-<li><a href="http://www.bignerdranch.com/blog/css-burrito-an-organizational-sass-template/" target="_blank" rel="external">css-burrito: an organizational Sass template</a></li>
-<li><a href="https://medium.com/@wanderingmatt/a-little-structure-for-your-large-sass-project-7fe19ab647fa" target="_blank" rel="external">A Little Structure For Your Large Sass Project</a></li>
-<li><a href="http://blog.groupbuddies.com/posts/32-our-css-sass-project-architecture-and-styleguide" target="_blank" rel="external">Our CSS/Sass Project Architecture and Styleguide</a></li>
-<li><a href="http://branch.com/b/scss-how-do-you-structure-your-file-architecture-and-why" target="_blank" rel="external">SCSS: How do you structure your file architecture and why?</a></li>
-<li><a href="http://www.infobahndesign.com/how-i-structure-my-sass-projects/" target="_blank" rel="external">Our Front-end Development Practices: How I Structure my SASS Projects</a></li>
-</ul>
-<p>##2、更有效的使用Sass变量</p>
-<p>变量是Sass中最简单的特性之一，但有时候也会使用不当。创建站点范围内有语义化的变量，是不可或缺的工作。如果命名不好，他会变得难以理解和重复使用。</p>
-<p>这里有一些命名变量的小技巧，提供参考：</p>
-<ul>
-<li>命名变量时不要含糊不清</li>
-<li>坚持一种命名规则（Modular, BEM等等）</li>
-<li>确定变量的使用是有道理的</li>
-</ul>
-<p>这有一个好的示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$orange: #ffa600;</div><div class="line">$grey: #f3f3f3;</div><div class="line">$blue: #82d2e5;</div><div class="line"></div><div class="line">$link-primary: $orange;</div><div class="line">$link-secondary: $blue;</div><div class="line">$link-tertiary: $grey;</div><div class="line"></div><div class="line">$radius-button: 5px;</div><div class="line">$radius-tab: 5px;</div></pre></td></tr></table></figure>
-<p>这个是不好的示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$link: #ffa600;</div><div class="line">$listStyle: none;</div><div class="line">$radius: 5px;</div></pre></td></tr></table></figure>
-<p>##3、减少Mixins的使用</p>
-<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank" rel="external">Mixins</a>是实现代码块的一种伟大方式，可以在一个站点内多次使用。然而，<code>@include</code>定义好的Mixins和在CSS代码中复制、粘贴没什么不一样。它将会让你的CSS代码生成很多重复的代码，让你的文件变得越来越臃肿。</p>
-<p>到目前为止，Mixins只适合那种需要通过传递参数来快速创建样式的情形。</p>
-<p>例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@mixin rounded-corner($arc) &#123;</div><div class="line">    -moz-border-radius: $arc;</div><div class="line">    -webkit-border-radius: $arc;</div><div class="line">    border-radius: $arc;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>rounded-corner</code>这个Mixins可以在任何情况下使用，仅仅通过改变其参数<code>$arc</code>的值，将得到不同的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.tab-button &#123;</div><div class="line">     @include rounded-corner(5px);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.cta-button &#123;</div><div class="line">     @include rounded-corner(8px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>像这样使用Mixins是不明智的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@mixin cta-button &#123;</div><div class="line">    padding: 10px;</div><div class="line">    color: #fff;</div><div class="line">    background-color: red;</div><div class="line">    font-size: 14px;</div><div class="line">    width: 150px;</div><div class="line">    margin: 5px 0;</div><div class="line">    text-align: center;</div><div class="line">    display: block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这个Mixins没有传递任何参数，更建议<a href="http://www.sitepoint.com/sass-mixin-placeholder/" target="_blank" rel="external">使用<code>%placeholder</code>来创建</a>，这也是接下来要说的第四点。</p>
-<p>##4、拥抱Placeholder</p>
-<p>与Mixins不同，<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_" target="_blank" rel="external">%placeholder</a>也可以多次使用，而且不会生成重复的代码。这使得输入的CSS更友好，更干净。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">%bg-image &#123;</div><div class="line">    width: 100%;</div><div class="line">    background-position: center center;</div><div class="line">    background-size: cover;</div><div class="line">    background-repeat: no-repeat;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.image-one &#123;</div><div class="line">    @extend %bg-image;</div><div class="line">    background-image:url(/img/image-one.jpg&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.image-two &#123;</div><div class="line">    @extend %bg-image;</div><div class="line">    background-image:url(/img/image-two.jpg&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>编译出来的CSS：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.image-one, .image-two &#123;</div><div class="line">    width: 100%;</div><div class="line">    background-position: center center;</div><div class="line">    background-size: cover;</div><div class="line">    background-repeat: no-repeat;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.image-one &#123;</div><div class="line">    background-image:url(/img/image-one.jpg&quot;) ;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.image-two &#123;</div><div class="line">    background-image:url(/img/image-two.jpg&quot;) ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>多个选择器运用了相同的<code>%placeholder</code>也只会输出一次代码。没有引用的<code>%placeholder</code>是不会输出任何CSS代码。</p>
-<p>和第三点的Mixins配合在一起使用，既可保持Mixins灵活性，而且还可以保持代码的简洁与干净。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">/* PLACEHOLDER</div><div class="line">============================================= */</div><div class="line"></div><div class="line">%btn &#123;</div><div class="line">    padding: 10px;</div><div class="line">    color:#fff;</div><div class="line">    curser: pointer;</div><div class="line">    border: none;</div><div class="line">    shadow: none;</div><div class="line">    font-size: 14px;</div><div class="line">    width: 150px;</div><div class="line">    margin: 5px 0;</div><div class="line">    text-align: center;</div><div class="line">    display: block;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* BUTTON MIXIN</div><div class="line">============================================= */</div><div class="line"></div><div class="line">@mixin  btn-background($btn-background) &#123;</div><div class="line">    @extend %btn;</div><div class="line">    background-color: $btn-background;</div><div class="line">    &amp;:hover &#123;</div><div class="line">        background-color: lighten($btn-background,10%);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* BUTTONS</div><div class="line">============================================= */</div><div class="line"></div><div class="line">.cta-btn &#123;</div><div class="line">    @include btn-background(green);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.main-btn &#123;</div><div class="line">    @include btn-background(orange);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.info-btn &#123;</div><div class="line">    @include btn-background(blue);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###扩展阅读</p>
-<ul>
-<li><a href="http://www.w3cplus.com/preprocessor/understanding-placeholder-selectors.html" target="_blank" rel="external">理解Sass的选择占位符%placeholder</a></li>
-<li><a href="http://www.w3cplus.com/preprocessor/sass-mixin-placeholder.html" target="_blank" rel="external">Sass:Mixin还是Placeholder</a></li>
-<li><a href="http://www.w3cplus.com/preprocessor/sass-basic-mixins-nesting-placeholders-extend.html" target="_blank" rel="external">理解SASS的嵌套，@extend，%Placeholders和Mixins</a></li>
-<li><a href="http://miguelcamba.com/blog/2013/07/11/sass-placeholders-versus-mixins-and-extends/" target="_blank" rel="external">SASS Placeholders Versus Mixins and Extends</a></li>
-<li><a href="http://thesassway.com/intermediate/understanding-placeholder-selectors" target="_blank" rel="external">Understanding placeholder selectors</a></li>
-<li><a href="http://www.sitepoint.com/sass-mixin-placeholder/" target="_blank" rel="external">Sass: Mixin or Placeholder?</a></li>
-<li><a href="http://www.fredparke.com/blog/ditto-making-good-use-sass-extends-and-placeholder-selectors" target="_blank" rel="external">Ditto: Making good use of Sass extends and placeholder selectors</a></li>
-<li><a href="http://learnwebtutorials.com/sass-mixin-placeholder-tutorial" target="_blank" rel="external">Sass Mixin and Sass Placeholder Tutorial</a></li>
-</ul>
-<p>##5、使用Function计算</p>
-<p>使用<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#functions" target="_blank" rel="external">Functions</a>来进行计算。Sass的函数不会输出任何CSS代码。相反，在使用的函数的时候，他会返回一个值。在网站使用函数来计算是非常有用的。</p>
-<p>例如，函数可以计算给定元素的百分比宽度值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@function calculate-width ($col-span) &#123;</div><div class="line">    @return 100% / $col-span</div><div class="line">&#125;</div><div class="line"></div><div class="line">.span-two &#123;</div><div class="line">    width: calculate-width(2); // spans 2 columns, width = 50%</div><div class="line">&#125;</div><div class="line"></div><div class="line">.span-three &#123;</div><div class="line">    width: calculate-width(3); // spans 3 columns, width = 33.3%</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###扩展阅读</p>
-<ul>
-<li><a href="http://thesassway.com/advanced/pure-sass-functions" target="_blank" rel="external">Using pure Sass functions to make reusable logic more useful</a></li>
-<li><a href="http://www.intridea.com/blog/2014/2/11/sass-functions-for-fun-profit" target="_blank" rel="external">Sass Functions for Play + Profit</a></li>
-</ul>
-<p>##6、有顺工作</p>
-<p>将所有的Mixins、Placeholder、Functions和变量放置在一起。将他们放置一起，可以确认他们可以很快的编写以及将来重复使用。</p>
-<p>整站的元素应该放在一个<code>base</code>文件夹中。<code>base</code>文件夹应该包括全局的变量，如字体和颜色等：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$font-primary: &apos;Roboto&apos;, sans-serif;</div><div class="line">$font-secondary: Arial, Helvetica, sans-serif;</div><div class="line"></div><div class="line">$color-primary: $orange;</div><div class="line">$color-secondary: $blue;</div><div class="line">$color-tertiary: $grey;</div></pre></td></tr></table></figure>
-<p>对于特定模块的Mixins、Functions 和变量，为了保证模块能正常运行，需要将这些集中放置在<code>module</code>文件中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$tab-radius: 5px;</div><div class="line">$tab-color: $grey;</div></pre></td></tr></table></figure>
-<p>##7、限制嵌套</p>
-<p><a href="http://www.sitepoint.com/8-tips-help-get-best-sass/nested_rules" target="_blank" rel="external">Sass的嵌套规则</a>是，过度的嵌套会导致很多问题的发生,代码变得复杂，而且太过于依赖HTML结构。这样将导致后面的样式需要使用<code>!important</code>来覆盖，而这种方式，我们应该尽量要去避免的。</p>
-<p>这有几条是使用嵌套的黄金规则：</p>
-<ul>
-<li>嵌套永远不要超过三个层级</li>
-<li>确保输出的CSS简洁、可重用</li>
-<li>使用嵌套是很有意义的，而不是默认选项</li>
-</ul>
-<p>##保持简单</p>
-<p>这篇文章的结论是保持简单。使用Sass的目的是要写出更简洁，更易于管理的CSS。在创建任何新的Mixins、变量或函数之前，你都需要确保它们的存在将会加强开发，并不会把事情整得更复杂。Sass的所有功能只要在适度的使用和正确的使用，才能发挥其最大的作用。</p>
-<p>无休止创建一个变量列表，或者创建一个复杂的函数，对于任何人来都是很难理解的，因为其他人必竟不是作者，无法理解作者的意图，或者说这样对开发并没带来好处和编译出干净的CSS。</p>
-<p>###扩展阅读</p>
-<ul>
-<li><a href="http://www.w3cplus.com/preprocessor/keep-sass-simple.html" target="_blank" rel="external">保持Sass的简单</a></li>
-</ul>
-<p>##结论</p>
-<p>上面所说的这些小技巧，或许你并不会完全认可。Sass仍然是一门很新的技术，因此我们只有不断去学习和实践，才能得到更多的有用技巧。如果您有更好的看法，欢迎在评论中一起讨论。</p>
-<p>译者手语：整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
-<p>如需转载烦请注明出处：</p>
-<p>英文原文：<a href="http://www.sitepoint.com/8-tips-help-get-best-sass/" target="_blank" rel="external">http://www.sitepoint.com/8-tips-help-get-best-sass/</a></p>
-<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/8-tips-help-get-best-sass.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/8-tips-help-get-best-sass.html</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Sass可以编译出非常优秀的CSS样式表，或者说，这就是Sass要做的事情。有效的使用Sass可以帮助你构建出干净的有效的CSS，但如果运用不好，Sass其实会让你的CSS文件变得更大，并且添加一些不必要的和重复的CSS代码。下面一些编写Sass小技巧，可以有效帮助你编写出更好的Sass。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="译文" scheme="http://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
-    
-    
-      <category term="技巧" scheme="http://ddnode.com/tags/%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何组织一个Sass项目</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87%E4%B8%80%E4%B8%AAsass%E9%A1%B9%E7%9B%AE.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/如何组织一个sass项目.html</id>
-    <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Sass最有用的一个特性就是可以将你的样式表分隔成很多个单独的文件。然后，你可以在主样式文件中通过<code>@import</code>引入你所需要的<code>.scss</code>文件。<br><a id="more"></a></p>
-<blockquote>
-<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://wiseheartdesign.com/" target="_blank" rel="external">John W. Long</a>的《<a href="http://thesassway.com/beginner/how-to-structure-a-sass-project" target="_blank" rel="external">How to structure a Sass project</a>》一文所译，整个译文带有我们自己的理解与思想，如果译得不好或不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://thesassway.com/beginner/how-to-structure-a-sass-project" target="_blank" rel="external">http://thesassway.com/beginner/how-to-structure-a-sass-project</a>，以及作者相关信息。</p>
-<p>——作者：<a href="http://wiseheartdesign.com/" target="_blank" rel="external">John W. Long</a></p>
-<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
-</blockquote>
-<p>Sass最有用的一个特性就是可以将你的样式表分隔成很多个单独的文件。然后，你可以在主样式文件中通过<code>@import</code>引入你所需要的<code>.scss</code>文件。</p>
-<p>但是你应该如何组织你的Sass项目呢？有没有分离样式文件的一个标准呢？</p>
-<p>##基本目录结构</p>
-<p>我喜欢将我的Sass项目这样组织文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">stylesheets/</div><div class="line">|</div><div class="line">|-- modules/              # 通用模块</div><div class="line">|   |-- _all.scss         # 包含了所有模块</div><div class="line">|   |-- _utility.scss     # 模块名称</div><div class="line">|   |-- _colors.scss      # Etc...</div><div class="line">|   ...</div><div class="line">|</div><div class="line">|-- partials/             # Partials</div><div class="line">|   |-- _base.sass        # 引入项目所有的mixins和项目的全局变量</div><div class="line">|   |-- _buttons.scss     # buttons</div><div class="line">|   |-- _figures.scss     # figures</div><div class="line">|   |-- _grids.scss       # grids</div><div class="line">|   |-- _typography.scss  # typography</div><div class="line">|   |-- _reset.scss       # reset</div><div class="line">|   ...</div><div class="line">|</div><div class="line">|-- vendor/               # 其他项目的CSS或SCSS</div><div class="line">|   |-- _colorpicker.scss</div><div class="line">|   |-- _jquery.ui.core.scss</div><div class="line">|   ...</div><div class="line">|</div><div class="line">`-- main.scss            # 主SCSS文件</div></pre></td></tr></table></figure>
-<p>##主样式表</p>
-<p>继续让我的主样式文件保持干净与简洁：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// Modules and Variables</div><div class="line">@import &quot;partials/base&quot;;</div><div class="line"></div><div class="line">// Partials</div><div class="line">@import &quot;partials/reset&quot;;</div><div class="line">@import &quot;partials/typography&quot;;</div><div class="line">@import &quot;partials/buttons&quot;;</div><div class="line">@import &quot;partials/figures&quot;;</div><div class="line">@import &quot;partials/grids&quot;;</div><div class="line">// ...</div><div class="line"></div><div class="line">// Third-party</div><div class="line">@import &quot;vendor/colorpicker&quot;;</div><div class="line">@import &quot;vendor/jquery.ui.core&quot;;</div></pre></td></tr></table></figure>
-<p>##模块, 局部和供应商</p>
-<p>正如你所看到的，我将我的项目划分成三部分：模块样式(Modules)，局部样式(Partials)和供应商样式(vendor)（也就是引入的第三方样式）。</p>
-<ul>
-<li><strong>modules</strong>目录是用来放置Sass文件的，他不会编译出CSS文件。主要放置了混合宏（mixins）、函数(functions)和变量(variables)这些东西。</li>
-<li><strong>partials</strong>目录主要是用来放置我的CSS的，有很多人喜欢将其拆分成“header”、“content”、“sidebar”和”footer”等组件（或者还有其他的）。因为我自己更喜欢<a href="http://smacss.com/" target="_blank" rel="external">SMACSS</a>，所以我将其化分更多的类别（typography, buttons, textboxes, selectboxes等等）。</li>
-<li><strong>vendor</strong>目录放的是第三方的CSS。放置了由其他人(或你自己为其他项目开发的其他组件)开发的预先封装的组件。比如说在vendor目录中放置了jQuery UI和Color picker组件。按一般的原则来说，我是不会支修改vendored目录中的文件，我只会将这些文件引入到我的主样式文件中。这样我就可以很容易在项目中更新第三方样式的未来版本。</li>
-</ul>
-<p>##使用基础的局部样式</p>
-<p>在我的partials目录中，你会注意到，我还放了一个基础的partials。这个partials主要目的是配置一个基本的Sass环境，使大家可以很容易构造一个样式。</p>
-<p>他看起来像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// Use Compass (&apos;cause it rocks!)</div><div class="line">@import &quot;compass&quot;;</div><div class="line"></div><div class="line">// Font weights</div><div class="line">$light: 100;</div><div class="line">$regular: 400;</div><div class="line">$bold: 600;</div><div class="line"></div><div class="line">// Base Font</div><div class="line">$base-font-family: sans-serif;</div><div class="line">$base-font-weight: $regular;</div><div class="line">$base-font-size: 13px;</div><div class="line">$base-line-height: 1.4;</div><div class="line"></div><div class="line">// Fixed Font</div><div class="line">$fixed-font-family: monospace;</div><div class="line">$fixed-font-size: 85%;</div><div class="line">$fixed-line-height: $base-line-height;</div><div class="line"></div><div class="line">// Headings</div><div class="line">$header-font-weight: $bold;</div><div class="line"></div><div class="line">@import &quot;modules/all&quot;;</div></pre></td></tr></table></figure>
-<p>这个样式表设置了一些全局的变量和加载了我所有的模块。模块不能再次的导入，不然会导致CSS输出。将所有变量和模块构成了我一个基本的Partials，让我有一个好的Sass环境。我可以使用<code>@import</code>语句引入一个样式。这可以让我导入不同的Partials来构建更多个样式表。一旦项目发展到一定的规模，多个样式表使用起来就更得心应手。</p>
-<p>##进一步加强</p>
-<p>根据<a href="http://uservoice.com/" target="_blank" rel="external">用户的建议</a>，我们进一步的对其完善。通过一个单独的Rails应用上同时开发多个子项目，我们可以将每个子项目设置为一个顶级的目录，这个时候，我们的项目目录结构将看来是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">stylesheets/</div><div class="line">|</div><div class="line">|-- admin/           # Admin子项目</div><div class="line">|   |-- modules/</div><div class="line">|   |-- partials/</div><div class="line">|   `-- _base.scss</div><div class="line">|</div><div class="line">|-- account/         # Account子项目</div><div class="line">|   |-- modules/</div><div class="line">|   |-- partials/</div><div class="line">|   `-- _base.scss</div><div class="line">|</div><div class="line">|-- site/            # Site子项目</div><div class="line">|   |-- modules/</div><div class="line">|   |-- partials/</div><div class="line">|   `-- _base.scss</div><div class="line">|</div><div class="line">|-- vendor/          # 其他项目引入的CSS或SCSS</div><div class="line">|   |-- _colorpicker-1.1.scss</div><div class="line">|   |-- _jquery.ui.core-1.9.1.scss</div><div class="line">|   ...</div><div class="line">|</div><div class="line">|-- admin.scss       # 每个子项目的主SCSS文件</div><div class="line">|-- account.scss</div><div class="line">`-- site.scss</div></pre></td></tr></table></figure>
-<p>正如你所看到的，每个子项目都有其自己的主样式文件，模块，局部和基础样式。vendor是通用的，并且有自己的一级目录。这样的文件组织方式，在一个大型的Sass项目中非常实用。</p>
-<p>##进一步探索</p>
-<p>现在，我在这里介绍了我自己的想法，你或许还会想了解别人是如何组织他们的Sass项目。实际上你可以在这里做很多的变化。下面的这些项目可能让你得到一些更好的方法：</p>
-<ul>
-<li><a href="https://github.com/chriseppstein/compass/tree/stable/frameworks" target="_blank" rel="external">Compass</a></li>
-<li><a href="https://github.com/lesjames/breakpoint/tree/master/breakpoint" target="_blank" rel="external">Breakpoint</a></li>
-<li><a href="https://github.com/imathis/octopress/tree/master/.themes/classic/sass" target="_blank" rel="external">Octopress</a></li>
-<li><a href="https://github.com/jlong/sass-twitter-bootstrap/tree/master/lib" target="_blank" rel="external">Sass Twitter Bootstrap</a></li>
-</ul>
-<p>你还可以阅读Dale Sande写的一篇优秀的文章：《<a href="http://gist.io/4436524" target="_blank" rel="external">Clean out your Sass junk drawer</a>》</p>
-<blockquote>
-<p>《<a href="http://gist.io/4436524" target="_blank" rel="external">Clean out your Sass junk drawer</a>》需要翻墙才能阅读。早前翻译了<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a>写的一篇有关于这方面的教程，感兴趣的同学可以阅读译文《<a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">管理Sass项目文件结构</a>》，原文《<a href="http://www.sitepoint.com/architecture-sass-project/" target="_blank" rel="external">Architecture for a Sass Project</a>》。——@大漠</p>
-</blockquote>
-<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
-<p>如需转载，烦请注明出处：</p>
-<p>英文出处：<a href="http://thesassway.com/beginner/how-to-structure-a-sass-project" target="_blank" rel="external">http://thesassway.com/beginner/how-to-structure-a-sass-project</a></p>
-<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/beginner/how-to-structure-a-sass-project.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/beginner/how-to-structure-a-sass-project.html</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Sass最有用的一个特性就是可以将你的样式表分隔成很多个单独的文件。然后，你可以在主样式文件中通过&lt;code&gt;@import&lt;/code&gt;引入你所需要的&lt;code&gt;.scss&lt;/code&gt;文件。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
-    
-      <category term="初级" scheme="http://ddnode.com/tags/%E5%88%9D%E7%BA%A7/"/>
-    
-      <category term="组织项目" scheme="http://ddnode.com/tags/%E7%BB%84%E7%BB%87%E9%A1%B9%E7%9B%AE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>定义好的变量名</title>
     <link href="http://ddnode.com/2014/09/21/Sass/%E5%AE%9A%E4%B9%89%E5%A5%BD%E7%9A%84%E5%8F%98%E9%87%8F%E5%90%8D.html"/>
     <id>http://ddnode.com/2014/09/21/Sass/定义好的变量名.html</id>
@@ -1451,9 +1447,9 @@ a:hover {
     
       <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
     
-      <category term="变量" scheme="http://ddnode.com/tags/%E5%8F%98%E9%87%8F/"/>
-    
       <category term="初级" scheme="http://ddnode.com/tags/%E5%88%9D%E7%BA%A7/"/>
+    
+      <category term="变量" scheme="http://ddnode.com/tags/%E5%8F%98%E9%87%8F/"/>
     
   </entry>
   
