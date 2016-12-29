@@ -4,9 +4,9 @@
   <subtitle>记录生活学习中的点点滴滴</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://ddnode.com/"/>
+  <link href="https://ddnode.com/"/>
   <updated>2016-12-29T01:26:58.000Z</updated>
-  <id>http://ddnode.com/</id>
+  <id>https://ddnode.com/</id>
   
   <author>
     <name>Boy</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Laravel 5.3 + vue 2.1 组件化开发的博客系统</title>
-    <link href="http://ddnode.com/2016/12/29/laravel-blog.html"/>
-    <id>http://ddnode.com/2016/12/29/laravel-blog.html</id>
+    <link href="https://ddnode.com/2016/12/29/laravel-blog.html"/>
+    <id>https://ddnode.com/2016/12/29/laravel-blog.html</id>
     <published>2016-12-29T01:25:53.000Z</published>
     <updated>2016-12-29T01:26:58.000Z</updated>
     
@@ -36,8 +36,8 @@
   
   <entry>
     <title>从输入URL到页面加载发生了什么</title>
-    <link href="http://ddnode.com/2016/10/08/what-happen-when-url-open.html"/>
-    <id>http://ddnode.com/2016/10/08/what-happen-when-url-open.html</id>
+    <link href="https://ddnode.com/2016/10/08/what-happen-when-url-open.html"/>
+    <id>https://ddnode.com/2016/10/08/what-happen-when-url-open.html</id>
     <published>2016-10-08T01:06:03.000Z</published>
     <updated>2016-12-29T01:34:53.000Z</updated>
     
@@ -143,8 +143,8 @@
   
   <entry>
     <title>正则匹配在线测试</title>
-    <link href="http://ddnode.com/2016/01/31/regexr.html"/>
-    <id>http://ddnode.com/2016/01/31/regexr.html</id>
+    <link href="https://ddnode.com/2016/01/31/regexr.html"/>
+    <id>https://ddnode.com/2016/01/31/regexr.html</id>
     <published>2016-01-31T05:54:35.000Z</published>
     <updated>2016-01-31T05:56:59.000Z</updated>
     
@@ -159,14 +159,14 @@
     </summary>
     
     
-      <category term="正则" scheme="http://ddnode.com/tags/%E6%AD%A3%E5%88%99/"/>
+      <category term="正则" scheme="https://ddnode.com/tags/%E6%AD%A3%E5%88%99/"/>
     
   </entry>
   
   <entry>
     <title>Business name generator</title>
-    <link href="http://ddnode.com/2015/11/28/Business-name-generator.html"/>
-    <id>http://ddnode.com/2015/11/28/Business-name-generator.html</id>
+    <link href="https://ddnode.com/2015/11/28/Business-name-generator.html"/>
+    <id>https://ddnode.com/2015/11/28/Business-name-generator.html</id>
     <published>2015-11-28T08:54:34.000Z</published>
     <updated>2015-11-28T08:56:30.000Z</updated>
     
@@ -180,14 +180,14 @@
     </summary>
     
     
-      <category term="Tools" scheme="http://ddnode.com/tags/Tools/"/>
+      <category term="Tools" scheme="https://ddnode.com/tags/Tools/"/>
     
   </entry>
   
   <entry>
     <title>Laravel常用插件</title>
-    <link href="http://ddnode.com/2015/11/21/laravel-packages.html"/>
-    <id>http://ddnode.com/2015/11/21/laravel-packages.html</id>
+    <link href="https://ddnode.com/2015/11/21/laravel-packages.html"/>
+    <id>https://ddnode.com/2015/11/21/laravel-packages.html</id>
     <published>2015-11-21T12:52:49.000Z</published>
     <updated>2015-11-21T13:00:16.000Z</updated>
     
@@ -277,14 +277,14 @@
     </summary>
     
     
-      <category term="laravel" scheme="http://ddnode.com/tags/laravel/"/>
+      <category term="laravel" scheme="https://ddnode.com/tags/laravel/"/>
     
   </entry>
   
   <entry>
     <title>Nothing</title>
-    <link href="http://ddnode.com/2015/06/14/Nothing.html"/>
-    <id>http://ddnode.com/2015/06/14/Nothing.html</id>
+    <link href="https://ddnode.com/2015/06/14/Nothing.html"/>
+    <id>https://ddnode.com/2015/06/14/Nothing.html</id>
     <published>2015-06-14T02:12:07.000Z</published>
     <updated>2015-06-16T15:12:34.000Z</updated>
     
@@ -303,8 +303,8 @@
   
   <entry>
     <title>google镜像</title>
-    <link href="http://ddnode.com/2015/05/23/google-mirror.html"/>
-    <id>http://ddnode.com/2015/05/23/google-mirror.html</id>
+    <link href="https://ddnode.com/2015/05/23/google-mirror.html"/>
+    <id>https://ddnode.com/2015/05/23/google-mirror.html</id>
     <published>2015-05-23T08:52:04.000Z</published>
     <updated>2015-05-23T08:53:17.000Z</updated>
     
@@ -323,8 +323,8 @@
   
   <entry>
     <title>git修改远程仓库地址</title>
-    <link href="http://ddnode.com/2015/04/14/git-modify-remote-responsity-url.html"/>
-    <id>http://ddnode.com/2015/04/14/git-modify-remote-responsity-url.html</id>
+    <link href="https://ddnode.com/2015/04/14/git-modify-remote-responsity-url.html"/>
+    <id>https://ddnode.com/2015/04/14/git-modify-remote-responsity-url.html</id>
     <published>2015-04-14T12:59:56.000Z</published>
     <updated>2016-10-01T14:09:15.000Z</updated>
     
@@ -351,14 +351,14 @@
     </summary>
     
     
-      <category term="git" scheme="http://ddnode.com/tags/git/"/>
+      <category term="git" scheme="https://ddnode.com/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>hexo-update</title>
-    <link href="http://ddnode.com/2015/03/29/hexo-update.html"/>
-    <id>http://ddnode.com/2015/03/29/hexo-update.html</id>
+    <link href="https://ddnode.com/2015/03/29/hexo-update.html"/>
+    <id>https://ddnode.com/2015/03/29/hexo-update.html</id>
     <published>2015-03-29T11:14:49.000Z</published>
     <updated>2015-03-29T11:15:28.000Z</updated>
     
@@ -377,8 +377,8 @@
   
   <entry>
     <title>Drupal创建自己的钩子</title>
-    <link href="http://ddnode.com/2014/10/15/Drupal/drupal-design-patterns-hooks.html"/>
-    <id>http://ddnode.com/2014/10/15/Drupal/drupal-design-patterns-hooks.html</id>
+    <link href="https://ddnode.com/2014/10/15/Drupal/drupal-design-patterns-hooks.html"/>
+    <id>https://ddnode.com/2014/10/15/Drupal/drupal-design-patterns-hooks.html</id>
     <published>2014-10-15T02:06:55.000Z</published>
     <updated>2014-10-29T01:42:17.000Z</updated>
     
@@ -396,181 +396,203 @@
     
     </summary>
     
-      <category term="Drupal" scheme="http://ddnode.com/categories/Drupal/"/>
+      <category term="Drupal" scheme="https://ddnode.com/categories/Drupal/"/>
     
     
-      <category term="Drupal" scheme="http://ddnode.com/tags/Drupal/"/>
+      <category term="Drupal" scheme="https://ddnode.com/tags/Drupal/"/>
     
   </entry>
   
   <entry>
-    <title>理解Sass的list</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E7%90%86%E8%A7%A3sass%E7%9A%84list.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/理解sass的list.html</id>
+    <title>管理Sass项目</title>
+    <link href="https://ddnode.com/2014/09/21/Sass/%E7%AE%A1%E7%90%86sass%E9%A1%B9%E7%9B%AE.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/管理sass项目.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:37.000Z</updated>
+    <updated>2015-03-29T11:01:39.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能，我们就必须的深入了解他。<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>写了几篇教程，其深入的培析了Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能，以及其使用方法。<br><a id="more"></a></p>
-<ul>
-<li><a href="http://css-tricks.com/striped-background-gradients/" target="_blank" rel="external">Create Striped Backgrounds With Gradients (and a Sass Mixin)</a></li>
-<li><a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/" target="_blank" rel="external">UNDERSTANDING SASS LISTS</a></li>
-<li><a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a></li>
-</ul>
-<p>除了这向篇文章，在互联网上很难找到有关于Sass的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>更好教程了。而在Sass的社区中对List的功能讨论也是相当的激烈。这些天我也一直在阅读这几篇文章，想让自己能更好的理解Sass中的<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能。今天根据这几篇文章，对<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists" target="_blank" rel="external">List</a>功能的介绍做了一些翻译与整理。</p>
-<p>##创建一个Sass的list</p>
-<p>首要的事情就是创建List。虽然在Sass中创建一个list可能会非常棘手，但事实上呢？<strong>Sass对于变量类型并不是非常原格</strong>，可以像理解<code>Javascript</code>语言一样，<strong>Sass也是一种弱类型语言</strong>。这样就意味着，处理一个列表你就可以像是在处理一个字符串，或者说是一个字符串列表功能。</p>
+    <content type="html"><![CDATA[<p>回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。<br><a id="more"></a></p>
+<p>我的小伙伴们，那些苦逼的日子就将过去了。CSS处理变得更有趣，也更复杂。现在我们有CSS预处理器、响应式设计、渐进增强、优雅降级，和其他一些时尚的东西。可以说，CSS变得比以往任何时候都更加强大。</p>
 <blockquote>
-<p>Sass对于变量类型不是非常严格</p>
+<p>CSS变得更有趣，更复杂。——@<a href="http://www.sitepoint.com/author/hgiraudel" target="_blank" rel="external">Hugo Giraudel</a></p>
 </blockquote>
-<p>在Sass中，有两种方法可以用来初始化一个<strong>空</strong>的变量（这也可以被视为一个列表）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$a:();</div><div class="line">$b:unquote(&quot; &quot;);//注意，冒号之间有一个空格</div><div class="line">$c:null;</div><div class="line">$d:(null);</div></pre></td></tr></table></figure>
-<p>现在我们创建了四个变量，接着通过Sass的<code>type-of()</code>函数来检测这些变量的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">type-of($a) =&gt; list</div><div class="line">type-of($b) =&gt; string</div><div class="line">type-of($c) =&gt; null</div><div class="line">type-of($d) =&gt; null</div></pre></td></tr></table></figure>
-<p>接下来，使用<code>length()</code>函数来检测一下每个变量的长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">length($a) =&gt; 0</div><div class="line">length($b) =&gt; 1</div><div class="line">length($c) =&gt; 1</div><div class="line">length($d) =&gt; 1</div></pre></td></tr></table></figure>
-<p><code>$a</code>的长度是<code>0</code>，这是我们能预想到的，因为他是一个空列表。<code>$b</code>的长度是<code>1</code>，因为他是一个字符串，然而<code>$c</code>和<code>$d</code>都是<code>null</code>变量（空变量），令人想不通的是，他们的长度也是<code>1</code>。</p>
-<p>虽然<code>$a</code>和<code>$c</code>(<code>$d</code>)都可以用来初始化一个<code>List</code>（甚至是<code>unquote(&quot;&quot;)</code>,<strong>注，冒号之间没有任何空格</strong>），但前面简单的长度测试告诉我们，他们其实并不是完全一样的。当然如果你喜欢，你可以使用他们来初始化Sass的一个列表，但大家必须要记住，他们之间是不一样的。</p>
-<p>##<code>()</code>和<code>null</code>的区别</p>
-<p><code>null</code>等同于<code>(null)</code>或者<code>unquote(&quot;&quot;)</code>他们都是用来做为列表的第一个列表项，大多数情况之下，用他们来对Sass的列表进行初始化，但是和<code>()</code>并不完全一样，接下来通过几个简单的测试来说明<code>()</code>和<code>null</code>的区别。</p>
-<p>假设有两个变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$a:();</div><div class="line">$b:null;</div></pre></td></tr></table></figure>
-<p>使用<code>type-of()</code>函数测试出变量的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">type-of($a) =&gt; list</div><div class="line">type-of($b) =&gt; null</div></pre></td></tr></table></figure>
-<p>使用<code>length()</code>函数输出变量的长度值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">length($a) =&gt; 0</div><div class="line">length($b) =&gt; 1</div></pre></td></tr></table></figure>
-<p>变量<code>$a</code>和<code>$b</code>都是一个列表，通过<code>nth()</code>函数来检测出第一个列表项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nth($a,1) =&gt; throws error</div><div class="line">nth($b,1) =&gt;</div></pre></td></tr></table></figure>
-<p>由于<code>$a</code>长度是0，在<code>nth()</code>函数检出其第一个列表项，在Sass编译的时候将会报错，而<code>$b</code>第一项刚好是空，那么在<code>nth()</code>函数检出其第一个列表项是一个空，没有任何东西。</p>
-<p>接下来使用<code>append()</code>函数为每个列表添加一个列表项<code>test</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$a: append($a,&quot;test&quot;);</div><div class="line">$b: append($b,&quot;test&quot;);</div></pre></td></tr></table></figure>
-<p>再次检测其长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">length($a) =&gt; 1</div><div class="line">length($b) =&gt; 2</div></pre></td></tr></table></figure>
-<p>使用<code>index()</code>函数来检测“test”列表项在列表中各处什么位置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">index($a,&quot;test&quot;) =&gt; 1</div><div class="line">index($b,&quot;test&quot;) =&gt; 2</div></pre></td></tr></table></figure>
-<p>使用<code>nth()</code>函数，再次检出列表的第一个列表项，这个时候又变了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nth($a,1) =&gt; test</div><div class="line">nth($b,1) =&gt;</div></pre></td></tr></table></figure>
-<p>我想这几个函数对<code>$a</code>和<code>$b</code>变量的操作，一路下来，您应该很清楚的知道<code>()</code>和<code>null</code>的不同之处了吧。</p>
-<p>##Sass的List</p>
-<p>Sass的<code>list</code>非常类似于<code>JavaScript</code>语言中的数组。你可以通过下面的方式来初始化一个Sass的List:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$list:();</div></pre></td></tr></table></figure>
-<p>当然，你也还可以使用<code>$list:null</code>或者<code>$list:unquote(&quot;&quot;)</code>，但你要注意一下他们之间的不同。不管使用哪种方法，我们先来看一个简单的Sass列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$list:(#b4d455,42,&quot;awesome&quot;);</div></pre></td></tr></table></figure>
-<p>前面也说过，<strong>Sass语法非常宽松</strong>，这也让    <code>list</code>在Sass中使用变得更加的复杂。我们一个一个来看。</p>
-<p>###列表的分隔符</p>
-<p>在Sass的列表中，你可以使用<strong>空格符</strong>或者<strong>逗号</strong>作为列表项与列表项之间的分隔符。事实上，我更喜欢使用逗号(<code>,</code>)用来做为列表的分隔符。在<code>JavaScript</code>和<code>PHP</code>这些语言中，都是用逗号作为数组的分隔符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$list-space: &quot;item-1&quot; &quot;item-2&quot; &quot;item-3&quot;;</div><div class="line">$list-space: &quot;item-1&quot;,&quot;item-2&quot;,&quot;item-3&quot;;</div></pre></td></tr></table></figure>
-<p><strong>注：</strong>和CSS一样，只要没有特殊字符，列表项的双引号是可以省略的。所以<code>$list: item-1,item-2,item-3;</code>是有效的。</p>
-<p>###列表的嵌套</p>
-<p>Sass的List就像<code>JavaScript</code>或者其他的程序语言一样，对列表的嵌套层级并没有限制，可以根据自己的需求对列表进行嵌套。Sass的嵌套主要有两种方式，一种是嵌套的列表子级列表项是以逗号分隔，那么在列表中需要用括号来分隔；另一种嵌套的列表子级用空格分隔，那么在列表中可以使用逗号来分隔。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* Nested lists with braces and same separator */</div><div class="line">$list: (</div><div class="line">        (&quot;item-1.1&quot;, &quot;item-1.2&quot;, &quot;item-1.3&quot;),</div><div class="line">        (&quot;item-2.1&quot;, &quot;item-2.2&quot;, &quot;item-2.3&quot;),</div><div class="line">        (&quot;item-3.1&quot;, &quot;item-3.2&quot;, &quot;item-3.3&quot;)</div><div class="line">       );</div><div class="line"></div><div class="line">/* Nested lists without braces using different separators to distinguish levels */</div><div class="line">$list: &quot;item-1.1&quot; &quot;item-1.2&quot; &quot;item-1.3&quot;,</div><div class="line">       &quot;item-2.1&quot; &quot;item-2.2&quot; &quot;item-2.3&quot;,</div><div class="line">       &quot;item-3.1&quot; &quot;item-3.2&quot; &quot;item-3.3&quot;;</div></pre></td></tr></table></figure>
-<p>###你可以使用括号</p>
-<p>正如你前面看到的示例一样，在Sass中，你可以不用括号定义一个非空的列表。这主要是因为大多数人的想法相反，在Sass中括号不是用来创建列表（除非是空的列表），而是用来做为分隔符的。</p>
-<p>事实上，在Sass中没有人会强迫您使用括号来创建一个列表，如果你喜欢，完全可以使用逗号来区别。说实话，我就经常使用逗号来创建一个列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$list: &quot;item-1&quot;, &quot;item-2&quot;, &quot;item-3&quot;;</div></pre></td></tr></table></figure>
-<p><strong>注：</strong>这是一个理论。我注意到括号都不只是一个列表项分组。当你操作的一个列表有四五层的嵌套时，括号绝对不是可选的。这样会让列表变得太复杂了。</p>
+<p>所以我们有很多东西需要处理，这样一来，如何组织项目文件就变得非常的重要。我想大家都同意这样的观点，但实现起来并不太容易。所以我写了这篇文章，将会告诉你应该怎么去想，比告诉你怎么做要更好，否则，我就离开你了。</p>
+<p>##构建你的结构体系</p>
+<p>CSS预处理器的特点之一是可以把你的代码分割成很多个文件，而且不会影响性能。这都要归功于Sass的<code>@import</code>命令，只要在你的开发环境下，你调用不管多少文件，最终将编译出一个CSS样式文件。</p>
 <blockquote>
-<p>操作一个五层以上的嵌套列表是一件痛苦而又麻烦的事情</p>
+<p>多个文件中开发，最终合并输出一个文件。——@Bruce Lee</p>
 </blockquote>
-<p>###列表的索引值</p>
-<p>Sass中的列表索引值和<code>JavaSctript</code>数组中的索引值不一样，他是<strong>从1开始，而不是从0开始</strong>。一旦你开始使用Sass列表，这个问题也是最容易出错的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nth($list,0) =&gt; throws error</div><div class="line">nth($list,1) =&gt; item-1</div></pre></td></tr></table></figure>
-<p>###每个值都是一个列表</p>
-<p>在Sass中每一个值都可以是一个列表。字符串、数值、布尔值或者任何变量。而且可以通过Sass的<a href="http://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="external">List函数</a>来检测出一些值。</p>
-<p>我们来看一个简单的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$variable: &quot;Sass is awesome&quot;;</div><div class="line">$variable2: Sass is awesome;</div></pre></td></tr></table></figure>
-<p>上面两个变量值仅仅就是一个有引号，一个没有引号。</p>
-<p>使用<code>type-of()</code>函数检测出他们的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; type-of($variable)</div><div class="line">&quot;string&quot;</div><div class="line">&gt;&gt; type-of($variable2)</div><div class="line">&quot;list&quot;</div><div class="line">&gt;&gt;</div></pre></td></tr></table></figure>
-<p>使用<code>length()</code>函数检测出他们的长度：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; length($variable)</div><div class="line">1</div><div class="line">&gt;&gt; length($variable2)</div><div class="line">3</div></pre></td></tr></table></figure>
-<p>在用<code>nth()</code>函数来检测输出内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; nth($variable,1)</div><div class="line">&quot;Sass is awesome&quot;</div><div class="line">&gt;&gt; nth($variable2,1)</div><div class="line">&quot;Sass&quot;</div><div class="line">&gt;&gt;</div></pre></td></tr></table></figure>
-<p>这里变动一下，来索引第二个值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; nth($variable,2)</div><div class="line">SyntaxError: List index is 2 but list is only 1 item long for `nth&apos;</div><div class="line">&gt;&gt; nth($variable2,2)</div><div class="line">&quot;is&quot;</div></pre></td></tr></table></figure>
-<p>所在大家在使用的时候当心了，有引号的时候会当为一个字符串，当然他也是一个只有一个列表项的列表，而删除引号会被视为有三个列表项的列表。</p>
-<p>###可以使用空格或逗号分隔列表项</p>
-<p>在Sass的列表中，使用空格和逗号都可以用来分隔列表项，这两者都是完全有效的。我敢肯定你更喜欢使用逗号来分隔列表项，因为在<code>JavaScript</code>和<code>PHP</code>等程序中的数组，逗号是一个标准的分离器。如果你喜欢也可以用空格分隔。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$list: #fff 42 &quot;awesome&quot;;</div><div class="line">$list: #fff,42,&quot;awesome&quot;;</div></pre></td></tr></table></figure>
-<p>你也可以使用逗号和空格分隔符混用，此时用来区别列表的嵌套。比如说你的一级列表中使用逗号来分隔列表项，而且他里面还嵌套了一个二级列表，那么二级列表可以使用空格来分隔。在下面的示例当中，第三个值是一个空格分隔的列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$list:  #b4d455, 42, &quot;awesome&quot; &quot;interesting&quot; &quot;free&quot;;</div></pre></td></tr></table></figure>
-<p>综合上述，在任何情况之下，定义你的列表时，你应该注意以下几点：</p>
+<p>开始将你的CSS文件分割成多个文件和文件夹。正如我的一位导师说的“任何事物都有其正确的地方，每个地方都有其正确的事”。那么，这也是我喜欢做的事。</p>
+<p>##文件夹构建</p>
+<p>文件夹的创建是必不可少的。就算在家里，你也不会把所有的纸张放在一个盒子里。你可能会使用一个文件夹。一个用于房子上，一个用于银行，一个用于账单等等。</p>
+<p>你在创建CSS的架构的时候也应该如此：你不只是把所有的Sass文件放在一个文件夹下，你会将他们分类。</p>
+<p>下面的示例屏示的是我将如何组织我的Sass文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">sass/</div><div class="line">|</div><div class="line">|– base/</div><div class="line">|   |– _reset.scss       # Reset/normalize</div><div class="line">|   |– _typography.scss  # Typography rules</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– components/</div><div class="line">|   |– _buttons.scss     # Buttons</div><div class="line">|   |– _carousel.scss    # Carousel</div><div class="line">|   |– _cover.scss       # Cover</div><div class="line">|   |– _dropdown.scss    # Dropdown</div><div class="line">|   |– _navigation.scss  # Navigation</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– helpers/</div><div class="line">|   |– _variables.scss   # Sass Variables</div><div class="line">|   |– _functions.scss   # Sass Functions</div><div class="line">|   |– _mixins.scss      # Sass Mixins</div><div class="line">|   |– _helpers.scss     # Class &amp; placeholders helpers</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– layout/</div><div class="line">|   |– _grid.scss        # Grid system</div><div class="line">|   |– _header.scss      # Header</div><div class="line">|   |– _footer.scss      # Footer</div><div class="line">|   |– _sidebar.scss     # Sidebar</div><div class="line">|   |– _forms.scss       # Forms</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– pages/</div><div class="line">|   |– _home.scss        # Home specific styles</div><div class="line">|   |– _contact.scss     # Contact specific styles</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– themes/</div><div class="line">|   |– _theme.scss       # Default theme</div><div class="line">|   |– _admin.scss       # Admin theme</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– vendors/</div><div class="line">|   |– _bootstrap.scss   # Bootstrap</div><div class="line">|   |– _jquery-ui.scss   # jQuery UI</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|</div><div class="line">`– main.scss             # primary Sass file</div></pre></td></tr></table></figure>
+<p>正如你所看到的，在根目录底下只有一个<code>main.scss</code>文件，其他<code>.scss</code>文件都根据不同的分类放在对应的文件夹中，只是这些<code>.scss</code>文件前面都有一个下划线(<code>_</code>)，用来告诉Sass，这些<code>.scss</code>文件只是<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials" target="_blank" rel="external">局部</a>，不通过<code>@import</code>是不应该被编译出<code>.css</code>文件。事实上，它们是导入和合并文件的<a href="https://gist.github.com/HugoGiraudel/8615243" target="_blank" rel="external">基本文件</a>而以。</p>
+<blockquote>
+<p>一个文件可以解决所有问题，一个文件可以找到他们，一个文件给他们带来了所有的一切，Sass只是将他们合并在一起。——@J.R.R. Tolkien</p>
+</blockquote>
+<p>接下来，我们依次来看结构中的每一个文件目录。</p>
+<p>###Base</p>
+<p><code>base/</code>文件夹包含了一些有关于你的项目中一些模板相关。在这里，你可以看到<code>reset</code>样式(或者Normalize.css,或者其他)，也有一些关于文本排版方面的，当然根据不同的项目会有一些其他的文件。</p>
 <ul>
-<li>使用括号进行列表嵌套；</li>
-<li>使用逗号分隔列表项；</li>
-<li>给字符串添加引号；</li>
-<li>列表嵌套不要超过五层；</li>
-<li>初始化列表建议使用<code>()</code>，不使用<code>null</code>;</li>
+<li><code>_reset.scss</code>或<code>_normalize.scss</code></li>
+<li><code>_typography.scss</code></li>
 </ul>
-<p>这些细节都将帮助您节省更多的时间，请相信我。</p>
-<p>##列表函数</p>
-<p>在Sass中，给列表提供了一系列的函数操作。在《<a href="http://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="external">Sass函数</a>》一文中，对列表的函数进行过详细介绍，感兴趣的可以看看。此处将Sass函数做一个汇总。</p>
+<p>###Helpers</p>
+<p><code>helpers/</code>文件夹（有的地方也称其为<code>utils/</code>）主要包含了项目中关于Sass的工具和帮助之类。在里面放置了我们需要使用的<code>_function.scss</code>，和<code>_mixin.scss</code>。在这里还包含了一个<code>_variables.scss</code>文件（有的地方也称其为<code>_config.scss</code>），这里包含项目中所有的全局变量（比如排版本上的，配色方案等等）。</p>
 <ul>
-<li><strong>length($list)：</strong>返回<code>$list</code>长度（如果不是list,返回1）</li>
-<li><strong>nth($list,$index)：</strong>返回<code>$list</code>中第<code>$index</code>列表项值（如果索引值不在列表范围内，将会报错）</li>
-<li><strong>index($list,$value)：</strong>返回<code>$value</code>在<code>$list</code>中的位置</li>
-<li><strong>append($list,$value[,$separator])：</strong>使用<code>$separator</code>分隔符将<code>$value</code>列表项添加到<code>$list</code>最后（如果没有显式指定<code>$separator</code>分隔符，会以当前分隔符分隔）</li>
-<li><strong>jion($list-1,$list-2[,$separator]):</strong>使用<code>$separator</code>分隔符将<code>$list-2</code>附加到<code>$list-1</code>（如果没有显式指定分隔符，将对<code>$list-1</code>中的分隔符）</li>
-<li><strong>zip(*$lists):</strong>将多个<code>$list</code>组合在一起成为一个多维列表。如果列表源长度并不是所有都相同，结果列表长度将以最短的一个为准</li>
-<li><strong>reject($list,$value)：</strong>这是Compass中的一个函数，将<code>$value</code>值从<code>$list</code>中删除</li>
-<li><strong>compact(*$args)：</strong>Compass函数，返回一个删除非真值的新列表</li>
+<li><code>_variables.scss</code></li>
+<li><code>_mixin.scss</code></li>
+<li><code>_function.scss</code></li>
+<li><code>_placeholders.scss</code>(也有称为<code>_helpers.scss</code>)</li>
 </ul>
-<p>##给Sass列表添加东西</p>
-<p>Sass中的<code>list</code>是一个很有趣的东西，但也是个很复杂的东西。前面都是一些理论化，接下来通过一个例子的使用来介绍<code>list</code>。</p>
-<p>比如说一个扩展选择器，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.home .nav-home,</div><div class="line">.about .nav-about,</div><div class="line">.products .nav-products,</div><div class="line">.contact .nav-contact</div></pre></td></tr></table></figure>
-<p>这些选择器都是基于列表的关键值生成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pages: home,about,products,contact;</div></pre></td></tr></table></figure>
-<p>根据这个列表，有三种方法可以生成这样的选择器，我们可以一个一个来看。</p>
-<p>首先我们创建一个测试例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$pages: home,about,products,contact;</div><div class="line">$selector:();</div><div class="line">@each $item in $pages &#123;</div><div class="line">	//我们创建$selector</div><div class="line">&#125;</div><div class="line">#&#123;$selector&#125;&#123;</div><div class="line">	//样式写在这里</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###长而复杂的方法</p>
-<p>这是我两星期前使用的一个方法，它可以运行，但它需要一个额外的条件来处理逗号。如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@each $item in $pages&#123;</div><div class="line">	$selector: $selector unquote(&quot;.#&#123;$item&#125; .nav-#&#123;$item&#125;&quot;);</div><div class="line">	@if $item != nth($pages, length($pages))&#123;</div><div class="line">		$selector: $selector unquote(&quot;,&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>基本上给<code>$selector</code>添加了新的选择器，如果我们不处理列表的最后一项，我们需要添加一个逗号。</p>
-<p>###简洁的方法</p>
-<p>这种方法是通过<code>append()</code>函数方法，将他们添加到一起。这也是最简单的方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@each $item in $pages&#123;</div><div class="line">	$selector: append($selector,unquote(&quot;.#&#123;$item&#125; .nav-#&#123;$item&#125;&quot;),comma);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我认为这是很简单的，我们将显示的使用逗号将选择器与前面的分隔开，并将此重新赋以给新的选择器<code>$selector</code>。</p>
-<p>###隐式的方法</p>
-<p>这种方法是最简单的，通过隐式的附加功能，将选择器合在一起，非常的简洁。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@each $item in $pages&#123;</div><div class="line">	$selector: $selector,unquote(&quot;.#&#123;$item&#125; .nav-#&#123;$item&#125;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>##自定义列表函数</p>
-<p>前面介绍主要Sass中<code>list</code>的功能以及自带的处理<code>list</code>的函数，但很多更先进的列表处理到目前为止，Sass自身是无法处理的。</p>
-<p><a href="http://hugogiraudel.com" target="_blank" rel="external">Hugo</a>根据Sass的一些功能为<code>list</code>定义了一些高级的函数功能，用来处理Sass的<code>list</code>。并在《<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a>》一文中介绍了这些高级函数的功能，以及使用方法。接下来，我们也跟随此文了解和学习这些高级的列表函数。</p>
-<p>我们来演示一个简单的函数。这里有两上小功能，就是定义两个函数用来获取列表中的第一个列表项和最后一个列表项的值。在很多时候我们都是通过<code>nth()</code>函数方式来获取：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nth($list,1);//获取列表中的第一个列表项</div><div class="line">nth($list,length($list));//获取列表中的最后一个列表项</div></pre></td></tr></table></figure>
-<p>众所周知，Sass中的列表项索引号是从<code>1</code>开始，而<code>length($list)</code>可以获得一个列表的长度值，再配合<code>nth()</code>函数得到第一项和最后一项。那么我们可以换过一个角度来思考，将这两个分别封装成两个函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//定义first()函数，获取列表中的第一个列表项</div><div class="line">@function first($list)&#123;</div><div class="line">	@return nth($list,1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//定义last()函数，获取列表中的最后一个列表项</div><div class="line">@function last($list)&#123;</div><div class="line">	@return nth($list,length($list));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>例如我们一个颜色列表，我在页头<code>header</code>调用列表中第一个颜色，而在页脚<code>footer</code>调用列表中最后一个颜色，我们就可以这样来使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//定义颜色列表</div><div class="line">$colors: green,blue,orange,yellow;</div><div class="line"></div><div class="line">//调用列表中第一个颜色</div><div class="line">.header &#123;</div><div class="line">	color: first($colors);//等同于nth($colors,1)</div><div class="line">&#125;</div><div class="line"></div><div class="line">//调用列表中最后一个颜色</div><div class="line">.footer&#123;</div><div class="line">	color: last($colors);//等同于nth($colors,length($colors))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>转译出来的CSS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.header &#123;</div><div class="line">  color: green;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.footer &#123;</div><div class="line">  color: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>很多时候列表只有一个列表项，此时<code>first()</code>和<code>last()</code>函数获取的列表项将等同。</p>
-<p>其它自定义的列表高级函数，如果你感兴趣，可以猛击<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">这里</a></p>
+<p>###Layout</p>
+<p><code>layout/</code>文件夹(有时也称为<code>partials/</code>)中放置了大量的文件，每个文件主要用于布局方面的，比如说”header”，“footer”等。他也会包括<code>_grid.scss</code>文件，用来创建网格系统。</p>
+<ul>
+<li><code>_grid.scss</code></li>
+<li><code>_header.scss</code></li>
+<li><code>_footer.scss</code></li>
+<li><code>_sidebar.scss</code></li>
+<li><code>_forms.scss</code></li>
+</ul>
+<p>导航文件（<code>_navigation.scss</code>）文件放在这里也有意义，虽然我将他放在了<code>components/</code>文件夹中。但是我想将其放在<code>layout/</code>文件夹中更好些，当然最后还是由你自己来决定。</p>
+<p>###Components</p>
+<p>对于一些小组件，都放在了<code>components/</code>文件夹（通常也称为<code>modules/</code>），<code>layout/</code>是一个宏观的（定义全局的线框），<code>components/</code>是一个微观的。它里面放了一些特定的组件，比如说<code>slider</code>，<code>loading</code>，<code>widget</code>或者其他的小组件。通常<code>components/</code>目录下的都是一些小组件文件。</p>
+<ul>
+<li><code>_media.scss</code></li>
+<li><code>_carousel.scss</code></li>
+<li><code>_thumbnails.scss</code></li>
+</ul>
+<p>###Page</p>
+<p>如果你需要针对一些页面写特定的样式，我想将他们放在<code>page/</code>文件夹中是非常酷的，并且以页面的名称来命名。例如，你的首页需要制作一个特定的样式，那么你就可以在<code>page/</code>文件夹中创建一个名叫<code>_home.scss</code>文件。</p>
+<ul>
+<li><code>_home.scss</code></li>
+<li><code>_contact.scss</code></li>
+</ul>
+<p>根据你自己的布署，你可以根据自己的需求调用这些文件，避免与其他样式文件合并在一起。这真的主取决于你自己，在我工作的地方，我是不允许这样的事情发生，只在需要的页面调用需要的文件。比如说，我们首页有一个特定的布局样式，编译出来的CSS大约有200行代码。为了防止每个页面加载这些代码，我只在主页文件上引用这个文件。</p>
+<p>###Themes</p>
+<p>如果你像我一样要为一个大型的网站制作多个主题，那么有一个<code>theme/</code>文件夹是非常有意义的。你可以把主题相关的文件放在这个文件夹中。这绝对跟具体的项目有关，你只要觉得跟主题相关的，有必要引入。</p>
+<ul>
+<li><code>_theme.scss</code></li>
+<li><code>_admin.scss</code></li>
+</ul>
+<p>###Vendors</p>
+<p>最后一个但并非不重要，创建<code>vendors/</code>文件夹，主要用来包含来自外部的库和框架的CSS文件。比如Bootstrap,jQueryUI，FancyCarouselSliderjQueryPowered等等。把这些文件放在同一个文件夹中，你可以说，嘿，这些代码不是我的，不是我写的，跟我无关。</p>
+<p>例如：</p>
+<ul>
+<li><code>bootstrap.scss</code></li>
+<li><code>jquery-ui.scss</code></li>
+<li><code>select2.scss</code></li>
+</ul>
+<p>从另一个角度来说，在我平时工作中，还创建了一个<code>vendors-extensions/</code>文件夹，用来放置一些覆盖从外部引入进来的库和框架中的小组件。例如，我们可以在<code>_bootstrap.scss</code>文件中用来覆盖Bootstrap框架中的一些小组件。这为了避免和外部直接引来的组件升级造成的冲突，或许这不是一个很好的方案。</p>
+<p>大致就是这些，但不同的项目可能会不一样，但我可以肯定，你们都有了这样的一个概念。在文件夹中嵌套一个文件夹，这样的做法我一直不太反对，但我不太喜欢这样的方式。我发现，在大多数情况之下，只需一个层级就足足够，既保证结构的简洁与清晰，而且不复杂。但话又说回来，如果你觉得你的项目有必要嵌套更深层次的文件夹，你也可以自由的发挥。</p>
+<p><strong>温馨提示：</strong>如果你觉得你的架构并不能向大家说明<code>SCSS</code>文件夹的架构，你可以在根目录下创建一个<code>README.md</code>文件（或者在<code>main.scss</code>文件中一步一步说明）解释。</p>
+<p>##文件很酷？</p>
+<p>有一个问题常被人问到“多少文件才算是很多文件呢？”我常回答“再多文件都不算多”。拆分成多个文件的宗旨是帮助你组织你的代码。如果你觉得某事值得拆分成多个文件，可以自由的拆分。正如<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a>在《<a href="http://css-tricks.com/sass-style-guide/" target="_blank" rel="external">Sass Style Guide</a>》中所说：</p>
+<blockquote>
+<p>拆分成尽可能多的小文件是有道理的。——@<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a></p>
+</blockquote>
+<p>不过，我建议不把单个组件拆分成多个文件，除非你有很好的理由这样做。通常我更倾向于一个组件一个文件。俗话说“没有更多，只有更少”。用一个简洁语义化的名称，用来表示模块的名称。这样我们就可以通过查找名称找到你需要的东西。</p>
 <p>##总结</p>
-<p>本文主要根据<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>写了几篇教程：《<a href="http://css-tricks.com/striped-background-gradients/" target="_blank" rel="external">Create Striped Backgrounds With Gradients (and a Sass Mixin)</a>》、《<a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/" target="_blank" rel="external">UNDERSTANDING SASS LISTS</a>》、《<a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/" target="_blank" rel="external">ADVANCED SASS LIST FUNCTIONS</a>》介绍了Sass中的<code>list</code>功能。</p>
-<p>经过上面的阅读之后，你能轻松的创建一个列表，以及索引列表项的值，判断列表的长度等等功能。同时在项目中使用列表功能，让你更佳轻松的完成你的工作，并且还能让你的代码更佳的简洁。</p>
-<p>最后非常感谢<a href="http://hugogiraudel.com/" target="_blank" rel="external">Hugo</a>给我们带来这么优秀的Sass教程，希望大家在此文上有所获得。</p>
-<p>如需转载，烦请注明出处：<a href="http://www.w3cplus.com/preprocessor/understanding-sass-list.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/understanding-sass-list.html</a></p>
+<p>本文所有内容都是基于我当年在法国Crédit Agricole银行做前端（唯一一前端）的工作经验。针对于各人，有各自的情况和经验，可以有不同的方法。</p>
+<p>如果我们能给构建一个Sass项目挑选一个黄金法则，它可能会简单一些：就如捡东西的一个道理。如果做为一个团队，项目的结构要确认每个人用得都舒服，让大家都要知道是怎么一回事。</p>
+<p>你对构建Sass项目架构有任何想法和建议，我们都非常想听听。</p>
+<blockquote>
+<p>能力越大，责任越大。——@Aquaman</p>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a>的《<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">Architecture for a Sass Project</a>》所译，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://www.sitepoint.com/architecture-sass-project/" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a>。</p>
+<p>——作者：<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a></p>
+<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
+</blockquote>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/architecture-sass-project.html</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Sass中的&lt;a href=&quot;http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists&quot;&gt;List&lt;/a&gt;是一个让人可爱又可恨的东西。主要是他的语法太宽松，你几乎可以做任何你想做的事情。如果要想更好的使用好Sass语言中的&lt;a href=&quot;http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists&quot;&gt;List&lt;/a&gt;功能，我们就必须的深入了解他。&lt;a href=&quot;http://hugogiraudel.com/&quot;&gt;Hugo&lt;/a&gt;写了几篇教程，其深入的培析了Sass的&lt;a href=&quot;http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists&quot;&gt;List&lt;/a&gt;功能，以及其使用方法。&lt;br&gt;
+      &lt;p&gt;回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。&lt;br&gt;
     
     </summary>
     
-      <category term="周刊" scheme="http://ddnode.com/categories/%E5%91%A8%E5%88%8A/"/>
+      <category term="技巧" scheme="https://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="列表" scheme="http://ddnode.com/tags/%E5%88%97%E8%A1%A8/"/>
+      <category term="项目管理" scheme="https://ddnode.com/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>理解Sass的选择占位符%placeholder</title>
+    <link href="https://ddnode.com/2014/09/21/Sass/%E7%90%86%E8%A7%A3sass%E7%9A%84%E9%80%89%E6%8B%A9%E5%8D%A0%E4%BD%8D%E7%AC%A6placeholder.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/理解sass的选择占位符placeholder.html</id>
+    <published>2014-09-20T16:00:00.000Z</published>
+    <updated>2015-03-29T11:01:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Sass中提供多种方法来共用相同的CSS代码。你可以使用<code>@include</code>定义好的<a href="http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code" target="_blank" rel="external">@mixin</a>在你的CSS样式中插入新的CSS样式，你也可以使用<code>@extend</code>定义好的CSS类选择器，向你的CSS样式中插入新的CSS样式。在Sass3.2中引入了一个新的特性——选择器占位符“%placeholder”，能过<code>@extend</code>可以得到更有效的输出。<br><a id="more"></a></p>
+<p>在开始介绍<code>%placeholder</code>之前，我们先来了解一下Sass中<code>@extend</code>是如何工作的。</p>
+<p>##@extend如何工作</p>
+<p>使用<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend" target="_blank" rel="external"><code>@extend</code></a>我们可以使用CSS中的定义好的选择器，下面的例子可以很好的说明一切：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.icon &#123;</div><div class="line">  transition: background-color ease .2s;</div><div class="line">  margin: 0 .5em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.error-icon &#123;</div><div class="line">  @extend .icon;</div><div class="line">  /*错误图标指定的样式... */</div><div class="line">&#125;</div><div class="line"></div><div class="line">.info-icon &#123;</div><div class="line">  @extend .icon;</div><div class="line">  /* 信息图标指定的样式... */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的SCSS代码将编译的CSS代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.icon, .error-icon, .info-icon &#123;</div><div class="line">  transition: background-color ease .2s;</div><div class="line">  margin: 0 .5em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.error-icon &#123;</div><div class="line">  /*错误图标指定的样式... */</div><div class="line">&#125;</div><div class="line"></div><div class="line">.info-icon &#123;</div><div class="line">  /* 信息图标指定的样式... */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这是怎么回事？通过<code>@extend</code>可以直接在<code>.error-icon</code>和<code>.info-icon</code>中插入定义好的<code>.icon</code>属性。只要你修改了<code>.icon</code>样式，<code>.error-icon</code>和<code>.info-icon</code>也会做出对应的变化。非常完美，对不对？</p>
+<p>很有兴的一个地方。如果我们在HTML中从来不使用<code>.icon</code>，其存在的唯一目的就是为了扩展吗？这似乎比我们需要的基本样式稍大些，因为我们将永远不会使用<code>.icon</code>对应的样式。其实在Sass3.2开始，我们可以通过使用选择器占位符<code>%placeholder</code>来解决这种现象。</p>
+<p>##使用选择器占位符%placeholder</p>
+<p>选择器占位符<code>%placeholder</code>可以很好的解决上面提到的问题。选择器占位符很类似于CSS的类，不同的是他不是使用<code>(.)</code>开始，而是使用<code>(%)</code>开始，而且编译出来的CSS代码中并不会包括<code>%placeholder</code>规则中的样式，除非是通过<code>@extend</code>对其进行调用。</p>
+<p>回到当初的示例，如果我们定义的图标样式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">%icon &#123;</div><div class="line">  transition: background-color ease .2s;</div><div class="line">  margin: 0 .5em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.error-icon &#123;</div><div class="line">  @extend %icon;</div><div class="line">  /*错误图标指定的样式... */</div><div class="line">&#125;</div><div class="line"></div><div class="line">.info-icon &#123;</div><div class="line">  @extend %icon;</div><div class="line">  /* 信息图标指定的样式... */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译出的CSS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.error-icon, .info-icon &#123;</div><div class="line">  transition: background-color ease .2s;</div><div class="line">  margin: 0 .5em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.error-icon &#123;</div><div class="line">  /*错误图标指定的样式... */</div><div class="line">&#125;</div><div class="line"></div><div class="line">.info-icon &#123;</div><div class="line">  /* 信息图标指定的样式... */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>请注意，编译出来的CSS代码中将不再包括<code>.icon</code>了。</p>
+<h2 id="extend-VS-include"><a href="#extend-VS-include" class="headerlink" title="@extend VS @include"></a>@extend VS @include</h2><p>乍一看，选择器占位符<code>%placeholder</code>看起来和具有相同参数的<code>@mixin</code>一样。虽然从功能上来说（在浏览器上渲染的效果是完全相同的）他们是相同，但编译出来的CSS却大大的不同。</p>
+<p>请考虑使用<code>@mixin .icon</code>来实现上面示例的效果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@mixin icon &#123;</div><div class="line">  transition: background-color ease .2s;</div><div class="line">  margin: 0 .5em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.error-icon &#123;</div><div class="line">  @include icon;</div><div class="line">  /*错误图标指定的样式... */</div><div class="line">&#125;</div><div class="line"></div><div class="line">.info-icon &#123;</div><div class="line">  @include icon;</div><div class="line">  /* 信息图标指定的样式... */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译出来的CSS：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.error-icon &#123;</div><div class="line">  transition: background-color ease .2s;</div><div class="line">  margin: 0 .5em;</div><div class="line">  /*错误图标指定的样式... */</div><div class="line">&#125;</div><div class="line"></div><div class="line">.info-icon &#123;</div><div class="line">  transition: background-color ease .2s;</div><div class="line">  margin: 0 .5em;</div><div class="line">  /* 信息图标指定的样式... */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>仅从维护的角度来说，这是一个很好的扩展的示例，但编译出来的CSS实在是糟糕，因为编译出来的CSS样式，没有把相同的样式合并在一起。</p>
+<p>##选择器占位符的限制</p>
+<p>使用<code>@extend</code>调用定义好的选择器占位符<code>%placeholder</code>有所限制，他不能在不同的<code>@media</code>中运行。</p>
+<p>如下面的示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">%icon &#123;</div><div class="line">  transition: background-color ease .2s;</div><div class="line">  margin: 0 .5em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@media screen &#123;</div><div class="line">  .error-icon &#123;</div><div class="line">    @extend %icon;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  .info-icon &#123;</div><div class="line">    @extend %icon;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>此时编译你的SCSS文件时，编译器将会报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; Sass is watching for changes. Press Ctrl-C to stop.</div><div class="line">      error test.scss (Line 3: You may not @extend an outer selector from within @media.</div><div class="line">You may only @extend selectors within the same directive.</div><div class="line">From &quot;@extend %icon&quot; on line 10 of test.scss.</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>当我第一次碰到这个限制时，我以为这是一个错误。然而有一个很好的理由，Sass为什么要这样工作。</p>
+<p>因为<code>@extend</code>是将一个选择器样式扩展到另一个选择器当中，而实际上在不同的<code>@media</code>中却无需复制这些样式。</p>
+<p>虽然他可以通过其他的方式来工作，在<code>@media</code>块中定义选择器占位符，在<code>@extend</code>调用时，将会将整个样式包含在<code>@media</code>区块中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@media screen &#123;</div><div class="line">  %icon &#123;</div><div class="line">    transition: background-color ease .2s;</div><div class="line">    margin: 0 .5em;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.error-icon &#123;</div><div class="line">  @extend %icon;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.info-icon &#123;</div><div class="line">  @extend %icon;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译出的CSS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@media screen &#123;</div><div class="line">  .error-icon, .info-icon &#123;</div><div class="line">    transition: background-color ease .2s;</div><div class="line">    margin: 0 .5em;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>##总结</p>
+<p><code>@extend</code>和<code>@include</code>都具有强大的功能，尽管细节上有一些差别，这就要问你自己，编译出来的CSS样式，接近重用的样式对你是不是很重要。在某些情况下,<code>@extend</code>可以大大的减化你的CSS输出，并且显著的提高你的CSS性能。</p>
+<blockquote>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://www.growingwiththeweb.com/" target="_blank" rel="external">Daniel Imms</a>的《<a href="http://thesassway.com/intermediate/understanding-placeholder-selectors" target="_blank" rel="external">Understanding placeholder selectors</a>》所译，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://thesassway.com/intermediate/understanding-placeholder-selectors" target="_blank" rel="external">http://thesassway.com/intermediate/understanding-placeholder-selectors</a>。</p>
+<p>——作者：<a href="http://www.growingwiththeweb.com/" target="_blank" rel="external">Daniel Imms</a></p>
+<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
+</blockquote>
+<p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
+<p>如需转载烦请注明出处：</p>
+<p>英文原文：<a href="http://thesassway.com/intermediate/understanding-placeholder-selectors" target="_blank" rel="external">http://thesassway.com/intermediate/understanding-placeholder-selectors</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/understanding-placeholder-selectors.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/understanding-placeholder-selectors.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Sass中提供多种方法来共用相同的CSS代码。你可以使用&lt;code&gt;@include&lt;/code&gt;定义好的&lt;a href=&quot;http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code&quot;&gt;@mixin&lt;/a&gt;在你的CSS样式中插入新的CSS样式，你也可以使用&lt;code&gt;@extend&lt;/code&gt;定义好的CSS类选择器，向你的CSS样式中插入新的CSS样式。在Sass3.2中引入了一个新的特性——选择器占位符“%placeholder”，能过&lt;code&gt;@extend&lt;/code&gt;可以得到更有效的输出。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="译文" scheme="https://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
+    
+    
+      <category term="Placeholder" scheme="https://ddnode.com/tags/Placeholder/"/>
     
   </entry>
   
   <entry>
     <title>Sass中的反三角函数</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/sass%E4%B8%AD%E7%9A%84%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/sass中的反三角函数.html</id>
+    <link href="https://ddnode.com/2014/09/21/Sass/sass%E4%B8%AD%E7%9A%84%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/sass中的反三角函数.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
     <updated>2015-03-29T11:01:41.000Z</updated>
     
@@ -702,21 +724,21 @@
     
     </summary>
     
-      <category term="资源" scheme="http://ddnode.com/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://ddnode.com/categories/%E8%B5%84%E6%BA%90/"/>
     
     
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+      <category term="Sass" scheme="https://ddnode.com/tags/Sass/"/>
     
-      <category term="高级" scheme="http://ddnode.com/tags/%E9%AB%98%E7%BA%A7/"/>
+      <category term="高级" scheme="https://ddnode.com/tags/%E9%AB%98%E7%BA%A7/"/>
     
-      <category term="函数" scheme="http://ddnode.com/tags/%E5%87%BD%E6%95%B0/"/>
+      <category term="函数" scheme="https://ddnode.com/tags/%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
   <entry>
     <title>使用Sass和Compass制作雪碧图</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E4%BD%BF%E7%94%A8sass%E5%92%8Ccompass%E5%88%B6%E4%BD%9C%E9%9B%AA%E7%A2%A7%E5%9B%BE.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/使用sass和compass制作雪碧图.html</id>
+    <link href="https://ddnode.com/2014/09/21/Sass/%E4%BD%BF%E7%94%A8sass%E5%92%8Ccompass%E5%88%B6%E4%BD%9C%E9%9B%AA%E7%A2%A7%E5%9B%BE.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/使用sass和compass制作雪碧图.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
     <updated>2015-03-29T11:01:18.000Z</updated>
     
@@ -897,23 +919,23 @@
     
     </summary>
     
-      <category term="译文" scheme="http://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
+      <category term="译文" scheme="https://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
     
     
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+      <category term="Sass" scheme="https://ddnode.com/tags/Sass/"/>
     
-      <category term="雪碧图" scheme="http://ddnode.com/tags/%E9%9B%AA%E7%A2%A7%E5%9B%BE/"/>
+      <category term="雪碧图" scheme="https://ddnode.com/tags/%E9%9B%AA%E7%A2%A7%E5%9B%BE/"/>
     
-      <category term="Compass" scheme="http://ddnode.com/tags/Compass/"/>
+      <category term="Compass" scheme="https://ddnode.com/tags/Compass/"/>
     
-      <category term="中级" scheme="http://ddnode.com/tags/%E4%B8%AD%E7%BA%A7/"/>
+      <category term="中级" scheme="https://ddnode.com/tags/%E4%B8%AD%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
     <title>保持Sass的简单</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E4%BF%9D%E6%8C%81sass%E7%9A%84%E7%AE%80%E5%8D%95.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/保持sass的简单.html</id>
+    <link href="https://ddnode.com/2014/09/21/Sass/%E4%BF%9D%E6%8C%81sass%E7%9A%84%E7%AE%80%E5%8D%95.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/保持sass的简单.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
     <updated>2015-03-29T11:01:20.000Z</updated>
     
@@ -975,17 +997,17 @@
     
     </summary>
     
-      <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
+      <category term="技巧" scheme="https://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+      <category term="Sass" scheme="https://ddnode.com/tags/Sass/"/>
     
   </entry>
   
   <entry>
     <title>关于Sass3.4你应该知道的一些事情</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E5%85%B3%E4%BA%8Esass3.4%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/关于sass3.4你应该知道的一些事情.html</id>
+    <link href="https://ddnode.com/2014/09/21/Sass/%E5%85%B3%E4%BA%8Esass3.4%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/关于sass3.4你应该知道的一些事情.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
     <updated>2015-03-29T11:01:21.000Z</updated>
     
@@ -1041,397 +1063,85 @@
     
     </summary>
     
-      <category term="周刊" scheme="http://ddnode.com/categories/%E5%91%A8%E5%88%8A/"/>
+      <category term="周刊" scheme="https://ddnode.com/categories/%E5%91%A8%E5%88%8A/"/>
     
     
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sass变量揭秘</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E5%8F%98%E9%87%8F.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/变量.html</id>
-    <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。。<br><a id="more"></a></p>
-<p>刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。</p>
-<p>##全局变量和局部变量</p>
-<p>要了解sass或less的变量，有必要先了解下js的变量定义，先来一段js的代码：</p>
-<pre><code>var a = 1;
-(function(){
-    a = 5;
-})();
-console.log(a);//5
-</code></pre><p>上面这段代码，匿名函数里面的a因为没有使用var关键字来定义，所以当我们在函数外打印a的时候，得到的是5，改变了一开始定义的1</p>
-<pre><code>var a = 1;
-(function(){
-    var a = 5;
-})();
-console.log(a);//1
-</code></pre><p>而这段代码，匿名函数里面的a使用了var关键字来定义，所以当我们在函数外打印a的时候，得到的是1，一开始定义的值。</p>
-<p>如果你明白了上面两个的区别，那下面就好办了，如果你还没有明白，那么建议先去看下js的变量申明。<br>也许你现在已经看出眉目了，其实sass的变量设计用的是上面两段代码中的第一段思想，即在局部不使用var来申明，而less用的是第二段思想，即局部使用var来申明，这就是很多人所说的为什么sass没有局部变量。我们来两段代码测试下：</p>
-<p>sass版</p>
-<pre><code>$color:red;
-p{
-    $color:blue;
-    color:$color;//blue
-}
-a{
-    color:$color;//blue
-}
-</code></pre><p>less版</p>
-<pre><code>@color:red;
-p{
-    @color:blue;
-    color:@color;//blue
-}
-a{
-    color:@color;//red
-}
-</code></pre><p>简单总结下：如果全局申明了一个变量a，sass中如果使用到局部中是属于改变a的值，所以后来所有的都是改变之后的值；而less中使用到局部变量则属于在局部重新定义a的值，不影响其他地方。说到底，其实sass和less的变量其实都是js变量的表现形式，两者都有其科学性，只是设计思路不同而已。</p>
-<p>当然说到这里，可能有人会说了，那sass就没有局部变量喽。其实不然，正确的说法应该是：在有全局变量的情况下，sass是没有局部变量的。意思是如果要看到sass的局部变量，请不要设置全局变量。代码为证：</p>
-<pre><code>p{
-    $color:blue;
-    color:$color;//blue
-}
-a{
-    color:$color;//$color未定义
-}
-</code></pre><p>这是一个没有定义全局变量$color的例子，上面的p元素的color为blue，而a里面就会报错因为$color没定义，它没有获取到p元素里面定义的那个$color变量，这证明了其实sass同样存在局部变量，只是这个前提是得没有全局变量。</p>
-<p>相信到这里，大家应该对sass的变量有所了解，不至于那么迷惑吧。下面我们再来两段代码：</p>
-<pre><code>p{
-    $color:blue;
-    color:$color;//blue
-
-    a{
-        color:$color;//blue
-    }
-}
-</code></pre><p>这一段代码中，a嵌套在p中，然后在p元素中定义了$color这个变量，a里面是可以访问到$color变量的。</p>
-<pre><code>p{
-    $color:blue;
-    color:$color;//blue
-
-    a{
-        $color:red;
-        color:$color;//red
-    }
-
-    background-color:$color;//red
-
-    span{
-        color:$color;//red
-    }
-}
-div{
-    color:$color;//$color未定义
-}
-</code></pre><p>估计这里有人迷惑了，我们来分析下吧：因为sass的代码是从上到下解析的，所以这段代码执行到p的color值的时候颜色是上面的blue色，然后由于我们在a中又改变了$color的值为红色，所以后面所有p元素范围内用到$color这个变量的都为红色，这反应到我们后来的bgcolor和span的color上面，而p元素之外还是未定义。</p>
-<p>这里吐个槽吧，其实个人觉得正是由于这个，使得开发sass的小心定义变量，以避免污染；而less呢却刚好相反，估计到时候就是全局局部满天飞的情况，代码一团糟。你想选择哪种呢？</p>
-<p>关于sass的全部变量和局部变量就说到这，既然这篇文章的标题说了是sass变量揭秘，光这全局变量和局部变量肯定是满足不了大家的胃口的，下面我们继续说下sass变量的另一个创新点，变量默认值。</p>
-<p>##变量默认值!default</p>
-<p>为了说明这个创新点，我特意去less群问了下，less有没有这个功能，得到的答案是没有。哎呀，我那个高兴啊，小心脏那个激动啊。当然less可能是有的，这里不去计较了。我们言归正传说sass。</p>
-<p>可能很多人对这个不是很熟悉，或者觉得这个其实就是个幌子，挂羊头卖狗肉的家伙。其实不然，它的来头可不小，而且是非常的科学，我是佩服的五体投地，因为它从根本上解决了困扰我多年的css组件化开发。简单来两段比较的代码：</p>
-<p>无!default</p>
-<pre><code>$color:red;
-$color:blue;
-p{
-    color:$color;//blue
-}
-</code></pre><p>有!default</p>
-<pre><code>$color:red;
-$color:blue !default;
-p{
-    color:$color;//red
-}
-</code></pre><p>上面说了，sass编译css是从上到下的，后面会覆盖前面的，所以第一段无!default的解析的是blue，而第二段代码由于有了!default，打破了这个规则，使用了前面定义的red。有意思吧，当然这样的使用是体现不了它伟大的价值的。</p>
-<p>简单介绍下它的作用吧：假设变量申明带有!default，那么如果在此申明之前没有这个变量的申明，则用这个值，反之如果之前有申明，则用申明的值。当然如果你先!default申明，然后再申明一次，那就没什么意思了，这就是基本的变量覆盖，第一次申明的有无!default都一样。所以你要区分这两种情况：<br>    //第一种，使用默认值<br>    //变量申明带有!default，但是之前没有这个变量的申明<br>    $color:blue !default;<br>    p{<br>        color:$color;//blue<br>    }</p>
-<pre><code>//第二种，使用前面定义的值
-$color:red;
-//变量申明带有!default，但是前面还有这个变量的申明
-$color:blue !default;
-p{
-    color:$color;//red
-}
-
-//第三种错误的用法，先!default申明
-$color:red !default;
-$color:blue;
-</code></pre><p>上面的第三种错误用法其实和下面的这个覆盖写法是一样一样的：</p>
-<pre><code>//覆盖写法
-$color:red;
-$color:blue;
-</code></pre><p>能一口气看到这里的，应该有点时间，建议简单活动下，摇摇脑袋，伸伸懒腰，因为下面的更加精彩。</p>
-<p>其实长久以来，css之所以不能组件化开发，有两大原因：第一个是@import的样式不能合并在一个文件中（这里排除使用压缩工具来合并）；第二个问题就是这里说到的变量问题了。感谢sass帮我们全解决了，大笑三声。</p>
-<p>现在假设我们有个scss文件，这里暂且叫做<code>_imgstyle.scss</code>，代码如下：</p>
-<pre><code>// 变量
-//---------------------------------
-$imgStyleBorder:         1px solid #ccc !default;
-$imgStylePadding:        2px !default;
-$imgStyleRadius:         8px !default;
-
-// mixin
-//---------------------------------
-@mixin img-border($border:$imgStyleBorder,$padding:$imgStylePadding){
-    border: $border;
-    padding: $padding;
-}
-
-@mixin img-rounded($radius:$imgStyleRadius){
-    border-radius:$radius;
-}
-
-//样式
-//---------------------------------
-.img-border{
-    @include img-border;
-}
-
-.img-rounded{
-    @include img-rounded;
-}
-</code></pre><p>接下来我们要在<code>style.scss</code>这个文件里面调用<code>_imgstyle.scss</code>，代码如下：</p>
-<pre><code>//导入_imgstyle.scss
-@import &apos;imgstyle&apos;;
-</code></pre><p>现在问题来了，如果我们对默认的padding为2px不满意，要改为5px，我们有如下方法：</p>
-<p>方法一：重新覆写</p>
-<pre><code>//导入_imgstyle.scss
-@import &apos;imgstyle&apos;;
-
-.img-border{
-    padding:5px;
-}
-</code></pre><p>解析成的css：</p>
-<pre><code>.img-border {
-  border: 1px solid #cccccc;
-  padding: 2px;
-}
-.img-rounded {
-  border-radius: 8px;
-}
-.img-border {
-  padding: 5px;
-}
-</code></pre><p>方法二：改变@include的参数</p>
-<pre><code>//导入_imgstyle.scss
-@import &apos;imgstyle&apos;;
-
-.img-border{
-    @include img-border($imgStyleBorder,5px);
-}
-</code></pre><p>解析成的css：</p>
-<pre><code>.img-border {
-  border: 1px solid #cccccc;
-  padding: 2px;
-}
-.img-rounded {
-  border-radius: 8px;
-}
-
-.img-border {
-  border: 1px solid #cccccc;
-  padding: 5px;
-}
-</code></pre><p>显而易见，上面的方法都会产生重复的代码，不科学啊。当然这时候可能有人会说了，你脑子浸水了呗，直接在<code>_imgstyle.scss</code>文件中，修改<code>$imgStyleBorder</code>为5px不就得了。当然如果你要的是每个项目使用这个样式的时候都拷贝一份这个，然后打开把变量修改成你要的值，那么我只好承认我脑子浸水了，不仅脑子浸水，还得吐血了。</p>
-<p>现在请上面那些山寨土鳖方法闪一边去，该我们的!default出场了，废话少说，上代码：</p>
-<pre><code>//申明$imgStylePadding为5px
-$imgStylePadding:  5px;
-
-//导入_imgstyle.scss
-@import &apos;imgstyle&apos;;
-</code></pre><p>解析成的css：</p>
-<pre><code>.img-border {
-  border: 1px solid #cccccc;
-  padding: 5px;
-}
-
-.img-rounded {
-  border-radius: 8px;
-}
-</code></pre><p>无须去源文件中修改，且解析出来无重复代码，完美！这才是!default的价值，这为组件式开发，更改调用组件里面的变量的值带来了彻底的变化。如果less真没有这个变量的默认值的话，那less的同学们估计得伤心死了。</p>
-<p>重量级的都介绍完了，下面把其他的一些小罗罗也简单介绍下吧。</p>
-<p>##变量后面加…</p>
-<p>在css3出现以前，你是绝对没有看到过的，因为它就是为css3而设计的。css3在给css带来翻天覆地的变化之外，也给sass的@mixin传递参数带来纠结了。一般来说我们的@mixin传递的参数是以<code>,</code>来分隔的，但是css3的一些属性可以设置多个值，并且多个值以<code>,</code>分开，如<code>box-shadow:0 0 3px rgba(0,0,0,0.3),inset 0 0 3px rgba(255,255,255,0.3);</code>这让@mixin如何给box-shadow传递参数啊。所以这种变量后面加<code>...</code>的变量就出现了。</p>
-<pre><code>@mixin box-shadow($shadow...){
-    -webkit-box-shadow:$shadow;
-    -moz-box-shadow:$shadow;
-    box-shadow:$shadow;
-}
-</code></pre><p>这样就完美解决了这个需求了，漂亮吧哈哈。注意这种变量加<code>...</code>的方式只出现在传递参数中，你可以看到上面的大括号里面的变量都是没有<code>...</code>。除了box-shadow，gradient也可以用，反正能使用多个值的属性里面都可以用。</p>
-<p>##变量用<code>#{}</code>包裹</p>
-<p>一般来说，我们设置的变量都是用于属性值的，而如果用在属性或者选择器上，就得以<code>#{}</code>包裹起来了。</p>
-<pre><code>$btnClass: btn !default;
-$borderDirection:  top !default;
-
-.#{$btnClass}{
-    border-#{$borderDirection}:1px solid #ccc;
-}
-</code></pre><p>解析成的css：</p>
-<pre><code>.btn{
-    border-top:1px solid #ccc;
-}
-</code></pre><p>##多个变量一起申明</p>
-<p>其实这个还是很实用的，把多个相关的值写在一个变量里，然后通过<code>nth($var,index)</code>来获取第几个值。</p>
-<pre><code>$linkColor: red blue !default;
-
-a{
-    color:nth($linkColor,1);
-
-    &amp;:hover{
-        color:nth($linkColor,2);
-    }
-}
-</code></pre><p>解析成的css：</p>
-<pre><code>a {
-    color: red;
-}
-a:hover {
-    color: blue;
-}
-</code></pre><p>关于sass变量揭秘到此为止。如果你对sass比较感兴趣但是还不会，可以试试我们的<a href="http://www.w3cplus.com/sassguide/index.html" target="_blank" rel="external">sassGuide</a>教程，如果已经开始使用sass了，欢迎试用<a href="https://github.com/marvin1023/sassCore" target="_blank" rel="external">sassCore</a>这个库。</p>
-<p>顺便说下，本人的面向熟悉sass人员开发的tobe即将上线，欢迎关注，也欢迎到时拍砖。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;刚开始sass的人，也许其最大的抱怨就是sass的变量了，尤其是那些了解less变量的，更是会说sass的变量做得不如less的变量好，less中有明显的全局变量和局部变量之分，但是到sass这边来，好像有点乱了，分不清了。其实不管sass的变量还是less变量都是有其设计的原理的，有着不一样的科学性，下面我们简单来了解下。。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
-    
-      <category term="变量" scheme="http://ddnode.com/tags/%E5%8F%98%E9%87%8F/"/>
+      <category term="Sass" scheme="https://ddnode.com/tags/Sass/"/>
     
   </entry>
   
   <entry>
-    <title>管理Sass项目</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E7%AE%A1%E7%90%86sass%E9%A1%B9%E7%9B%AE.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/管理sass项目.html</id>
+    <title>如何根据背景颜色动态修改文本颜色</title>
+    <link href="https://ddnode.com/2014/09/21/Sass/%E5%A6%82%E4%BD%95%E6%A0%B9%E6%8D%AE%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%96%87%E6%9C%AC%E9%A2%9C%E8%89%B2.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/如何根据背景颜色动态修改文本颜色.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
-    <updated>2015-03-29T11:01:39.000Z</updated>
+    <updated>2015-03-29T11:01:27.000Z</updated>
     
-    <content type="html"><![CDATA[<p>回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。<br><a id="more"></a></p>
-<p>我的小伙伴们，那些苦逼的日子就将过去了。CSS处理变得更有趣，也更复杂。现在我们有CSS预处理器、响应式设计、渐进增强、优雅降级，和其他一些时尚的东西。可以说，CSS变得比以往任何时候都更加强大。</p>
+    <content type="html"><![CDATA[<p>设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。<br><a id="more"></a></p>
 <blockquote>
-<p>CSS变得更有趣，更复杂。——@<a href="http://www.sitepoint.com/author/hgiraudel" target="_blank" rel="external">Hugo Giraudel</a></p>
+<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://zerosixthree.se/" target="_blank" rel="external">Sebastian Ekström</a>的《<a href="http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass" target="_blank" rel="external">How to dynamically change text color based on a background color</a>》所译，整个系列共分四章，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明原作者相关信息<a href="http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass" target="_blank" rel="external">http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass</a>。</p>
+<p>——作者：<a href="http://zerosixthree.se/" target="_blank" rel="external">Sebastian Ekström</a></p>
+<p>——<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
 </blockquote>
-<p>所以我们有很多东西需要处理，这样一来，如何组织项目文件就变得非常的重要。我想大家都同意这样的观点，但实现起来并不太容易。所以我写了这篇文章，将会告诉你应该怎么去想，比告诉你怎么做要更好，否则，我就离开你了。</p>
-<p>##构建你的结构体系</p>
-<p>CSS预处理器的特点之一是可以把你的代码分割成很多个文件，而且不会影响性能。这都要归功于Sass的<code>@import</code>命令，只要在你的开发环境下，你调用不管多少文件，最终将编译出一个CSS样式文件。</p>
+<p>设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。</p>
+<p>那么我们如何利用Sass在背景色的基础上选择合适的文本颜色呢？</p>
+<p>我们将以通知信息(notification message)组件做为示例。我们先从HTML结构开始：</p>
+<pre><code>&lt;p class=&quot;notification notification-confirm&quot;&gt;Confirmation&lt;/p&gt;
+&lt;p class=&quot;notification notification-warning&quot;&gt;Warning&lt;/p&gt;
+&lt;p class=&quot;notification notification-alert&quot;&gt;Alert&lt;/p&gt;
+</code></pre><p>我们有三种类型的通知信息：确认、预警和警告。我们希望他们有不同的背景色和文本颜色。确认使用绿色(confirm)，黄色表示预警(warning)，红色表示警告(alert)。而我们的文本颜色是根据背景颜色的对比度来实现。</p>
+<p>我们来创建一个Sass函数，使我们变得更轻松：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@function set-notification-text-color($color) &#123;</div><div class="line">  @if (lightness($color) &gt; 50) &#123;</div><div class="line">    @return #000000; // 如果背景色为亮色,返回的文本色为暗色</div><div class="line">  &#125; @else &#123;</div><div class="line">    @return #ffffff; // 如果背景色为暗色，返回的文本色为亮色</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在这里，我们使用了Sass自带的<code>lightness()</code>函数来确定背景颜色是哪种类型。<code>lightness()</code>是Sass<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#lightness-instance_method" target="_blank" rel="external">内置的一个函数</a>，他返回的值是一个颜色的RGB值，这个值介于0到100。其中0表示最暗，而100表示最亮。</p>
 <blockquote>
-<p>多个文件中开发，最终合并输出一个文件。——@Bruce Lee</p>
+<p><code>lightness()</code>是Sass中的一个内置函数，说得更为确切一点，<code>lightness($color)</code>所表示的是<strong>从一个颜色中获取亮度（lightness）值</strong>。例如<code>lightness(#7ab)</code>函数，其返回的是<strong>#7ab</strong>颜色的亮度值，此值为<strong>60%</strong>。有关于Sass内置颜色相关函数的详细介绍，可以阅读前面写的一篇文章：《<a href="http://www.w3cplus.com/preprocessor/sass-color-function.html" target="_blank" rel="external">Sass基础——颜色函数</a>》，将帮助你对Sass内置的颜色函数有一个深入的了解。——@大漠</p>
 </blockquote>
-<p>开始将你的CSS文件分割成多个文件和文件夹。正如我的一位导师说的“任何事物都有其正确的地方，每个地方都有其正确的事”。那么，这也是我喜欢做的事。</p>
-<p>##文件夹构建</p>
-<p>文件夹的创建是必不可少的。就算在家里，你也不会把所有的纸张放在一个盒子里。你可能会使用一个文件夹。一个用于房子上，一个用于银行，一个用于账单等等。</p>
-<p>你在创建CSS的架构的时候也应该如此：你不只是把所有的Sass文件放在一个文件夹下，你会将他们分类。</p>
-<p>下面的示例屏示的是我将如何组织我的Sass文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">sass/</div><div class="line">|</div><div class="line">|– base/</div><div class="line">|   |– _reset.scss       # Reset/normalize</div><div class="line">|   |– _typography.scss  # Typography rules</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– components/</div><div class="line">|   |– _buttons.scss     # Buttons</div><div class="line">|   |– _carousel.scss    # Carousel</div><div class="line">|   |– _cover.scss       # Cover</div><div class="line">|   |– _dropdown.scss    # Dropdown</div><div class="line">|   |– _navigation.scss  # Navigation</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– helpers/</div><div class="line">|   |– _variables.scss   # Sass Variables</div><div class="line">|   |– _functions.scss   # Sass Functions</div><div class="line">|   |– _mixins.scss      # Sass Mixins</div><div class="line">|   |– _helpers.scss     # Class &amp; placeholders helpers</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– layout/</div><div class="line">|   |– _grid.scss        # Grid system</div><div class="line">|   |– _header.scss      # Header</div><div class="line">|   |– _footer.scss      # Footer</div><div class="line">|   |– _sidebar.scss     # Sidebar</div><div class="line">|   |– _forms.scss       # Forms</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– pages/</div><div class="line">|   |– _home.scss        # Home specific styles</div><div class="line">|   |– _contact.scss     # Contact specific styles</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– themes/</div><div class="line">|   |– _theme.scss       # Default theme</div><div class="line">|   |– _admin.scss       # Admin theme</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|– vendors/</div><div class="line">|   |– _bootstrap.scss   # Bootstrap</div><div class="line">|   |– _jquery-ui.scss   # jQuery UI</div><div class="line">|   ...                  # Etc…</div><div class="line">|</div><div class="line">|</div><div class="line">`– main.scss             # primary Sass file</div></pre></td></tr></table></figure>
-<p>正如你所看到的，在根目录底下只有一个<code>main.scss</code>文件，其他<code>.scss</code>文件都根据不同的分类放在对应的文件夹中，只是这些<code>.scss</code>文件前面都有一个下划线(<code>_</code>)，用来告诉Sass，这些<code>.scss</code>文件只是<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials" target="_blank" rel="external">局部</a>，不通过<code>@import</code>是不应该被编译出<code>.css</code>文件。事实上，它们是导入和合并文件的<a href="https://gist.github.com/HugoGiraudel/8615243" target="_blank" rel="external">基本文件</a>而以。</p>
+<p>所以这个函数功能告诉我们，如果我们调用的颜色，其“lightness”(亮度)大于50，这意味着我们引入的是一个浅（亮）颜色，反之，其返加的值小于50就是一个深(暗)颜色，因此我们需要确保他们有一个良好的对比色。否则我们返回的是一个亮色。</p>
+<p>我们来看一个具体的实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">$notification-confirm: hsla(101, 72%, 37%, 1);  // Green</div><div class="line">$notification-warning: #ffc53a;                 // Yellow</div><div class="line">$notification-alert: rgb(172, 34, 34);          // Red</div><div class="line"></div><div class="line">%notification &#123;</div><div class="line">  border-radius: 10px;</div><div class="line">  display: block;</div><div class="line">  font-size: 1.5em;</div><div class="line">  font-family: sans-serif;</div><div class="line">  padding: 1em 2em;</div><div class="line">  margin: 1em auto;</div><div class="line">  width: 30%;</div><div class="line">  text-align: center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.notification &#123;</div><div class="line">  @extend %notification;</div><div class="line">&#125;</div><div class="line">.notification-confirm &#123;</div><div class="line">  background: $notification-confirm;</div><div class="line">  color: set-notification-text-color($notification-confirm);</div><div class="line">&#125;</div><div class="line">.notification-warning &#123;</div><div class="line">  background: $notification-warning;</div><div class="line">  color: set-notification-text-color($notification-warning);</div><div class="line">&#125;</div><div class="line">.notification-alert &#123;</div><div class="line">  background: $notification-alert;</div><div class="line">  color: set-notification-text-color($notification-alert);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们有了这个功能，我们只要知道通知信息(notification message)的背景颜色，就会动态返回需要的文本颜色。</p>
+<p>下面的示例就是我们需要的效果：</p>
+<div><iframe id="cp_embed_ktcqw" src="http://codepen.io/anon/embed/ktcqw?height=400&amp;theme-id=394&amp;slug-hash=ktcqw&amp;default-tab=result" scrolling="no" frameborder="0" height="400" allowtransparency="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe></div>
+
+<p>这样做是件美妙的事情，如果我们修改了背景颜色变量值，文本颜色就会动态更新到适合背景颜色。</p>
+<p>这是如何使用Sass动态生颜色的一个简单的示例。我敢肯定你能想到这个办法。如果你有使用Sass颜色函数的其他经验，欢迎在下面的评论中与我一起分享。</p>
+<p><code>brightness()</code>函数提供了一个更先进的获取颜色亮度值的Sass函数功能。详细请参阅John W. Long写的<a href="https://gist.github.com/jlong/f06f5843104ee10006fe" target="_blank" rel="external"><code>brightness()</code>函数功能</a>。</p>
 <blockquote>
-<p>一个文件可以解决所有问题，一个文件可以找到他们，一个文件给他们带来了所有的一切，Sass只是将他们合并在一起。——@J.R.R. Tolkien</p>
+<p><code>brightness()</code>函数的详细代码如下所示：</p>
 </blockquote>
-<p>接下来，我们依次来看结构中的每一个文件目录。</p>
-<p>###Base</p>
-<p><code>base/</code>文件夹包含了一些有关于你的项目中一些模板相关。在这里，你可以看到<code>reset</code>样式(或者Normalize.css,或者其他)，也有一些关于文本排版方面的，当然根据不同的项目会有一些其他的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">//_brightness.scss</div><div class="line"></div><div class="line">$red-magic-number: 241;</div><div class="line">$green-magic-number: 691;</div><div class="line">$blue-magic-number: 68;</div><div class="line">$brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-number;</div><div class="line"></div><div class="line">@function brightness($color) &#123;</div><div class="line">  // Extract color components</div><div class="line">  $red-component: red($color);</div><div class="line">  $green-component: green($color);</div><div class="line">  $blue-component: blue($color);</div><div class="line"></div><div class="line">  // Calculate a brightness value in 3d color space between 0 and 255</div><div class="line">  $number: sqrt((($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor);</div><div class="line"></div><div class="line">  // Convert to percentage and return</div><div class="line">  @return 100% * $number / 255;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@function contrasting-color($color, $light, $dark) &#123;</div><div class="line">  @if brightness($color) &lt; 65% &#123;</div><div class="line">    @return $light;</div><div class="line">  &#125; @else &#123;</div><div class="line">    @return $dark;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//调用方法</div><div class="line">$dark-background-color: #333;</div><div class="line">$light-text-color: white;</div><div class="line"></div><div class="line">$light-background-color: #eee;</div><div class="line">$dark-text-color: black;</div><div class="line"></div><div class="line">.dark-background &#123;</div><div class="line">  background: $dark-background-color;</div><div class="line">  color: contrasting-color($dark-background-color, $light-text-color, $dark-text-color);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.light-background &#123;</div><div class="line">  background: $light-background-color;</div><div class="line">  color: contrasting-color($light-background-color, $light-text-color, $dark-text-color);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>##扩展阅读</p>
+<p>有关于Sass关于颜色功能方面的其他教程：</p>
 <ul>
-<li><code>_reset.scss</code>或<code>_normalize.scss</code></li>
-<li><code>_typography.scss</code></li>
+<li><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" target="_blank" rel="external">Module: Sass::Script::Functions</a></li>
+<li><a href="http://www.w3cplus.com/preprocessor/sass-color-function.html" target="_blank" rel="external">Sass基础——颜色函数</a></li>
+<li><a href="http://jackiebalzer.com/color" target="_blank" rel="external">Sass &amp; Compass Color Functions</a></li>
 </ul>
-<p>###Helpers</p>
-<p><code>helpers/</code>文件夹（有的地方也称其为<code>utils/</code>）主要包含了项目中关于Sass的工具和帮助之类。在里面放置了我们需要使用的<code>_function.scss</code>，和<code>_mixin.scss</code>。在这里还包含了一个<code>_variables.scss</code>文件（有的地方也称其为<code>_config.scss</code>），这里包含项目中所有的全局变量（比如排版本上的，配色方案等等）。</p>
-<ul>
-<li><code>_variables.scss</code></li>
-<li><code>_mixin.scss</code></li>
-<li><code>_function.scss</code></li>
-<li><code>_placeholders.scss</code>(也有称为<code>_helpers.scss</code>)</li>
-</ul>
-<p>###Layout</p>
-<p><code>layout/</code>文件夹(有时也称为<code>partials/</code>)中放置了大量的文件，每个文件主要用于布局方面的，比如说”header”，“footer”等。他也会包括<code>_grid.scss</code>文件，用来创建网格系统。</p>
-<ul>
-<li><code>_grid.scss</code></li>
-<li><code>_header.scss</code></li>
-<li><code>_footer.scss</code></li>
-<li><code>_sidebar.scss</code></li>
-<li><code>_forms.scss</code></li>
-</ul>
-<p>导航文件（<code>_navigation.scss</code>）文件放在这里也有意义，虽然我将他放在了<code>components/</code>文件夹中。但是我想将其放在<code>layout/</code>文件夹中更好些，当然最后还是由你自己来决定。</p>
-<p>###Components</p>
-<p>对于一些小组件，都放在了<code>components/</code>文件夹（通常也称为<code>modules/</code>），<code>layout/</code>是一个宏观的（定义全局的线框），<code>components/</code>是一个微观的。它里面放了一些特定的组件，比如说<code>slider</code>，<code>loading</code>，<code>widget</code>或者其他的小组件。通常<code>components/</code>目录下的都是一些小组件文件。</p>
-<ul>
-<li><code>_media.scss</code></li>
-<li><code>_carousel.scss</code></li>
-<li><code>_thumbnails.scss</code></li>
-</ul>
-<p>###Page</p>
-<p>如果你需要针对一些页面写特定的样式，我想将他们放在<code>page/</code>文件夹中是非常酷的，并且以页面的名称来命名。例如，你的首页需要制作一个特定的样式，那么你就可以在<code>page/</code>文件夹中创建一个名叫<code>_home.scss</code>文件。</p>
-<ul>
-<li><code>_home.scss</code></li>
-<li><code>_contact.scss</code></li>
-</ul>
-<p>根据你自己的布署，你可以根据自己的需求调用这些文件，避免与其他样式文件合并在一起。这真的主取决于你自己，在我工作的地方，我是不允许这样的事情发生，只在需要的页面调用需要的文件。比如说，我们首页有一个特定的布局样式，编译出来的CSS大约有200行代码。为了防止每个页面加载这些代码，我只在主页文件上引用这个文件。</p>
-<p>###Themes</p>
-<p>如果你像我一样要为一个大型的网站制作多个主题，那么有一个<code>theme/</code>文件夹是非常有意义的。你可以把主题相关的文件放在这个文件夹中。这绝对跟具体的项目有关，你只要觉得跟主题相关的，有必要引入。</p>
-<ul>
-<li><code>_theme.scss</code></li>
-<li><code>_admin.scss</code></li>
-</ul>
-<p>###Vendors</p>
-<p>最后一个但并非不重要，创建<code>vendors/</code>文件夹，主要用来包含来自外部的库和框架的CSS文件。比如Bootstrap,jQueryUI，FancyCarouselSliderjQueryPowered等等。把这些文件放在同一个文件夹中，你可以说，嘿，这些代码不是我的，不是我写的，跟我无关。</p>
-<p>例如：</p>
-<ul>
-<li><code>bootstrap.scss</code></li>
-<li><code>jquery-ui.scss</code></li>
-<li><code>select2.scss</code></li>
-</ul>
-<p>从另一个角度来说，在我平时工作中，还创建了一个<code>vendors-extensions/</code>文件夹，用来放置一些覆盖从外部引入进来的库和框架中的小组件。例如，我们可以在<code>_bootstrap.scss</code>文件中用来覆盖Bootstrap框架中的一些小组件。这为了避免和外部直接引来的组件升级造成的冲突，或许这不是一个很好的方案。</p>
-<p>大致就是这些，但不同的项目可能会不一样，但我可以肯定，你们都有了这样的一个概念。在文件夹中嵌套一个文件夹，这样的做法我一直不太反对，但我不太喜欢这样的方式。我发现，在大多数情况之下，只需一个层级就足足够，既保证结构的简洁与清晰，而且不复杂。但话又说回来，如果你觉得你的项目有必要嵌套更深层次的文件夹，你也可以自由的发挥。</p>
-<p><strong>温馨提示：</strong>如果你觉得你的架构并不能向大家说明<code>SCSS</code>文件夹的架构，你可以在根目录下创建一个<code>README.md</code>文件（或者在<code>main.scss</code>文件中一步一步说明）解释。</p>
-<p>##文件很酷？</p>
-<p>有一个问题常被人问到“多少文件才算是很多文件呢？”我常回答“再多文件都不算多”。拆分成多个文件的宗旨是帮助你组织你的代码。如果你觉得某事值得拆分成多个文件，可以自由的拆分。正如<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a>在《<a href="http://css-tricks.com/sass-style-guide/" target="_blank" rel="external">Sass Style Guide</a>》中所说：</p>
-<blockquote>
-<p>拆分成尽可能多的小文件是有道理的。——@<a href="http://chriscoyier.net/" target="_blank" rel="external">CHRIS COYIER</a></p>
-</blockquote>
-<p>不过，我建议不把单个组件拆分成多个文件，除非你有很好的理由这样做。通常我更倾向于一个组件一个文件。俗话说“没有更多，只有更少”。用一个简洁语义化的名称，用来表示模块的名称。这样我们就可以通过查找名称找到你需要的东西。</p>
-<p>##总结</p>
-<p>本文所有内容都是基于我当年在法国Crédit Agricole银行做前端（唯一一前端）的工作经验。针对于各人，有各自的情况和经验，可以有不同的方法。</p>
-<p>如果我们能给构建一个Sass项目挑选一个黄金法则，它可能会简单一些：就如捡东西的一个道理。如果做为一个团队，项目的结构要确认每个人用得都舒服，让大家都要知道是怎么一回事。</p>
-<p>你对构建Sass项目架构有任何想法和建议，我们都非常想听听。</p>
-<blockquote>
-<p>能力越大，责任越大。——@Aquaman</p>
-<p>本文由<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a>根据<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a>的《<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">Architecture for a Sass Project</a>》所译，整个译文带有我们自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://www.sitepoint.com/architecture-sass-project/" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a>。</p>
-<p>——作者：<a href="http://www.sitepoint.com/author/hgiraudel/" target="_blank" rel="external">Hugo Giraudel</a></p>
-<p>——译者：<a href="http://www.w3cplus.com" target="_blank" rel="external">大漠</a></p>
-</blockquote>
 <p><strong>译者手语：</strong>整个翻译依照原文线路进行，并在翻译过程略加了个人对技术的理解。如果翻译有不对之处，还烦请同行朋友指点。谢谢！</p>
 <p>如需转载烦请注明出处：</p>
-<p>英文原文：<a href="http://www.sitepoint.com/architecture-sass-project" target="_blank" rel="external">http://www.sitepoint.com/architecture-sass-project</a></p>
-<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/architecture-sass-project.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/architecture-sass-project.html</a></p>
+<p>英文出处：<a href="http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass" target="_blank" rel="external">http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass</a></p>
+<p>中文译文：<a href="http://www.w3cplus.com/preprocessor/intermediate/dynamically-change-text-color-based-on-its-background-with-sass.html" target="_blank" rel="external">http://www.w3cplus.com/preprocessor/intermediate/dynamically-change-text-color-based-on-its-background-with-sass.html</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;回想起来，我们以前做的事情主要是围绕着CSS打转。你是否还记得，你曾彻夜不眠的在努力写CSS。Year!写了上千行的代码——通常是写得不好——为了解决一些IE的bug，或者为了找到一个属性值，我们不得不努力去寻找这样的一个值。&lt;br&gt;
+      &lt;p&gt;设计选择文本颜色(前景色)一般都是在背景颜色的基础做选择。如果背景颜色是亮色，文本颜色就是暗色；如果背景颜色是暗色，文本颜色就亮色。因为这是亮色和暗色的配合，文本更容易阅读。&lt;br&gt;
     
     </summary>
     
-      <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
+      <category term="译文" scheme="https://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
     
     
-      <category term="项目管理" scheme="http://ddnode.com/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+      <category term="Sass" scheme="https://ddnode.com/tags/Sass/"/>
+    
+      <category term="中级" scheme="https://ddnode.com/tags/%E4%B8%AD%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
     <title>编写Sass的八个技巧</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E7%BC%96%E5%86%99sass%E7%9A%84%E5%85%AB%E4%B8%AA%E6%8A%80%E5%B7%A7.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/编写sass的八个技巧.html</id>
+    <link href="https://ddnode.com/2014/09/21/Sass/%E7%BC%96%E5%86%99sass%E7%9A%84%E5%85%AB%E4%B8%AA%E6%8A%80%E5%B7%A7.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/编写sass的八个技巧.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
     <updated>2015-03-29T11:01:38.000Z</updated>
     
@@ -1545,17 +1255,17 @@ a:hover {
     
     </summary>
     
-      <category term="译文" scheme="http://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
+      <category term="译文" scheme="https://ddnode.com/categories/%E8%AF%91%E6%96%87/"/>
     
     
-      <category term="技巧" scheme="http://ddnode.com/tags/%E6%8A%80%E5%B7%A7/"/>
+      <category term="技巧" scheme="https://ddnode.com/tags/%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>如何组织一个Sass项目</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87%E4%B8%80%E4%B8%AAsass%E9%A1%B9%E7%9B%AE.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/如何组织一个sass项目.html</id>
+    <link href="https://ddnode.com/2014/09/21/Sass/%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87%E4%B8%80%E4%B8%AAsass%E9%A1%B9%E7%9B%AE.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/如何组织一个sass项目.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
     <updated>2015-03-29T11:01:28.000Z</updated>
     
@@ -1613,21 +1323,21 @@ a:hover {
     
     </summary>
     
-      <category term="技巧" scheme="http://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
+      <category term="技巧" scheme="https://ddnode.com/categories/%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+      <category term="Sass" scheme="https://ddnode.com/tags/Sass/"/>
     
-      <category term="初级" scheme="http://ddnode.com/tags/%E5%88%9D%E7%BA%A7/"/>
+      <category term="初级" scheme="https://ddnode.com/tags/%E5%88%9D%E7%BA%A7/"/>
     
-      <category term="组织项目" scheme="http://ddnode.com/tags/%E7%BB%84%E7%BB%87%E9%A1%B9%E7%9B%AE/"/>
+      <category term="组织项目" scheme="https://ddnode.com/tags/%E7%BB%84%E7%BB%87%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title>定义好的变量名</title>
-    <link href="http://ddnode.com/2014/09/21/Sass/%E5%AE%9A%E4%B9%89%E5%A5%BD%E7%9A%84%E5%8F%98%E9%87%8F%E5%90%8D.html"/>
-    <id>http://ddnode.com/2014/09/21/Sass/定义好的变量名.html</id>
+    <link href="https://ddnode.com/2014/09/21/Sass/%E5%AE%9A%E4%B9%89%E5%A5%BD%E7%9A%84%E5%8F%98%E9%87%8F%E5%90%8D.html"/>
+    <id>https://ddnode.com/2014/09/21/Sass/定义好的变量名.html</id>
     <published>2014-09-20T16:00:00.000Z</published>
     <updated>2015-03-29T11:01:29.000Z</updated>
     
@@ -1669,14 +1379,14 @@ a:hover {
     
     </summary>
     
-      <category term="资源" scheme="http://ddnode.com/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://ddnode.com/categories/%E8%B5%84%E6%BA%90/"/>
     
     
-      <category term="Sass" scheme="http://ddnode.com/tags/Sass/"/>
+      <category term="Sass" scheme="https://ddnode.com/tags/Sass/"/>
     
-      <category term="变量" scheme="http://ddnode.com/tags/%E5%8F%98%E9%87%8F/"/>
+      <category term="变量" scheme="https://ddnode.com/tags/%E5%8F%98%E9%87%8F/"/>
     
-      <category term="初级" scheme="http://ddnode.com/tags/%E5%88%9D%E7%BA%A7/"/>
+      <category term="初级" scheme="https://ddnode.com/tags/%E5%88%9D%E7%BA%A7/"/>
     
   </entry>
   
