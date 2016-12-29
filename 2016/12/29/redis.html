@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Laravel 5.3 + vue 2.1 组件化开发的博客系统 | Drupal 笔记</title>
+  <title>Redis内部数据结构详解 | Drupal 笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网站：https://pigjian.com源码：https://github.com/jcc/blog文档：https://manual.pigjian.com">
+  <meta name="description" content="Redis内部数据结构详解(1)——dictRedis内部数据结构详解(2)——sdsRedis内部数据结构详解(3)——robjRedis内部数据结构详解(4)——ziplistRedis内部数据结构详解(5)——quicklistRedis内部数据结构详解(6)——skiplistRedis内部数据结构详解(7)——intset">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Laravel 5.3 + vue 2.1 组件化开发的博客系统">
-<meta property="og:url" content="https://ddnode.com/2016/12/29/laravel-blog.html">
+<meta property="og:title" content="Redis内部数据结构详解">
+<meta property="og:url" content="https://ddnode.com/2016/12/29/redis.html">
 <meta property="og:site_name" content="Drupal 笔记">
-<meta property="og:description" content="网站：https://pigjian.com源码：https://github.com/jcc/blog文档：https://manual.pigjian.com">
-<meta property="og:updated_time" content="2016-12-29T01:26:58.000Z">
+<meta property="og:description" content="Redis内部数据结构详解(1)——dictRedis内部数据结构详解(2)——sdsRedis内部数据结构详解(3)——robjRedis内部数据结构详解(4)——ziplistRedis内部数据结构详解(5)——quicklistRedis内部数据结构详解(6)——skiplistRedis内部数据结构详解(7)——intset">
+<meta property="og:updated_time" content="2016-12-29T05:12:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laravel 5.3 + vue 2.1 组件化开发的博客系统">
-<meta name="twitter:description" content="网站：https://pigjian.com源码：https://github.com/jcc/blog文档：https://manual.pigjian.com">
+<meta name="twitter:title" content="Redis内部数据结构详解">
+<meta name="twitter:description" content="Redis内部数据结构详解(1)——dictRedis内部数据结构详解(2)——sdsRedis内部数据结构详解(3)——robjRedis内部数据结构详解(4)——ziplistRedis内部数据结构详解(5)——quicklistRedis内部数据结构详解(6)——skiplistRedis内部数据结构详解(7)——intset">
   
     <link rel="alternative" href="/atom.xml" title="Drupal 笔记" type="application/atom+xml">
   
@@ -165,11 +165,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-laravel-blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-redis" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/12/29/laravel-blog.html" class="article-date">
-  	<time datetime="2016-12-29T01:25:53.000Z" itemprop="datePublished">2016-12-29</time>
+      <a href="/2016/12/29/redis.html" class="article-date">
+  	<time datetime="2016-12-29T05:06:06.000Z" itemprop="datePublished">2016-12-29</time>
 </a>
     </div>
   
@@ -180,7 +180,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Laravel 5.3 + vue 2.1 组件化开发的博客系统
+      Redis内部数据结构详解
     </h1>
   
 
@@ -196,7 +196,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>网站：<a href="https://pigjian.com" target="_blank" rel="external">https://pigjian.com</a><br>源码：<a href="https://github.com/jcc/blog" target="_blank" rel="external">https://github.com/jcc/blog</a><br>文档：<a href="https://manual.pigjian.com" target="_blank" rel="external">https://manual.pigjian.com</a></p>
+        <p><a href="http://zhangtielei.com/posts/blog-redis-dict.html" target="_blank" rel="external">Redis内部数据结构详解(1)——dict</a><br><a href="http://zhangtielei.com/posts/blog-redis-sds.html" target="_blank" rel="external">Redis内部数据结构详解(2)——sds</a><br><a href="http://zhangtielei.com/posts/blog-redis-robj.html" target="_blank" rel="external">Redis内部数据结构详解(3)——robj</a><br><a href="http://zhangtielei.com/posts/blog-redis-ziplist.html" target="_blank" rel="external">Redis内部数据结构详解(4)——ziplist</a><br><a href="http://zhangtielei.com/posts/blog-redis-quicklist.html" target="_blank" rel="external">Redis内部数据结构详解(5)——quicklist</a><br><a href="http://zhangtielei.com/posts/blog-redis-skiplist.html" target="_blank" rel="external">Redis内部数据结构详解(6)——skiplist</a><br><a href="http://zhangtielei.com/posts/blog-redis-intset.html" target="_blank" rel="external">Redis内部数据结构详解(7)——intset</a></p>
 
       
     </div>
@@ -206,18 +206,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/12/29/redis.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Redis内部数据结构详解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/10/08/what-happen-when-url-open.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">从输入URL到页面加载发生了什么</div>
+    <a href="/2016/12/29/laravel-blog.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Laravel 5.3 + vue 2.1 组件化开发的博客系统</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
